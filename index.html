@@ -48,6 +48,29 @@
 
   .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
 
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
   ul.links { list-style: none; margin: 0; padding: 0; }
   ul.links li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   ul.links li:last-child { border-bottom: none; }
@@ -99,6 +122,16 @@
 
   <section class="topic weather" id="weather">
     <h2>Weather</h2>
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Hurricane Example — Gulf of Mexico</span>
+          <span class="event-status">Category 3, hurricane warning in effect</span>
+          <span class="context">Landfall expected within 48h; significant wind/storm surge impact</span>
+        </li>
+      </ul>
+    </div>
     <p class="summary">
       Summary of the day's weather-related developments.
     </p>
