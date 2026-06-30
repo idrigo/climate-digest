@@ -72,12 +72,58 @@
   ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
 
   ul.links { list-style: none; margin: 0; padding: 0; }
-  ul.links li { padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   ul.links li:last-child { border-bottom: none; }
-  ul.links .source { color: var(--muted); font-weight: 600; margin-right: 6px; }
-  ul.links a { color: var(--text); text-decoration: none; }
-  ul.links a:hover { text-decoration: underline; }
-  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
 
   footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
   footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
@@ -160,18 +206,37 @@
 
   <section class="topic industry" id="industry">
     <h2>Industry News</h2>
-    <ul class="links">
-      <li>
-        <span class="source">Crunchbase News</span>
-        <a href="#">Company X raises Series B</a>
-        <span class="context">$45M Series B led by Investor Y — climate-tech forecasting platform</span>
-      </li>
-      <li>
-        <span class="source">Reuters</span>
-        <a href="#">Company A acquires Company B</a>
-        <span class="context">Acquisition, undisclosed amount — consolidation in solar O&amp;M</span>
-      </li>
-    </ul>
+
+    <div class="news-item">
+      <h3 class="news-title">New Partnership with Resilens AG</h3>
+      <p class="news-body">
+        Reliable climate data is becoming an essential component of long-term
+        planning. Whether cities are assessing future heat exposure or
+        organisations are evaluating infrastructure risks, informed decisions
+        begin with accurate data. To strengthen this process, meteoblue has
+        entered a strategic partnership with
+        <a href="https://resilens.com/" target="_blank" rel="noopener">Resilens AG</a>,
+        a company specialising in climate risk assessment and adaptation
+        planning. Through this collaboration, high-resolution meteoblue
+        climate data will be integrated into the Resilens platform,
+        supporting vulnerability analyses, exposure assessments and the
+        prioritisation of climate adaptation measures.
+      </p>
+      <span class="news-source">meteoblue</span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Weather Trading Gains Traction as Wind and Solar Grow</h3>
+      <p class="news-body">
+        As wind and solar capacity expands, power markets are becoming more
+        exposed to short-term weather swings, fueling growth in
+        weather-linked trading strategies and hedging products.
+      </p>
+      <span class="news-source">
+        <a href="https://www.bloomberg.com/news/newsletters/2026-06-29/weather-trading-gains-traction-as-wind-and-solar-energy-grow" target="_blank" rel="noopener">Bloomberg</a>
+      </span>
+    </div>
+
   </section>
 
   <footer>
