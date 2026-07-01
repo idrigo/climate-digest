@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">30 June 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      Europe's catastrophic heatwave dominated climate news across the three-day window, with the WHO confirming more than 1,300 excess deaths since June 21 and scientists declaring the event "virtually impossible" without decades of fossil fuel emissions. The Bonn UN climate conference ended last week in deadlock over adaptation finance and emissions cuts — a bruising setback ahead of COP31 in Antalya — while UN Secretary-General Guterres used London Climate Action Week to demand AI companies disclose their environmental footprint and commit to renewables by 2030.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">France 24 / WHO</span>
+        <a href="https://www.france24.com/en/europe/20260628-more-than-1-300-excess-deaths-linked-to-record-breaking-europe-heatwave-who-says" target="_blank" rel="noopener">More than 1,300 excess deaths linked to record-breaking Europe heatwave, WHO says</a>
+        <span class="context">WHO confirmed over 1,300 heat-related deaths across Europe since June 21, with France alone accounting for roughly 1,000 — marking this event as one of the deadliest heatwaves on record. Spain's mortality system linked more than 400 additional deaths to temperatures in a single four-day stretch.</span>
+      </li>
+      <li>
+        <span class="source">World Weather Attribution</span>
+        <a href="https://www.worldweatherattribution.org/fossil-fuel-emissions-have-rapidly-worsened-european-heatwaves-in-just-a-few-decades/" target="_blank" rel="noopener">Fossil fuel emissions have rapidly worsened European heatwaves in just a few decades</a>
+        <span class="context">Rapid attribution study finds this heatwave would have been "virtually impossible" in 1976; daytime temperatures are now ~3.5°C hotter than an equivalent event 50 years ago, and nearly half of the 854 European cities studied broke all-time heat-stress records.</span>
+      </li>
+      <li>
+        <span class="source">CNN</span>
+        <a href="https://www.cnn.com/2026/06/26/climate/european-heat-wave-impossible-global-warming" target="_blank" rel="noopener">Europe's record heat wave would have been 'virtually impossible' just decades ago</a>
+        <span class="context">Scientists found the heatwave is 10 times more likely today than in 2003, and more than 100 times more likely at night — underlining the accelerating pace of heat amplification under ongoing warming.</span>
+      </li>
+      <li>
+        <span class="source">Carbon Brief</span>
+        <a href="https://www.carbonbrief.org/bonn-climate-talks-key-outcomes-from-the-june-2026-un-climate-conference/" target="_blank" rel="noopener">Bonn climate talks: Key outcomes from the June 2026 UN climate conference</a>
+        <span class="context">Two weeks of SB64 negotiations ended in "gridlock" — richer nations blocked language on tripling adaptation finance despite prior COP30 commitments, and parties could not agree on how climate science should feed into the Paris process.</span>
+      </li>
+      <li>
+        <span class="source">UN News</span>
+        <a href="https://www.un.org/en/climatechange/LCAW2026" target="_blank" rel="noopener">UN Secretary-General announces AI emissions transparency drive and methane action at London Climate Action Week</a>
+        <span class="context">At London Climate Action Week (June 23), Guterres called on all major AI companies to disclose carbon, water, and land impacts and power their systems with renewables by 2030 — and issued an urgent global call to slash methane in the final major climate address of his term.</span>
+      </li>
+      <li>
+        <span class="source">Copernicus C3S</span>
+        <a href="https://climate.copernicus.eu/copernicus-second-highest-surface-air-and-sea-surface-temperatures-may-globally-exceptional" target="_blank" rel="noopener">May 2026 second warmest globally; surging Pacific ocean temperatures signal El Niño onset</a>
+        <span class="context">Global average surface temperature for May was 15.81°C — 1.42°C above pre-industrial — driven by exceptionally warm tropical Pacific SSTs and an early, intense European heatwave; Arctic sea ice extent was about 4% below average.</span>
+      </li>
+      <li>
+        <span class="source">Gizmodo</span>
+        <a href="https://gizmodo.com/trump-killed-climate-gov-last-summer-scientists-just-brought-it-back-2000778745" target="_blank" rel="noopener">Ex-NOAA scientists launch climate.us to restore Trump-shuttered climate.gov</a>
+        <span class="context">Former federal scientists raised $280,000 and recruited 80 volunteers to rebuild climate.gov's full archive as a nonprofit site (climate.us), completing the restoration this week after the original was taken offline by DOGE cuts in 2025.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">European Heatwave 2026 — Western &amp; Central Europe</span>
+          <span class="event-status">Easing in France and Iberia; still extreme across Germany, Poland, Czech Republic — Poland broke its all-time record (40.5°C) on June 28; WHO: 1,300+ excess deaths</span>
+          <span class="context">Heat dome shifting east; wildfire Red Alerts issued in eastern Germany; gradual improvement expected through this week as an Atlantic pattern re-establishes.</span>
+        </li>
+        <li>
+          <span class="event-name">Highmore Derecho — South Dakota, United States</span>
+          <span class="event-status">Concluded June 29; 131 mph (211 km/h) straight-line winds recorded — 2nd highest thunderstorm gust in state history, 15th in US history (preliminary)</span>
+          <span class="context">Long-lived supercell spawned over Nebraska tracked into central SD Monday morning, destroying wind turbines, collapsing grain bins, and damaging homes across several counties; governor mobilised state emergency resources.</span>
+        </li>
+        <li>
+          <span class="event-name">Eastern Pacific Tropical Development — SW of Baja California Peninsula</span>
+          <span class="event-status">NHC monitoring; 80% 48-hour formation probability as of June 30; tropical depression expected to form tonight or Wednesday</span>
+          <span class="context">System moving generally northwest then north; environmental conditions may become less favourable by late this week as wind shear increases over cooler waters.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      An extraordinary cluster of extreme weather events defined the June 28–30 window: Europe's historic heat dome peaked lethally before shifting east and breaking new national records, while South Dakota endured one of the most powerful straight-line windstorms ever measured on US soil. In the tropics, the Eastern Pacific season appears ready to produce its first named storm of 2026 within 48 hours.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">South Dakota Searchlight</span>
+        <a href="https://southdakotasearchlight.com/2026/06/29/extreme-damage-from-131-mph-wind-brings-governor-and-state-response-to-highmore/" target="_blank" rel="noopener">131 mph windstorm causes extreme damage across Highmore, South Dakota</a>
+        <span class="context">A supercell-spawned derecho hit Highmore at 6:25 a.m. Monday, snapping wind turbines in half, tipping vehicles, and tearing roofs off homes; Governor deployed state patrol, DOT, and DNR crews to the town of 650 residents.</span>
+      </li>
+      <li>
+        <span class="source">Watchers News</span>
+        <a href="https://watchers.news/2026/06/30/preliminary-211-km-h-131-mph-gust-in-south-dakota-among-the-strongest-thunderstorm-winds-in-u-s/" target="_blank" rel="noopener">Preliminary 131 mph South Dakota gust ranks among strongest thunderstorm winds ever recorded in the US</a>
+        <span class="context">If confirmed, the Holabird measurement would be the 15th strongest thunderstorm gust in US history — the kind of benchmark event that drives re-examination of turbine siting standards in the Great Plains.</span>
+      </li>
+      <li>
+        <span class="source">Severe Weather EU</span>
+        <a href="https://www.severe-weather.eu/global-weather/historic-heat-dome-europe-excessive-heatwave-june-2026-mk/" target="_blank" rel="noopener">European heatwave expands east: Poland sets national record of 40.5°C on June 28</a>
+        <span class="context">As Western Europe began cooling, the heat dome shifted into Central and Eastern Europe on June 28 — Germany, Poland, and Czech Republic each broke all-time temperature records; wildfire Red Alerts were issued across the region.</span>
+      </li>
+      <li>
+        <span class="source">WMO</span>
+        <a href="https://wmo.int/media/news/records-fall-extreme-heat-grips-europe" target="_blank" rel="noopener">Records fall as extreme heat grips Europe — WMO confirms all-time highs in multiple countries</a>
+        <span class="context">The World Meteorological Organization confirmed all-time records broken in Belgium, France, Ireland, Italy, Netherlands, Poland, UK, and more; France's June 23 reading of 44.3°C was the country's hottest day since records began in 1947.</span>
+      </li>
+      <li>
+        <span class="source">NHC</span>
+        <a href="https://www.nhc.noaa.gov/gtwo.php" target="_blank" rel="noopener">NHC Graphical Tropical Weather Outlook — Eastern Pacific tropical depression likely within 48 hours</a>
+        <span class="context">NHC assigns 80% formation probability to a disorganised but developing area of low pressure SW of Baja California; Atlantic basin remains quiet with only 10% odds on a feature off the southeastern US coast.</span>
+      </li>
+      <li>
+        <span class="source">SPC / NOAA</span>
+        <a href="https://www.spc.noaa.gov/products/outlook/day2otlk.html" target="_blank" rel="noopener">Storm Prediction Center Day 2 Convective Outlook — elevated severe risk across Upper Midwest</a>
+        <span class="context">SPC's June 30 Day 2 outlook highlights continued severe thunderstorm potential across the Upper Midwest and northern Plains, following yesterday's record-breaking derecho event in South Dakota.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      The commissioning of SunZia — the largest clean energy infrastructure project in US history — is already reshaping the western grid, while the Trump administration's offshore wind dismantlement crossed $2.5 billion in lease buybacks and drew a legal challenge from California. Battery storage installations hit records in Q1 2026, and a federal court restored a key IRA tax-credit eligibility rule for wind and solar developers.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Pattern Energy</span>
+        <a href="https://patternenergy.com/sunzia-comes-online/" target="_blank" rel="noopener">SunZia fully operational — largest US renewable energy project in history delivers power to the West</a>
+        <span class="context">Pattern Energy's 3,650 MW New Mexico wind farm and 550-mile transmission line entered full operation in mid-June; California's wind output record was lifted ~20% on its first days of delivery, supplying power to roughly one million homes.</span>
+      </li>
+      <li>
+        <span class="source">Utility Dive</span>
+        <a href="https://www.utilitydive.com/news/trump-administration-buys-out-four-more-offshore-wind-leases-for-765m/823314/" target="_blank" rel="noopener">Trump administration pays $765M to cancel Invenergy's offshore wind leases; total buyouts exceed $2.5B</a>
+        <span class="context">The Interior Department agreed to reimburse Invenergy $765M to exit four early-stage leases in the New York Bight, Gulf of Maine, and Morro Bay — the eighth such deal — bringing the programme's total cost to more than $2.5 billion paid from the US Treasury Judgment Fund.</span>
+      </li>
+      <li>
+        <span class="source">Utility Dive</span>
+        <a href="https://www.utilitydive.com/news/us-sees-record-q1-2026-energy-storage-installations-amid-rosy-outlook/823547/" target="_blank" rel="noopener">US battery storage posts record Q1 2026: 3.3 GW / 8.4 GWh installed in the seasonally slow first quarter</a>
+        <span class="context">All three market segments — utility-scale, residential, and commercial/industrial — set Q1 records, driven by IRA investment tax credits and rising grid-scale demand from data centres and electrification.</span>
+      </li>
+      <li>
+        <span class="source">Utility Dive</span>
+        <a href="https://www.utilitydive.com/news/judge-restores-5-safe-harbor-rule-for-wind-and-solar/822313/" target="_blank" rel="noopener">Judge restores 5% safe harbor rule for wind and solar IRA tax credits</a>
+        <span class="context">A DC federal court vacated Treasury guidance that had eliminated key methodologies for proving tax-credit eligibility under the IRA, restoring an important route for developers to qualify for the 30%+ investment tax credit.</span>
+      </li>
+      <li>
+        <span class="source">BloombergNEF</span>
+        <a href="https://about.bnef.com/insights/clean-energy/bloombergnefs-new-energy-outlook-2026-transition-to-newer-technologies-expanded-electrification-to-strengthen-nations-energy-security/" target="_blank" rel="noopener">BNEF New Energy Outlook 2026: solar set to become world's top electricity source within six years</a>
+        <span class="context">Global energy transition investment hit a record $2.3 trillion in 2025; BNEF projects solar PV reaches 10% of global generation in 2026 and overtakes wind and nuclear — driven by falling costs, a Chinese supply glut, and energy security imperatives.</span>
+      </li>
+      <li>
+        <span class="source">Energy News Beat</span>
+        <a href="https://energynewsbeat.co/wind/wind-farm-near-highmore-south-dakota-has-critical-damage-highmore-sd/" target="_blank" rel="noopener">South Dakota wind farm sustains critical damage from 131 mph derecho</a>
+        <span class="context">A wind farm near Highmore, SD suffered severe structural damage as straight-line winds snapped turbine towers in half on June 29 — a stark demonstration of the extreme-weather risk facing wind infrastructure, with implications for turbine siting and insurance models in the central US.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <div class="news-item">
+      <h3 class="news-title">Trump Administration Accelerates Offshore Wind Dismantlement — $2.5B+ Paid, California Fights Back</h3>
+      <p class="news-body">
+        The U.S. Interior Department struck its eighth offshore wind lease buyout deal this month, agreeing to pay <a href="https://www.invenergy.com/" target="_blank" rel="noopener">Invenergy</a> $765 million to surrender four early-stage leases in the New York Bight, Gulf of Maine, and Morro Bay — projects that had already been cancelled due to economic and regulatory pressure. Drawn from the Treasury's Judgment Fund rather than Interior's budget, the payments bring the administration's total offshore wind lease buyback programme to more than $2.5 billion. Invenergy said it will redirect the proceeds into natural gas plants across five Midwest states and geothermal projects in the western US. The accelerating buyout strategy drew an immediate legal challenge: California Attorney General Rob Bonta and the California Energy Commission filed a notice of intent to sue Interior and developer Golden State Wind over a separate cancellation they say puts more than $100 million in voter-approved clean energy funds at risk.
+      </p>
+      <span class="news-source"><a href="https://www.canarymedia.com/articles/offshore-wind/invenergy-offshore-wind-payout-geothermal" target="_blank" rel="noopener">Canary Media</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Weather Trading Gains Traction as Wind and Solar Reshape Power Markets</h3>
+      <p class="news-body">
+        As wind and solar capacity expands across US and European grids, power markets are becoming increasingly exposed to short-term weather swings — fuelling rapid growth in <a href="https://www.bloomberg.com/news/newsletters/2026-06-29/weather-trading-gains-traction-as-wind-and-solar-energy-grow" target="_blank" rel="noopener">weather-linked trading strategies and hedging products</a>. Utilities, energy traders, and renewable developers are turning to weather derivatives, volumetric contracts, and AI-driven short-range forecasting tools to manage the price volatility that comes with a weather-dependent generation mix. The trend is opening new market opportunities for specialised weather analytics and forecasting firms, which are increasingly positioning their products directly to energy desk clients rather than only to traditional meteorology customers.
+      </p>
+      <span class="news-source"><a href="https://www.bloomberg.com/news/newsletters/2026-06-29/weather-trading-gains-traction-as-wind-and-solar-energy-grow" target="_blank" rel="noopener">Bloomberg</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">NextEra Energy's $67B Dominion Takeover Advances Through Regulatory Review</h3>
+      <p class="news-body">
+        The all-stock merger between NextEra Energy and <a href="https://www.dominionenergy.com/" target="_blank" rel="noopener">Dominion Energy</a> — announced in May and valued at approximately $67 billion — continues to move through a 12–18-month regulatory review process. The deal would create the world's largest regulated electric utility, serving roughly 10 million customers across Florida, Virginia, North Carolina, and South Carolina and holding a 110 GW combined generation portfolio. A key strategic asset is Dominion's 2.6 GW Coastal Virginia Offshore Wind project — the largest offshore wind development in the United States — which began generating first power in March 2026 and is on track for full commissioning in early 2027. Industry observers note the merger positions the combined entity to capitalise on surging electricity demand from AI data centres expanding across the US Southeast.
+      </p>
+      <span class="news-source"><a href="https://insideclimatenews.org/news/21052026/inside-clean-energy-nextera-dominion-merger-offshore-wind/" target="_blank" rel="noopener">InsideClimate News</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-06-29.html">29 June 2026</a></li>
+      <li><a href="archive/2026-06-28.html">28 June 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
