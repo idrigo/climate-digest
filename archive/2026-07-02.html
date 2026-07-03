@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">2 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      Simultaneous heat emergencies scorching two continents on July 1 crystallised what scientists have long modelled: in an El Niño year on top of decades of warming, concurrent extremes are not anomalies but the new baseline. A landmark CNN analysis published July 1 framed the dual heat domes explicitly as a "preview of what's to come," while new UK government statistics published June 30 confirmed that the clean energy transition is accelerating even as the events it must ultimately prevent keep escalating. On the policy front, Carbon Brief's latest coverage highlights a sharpening UK debate over North Sea expansion and a new EU–China climate consultation begun ahead of COP31.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">CNN</span>
+        <a href="https://www.cnn.com/2026/07/01/climate/heat-waves-europe-us-el-nino-warming" target="_blank" rel="noopener">Cruel summer: Punishing heat waves hit Europe and the US simultaneously — scientists call it a preview of what's to come</a>
+        <span class="context">July 1 analysis frames Europe's third heat wave in weeks and the eastern US July 4 heat dome as a paired El Niño–amplified climate signal; DC forecast for its hottest July 4 on record (101°F); experts warn heat events are becoming more common, more intense, and longer-lasting under ongoing warming — "the new prologue, not the exception."</span>
+      </li>
+      <li>
+        <span class="source">Carbon Brief</span>
+        <a href="https://www.carbonbrief.org/cropped-1-july-2026-heatwave-scorches-europe-uk-2050-farm-plan-whats-next-for-the-high-seas-treaty/" target="_blank" rel="noopener">Heatwave scorches Europe: Italy and Balkans enter the danger zone as UK publishes first farm-to-net-zero roadmap through 2050</a>
+        <span class="context">Carbon Brief's July 1 overview finds red heat alerts spreading across Italy and Croatia as the first heat dome's axis shifts south and east; simultaneously, the UK government published its agriculture-to-net-zero roadmap for 2050 — the first national strategy addressing how Britain's farming sector must transform under both climate mitigation and adaptation pressures.</span>
+      </li>
+      <li>
+        <span class="source">Carbon Brief</span>
+        <a href="https://www.carbonbrief.org/daily-brief/north-sea-delusion-heat-hits-italy-balkans-us-eu-china-consultation/" target="_blank" rel="noopener">North Sea 'delusion': UK Labour MPs urge PM-designate Burnham to rule out Rosebank; EU and China open new climate consultation</a>
+        <span class="context">Carbon Brief's July 2 daily brief: senior Labour MPs told prospective prime minister Andy Burnham to ignore "deluded" calls for further North Sea drilling, pointing to the 63 pro-Rosebank editorials published in UK papers in 2026 as evidence of a fossil fuel lobby push; separately, the EU and China opened a new round of formal climate "consultation" ahead of COP31 in Antalya, a diplomatic signal amid ongoing solar and EV trade friction between the two sides.</span>
+      </li>
+      <li>
+        <span class="source">CAMS / Copernicus</span>
+        <a href="https://atmosphere.copernicus.eu/cams-releases-annual-assessment-report-european-air-quality-2025-0" target="_blank" rel="noopener">CAMS releases European Air Quality Assessment 2025: heatwave-driven ozone and PM2.5 episodes are the leading air pollution threat; 2025 was Europe's third warmest year on record</a>
+        <span class="context">Published June 29, the annual CAMS assessment confirms that air pollution episodes driven by heatwaves — elevated ozone, wildfire particulates, and Saharan dust — are now the dominant air quality challenge across the continent, overshadowing the long-term improvement trend from reduced industrial and transport emissions. The report is directly relevant to the current heat emergencies compounding wildfire smoke across Italy, the Balkans, and Central Europe.</span>
+      </li>
+      <li>
+        <span class="source">RenewableUK</span>
+        <a href="https://www.renewableuk.com/news-and-resources/press-releases/renewables-hit-new-quarterly-record-and-generate-majority-of-uk-s-electricity-as-wind-leads-the-way/" target="_blank" rel="noopener">UK renewables set new quarterly record in Q1 2026: 53.1% of electricity, wind up 30% to 29.3 TWh — second consecutive year renewables supplied majority of British power</a>
+        <span class="context">Official UK Energy Trends statistics published June 30: renewables generated a record 43.7 TWh in Q1 2026 (up 18% year-on-year); wind generation hit 29.3 TWh (up 30%), driven by expanded capacity and stronger wind speeds recovering from the near-record low Q1 2025; renewables have now exceeded 50% of UK generation for two consecutive years — a threshold that would have been considered unattainable a decade ago.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Eastern US Heat Dome — Eastern Two-Thirds of the United States</span>
+          <span class="event-status">PEAK PHASE: Active through July 4; NWS Excessive Heat Warnings across 31 states; ~150 million people under heat alerts; DC forecast 101°F on July 4 — would be hottest July 4 on record (old record: 100°F, 1919); Philadelphia tying July monthly record at 104°F; NYC first triple-digit day in a decade; 300+ daily records expected by Saturday</span>
+          <span class="context">Event peaks July 3–4 before a gradual pattern shift beginning early next week; heat index values of 105–115°F possible in some cities; nighttime lows near 80°F in major urban centres provide no meaningful relief; July 4 outdoor events from New York to Atlanta are being modified, shortened, or cancelled by local authorities.</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado Wildfires — Southern Colorado and Colorado-Utah Border</span>
+          <span class="event-status">NEW MAJOR EMERGENCY: Aspen Acres Fire (Pueblo/Custer counties): 47,953 acres, 0% contained as of July 1 — top-priority fire in the United States; 180+ structures destroyed; mandatory Level 3 "Go" evacuations for Beulah, Rye, Wetmore, Colorado City, San Isabel and surrounding areas; Snyder Fire (CO-UT border): ~30,000 acres, ~10% contained</span>
+          <span class="context">Three federal firefighters — Emily Barker, Nick Hutcherson, and Sydney Watson — were killed in a burnover incident on the Knowles Fire near the Colorado-Utah border on June 27; a fourth and fifth firefighter remain hospitalised with burns. Extreme fire weather persists: single-digit humidity, gusts to 45 mph, and fuel moisture readings of 2–8%. Fireworks shows across dozens of Colorado communities have been cancelled for the July 4 holiday. A new incident management team from Alaska takes over the Aspen Acres Fire on July 2; 750–1,000 firefighters are expected on scene.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave — Phase 3: Italy and the Balkans</span>
+          <span class="event-status">ONGOING — shifting south and east: Italy has 22 cities on Level 3 red heat alert as of July 1; wildfire active on Adriatic island of Vis (Croatia); wildfire contained near Klos, Albania; Serbia forecast 39°C; heat easing in Germany and Poland; another heat surge expected to begin July 5–6, ahead of the third Omega-block dome forecast for July 7–10</span>
+          <span class="context">The first wave's axis has completed its eastward shift and is now driving extreme conditions across the central Mediterranean and Balkans. European fire danger monitors (EFFIS) maintain very high to extreme wildfire risk across Italy, western Balkans, and parts of Spain as drought-hardened vegetation and record-low river levels persist. The third dome — now six days away — is forecast to push Iberian temperatures to 44–46°C, potentially exceeding the first wave in intensity and duration.</span>
+        </li>
+        <li>
+          <span class="event-name">Tropical Storm Douglas — Eastern Pacific, Open Ocean</span>
+          <span class="event-status">UPDATE: Tropical Depression Four-E organised and was named Tropical Storm Douglas July 1 (~5 PM PDT); located ~1,230 miles WSW of southern tip of Baja California; maximum sustained winds ~40 mph; moving northwest over open water</span>
+          <span class="context">Douglas is the fourth named storm of the 2026 Eastern Pacific hurricane season, upgraded from the tropical depression that formed July 1. The system is tracking northwest over progressively cooler sea surface temperatures; no land threat anticipated; expected to dissipate within the week. No additional development expected in the Atlantic basin over the next 7 days.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      The July 4 weekend is shaping up as one of the most hazardous in modern US history, with two separate emergencies converging: Colorado's Aspen Acres Fire — the nation's top-priority wildfire — is consuming 48,000 acres with zero containment and has already destroyed 180 structures, while more than 150 million people across the eastern US brace for temperatures that will break July 4 records from Washington DC to Philadelphia. Three federal firefighters were killed last week in a burnover on the Colorado-Utah border. In Europe, the first heat wave's lethal third act is now engulfing Italy and the Balkans, with wildfire Red Alerts active across the Adriatic coast and another surge imminent in just four days.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">CPR News</span>
+        <a href="https://www.cpr.org/2026/07/01/aspen-acres-fire-pueblo-custer-beulah-rye-san-isabel-colorado/" target="_blank" rel="noopener">Aspen Acres Fire becomes the nation's top-priority wildfire: 48,000 acres, 0% contained, Highway 96 closed, hundreds of mandatory evacuations across Pueblo and Custer counties</a>
+        <span class="context">As of July 1 evening, the Aspen Acres Fire has grown to 47,953 acres in the San Isabel National Forest corridor with zero containment; the fire destroyed at least 180 structures in Pueblo and Custer counties; mandatory Level 3 evacuations remain in effect across Beulah, Rye, Wetmore, Colorado City, and San Isabel; officials expect 750–1,000 firefighters on scene after an Alaskan team takes command July 2.</span>
+      </li>
+      <li>
+        <span class="source">NPR / DOI</span>
+        <a href="https://www.npr.org/2026/06/28/g-s1-130737/wildfires-utah-colorado-firefighter-deaths-snyder" target="_blank" rel="noopener">Three federal firefighters killed in Knowles Fire burnover on Colorado-Utah border — Emily Barker, Nick Hutcherson, and Sydney Watson identified</a>
+        <span class="context">The U.S. Department of the Interior confirmed the identities of three firefighters who died after a burnover incident on June 27: Emily Barker (38, USFS Rifle Helitack), Nick Hutcherson (27, Kaibab National Forest), and Sydney Watson (27, USFS Rifle Helitack). Two additional firefighters sustained burn injuries and are receiving medical care; crews were working in single-digit humidity with 45 mph wind gusts at the time of the incident.</span>
+      </li>
+      <li>
+        <span class="source">CNN</span>
+        <a href="https://www.cnn.com/2026/06/30/weather/wildfire-utah-colorado-smoke-west-climate" target="_blank" rel="noopener">Fast-moving wildfires scorch thousands of acres across Colorado and Utah, with more danger ahead — extreme heat, 45 mph gusts, and 2–8% fuel moisture driving explosive fire growth</a>
+        <span class="context">The fire emergency is driven by a combination of prolonged drought, record-breaking heat, and low relative humidity that is leaving vegetation with fuel moisture readings as low as 2% — approaching conditions seen in the most catastrophic western fire seasons on record; smoke from Colorado blazes is degrading air quality across the Southwest as wildfire-generated pyrocumulus columns were visible from satellite imagery.</span>
+      </li>
+      <li>
+        <span class="source">CBS News</span>
+        <a href="https://www.cbsnews.com/news/heat-wave-hottest-july-4th-record-temperatures/" target="_blank" rel="noopener">This July 4th could be the hottest ever in parts of the US, with over 300 record temperatures forecast — DC 101°F, Philadelphia 104°F, NYC first triple-digits in a decade</a>
+        <span class="context">Washington DC's July 4 forecast of 101°F would beat the previous record of 100°F set in 1919; Philadelphia's projected 104°F would tie its all-time July monthly record; New York City has not recorded 100°F since 2014; heat advisories in effect across 31 states; officials are implementing cooling centre expansions and emergency medical standby for outdoor July 4 celebrations across the eastern seaboard.</span>
+      </li>
+      <li>
+        <span class="source">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/6/29/deadly-heatwave-grips-italy-and-balkans-as-wildfire-fears-grow" target="_blank" rel="noopener">Italy and Balkans in the grip of the heat dome: 22 cities on red alert, wildfires burning in Croatia and Albania, another heat surge arrives in 4 days</a>
+        <span class="context">Italy placed 22 cities under Level 3 red heat alerts as the dome's axis moved south from Central Europe; Croatian firefighters backed by aircraft battled a wildfire in pine forests on the Adriatic island of Vis; a wildfire near Klos, Albania was contained after burning through olive trees and brush; the HNGN and Euronews report Spain is bracing for its second prolonged hot spell, with temperatures expected to re-escalate from July 5–6 ahead of the third Omega-block dome July 7–10.</span>
+      </li>
+      <li>
+        <span class="source">Big Island Video News</span>
+        <a href="https://www.bigislandvideonews.com/2026/07/01/tropical-depression-forms-in-eastern-pacific/" target="_blank" rel="noopener">Tropical Storm Douglas named July 1 over the Eastern Pacific — fourth named storm of 2026 season, no threat to any land area</a>
+        <span class="context">Tropical Depression Four-E organised west-southwest of Baja California on July 1 and was upgraded to Tropical Storm Douglas by 5 PM PDT; maximum sustained winds near 40 mph; the storm is moving northwest over cooling sea surface temperatures and is expected to dissipate over the open Pacific within the week; no land threat is forecast; Atlantic basin remains quiet.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      The UK clean energy sector posted a landmark result for Q1 2026 — 53% of national electricity from renewables for the second consecutive year — published in official government data on June 30, just three weeks before the AR8 offshore wind auction opens. New Carbon Brief analysis finds that record wind and solar output displaced £1 billion in gas imports in March alone, providing a vivid economic case for the buildout. A new BloombergNEF analysis finds global battery storage has crossed 100 GW of installed capacity for the first time, while in Europe the ongoing heatwave and deepening drought are cutting Alpine and Iberian hydropower output — increasing wind and solar's operational importance even as high-pressure heat domes suppress wind across the continent.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">RenewableUK</span>
+        <a href="https://www.renewableuk.com/news-and-resources/press-releases/renewables-hit-new-quarterly-record-and-generate-majority-of-uk-s-electricity-as-wind-leads-the-way/" target="_blank" rel="noopener">UK wind sets quarterly generation record of 29.3 TWh in Q1 2026 — renewables reach 53.1% of electricity for the second consecutive year</a>
+        <span class="context">UK Energy Trends statistics (June 30): wind power up 30% year-on-year to 29.3 TWh in Q1 2026 — the biggest single quarter for wind generation in UK history; total renewable generation hit 43.7 TWh (up 18% on Q1 2025); low-carbon sources including nuclear accounted for 63.8% of generation; fossil fuel share fell to 32.8%.</span>
+      </li>
+      <li>
+        <span class="source">Carbon Brief</span>
+        <a href="https://www.carbonbrief.org/analysis-record-wind-and-solar-saved-uk-from-gas-imports-worth-1bn-in-march-2026/" target="_blank" rel="noopener">Analysis: Record UK wind and solar output in March 2026 displaced gas imports worth £1 billion in a single month</a>
+        <span class="context">Carbon Brief modelling shows that the record renewable output in March 2026 directly avoided the import of £1 billion worth of LNG and pipeline gas — the clearest single-month demonstration to date of the energy security and cost benefits of the UK's offshore wind buildout; the analysis arrives as the AR8 auction is three weeks away from opening on July 20.</span>
+      </li>
+      <li>
+        <span class="source">BloombergNEF</span>
+        <a href="https://about.bnef.com/insights/clean-energy/energy-storage-enters-the-100-gigawatt-era-three-things-to-know/" target="_blank" rel="noopener">Global battery energy storage crosses 100 GW of installed capacity for the first time — BNEF identifies three structural implications for the energy transition</a>
+        <span class="context">BNEF's analysis confirms global installed BESS capacity crossed 100 GW in 2025 — a milestone reached faster than almost all prior forecasts — with costs hitting record lows even as solar and wind equipment costs rose under tariff and supply-chain pressures; the 100 GW threshold marks the point at which storage begins to have a measurable effect on hourly price formation and grid flexibility across multiple major markets simultaneously.</span>
+      </li>
+      <li>
+        <span class="source">Reneweconomy</span>
+        <a href="https://reneweconomy.com.au/renewables-generate-record-share-of-uk-electricity-as-wind-out-supplies-gas/" target="_blank" rel="noopener">UK wind out-supplies gas for second consecutive year as renewable share reaches 53% — a structural market shift confirmed</a>
+        <span class="context">Wind surpassed gas as the UK's largest electricity source for the second consecutive year in 2026, confirming the transition from a gas-dominated grid to a wind-led one is not cyclical but structural; the record low fuel costs during the quarter produced consumer bill savings that reinforce the economic case for accelerating the offshore wind buildout through AR8 and beyond.</span>
+      </li>
+      <li>
+        <span class="source">HNGN / Euronews</span>
+        <a href="https://www.hngn.com/articles/271813/20260630/europes-heatwave-shifts-east-italy-balkans-spain-braces-second-hot-spell.htm" target="_blank" rel="noopener">European drought deepens as heatwave expands to Italy and Balkans — Alpine and Iberian hydropower capacity at seasonal lows, compounding renewable output stress</a>
+        <span class="context">Persistent drought across the Alps and Iberian Peninsula is driving Alpine reservoir levels and Iberian river flows to their lowest seasonal readings since 2022; with hydropower output constrained across France, Spain, Portugal, Switzerland, and Austria, wind and solar are carrying a disproportionate share of low-carbon generation — but the same stagnant high-pressure systems responsible for the heat domes are also suppressing wind output across Western and Central Europe, tightening reserve margins heading into the third heat dome.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <div class="news-item">
+      <h3 class="news-title">Nuveen Completes $546 Million Preferred Equity Investment in SunZia — Institutional Capital Locks In on America's Largest Clean Energy Complex</h3>
+      <p class="news-body">
+        <a href="https://www.powermag.com/power-digest-july-2026/" target="_blank" rel="noopener">Nuveen</a>, the $1.2-trillion investment management arm of TIAA, has completed a preferred equity investment of $546 million in Pattern Energy's SunZia Wind and Transmission complex in New Mexico — the largest clean energy infrastructure project in US history — shortly after SunZia entered full commercial operation in mid-June. The capital structure gives Pattern Energy long-term institutional backing at the operating-asset stage without diluting common equity, while Nuveen gains exposure to an infrastructure-class cash flow from a project already delivering power across the western grid. For the broader clean energy finance market, the transaction signals that major fiduciaries are willing to deploy at scale into operating-stage US renewable infrastructure, even as development-stage capital in the US remains constrained by policy uncertainty — a meaningful endorsement of the sector's investment-grade maturing.
+      </p>
+      <span class="news-source"><a href="https://www.powermag.com/power-digest-july-2026/" target="_blank" rel="noopener">POWER Magazine</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">UK Renewables Industry Crosses 53% Market Share for Second Consecutive Year — Ahead of the AR8 Offshore Wind Auction</h3>
+      <p class="news-body">
+        Official UK Energy Trends statistics published June 30 confirm that the British <a href="https://www.renewableuk.com/news-and-resources/press-releases/renewables-hit-new-quarterly-record-and-generate-majority-of-uk-s-electricity-as-wind-leads-the-way/" target="_blank" rel="noopener">renewable energy industry</a> supplied 53.1% of national electricity in Q1 2026 — a record — generating 43.7 TWh in total and marking the second consecutive year renewables have held a majority share of UK generation. Wind alone accounted for 29.3 TWh, up 30% year-on-year, making it the largest single electricity source in the country by a widening margin over natural gas. The data arrives three weeks before the UK government opens the AR8 Contracts for Difference auction on July 20 — with up to 18 offshore wind farms eligible to compete — providing the investment community with hard evidence of operational performance at the very moment capital allocation decisions are being made for the next wave of buildout.
+      </p>
+      <span class="news-source"><a href="https://assets.publishing.service.gov.uk/media/69cd1451b5210036050bc625/Energy_Trends_March_2026.pdf" target="_blank" rel="noopener">UK Department for Energy Security &amp; Net Zero</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">EU and China Launch New Climate 'Consultation' Ahead of COP31 — Strategic Dialogue Continues Despite Solar and EV Trade War</h3>
+      <p class="news-body">
+        The European Union and China have opened a new round of formal climate "consultation," Carbon Brief reported in its July 2 daily brief — a signal that the world's two largest CO₂ emitters are maintaining bilateral climate channels even as they remain locked in a significant trade dispute over Chinese <a href="https://www.carbonbrief.org/daily-brief/north-sea-delusion-heat-hits-italy-balkans-us-eu-china-consultation/" target="_blank" rel="noopener">solar equipment and electric vehicles</a>. The EU imposed additional tariffs on Chinese EV and solar imports in 2025, and Beijing has challenged those measures at the WTO, but both sides have consistently used climate diplomacy to preserve strategic engagement on shared Paris Agreement objectives ahead of COP31 in Antalya, Turkey later this year. For the renewable energy supply chain, any outcome that preserves or expands clean technology trade between China's dominant manufacturing base and the EU's installer market has direct implications for solar module and battery cell pricing across Europe — and for the competitiveness of the AR8 auction bids due in November.
+      </p>
+      <span class="news-source"><a href="https://www.carbonbrief.org/daily-brief/north-sea-delusion-heat-hits-italy-balkans-us-eu-china-consultation/" target="_blank" rel="noopener">Carbon Brief</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Colorado Wildfire Emergency Triggers Insurance and Infrastructure Risk Reassessment for Mountain West Energy Assets</h3>
+      <p class="news-body">
+        The cascading wildfire emergency across Colorado — led by the Aspen Acres Fire at 48,000 acres with zero containment and 180+ structures destroyed — is forcing <a href="https://www.cpr.org/2026/07/01/aspen-acres-fire-pueblo-custer-beulah-rye-san-isabel-colorado/" target="_blank" rel="noopener">utility operators and renewable energy asset managers</a> to reassess structural fire exposure across the Mountain West. The fires come three days after the South Dakota derecho on June 29 snapped wind turbines in half at 131 mph, continuing a pattern of extreme-weather events targeting energy infrastructure that is triggering urgent reviews of catastrophic risk pricing by insurance underwriters across the Great Plains and western Rocky Mountain corridor. With the Knowles Fire having killed three federal firefighters last week and the Aspen Acres Fire claiming the top national priority designation, the back-to-back events underscore a structural elevation of wildfire risk that is expected to flow through to higher asset insurance premiums, more conservative turbine siting criteria, and broader deployment of on-site fire mitigation systems at generation and transmission facilities across the region.
+      </p>
+      <span class="news-source"><a href="https://www.doi.gov/wildlandfireservice/burnover-incident-western-colorado-wildfire-results-federal-wildland" target="_blank" rel="noopener">U.S. Department of the Interior</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-01.html">1 July 2026</a></li>
+      <li><a href="archive/2026-06-30.html">30 June 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
