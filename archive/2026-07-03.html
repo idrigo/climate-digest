@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">3 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      July 3 is the day the US heat dome stops being a forecast and starts becoming a record-book: 20 daily high temperature records fell across the East Coast on July 2, with more expected through the July 4 peak. In Europe, confirmed excess deaths from the first two heat waves have now climbed past 2,000 in Spain alone — with France adding roughly 1,000 more since June 24 — underscoring the compounding human toll of warming. The policy and climate transition are colliding directly this holiday weekend: July 4 is the statutory construction deadline under the One Big Beautiful Bill Act for thousands of US wind and solar projects to preserve their clean energy tax credits, a last-chance threshold to commit resources to the infrastructure designed to limit the warming driving these events. A third European Omega-block heat dome is now tracking toward Iberia for July 7–10.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">CNN</span>
+        <a href="https://www.cnn.com/2026/07/02/weather/heat-wave-east-coast-july-fourth-climate-hnk" target="_blank" rel="noopener">Heat records broken from DC to Boston, more to come Friday — at least 20 daily highs fell July 2 as the eastern heat dome enters its peak phase</a>
+        <span class="context">New York City's Central Park tied its 1966 record at 100°F on July 2 — the city's first triple-digit reading in 14 years; temperatures reached into the upper 90s and low 100s from Washington DC to Boston with heat index topping 112°F in Philadelphia and 113°F in DC; 160 million+ people remain under Level 3–4 NWS heat risk through July 4 with more than 200,000 customers losing power as of Thursday evening.</span>
+      </li>
+      <li>
+        <span class="source">AccuWeather</span>
+        <a href="https://www.accuweather.com/en/weather-news/european-heat-wave-death-toll-climbs-as-extreme-temperatures-grip-more-countries/1906434" target="_blank" rel="noopener">European heat wave death toll climbs as extreme temperatures grip more countries — Spain's Ministry of Health confirms 2,000+ excess deaths by July 1; France adds ~1,000 more since June 24</a>
+        <span class="context">Spain's Ministry of Health confirmed more than 2,000 excess deaths from the June heatwave by July 1, nearly double the Carlos III Health Institute's initial estimate of 1,028 for June alone; France's health agency counted approximately 1,000 excess deaths since June 24; WHO's June 28 European-wide figure of 1,300+ is expected to rise significantly as national reporting catches up — the combined Spain-France toll alone is now approaching 3,000, confirming the 2026 European summer as one of the continent's deadliest heat emergencies on record.</span>
+      </li>
+      <li>
+        <span class="source">PV-Tech</span>
+        <a href="https://www.pv-tech.org/us-judge-restores-5-safe-harbour-rule-for-solar-tax-credits-ahead-of-4-july-deadline/" target="_blank" rel="noopener">US judge restores 5% safe harbor for wind and solar tax credits just as July 4 OBBBA construction deadline arrives — thousands of projects in play</a>
+        <span class="context">A federal district court vacated IRS Notice 2025-42 on June 6, ruling the IRS acted arbitrarily and capriciously in eliminating the 5% total-cost "beginning of construction" safe harbor for wind and solar facilities; the ruling partially restores the pathway for projects to prove eligibility under the OBBBA's 45Y clean energy production tax credit and 48E clean energy investment tax credit as the statutory July 4, 2026 construction cut-off arrives; government appeal is possible, making reliance on the restored rule procedurally risky.</span>
+      </li>
+      <li>
+        <span class="source">NBC News</span>
+        <a href="https://www.nbcnews.com/data-graphics/us-extreme-heat-dome-july-fourth-2026-maps-charts-rcna352304" target="_blank" rel="noopener">Unpacking the 2026 US extreme heat dome in 7 graphs and charts: why this event is different from previous July heatwaves</a>
+        <span class="context">NBC's data team maps the four compounding factors distinguishing this event from prior July heat domes: simultaneous geographic breadth spanning the eastern two-thirds of the US, sustained overnight lows near 80°F in major cities (preventing physiological recovery), above-normal humidity amplifying the heat index beyond 110°F in many cities, and the event's alignment with the El Niño atmospheric coupling now underway — together producing a heat event whose duration and footprint outpaces any comparable modern July episode.</span>
+      </li>
+      <li>
+        <span class="source">Severe Weather EU</span>
+        <a href="https://www.severe-weather.eu/global-weather/heat-dome-europe-excessive-historic-heatwave-june-july-summer-2026-mk/" target="_blank" rel="noopener">Third European Omega-block heat dome now tracking for July 7–14; Iberia forecast 44–46°C; event could be more dangerous than the first two waves combined</a>
+        <span class="context">Medium-range ensemble models are coalescing around a third powerful Omega-block high building over Iberia from July 7–8, expanding into France, Germany, and Benelux July 9–14; Andalusia and SW France face peak temperatures of 44–46°C; drought-hardened soils, record-low river levels, depleted emergency services, and pre-existing heat fatigue across Southern Europe mean the physiological and infrastructure risk of a third dome exceeds that of the June events even at comparable peak temperatures.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Eastern US Heat Dome — Eastern Two-Thirds of the United States</span>
+          <span class="event-status">PEAK: Records confirmed breaking July 2–3; DOE Section 202(c) emergency orders in effect through July 3; PJM forecast approached all-time demand record (166,304 MW vs. 165,563 MW record set in 2006); 160M+ under Level 3–4 NWS heat risk; 200,000+ customers without power; event expected to ease slightly after July 4</span>
+          <span class="context">NYC Central Park tied its 1966 record at 100°F on July 2, its first triple-digit reading in 14 years; Washington DC forecast 103°F on July 4 (would be hottest July 4 ever recorded); Philadelphia approaching 104°F; overnight lows near 80°F in major cities offer no physiological relief. Emergency orders authorized PJM to curtail data centres of 50 MW+ and waive power plant pollution limits; wholesale electricity prices briefly spiked above $1,600/MWh during evening congestion on July 2 (from under $40/MWh earlier in the day).</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado Wildfires — Aspen Acres Fire (Pueblo / Custer Counties)</span>
+          <span class="event-status">ONGOING: 47,953 acres, 0% contained; Level 3 "Go" evacuations continuing across Beulah, Rye, Wetmore, Colorado City, San Isabel; Alaska Complex Incident Management Team now in command; top-priority fire in the United States</span>
+          <span class="context">The Alaska Complex IMT assumed command July 2 with 750–1,000 firefighters on scene. Extreme fire weather persists: single-digit humidity, gusts to 45 mph, fuel moisture 2–8%. More than 180 structures are confirmed destroyed. The Snyder Fire (Colorado-Utah border) remains approximately 30,000 acres at ~10% containment. Fireworks shows cancelled across dozens of Colorado communities for the July 4 holiday.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave 2026 — Phase 3 (Italy / Balkans) + Third Dome Imminent (July 7–10)</span>
+          <span class="event-status">ONGOING: Italy and Balkans still under Level 3 red heat alerts; confirmed excess death toll approaching 3,000 across Spain and France combined; active wildfires near Athens and Aegean islands; EFFIS fire danger very high to extreme across central Mediterranean; third Omega-block dome tracking July 7–10 onset with 44–46°C forecast for Iberia</span>
+          <span class="context">The first wave's eastward shift is now entrenched across Italy and the Balkans. Spain's Ministry of Health confirmed more than 2,000 excess deaths from June alone; France's health agency counted approximately 1,000 excess deaths since June 24. The WHO's June 28 figure of 1,300+ across Europe is a floor that will rise substantially as reporting catches up. A third Omega-block pattern is building toward Iberia for July 7–8 onset, expanding into France, Germany, and Benelux through July 9–14 — the risk window for which is considered more dangerous than the first two waves due to drought-hardened soils, exhausted emergency infrastructure, and population already weakened by prior heat stress.</span>
+        </li>
+        <li>
+          <span class="event-name">Tropical Storm Douglas — Eastern Pacific</span>
+          <span class="event-status">DISSIPATING: Convection fading as Douglas crosses cooler sea surface temperatures; low- and mid-level circulation centres becoming misaligned due to increasing wind shear; expected to transition to remnant low by July 4 — no land threat at any point; event resolving</span>
+          <span class="context">Tropical Storm Douglas — the fourth named storm of the 2026 Eastern Pacific hurricane season — is losing tropical characteristics as it moves northwest into a progressively less hospitable environment; NHC guidance and global model consensus call for the system to become a convection-free remnant low overnight July 3–4. Atlantic basin remains quiet; no development expected over the next 7 days.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      The July 4 weekend has become the most operationally intense weather period in recent US history, with two simultaneous national emergencies active: the eastern heat dome has reached its peak phase, breaking two dozen daily records on July 2 and driving the largest US power grid toward a potential all-time demand record that required the first Department of Energy emergency override orders in years. Colorado's Aspen Acres Fire remains unconstrained at 48,000 acres with zero containment. In Europe, the confirmed excess death toll from the first two waves has crossed 3,000 in Spain and France combined, and a third Omega-block dome is now four days from making landfall over Iberia.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">CNN</span>
+        <a href="https://www.cnn.com/2026/07/02/weather/heat-wave-east-coast-july-fourth-climate-hnk" target="_blank" rel="noopener">Heat records broken from DC to Boston, more to come Friday — July 2 update as heat dome enters confirmed peak phase</a>
+        <span class="context">At least 20 daily high temperature records fell across the US East Coast on July 2; NYC's Central Park tied its 1966 record at 100°F for the first time in 14 years; Washington DC forecast 103°F on July 4 — which would be the hottest July 4 ever in the capital; more than 200,000 customers lost power across the Northeast on Thursday evening as air-conditioning demand overwhelmed local distribution infrastructure.</span>
+      </li>
+      <li>
+        <span class="source">ABC News</span>
+        <a href="https://abcnews.com/US/stretched-limit-heat-wave-prompts-us-electrical-grid/story?id=134369230" target="_blank" rel="noopener">'Stretched to the limit': Heat wave prompts US electrical grid emergency — DOE issues Section 202(c) orders for PJM, data centres ordered onto backup generators</a>
+        <span class="context">Energy Secretary Chris Wright signed two emergency orders on June 30 under Section 202(c) of the Federal Power Act, authorising PJM to direct data centres and industrial loads of 50 MW or more to switch to their own backup generators within 15 minutes of an emergency signal and waiving environmental operating limits on power plants; both orders ran through 11:59 PM EDT July 3. AI-driven data-centre growth and aging gas plants running less efficiently in extreme heat were cited as compounding factors by grid operators.</span>
+      </li>
+      <li>
+        <span class="source">Utility Dive</span>
+        <a href="https://www.utilitydive.com/news/heat-wave-tests-power-grid-pjm-anticipates-new-record/824329/" target="_blank" rel="noopener">PJM approached potential all-time demand record during the July 4 heat wave — 166,304 MW forecast vs. 2006 record of 165,563 MW</a>
+        <span class="context">PJM Interconnection, the largest US grid operator serving 65 million people in 13 states, forecast peak demand of 166,304 MW on July 2 — within striking distance of the all-time record set in August 2006; MISO (Midwest) said it too could approach a new peak; wholesale prices briefly spiked above $1,600/MWh during evening transmission congestion on July 2, compared with under $40/MWh earlier in the same day.</span>
+      </li>
+      <li>
+        <span class="source">The Watchers</span>
+        <a href="https://watchers.news/2026/07/02/tropical-storm-douglas-forms-over-the-eastern-pacific-forecast-to-weaken-into-a-remnant-low-by-july-3/" target="_blank" rel="noopener">Tropical Storm Douglas weakening to remnant low by July 4 — fourth named storm of 2026 Eastern Pacific season dissipates over open ocean without threatening any land</a>
+        <span class="context">Convection associated with Douglas is fading as the system crosses cooler sea surface temperatures north-northwest of Baja California; the low- and mid-level centres are becoming misaligned under increasing wind shear; NHC guidance calls for the system to lose tropical characteristics overnight July 3–4; no coastal watches or warnings were ever issued; Atlantic basin remains quiet with no development expected in the next 7 days.</span>
+      </li>
+      <li>
+        <span class="source">Severe Weather EU</span>
+        <a href="https://www.severe-weather.eu/global-weather/heat-dome-europe-excessive-historic-heatwave-june-july-summer-2026-mk/" target="_blank" rel="noopener">Third European heat dome now confirmed tracking for July 7–14: Iberia onset July 7–8, peak risk France and Benelux July 9–14 at potentially 44–46°C</a>
+        <span class="context">Ensemble guidance has coalesced around a third Omega-block pattern building July 7–8 over Iberia and SW France, expanding north and east to cover France, Germany, Benelux, northern Italy, and Central Europe through July 14; Andalusia faces 44–46°C at peak; a small ridge shift can concentrate the heat core into Germany or Italy — every ensemble scenario brings temperatures well above red-alert thresholds; drought-hardened soils, record-low river levels, and a population already weakened by two prior heat waves amplify the public health risk significantly above the June events.</span>
+      </li>
+      <li>
+        <span class="source">AccuWeather</span>
+        <a href="https://www.accuweather.com/en/weather-news/european-heat-wave-death-toll-climbs-as-extreme-temperatures-grip-more-countries/1906434" target="_blank" rel="noopener">European heatwave death toll continues climbing: Spain 2,000+ excess deaths by July 1, France ~1,000 since June 24 — WHO Europe-wide figure expected well above its June 28 estimate of 1,300</a>
+        <span class="context">Spain's national health ministry confirmed more than 2,000 excess deaths from the June heatwave by July 1 — nearly double the Carlos III Health Institute's initial count; France's health agency separately recorded approximately 1,000 excess deaths since June 24; the WHO's June 28 Europe-wide figure of 1,300+ will rise substantially as national statistical agencies complete reporting; the combined Spain-France toll alone is approaching 3,000, making the 2026 European summer heat emergency one of the continent's deadliest on record.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      Three distinct developments are converging this weekend to reshape the US and global clean energy landscape simultaneously. Tesla's 13.5 GWh of Q2 2026 energy storage deployments — confirmed July 2 — represent the sector's second-largest quarter on record, arriving just as a DOE emergency authorised PJM to curtail AI data centres during the heat dome's demand peak: a real-time demonstration of both storage's value and the grid's new structural vulnerabilities. The OBBBA's July 4 construction deadline is simultaneously the single most consequential day in US renewable finance since the IRA, putting the economics of an entire generation of wind and solar projects on the line. Internationally, SAEL Industries' $954 million groundbreaking for a 10 GW solar manufacturing complex in India underscores that the global scale-up is not pausing regardless of US policy uncertainty.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">PV Magazine</span>
+        <a href="https://pv-magazine-usa.com/2026/07/02/tesla-announces-13-5-gwh-energy-storage-deployments-in-q2-sets-july-earnings-date/" target="_blank" rel="noopener">Tesla announces 13.5 GWh of energy storage deployed in Q2 2026 — up 53% from Q1, second-largest quarterly total in company history; cumulative total tops 132 GWh</a>
+        <span class="context">Tesla's Q2 2026 investor release (July 2) confirms 13.5 GWh of Megapack and Powerwall deployments, up from 8.8 GWh in Q1 2026 and 9.6 GWh in Q2 2025; cumulative Tesla energy storage deployments now exceed 132 GWh since 2016; Q2 earnings call set for July 22. At 13.5 GWh in a single quarter, Tesla's deployment alone exceeds the entire US utility-scale storage market's annual installed capacity as recently as 2022 — a measure of how rapidly the sector has scaled.</span>
+      </li>
+      <li>
+        <span class="source">PV-Tech</span>
+        <a href="https://www.pv-tech.org/us-judge-restores-5-safe-harbour-rule-for-solar-tax-credits-ahead-of-4-july-deadline/" target="_blank" rel="noopener">US judge restores 5% safe harbor for wind and solar as July 4 OBBBA clean energy tax credit construction deadline arrives — last chance to lock in IRA-era economics</a>
+        <span class="context">A federal district court vacated IRS Notice 2025-42 on June 6, ruling the IRS acted arbitrarily and capriciously in eliminating the 5% total-cost safe harbor as a "beginning of construction" route for wind and solar to prove 45Y and 48E credit eligibility; developers are now racing the July 4 statutory cut-off under the One Big Beautiful Bill Act, after which wind and solar projects must be placed in service by December 31, 2027 or forfeit clean energy tax credits entirely; a government appeal remains possible, leaving residual legal risk for developers who relied on the restored rule.</span>
+      </li>
+      <li>
+        <span class="source">PV-Tech</span>
+        <a href="https://www.pv-tech.org/sael-breaks-ground-on-5gw-cell-5gw-module-manufacturing-facility-in-uttar-pradesh/" target="_blank" rel="noopener">India's SAEL Industries breaks ground on integrated 5 GW solar cell + 5 GW module manufacturing complex in Uttar Pradesh — $954 million, 20,000 jobs</a>
+        <span class="context">SAEL Industries broke ground June 29 on a 200-acre TOPCon solar facility in Jewar, Uttar Pradesh — 5 GW of cell and 5 GW of module manufacturing capacity — committing ₹82 billion ($954 million) and targeting 20,000 local jobs; once operational, it brings SAEL's total solar manufacturing capacity to 8.5 GW. The project is designed to supply domestic Indian demand and export markets as global module procurement diversifies away from Chinese supply chains under FEOC rules and trade tariffs.</span>
+      </li>
+      <li>
+        <span class="source">Canary Media</span>
+        <a href="https://www.canarymedia.com/articles/clean-energy/big-stories-2026-renewables-power-grid" target="_blank" rel="noopener">Utility-scale solar outproduced US gas plants on 82% of all days through May 2026 — batteries now extending solar's effective generation into evening peak hours</a>
+        <span class="context">Canary Media's mid-year renewable review finds that from January through May 2026 utility-scale solar generation exceeded natural gas output on 82% of all calendar days — a structural milestone reached faster than most prior forecasts; battery storage is now routinely extending solar generation into the evening hours, materially reducing the role of gas peakers even during the hottest parts of the summer air-conditioning season when heat domes suppress wind output.</span>
+      </li>
+      <li>
+        <span class="source">Utility Dive</span>
+        <a href="https://www.utilitydive.com/news/heat-wave-tests-power-grid-pjm-anticipates-new-record/824329/" target="_blank" rel="noopener">PJM all-time demand test reveals renewables' structural vulnerability: heat domes suppress wind at the moment of peak load — DOE emergency orders waive gas plant pollution limits</a>
+        <span class="context">The July 4 heat dome exposed the critical challenge for renewable-heavy grids: Omega-block high-pressure heat dome events suppress wind generation across affected regions precisely when demand peaks; PJM's emergency authorisation to waive pollution limits on gas units — and curtail data centres — reflects a grid that is transitioning away from fossil fuels but has not yet built the storage and demand-response infrastructure needed to replace them at extreme demand peaks; this event is expected to accelerate FERC and state regulatory discussions on mandatory demand-response obligations for large AI data-centre loads.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <div class="news-item">
+      <h3 class="news-title">Tesla Posts Record-Near Q2 2026 Energy Storage Quarter: 13.5 GWh Deployed, Cumulative Total Tops 132 GWh</h3>
+      <p class="news-body">
+        <a href="https://ir.tesla.com/press-release/tesla-second-quarter-2026-production-deliveries-and-deployments" target="_blank" rel="noopener">Tesla</a> reported on July 2 that it deployed 13.5 gigawatt-hours of energy storage in Q2 2026 — a 53% sequential increase over Q1's 8.8 GWh and the company's second-largest quarterly deployment total ever, just short of the 14.2 GWh record set in Q4 2025. The figure brings Tesla's cumulative Megapack and Powerwall deployment total past 132 GWh since 2016, a milestone that arrives as the US grid is operating under a Department of Energy emergency order authorising data-centre curtailment during the heat dome. For scale: 13.5 GWh in a single quarter from one manufacturer exceeds what the entire US utility-scale energy storage market deployed annually as recently as 2022, illustrating the sector's compound growth curve. Tesla also announced its Q2 2026 financial results will be presented in an earnings webcast on July 22.
+      </p>
+      <span class="news-source"><a href="https://pv-magazine-usa.com/2026/07/02/tesla-announces-13-5-gwh-energy-storage-deployments-in-q2-sets-july-earnings-date/" target="_blank" rel="noopener">PV Magazine USA</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">SAEL Industries Breaks Ground on $954 Million 10 GW Integrated Solar Manufacturing Complex in India — One of South Asia's Largest Clean Energy Capital Commitments</h3>
+      <p class="news-body">
+        Indian renewable developer <a href="https://www.pv-tech.org/sael-breaks-ground-on-5gw-cell-5gw-module-manufacturing-facility-in-uttar-pradesh/" target="_blank" rel="noopener">SAEL Industries</a> held a groundbreaking ceremony on June 29 for an integrated solar manufacturing facility in Jewar, Uttar Pradesh, committing ₹82 billion ($954 million) to build 5 GW of TOPCon solar cell manufacturing capacity and 5 GW of module capacity on a 200-acre site in the Yamuna Expressway Industrial Development Authority zone. Once operational, the facility will bring SAEL's total solar manufacturing capacity to 8.5 GW and create approximately 20,000 local jobs. The project is structured under India's Production Linked Incentive scheme and is positioned to supply both domestic Indian demand and export markets as global module procurement diversifies away from Chinese supply chains — an accelerating shift driven by FEOC restrictions in the US, EU tariffs on Chinese solar equipment, and mounting geopolitical risk in Chinese-dominated supply chains.
+      </p>
+      <span class="news-source"><a href="https://www.nsenergybusiness.com/company-news/india-sael-solar-manufacturing-facility/" target="_blank" rel="noopener">NS Energy</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">DOE Emergency Orders Force AI Data Centres onto Backup Generators During Heat Wave — A Structural Inflection Point for Grid Regulation</h3>
+      <p class="news-body">
+        The US Department of Energy invoked Section 202(c) of the Federal Power Act on June 30, issuing two emergency orders authorising <a href="https://www.utilitydive.com/news/heat-wave-tests-power-grid-pjm-anticipates-new-record/824329/" target="_blank" rel="noopener">PJM Interconnection</a> to direct data centres and other industrial loads of 50 MW or more — predominantly AI computing facilities concentrated in Virginia, Maryland, and Delaware — to switch to their own backup generators within 15 minutes of an emergency signal. Both orders ran through July 3 and also waived environmental operating restrictions on power plants to expand available supply. PJM simultaneously projected a potential all-time demand record of 166,304 MW, and wholesale electricity prices spiked above $1,600/MWh during evening transmission congestion — from under $40/MWh earlier in the same day. The emergency orders represent the sharpest demonstration to date of the structural tension between exponential AI data-centre electricity demand — which has added tens of gigawatts to Mid-Atlantic grid load in three years — and grid infrastructure not designed for it; they are widely expected to accelerate FERC rulemaking on large-load interconnection disclosure requirements and mandatory demand-response obligations for hyperscale consumers.
+      </p>
+      <span class="news-source"><a href="https://thehill.com/policy/energy-environment/5950278-heatdome-energy-power-grid/" target="_blank" rel="noopener">The Hill</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">July 4 Is the Last Day US Wind and Solar Projects Can Begin Construction to Preserve IRA-Era Tax Credits Under the OBBBA</h3>
+      <p class="news-body">
+        The One Big Beautiful Bill Act's construction deadline — July 4, 2026 — is now effectively at hand: after today, wind and solar facilities that have not demonstrably begun physical construction lose eligibility for the 45Y clean energy production tax credit and 48E clean energy investment tax credit, unless they are placed in service by December 31, 2027. A federal court ruling on June 6 reinstated the 5% safe harbor as a valid pathway (vacating IRS Notice 2025-42), but the government may appeal and <a href="https://natlawreview.com/article/court-restores-5-safe-harbor-wind-and-solar-july-4-deadline-nears" target="_blank" rel="noopener">developers face residual legal exposure</a> in relying on it. The cut-off is wind-and-solar specific: other zero-emission technologies — geothermal, nuclear, storage — retain credit eligibility through 2032–2035 under a separate phasedown schedule. Industry analysts estimate that multiple gigawatts of US wind and solar capacity in early development stages, relying on IRA economics conceived before the OBBBA, will face fundamental reconfiguration of their return profiles — a structural headwind that is expected to slow the US renewable pipeline over 2026–2028 even as storage, geothermal, and nuclear see continued policy support.
+      </p>
+      <span class="news-source"><a href="https://www.pv-tech.org/us-judge-restores-5-safe-harbour-rule-for-solar-tax-credits-ahead-of-4-july-deadline/" target="_blank" rel="noopener">PV-Tech</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-02.html">2 July 2026</a></li>
+      <li><a href="archive/2026-07-01.html">1 July 2026</a></li>
+      <li><a href="archive/2026-06-30.html">30 June 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
