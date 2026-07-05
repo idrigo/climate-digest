@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">4 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      The simultaneous heat crises scorching two continents are now confirmed to be unfolding against the most anomalous oceanic baseline ever recorded: Copernicus Marine Service reported this week that June 2026 set an all-time global sea surface temperature record of 21.0°C, with 82% of the global ocean in active marine heatwave conditions — and the WMO has now formally forecast a strong El Niño developing by July–September, expected to amplify extreme weather further through the second half of the year. On the policy side, July 4 marks the statutory expiry of the OBBBA's wind and solar construction deadline — a hard turning point that severs thousands of pipeline projects from IRA-era clean energy tax credit economics.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Copernicus CMEMS</span>
+        <a href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026" target="_blank" rel="noopener">Persistent ocean warmth and expanding marine heatwaves mark the first half of 2026 — June 2026 hottest global sea surface temperatures ever recorded at 21.0°C; 82% of global ocean in marine heatwave</a>
+        <span class="context">Copernicus Marine Service's first-half 2026 assessment (published July 1) confirms the daily global sea surface temperature record was broken on June 21 at 21.0°C — exceeding the previous 2023/2024 record of 20.83°C by 0.17°C; global SSTs averaged 20.94°C for January–June 2026, the second warmest opening six months on record; approximately 82% of the global ocean was experiencing marine heatwave conditions of varying intensity by end of June — the second-largest extent ever observed, behind only 2024; CMEMS director Carlo Buontempo warned the readings suggest "the beginning of a new phase" leading to "uncharted territory."</span>
+      </li>
+      <li>
+        <span class="source">WMO / UN News</span>
+        <a href="https://news.un.org/en/story/2026/07/1167870" target="_blank" rel="noopener">El Niño forecast to intensify to possibly strong by July–September 2026, WMO warns — 80% probability for JJA season; SST anomalies expected to exceed 2°C in key monitoring regions</a>
+        <span class="context">The WMO's latest El Niño/La Niña update (published July 2026) gives an 80% probability of an El Niño event persisting through June–August 2026, rising to near or above 90% through November; most forecast models project rapid development into a strong event during July–September, with seasonal-mean sea-surface temperature anomalies in the Niño 3.4 region forecast to exceed 2°C — placing 2026 on a trajectory that could rival the strong 2015–16 El Niño; the WMO's global seasonal update projects near-universal dominance of above-normal temperatures across most of the globe for JJA 2026, increasing compound heatwave and drought risk.</span>
+      </li>
+      <li>
+        <span class="source">Copernicus C3S / ECMWF</span>
+        <a href="https://climate.copernicus.eu/ecmwf-weather-and-climate-experts-monitor-early-summer-european-heatwave" target="_blank" rel="noopener">ECMWF weather and climate experts monitor early-summer European heatwave — C3S reanalysis confirms two distinct heatwave peaks in June, both driven by persistent blocking patterns amplified by underlying warming trend</a>
+        <span class="context">Copernicus Climate Change Service and ECMWF published monitoring and attribution analysis of the June–July 2026 European heatwave sequence; C3S reanalysis data shows persistently warmer-than-average conditions across Europe throughout June, with two heatwave peaks — the first around June 20 and the second around June 27 — each driven by Omega-block high-pressure systems; the analysis notes that the probability of such events occurring has increased substantially due to anthropogenic climate change, with the 2026 sequence consistent with CMIP6 projections for the late-2020s European summer regime.</span>
+      </li>
+      <li>
+        <span class="source">National Law Review</span>
+        <a href="https://natlawreview.com/article/obbba-major-shift-federal-clean-energy-tax-incentives" target="_blank" rel="noopener">OBBBA wind and solar construction deadline expires July 4 — US clean energy tax credit era ends for new wind and solar starts; storage, geothermal and nuclear retain credits through 2032–2035</a>
+        <span class="context">The One Big Beautiful Bill Act's statutory construction cut-off for wind and solar expired today: projects that did not demonstrably begin physical construction by July 4, 2026 lose eligibility for the 45Y clean energy production tax credit and 48E clean energy investment tax credit, unless placed in service by December 31, 2027; a June 6 federal court ruling restored the 5% safe-harbor pathway, but a potential government appeal leaves legal residual risk; storage, geothermal, nuclear, and other zero-emission technologies retain credit eligibility under separate phasedown schedules through 2032–2035; industry analysts expect a structural slowdown in US wind and solar pipeline development over 2026–2028 while competing technologies — particularly battery storage and enhanced geothermal — attract capital that would previously have gone to solar and wind.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Eastern US Heat Dome — Eastern Two-Thirds of the United States</span>
+          <span class="event-status">PEAK TODAY / GRADUAL RELIEF BEGINS SATURDAY: 185M+ under heat alerts on July 4; heat index 100–115°F across Northeast and Mid-Atlantic; PJM demand peaked at approximately 163,000 MW — narrowly short of the 2006 all-time record of 165,563 MW — with no rolling blackouts; DOE Section 202(c) emergency orders expired July 3; gradual pattern shift and moderate relief expected Saturday–Sunday before another minor ridge builds early next week</span>
+          <span class="context">July 4 is the confirmed peak day of the event. Philadelphia reached 104°F, Washington DC 103°F, and Boston 98°F — all among the hottest July 4 readings on record for those cities; heat index values of 105–115°F were measured in urban centres throughout the corridor. PJM's emergency demand response — including directing 50 MW+ data centres onto backup generators — is credited with preventing the grid from crossing into emergency shedding territory; wholesale electricity prices briefly spiked above $2,000/MWh on July 3 during transmission congestion before falling sharply as emergency resources cleared. Heat watches and warnings extend into parts of New England through Saturday.</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado Wildfires — Aspen Acres Fire (Pueblo / Custer Counties)</span>
+          <span class="event-status">RAPIDLY GROWING: 74,265 acres as of July 3 evening (up from 47,953 acres on July 2); 0% contained; more than 4,000 people under mandatory Level 3 "Go" evacuations; ninth-largest fire in Colorado history; statewide fireworks ban across all major communities including Colorado Springs, Denver metro, and southern Colorado; 16 active wildfires statewide burning more than 139,000 acres total</span>
+          <span class="context">The fire grew by approximately 55% overnight July 2–3, driven by single-digit relative humidity, gusts to 45 mph, and fuel moisture readings as low as 2%. Over 180 structures remain confirmed destroyed. Aircraft support — 8 to 10 tankers and helicopters — were deployed July 3 when conditions briefly allowed. The Snyder Fire on the Colorado-Utah border remains approximately 30,000 acres at partial containment. Wildfire smoke plumes from Colorado fires are degrading air quality across the Southwest; NWS air quality alerts are in effect from Colorado into New Mexico and Utah. All Fourth of July fireworks events in Colorado Springs and dozens of other communities have been cancelled.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave 2026 — Third Omega-Block Dome: 3 Days to Onset</span>
+          <span class="event-status">IMMINENT — ONSET JULY 7–8: Italy and Balkans still under Level 3 red heat alerts; EFFIS fire danger very high to extreme across central Mediterranean; third Omega-block high-pressure system building over Iberia with July 7–8 onset, expanding into France, Germany, and Benelux July 9–14; ensemble models now highly confident in 44–46°C peak temperatures for Andalusia; risk elevated by prior heat fatigue, depleted emergency services, and drought-hardened soils</span>
+          <span class="context">This is the third distinct heat dome over Europe since late May 2026. The combined Spain-France excess death toll from the first two waves is now approaching 3,000. The upcoming third dome is considered by meteorologists to carry greater public health risk than the first two events, as the affected population has already experienced weeks of heat stress, river and reservoir levels are at seasonal lows across the Alps and Iberia, and wildfire fuel conditions across the central Mediterranean are critically dry. Any ensemble shift in the dome's position northward could concentrate extreme heat over Germany, Austria, and Switzerland at levels not seen in modern records.</span>
+        </li>
+        <li>
+          <span class="event-name">Tropical Systems — Atlantic and Pacific</span>
+          <span class="event-status">NO ACTIVE THREATS: Tropical Storm Douglas (Eastern Pacific) has fully dissipated — convection collapsed by July 3–4 as the system crossed cool sea surface temperatures; NHC reports no active tropical cyclones in Atlantic or Pacific; low-probability tropical wave in Eastern Pacific (less than 10% 7-day development probability); Atlantic basin quiet, no development expected next 7 days</span>
+          <span class="context">Douglas, the fourth named storm of the 2026 Eastern Pacific season, lost all tropical characteristics on July 3–4 after crossing cooler SSTs northwest of Baja California. NOAA's outlook for the 2026 Atlantic hurricane season remains below-normal overall, though the developing strong El Niño — which historically increases Atlantic wind shear — is the primary factor suppressing basin activity relative to the hyperactive 2024–2025 seasons.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      July 4, 2026 is shaping up as one of the most operationally intense days in the modern history of US emergency management, with two separate national emergencies peaking simultaneously: the eastern heat dome reached its confirmed maximum extent today with 185 million Americans under heat alerts and the PJM grid coming within 2% of its all-time demand record, while Colorado's Aspen Acres Fire exploded to 74,000 acres overnight — a 55% single-day growth surge — and joined 15 other active wildfires across the state. In Europe, with the confirmed death toll from the first two heat waves approaching 3,000 in Spain and France alone, a third Omega-block dome is now just three days from making landfall on Iberia.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">Fox Weather</span>
+        <a href="https://www.foxweather.com/weather-news/extreme-heat-wave-july-4-america-250" target="_blank" rel="noopener">July 4 heat dome at peak intensity: 260M Americans under extreme heat with feels-like temperatures reaching 100–115°F along the Northeast and Mid-Atlantic coasts</a>
+        <span class="context">The core of the heat dome is directly overhead on July 4 — the nation's 250th birthday — with heat index values forecast between 100 and 115°F from Boston to Washington DC; more than 185 million people are under NWS heat alerts including residents of every major northeastern metropolitan area; overnight lows near 80°F in urban centres continue to deny physiological recovery; gradual relief from the west is expected to begin Saturday, with temperatures dropping toward seasonal norms across the Midwest first before reaching the East Coast by Sunday–Monday.</span>
+      </li>
+      <li>
+        <span class="source">CPR News</span>
+        <a href="https://www.cpr.org/2026/07/03/aspen-acres-fire-pueblo-update-july-3-evacuations/" target="_blank" rel="noopener">Aspen Acres Fire explodes to 74,000+ acres overnight — mandatory evacuations expanded to more than 4,000 residents; ninth-largest fire in Colorado history with zero containment</a>
+        <span class="context">The fire grew from 47,953 acres on July 2 to an estimated 74,265 acres by July 3 evening — a single-day expansion of roughly 26,000 acres driven by extreme fire weather across Pueblo and Custer counties; the Alaska Complex Incident Management Team has assumed command with approximately 475 personnel, supported by 8–10 aircraft when conditions allow; crews have been able to slow the fire's progression on certain flanks and strengthen some fire lines, but zero containment remains the official figure; fire officials describe the situation as the most dangerous in Colorado in several years.</span>
+      </li>
+      <li>
+        <span class="source">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/7/3/thousands-forced-to-evacuate-in-colorado-as-wildfire-spreads" target="_blank" rel="noopener">Thousands forced to evacuate in Colorado as wildfires spread — Aspen Acres Fire destroys 180+ structures; 16 fires burning more than 139,000 acres statewide</a>
+        <span class="context">More than 4,000 people are under mandatory Level 3 "Go" evacuations across Pueblo and Custer counties as the Aspen Acres Fire spreads through the San Isabel National Forest corridor; at least 180 structures are confirmed destroyed; a separate cluster of fires is burning on the Western Slope and Colorado-Utah border; the combination of the wildfire emergency and the July 4 heat dome — with temperatures approaching 100°F in Colorado Front Range cities — has created one of the most complex multi-hazard emergency situations in the state's recent history.</span>
+      </li>
+      <li>
+        <span class="source">Reuters</span>
+        <a href="https://www.tradingview.com/news/reuters.com,2026:newsml_L1N4340XB:0-largest-us-grid-pjm-falls-short-of-setting-all-time-demand-record/" target="_blank" rel="noopener">PJM falls short of all-time demand record — grid peaked near 163,000 MW, short of 165,563 MW 2006 record; emergency demand response credited with preventing record breach and avoiding blackouts</a>
+        <span class="context">PJM Interconnection's actual peak load came in at approximately 163,000 MW — within 2% of its all-time record set in August 2006 — after demand response resources activated by the DOE Section 202(c) emergency orders suppressed the preliminary forecast of 166,241+ MW; the grid avoided rotating outages despite operating reserves falling as low as 5,091 MW on some intervals; wholesale electricity prices briefly exceeded $2,000/MWh on July 3 during transmission congestion before clearing; the near-miss is expected to accelerate FERC rulemaking requiring large AI data-centre loads to participate in mandatory demand-response programmes.</span>
+      </li>
+      <li>
+        <span class="source">Denver Gazette</span>
+        <a href="https://www.denvergazette.com/2026/07/02/colorado-wildfires-prompt-firework-bans-in-metro-denver-area-southern-colorado-ahead-of-july-4/" target="_blank" rel="noopener">Colorado wildfires prompt statewide fireworks bans across metro Denver and southern Colorado — Stage 2 fire restrictions prohibit open flames statewide ahead of July 4</a>
+        <span class="context">Colorado Springs cancelled all permitted professional fireworks displays; bans and restrictions extend through metro Denver, Garfield, Eagle, Summit, Routt, Pitkin, and La Plata counties; wildfire smoke plumes from the Aspen Acres Fire and the Western Slope fires are generating unhealthy air quality across southern and central Colorado and extending into New Mexico and Utah; authorities are warning residents to stay indoors on days with poor air quality, with fine particle pollution from wildfire smoke posing elevated respiratory and cardiovascular risk particularly among children, the elderly, and people with pre-existing conditions.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      July 4 closes the door on IRA-era clean energy tax credit economics for wind and solar: the OBBBA construction deadline has expired, ending the era in which a new wind or solar project could lock in the 45Y or 48E credit simply by beginning construction. The clean energy finance landscape pivots immediately — storage, geothermal, and nuclear retain credit eligibility through 2032–2035 and are expected to capture capital that previously flowed to wind and solar. Internationally, the UK's AR8 offshore wind CfD auction countdown is now at 16 days; and the July 4 heat dome delivered a high-stakes stress test for renewable-dependent grids that yielded a cautiously optimistic result: batteries and demand response held the line, and no blackouts occurred.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Mintz</span>
+        <a href="https://www.mintz.com/insights-center/viewpoints/2906/2025-09-16-obbba-major-shift-federal-clean-energy-tax-incentives" target="_blank" rel="noopener">OBBBA construction deadline expires today — wind and solar tax credits permanently closed for new construction starts after July 4, 2026; storage and other zero-emission technologies unaffected through 2032–2035</a>
+        <span class="context">As of midnight tonight, new wind and solar projects beginning physical construction lose access to the 45Y clean energy production tax credit and 48E clean energy investment tax credit under the One Big Beautiful Bill Act; the only remaining pathway to any credit for new starts is placement in service by December 31, 2027 — a two-year window tight enough to effectively exclude large-scale offshore wind and many utility-scale solar projects still in the permitting phase; battery storage retains full 48E credit eligibility through 2035, creating an immediate incentive for developers to restructure hybrid projects to maximise storage capacity; geothermal and nuclear projects also retain credit eligibility under separate schedules, with enhanced geothermal already attracting increased developer and investor attention through H1 2026.</span>
+      </li>
+      <li>
+        <span class="source">CMS Law</span>
+        <a href="https://cms.law/en/gbr/legal-updates/uk-cfd-cfds-ar8-what-to-expect-in-july" target="_blank" rel="noopener">UK AR8 offshore wind CfD auction: statutory notices due July 6, application window opens July 20 — up to 18 offshore wind farms eligible to bid; AR7 strike price was £91/MWh for offshore wind</a>
+        <span class="context">The UK's Allocation Round 8 Contracts for Difference auction — the country's primary mechanism for commissioning new renewable generation — follows a new annual cycle established after AR7's record 8.4 GW offshore wind procurement in January 2026; statutory notices are due Monday July 6, with the main application window opening July 20 and closing August 7; AR8 introduces a new rule requiring firm grid connection offers for projects to bid, excluding Gate 1 projects not connecting before 2035; provisional results could be announced as early as November 27 on the fastest timeline; the AR7 offshore wind strike price of £91/MWh — combined with Carbon Brief's analysis that record UK wind and solar saved £1 billion in gas imports in March 2026 alone — provides a strong commercial case for the next round.</span>
+      </li>
+      <li>
+        <span class="source">Electric Choice</span>
+        <a href="https://www.electricchoice.com/blog/pjm-emergency-order-heat-wave-2026/" target="_blank" rel="noopener">Heat dome stress test verdict: batteries and demand response hold PJM below all-time demand record with no blackouts — but the near-miss exposes a structural gap between current storage deployment and what extreme heat events require</a>
+        <span class="context">PJM's grid came within 2% of its all-time demand record during the July 4 heat dome while simultaneously having emergency orders in force that curtailed large data-centre loads onto backup generators and waived pollution limits on gas units; the fact that no blackouts occurred is partly a function of those measures — not purely a renewable-grid success story; the event exposed that AI data-centre load growth has added tens of gigawatts to Mid-Atlantic peak demand in three years, and that the battery storage and demand-response infrastructure needed to manage those peaks under a heatwave-suppressed-wind scenario is not yet in place; FERC is widely expected to accelerate rulemaking on large-load interconnection disclosure and mandatory demand response for hyperscale consumers following this event.</span>
+      </li>
+      <li>
+        <span class="source">Solar Quarter</span>
+        <a href="https://solarquarter.com/2026/07/03/tata-motors-welspun-renewable-energy-partner-to-develop-86-mw-wind-solar-hybrid-project/" target="_blank" rel="noopener">Tata Motors partners with Welspun Renewable Energy to develop 86 MW wind-solar hybrid project supplying its commercial vehicle manufacturing plant in India</a>
+        <span class="context">Tata Motors and Welspun Renewable Energy signed a long-term Power Purchase Agreement on July 3 to jointly develop an 86 MW wind-solar hybrid project in India, with the generated electricity dedicated to supplying Tata Motors' commercial vehicle manufacturing operations; the deal is part of Tata Motors' commitment to sourcing a majority of its manufacturing electricity from renewable sources and is structured under India's open-access renewable procurement framework; Welspun Renewable Energy, a major Indian independent power producer, will develop and operate the facility — bringing its industrial PPA portfolio to several gigawatts across manufacturing, cement, and automotive anchor customers.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <div class="news-item">
+      <h3 class="news-title">National Grid Ventures Invests $1.75 Billion in Joulent to Power AI Data Centres Directly — Bypassing the Congested Grid</h3>
+      <p class="news-body">
+        National Grid Ventures, the international investment arm of the UK's National Grid, announced a $1.75 billion strategic minority investment in <a href="https://www.datacenterknowledge.com/energy-power-supply/national-grid-agrees-to-1-75b-investment-in-joulent-to-expand-ai-power-infrastructure" target="_blank" rel="noopener">Joulent</a> — a US power developer founded by activist investor Engine No. 1 and GE Vernova specifically to build co-located, off-grid generation assets for AI data centres. Joulent's flagship project, Project Kilby in West Texas, is a 2.67 GW co-located power and transmission facility serving a Microsoft-operated data centre under a 20-year power purchase agreement, with first power delivery targeted for 2028 through a 50/50 joint venture with Chevron Corporation. The deal reflects a structural shift in how hyperscale computing infrastructure is being powered: rather than connecting to an already-congested transmission grid and waiting years for interconnection queue clearance, Joulent co-locates dedicated generation directly at the data-centre site, effectively creating private utility-scale microgrids for the largest AI workloads. For National Grid, the investment is an aggressive pivot into the US energy market, where AI-driven load growth is adding tens of gigawatts of demand at a pace the conventional grid was not designed to absorb.
+      </p>
+      <span class="news-source"><a href="https://easternherald.com/2026/07/02/national-grid-joulent-microsoft-ai-data-center-project-kilby/" target="_blank" rel="noopener">Eastern Herald</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Tata Motors and Welspun Renewable Energy Sign 86 MW Wind-Solar Hybrid PPA — Indian Automaker Deepens Renewable Manufacturing Commitment</h3>
+      <p class="news-body">
+        India's <a href="https://solarquarter.com/2026/07/03/tata-motors-welspun-renewable-energy-partner-to-develop-86-mw-wind-solar-hybrid-project/" target="_blank" rel="noopener">Tata Motors</a> signed a long-term Power Purchase Agreement with Welspun Renewable Energy on July 3 to jointly develop an 86 MW wind-solar hybrid renewable energy project that will supply clean electricity directly to the automaker's commercial vehicle manufacturing facility. The deal is structured under India's open-access framework and adds to the growing roster of industrial anchor-tenant PPAs that are driving large-scale renewable project development across India's manufacturing belt. For Welspun — one of India's largest independent renewable power producers — the deal extends a portfolio of gigawatt-scale industrial PPA commitments spanning automotive, cement, and steel customers. The transaction underscores that India's industrial decarbonisation drive is accelerating independently of the US policy uncertainty around the OBBBA, with PPAs for captive renewable consumption increasingly replacing grid electricity purchases for large manufacturers seeking both cost certainty and emissions reduction targets.
+      </p>
+      <span class="news-source"><a href="https://solarquarter.com/2026/07/03/tata-motors-welspun-renewable-energy-partner-to-develop-86-mw-wind-solar-hybrid-project/" target="_blank" rel="noopener">Solar Quarter</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Isometric Raises $40 Million Series A to Expand AI-Powered Certification Beyond Carbon Markets Into the Broader Industrial Economy</h3>
+      <p class="news-body">
+        London-based <a href="https://isometric.com/writing-articles/isometric-raises-40m-to-bring-agentic-certification-to-the-industrial-economy" target="_blank" rel="noopener">Isometric</a>, the world's largest certifier of carbon removal by contracted volume, closed a $40 million Series A led by AVP (formerly AXA Venture Partners) — joined by returning investors Lowercarbon Capital and Plural, plus personal investments from Kleiner Perkins chairman John Doerr and investor Walter Kortschak. Isometric's platform deploys AI agents to ingest and cross-check sensor readings, satellite imagery, supply chain records, and laboratory results that underpin a carbon or sustainability certification claim, flagging inconsistencies and escalating edge cases to human experts — a model designed to fix the fundamental credibility problem that collapsed voluntary carbon markets in 2023–2024, when certifiers were paid by the same project developers whose claims they were assessing. The company has contracted to certify more than 16 million tonnes of carbon removal across clients including Microsoft, Anglo American, JPMorganChase, and Boeing, and will use the new capital to expand its Certify platform into a $350 billion global certification market spanning industrial regulatory compliance, safety standards, and broader sustainability requirements — positioning itself as critical infrastructure for the next phase of corporate climate commitments and Article 6 carbon trading under the Paris Agreement.
+      </p>
+      <span class="news-source"><a href="https://www.esgtoday.com/isometric-raises-40-million-to-expand-industrial-certification-platform-beyond-carbon-markets/" target="_blank" rel="noopener">ESG Today</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-03.html">3 July 2026</a></li>
+      <li><a href="archive/2026-07-02.html">2 July 2026</a></li>
+      <li><a href="archive/2026-07-01.html">1 July 2026</a></li>
+      <li><a href="archive/2026-06-30.html">30 June 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
