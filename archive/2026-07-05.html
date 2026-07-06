@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">5 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      The Copernicus Climate Change Service published its June 2026 monthly climate bulletin, confirming last month as the hottest June in the instrumental record — global surface air temperatures ran 0.5°C above the 1991–2020 reference period, substantially exceeding June 2019's previous record. ECMWF simultaneously reported a landmark for operational numerical weather prediction: data from EarthCARE's cloud profiling radar are now being routinely assimilated into the global forecast system, the first time any forecasting centre has ingested spaceborne cloud radar observations operationally. A World Weather Attribution analysis framing the ongoing European heatwave sequence underscores that such events have been made dramatically more likely — and more intense — by fossil fuel emissions over recent decades.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Copernicus C3S</span>
+        <a href="https://climate.copernicus.eu/copernicus-record-north-atlantic-warmth-hottest-june-record-globally" target="_blank" rel="noopener">Copernicus confirms June 2026 as hottest June on global record — surface air temperatures 0.5°C above 1991–2020 average; record North Atlantic warmth; El Niño amplification on top of long-term warming trend driving the new benchmark</a>
+        <span class="context">The C3S June 2026 monthly climate bulletin reports that global average surface air temperature for June 2026 was just over 0.5°C above the 1991–2020 reference average, making it the warmest June since records began — exceeding June 2019, the previous record holder, by a substantial margin; the North Atlantic simultaneously set its own June sea-surface temperature record, sustaining the anomalous ocean warmth that has persisted since late 2023; the bulletin notes that with El Niño now established and strengthening, 2026 is on track for new annual mean temperature records in both the ocean and atmosphere; C3S director Carlo Buontempo described the sequence of record-breaking months as reflecting an accelerating shift in the background state of the climate system.</span>
+      </li>
+      <li>
+        <span class="source">ECMWF</span>
+        <a href="https://www.ecmwf.int/en/about/media-centre/news/2026/earthcare-cloud-radar-data-world-first" target="_blank" rel="noopener">World first: ECMWF assimilates EarthCARE cloud profiling radar data into operational global forecast system from June 10, 2026 — first spaceborne cloud radar ever ingested operationally by any NWP centre</a>
+        <span class="context">Published July 1, 2026: ECMWF's Integrated Forecasting System (IFS) has been ingesting cloud reflectivity profiles from the ESA–JAXA EarthCARE satellite's Cloud Profiling Radar since June 10, 2026 — the first operational assimilation of spaceborne cloud radar observations in NWP history; the data provide direct vertical profiles of cloud structure and precipitation intensity that were previously unavailable to models, constraining ice/liquid partitioning, particle size, and fall velocity within clouds; early verification scores show improved cloud representation, particularly in dynamically active mid-latitude systems where cloud feedbacks are known to amplify forecast errors; the achievement is expected to improve short- to medium-range rainfall and severe weather forecasts globally.</span>
+      </li>
+      <li>
+        <span class="source">World Weather Attribution</span>
+        <a href="https://www.worldweatherattribution.org/fossil-fuel-emissions-have-rapidly-worsened-european-heatwaves-in-just-a-few-decades/" target="_blank" rel="noopener">Fossil fuel emissions have rapidly worsened European heatwaves in just a few decades, WWA finds — 2026 June–July heatwave sequence among the most extreme in European history; such events virtually impossible without human-caused warming</a>
+        <span class="context">The World Weather Attribution collaboration published a rapid attribution analysis concluding that the 2026 European heatwave sequence is representative of the type of event that has been made substantially more likely and more intense by anthropogenic greenhouse gas emissions; temperatures recorded during the June 2026 heatwave events — including 44.3°C in Pissos, France and 43.7°C in Tama, Spain — were 5–12°C above seasonal averages and consistent with late-21st-century climate projections under current emission trajectories; the analysis finds that such events, which might have been expected once in several decades in the pre-industrial climate, now occur with a frequency and intensity consistent with 1.5°C of global warming — and will worsen further if warming continues above current levels.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Colorado Wildfires — Aspen Acres Fire (Pueblo / Custer / Huerfano Counties)</span>
+          <span class="event-status">GROWING — FIRST CONTAINMENT OPERATIONS UNDER WAY: 86,983 acres as of July 4 evening (up from 74,265 on July 3 — a 17% overnight increase); 0% contained; firefighting force doubled to 734 personnel (up from 498 on July 3 morning); milder July 4 weather conditions enabled first "aggressive" operations — crews bolstered protective lines around Colorado City, Beulah, Rye, and along CO Highway 165; now the 8th largest fire in Colorado history; approximately 11,000 residents remain under mandatory evacuation orders across Pueblo, Custer, and Huerfano counties; 180+ structures confirmed destroyed</span>
+          <span class="context">The Aspen Acres Fire is the highest-priority fire in the nation for resource requests; critical fire weather — single-digit relative humidity, gusts to 45 mph, fuel moisture readings as low as 2% — drove the explosive growth that began June 30; the July 4 moderate conditions represented the first meaningful opportunity for suppression since the fire started; overnight July 4–5 conditions and the longer-term forecast will determine whether the initial line work holds; 16 active wildfires burning more than 139,000 acres statewide; smoke plumes producing unhealthy air quality across southern Colorado into New Mexico and Utah.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave 2026 — Third Omega-Block: Onset in 48 Hours</span>
+          <span class="event-status">IMMINENT — ONSET JULY 7–8: Iberia and Balkans still under active Level 3 red heat alerts from the second wave; third Omega-block high-pressure system building over Iberia with July 7–8 onset, expanding into France July 9–10 then Germany, Austria, and Benelux July 10–14; ensemble models converging on 44–46°C peak temperatures for Andalusia and interior Portugal; combined excess death toll from waves 1 and 2 estimated at 2,000–3,000 across Spain and France; EFFIS wildfire danger remains very high to extreme across the central Mediterranean</span>
+          <span class="context">Meteorologists warn the third wave carries the highest mortality risk of the three: the affected population has experienced weeks of cumulative heat stress, emergency medical services and cooling centres are depleted, river and reservoir levels are at seasonal lows across the Alps and Iberia, and wildfire fuel conditions across the central Mediterranean are critically dry; any northward drift of the dome's axis would concentrate the most extreme heat over Germany, Austria, and Switzerland — countries with limited heat emergency infrastructure compared with Iberia and France.</span>
+        </li>
+        <li>
+          <span class="event-name">Eastern US Heat Dome — Entering Relief Phase</span>
+          <span class="event-status">BREAKING DOWN (July 5–7): Heat dome weakening from west to east; temperatures dropping toward seasonal norms across the Midwest July 5, reaching the Mid-Atlantic and Northeast July 6–7; overnight lows gradually falling below 80°F in urban centres; PJM demand returning to seasonal norms following expiry of DOE Section 202(c) emergency orders on July 3; secondary ridge builds over the Plains and Intermountain West July 8–10, concentrating elevated heat in the central US into early next week</span>
+          <span class="context">The event's confirmed peak was July 3–4, with 185 million Americans under NWS heat alerts and PJM peak demand reaching approximately 163,000 MW — within 2% of the all-time 2006 record of 165,563 MW; multiple daily, monthly, and all-time temperature records were set across the Northeast; the heat dome simultaneously coincided with the Aspen Acres Fire emergency, the July 4 national holiday, and the OBBBA wind/solar tax credit deadline, creating a convergence of pressures on grid operators, emergency managers, and energy policy administrators; FERC is expected to accelerate rulemaking on large data-centre load co-location and demand-response, with PJM targeting a July 31, 2026 effective date for new rules.</span>
+        </li>
+        <li>
+          <span class="event-name">Atlantic &amp; Pacific — Quiet</span>
+          <span class="event-status">NO ACTIVE THREATS: No active tropical cyclones in the Atlantic or Eastern Pacific; NHC reports no development expected in either basin in the next 7 days; El Niño strengthening and increasing Atlantic vertical wind shear, suppressing storm activity; basin activity expected to remain quiet through mid-July</span>
+          <span class="context">NOAA's 2026 Atlantic hurricane season outlook predicts a below-normal season (55% probability) with 8–14 named storms and 3–6 hurricanes, driven primarily by the developing strong El Niño; Tropical Storm Arthur (the season's first named storm) made landfall near Galveston, Texas in late June and has dissipated; no systems are currently being tracked.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      The Aspen Acres Fire surged another 13,000 acres on July 4 to reach nearly 87,000 acres — now the 8th largest fire in Colorado history — even as nearly twice as many firefighters arrived and a window of moderate conditions allowed the first meaningful line construction work since the fire ignited. The Eastern US heat dome is simultaneously entering its relief phase, with temperatures dropping toward seasonal norms from the west through the July 4th weekend. Across the Atlantic, Europe's third consecutive Omega-block heatwave is just 48 hours from making landfall on Iberia, with ensemble models converging on peak temperatures of 44–46°C in Andalusia and the combined death toll from the first two waves still being tallied.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">Colorado Sun</span>
+        <a href="https://coloradosun.com/2026/07/04/colorado-wildfires-update-saturday-evacuations/" target="_blank" rel="noopener">Aspen Acres Fire grows to 87,000 acres on July 4 as firefighting force doubles to 734 — milder holiday conditions open first window for aggressive operations; 0% contained; 8th largest fire in Colorado history</a>
+        <span class="context">The fire grew from 74,265 acres July 3 to 86,983 acres by July 4 evening; firefighting personnel increased from 498 to 734 over 24 hours — "more than double the force on Friday" — after the Aspen Acres Fire was designated the nation's highest-priority fire for resource allocation; mild Fourth of July weather paved the way for protective line construction around Colorado City, Beulah, and the CO-165 corridor; fire officials described the July 4 operations as "aggressive" but caution that the fire's 0% containment figure reflects the scale and ongoing risk; the fire is just hundreds of acres short of the 2012 High Park Fire (87,284 acres), the 8th largest on record.</span>
+      </li>
+      <li>
+        <span class="source">Severe Weather EU</span>
+        <a href="https://www.severe-weather.eu/global-weather/heat-dome-europe-excessive-historic-heatwave-june-july-summer-2026-mk/" target="_blank" rel="noopener">European heatwave third wave: July 7–14 timeline, 44–46°C risk for Iberia — ensemble models increasingly confident; Omega-block worst-case could push 38–41°C into Germany and Benelux by July 9–11</a>
+        <span class="context">The third Omega-block high-pressure system of summer 2026 is building over the Iberian peninsula with the first dangerous phase expected to begin July 7–8; the most likely high-risk period is July 9–14 for western Europe, with Andalusia and interior valleys of Portugal most exposed to peak temperatures of 44–46°C; ensemble scenarios place a meaningful probability on the dome drifting northward to put central Europe — Germany, Austria, Switzerland — under temperatures of 38–41°C that would exceed modern records for those countries; the sequence is the third consecutive Omega-block event since late May 2026 and follows a combined Spain–France excess death toll from waves 1 and 2 estimated at 2,000–3,000.</span>
+      </li>
+      <li>
+        <span class="source">Severe Weather EU</span>
+        <a href="https://www.severe-weather.eu/global-weather/historic-heat-dome-heatwave-united-states-us-fourth-of-july-mk/" target="_blank" rel="noopener">US heat dome entering relief phase — temperatures dropping toward seasonal norms July 5–7 from west to east; Plains-centred secondary ridge builds July 8–10 bringing fresh heat threat to central US</a>
+        <span class="context">The historic eastern US heat dome — which covered the eastern two-thirds of the country from late June through July 4 and placed more than 185 million Americans under NWS heat alerts — is now breaking down as an upper-level trough moves in from the west; temperature relief is reaching the Midwest by July 5, the Mid-Atlantic by July 6, and the Northeast by July 7; however, ensemble guidance shows a new ridge building over the central Plains and Intermountain West around July 8–10, which will sustain above-average heat across the south-central US well into mid-July; the Northeast and East Coast cities will see a return to near-normal conditions for the coming week.</span>
+      </li>
+      <li>
+        <span class="source">NOAA</span>
+        <a href="https://www.noaa.gov/news-release/noaa-predicts-below-normal-2026-atlantic-hurricane-season" target="_blank" rel="noopener">NOAA 2026 Atlantic hurricane season outlook: below-normal season forecast (55% probability), 8–14 named storms, 3–6 hurricanes — developing El Niño is primary suppressor</a>
+        <span class="context">NOAA's official 2026 Atlantic hurricane season outlook forecasts a 55% chance of below-normal activity, driven primarily by the developing El Niño event expected to reach strong intensity by July–September 2026; El Niño enhances vertical wind shear over the Atlantic, which disrupts tropical cyclone organisation and limits intensification; the 8–14 named storm range and 1–3 major hurricane forecast are below the long-term 30-year averages; the Atlantic basin has been quiet since Tropical Storm Arthur (late June) and no development is expected in the next 7 days; this contrasts sharply with the hyperactive 2024–25 Atlantic seasons that preceded the current El Niño onset.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      The day after the OBBBA wind and solar construction deadline expired, analysis confirms that clean energy investment is rerouting rather than collapsing — battery storage, nuclear, geothermal, and hybrid projects are absorbing capital that previously flowed to wind and solar, while offshore wind faces the deepest structural adjustment. In the UK, tomorrow's publication of AR8 Contracts for Difference statutory notices marks the official start of the next annual offshore wind auction cycle, with a record-setting AR7 baseline behind it. Massachusetts's Senate passed a sweeping $14 billion energy affordability bill this week that recalibrates the state's offshore wind procurement pace in light of federal policy changes.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">reNews</span>
+        <a href="https://renews.biz/111846/uk-sets-out-ar8-contracts-for-difference-timetable/" target="_blank" rel="noopener">UK AR8 CfD statutory notices due July 6, application window opens July 20 — annual offshore wind auction proceeds under new cycle established after AR7's record 8.4 GW procurement in January 2026</a>
+        <span class="context">The UK Department for Energy Security and Net Zero will publish five key statutory notices on July 6 — including the Application Window Notice, Pot and Price Notice, and Standard Terms Notice — setting the rules for Allocation Round 8; the application window opens July 20 and closes August 7, with provisional auction results expected between November 27, 2026 and February 17, 2027 depending on the length of the auction process; AR8 introduces a new gate requirement that projects must hold a firm grid connection offer to bid, targeting capacity connecting before 2035; the auction follows AR7's record 8.4 GW of offshore wind contracted in January 2026 at a strike price of £91/MWh, which Carbon Brief analysis showed saved the UK approximately £1 billion in gas imports in March 2026 alone.</span>
+      </li>
+      <li>
+        <span class="source">Canary Media</span>
+        <a href="https://www.canarymedia.com/articles/policy-regulation/massachusetts-senate-passes-energy-affordability-bill" target="_blank" rel="noopener">Massachusetts Senate passes $14 billion energy affordability bill on July 2 — adjusts offshore wind procurement pace to reflect Trump-era setbacks; heads to conference committee with the House version</a>
+        <span class="context">The Massachusetts Senate passed S.3143 on July 2 with projected ratepayer savings of at least $14 billion over 10 years — compared with the $9 billion projection from the House-passed version in February; the bill reduces the Renewable Portfolio Standard incremental requirement from 3% to 1% per year, explicitly acknowledging that "the Trump Administration's attack on offshore wind development" makes the prior pace unrealistic given federal permitting and leasing uncertainty; other provisions phase out the Gas System Enhancement Plan by 2030, crack down on predatory energy marketing, and allow outside investment in grid upgrades; the House and Senate must now form a conference committee before July 31, 2026 to reconcile the two versions; the bill represents the most significant state-level clean energy legislation of 2026 in New England.</span>
+      </li>
+      <li>
+        <span class="source">Canary Media</span>
+        <a href="https://www.canarymedia.com/articles/clean-energy/trumps-big-beautiful-law-was-supposed-to-kill-clean-energy-it-didnt" target="_blank" rel="noopener">One year after the OBBBA's signing: clean energy investment is rerouting rather than collapsing — storage, nuclear, geothermal capture capital displaced from wind and solar; offshore wind most exposed</a>
+        <span class="context">Published July 2–3, 2026 on the one-year anniversary of the OBBBA's signing: analysis finds that while the OBBBA eliminated the 45Y and 48E tax credits for new wind and solar construction starts after July 4, 2026, the broader clean energy transition has continued to advance through alternative pathways; battery storage retains full 48E credit eligibility through 2035, geothermal retains its credit through 2032, and nuclear retains credits through separate schedule — together attracting accelerated capital flows from developers and investors pivoting away from wind and solar; US corporate clean energy contracting reached 13.4 GW in Q1 2026 alone, exceeding the total contracted in all of 2021, driven overwhelmingly by hyperscale data-centre loads seeking storage and firm-capacity solutions rather than intermittent generation.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <p class="summary">
+      Carbon market infrastructure is consolidating as institutional demand for verified emissions data intensifies ahead of EU ESG disclosure mandates and Article 6 bilateral trading under the Paris Agreement. In battery technology, a UCL spinout raised £21 million to commercialise a magnetic-field approach to faster, longer-lasting lithium charging — a bet on the performance optimisation layer as storage deployment accelerates globally. And in Australia, the opening of what MCi Carbon describes as the world's first industrial carbon refinery marks a new milestone for the industrial carbon removal sector.
+    </p>
+
+    <div class="news-item">
+      <h3 class="news-title">BeZero Carbon Acquires Cedar to Bring AI-Driven Carbon Accounting Into Its Ratings Platform</h3>
+      <p class="news-body">
+        London-based <a href="https://bezerocarbon.com/insights/bezero-carbon-acquires-cedar-to-accelerate-platform-growth" target="_blank" rel="noopener">BeZero Carbon</a>, the world's largest provider of independent carbon credit ratings by contracted volume, acquired Cedar, a New York-based startup whose software-agent platform automates carbon accounting, renewable energy analysis, and ESG due diligence for institutional investors and corporates. Financial terms were not disclosed, but all three Cedar co-founders join BeZero's team. The deal deepens BeZero's ability to ingest sensor data, satellite imagery, supply-chain records, and registry information into a single automated verification workflow — directly targeting the credibility gap that collapsed voluntary carbon markets in 2023–24, when certifiers were compensated by the developers whose claims they assessed. The acquisition comes as institutional demand for rigorous third-party carbon ratings is rising sharply ahead of EU ESG disclosure regulation and the growing volume of Article 6 bilateral carbon trading under the Paris Agreement.
+      </p>
+      <span class="news-source"><a href="https://www.esgtoday.com/carbon-credit-ratings-provider-bezero-acquires-sustainability-data-platform-cedar/" target="_blank" rel="noopener">ESG Today</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Gaussion Raises £21 Million to Commercialise Magnetic-Field Battery Intelligence for EVs and Grid Storage</h3>
+      <p class="news-body">
+        London-based <a href="https://fuelcellsworks.com/2026/06/29/battery/gaussion-raises-28m-to-accelerate-commercial-deployment-of-energy-intelligence-technology" target="_blank" rel="noopener">Gaussion</a>, a University College London spinout, closed a £21 million ($28 million) round led by AlbionVC and BGF — joined by US deep-tech investor Future Ventures, mobility specialist Autotech Ventures, and the UCL Technology Fund — to commercialise its AI-enabled control software that applies an externally generated magnetic field to lithium battery cells during charge and discharge. The magnetic field steers ion flow to enable faster charging and significantly reduce cell degradation, with no modification to battery chemistry or pack design, making the technology deployable across existing EV charging infrastructure, grid-scale battery energy storage systems, and drone platforms. The round pushes total BGF investment in UK and Irish businesses past £5 billion and reflects growing investor appetite for battery performance optimisation as BESS costs hit record lows and renewable-plus-storage project pipelines accelerate globally — with grid-scale storage now positioned as the primary beneficiary of clean energy capital flows in the post-OBBBA US market.
+      </p>
+      <span class="news-source"><a href="https://fuelcellsworks.com/2026/06/29/battery/gaussion-raises-28m-to-accelerate-commercial-deployment-of-energy-intelligence-technology" target="_blank" rel="noopener">Fuel Cells Works</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">MCi Carbon Opens World's First Industrial Carbon Refinery in Newcastle — Now Seeking $50 Million to Scale</h3>
+      <p class="news-body">
+        Australian clean technology company <a href="https://carbonherald.com/mci-carbon-launches-worlds-first-industrial-carbon-refinery/" target="_blank" rel="noopener">MCi Carbon</a> has opened Myrtle — described as the world's first fully integrated, multi-purpose industrial carbon refinery — on Kooragang Island in Newcastle, Australia, converting captured industrial CO₂ into commercially valuable construction minerals including magnesium carbonates, silica, and precipitated calcium carbonate. The company has since launched a search for up to US$50 million in new investment to expand production capacity and advance commercial-scale deployment, following A$14.5 million in prior Australian government Carbon Capture Technologies Programme grants. Unlike geological storage or ocean injection approaches, MCi's process uses CO₂ as a manufacturing feedstock with defined revenue-generating output products — a model that seven of the top 20 funded carbon capture startups now share, reflecting investor preference for CCUS approaches that generate cash flow rather than requiring ongoing cost-of-abatement financing. The fundraise comes as Article 6 markets and enterprise demand for supply-chain-verified carbon removal solutions expand ahead of mandatory EU and Australian corporate disclosure frameworks.
+      </p>
+      <span class="news-source"><a href="https://carboncapturemagazine.com/articles/carbon-capture-startup-mci-carbon-seeks-50-million-funding-round-after-opening-newcastle-plant" target="_blank" rel="noopener">Carbon Capture Magazine</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-04.html">4 July 2026</a></li>
+      <li><a href="archive/2026-07-03.html">3 July 2026</a></li>
+      <li><a href="archive/2026-07-02.html">2 July 2026</a></li>
+      <li><a href="archive/2026-07-01.html">1 July 2026</a></li>
+      <li><a href="archive/2026-06-30.html">30 June 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
