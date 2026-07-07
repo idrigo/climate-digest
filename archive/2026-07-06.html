@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">6 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      WMO's July 2026 Global Seasonal Climate Update, published July 3, upgrades the El Niño forecast to "strong" — projecting a central Pacific SST departure of approximately 2.0°C by the peak July–August–September window — and assigns greater than 80% probability of above-normal temperatures across most inhabited land areas through September. Copernicus CAMS published a wildfire emissions bulletin this week documenting that the United Kingdom has already surpassed its highest annual wildfire carbon emissions total in the 23-year satellite record, while simultaneous fires across North America and southern Europe drive Northern Hemisphere fire radiative power to historic levels for the season. Scientists interviewed in a detailed Al Jazeera investigation published July 3 describe a broad consensus that Europe's run of four record-breaking heatwave sequences since 2022 reflects a fundamental and accelerating shift in the climate baseline, not natural variability.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">WMO</span>
+        <a href="https://wmo.int/media/update/global-seasonal-climate-update-july-august-september-2026" target="_blank" rel="noopener">WMO Global Seasonal Climate Update July 2026: El Niño upgraded to "strong" (≈2.0°C SST departure) — >80% probability of above-normal temperatures across most land areas July–September 2026</a>
+        <span class="context">Published July 3, 2026: WMO's July seasonal update raises the El Niño forecast to the "strong" threshold, projecting central Pacific sea-surface temperature anomalies near 2.0°C above the 1991–2020 reference by the JAS 2026 peak window; the bulletin assigns greater than 80% probability of above-normal seasonal mean temperatures across virtually all inhabited land areas through September, with highest-confidence signals over North America, Europe, and sub-Saharan Africa; precipitation outlooks indicate enhanced dry conditions across central and southern Europe, the western United States, and the northern Amazon, consistent with historical strong El Niño composites; WMO stresses that El Niño is amplifying a warming signal already locked in by anthropogenic greenhouse gas accumulation, making attribution of individual extremes to either factor alone increasingly difficult; the bulletin also notes that the same El Niño is expected to suppress Atlantic hurricane development through elevated vertical wind shear over the main development region during the climatologically most active months.</span>
+      </li>
+      <li>
+        <span class="source">Copernicus CAMS</span>
+        <a href="https://atmosphere.copernicus.eu/copernicus-north-america-and-europe-experience-large-wildfires-june-and-july" target="_blank" rel="noopener">Copernicus CAMS: UK records highest annual wildfire carbon emissions in 23-year satellite record — simultaneous large fires in North America and Europe drive Northern Hemisphere fire radiative power to historic seasonal levels</a>
+        <span class="context">The Copernicus Atmosphere Monitoring Service wildfire bulletin documents an extraordinary convergence of fire activity across the Northern Hemisphere in June–July 2026: the United Kingdom — experiencing record spring and early-summer heat combined with historically low precipitation — has already exceeded its highest annual wildfire carbon emissions total in the 23-year CAMS satellite record; the Colorado fire complex (Aspen Acres, Ferris/Doe Canyon, Gold Mountain, Willow) is the dominant North American signal, contributing substantial smoke loading to downwind areas across the central and eastern US; simultaneously, major fires in Portugal and Spain add to the European total; fire radiative power readings for the Northern Hemisphere as a whole are tracking at a multi-year high for the season-to-date, consistent with the CAMS May seasonal fire danger forecast that placed western North America and the Iberian Peninsula at extreme risk; global biomass burning emissions for the season are running approximately 35% above the 2003–2022 climatological mean.</span>
+      </li>
+      <li>
+        <span class="source">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/features/2026/7/3/are-europes-extreme-summers-the-new-normal-what-the-science-says" target="_blank" rel="noopener">"Are Europe's extreme summers the new normal?" — Al Jazeera investigation finds scientific consensus: yes, made five to ten times more likely by fossil fuel emissions, and worsening</a>
+        <span class="context">Published July 3, 2026: Al Jazeera's climate investigation spoke with leading atmospheric scientists from the UK Met Office, KNMI, the Potsdam Institute, and the World Weather Attribution network, all of whom confirmed that Europe is now experiencing a new climate baseline rather than an active period of natural variability; attribution research consistently finds that events at the intensity of the 2022–2026 heatwave sequence were made five to ten times more likely by anthropogenic greenhouse gas emissions; Europe is warming roughly twice as fast as the global mean, driven by declining reflective aerosol loading over Northern Hemisphere industrial regions and the northward expansion of Saharan heat corridors; scientists note that the 2026 sequence is exceptional not only for peak temperatures but for its persistence — three consecutive Omega-block events within a single summer season is without precedent in the observational record; the investigation cites a growing mortality research literature projecting 30,000–100,000 additional heat deaths in Europe annually by mid-century under high-emissions scenarios.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Colorado Wildfires — Aspen Acres Fire (Pueblo / Custer / Huerfano Counties)</span>
+          <span class="event-status">FIRST CONTAINMENT — THUNDERSTORM THREAT: 89,055 acres as of July 5 evening (up from 86,983 on July 4); 13–14% contained — the fire's first containment after six days at 0%; approximately 800 personnel on scene; 212+ structures destroyed; all evacuations across Pueblo, Custer, and Huerfano counties remain in effect; NWS Pueblo has posted a Flash Flood Watch for the Aspen Acres burn scar July 5–6 as a thunderstorm complex advances from the southwest; burn scar hydrophobicity and steep terrain significantly elevate runoff risk</span>
+          <span class="context">After six days burning without any containment, crews established the fire's first meaningful suppression lines on July 5, working the northern perimeter during a window of more favourable fire weather; the 13–14% containment figure represents a major operational milestone, though incident commanders caution that the fire remains extremely dynamic; the advancing thunderstorm complex now presents a dual threat: lightning ignitions in dry unburned fuel adjacent to active perimeters, and — more urgently — flash flooding through the burn scar where soils baked hydrophobic by intense heat can generate dangerous runoff from moderate rainfall; swift-water rescue resources are pre-positioned downstream along Muddy Creek and adjacent drainages; the Aspen Acres Fire remains the nation's highest-priority wildfire for resource allocation, with crews and aircraft drawn from 14 states.</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado Fire Complex — Ferris/Doe Canyon, Gold Mountain, Willow, Snyder Fires</span>
+          <span class="event-status">MULTI-FIRE EMERGENCY: Ferris Fire merged with Doe Canyon Fire forming a single complex at 41,337 acres, 7% contained (Las Animas / Archuleta Counties); Gold Mountain Fire near Ouray at 25,920 acres, 0% contained — evacuations in parts of Ouray County; Willow Fire new ignition near Leadville (Lake County) at 3,090 acres, 0% contained; Snyder Fire (Montrose / San Miguel Counties) at 95% contained — all evacuations lifted July 3; statewide active fire acreage exceeds 160,000 acres</span>
+          <span class="context">Colorado's wildfire emergency has expanded well beyond the Aspen Acres incident to encompass multiple simultaneous high-priority fires across the southern and central Rockies; the Ferris/Doe Canyon merger creates a major new complex in the San Juan Basin affecting communities in two counties; Gold Mountain near Ouray carries elevated life-safety concern because Ouray's canyon topography limits evacuation routes and the fire is entirely uncontained; the new Willow Fire emergence near Leadville is a third distinct incident in the central Rockies, adding further strain to firefighting resources already stretched across the state; the Snyder Fire's approach to full containment and the lifting of its evacuation orders is the lone piece of positive news, and freed resources from Snyder are being redistributed to higher-priority incidents.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave 2026 — Third Wave Active: Wildfires in Portugal, Spain, and Greece</span>
+          <span class="event-status">ACTIVE — WILDFIRES BURNING: Third Omega-block high arrived July 5–7 as forecast; Portugal — Vouzela wildfire has burned approximately 12,000 ha in Viseu district, EU Civil Protection Mechanism activated, 9 firefighters injured; Spain — Costa Brava wildfire near Girona consumed 2,200 ha, approximately 12,000 residents confined; Greece — industrial fire near Thessaloniki spreading into surrounding vegetation with authorities issuing toxic smoke warning; revised excess death toll across Europe since late May: more than 5,600; EFFIS wildfire danger extreme across Iberia, southern France, and Greece</span>
+          <span class="context">The third and most sustained European heatwave of summer 2026 arrived over the July 5–6 weekend, with wildfires erupting simultaneously in Portugal, Spain, and Greece; Portugal's Atlantic coastal zone — previously less exposed to interior Iberian heat — is experiencing extreme fire danger as winds shifted to hot easterlies, driving the Vouzela fire to 12,000 ha; Spain and France deployed Canadair aircraft under EU Civil Protection to assist Portuguese firefighters; Spain's Costa Brava fire is the largest in that coastal tourist region in decades; the Greek situation adds a new public-health dimension as chemical smoke from the Thessaloniki industrial fire has combined with wildfire smoke, raising airborne toxin concerns across a major metropolitan area; the revised 5,600+ excess death figure incorporates Eurostat and national health authority data from multiple countries across the full three-wave sequence since late May, extending the toll well beyond the original 2,000–3,000 estimate that covered only Spain and France.</span>
+        </li>
+        <li>
+          <span class="event-name">Eastern US Heat Dome — Resolved</span>
+          <span class="event-status">FULLY RESOLVED (July 6): Upper-level trough has fully displaced the dome; temperatures across the Northeast and Mid-Atlantic within 1–2°C of seasonal normals; all NWS heat advisories expired July 5 evening; overnight lows in urban centres falling below 75°F for the first time in two weeks; secondary ridge over the central Plains sustaining above-average heat in Kansas, Oklahoma, and Texas into early next week</span>
+          <span class="context">The event's five-day peak (July 1–5) broke dozens of daily, monthly, and all-time maximum temperature records across the northeastern US, placed 185 million Americans under NWS heat alerts at peak, and pushed PJM demand to within 2% of the all-time 2006 grid record of 165,563 MW; FERC and PJM have announced an emergency rulemaking review of data-centre load co-location and demand-response rules targeting a July 31 effective date, citing the near-record grid stress event and its coincidence with the OBBBA clean energy incentive deadline; the Northeast and East Coast are expected to remain near normal through mid-July before any potential renewed ridge influence.</span>
+        </li>
+        <li>
+          <span class="event-name">Atlantic Basin — Quiet</span>
+          <span class="event-status">NO ACTIVE THREATS: No active tropical cyclones in the Atlantic or Eastern Pacific; NHC reports no areas of concern and no development expected in either basin in the next 7 days; strengthening El Niño maintaining elevated vertical wind shear across the Atlantic main development region</span>
+          <span class="context">The Atlantic basin has remained quiet since Tropical Storm Arthur (late June landfall near Galveston, Texas) dissipated; El Niño's influence — driving increased upper-level westerly wind shear over the MDR — is running somewhat stronger than the seasonal baseline forecast anticipated, consistent with the central Pacific SST anomaly now approaching 2.0°C; NOAA's official 2026 outlook (below-normal season, 55% probability, 8–14 named storms, 3–6 hurricanes) is tracking on the lower end of its range; the climatologically most active phase of Atlantic hurricane season remains more than a month away.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      For the first time in six days, the Aspen Acres Fire showed meaningful containment progress on July 5, with crews establishing 13–14% suppression lines as fire weather moderated — a major milestone — but an advancing thunderstorm complex has triggered NWS flash flood watches for the burn scar, adding a new and immediate hazard. Colorado's fire emergency has simultaneously expanded: the merged Ferris/Doe Canyon complex now covers 41,337 acres, Gold Mountain near Ouray stands at nearly 26,000 acres with zero containment, and a new Willow Fire has ignited near Leadville, pushing statewide active acreage past 160,000 acres. In Europe, the third heatwave of the season arrived as forecast over the weekend, bringing wildfires to Portugal's coast, Spain's Costa Brava, and Greece's Thessaloniki, while the European excess death toll since late May has been revised upward to more than 5,600.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">Colorado Sun</span>
+        <a href="https://coloradosun.com/2026/07/05/colorado-fires-aspen-acres-willow-gold-mountain-ouray-100/" target="_blank" rel="noopener">Aspen Acres Fire reaches 13–14% containment for the first time, 89,055 acres — Willow Fire ignites near Leadville, Gold Mountain grows near Ouray; NWS flash flood watches posted for burn scars</a>
+        <span class="context">The Colorado Sun's July 5 comprehensive update covers the full statewide wildfire picture: the Aspen Acres Fire's first containment breakthrough after six days at 0%, with nearly 800 personnel on scene; a Flash Flood Watch posted by NWS Pueblo for the burn scar July 5–6 as an approaching thunderstorm complex threatens to trigger life-threatening runoff through hydrophobic post-fire soils; the article also details the newly ignited Willow Fire near Leadville (3,090 acres) and the growing Gold Mountain Fire near Ouray (25,920 acres, 0% contained), documenting the full scope of Colorado's multi-front wildfire emergency as it enters its second week; statewide active fire acreage has surpassed 160,000 acres.</span>
+      </li>
+      <li>
+        <span class="source">NPR</span>
+        <a href="https://www.npr.org/2026/07/05/nx-s1-5883052/colorado-wildfires-thunderstorms-firefighters-killed" target="_blank" rel="noopener">Two firefighters killed fighting Colorado wildfires as thunderstorms bring lightning ignition risk and flash flooding to burn areas — incident commanders warn of elevated hazard period July 5–7</a>
+        <span class="context">NPR's July 5 report documents the human toll of the firefighting campaign: two suppression personnel killed during active operations, as the Colorado fire complex has now drawn resources from 14 states plus mutual aid requests extending to Canada and Australia; incident commanders describe the approaching thunderstorm system as introducing a complex dual hazard — lightning igniting new fires in bone-dry unburned fuel adjacent to active perimeters, and convective rainfall generating rapid flash flooding through recently burned terrain; direct suppression costs for the Colorado wildfire emergency have already exceeded $400 million, and officials describe the July 5–7 period as a critical operational transition from firefighting to flood and life-safety management.</span>
+      </li>
+      <li>
+        <span class="source">Euronews</span>
+        <a href="https://www.euronews.com/2026/07/06/wildfires-rage-in-portugal-and-spain-as-authorities-in-greece-warn-of-toxic-smoke" target="_blank" rel="noopener">Wildfires rage in Portugal and Spain as Europe's third heatwave arrives — Vouzela burns 12,000 ha with EU civil protection activated, Costa Brava confines 12,000 in Spain, Thessaloniki toxic smoke warning in Greece</a>
+        <span class="context">Euronews's July 6 report covers the simultaneous wildfire outbreak accompanying Europe's third Omega-block heatwave: Portugal's Vouzela fire has consumed around 12,000 hectares in the Viseu district, prompting activation of the EU Civil Protection Mechanism and dispatch of Canadair aircraft from France and Spain — nine firefighters have been injured; Spain's Costa Brava fire near Girona, the largest in that coastal tourist region in decades, has forced approximately 12,000 residents indoors after burning 2,200 ha of forest and Mediterranean scrubland; Greece's Thessaloniki situation is distinct as an industrial complex fire has merged with surrounding vegetation fires, generating a combined plume of chemical and wildfire smoke prompting official health warnings covering the wider metropolitan area; the article also reports the European excess death toll from the combined three-wave heatwave sequence since late May has been revised upward to more than 5,600, drawing on Eurostat and national health data from Spain, France, Italy, Portugal, and Greece.</span>
+      </li>
+      <li>
+        <span class="source">NOAA</span>
+        <a href="https://www.noaa.gov/news-release/noaa-predicts-below-normal-2026-atlantic-hurricane-season" target="_blank" rel="noopener">NOAA 2026 Atlantic hurricane season outlook: below-normal activity as strengthening El Niño elevates wind shear — basin remains quiet into mid-July with no development expected next 7 days</a>
+        <span class="context">NOAA's official 2026 Atlantic seasonal outlook forecast 8–14 named storms and 3–6 hurricanes, with 55% probability of a below-normal season primarily driven by El Niño; as of July 6 the basin has remained quiet since Tropical Storm Arthur (late June) dissipated, with NHC reporting zero areas of concern and no development expected in the next seven days; El Niño's suppressive influence via elevated upper-level wind shear over the Atlantic main development region is running somewhat stronger than the seasonal baseline implied, consistent with central Pacific SST anomalies now tracking near the 2.0°C strong El Niño threshold; the climatologically most active phase of hurricane season (August 10 – October 10) remains more than a month away.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      Germany published its first-half electricity figures on July 2, confirming that renewables covered a record 58% of German power consumption in January–June 2026 — the highest share ever recorded for Europe's largest electricity market, driven by expanded wind and solar capacity and below-average industrial demand. In the UK, the Contracts for Difference Allocation Round 8 officially opened today: statutory notices were published July 6 with the application window running July 20–August 7 and provisional results expected between late November 2026 and February 2027. Across the United States, Novogradac is tracking 14 state legislatures now advancing their own renewable energy production credits, siting streamlining, or procurement mandates specifically to compensate for the federal incentives curtailed by the OBBBA.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Clean Energy Wire</span>
+        <a href="https://www.cleanenergywire.org/news/renewables-covered-record-58-german-electricity-consumption-first-half-2026" target="_blank" rel="noopener">Renewables covered a record 58% of German electricity consumption in H1 2026 — strongest first-half result since the Energiewende began; wind at 35%, solar at 13%; 80% target by 2030 roughly on track</a>
+        <span class="context">Germany's Bundesnetzagentur confirmed that renewable energy sources supplied 58% of gross electricity consumption in January–June 2026, beating the previous H1 record of 52% set in 2023 and marking a decisive structural shift for Europe's largest electricity market; wind was the single largest contributor at 35% of consumption, driven by expanded onshore and offshore capacity brought online during 2024–25; solar PV contributed 13%, with April and May setting individual monthly records; the strong renewable share also reflects continued weakness in energy-intensive industrial production (steel, chemicals, aluminium) following the 2024–25 European industrial recession, which reduced total consumption and boosted the percentage; Germany's statutory target is 80% renewable electricity by 2030 — the H1 2026 result puts the country roughly on the trajectory required to meet that target if offshore wind expansion continues at the planned pace, with approximately 3–4 GW of additional offshore capacity targeted per year through 2030.</span>
+      </li>
+      <li>
+        <span class="source">CfD Allocation Round</span>
+        <a href="https://www.cfdallocationround.uk/news" target="_blank" rel="noopener">UK AR8 Contracts for Difference statutory notices published July 6 — application window July 20 to August 7; provisional auction results due November 27, 2026 to February 17, 2027</a>
+        <span class="context">The UK government published five statutory notices on July 6 formally opening Allocation Round 8: the Application Window Notice, Pot and Price Notice (setting Administrative Strike Price ceilings by technology), Standard Terms Notice, Standard Terms — Offshore Transmission Networks Notice, and Eligible Generating Stations Conditions Notice; the application window runs July 20 to August 7, 2026, with provisional results expected between November 27, 2026 and February 17, 2027 depending on the length of the competitive stage; AR8 introduces a strengthened grid connection gate — projects must hold a firm grid connection offer to bid — designed to reduce cases where auction results fail to reach construction due to grid access delays; the round follows AR7's record-setting January 2026 auction in which 8.4 GW of offshore wind was contracted at £91/MWh; industry reports indicate approximately 14 GW of offshore wind projects are targeting AR8 eligibility.</span>
+      </li>
+      <li>
+        <span class="source">Novogradac</span>
+        <a href="https://www.novoco.com/periodicals/articles/states-take-action-on-renewable-energy-after-obbba-curtails-tax-incentives" target="_blank" rel="noopener">States take action on renewable energy as OBBBA curtails federal tax incentives — 14 states advancing production credits, siting streamlining, or clean energy procurement mandates</a>
+        <span class="context">Novogradac's July 3, 2026 analysis tracks state-level legislative responses to the OBBBA's elimination of 45Y and 48E production and investment credits for new wind and solar construction starts after July 4, 2026: 14 states have introduced, advanced, or passed their own renewable energy incentive programmes; leading examples include New York (Enhanced EETC programme expanded), Illinois (new wind and solar production credit at $10/MWh through 2035), and Colorado (emergency executive order streamlining siting and permitting for fire-affected communities); the analysis notes that state credits typically cover $5–15/MWh versus the federal 45Y's approximately $27/MWh at current electricity prices, meaning state programmes cannot fully substitute for the federal incentive but are keeping project economics viable in markets with strong renewable portfolio standards; states without such mandates are seeing wind and solar development pipelines pause or redirect capital toward battery storage and geothermal, which retain full federal credit eligibility.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <p class="summary">
+      The sodium-ion battery sector recorded its largest single commercial agreement in the mining industry this week, with Alsym Energy and ERITY signing a 9 GWh strategic partnership targeting diesel displacement at mining sites across four continents — underscoring the expanding addressable market for non-flammable alternative chemistries in remote, high-value industrial settings. In project finance, Vena Energy's close of AU$1.4 billion in green-labelled debt from an 11-bank consortium for a 614 MW solar and 1.14 GWh BESS portfolio in Australia signals continued institutional appetite for renewable energy credit in markets undergoing rapid grid transformation.
+    </p>
+
+    <div class="news-item">
+      <h3 class="news-title">Alsym Energy and ERITY Sign World's Largest Sodium-Ion Battery Agreement for Mining: 9 GWh to Replace Diesel Across Four Countries</h3>
+      <p class="news-body">
+        Norwegian battery deployment platform ERITY and Woburn, Massachusetts-based <a href="https://www.businesswire.com/news/home/20260701570935/en/Alsym-Energy-and-ERITY-Sign-Landmark-9GWh-Strategic-Partnership-to-Deploy-Non-Flammable-Sodium-Ion-Batteries-Across-the-Mining-Sector" target="_blank" rel="noopener">Alsym Energy</a> have signed a Strategic Relationship Agreement to deploy 9 GWh of sodium-ion battery energy storage systems across mining sites in Tanzania, Saudi Arabia, Finland, and the United States — described as the largest sodium-ion agreement in the history of the mining sector. Alsym's non-flammable, water-based sodium-ion chemistry eliminates the thermal runaway risk inherent in lithium-ion batteries, a critical safety distinction at remote mining sites where emergency response capability is limited and the consequences of a fire incident would be severe and costly. The partnership targets direct diesel displacement: grid-scale BESS co-located with on-site solar allows mining operations to dramatically reduce diesel generator run hours, with estimated energy cost reductions of 30–50% per site. Mining consumes an estimated 9% of global diesel production annually, making it one of the largest untapped markets for stationary battery storage outside the electricity sector.
+      </p>
+      <span class="news-source"><a href="https://www.businesswire.com/news/home/20260701570935/en/Alsym-Energy-and-ERITY-Sign-Landmark-9GWh-Strategic-Partnership-to-Deploy-Non-Flammable-Sodium-Ion-Batteries-Across-the-Mining-Sector" target="_blank" rel="noopener">BusinessWire</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Vena Energy Closes AU$1.4 Billion Green Financing for 614 MW Solar and 1.14 GWh BESS Portfolio Across Three Australian States</h3>
+      <p class="news-body">
+        Singapore-headquartered <a href="https://solarquarter.com/2026/07/01/vena-energy-secures-a1-4-billion-green-financing-to-expand-solar-and-battery-storage-projects-in-australia/" target="_blank" rel="noopener">Vena Energy</a> has closed AU$1.4 billion (approximately US$920 million) in green-labelled project financing from an 11-bank consortium to develop, build, and operate six renewable energy projects across South Australia, Queensland, and New South Wales — a combined 614 MW of solar PV generation and 1.14 GWh of co-located battery energy storage. The 11-bank consortium, which includes major Australian and international infrastructure lenders, reflects growing institutional appetite for long-dated renewable energy credit exposure in a market undergoing rapid grid transformation. The portfolio is designed with co-located storage to allow solar generation to charge batteries that then dispatch into the afternoon and evening price peaks created by midday solar surpluses — a configuration that has proved highly profitable in South Australia's grid, where midday prices regularly go negative and evening dispatch windows exceed A$300/MWh. Projects are expected to reach commercial operations between 2026 and 2028.
+      </p>
+      <span class="news-source"><a href="https://solarquarter.com/2026/07/01/vena-energy-secures-a1-4-billion-green-financing-to-expand-solar-and-battery-storage-projects-in-australia/" target="_blank" rel="noopener">Solar Quarter</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-05.html">5 July 2026</a></li>
+      <li><a href="archive/2026-07-04.html">4 July 2026</a></li>
+      <li><a href="archive/2026-07-03.html">3 July 2026</a></li>
+      <li><a href="archive/2026-07-02.html">2 July 2026</a></li>
+      <li><a href="archive/2026-07-01.html">1 July 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
