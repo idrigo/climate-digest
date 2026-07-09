@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">9 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      A World Weather Attribution rapid-attribution study published July 7–8 concluded that Europe's late-June 2026 heatwave would have been "virtually impossible" without fossil-fuel-driven climate change — the extreme temperatures are now 10–100 times more likely than in the pre-industrial era, exposed 327 million people and $15.6 trillion in assets, and contributed to more than 2,025 excess deaths in France alone. In parallel, the EU added a major carbon policy signal on July 8 when Bloomberg reported that the European Commission's July 17 ETS review will offer heavy industry more free allowances and a slower CO₂ reduction pace, while simultaneously launching a new €30 billion ETS Investment Booster fund — a tradeoff that draws the familiar tension between near-term industrial competitiveness and long-term decarbonisation credibility.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">World Weather Attribution</span>
+        <a href="https://www.worldweatherattribution.org/fossil-fuel-emissions-have-rapidly-worsened-european-heatwaves-in-just-a-few-decades/" target="_blank" rel="noopener">Fossil fuel emissions make Europe's heatwaves 10–100 times more likely — June 2026 event "virtually impossible" without climate change — rapid attribution study published July 7–8; 327 million people and $15.6 trillion in assets exposed; 2,025 excess deaths in France; heat at this level was "virtually unheard of" 50 years ago</a>
+        <span class="context">Published July 7–8, 2026: The World Weather Attribution network — an international research consortium that conducts rapid real-time attribution analyses of extreme weather events — published its assessment of Europe's late-June 2026 heatwave, finding unequivocally that fossil fuel emissions are responsible for the event's severity: extreme heat of the June 2026 magnitude is now 10–100 times more likely than it was in the pre-industrial climate, and would have been "virtually impossible" at all without human-induced warming at its current level of approximately 1.4°C. The study found that 327 million people were exposed to heat intensified by climate change during the late-June episode, with $15.6 trillion in economic assets at risk — a ClimaMeter analysis integrated into the WWA findings showed 81% of those people and 86% of those assets were exposed to the highest category of heat. France recorded 2,025 excess deaths attributed to the June heatwave. In a parallel Nature commentary, scientists described the 2026 European heatwave as evidence that "Europe has changed irrevocably, climate-wise" — a phrase that echoes the C3S director's earlier statement about ocean temperatures entering "uncharted territory." The rapidity of the attribution (published within two weeks of the event peak) reflects the maturation of event attribution science into an operational capacity.</span>
+      </li>
+      <li>
+        <span class="source">Bloomberg</span>
+        <a href="https://www.bloomberg.com/news/articles/2026-07-08/eu-plans-more-flexibility-for-industry-in-carbon-market-review" target="_blank" rel="noopener">EU plans slower CO₂ cuts and more free permits for heavy industry in July 17 carbon market overhaul — €6B in additional free allowances, new €30B ETS Investment Booster fund; Commission seeks balance between competitiveness and decarbonisation</a>
+        <span class="context">Published July 8, 2026: Bloomberg's reporting on the upcoming EU ETS review — due to be unveiled publicly by the European Commission on July 17 — reveals the broad shape of the reform: the Commission will propose extending the period in which companies can emit CO₂ into the 2040s (a slower reduction trajectory than the current 2030 linear pathway), granting more free CO₂ allowances to energy-intensive industries in exchange for those companies committing to invest in European decarbonisation, and fast-tracking a revision of the 2026–2030 carbon benchmarks to deliver an additional €6 billion ($6.8 billion) in free allowances. The Commission will also launch the ETS Investment Booster, a new €30 billion fund based on 400 million allowances that will grant credits to eligible companies on a first-come, first-served basis for three years beginning in 2027. The policy design reflects intense lobbying pressure from heavy industry groups who argue the current ETS carbon price (hovering near €50–55/tonne in July 2026) is undermining European industrial competitiveness against non-carbon-priced rivals, particularly given the parallel US OBBBA elimination of clean energy tax credits. Climate advocates have argued the concessions undermine the ETS's primary purpose as the world's largest carbon price signal; the reform also arrives as the EU's Carbon Border Adjustment Mechanism is moving toward full implementation, adding a new layer of complexity to the free-allowance architecture.</span>
+      </li>
+      <li>
+        <span class="source">MSN / Carbon Brief</span>
+        <a href="https://www.msn.com/en-ca/news/insight/uk-heatwave-forces-week-long-shutdown-of-ai-supercomputer/gm-GM07A3A508" target="_blank" rel="noopener">UK heatwave forced week-long shutdown of Cambridge's Dawn AI supercomputer — facility still offline in early July; climate modeling and cancer research disrupted; illustrates growing infrastructure vulnerability to extreme heat</a>
+        <span class="context">Reported in Carbon Brief's early July 2026 daily brief (headline: "Thousands flee from wildfires | Heatwave shuts AI supercomputer | Cuban blackout"): The University of Cambridge's Dawn supercomputer — the UK's most powerful publicly funded AI research system, a £270 million facility used by institutions including the British Antarctic Survey for climate science, as well as by cancer research teams screening billions of molecules for neurodegenerative disease treatments — was forced into an abrupt shutdown after ambient temperatures at its facility exceeded 30°C during the June 27 UK heatwave and pushed internal infrastructure beyond operational safety thresholds. A Cambridge spokesperson cited "technical issues during the hot weather." The system remained offline into early July — a week-long disruption to research that cannot be paused or checkpointed cleanly without losing computational state. The incident illustrates a systemic vulnerability increasingly relevant to the intersection of weather, climate, and AI: data centres and supercomputing facilities, whose cooling infrastructure was typically engineered to historical climate norms, are now periodically exceeding design temperatures during heatwaves that are, according to the WWA study above, 10–100 times more likely than they were 50 years ago. The Dawn incident adds a concrete infrastructure dimension to the abstract climate attribution statistics.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Western Pacific — Typhoon Bavi (PAGASA name: Inday) — APPROACHING TAIWAN</span>
+          <span class="event-status">TAIWAN PREPARATION PHASE: As of July 9, Bavi is tracking northwest at ~20 km/h, located approximately 937 km south-southeast of Kadena Air Base in Okinawa; maximum significant wave height 15.2 metres; PAGASA Wind Signal No. 1 now in effect for Batanes, Cagayan, and Ilocos Norte in the Philippines (downgraded from Signal No. 3 as centre moves away from northern Luzon); Taiwan Central Weather Administration has forecast the most likely track passing north of or grazing the northern tip of Taiwan on July 10–11, with closest approach July 10; Taiwan has suspended ferry services to outlying islands, closed major tourist attractions, and is preparing traffic and air travel restrictions; CWA typhoon warning expected to be issued July 9–10; up to 450 mm of rainfall forecast across Taiwan and eastern China through July 14; landfall on southeastern China coast (Fujian/Zhejiang) expected approximately July 12</span>
+          <span class="context">Typhoon Bavi continues its northwest-northwestward track at roughly 20 km/h following its catastrophic Category 5 hit on Rota in the Northern Mariana Islands on July 6 and its Philippine Area of Responsibility entry on July 8. The Central Weather Administration of Taiwan has assessed that the most probable forecast track takes the typhoon centre north of Taiwan's main island rather than making direct landfall, though the storm's radius of gale-force winds — estimated at 320–350 km — ensures significant impact on Taiwan regardless of whether the eye crosses land; AccuWeather has warned that wind gusts of up to 200 mph are possible on Taiwan if the track shifts slightly southward. The storm is expected to traverse the Yaeyama Islands in Japan's southernmost Ryukyu chain around July 11 before making landfall on the Chinese coast near Fuzhou or Wenzhou on approximately July 12. Rainfall accumulations of 15–18 inches (380–450 mm) are forecast for parts of northern Taiwan and Fujian/Zhejiang Province through July 14, with coastal inundation likely along northern and western Taiwan and the Chinese Fujian/Zhejiang coast on July 10–11. China's emergency management authorities have begun issuing precautionary evacuation orders for coastal and low-lying areas in eastern China.</span>
+        </li>
+        <li>
+          <span class="event-name">France — Pyrénées-Orientales Wildfire (Trévillach) and Broader Southern France Fire Crisis</span>
+          <span class="event-status">ONGOING — MODEST IMPROVEMENT IN LARGEST BLAZE; RED ALERTS SPREADING: Pyrénées-Orientales fire now approximately 5,000 ha (up from 4,600 ha July 8); still 12,000 evacuated; firefighters "hoping to begin to reduce the surface area" — a further step beyond July 8's "no longer spreading"; 15 wildfires simultaneously burning across France as of July 8; red alerts for fire danger now raised in Vaucluse, Essonne, and Deux-Sèvres departments (new since July 8 digest); fire in Lozère (150 ha) contained; Drôme blaze (approx. 1,000 ha) still burning but stabilised; Tour de France Stage 4 and Stage 5 spectator bans continue; EU water-bombing aircraft from Cyprus and Sweden remain on station</span>
+          <span class="context">The Pyrénées-Orientales blaze near Trévillach continued its operational improvement trajectory on July 9: ground crews, having described the fire as "no longer spreading to new areas" on July 8, are now expressing cautious optimism that active surface reduction can begin, though full containment is not expected within 48 hours; the perimeter remains approximately 40 km across dozens of communes in the Pyrenean foothills. The broader French wildfire picture has worsened in a geographic sense even as the Pyrénées-Orientales situation stabilises: The Local France's July 8 interactive map documents 15 simultaneous wildfires burning across the country, with red alerts — the highest possible fire danger classification — newly raised in three additional departments (Vaucluse, Essonne, Deux-Sèvres), reflecting the extraordinary extent of tinder-dry conditions across France after weeks of drought; the risk corridor now extends from the Pyrenees east through Provence and the Var, north along the Rhône valley, and into central France. France recorded 2,025 excess deaths from the June heatwave according to the WWA study (see Climate section), underscoring the compounding human cost of the ongoing thermal and fire emergency.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave 2026 — Third Wave: Northward Expansion</span>
+          <span class="event-status">CONTINUING — HEAT DOME EXPANDING NORTH AND EAST: ECMWF and GFS ensemble guidance consistently show 500 hPa geopotential heights and 850 hPa temperatures reaching near-record levels and expanding toward Germany, Austria, Czech Republic, and Benelux July 10–14; Italy, Balkans, and southeastern Europe also in heat ridge through mid-July; Portugal and Spain Iberian temperatures moderating somewhat from their July 5–8 peaks; Spain Costa Brava fire (Girona) in smouldering phase at approximately 2,200 ha; Albania and Croatia wildfires at reduced intensity; Greece wildfire activity near Mandra ongoing</span>
+          <span class="context">The third Omega-block heatwave of the 2026 European summer remains the dominant atmospheric feature, with models consistently showing the heat dome's core slowly migrating northward and eastward over the July 10–14 window — the same signal flagged as a key forecast uncertainty in the July 8 digest is now confirmed across all major ensemble suites. Germany, Austria, the Czech Republic, Belgium, and the Netherlands are the primary populations now coming into the heat ridge's influence; these countries, being less adapted to extreme heat than Iberia in terms of building stock, emergency protocols, and public health preparedness, face elevated risks. The severe-weather.eu analysis notes multday stretches of 35–40°C are expected for many central European regions, with near-record 500 hPa heights sustained over much of the continent through mid-July; the ClimaMeter analysis integrated into the WWA attribution study (see Climate section) found that 81% of the 327 million people exposed to the June heatwave lived in places exposed to the highest tier of heat intensity — a fraction that will grow as the heat dome expands north.</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado Fire Complex — Aspen Acres, Gold Mountain, Ferris/Doe Canyon</span>
+          <span class="event-status">MIXED PROGRESS — CONTAINMENT ADVANCING BUT FIRE STILL GROWING: Aspen Acres (Pueblo/Custer/Huerfano/Fremont counties) — 93,508 acres, 16% contained (from 91,523 acres, 12–13% on July 8); 275 structures destroyed (from 263); 1,677 personnel now assigned (from 1,300+); mandatory evacuations continue across Colorado City, Beulah, Rye, San Isabel, Wetmore, Red Creek, Apache City; aerial footage documents "mosaic of destruction" in Beulah area; overnight curfew (9 p.m.–7 a.m.) remains in effect; post-fire flash flood risk from burn-scar debris flows continuing with afternoon thunderstorm activity; Gold Mountain (Montrose County) and Ferris/Doe Canyon (Las Animas/Archuleta/Montezuma/Dolores counties) — no major status changes since July 8</span>
+          <span class="context">Colorado's multi-fire emergency continues to inch toward improved containment on Aspen Acres — now the state's seventh-largest fire on record at 93,508 acres — with the 16% containment line representing sustained overnight suppression progress on the fire's southern and eastern flanks; additional aircraft resources and 1,677 assigned personnel (compared with 1,300+ on July 8) reflect the fire's ongoing designation as the nation's highest-priority suppression resource assignment. CPR Colorado's July 8 aerial footage survey documents a "mosaic of destruction" in the Beulah area, with individual structures showing the characteristic pattern of wildfire damage where some properties burned completely while neighbours survived — a pattern reflecting ember transport, local topography, and defensible space decisions. The 275 confirmed structure losses in Pueblo and Custer counties continue to rise as aerial damage assessment expands into areas that were inaccessible until recently. Afternoon thunderstorm activity across the Colorado fire complex continues to produce two competing effects: brief localized humidity that can suppress surface fire behaviour in some locations, and thunderstorm outflow winds that can dramatically accelerate fire spread in others; swift-water rescue resources remain pre-positioned in burn-scar drainages downstream of all three major fires.</span>
+        </li>
+        <li>
+          <span class="event-name">Atlantic Basin — QUIET: CSU Downgrades 2026 Season Forecast to Fewest Storms Since 2014</span>
+          <span class="event-status">NO ACTIVE THREATS; SEASON OUTLOOK REVISED DOWNWARD: No active tropical cyclones in the Atlantic or Eastern Pacific as of July 9; Colorado State University updated its seasonal forecast July 8, now calling for just 9 named storms, 4 hurricanes, and 1 major hurricane — the fewest named storms forecast in any Atlantic season since 2014, fewest hurricanes since 2015, fewest major hurricanes since 2013; El Niño odds of reaching the "very strong" category (the highest official classification) jumped from 37% to 63% since CSU's prior June forecast update; upper-level wind shear over the Atlantic main development region remains above-average, suppressing tropical cyclogenesis; no development expected in either basin through end of July</span>
+          <span class="context">Colorado State University's July 8, 2026, mid-season forecast update represents a substantial downward revision from its earlier forecasts, driven by the rapidly strengthening El Niño whose central Pacific SST anomaly has now crossed the threshold into "strong" territory and is showing 63% odds of reaching the highest "very strong" category — a level not reached in the current climate record outside of the exceptional 2015–16 event. A strong-to-very-strong El Niño produces elevated upper-level westerly wind shear over the Atlantic main development region, which mechanically disrupts tropical cyclone formation and intensification; this is the same mechanism that explains the stark contrast between the exceptionally active Western Pacific season (Super Typhoon Bavi reached Category 5 in early July) and the quiet Atlantic basin. CSU's forecast of just 9 named storms would be the lowest since 2014's 8 named storms and significantly below the 10-year average of approximately 14 named storms; however, the agency emphasises that below-normal seasons are not "no-risk" seasons — a single major landfalling hurricane generates catastrophic impacts regardless of seasonal totals, and the climatologically most active window (August 10–October 10) remains more than a month away.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      Typhoon Bavi is now approaching Taiwan and remains the week's dominant evolving weather story: Taiwan is suspending ferry services, closing tourist attractions, and preparing traffic restrictions ahead of the storm's expected closest approach on July 10–11 before tracking to southeastern China around July 12 with up to 450 mm of forecast rainfall. In Europe, the broader wildfire picture has worsened even as the Pyrénées-Orientales blaze shows modest improvement — The Local France counted 15 simultaneous fires burning across the country on July 8, with red alerts newly raised in three additional departments. Colorado's Aspen Acres fire has grown to 93,508 acres (16% contained) with 275 structures confirmed destroyed and 1,677 personnel now assigned. The Atlantic basin remains completely quiet, with CSU's July 8 updated forecast cutting the season outlook to just 9 named storms — fewest since 2014 — as El Niño strengthens toward "very strong" status.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">Taipei Times</span>
+        <a href="https://www.taipeitimes.com/News/taiwan/archives/2026/07/09/2003860465" target="_blank" rel="noopener">Taiwan hunkers down as Typhoon Bavi approaches — ferry services suspended, tourist attractions closed, traffic restrictions prepared; CWA track most likely passes north of or grazes Taiwan July 10–11 before China landfall July 12</a>
+        <span class="context">Published July 9, 2026: The Taipei Times reports Taiwan's active preparations for Typhoon Bavi's approach, with the Central Weather Administration's latest forecast track taking the typhoon centre along the northern coast of Taiwan or just north of the island during the July 10–11 window; the Taiwan Maritime Patrol Administration has suspended ferry routes to outlying islands including Kinmen, Matsu, and Penghu; the Tourism Administration has ordered tourist sites in northern Taiwan closed; airlines are waiving change and cancellation fees for flights scheduled during the impact window; Taiwan's National Disaster Prevention and Protection Commission convened an emergency meeting July 8; the typhoon is expected to bring torrential rainfall and rough surf to Taiwan's northern and eastern coasts regardless of whether the centre crosses land, given the storm's estimated radius of gale-force winds of 320–350 km.</span>
+      </li>
+      <li>
+        <span class="source">AccuWeather</span>
+        <a href="https://www.accuweather.com/en/hurricane/super-typhoon-bavi-devastates-rota-200-mph-gusts-expected-in-taiwan/1908408" target="_blank" rel="noopener">Super Typhoon Bavi: up to 200 mph wind gusts possible on Taiwan if track shifts south; 15–18 inches (380–450 mm) of rainfall forecast across Taiwan and eastern China through July 14</a>
+        <span class="context">Published July 8, 2026: AccuWeather's forecast discussion for Bavi's Taiwan impact details the range of possible outcomes depending on the precise track of the typhoon centre: in the most likely scenario (centre passing north of Taiwan), Taiwan experiences extreme rainfall, dangerous surf, and tropical-storm-to-typhoon-force winds across the northern third of the island; in the worst-case track (centre grazing or crossing the northern tip of Taiwan), wind gusts near or above 200 mph are possible in the most exposed locations. Rainfall accumulations of 15–18 inches (380–450 mm) are forecast across a broad area spanning northern Taiwan and the Fujian/Zhejiang provinces of China, with the most intense totals in orographically enhanced upslope zones along the Central Mountain Range's northern end; coastal inundation is expected along northern and western Taiwan and the Chinese coast during July 10–11 due to storm surge and wave action.</span>
+      </li>
+      <li>
+        <span class="source">Weather.com / CSU</span>
+        <a href="https://weather.com/2026/07/08/storms/hurricane/2026-atlantic-hurricane-season-outlook-csu-july-el-nino" target="_blank" rel="noopener">CSU cuts 2026 Atlantic hurricane forecast to just 9 named storms — fewest since 2014 — as El Niño strengthens; odds of "very strong" El Niño jump to 63%; season tracking well below the 10-year average of 14 named storms</a>
+        <span class="context">Published July 8, 2026: Colorado State University's mid-season forecast update represents one of the most significant downward revisions in the 2026 season outlook: the 9-named-storm, 4-hurricane, 1-major-hurricane forecast would, if verified, be the least active Atlantic season since 2014 and dramatically below the 10-year average of 14 named storms, 7 hurricanes, and 3 major hurricanes. The primary driver is the rapidly strengthening El Niño — central Pacific SST anomalies have crossed into "strong" territory and show 63% odds of reaching the "very strong" category (up from 37% in CSU's June forecast), generating elevated upper-level westerly wind shear over the Atlantic main development region that suppresses tropical cyclone formation. CSU forecasters nonetheless emphasised that even well-below-normal seasons produce dangerous storms, and the climatologically most active window for the US East Coast and Gulf Coast runs August 10 through October 10 — still well ahead.</span>
+      </li>
+      <li>
+        <span class="source">CPR Colorado</span>
+        <a href="https://www.cpr.org/2026/07/08/aspen-acres-fire-southern-colorado-updates-july-8/" target="_blank" rel="noopener">Aspen Acres fire: aerial footage documents "mosaic of destruction" in Beulah — fire at 93,508 acres, 16% contained; 275 structures destroyed, 1,677 personnel now assigned; mandatory evacuations across Colorado City, Beulah, Rye, Wetmore, and surrounding communities</a>
+        <span class="context">Published July 8, 2026: CPR Colorado's July 8 update and aerial footage survey provides the most comprehensive visual documentation yet of the Aspen Acres fire's destruction footprint: the "mosaic" pattern — characteristic of wind-driven wildfires where ember transport burns some structures while sparing immediate neighbours depending on local terrain and defensible space — is clearly visible across the Beulah area south of Pueblo; the 275 confirmed structure losses continue to grow as aerial damage assessment reaches areas previously inaccessible. An additional 300+ firefighters were deployed between July 7 and July 8, bringing total assigned personnel to 1,677; the 16% containment figure reflects sustainable gains on the fire's southern and eastern perimeter, though north-facing slopes and terrain near the Wet Mountains remain difficult to access and suppress. The Colorado Sun separately confirmed that 192 homes were destroyed in Pueblo County and 83 in Custer County, with the ongoing aerial survey expected to revise these figures upward.</span>
+      </li>
+      <li>
+        <span class="source">The Local France</span>
+        <a href="https://www.thelocal.fr/20260708/maps-where-are-all-the-wildfires-and-warnings-in-france-right-now" target="_blank" rel="noopener">Maps: Where are all the wildfires and warnings in France right now? — 15 simultaneous fires burning across France on July 8; Vaucluse, Essonne, and Deux-Sèvres newly on highest fire danger alert; Lozère fire (150 ha) contained; Drôme blaze (~1,000 ha) ongoing but stable</a>
+        <span class="context">Published July 8, 2026: The Local France's interactive wildfire tracking map documents the extraordinary geographical breadth of the French wildfire emergency: as of July 8, 15 separate wildfires were simultaneously burning across the country, with the Pyrénées-Orientales blaze (approximately 5,000 ha) the largest by far but far from the only active incident; the map shows 816 fires reported over the previous 30 days, reflecting the cumulative effect of the heatwave and drought conditions. Three departments — Vaucluse (Provence), Essonne (Île-de-France, south of Paris), and Deux-Sèvres (western France) — were newly placed on the highest possible fire danger alert on July 8, demonstrating that the risk corridor has spread well beyond the traditionally fire-prone south and into central and northern France; the extension of red alerts into Essonne, which borders the greater Paris metropolitan area, is particularly notable.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      Germany dominated the renewables news cycle this week with a landmark H1 2026 result: Fraunhofer ISE analysis published July 8 shows 61.8% of Germany's net public electricity came from renewable sources in the first six months of the year, with solar hitting an all-time H1 record of 43.2 TWh (+10% year-on-year) and offshore wind reaching a record 14.6 TWh (+28%); grid-scale battery storage capacity grew from 25.4 to 29.3 GWh in the same six-month window, with more large-scale systems commissioned in H1 2026 than in all of 2025. The July 7–9 window was otherwise relatively thin for new renewables-specific stories — the major new policy signal, the EU carbon market reform previewed July 8, is covered under Climate and will have significant second-order implications for European renewable energy investment through the new ETS Investment Booster mechanism.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Fraunhofer ISE / SolarQuarter</span>
+        <a href="https://solarquarter.com/2026/07/08/germanys-renewable-energy-share-reaches-61-8-as-solar-and-wind-set-new-records-in-h1-2026/" target="_blank" rel="noopener">Germany's renewable electricity share reaches 61.8% of net public generation in H1 2026 — offshore wind record 14.6 TWh (+28%), solar all-time H1 record 43.2 TWh (+10%); battery storage capacity grows from 25.4 to 29.3 GWh in six months; zero and negative electricity price hours multiply</a>
+        <span class="context">Published July 8, 2026: Fraunhofer ISE's H1 2026 analysis of German public electricity generation shows that renewables have now crossed the threshold of generating more than three-fifths of net public electricity even including the traditionally lower-generation winter months: wind power increased total generation by 12.2% year-on-year (offshore rising from 11.4 to 14.6 TWh, onshore from 48.7 to 52.8 TWh), while solar PV reached a new first-half record at 43.2 TWh; combined, wind and solar alone generated approximately 111 TWh in the first six months of 2026. The 61.8% figure applies to net public electricity generation (excluding self-consumption and small-scale production), while the ZSW/BDEW industry association's parallel preliminary estimate — using a different denominator that includes total national consumption — puts the renewables share at 58%, up three percentage points from H1 2025; both figures represent historic milestones. A structural consequence of this renewable share is the multiplication of hours in which day-ahead electricity prices approach or fall below zero as generation routinely exceeds demand during favourable wind or solar conditions. Germany added 8.3 GW of solar PV and 3.4 GW of wind (2.5 GW onshore, 0.9 GW offshore) in H1 2026 alone, and its 10 GW/year onshore wind installation target — if sustained — puts the country on a credible path to its 80% renewable electricity goal by 2030.</span>
+      </li>
+      <li>
+        <span class="source">PV Tech</span>
+        <a href="https://www.pv-tech.org/germany-solar-pv-generation-increases-h1-2026/" target="_blank" rel="noopener">German solar PV generation up 10% year-on-year in H1 2026 — 8.3 GW of new capacity added in six months; total installed now 124.9 GW; on course for 80% renewable electricity target by 2030 if pace holds</a>
+        <span class="context">PV Tech's commentary on the Fraunhofer ISE H1 2026 data highlights the solar PV capacity addition trajectory: Germany added 8.3 GW of new solar PV capacity in the first six months of 2026, bringing total installed capacity from approximately 118 GW at end-2025 to 124.9 GW — putting the country on course to hit 160 GW by 2030 if the H1 run-rate is maintained, ahead of the level needed to hit 80% renewable electricity on current load growth assumptions. The 10% year-on-year increase in solar generation (from approximately 39.3 TWh to 43.2 TWh) reflects both capacity additions and somewhat better irradiance conditions compared with H1 2025; the Fraunhofer ISE's "Energy Charts" data tool shows that Germany set new single-day and single-week solar generation records during the June 2026 heatwave, when clear skies and high irradiance coincided with peak installed capacity. The concurrent growth in grid-scale battery storage (from 25.4 to 29.3 GWh in H1 alone, commissioning more capacity in six months than in all of 2025) points to the market beginning to absorb the flexibility requirements that a 60%+ renewable share creates.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <p class="summary">
+      A comparatively quiet week for corporate deal announcements in the climate, weather, and energy technology sectors, with the primary industrial milestone being the commissioning of the Hertz 2 battery storage facility in Estonia on July 7 — completing the Baltic Storage Platform's 200 MW/400 MWh Hertz hub and establishing one of the largest subsidy-free utility-scale BESS installations in the Baltic region. The EU ETS reform previewed July 8 (see Climate section) will have significant second-order implications for corporate investment decisions across European heavy industry and the decarbonisation supply chain through the new €30 billion ETS Investment Booster mechanism.
+    </p>
+
+    <div class="news-item">
+      <h3 class="news-title">Baltic Storage Platform Completes 200 MW/400 MWh Hertz Battery Hub in Estonia — Hertz 2 Commissioned July 7 on Merchant Terms Without Subsidies</h3>
+      <p class="news-body">
+        A joint venture of Estonian energy developer Evecon, French independent power producer Corsica Sole, and Paris-based infrastructure fund Mirova has commissioned <a href="https://renewablesnow.com/news/baltic-storage-platform-brings-live-second-100-mw-battery-in-estonia-1297696/" target="_blank" rel="noopener">Hertz 2</a>, a 100 MW/200 MWh battery energy storage system in Aruküla, Harju County, Estonia, formally opened July 7, 2026 — completing the two-project Hertz battery hub alongside its sister facility Hertz 1 at a combined 200 MW and 400 MWh capacity. Both systems are connected to the grid of Estonian transmission system operator Elering and will provide fast-response frequency regulation services alongside day-ahead and intraday electricity market participation, addressing a strategically critical gap as Estonia, Latvia, and Lithuania finalise desynchronisation from the Russian/Belarusian power system and full integration with the continental European grid. The €170 million investment was made entirely with private capital and without direct subsidies, financed through an €85.6 million loan facility provided jointly by the European Bank for Reconstruction and Development, the Nordic Investment Bank, and Edmond de Rothschild Asset Management. Evecon CEO Karl-Joonatan Kvell described the subsidy-free investment decision as a signal that grid-scale battery storage is commercially viable on merchant terms in Baltic electricity markets — a proof point with implications for BESS project pipelines across the broader Nordic-Baltic region.
+      </p>
+      <span class="news-source"><a href="https://www.ess-news.com/2026/07/08/hertz-2-bess-begins-operation-forming-200-mw-storage-complex-in-estonia/" target="_blank" rel="noopener">ESS News / Renewables Now</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-08.html">8 July 2026</a></li>
+      <li><a href="archive/2026-07-07.html">7 July 2026</a></li>
+      <li><a href="archive/2026-07-06.html">6 July 2026</a></li>
+      <li><a href="archive/2026-07-05.html">5 July 2026</a></li>
+      <li><a href="archive/2026-07-04.html">4 July 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
