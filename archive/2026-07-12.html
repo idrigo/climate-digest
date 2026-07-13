@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">12 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      Three distinct developments updated the climate science and policy picture in the July 9–12 window. The Trump White House appointed geochemist and climate critic Matthew Wielicki to lead the US National Climate Assessment program — the statutory review coordinated across 13 federal agencies including NOAA — raising immediate questions about the scientific integrity of the country's most authoritative domestic climate report. Simultaneously, Microsoft disclosed a 25% surge in FY2025 greenhouse gas emissions driven by AI data centre buildout, followed by similar disclosures from Google (+18%) and Amazon (+16%), crystallising a structural gap between Big Tech's decarbonization pledges and its operational reality. And NOAA's July 9 ENSO update raised the probability of a "super" El Niño developing this winter to 81% — potentially ranking among the largest events in the historical record — carrying material implications for global weather patterns, crop production, and energy demand through 2027.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Washington Post</span>
+        <a href="https://www.washingtonpost.com/climate-environment/2026/07/10/white-house-appoints-climate-science-critic-lead-key-climate-program/" target="_blank" rel="noopener">Trump appoints climate science critic Matthew Wielicki to lead US National Climate Assessment — former Alabama geochemist with no peer-reviewed climate publications named to head the US Global Change Research Program; on record arguing mainstream climate science is "too dire"; White House says it will "restore sound science" to the USGCRP</a>
+        <span class="context">Published July 10, 2026 (Washington Post; GV Wire): Matthew M. Wielicki, a former University of Alabama geochemist who resigned his untenured assistant professorship in 2023, has been appointed to lead the US Global Change Research Program — the interagency body, mandated by Congress, that coordinates climate research across 13 federal agencies including NOAA and NASA and publishes the National Climate Assessment (NCA). Wielicki has no peer-reviewed publications in climate science; he has instead built a public profile through a podcast, PragerU videos, and social media, arguing that mainstream climate science overstates the negative impacts of warming. The National Climate Assessment is the statutory basis for much of the US government's planning for climate impacts on infrastructure, public health, agriculture, and national security; the appointment places a prominent internal sceptic in charge of its next edition, which is currently underway. NOAA scientists and former NCA lead authors contacted by the Washington Post described the appointment as unprecedented in the program's history. The White House described it as restoring the USGCRP to its "legal mandate" and distancing it from "political agendas" — a framing that reverses the characterisation applied to the program's previous leadership.</span>
+      </li>
+      <li>
+        <span class="source">Fortune / GeekWire</span>
+        <a href="https://fortune.com/2026/07/09/microsoft-carbon-emissions-2025-data-centers/" target="_blank" rel="noopener">Microsoft FY2025 emissions surge 25% as AI data centre buildout accelerates — Scope 2 market-based electricity emissions balloon from 259,090 to 2.7 million MtCO₂e; Google discloses 18% increase, Amazon 16%; all three reiterate long-term carbon commitments while acknowledging AI infrastructure outpaces decarbonization</a>
+        <span class="context">Published July 9, 2026 (Fortune; GeekWire; Carbon Pulse): Microsoft's fiscal year 2025 sustainability report, released July 9, discloses total greenhouse gas emissions of 21.1 MtCO₂e, a 25–27% increase over FY2024, driven primarily by the company's accelerated construction of AI data centres and its decision to stop relying on short-term renewable energy certificates to offset reported electricity emissions. The most striking line item is Scope 2 market-based emissions — those tied to purchased electricity — which increased from 259,090 MtCO₂e to 2.7 million MtCO₂e, an increase of more than tenfold, reflecting both the volume of new data centre load and the stranded renewable matching problem in grid regions where Microsoft is building fastest. The disclosure arrived in the same week as similar reports from Google (18% emissions increase attributed to AI infrastructure) and Amazon (16%), creating a simultaneous reckoning across the three largest hyperscale cloud providers. All three companies reiterated their long-term carbon-negative, net-zero, or carbon-neutral commitments while acknowledging that near-term AI investment is pushing their trajectory in the wrong direction. The combined power demand from these three companies alone represents a significant structural shift in electricity market fundamentals — Bloomberg NEF data shows hyperscale data centre construction projects totalling more than 80 GW of new load globally in the 2025–2027 window — and is accelerating the pace of long-duration renewable energy power purchase agreement negotiations in markets from Texas to Ireland to Singapore.</span>
+      </li>
+      <li>
+        <span class="source">Weather.com / NOAA CPC</span>
+        <a href="https://weather.com/2026/07/09/news/climate/july-update-super-el-nino-strengthening-noaa" target="_blank" rel="noopener">NOAA July 2026 ENSO update: 81% probability of "super" El Niño developing by winter 2026–27 — sea-surface temperature anomalies potentially reaching 3–4°C above average in equatorial Pacific; event expected to peak November 2026–January 2027 and rank among largest in historical record</a>
+        <span class="context">Published July 9, 2026 (Weather.com citing NOAA Climate Prediction Center; GFDL SPEAR ensemble): NOAA's July ENSO Diagnostic Discussion, released July 9, raises the probability of a very strong El Niño episode developing by the October–December 2026 season to 81% — the highest confidence level for a strong event forecast at this lead time since the 2015–16 super El Niño. Equatorial sea-surface temperature anomalies in the Niño3.4 index are currently +1.2°C above average and all 30 ensemble members of NOAA's GFDL SPEAR prediction system project a peak event strength that is at least competitive with the strongest El Niños on record, with some members reaching 3–4°C above average in the central and eastern Pacific — the threshold historically associated with "super" event behaviour. The event is expected to peak between November 2026 and January 2027, with conditions intensifying through the Northern Hemisphere autumn. The implications of a super El Niño at this magnitude include suppressed Atlantic hurricane activity through the remainder of the 2026 season (consistent with the quiet basin currently documented by NHC), significantly above-normal rainfall across the southern United States, Peru, Ecuador, and eastern Africa, and drought risk across Australia, Indonesia, and southern Africa — all of which carry direct consequences for crop production, energy demand, and natural disaster planning in the affected regions over the next 6–12 months. The same El Niño signal that is keeping the Atlantic quiet contributed to the warm, dry conditions that drove the Colorado fire complex earlier this summer.</span>
+      </li>
+      <li>
+        <span class="source">Carbon Pulse</span>
+        <a href="https://carbon-pulse.com/530595/" target="_blank" rel="noopener">EU Parliament groups stake out positions on ETS reform ahead of July 17 overhaul — multiple political groups write to Commission backing a "strong and stable" ETS; EPP pushes for extended free allowances beyond 2030; Sweden vows to block dilution of emissions cuts; €6B in additional allowances and 400M-permit "Investment Booster" mechanism confirmed for Commission proposal</a>
+        <span class="context">Published July 11–12, 2026 (Carbon Pulse): With the European Commission's dual July 17 package — combining the ETS overhaul with the binding 2040 electrification target — now less than a week away, EU Parliament political groups have begun openly staking out their positions in letters to the Commission and public statements. Three major groups (S&amp;D, Greens/EFA, and Renew Europe) wrote separate letters to the EU executive backing a "strong and stable" ETS that preserves the current trajectory of emissions cuts, explicitly opposing proposals to slow the linear reduction factor. The European People's Party (EPP), the Parliament's largest group and a key coalition partner of the Commission President, has urged the Commission to go further than its current free-allowance proposal, extending the validity of free emission allowances beyond 2030 and slowing the pace of planned emissions reductions — a position that reflects lobbying from energy-intensive industries facing competitive pressure from post-OBBBA US manufacturers and from Chinese counterparts whose domestic carbon price remains substantially below the EU's. Sweden announced it will veto any reform that it considers a dilution of the ETS's ambition at the Council level; at least 9 other member states are reportedly pushing in the opposite direction. The Commission's confirmed proposal includes approximately €6 billion in additional free allowances for industry over 2026–2030 and a new 400-million-permit "Investment Booster" fund — reserve allowances that will not be monetised but instead directed to support industrial decarbonization investment. The EU ETS carbon price, hovering near its highest level since February 2026, is sensitive to the free-allowance volume and linear-reduction-factor decisions expected July 17.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">Western Pacific — Typhoon Bavi — POST-LANDFALL: INLAND FLOODING SPREADING THROUGH EAST AND CENTRAL CHINA; 1.7 MILLION EVACUATED</span>
+          <span class="event-status">WEAKENING INLAND BUT LARGE MOISTURE ENVELOPE ONGOING: Bavi made dual landfall in Zhejiang Province at 23:20 local time July 11 — first in Yuhuan City, then a second landfall in Yueqing (Wenzhou) shortly after midnight — with 10-minute maximum sustained winds of 144 km/h; weakened to tropical storm strength by Sunday morning as it pushed inland but retains a France-sized moisture envelope; post-landfall rainfall spreading from Zhejiang and Fujian northward through Jiangsu, Anhui, Henan, Hebei, and Shandong over July 12–14; 1,300+ trees fell in Yueqing alone (700+ uprooted entirely); Hangzhou's two major train stations suspended all services; 327 flights cancelled at Hangzhou Xiaoshan; 1,620 train trips and 684 flights cancelled in Shanghai; 40 million yuan (≈US$5.9M) in central disaster relief allocated to Zhejiang and Fujian; compound flood risk with pre-existing Maysak saturation in southern China remains elevated. Taiwan damage summary: 134 total injuries confirmed by Taiwan fire department (up from 36 in July 11 midday reporting) — most from motorbike accidents, falls, and flying debris; nearly 80 cm of rain recorded in one 24-hour period in northern Miaoli County; 14,000+ evacuated pre-storm, power largely restored.</span>
+          <span class="context">Bavi's dual landfall in Zhejiang on the night of July 11–12 represents the completion of its western Pacific track from its Category 5 peak near Rota (285 km/h 1-minute sustained, 901 hPa) through the Ryukyu chain, Taiwan's northern corridor, and now China's eastern seaboard. The 134 Taiwan injury total — confirmed by the Taiwan fire department on Sunday — is nearly four times the midday July 11 figure of 36, reflecting injuries sustained as conditions worsened through the afternoon and evening. The post-landfall situation in China is now the primary concern: Bavi had weakened to tropical storm strength by Sunday morning but its very large wind and moisture field means significant rainfall will continue across eastern and inland China through Tuesday. Jiangsu and Anhui are the next provinces to receive heavy rainfall as the remnants track northward, and the eventual moisture interaction with the Bohai Sea region is expected to extend impacts to Hebei and Shandong. The 40 million yuan central government allocation to Zhejiang and Fujian underscores that the direct-impact zone will require sustained recovery operations. The Philippines impacts from Bavi's outer convective bands (see separate item) add a third national dimension to the typhoon's regional death toll — the storm's remote effects exceeded its direct landfall impacts in terms of casualties.</span>
+        </li>
+        <li>
+          <span class="event-name">Philippines — Bavi-Enhanced Monsoon Flooding and Landslides — 17 Dead, 9 Missing, 514,700 Affected</span>
+          <span class="event-status">ONGOING RECOVERY — DEATH TOLL AT 17: Typhoon Bavi did not make landfall in the Philippines but enhanced the southwest monsoon over Mindanao and the Visayas; 17 confirmed dead, 9 missing, approximately 514,700 people affected across multiple provinces; single deadliest event: landslide in Pandaw village, Malapatan, Sarangani Province, killed 10 people — rainfall from Bavi combined with soil weakened by the 2026 Mindanao earthquake increased slope instability; second landslide in Calanogas, Lanao del Sur killed 7 and left 4 missing; two additional bodies recovered in Bukidnon; evacuations ongoing in low-lying coastal and river-adjacent communities.</span>
+          <span class="context">The Philippines toll from Typhoon Bavi is a consequence of the storm's outer rain bands intensifying the southwest monsoon — the same mechanism that causes the Philippines to experience dangerous rainfall even from typhoons that track hundreds of kilometres north of the archipelago. The 10-person Sarangani landslide is particularly notable because it was a compound event: Bavi's rainfall fell on slopes already weakened by the 2026 Mindanao earthquake, which had loosened rock and soil across a broad area before the typhoon even developed. The 514,700 people affected figure underscores the scale of the monsoon enhancement: even a typhoon that never crosses Philippine land can displace hundreds of thousands through its influence on the regional monsoon circulation. PAGASA tracked Bavi under the local name Inday and had issued warnings about the monsoon-enhancement risk before the typhoon entered the Philippine Area of Responsibility. As of July 12, rescue and recovery operations are ongoing in Sarangani, Lanao del Sur, and Bukidnon.</span>
+        </li>
+        <li>
+          <span class="event-name">China — Guangxi Flooding (Maysak) — Bavi Compound Risk Now Materialising</span>
+          <span class="event-status">ONGOING RESCUE + COMPOUND IMPACT ARRIVING: Guangxi Maysak flooding (39 dead, 9 missing, 130,000 evacuated, Liulan Reservoir dam breach) remains in active recovery; Bavi's outer moisture bands now delivering additional rainfall to southern Guangxi on top of still-saturated soils; the national geological disaster emergency response for Guangxi remains at Level III; electricity restoration continues across affected communities; cross-border railway to Vietnam still under observation; 5,700 boats and rescue drones still deployed in cut-off communities.</span>
+          <span class="context">The Guangxi flooding disaster from Tropical Storm Maysak has not resolved — active rescue operations and missing persons searches are ongoing — as Bavi's post-landfall moisture envelope begins to deliver additional rainfall to the province. This is the precise compound risk that Chinese emergency authorities flagged earlier in the week when they elevated Guangxi's national geological disaster emergency response from Level IV to Level III: the soil saturation and reservoir levels from Maysak remain elevated across much of Guangxi, meaning that even moderate additional rainfall from Bavi's outer circulation can trigger secondary floods and further slope failures. The dam failure at Liulan Reservoir in Hengzhou — which killed 26 people in a single event on July 7 — has accelerated inspection of other small reservoir structures across the province; results of those inspections were not yet public as of July 12.</span>
+        </li>
+        <li>
+          <span class="event-name">European Heatwave 2026 — Third Wave: Germany and Central Europe, 38–42°C; Modestly Beginning to Ease</span>
+          <span class="event-status">STILL ACTIVE THROUGH APPROXIMATELY JULY 14 — MODEST EASING FROM MID-WEEK: Heat dome over Germany, Austria, Czech Republic, Belgium, and the Netherlands continues to produce 35–42°C temperatures; Germany provisionally hit a new national heat record of 41.7°C at Coschen in late June and experienced multi-day stretches above 35°C in the current third wave; forecast models now indicate the Omega-block will begin to break down from approximately July 14, allowing Atlantic moisture to moderate temperatures; Italy, Balkans, and southeastern Europe remain in the heat ridge through mid-July; Greece wildfire activity near Mandra ongoing; Spain Costa Brava fire (Girona, ~2,200 ha) stable; European excess death toll from the June 2026 first wave now estimated above 9,900 across completed preliminary datasets.</span>
+          <span class="context">The third-wave heat dome over Germany and central Europe is approaching its expected terminal phase: ensemble guidance from severe-weather.eu and the ECMWF medium-range forecast indicates the Omega-block will begin to weaken from approximately July 14, a week after it locked in over central Europe. Germany's population — confronting its third heatwave in five weeks — is the principal public health concern for the remainder of the current event, given building stock, emergency health protocols, and physiological adaptation that are less mature than in Iberian or Italian populations. The revised June 2026 excess death figures (France 2,700+, Germany 5,000+, Europe-wide 9,900+) established a new baseline for understanding the human cost of the current summer's pattern; the third-wave event will add to that toll before assessments are completed. Greece's ongoing wildfire near Mandra and Spain's Costa Brava fire (Girona Province, approximately 2,200 ha, stable as of July 11) reflect the sustained elevated wildfire risk across southern Europe even as the Pyrénées-Orientales fire is now controlled (see below).</span>
+        </li>
+        <li>
+          <span class="event-name">France — Pyrénées-Orientales Wildfire — DECLARED CONTROLLED JULY 11; MOP-UP CONTINUING; ALL VILLAGES REOPENED</span>
+          <span class="event-status">RESOLVED — CONTROLLED STATUS ACHIEVED JULY 11: The ~5,000 ha Trévillach blaze was declared controlled on July 11 as improved weather conditions (lower temperatures, higher humidity) ended active spread; final 6 remaining closed villages reopened to residents at 14:00 July 11; approximately 450 firefighters remain deployed for mop-up operations; department moved from red to yellow fire danger classification; EU water-bombing aircraft from Cyprus and Sweden stood down from active mission; no active spread reported as of July 12 morning. Event summary: 7 days from ignition to control; ~5,000 ha burned; ~12,000 cumulative evacuation orders; peak 800 firefighters; EU mutual aid aircraft deployed from two member states.</span>
+          <span class="context">The declaration of controlled status for the Pyrénées-Orientales fire on July 11 marks the resolution of the most significant single French wildfire event of the 2026 season. The seven-day suppression campaign from ignition (approximately July 4–5 near Trévillach) to control was the longest sustained active wildfire operation in France in recent memory, involving at its peak 800 firefighters from multiple departments and EU mutual aid water-bombing aircraft. The reopening of the final six closed villages at 14:00 on July 11 — and the return to yellow (moderate) fire danger classification in Pyrénées-Orientales — marks a genuine transition from crisis to recovery. Mop-up operations will continue for several days across the 5,000 ha perimeter; the risk of flare-up from embedded hot spots remains present but manageable under the current weather pattern. France's broader wildfire picture remains elevated: the underlying drought and heat conditions that drove the Trévillach fire (documented in C3S and Copernicus fire database records of 816+ fires in the 30 days preceding the event) persist across southern and central France, and the European heatwave's continuation through July 14 will maintain elevated wildfire risk in several southern departments.</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado — Aspen Acres Fire — CONTAINMENT RISES TO 34%; RECOVERY OPERATIONS BEGINNING IN SOME AREAS</span>
+          <span class="event-status">CONTINUED PROGRESS — 34% CONTAINED AS OF JULY 11: Aspen Acres (Pueblo/Custer/Huerfano/Fremont counties) — 97,504 acres, 34% contained as of July 11 (up from 28% July 10, 16% July 9, 12% July 8); the fire remains the seventh most destructive in Colorado history at 780+ structures damaged or destroyed; mandatory evacuations still in effect in portions of Colorado City, Beulah corridor, San Isabel, Wetmore, Red Creek, and Apache City; burn-scar flash flood risk continues with afternoon convective activity; Custer County maintaining major fire restrictions; suppression crews continue reinforcing containment lines around threatened communities including Rye, Siloam Road corridor, and portions of Custer County.</span>
+          <span class="context">The Aspen Acres fire's four-day progression from 12% to 34% containment is the most sustained suppression gain of the fire's 12-day operational history, and represents incident command's transition from reactive perimeter defence to proactive perimeter closure. At 34% containment the fire is approaching the midpoint of suppression — a significant milestone after the extraordinary speed of initial spread — but the 97,504-acre perimeter remains vast and afternoon convective weather continues to produce outflow winds that can threaten gains. The 780+ structures damaged or destroyed figure — which revised sharply upward as aerial assessment reached previously inaccessible terrain — places the Aspen Acres fire among the costliest property loss events in Colorado history alongside 2013's Black Forest and 2020's East Troublesome fires. Atlantic basin: tropical cyclone formation not expected in the North Atlantic, Caribbean, or Gulf of America in the next 7 days per NHC. Eastern Pacific: low (20%) chance of tropical development from a trough southwest of Baja California in the next 7 days.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      Typhoon Bavi completed its Pacific track on the night of July 11–12, making dual landfall in Zhejiang Province with 144 km/h sustained winds after injuring 134 people in Taiwan (nearly four times the initial count) and killing 17 in the Philippines through Bavi-enhanced monsoon flooding and earthquake-weakened landslides in Mindanao — bringing more than 1.7 million people under evacuation in eastern China and threatening days of heavy rainfall spreading inland through Jiangsu, Anhui, Henan, Hebei, and Shandong. The Pyrénées-Orientales wildfire was declared controlled on July 11 after seven days of suppression covering approximately 5,000 ha, with all 12,000 evacuees now cleared to return home. Colorado's Aspen Acres fire improved to 34% containment across 97,504 acres, while the European heat dome remains locked over Germany and central Europe through approximately July 14.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/7/11/hundreds-of-thousands-evacuated-as-typhoon-bavi-barrels-towards-china" target="_blank" rel="noopener">More than 1.7 million evacuated as Typhoon Bavi makes landfall in China — dual landfall in Yuhuan and Yueqing (Wenzhou), Zhejiang, at 23:20 July 11; 144 km/h sustained winds at landfall; 40 million yuan central relief funds allocated; rainfall extending to Jiangsu, Anhui, Henan, Hebei, Shandong through July 12–14</a>
+        <span class="context">Published July 11, 2026: Al Jazeera's landfall summary confirms the scale of China's pre-typhoon preparations: 1.7 million people evacuated across eastern China — a mobilisation that required several days of coordinated action by provincial and local emergency management authorities in Zhejiang, Fujian, and Shanghai. The 40 million yuan central government disaster relief allocation is a rapid deployment of national resources for immediate emergency operations (evacuation logistics, emergency rescue personnel, shelter provision), separate from any longer-term reconstruction funding. The storm's dual landfall — first in Yuhuan at 23:20 and then in Yueqing/Wenzhou shortly after midnight — reflects the complexity of its landfall geometry along an irregular coastline. The primary concern as of July 12 is the post-landfall rain trajectory: as Bavi weakens but maintains a large moisture envelope, rainfall totals of 200–500 mm are expected across Jiangsu and Anhui, with additional significant rainfall reaching as far north as Hebei and Shandong over July 12–14.</span>
+      </li>
+      <li>
+        <span class="source">The Watchers</span>
+        <a href="https://watchers.news/2026/07/11/typhoon-bavi-landfall-zhejiang-china-damage-aftermath-july-2026/" target="_blank" rel="noopener">Typhoon Bavi makes landfall in Zhejiang, China — post-landfall damage assessment: 1,300+ trees fallen in Yueqing alone (700+ uprooted); flooding to mid-tire depth in streets; excavators deployed to clear debris; Hangzhou train services suspended; 327 flights cancelled at Xiaoshan; weakening to tropical storm by Sunday morning</a>
+        <span class="context">Published July 11, 2026: The Watchers' post-landfall damage report provides the most granular on-the-ground assessment of Bavi's Zhejiang impacts: more than 1,300 fallen trees in Yueqing alone — 700 of them completely uprooted — with emergency crews deploying excavators and chainsaws from Sunday morning to clear waterlogged streets. The flooding in coastal Zhejiang reached approximately mid-tire depth in the most affected areas, consistent with a moderate storm surge combined with saturated soils following the typhoon's rainfall. The suspension of all rail services at Hangzhou's two major train stations and the cancellation of 327 flights at Xiaoshan International Airport reflects both the direct wind and rain impact and the broader network disruption from the typhoon's approach and landfall. The storm was weakening to tropical storm strength by Sunday morning as it pushed inland, but its continued northward track means significant rainfall continues across Jiangsu and Anhui.</span>
+      </li>
+      <li>
+        <span class="source">AP / PBS News</span>
+        <a href="https://www.pbs.org/newshour/world/typhoon-bavi-makes-landfall-in-eastern-china-as-more-than-1-million-are-evacuated" target="_blank" rel="noopener">Taiwan reports 134 injured from Typhoon Bavi as storm batters eastern China — Taiwan fire department confirms 134 total injuries (most from motorbike falls, slips, flying debris); nearly 80 cm of rain recorded in Miaoli County over 24 hours; Shanghai evacuated 34,000 residents and cancelled 684 flights and 1,620 train trips</a>
+        <span class="context">Published July 11, 2026 (AP wire via PBS News): The AP's updated Taiwan injury count of 134 — confirmed by Taiwan's fire department on Sunday morning — is nearly four times the July 11 midday figure of 36 and reflects a steady accumulation of casualties as typhoon conditions intensified across the island through Saturday afternoon and evening. The majority of injuries were from motorbike accidents on rain-slicked roads, slips and falls, and injuries from airborne debris — the characteristic injury pattern of a strong typhoon affecting a highly urbanised, motorbike-reliant island. The near-80 cm rainfall in Miaoli County's mountain areas over 24 hours is a remarkably high single-station total, consistent with the orographic intensification of rainfall on the northern Central Mountain Range's windward faces that forecasters had highlighted. Shanghai's pre-emptive actions — evacuating 34,000 from high-risk flood zones and implementing widespread transport cancellations — were coordinated before Bavi's outer bands began affecting the city, reflecting the high-tempo emergency response mobilisation across the region.</span>
+      </li>
+      <li>
+        <span class="source">Al Jazeera</span>
+        <a href="https://www.aljazeera.com/news/2026/7/10/philippines-landslides-kill-15-as-typhoon-bavi-threatens-region" target="_blank" rel="noopener">Philippines: Bavi-enhanced monsoon kills 17, leaves 9 missing — 10 dead in Malapatan, Sarangani landslide (earthquake-weakened slopes); 7 dead in Calanogas, Lanao del Sur; 514,700 people affected across multiple provinces; storm never made landfall in Philippines but enhanced southwest monsoon</a>
+        <span class="context">Published July 10, 2026 (death toll updated to 17 in subsequent reports): Al Jazeera's Philippines coverage documents the deadly interaction between Typhoon Bavi's outer circulation and the southwest monsoon — a meteorological mechanism that means typhoons tracking north of the Philippines still deliver deadly rainfall to the archipelago. The Malapatan, Sarangani landslide that killed 10 people is a compound disaster: the 2026 Mindanao earthquake had already weakened the hillside soils in the area before Bavi's monsoon-enhanced rainfall saturated them to failure, producing a slide that overwhelmed the village of Pandaw. PAGASA tracked Bavi under the local name Inday and had issued monsoon enhancement warnings; the scale of impact — 514,700 people affected across provinces that were never in Bavi's direct wind field — underlines how large-scale typhoon dynamics can affect populations far from the storm's centre.</span>
+      </li>
+      <li>
+        <span class="source">Wikipedia / IQAir</span>
+        <a href="https://en.wikipedia.org/wiki/Aspen_Acres_Fire" target="_blank" rel="noopener">Aspen Acres Fire Colorado — 34% contained as of July 11, up from 28% July 10 and 12% July 8; 97,504 acres; 780+ structures damaged or destroyed (seventh most destructive in Colorado history); mandatory evacuations still in effect in multiple Pueblo/Custer/Huerfano communities; burn-scar flash flood risk ongoing</a>
+        <span class="context">Updated July 11–12, 2026: The Aspen Acres fire's containment reached 34% on July 11, continuing the most rapid suppression progress of the fire's history and marking the fifth consecutive day of meaningful containment gain. The revised structure damage and destruction total of 780+ — confirmed as aerial assessment expanded into previously inaccessible terrain — places the fire seventh on Colorado's all-time most-destructive list. Incident command's focus has shifted increasingly toward reinforcing containment lines around Colorado City, the Rye and Siloam Road corridors, and Custer County communities, protecting structures that remained under threat as of July 11's evening report. The burn scar's debris-flow and flash-flood risk remains a secondary hazard requiring monitoring: afternoon convective activity regularly produces localized thunderstorms over the Wet Mountains, and even modest rainfall (half an inch per hour or more) on the bare, hydrophobic soils of the fire scar can trigger debris flows that move at highway speed down drainage channels toward downstream communities.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      Germany's first-half 2026 electricity data, released by Fraunhofer ISE in early July, documents renewables covering a record 61.8% of net public electricity generation in H1 2026 — the first time any major industrial economy has exceeded three-fifths renewable electricity for a sustained half-year — with solar reaching an all-time high of 43.2 TWh (up 10% year-on-year) and offshore wind a record 14.6 TWh, while battery storage capacity grew from 25.4 GWh to 29.3 GWh. The milestone is significant not only as an energy transition benchmark but also in the context of this week's heatwave: Germany's record-renewable grid is now stress-tested in real time by multi-day 38–42°C temperatures that drive peak air-conditioning load simultaneously with the flat midday solar output curves that characterise cloudless heat domes.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Fraunhofer ISE</span>
+        <a href="https://www.ise.fraunhofer.de/en/press-media/press-releases/2026/solar-power-on-the-rise-across-europe.html" target="_blank" rel="noopener">Germany sets renewable energy record in H1 2026: 61.8% of net public electricity from renewables — solar at record 43.2 TWh (+10% YoY), offshore wind record 14.6 TWh, onshore wind 52.8 TWh; battery storage capacity reaches 29.3 GWh; net electricity imports fall to 1.3 TWh from 9.6 TWh a year earlier</a>
+        <span class="context">Published early July 2026 (Fraunhofer ISE; reported by SolarQuarter July 8, PV Tech July 2026): The Fraunhofer Institute for Solar Energy Systems' H1 2026 electricity analysis documents Germany's most renewable first half-year on record in three overlapping metrics. Net public electricity generation reached 61.8% renewable — meaning that of all electricity produced and exported from Germany's public power plants in the first six months, nearly two-thirds was from wind, solar, hydro, or biomass. The renewable share of electricity load (consumption plus transmission losses) rose from 55% to 58.5%, a separate and comparably significant metric. Solar PV hit a record 43.2 TWh in H1, driven by an installed base that grew from 118 GW to 124.9 GW as Germany added approximately 7 GW of new solar capacity in the first half. Offshore wind's record 14.6 TWh reflects the expansion of Germany's North Sea fleet — including contributions from newly commissioned turbines — and particularly strong wind years in the first and second quarters. The practical consequence of the renewable record was a dramatic reduction in net electricity imports: from 9.6 TWh in H1 2025 to just 1.3 TWh in H1 2026, improving Germany's energy balance and reducing its exposure to European wholesale electricity price spikes. Large-scale battery storage capacity increased from 25.4 GWh to 29.3 GWh — more large-scale systems were commissioned in H1 2026 than in all of 2025 — providing critical short-term flexibility for the increasingly variable generation mix.</span>
+      </li>
+      <li>
+        <span class="source">Carbon Brief / E&amp;E News</span>
+        <a href="https://www.eenews.net/articles/document-eu-plans-electrification-target-but-no-sign-of-cooling-strategy/" target="_blank" rel="noopener">EU electrification target 2040 confirmed to include mandatory heat pump installation in public buildings and stronger EV public procurement targets — draft document also requires annual heat pump sales to triple to ~29 GW/year; no specific cooling strategy included despite record heatwave deaths; July 17 dual publication with ETS reform confirmed</a>
+        <span class="context">Published July 11, 2026 (E&amp;E News via POLITICO; Carbon Brief daily brief July 11): Additional reporting on the European Commission's draft 2040 electrification plan — first leaked by Bloomberg and Euronews on July 9 — has surfaced specific policy instruments beyond the headline oil-halving and gas-two-thirds-reduction targets. The draft document, reviewed by E&amp;E News and POLITICO, confirms that achieving the 2040 electrification share target would require annual heat pump sales in the EU to nearly triple from current levels to approximately 29 GW per year — twice the sector's previous peak year (29 GW in 2022). To drive this, the Commission plans to mandate heat pump installation in public buildings (a significant extension of the existing Energy Performance of Buildings Directive framework) and strengthen public procurement requirements for electric vehicles across EU institutions and member state fleets. Notably absent from the draft, per E&amp;E News, is any specific cooling strategy despite the record heat-related deaths of the 2026 European summer; the omission is already drawing criticism from public health researchers who note that building cooling is as much an electrification opportunity as heating. The dual July 17 publication date — electrification target + ETS reform simultaneously — is confirmed by the Commission's legislative calendar as the most significant single-day EU climate policy event of 2026.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <p class="summary">
+      The July 9–12 window was lighter than the previous period for closed transactions in the weather, climate-tech, and renewable energy sectors, following the concentrated deal activity of late June through early July. The two most consequential industry-level developments were the acceleration of political positioning around the EU ETS reform — a market-moving event for the entire carbon market industry — and the near-simultaneous disclosure by Microsoft, Google, and Amazon that their greenhouse gas emissions have surged 16–27% in FY2025, driven by AI data centre buildout, with direct implications for power purchase agreement demand and renewable energy offtake markets through 2030.
+    </p>
+
+    <div class="news-item">
+      <h3 class="news-title">EU Carbon Market Political Battle Intensifies Ahead of July 17 Reform — EPP Pushes Softer Targets, Sweden Threatens Veto, Investment Booster Mechanism Confirmed</h3>
+      <p class="news-body">
+        With the European Commission's ETS overhaul package days away from publication, competing factions in the EU Parliament and Council have broken cover on their positions in a way that is creating significant uncertainty for <a href="https://carbon-pulse.com/530595/" target="_blank" rel="noopener">carbon market participants</a>. The European People's Party — the largest Parliament group and one of the Commission President's key coalition partners — is publicly pushing for free allowance extensions beyond 2030 and a slower emissions reduction trajectory, aligned with lobbying from energy-intensive industries facing competitive pressure from the post-OBBBA US market. Three other major Parliament groups (S&amp;D, Greens/EFA, Renew Europe) have written to the Commission backing a "strong and stable" ETS without dilution of current ambition. Sweden has stated it will seek to block any dilution at the Council level, while approximately 10 other member states are reportedly pushing for softer rules. The confirmed parameters of the Commission's proposal — an additional €6 billion in free allowances for industry over 2026–30 and a new 400-million-permit "Investment Booster" mechanism directing reserve allowances toward industrial decarbonization investment rather than monetisation — represent a middle-ground offer that is likely to satisfy neither the EPP nor the environmental bloc fully, setting up a multi-month legislative process after the July 17 publication date.
+      </p>
+      <span class="news-source"><a href="https://carbon-pulse.com/529695/" target="_blank" rel="noopener">Carbon Pulse</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">Microsoft, Google, and Amazon Simultaneously Disclose AI-Driven Emissions Surges — Structural Shift in Data Centre Power Demand Reshapes Renewable Offtake Markets</h3>
+      <p class="news-body">
+        Three of the world's largest technology companies disclosed large increases in their FY2025 greenhouse gas emissions within days of each other in early July, in a collective reckoning that is accelerating the restructuring of corporate renewable energy procurement strategies. <a href="https://fortune.com/2026/07/09/microsoft-carbon-emissions-2025-data-centers/" target="_blank" rel="noopener">Microsoft's FY2025 sustainability report</a> disclosed total emissions of 21.1 MtCO₂e — a 25% increase over FY2024 — with Scope 2 market-based electricity emissions alone rising from 259,090 to 2.7 million MtCO₂e, driven by the company's decision to stop using short-term renewable energy certificates alongside its accelerating data centre buildout. Google reported an 18% increase in FY2025 emissions, Amazon a 16% increase, both attributed to the same AI infrastructure expansion dynamic. All three companies reiterated long-term sustainability commitments while acknowledging that near-term AI investment is pushing their trajectory in the wrong direction. The disclosures have immediately sharpened debate among power market analysts about the scale of new electricity demand from the hyperscale sector: Bloomberg NEF data shows data centre construction projects totalling more than 80 GW of new load globally in the 2025–2027 window, a figure that is materially altering long-duration power purchase agreement pricing and driving hyperscale operators to compete directly with regulated utilities for access to nuclear, geothermal, and long-duration storage offtake agreements in the US, Europe, and Asia-Pacific.
+      </p>
+      <span class="news-source"><a href="https://www.geekwire.com/2026/microsofts-carbon-emissions-climb-25-as-tech-giants-grapple-with-ais-energy-toll/" target="_blank" rel="noopener">GeekWire / Fortune / Carbon Pulse</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-11.html">11 July 2026</a></li>
+      <li><a href="archive/2026-07-10.html">10 July 2026</a></li>
+      <li><a href="archive/2026-07-09.html">9 July 2026</a></li>
+      <li><a href="archive/2026-07-08.html">8 July 2026</a></li>
+      <li><a href="archive/2026-07-07.html">7 July 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
