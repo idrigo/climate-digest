@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">15 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      The headline scientific finding of the past 72 hours comes from Harvard Forest, where results from the world's longest-running soil warming experiment — now in its 37th year — show that microbes can decompose supposedly stable humic soil carbon under warming conditions, a process that could strengthen positive climate feedbacks and push future warming projections higher than current models indicate. No new C3S or CAMS bulletins have been published in this window; the June 2026 baselines from those services (June ranked second-warmest June globally at +1.39°C; 82% of the ocean in marine heatwave conditions) established in the July 14 digest remain operative.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">ScienceDaily / Sci. Total Environ.</span>
+        <a href="https://www.sciencedaily.com/releases/2026/07/260713000809.htm" target="_blank" rel="noopener">37-year Harvard Forest soil warming experiment reveals hidden climate feedback — warming causes microbes to break down stable (humic) soil carbon once thought largely protected; process strengthens warming–carbon-release feedback loop; finding not apparent in short-term experiments, underscoring value of decadal-scale observation; incorporation into climate models expected to raise upper-bound warming projections</a>
+        <span class="context">Published July 13, 2026 (ScienceDaily reporting on research published in Science of The Total Environment; led by Jerry Melillo, Marine Biological Laboratory): The Harvard Forest experiment — begun in 1991 and now the oldest continuous soil-warming study in the world — uses buried heating rods to maintain experimental plots at 5°C above ambient temperature, closely mimicking the projected warming trajectory for temperate forest soils in New England by mid-century. The finding that this warming causes microbial communities to access and decompose forms of soil organic matter previously classified as stable (mineral-associated and humic fractions) overturns an assumption embedded in most earth system models: that labile (easily decomposable) carbon would be depleted within the first few decades of warming, after which soil carbon losses would plateau. Instead, the 37-year record shows no plateau — decomposition of stable fractions has accelerated as the experiment has continued, with the most recent decade showing the largest rate of change. Soils globally store an estimated 1,500–2,400 GtC, roughly twice the amount of carbon in the atmosphere; even a fractional release of the stable fraction under warming represents a forcing comparable to years of human emissions. The researchers note that short-term experiments (1–5 years) would have completely missed this signal, and call for updated parameterisation of soil carbon decomposition in CMIP7 models ahead of the next IPCC assessment cycle.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">European Heatwave 2026 — Fourth Wave: FRANCE NUCLEAR OFFLINE 6.3 GW; FONTAINEBLEAU FOREST BURNS SOUTH OF PARIS; IBERIA 40–45°C ONGOING</span>
+          <span class="event-status">MULTIPLE ACTIVE CRISES — HEAT DOME PERSISTING THROUGH AT LEAST NEXT WEEK: Two significant developments not in yesterday's digest materialised on July 12–14. First, elevated river temperatures caused France to shut down three nuclear reactor units (Golfech Unit 2, Bugey Unit 3, Chooz Unit 2) and curtail output from eight others, removing approximately 6.3 GW — around 14% of total French electricity demand — from the grid during peak cooling season; an emergency exemption was granted to the Bugey plant to discharge warmer water into the Rhône through July 20. Second, a wildfire ignited on July 13 in the Fontainebleau forest (60 km southeast of Paris), burning approximately 2,050 hectares by July 14 — the largest fire ever in Île-de-France — and forcing ~1,000 evacuations; 850 firefighters and Canadair aircraft are deployed, with planes scooping water from the Seine; police have detained six people on suspicion of arson, including an 18-year-old volunteer firefighter who admitted involvement. The fourth heat dome itself remains locked over Spain, Portugal, and France; Barcelona's 112-year temperature record (set July 9 during the third wave) and the UK's broken record for most annual days above 34°C both remain current benchmarks entering the fourth event. Red heat alerts remain in force across six European countries.</span>
+          <span class="context">The 6.3 GW nuclear curtailment — representing three offline units (total rated capacity ~3,650 MW) plus partial output cuts across eight more — creates a dual crisis: France is the EU's largest net electricity exporter under normal conditions, so its reduced output tightens supply across interconnected grids in the UK, Germany, and Switzerland precisely when those countries face elevated cooling demand of their own. The Fontainebleau fire adds a third dimension: the forest is a UNESCO-listed recreational and ecological asset visited by ~12 million people annually, with over 1,900 species of lichen, fungi, and vascular plants recorded there. Its location on the urban fringe of the Paris region — and the speed with which the fire expanded under third/fourth-wave heat and wind conditions — illustrates the geographic reach of the 2026 European fire season, which had previously concentrated on Mediterranean and Iberian landscapes. France's air quality monitoring network (Airparif for Île-de-France) has flagged elevated PM2.5 concentrations in the Paris metropolitan area from the smoke plume.</span>
+        </li>
+        <li>
+          <span class="event-name">Spain — Los Gallardos Wildfire (Almería) — 12 OF 13 DEAD CONFIRMED FOREIGN NATIONALS; MISSING COMPLAINTS RISE TO 10</span>
+          <span class="event-status">RECOVERY/INVESTIGATION PHASE — MEANINGFUL UPDATE: A July 15 Euronews report confirms that 12 of the 13 confirmed dead in the Los Gallardos wildfire were foreign nationals — 7 British, 3 Belgian, 1 French, 1 American — with one Spanish national. The total dead (13) is unchanged. Formal missing-persons complaints filed with Spanish police have risen from 8 to 10, with two new alerts added since the July 14 digest. The fire itself remains stabilised; all evacuees have returned home; mop-up and hotspot suppression continuing.</span>
+          <span class="context">The confirmation of 12 foreign nationals among the dead underscores the concentration of expatriate and tourist populations in the coastal zones of Almería — the "Almanzora valley" corridor (including Los Gallardos) hosts one of Spain's largest concentrations of British and Northern European retirees. The shift from 23 informally "missing" (the figure in circulation from rescue teams tracking vehicles near the fire path) to 10 formal missing-persons complaints represents the transition from emergency field counts to structured judicial investigation; search teams continue accessing terrain that was previously too dangerous to enter, and each confirmed location either resolves or adds to the official missing tally. The increase in formal complaints from 8 to 10 suggests new families have filed reports, not that previously-located people have been re-classified as missing.</span>
+        </li>
+        <li>
+          <span class="event-name">Greece — Wildfires Across Multiple Fronts: EVROS EVACUATIONS, MULTIPLE ACTIVE FIRES; 4TH WAVE MAINTAINS CRITICAL RISK</span>
+          <span class="event-status">ACTIVE / EVOLVING — HIGH DANGER CONDITIONS PERSISTING THROUGH MID-WEEK: Multiple wildfires remain active across Greece, with the most acute situations in the Evros region (northeastern Thrace, near the Turkish border) and areas northeast of Athens. Authorities ordered evacuations in communities near Alexandroupoli — the same region that burned ~81,000 ha in August 2023 — and Greece's 112 emergency alert system remains active for affected areas. Approximately 64 wildfires erupted across Greece in a 24-hour period, with strong winds and high temperatures complicating containment on multiple fronts simultaneously. Toxic smoke warnings have been issued for communities in the Athens region from a separate fire involving a recycling facility. Aerial and ground resources remain engaged on multiple fronts.</span>
+          <span class="context">Greece's multi-front fire situation reflects the transition between the third and fourth European heat waves: while central European temperatures are easing slightly, the eastern Mediterranean remains in a sustained heat and drought pattern that maintains fire danger across Greece and the Aegean islands. The Evros region's significance is both ecological — it hosts the Dadia-Lefkimi-Soufli Forest National Park, one of Europe's last refuges of black and griffon vultures — and geopolitical, given its position on the Greek-Turkish border. The reactivation of fire danger in Evros so soon after the 2023 megafire reflects the shortened vegetation recovery periods now being observed in Mediterranean fire-prone regions under successive heat-drought episodes.</span>
+        </li>
+        <li>
+          <span class="event-name">China — Bavi Remnants: LIAONING/HEBEI FLOODING CONTINUING; TRANSPORT DISRUPTION; RAIN TAPERING INTO WEDNESDAY</span>
+          <span class="event-status">LATE-STAGE EMERGENCY / GRADUAL IMPROVEMENT EXPECTED: As of July 15, Typhoon Bavi's remnant circulation continues to deliver heavy rain across Liaoning and Hebei provinces, though the intensity is expected to taper through Wednesday as the system fully dissipates. Liaoning remains at its highest-level red flash-flood alert with 260,000+ evacuated; 1,800 residents remain stranded in Hebei's Kuancheng county (Chengde prefecture) where floodwaters peaked at approximately 2 metres on road surfaces; rail services in Shenyang and Jilin remain suspended on multiple sections; schools continue to operate on extended closures in major cities. No confirmed all-China death toll attributable specifically to Bavi's inland track had been published by mid-July 15; the Maysak-related toll (39 dead, reported July 7) remains the dominant confirmed casualty figure for the compound disaster.</span>
+          <span class="context">The anticipated cessation of Bavi's rainfall by mid-week does not immediately end the emergency in Liaoning and Hebei: major rivers draining the Changbai Mountains system (including the Luan River, whose flooding inundated Kuancheng) typically take 1–3 days after rain cessation to fall below flood stage, and the saturated soils create ongoing landslide and secondary flooding risk during that window. Chinese authorities' maintenance of flood emergency response postures at provincial level — rather than standing them down as rain intensity decreases — reflects this lag dynamic. The Shenyang rail suspensions are particularly economically significant, as Shenyang is a major trans-Siberian rail connection and a gateway city to China's northeast industrial zone (Liaoning, Jilin, Heilongjiang collectively represent approximately 6% of Chinese GDP).</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado — Aspen Acres Fire — NOW 99,077 ACRES; 36% CONTAINED; HOT DRY WEEK AHEAD TESTS LINES</span>
+          <span class="event-status">PROGRESS CONTINUING BUT SLOW: As of Tuesday morning July 14-15, the Aspen Acres fire has grown slightly to 99,077 acres (from 98,609 reported in the July 14 digest), with containment holding at 36%. Mandatory evacuations remain in effect in Colorado City, Beulah corridor, San Isabel, Wetmore, Red Creek, and Apache City. Forecasters are warning of hot, dry conditions across the region through the week that will test containment lines, particularly the northeast flank where pockets of residual heat in juniper terrain continue to resist suppression; infrared drone monitoring is active on these hot spots. At 99,077 acres, the fire is approaching Colorado's 100,000-acre threshold. The 850+ structure damage/destruction figure stands unchanged pending additional aerial survey completion.</span>
+          <span class="context">The near-static containment figure (36% for multiple consecutive operational periods) reflects the practical limits of perimeter-based wildfire suppression when the fire is still growing at its edges: incident command can secure a large arc of the perimeter while one or two difficult sections prevent the overall percentage from climbing rapidly. The junction between Huerfano and Pueblo counties — where the northeast flank is most active — presents challenging terrain for mechanical line construction, and the outflow winds from afternoon convective development over the Wet Mountains continue to drive occasional runs into unburned fuels. The week's hot, dry forecast adds urgency: the next opportunity for meaningful natural dampening (rainfall or humidity recovery) is not expected before the weekend at the earliest according to the NWS Pueblo forecast office.</span>
+        </li>
+        <li>
+          <span class="event-name">Eastern Pacific — TROPICAL DEPRESSION FIVE-E FORMING; FORECAST TO REACH HURRICANE INTENSITY BY THURSDAY</span>
+          <span class="event-status">DEVELOPING — NO COASTAL WATCHES/WARNINGS CURRENTLY: Tropical Depression Five-E formed in the eastern Pacific approximately 560 miles south-southwest of the southern tip of Baja California as of July 14-15. As of 2100 UTC July 14, the system was located near 14.8°N, 109.2°W, moving west-northwest at approximately 18 mph with maximum sustained winds of 35 mph (55 km/h). The NHC forecast projects steady strengthening over the coming days, with the depression expected to reach tropical storm intensity (becoming Tropical Storm Emilia) followed by further intensification to hurricane strength by Thursday, July 17. No coastal watches or warnings are in effect and the storm is expected to remain well offshore Mexico.</span>
+          <span class="context">The rapid formation and expected intensification of TD Five-E is consistent with the unusually warm eastern Pacific sea surface temperatures that have characterised the 2026 season, which is running well ahead of the historical average at this point in the season. The eastern Pacific hurricane season tends to be most active during a developing El Niño — in contrast to the suppressed Atlantic — and the 2026 Pacific season has already produced multiple named storms. Five-E's forecast track carrying it west-northwest and away from the Mexican coast is the typical trajectory for early-season eastern Pacific systems that form in that latitude band; the primary hazard is swell on southwestern Mexican beaches and surf along the Baja California coast.</span>
+        </li>
+        <li>
+          <span class="event-name">Atlantic Basin — NO ACTIVE TROPICAL CYCLONES; MONITORING CONTINUES</span>
+          <span class="event-status">QUIET: No active tropical cyclones in the North Atlantic, Caribbean, or Gulf of Mexico as of July 15. El Niño-driven wind shear continues to suppress development. NHC monitoring continues; no high-risk areas identified in the current 7-day outlook. NOAA's 2026 Atlantic season outlook (issued May 2026: 8–14 named storms, 3–6 hurricanes, 1–3 major hurricanes) is consistent with current quiet conditions.</span>
+          <span class="context">No change from the July 14 assessment. The quiet Atlantic contrasts sharply with the active western Pacific season and the developing eastern Pacific TD Five-E, illustrating the canonical El Niño asymmetry that suppresses Atlantic development while enhancing activity in both Pacific basins.</span>
+        </li>
+        <li>
+          <span class="event-name">China — Guangxi Flooding (Maysak) — ONGOING RECOVERY; SECONDARY BAVI RAINFALL NOW TAPERING</span>
+          <span class="event-status">RECOVERY PHASE — NO NEW MAJOR DEVELOPMENTS: The Guangxi recovery from Maysak flooding (39 dead, 9 missing, 130,000+ evacuated, Liulan Reservoir dam breach July 7) continues. Secondary rainfall from Bavi's moisture tail that had been delivering additional rainfall to already-saturated Guangxi soils is now expected to taper as Bavi's remnant circulation weakens. Missing-persons search and infrastructure inspection ongoing; 5,700 rescue boats and drones remain deployed. No change to casualty figures.</span>
+          <span class="context">No material change from the July 14 assessment. The tapering of Bavi's moisture tail reduces the compound rainfall risk that authorities had been managing since Bavi's July 11-12 landfall. The primary remaining emergency operation is the recovery of missing persons in the Liulan Reservoir breach zone.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      The two most significant new weather developments on July 13–15 were the Fontainebleau forest fire near Paris — the largest wildfire ever recorded in Île-de-France, burning 2,050+ hectares — and France's decision to take offline or curtail output from eleven nuclear reactor units, removing 6.3 GW (~14% of national demand) as elevated river temperatures prevented legal cooling-water discharge during the fourth heat wave. Both events were wholly absent from yesterday's digest and expand the operational footprint of the European summer crisis into the French capital region for the first time. Elsewhere, the eastern Pacific produced a new tropical depression forecast to reach hurricane strength by Thursday, while China's Bavi flooding in Liaoning and Hebei continues to taper as the storm dissipates.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">France 24</span>
+        <a href="https://www.france24.com/en/france/20260714-more-than-1-900-hectares-fontainebleau-forest-near-paris-destroyed-by-wildfires" target="_blank" rel="noopener">Fontainebleau forest fire near Paris: 2,050+ hectares burned, ~1,000 evacuated, 850 firefighters deployed — largest fire in Île-de-France history; fire "contained" but not extinguished as of July 14; planes scooping water from River Seine; six people detained on suspicion of arson including 18-year-old volunteer firefighter who admitted involvement</a>
+        <span class="context">Published July 14, 2026 (France 24; confirmed by CNN, Al Jazeera, CBS News July 13–14): The Fontainebleau fire, which ignited on the afternoon of July 13, spread rapidly under the combination of extreme heat, low humidity, and gusty winds associated with the fourth European heat wave. The two fires — the main blaze ignited July 13 and a second smaller one July 14 — merged and burned approximately 2,050 hectares of the forest by late July 14, making this the largest fire event ever recorded in the Île-de-France region, which sits on the northern edge of the area affected by the current heat dome. Fontainebleau is classified as a high-conservation-value forest and UNESCO World Heritage site, receives approximately 12 million visitors per year, and is particularly significant for the outdoor recreation culture of the Paris metropolitan area (climbing, hiking, cycling). The 850-firefighter deployment with Canadair aerial assets represents the full mobilisation of regional firefighting capacity and reflects both the severity of the fire and the political sensitivity of a heritage-site blaze within the Paris commuter zone. The arrest of six people — including an 18-year-old volunteer firefighter — marks one of the most high-profile suspected wildfire arson cases in recent French history and has prompted calls for a review of volunteer firefighting recruitment and oversight procedures.</span>
+      </li>
+      <li>
+        <span class="source">Euronews / Egypt Oil &amp; Gas</span>
+        <a href="https://www.euronews.com/business/2026/07/13/france-shuts-down-nuclear-reactors-as-heatwave-intensifies" target="_blank" rel="noopener">France shuts down or curtails 11 nuclear reactors, removing 6.3 GW (~14% of national demand) as heatwave raises river temperatures above legal discharge limits — three units fully offline (Golfech, Bugey, Chooz); emergency exemption granted to Bugey to discharge warmer water into Rhône through July 20; energy security warnings issued across UK, Germany, Switzerland as France's export capacity shrinks during peak European cooling demand</a>
+        <span class="context">Published July 12–13, 2026 (Euronews July 13; Egypt Oil &amp; Gas; TechTimes July 13; Travel and Tour World; nomadlawyer.org): France operates 56 nuclear reactors providing approximately 70% of its electricity under normal conditions and is the EU's largest net electricity exporter. French nuclear plants use river water for cooling and are legally required to return that water below regulatory temperature thresholds to protect river ecosystems (particularly oxygen levels and aquatic life at downstream fish habitats). During a heatwave, river water is already warm; plants cannot discharge additional heated water without exceeding ecological limits. The three fully offline units — Golfech Unit 2 (1,300 MW), Bugey Unit 3 (900 MW), and Chooz Unit 2 (1,450 MW) — represent approximately 3,650 MW of hard capacity loss; the additional partial curtailments across eight more units bring the total reduction to ~6.3 GW. The emergency exemption granted to Bugey (allowing warmer-than-permitted discharge into the Rhône through July 20) follows a precedent from the 2022 European heatwave when similar exemptions were granted to multiple French nuclear plants, and was explicitly justified by grid security grounds — the same justification used in 2022 when France's export balance briefly turned negative. The UK, Germany, and Switzerland grid operators have all flagged reduced import availability from France as a supply-side constraint in their mid-July grid adequacy assessments.</span>
+      </li>
+      <li>
+        <span class="source">Euronews</span>
+        <a href="https://www.euronews.com/my-europe/2026/07/15/spain-confirms-12-foreigners-among-13-victims-of-los-gallardos-wildfire-as-missing-toll-ri" target="_blank" rel="noopener">Spain confirms 12 of 13 Los Gallardos wildfire dead were foreign nationals — 7 British, 3 Belgian, 1 French, 1 American; 1 Spanish; missing-persons complaints rise from 8 to 10 as two new alerts filed; fire remains stabilised, search for missing ongoing in previously inaccessible terrain</a>
+        <span class="context">Published July 15, 2026 (Euronews): This July 15 update provides the most detailed victim profile yet for the Los Gallardos fire, which killed 13 people on July 9 in Almería Province and is now confirmed as the deadliest wildfire in Andalusia's recorded history and the third deadliest in Spanish history. The high proportion of foreign nationals (12 of 13 dead) reflects the demographics of the affected area: the Almanzora valley and coastal Almería have among Spain's highest concentrations of Northern European and British retirees, many of whom settled in the area before Spain's rural fire risk was fully incorporated into property purchase guidance or regional emergency communication systems. The rise in formal missing complaints from 8 to 10 indicates two new families have filed formal reports with Spanish authorities since July 14; the total initially reported as "23 missing" in early post-fire assessments reflected field-based estimates by rescue teams counting unaccounted vehicle occupants near the fire path, and the formal complaint count — now 10 — is the legally operative figure for active search operations.</span>
+      </li>
+      <li>
+        <span class="source">NHC / Washington Times</span>
+        <a href="https://www.washingtontimes.com/news/2026/jul/14/tropical-depression-forms-far-offshore-mexico-forecast-strengthen/" target="_blank" rel="noopener">Eastern Pacific Tropical Depression Five-E forms, forecast to become hurricane by Thursday — system located ~560 miles south-southwest of Baja California tip as of July 14; maximum winds 35 mph, moving WNW at 18 mph; NHC projects strengthening to tropical storm (Emilia) and then hurricane by July 17; no coastal watches or warnings; no threat to land currently</a>
+        <span class="context">Published July 14, 2026 (Washington Times citing NHC; AccuWeather; TechTimes July 12 on prior EP systems; NHC advisory data): The formation of TD Five-E continues an eastern Pacific hurricane season running well ahead of historical averages for this point in the year, consistent with the anomalously warm Pacific SSTs associated with the developing El Niño and the thermodynamic contrast between a suppressed Atlantic and an enhanced Pacific. If the depression strengthens as forecast to hurricane intensity by Thursday, it would become the fifth named storm of the eastern Pacific season and would do so within a very short period of formation — a signature of the warm SST environment providing rapid intensification potential. The storm's westward trajectory keeps it well clear of the Mexican coastline, though swell advisories are expected to be issued for southwestern Mexico and the Baja California Pacific coast as the system intensifies. The eastern Pacific season's early activity is consistent with the NOAA pre-season outlooks that identified El Niño as the primary season-shaping factor for Pacific basin activity in 2026.</span>
+      </li>
+      <li>
+        <span class="source">PBS NewsHour / Greek Civil Protection</span>
+        <a href="https://www.pbs.org/newshour/world/wildfires-rage-in-portugal-greece-and-spain-while-greek-authorities-warn-of-toxic-smoke" target="_blank" rel="noopener">Greece battles 60+ wildfires simultaneously across multiple fronts — evacuations ordered near Alexandroupoli (Evros region, same area burned 81,000 ha in August 2023); Athens-area fires adding toxic smoke to capital air quality concerns; 4th heat wave maintaining dangerous fire conditions through mid-week; Dadia forest area and other high-conservation-value zones in northeastern Greece under threat</a>
+        <span class="context">Published July 2026 (PBS NewsHour via wire agencies; Athens Times; Greek Reporter; Wego Travel Blog): Greece's simultaneous multi-front wildfire situation reflects the country's structural vulnerability to a season characterised by multiple successive extreme heat events without the moisture recovery intervals that would normally allow vegetation to hydrate between episodes. The Evros region's proximity to the 2023 megafire perimeter is significant: vegetation in recently burned areas is re-sprouting with high fuel densities of fast-growing shrubs and grasses — a "fire trap" phenomenon in which the first 5–8 years after a megafire can paradoxically produce the most dangerous fuel conditions for a successor fire. The toxic smoke warning issued for Athens — involving a recycling plant fire, not directly the forest fires — illustrates the compound air quality pressure: CAMS PM2.5 forecasts for Greece and the Aegean have been elevated for much of July as Saharan dust, wildfire smoke, and photochemical smog interact under the stagnant heat dome circulation.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      Two policy dynamics converged on July 15. Today marks the European Commission's internal deadline to assess whether alternative (non-Chinese) inverter suppliers can meet EU solar demand, a finding that will determine whether the April funding ban proceeds as written or triggers a transitional accommodation — with Wood Mackenzie estimating 28+ GW of European solar capacity at risk through 2030 if Chinese sourcing is fully blocked without a viable European alternative confirmed. Separately, France's July 12–14 nuclear curtailment — 6.3 GW removed from the grid — exposed the gap that intermittent heat-stressed generation creates in even the most nuclear-heavy grid in Europe, putting battery storage and demand flexibility front and centre for European energy system operators.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Wood Mackenzie / SolarQuarter</span>
+        <a href="https://solarquarter.com/2026/07/10/eu-ban-on-chinese-inverters-could-disrupt-28-gw-solar-demand-and-12-energy-storage-deployments-wood-mackenzie/" target="_blank" rel="noopener">July 15: EU Commission alternative-supplier assessment deadline — today's finding determines if Chinese inverter ban proceeds; Wood Mackenzie: ban could disrupt 28+ GW of EU solar PV demand 2026–2030 (14% of total) and 12% of energy storage deployments; European inverter manufacturing still insufficient to replace Chinese supply; Central/Eastern Europe most exposed (Romania, Bulgaria, Czechia, Baltic states, Greece)</a>
+        <span class="context">Published July 10, 2026 (Wood Mackenzie press release via SolarQuarter; Renewables Now; ESS News; PV Magazine; EU Commission implementation timeline): The European Commission's inverter ban implementation timeline specifies that by July 15, all Commission services must complete an assessment of whether alternative (European and non-Chinese) inverter suppliers have sufficient production capacity to meet EU solar and storage demand if Chinese suppliers are excluded from EU-funded projects. This assessment is not merely administrative: its finding directly shapes whether the Commission issues updated guidance narrowing the ban, extends the transitional period beyond November 1, 2026, or proceeds with the full implementation that SolarPower Europe and Wood Mackenzie have warned could freeze project pipelines. The 28 GW figure — representing approximately 14% of forecast European solar PV demand through 2030 — is a market disruption equivalent to roughly 1.5–2 years of German solar installation at 2025 pace. Central and Eastern European markets are most exposed because they have the highest proportions of Chinese-sourced inverters in existing and contracted project pipelines, and the lowest domestic inverter manufacturing capacity; a November 1 hard cutoff without guidance clarity could freeze financing decisions across the entire CEE renewable project pipeline. The solar sector's lobbying group SolarPower Europe called the current lack of written guidance "a freezing of financing decisions" in its July 14 statement (covered in the July 14 digest); today's Commission assessment outcome is the critical next event that will determine whether that freeze extends or resolves.</span>
+      </li>
+      <li>
+        <span class="source">Euronews / Egypt Oil &amp; Gas</span>
+        <a href="https://egyptoil-gas.com/news/france-cuts-nuclear-output-by-6-3-gw-as-heatwave-raises-river-temperatures/" target="_blank" rel="noopener">France's 6.3 GW nuclear curtailment during heatwave exposes European grid fragility — 14% of French demand supply removed during peak cooling; emergency river-temperature exemption granted to Bugey plant through July 20; UK, Germany, Switzerland warned of reduced French electricity export capacity; episode highlights need for grid-scale storage and demand flexibility as complement to nuclear baseload during heat extremes</a>
+        <span class="context">Published July 12–14, 2026 (Egypt Oil &amp; Gas; Euronews July 13; TechTimes July 13; nomadlawyer.org; TFTC): The French nuclear curtailment episode is the third major demonstration in four years — after the 2022 and 2024 European heatwaves produced similar reactor output cuts — that nuclear plants relying on river cooling are structurally vulnerable to the specific kind of sustained high temperatures Europe is experiencing in summer 2026. The 2022 episode was arguably more severe (France lost approximately 17 GW of nuclear capacity at peak and briefly became a net electricity importer for the first time in decades); the 2026 event, at 6.3 GW, is smaller but arrives in a summer with less grid slack — Germany's nuclear exit is complete, interconnector capacity is constrained by ongoing heatwave demand across the continent, and the battery storage buildout in France has not yet reached a scale that can meaningfully bridge multi-GW gaps. The episode is being cited by European energy regulators, battery storage developers, and demand-response aggregators as the clearest recent evidence for the "dispatchability premium" argument: the ability to dispatch clean power during extreme heat events, when thermal power generation (including nuclear) is capacity-constrained and solar output is high but grid-frequency volatility is elevated, is the primary market signal now driving European battery storage investment. France's Bugey emergency exemption — allowing discharge above ecological limits to maintain grid security — also creates a political and legal flashpoint: environmental groups have already filed or are expected to file challenges to the exemption on aquatic ecosystem protection grounds.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <p class="summary">
+      The headline deal in the July 12–15 window is Masdar's July 13 announcement of a $6.1 billion financial close for a 5.2 GW solar plus 19 GWh battery storage project in Abu Dhabi — the world's first gigascale 24/7 renewable energy project, designed to deliver continuous clean electricity without fossil fuel backup and representing the single largest solar-plus-storage financing in history.
+    </p>
+
+    <div class="news-item">
+      <h3 class="news-title">Masdar Closes $6.1 Billion Financing for World's First Gigascale 24/7 Renewable Energy Project — 5.2 GW Solar Plus 19 GWh Battery Storage in Abu Dhabi</h3>
+      <p class="news-body">
+        Abu Dhabi's state renewable energy company <a href="https://www.thenationalnews.com/business/energy/2026/07/13/masdar-secures-funding-for-61bn-round-the-clock-clean-energy-project/" target="_blank" rel="noopener">Masdar</a> announced on July 13 the financial close of a $6.1 billion project combining a 5.2 GW solar photovoltaic plant with a 19 GWh battery energy storage system in Abu Dhabi — the largest solar-plus-storage financing ever completed and the world's first demonstration at "gigascale" that round-the-clock clean power delivery is commercially financeable without fossil fuel backup. The project, co-developed with state-owned Emirates Water and Electricity Company (EWEC), was funded through a $5.1 billion debt package from a consortium of 13 banks spanning the UAE, France, the UK, Germany, China, and Japan, with Masdar contributing $1 billion in equity. Once operational in 2027, the plant will deliver 1 GW of continuous clean electricity to the Abu Dhabi grid regardless of time of day or weather — effectively making it dispatchable in the same operational sense as a natural gas peaker plant, but without emissions. The deal is a landmark for bankability: the 13-bank consortium's participation across multiple jurisdictions signals that project finance lenders have crossed a threshold of confidence in large-scale storage's ability to guarantee the kind of firm, predictable output that debt covenants require. For Masdar, the close advances its target of 100 GW of renewable capacity by 2030 from its current 65 GW deployed base.
+      </p>
+      <span class="news-source"><a href="https://solarquarter.com/2026/07/13/masdar-achieves-financial-close-for-us6-1-billion-worlds-first-24-7-gigascale-solar-and-battery-energy-project/" target="_blank" rel="noopener">The National / SolarQuarter / Power Technology</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-14.html">14 July 2026</a></li>
+      <li><a href="archive/2026-07-13.html">13 July 2026</a></li>
+      <li><a href="archive/2026-07-12.html">12 July 2026</a></li>
+      <li><a href="archive/2026-07-11.html">11 July 2026</a></li>
+      <li><a href="archive/2026-07-10.html">10 July 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
