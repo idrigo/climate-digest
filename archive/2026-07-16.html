@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Climate · Weather · Renewables — Daily Digest</title>
+<style>
+  :root {
+    --climate: #6b7280;    /* gray */
+    --weather: #2563eb;    /* blue */
+    --renewables: #16a34a; /* green */
+    --industry: #d97706;   /* amber */
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #ffffff;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 48px 20px 80px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 700px; margin: 0 auto; }
+  header { margin-bottom: 40px; }
+  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
+  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
+  nav.toc { margin: 16px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
+  nav.toc a:hover { text-decoration: underline; }
+
+  section.topic { margin-bottom: 40px; }
+  section.topic h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--border);
+  }
+  section.climate h2 { color: var(--climate); border-color: var(--climate); }
+  section.weather h2 { color: var(--weather); border-color: var(--weather); }
+  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
+  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+
+  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+
+  .major-events {
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-left: 4px solid var(--industry);
+    border-radius: 4px;
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .major-events-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--industry);
+    margin-bottom: 8px;
+  }
+  ul.event-list { list-style: none; margin: 0; padding: 0; }
+  ul.event-list li { padding: 6px 0; font-size: 14px; }
+  ul.event-list li + li { border-top: 1px solid #fed7aa; }
+  ul.event-list .event-name { display: block; font-weight: 600; }
+  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
+  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+
+  ul.links { list-style: none; margin: 0; padding: 0; }
+  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  ul.links li:last-child { border-bottom: none; }
+  ul.links .source {
+    display: inline-block;
+    color: #ffffff;
+    background: var(--muted);
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  section.climate ul.links .source { background: var(--climate); }
+  section.weather ul.links .source { background: var(--weather); }
+  section.renewables ul.links .source { background: var(--renewables); }
+  section.industry ul.links .source { background: var(--industry); }
+  ul.links a {
+    color: var(--text);
+    text-decoration: underline;
+    text-decoration-color: var(--border);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  ul.links a:hover { text-decoration-color: currentColor; }
+  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
+
+  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
+  .news-item:last-child { border-bottom: none; }
+  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
+  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
+  .news-body a {
+    color: var(--industry);
+    text-decoration: underline;
+    text-decoration-color: var(--industry);
+    text-underline-offset: 2px;
+    font-weight: 600;
+  }
+  .news-source {
+    font-size: 12px;
+    color: #ffffff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .news-source a { color: #ffffff; text-decoration: none; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
+  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
+  footer li { margin-bottom: 4px; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="date">16 July 2026</div>
+    <h1>Climate · Weather · Renewables — Daily Digest</h1>
+    <nav class="toc">
+      <a href="#climate">Climate</a>
+      <a href="#weather">Weather</a>
+      <a href="#renewables">Renewables</a>
+      <a href="#industry">Industry News</a>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
+  <section class="topic climate" id="climate">
+    <h2>Climate</h2>
+    <p class="summary">
+      The headline climate-health finding of the July 13–16 window is EuroMOMO data published July 13 by Euronews and multiple outlets: 10,650 excess deaths were recorded across 27 European countries during the single peak week of June 22–28, 2026 — when the first European heatwave reached its maximum intensity — with France and Belgium both logging "very high excess" mortality, the highest category on the EuroMOMO scale. Belgium's excess mortality was the highest recorded during any heatwave since EuroMOMO records began in 2000. The World Weather Attribution group separately confirmed this heatwave would have been "virtually impossible" without human-caused climate change, reinforcing the direct attribution line from global warming to what is now the worst heat-mortality event in European records. No new Copernicus or CAMS scientific bulletins have been published in this 72-hour window; the June 2026 baselines established in the July 14 digest remain operative: June ranked second-warmest June globally (+1.39°C above pre-industrial); 82% of the global ocean in marine heatwave at month's end.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Euronews / EuroMOMO</span>
+        <a href="https://www.euronews.com/my-europe/2026/07/13/europe-records-10000-excess-deaths-during-june-heatwaves-new-data-shows" target="_blank" rel="noopener">Europe records 10,650 excess deaths during June heatwave peak week (June 22–28) — worst single-week heat mortality on record across 27 European countries; over 9,000 of the dead were aged 65+; France and Belgium logged "very high excess" mortality (highest EuroMOMO category); Belgium's toll was the highest during any heatwave in records back to 2000; World Weather Attribution: heatwave "virtually impossible" without climate change</a>
+        <span class="context">Published July 13, 2026 (Euronews citing EuroMOMO pooled mortality data; corroborated by CBC News, CP24, IOL, Business Standard, Newser July 13): EuroMOMO — the European mortality monitoring collaboration backed by the European Centre for Disease Prevention and Control (ECDC) and the World Health Organisation (WHO) — pools all-cause excess mortality data from national statistical agencies across 27 European countries and publishes updated figures weekly. The week of June 22–28 represents the peak of the first of what became four successive European heat events in summer 2026. The total of 10,650 excess deaths in a single week from all causes — with scientists confirming no other major confounding factor (such as COVID-19) that week — is the largest single-week heat-attributable excess mortality figure in the EuroMOMO record and exceeds the weekly peak of the 2003 European heatwave (which killed approximately 70,000 people over the full summer but whose peak-week mortality, while enormous, was not systematically documented at this level of cross-national precision). The "very high" designation — the highest of four EuroMOMO excess mortality categories — is rarely applied; only France and Belgium reached this threshold during the June event. France's excess mortality reflects the overlap of extreme temperatures with a heat-vulnerable elderly population in urban areas poorly adapted to air conditioning; Belgium's being the highest on record underscores how quickly European countries that had previously escaped the worst heatwaves are now facing mortality consequences comparable to the Mediterranean nations. WWA's rapid attribution finding — published days after the event — confirms this week would have been "virtually impossible" without anthropogenic warming, adding to an unbroken string of attribution results for every major European heatwave since 2021 that have reached the same conclusion. The second, third, and fourth waves of the 2026 European summer (July events, still ongoing) have not yet had their mortality data quantified at this level of cross-national resolution, but the fourth wave — with red alerts across six countries and temperatures approaching 45°C in France — is expected to produce a comparable or larger signal when data are compiled.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
+  <section class="topic weather" id="weather">
+    <h2>Weather</h2>
+
+    <div class="major-events">
+      <div class="major-events-label">Major Events</div>
+      <ul class="event-list">
+        <li>
+          <span class="event-name">European Heatwave 2026 — Fourth Wave: HEAT DOME LOCKING IN FOR ANOTHER WEEK; 37 FRENCH DEPARTMENTS ON RED ALERT; 10,650 JUNE PEAK-WEEK DEATHS NOW CONFIRMED</span>
+          <span class="event-status">ACTIVE / NO RELIEF IN SIGHT BEFORE WEEKEND AT EARLIEST: The fourth consecutive extreme heat event over Europe continues with no meaningful break expected before the weekend at the earliest. As of July 16, 37 French departments remain under the highest red alert level; Iberian temperatures are sustaining 40–45°C; forecasters from severe-weather.eu and Copernicus confirm the heat ridge over Western and Southwestern Europe is forecast to hold for at least another week. The primary new development since the July 15 digest is the EuroMOMO publication confirming 10,650 excess deaths across 27 European countries during the single peak week of the first wave (June 22–28), establishing this as the worst single-week heat mortality event in modern European epidemiological records. France and Belgium logged "very high" excess mortality — the highest EuroMOMO category. Nuclear curtailment: France's 6.3 GW offline or at reduced output (Golfech Unit 2, Bugey Unit 3, Chooz Unit 2; emergency exemption for Bugey through July 20) remains current. Fontainebleau forest fire: declared "contained" after 48-hour battle July 13–14; firefighters expected to remain on scene for days to weeks; four suspects in custody.</span>
+          <span class="context">The succession of four European heat waves in five weeks — all driven by the same anomalously north-displaced and weakened Atlantic jet stream — constitutes a historically unprecedented sustained extreme heat episode for the European continent. The confirmed 10,650-death peak-week toll for the first wave alone means the cumulative mortality from all four events together is likely to rank among the worst heat disaster sequences in European history even before final counts are compiled for July. The continued nuclear curtailment through at least July 20 (when Bugey's emergency water-discharge exemption expires) means France remains about 14% below normal grid capacity during the highest-demand period of the year; neighbouring grid operators in the UK, Germany, and Switzerland continue to manage reduced French export availability. Wildfire risk remains critically elevated across Spain, Portugal, southern France, and Greece through the remainder of the week.</span>
+        </li>
+        <li>
+          <span class="event-name">Eastern Pacific — TROPICAL STORM ELIDA (ex-TD FIVE-E) — NAMED JULY 15; HURRICANE INTENSITY EXPECTED TONIGHT; POSSIBLE CATEGORY 2 BY FRIDAY</span>
+          <span class="event-status">INTENSIFYING — NO COASTAL WATCHES OR WARNINGS CURRENTLY: Tropical Depression Five-E — named in the July 15 digest with the tentative name "Emilia" — was officially designated Tropical Storm Elida at 0900 UTC July 15, becoming the fifth named storm of the 2026 eastern Pacific hurricane season. As of July 16, Elida is centered approximately 565 miles south-southwest of the southern tip of Baja California, moving due west at about 15 mph with maximum sustained winds of 50 mph (45 knots). The NHC forecast projects steady intensification, with Elida expected to reach hurricane intensity (65 knots) by the night of July 16, and a peak intensity around 100 mph (Category 2 equivalent) by Friday July 17. No coastal watches or warnings are in effect and the storm track takes it well offshore Mexico. After 60 hours, the storm will cross the 26°C SST isotherm and weakening is expected.</span>
+          <span class="context">Elida's rapid intensification from tropical depression to forecast Category 2 hurricane within approximately 72 hours is consistent with the anomalously warm eastern Pacific SSTs driving the 2026 season's historically fast pace. The storm's westward track into the open Pacific is the typical trajectory for early- and mid-season eastern Pacific systems forming at these latitudes (around 14–15°N); the primary hazards are swell on Mexican Pacific resort beaches and high surf along the Baja California Pacific coast, both of which typically prompt surf advisories from Mexico's national meteorological service (SMN). The 2026 eastern Pacific season has now produced five named storms in roughly six weeks of the active June 1 – November 30 season, a pace well above the historical average and consistent with the developing El Niño providing enhanced thermodynamic support for rapid intensification events.</span>
+        </li>
+        <li>
+          <span class="event-name">Spain — Los Gallardos Wildfire (Almería) — 12 OF 13 DEAD CONFIRMED FOREIGN NATIONALS; 10 FORMAL MISSING COMPLAINTS; TERRAIN ACCESS ONGOING</span>
+          <span class="event-status">RECOVERY/INVESTIGATION PHASE — NO NEW CASUALTY UPDATES: No change from July 15 digest. Twelve of 13 confirmed dead were foreign nationals (7 British, 3 Belgian, 1 French, 1 American; 1 Spanish). Formal missing-persons complaints stand at 10 (up from 8 in earlier reporting). Fire remains stabilised; all evacuees home; mop-up continuing. Search and terrain-access operations ongoing in previously inaccessible areas.</span>
+          <span class="context">No material new developments since the July 15 digest. The judicial investigation into the fire's cause continues. The fourth-wave heat dome maintains elevated wildfire readiness across Andalusia, though no new fire emergencies have been reported in the Los Gallardos area.</span>
+        </li>
+        <li>
+          <span class="event-name">Greece — Multi-Front Wildfires: 60+ FIRES ACTIVE ACROSS COUNTRY; FOURTH WAVE MAINTAINING CRITICAL RISK THROUGH MID-WEEK</span>
+          <span class="event-status">ACTIVE / HIGH DANGER ONGOING: Approximately 64 wildfires remain active or recently suppressed across Greece, with the most acute situations in the Evros region (northeastern Thrace) and areas northeast of Athens. Evacuations ordered near Alexandroupoli — the same region that burned ~81,000 ha in August 2023. Toxic smoke warnings remain active for parts of Athens from fires involving industrial facilities. Fourth-wave heat and drought maintaining dangerously low fuel moisture across mainland Greece and the Aegean islands through at least mid-week.</span>
+          <span class="context">No confirmed new July 16-specific containment update was available at time of digest compilation. Greece's Civil Protection emergency system (112) remains active across multiple regions. The CAMS European wildfire emissions monitoring has flagged southern Europe — including Greece and the Balkans — as experiencing one of the most intense wildfire seasons on record, with smoke plumes visible in satellite imagery across the eastern Mediterranean.</span>
+        </li>
+        <li>
+          <span class="event-name">France — Fontainebleau Forest Fire (Île-de-France) — FULLY CONTAINED AFTER 48-HOUR BATTLE; FIREFIGHTERS REMAIN ON SCENE</span>
+          <span class="event-status">CONTAINED BUT NOT EXTINGUISHED — POST-INCIDENT PHASE: Both fires in the Fontainebleau forest (2,050+ hectares, largest fire ever recorded in Île-de-France) were declared "contained within their perimeter" by Prefect Pierre Ory after a 48-hour firefighting effort culminating on the evening of July 14. Containment means fires are confined to existing perimeters; complete extinguishment is expected to take days to weeks given residual heat retention in the UNESCO-listed forest's understory. Four suspects remain in police custody, including a volunteer firefighter who confessed to igniting the fire with a lighter and petrol, and a second suspect who admitted accidentally starting a blaze by discarding a cigarette. ~1,000 evacuees have returned home. Ground crews with Canadair aerial support remain on scene.</span>
+          <span class="context">The "contained" declaration is a meaningful operational step down from the active firefighting emergency reported in the July 15 digest. The distinction between "contained" and "extinguished" is significant for forests: containment lines prevent lateral spread, but residual combustion in root systems, deep duff, and fallen logs can persist for weeks and may re-ignite under dry, windy conditions — a risk that remains elevated as long as the fourth heat wave holds. The arson investigation — involving a volunteer firefighter confession — has prompted calls in French media for a review of background check procedures in volunteer fire brigades and for enhanced perimeter security around heritage forest areas during extreme fire-weather periods.</span>
+        </li>
+        <li>
+          <span class="event-name">Colorado — Aspen Acres Fire — 99,077 ACRES; 36% CONTAINED; NEW INCIDENT COMMAND; RYES REMAINS UNDER THREAT</span>
+          <span class="event-status">COMMAND TRANSITION / SLOW PROGRESS: The Northern Rockies Complex Incident Management Team 6 (Incident Commander Rich Cowger) assumed command of the Aspen Acres Fire at 0600 local time July 15, 2026. As of July 16 morning, the fire remains at 99,077 acres and 36% containment — unchanged for two consecutive operational periods. The fire continues to pose a serious active threat to the town of Rye, where mandatory evacuation orders remain in effect; active suppression continues with 1,767 personnel assigned. Continued hot, dry weather through the week is expected to stress containment lines. Burn-scar flash flood risk with afternoon convective development remains a secondary hazard.</span>
+          <span class="context">Command transitions at large fires are routine when a new team brings specialised capabilities or when an initial-attack team has reached operational limits. The Northern Rockies Complex IMT 6 arriving at Aspen Acres with 1,767 personnel is consistent with the fire being managed as a Type 1 incident — the most complex classification in the US wildfire management system, reserved for fires that threaten communities and require large, multi-agency resource deployments. The absence of containment progress in the most recent two operational periods reflects the combination of difficult terrain on the northeast flank (juniper and scrub oak in rocky terrain near Saint Charles Peak), afternoon wind events driven by convective development, and the cumulative drying of fuels across a summer drought cycle in southern Colorado.</span>
+        </li>
+        <li>
+          <span class="event-name">China — Bavi Remnants (Liaoning/Hebei) — RAINFALL TAPERING; RECOVERY PHASE ADVANCING; FLOOD WATERS RECEDING</span>
+          <span class="event-status">LATE-STAGE EMERGENCY / GRADUAL IMPROVEMENT: Bavi's residual moisture circulation has weakened substantially as of July 16, with rainfall in Liaoning and Hebei tapering as forecast. River levels remain elevated but trending downward; the 1,800 residents previously stranded in Kuancheng (Hebei/Chengde) are being accessed as floodwaters recede. The 260,000 evacuees in Liaoning are being managed through provincial shelter operations. Shenyang and Jilin rail suspensions remain in effect on some sections pending inspection. No comprehensive all-China death toll for Bavi's inland track had been officially published by July 16 morning; the Maysak-related toll (39 dead, 9 missing) remains the dominant confirmed casualty figure from the compound July disaster sequence.</span>
+          <span class="context">The tapering of Bavi's rain does not immediately resolve the flood emergency in north China: major rivers draining the Changbai Mountains system (including the Luan River that inundated Kuancheng) typically take 1–3 days after rain cessation to fall below flood stage. Chinese provincial authorities are maintaining their flood emergency postures specifically because of this lag — as happened in Guangxi following Maysak in early July. The Shenyang rail suspensions are economically significant: Shenyang is a hub on the China-Russia rail corridor and a key gateway to China's northeastern industrial zone.</span>
+        </li>
+        <li>
+          <span class="event-name">China — Guangxi Flooding (Maysak) — ONGOING RECOVERY; BAVI MOISTURE TAIL NOW DISSIPATING</span>
+          <span class="event-status">RECOVERY PHASE — IMPROVING CONDITIONS: Guangxi's recovery from Maysak flooding (39 dead, 9 missing, 130,000+ evacuated, Liulan Reservoir dam breach July 7) continues, with Bavi's secondary moisture contribution now dissipating. No change to casualty figures. Missing-persons search and infrastructure inspection ongoing; 5,700 rescue boats remain deployed in isolated communities. Conditions improving.</span>
+          <span class="context">No material change from the July 15 assessment. The compound rainfall risk that authorities managed since Bavi's July 11–12 landfall is now resolved, allowing recovery operations to focus on the Liulan Reservoir breach zone and damaged infrastructure.</span>
+        </li>
+        <li>
+          <span class="event-name">Atlantic Basin — NO ACTIVE TROPICAL CYCLONES; EL NIÑO SHEAR PATTERN MAINTAINED</span>
+          <span class="event-status">QUIET: No active tropical cyclones in the North Atlantic, Caribbean, or Gulf of Mexico as of July 16. El Niño-driven wind shear continues to suppress development. NHC monitoring continues with no high-risk areas identified in the current 7-day outlook.</span>
+          <span class="context">Unchanged from July 15 assessment. The canonical El Niño asymmetry — enhanced eastern Pacific activity vs. suppressed Atlantic — is fully in effect, as illustrated by Elida's rapid intensification in the eastern Pacific alongside the quiet Atlantic basin.</span>
+        </li>
+      </ul>
+    </div>
+
+    <p class="summary">
+      The two principal new developments since the July 15 digest are: Tropical Depression Five-E's official naming as Tropical Storm Elida on July 15 (not "Emilia" as tentatively forecast), now expected to reach hurricane intensity tonight with possible Category 2 intensity by Friday — no land threat; and the EuroMOMO data release confirming 10,650 excess deaths across 27 European countries during the single peak week (June 22–28) of the first 2026 heatwave, making it the worst single-week heat mortality event in modern European records. The fourth European heat wave continues with no relief before the weekend, 37 French departments on red alert, and France's nuclear curtailment (6.3 GW) continuing through at least July 20. The Fontainebleau fire is now "contained" (not yet extinguished) after a 48-hour battle. Colorado's Aspen Acres fire sees a new incident command team but no containment progress.
+    </p>
+
+    <ul class="links">
+      <li>
+        <span class="source">Fox Weather / NHC</span>
+        <a href="https://www.foxweather.com/weather-news/tropical-storm-elida-el-nino-active-eastern-pacific-hurricane-season" target="_blank" rel="noopener">Tropical Storm Elida forms from TD Five-E on July 15; expected to reach hurricane intensity tonight, Category 2 by Friday — NHC advisory: 50 mph winds moving due west; El Niño driving historically active eastern Pacific season; no coastal threat to Mexico; swell advisories expected for southwestern Mexican beaches and Baja Pacific coast</a>
+        <span class="context">Published July 15, 2026 (Fox Weather citing NHC advisories; The Watchers July 15; TechTimes July 15; Newsweek; AccuWeather; AOL/Yahoo July 15): The storm was designated Tropical Storm Elida — the fifth named storm of the 2026 eastern Pacific season — at approximately 0900 UTC July 15. The July 15 digest referred to this system as TD Five-E and tentatively named it "Emilia" based on an early NHC alphabetical-sequence forecast; the official name Elida reflects the actual NHC naming convention (the 2026 eastern Pacific season name list follows E with Elida, not Emilia). The forecast for Elida to reach Category 2 intensity (~100 mph) by Friday July 17 would make it a significant early-season eastern Pacific hurricane; the storm is expected to peak before crossing the 26°C SST isotherm west of the list dates, after which weakening will set in rapidly. The forecast swell heights from a near-Category 2 storm passing 500+ miles off the Mexican coast typically reach 10–14 feet at Pacific resort beaches, with high surf advisories routinely issued by Mexico's SMN for these conditions. Eastern Pacific sea surface temperatures at the time of Elida's formation were approximately 1.5–2°C above the historical climatological average — a direct El Niño imprint that reduces the threshold for rapid intensification events such as this.</span>
+      </li>
+      <li>
+        <span class="source">Euronews / EuroMOMO</span>
+        <a href="https://www.euronews.com/my-europe/2026/07/13/europe-records-10000-excess-deaths-during-june-heatwaves-new-data-shows" target="_blank" rel="noopener">EuroMOMO confirms 10,650 excess deaths in single peak week of June heatwave across 27 EU countries — over 9,000 aged 65+; France and Belgium at "very high excess" mortality (highest EuroMOMO category); Belgium's worst heatwave death toll since records began in 2000; World Weather Attribution: event "virtually impossible" without climate change; second, third, and fourth July waves not yet quantified at this level</a>
+        <span class="context">Published July 13, 2026 (Euronews citing EuroMOMO/ECDC/WHO pooled data; corroborated by CBC News, CP24, Business Standard, Newser July 13): The EuroMOMO dataset — the gold standard for European all-cause excess mortality monitoring — aggregates death registrations from national agencies across 27 countries within roughly two weeks of the death occurring, then applies a statistical model to separate excess from expected mortality. The result for the week of June 22–28 (10,650 excess deaths) is the first comprehensive, quantified mortality signal for the 2026 European summer heatwave sequence and establishes a mortality benchmark against which the July waves will be measured. Scientists confirm that the background mortality from other causes (influenza, COVID, etc.) was unremarkable that week, so effectively the entire 10,650 excess figure is attributable to the heat event. The WWA rapid attribution result — "virtually impossible" without human-caused climate change — means this week's deaths are, in a probabilistic sense, directly caused by the 1.1–1.4°C of global warming attributable to fossil fuel emissions. France (where the June 22–28 peak overlapped with record-breaking temperatures on June 24) and Belgium (where the same event generated higher excess mortality than any previous heatwave on the national EuroMOMO record) were the two most severely affected countries in the June event. The July heatwave sequence — which is both more persistent and affects a population already heat-stressed from the June events — is likely to produce comparable or larger mortality signals when data are compiled at the same resolution in the coming weeks.</span>
+      </li>
+      <li>
+        <span class="source">Colorado Sun / InciWeb</span>
+        <a href="https://coloradosun.com/2026/07/15/colorado-wildfires-aspen-acres-fire-acres-greenridge-fishhook-wednesday-update/" target="_blank" rel="noopener">Aspen Acres fire: new incident command assumes control July 15; still 99,077 acres and 36% contained; Rye remains under active threat with mandatory evacuations; 1,767 personnel assigned; hot dry week ahead will stress lines; 850+ structures damaged/destroyed; seventh largest wildfire in Colorado history</a>
+        <span class="context">Published July 15, 2026 (Colorado Sun; IQAir wildfire spotlight July 15; InciWeb incident page): The transition to Northern Rockies Complex IMT 6 under Incident Commander Rich Cowger — effective 0600 local July 15 — typically signals either a long-duration management phase (the fire is expected to burn for weeks under prevailing drought conditions) or a specific tactical need the incoming team is better suited to address. The continued threat to Rye — a town of roughly 400 permanent residents in Pueblo County — is the primary community protection priority, with suppression resources concentrated on maintaining firebreaks between the northeast fire flank and the town's perimeter. The week's forecast of hot, dry conditions and low relative humidity (10–15% during afternoon hours) will maintain Red Flag Warning conditions across Pueblo, Huerfano, and Custer counties through at least Thursday, significantly constraining the window of safe suppression work to early morning hours before afternoon outflow winds develop. The 850+ structure figure (a mix of primary residences, outbuildings, and barns) places Aspen Acres among the most structurally destructive wildfires in Colorado history, alongside the 2021 Marshall Fire (1,084 structures) and the 2020 East Troublesome and Cameron Peak fires.</span>
+      </li>
+      <li>
+        <span class="source">Sortiraparis / France 24</span>
+        <a href="https://www.sortiraparis.com/en/news/in-paris/articles/349144-fontainebleau-fire-fires-under-control-six-people-in-custody" target="_blank" rel="noopener">Fontainebleau forest fires "contained" after 48-hour battle — both fires confined to existing 2,050-ha perimeter as of July 14 evening; six suspects in custody including volunteer firefighter who confessed to using lighter and petrol; second suspect admitted discarding a cigarette; Prefect Ory: "contained means confined within their perimeter"; complete extinguishment expected to take days to weeks; firefighters to remain on scene</a>
+        <span class="context">Published July 14, 2026 (Sortiraparis.com; France 24 live news July 14; Euronews July 14; Climbing.com July 14): The "contained" declaration marks the transition from active suppression to perimeter reinforcement and hotspot mopping-up. The Fontainebleau forest — a UNESCO World Heritage site visited by ~12 million people annually, with over 1,900 documented species of lichen, fungi, and vascular plants — faces a complex recovery: the 2,050 ha burned (about 13% of the total forest area) includes ecologically irreplaceable old-growth stands and the world's most famous bouldering area (the Bleau sandstone circuit). The six people detained — including a volunteer firefighter and a cigarette-discarding second suspect — underscore the human ignition vector in this event; the investigation now under French anti-terrorism and organised crime jurisdiction (JUNALCO) will establish whether the fires were intentionally coordinated or coincidental. Post-fire ecological surveys and public access restrictions to the burned zone are expected to begin as soon as ground conditions permit.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
+  <section class="topic renewables" id="renewables">
+    <h2>Renewables</h2>
+    <p class="summary">
+      Solar hit a landmark in European electricity markets: Ember data published July 14 confirm that solar provided exactly 25% of EU monthly electricity generation in June 2026 — the first time solar has ever supplied a full quarter of EU power in a single calendar month, making it the EU's largest single electricity source for the month, ahead of nuclear (21%), gas (15%), and wind (14%). The milestone was simultaneously a function of rapid capacity buildout and record June sunshine hours driven by the heat dome. In California, Avantus closed a $525 million construction financing package on July 13 for the Aratina 2 solar-plus-storage project in Kern County, adding 150 MW of solar and 452 MWh of battery storage under a 15-year PPA with Southern California Edison.
+    </p>
+    <ul class="links">
+      <li>
+        <span class="source">Ember / Euronews</span>
+        <a href="https://www.euronews.com/2026/07/14/solar-generated-record-25-of-eu-power-in-june-with-germany-spain-and-poland-leading-the-ra" target="_blank" rel="noopener">Solar provides 25% of EU electricity in June 2026 for the first time — record 52 TWh generated; solar ranked #1 source ahead of nuclear (21%), gas (15%), wind (14%), hydro (12%), coal (8%); only third month solar has been EU's top power source; Germany 36%, Spain 34%, 18 EU countries hit new monthly solar records; driven by both heatwave sunshine hours and five-year buildout (65 GW installed in 2025 alone)</a>
+        <span class="context">Published July 14, 2026 (Euronews; Ember press release July 14; CleanTechnica July 14; PV Tech; Electrek July 15; GreentechLead; Envirotec): Ember's monthly EU electricity generation tracker confirmed that solar generated 52 TWh of EU electricity in June 2026, representing exactly 25% of total EU net public electricity generation — both absolute and percentage-share records for a calendar month. The previous monthly record was solar's 47 TWh (23%) output in May 2026. The June milestone is historically significant: reaching 25% was a symbolic threshold often cited as the point at which solar transitions from a "niche" to a "dominant" generation source in policy and market analyses. For the June 2026 result, two distinct factors reinforced each other: the structural factor (a cumulative buildout of approximately 65 GW of new EU solar capacity in 2025 alone, extending a trend that has seen EU solar grow by more than a fifth per year every year since 2021) and the situational factor (the June 2026 European heatwave brought anomalously high solar irradiance and record sunshine hours across central and southern Europe, boosting output from existing capacity above typical June levels). Spain's 34% share (first time Spain's monthly solar fraction exceeded one-third) and Germany's 36% share in June (building on the 33% May record) led the EU member state ranking; Poland's recent offshore and utility-scale buildout put it among the fastest-improving markets. Nuclear's second-place 21% share in June — typically the largest single EU electricity source in non-peak-solar months — was suppressed partly by the same heatwave that boosted solar, through the river-cooling constraints that took French reactors offline or at reduced output. The combination of rapidly falling solar LCOE, a pro-deployment regulatory environment in most EU member states, and the heatwave-driven impetus from France's nuclear curtailment crisis is expected to sustain EU solar's growth trajectory well into the 2030s.</span>
+      </li>
+      <li>
+        <span class="source">PV Tech / Power Magazine</span>
+        <a href="https://www.pv-tech.org/avantus-secures-financing-184mw-solar-plus-storage-california/" target="_blank" rel="noopener">Avantus closes $525M construction financing for Aratina 2 solar+storage in Kern County, California — 150 MW solar + 452 MWh battery storage; funded by BBVA, CIBC, and Santander; 15-year PPA with Southern California Edison; commercial operation expected year-end 2026; part of 350 MW / 952 MWh Aratina Solar Center; Fluence providing domestic-content BESS system</a>
+        <span class="context">Published July 13, 2026 (PV Tech; Power Magazine; NA Clean Energy; Renewable Watch; Energy Monitor July 13): Avantus's $525 million construction financing close for the Aratina 2 project in eastern Kern County represents one of the larger individual solar-plus-storage project finance transactions in the US in 2026 — particularly notable because it closed after the July 4, 2026 OBBBA construction-start deadline that ended the federal Investment Tax Credit for new solar starts. The Aratina 2 financing was structured to qualify under the pre-existing ITC regime (the project was either already under construction before July 4 or falls within the placed-in-service-before-2028 eligibility window); the $525 million package from BBVA, CIBC, and Santander — a combination of construction debt, tax equity bridge financing, and letters of credit — reflects lender confidence in the project's contracted revenue stream (the 15-year PPA with Southern California Edison) despite the post-OBBBA policy uncertainty. Fluence providing the BESS (battery energy storage system) using domestic-content equipment is significant: the domestic content requirement is one of the qualifying conditions for maintaining ITC eligibility under the OBBBA's transitional rules. When combined with the adjacent Aratina 1 project, the full Aratina Solar Center will deliver 350 MW of solar capacity and 952 MWh of battery storage — enough to power approximately 175,000 California homes — and represents a meaningful contribution to the California ISO's storage buildout mandate. The project's completion by year-end 2026 positions it as one of the largest solar-plus-storage facilities to come online in the US during what is expected to be a record year for US storage installations despite the subsidy changes.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
+  <section class="topic industry" id="industry">
+    <h2>Industry News</h2>
+
+    <p class="summary">
+      Two deals define the July 14–16 industry window. Google and Cypress Creek Energy broke ground on July 14 on the Steel River Energy Center in Wilson, Arkansas — a 2.5 GW solar plus 2.9 GWh battery project billed as the largest solar development in US history when complete, with Google signed as the anchor power purchase agreement offtaker. Separately, The Weather Company expanded its data footprint on July 15 through a new partnership with real estate platform Redfin, embedding ZIP code-level weather and climate analytics into every home listing on Redfin.com and its mobile apps.
+    </p>
+
+    <div class="news-item">
+      <h3 class="news-title">Google and Cypress Creek Energy Break Ground on America's Largest Solar Project — 2.5 GW / 2.9 GWh Steel River Energy Center in Arkansas</h3>
+      <p class="news-body">
+        Renewables developer <a href="https://cypresscreekenergy.com/news/steel-river-groundbreaking/" target="_blank" rel="noopener">Cypress Creek Energy</a> and Google broke ground on July 14, 2026 on the first two phases of the Steel River Energy Center in Wilson, Arkansas — described as the nation's largest solar energy project to date. The initial phases will deliver 1.6 GW-DC of solar photovoltaic capacity paired with 1.9 GWh of battery storage; the project's three-phase buildout will reach a total of 2.5 GW-DC of solar and 2.9 GWh of battery storage when fully complete by 2029, sufficient to supply more than 315,000 Arkansas homes annually. Google has signed a power purchase agreement covering the first two phases, acting as the anchor corporate offtaker and signalling its continued strategy of securing large-scale, regionally sited clean power to meet the electricity demand of its AI data centre expansion. For Cypress Creek — a North Carolina-based developer with one of the largest US distributed solar portfolios — Steel River represents its entry into the utility-scale gigawatt class and its largest single project to date.
+      </p>
+      <span class="news-source"><a href="https://www.power-technology.com/news/google-construction-steel-river-energy/" target="_blank" rel="noopener">Cypress Creek / Power Technology / Yahoo Finance Energy</a></span>
+    </div>
+
+    <div class="news-item">
+      <h3 class="news-title">The Weather Company Partners With Redfin to Embed Climate and Weather Data Into Every US Home Listing</h3>
+      <p class="news-body">
+        <a href="https://www.weathercompany.com/news/redfin-partners-with-the-weather-company/" target="_blank" rel="noopener">The Weather Company</a> — operator of The Weather Channel app and weather.com — announced on July 15, 2026 that it has signed an exclusive partnership with real estate platform Redfin to make ZIP code-level historical weather metrics available on every for-sale home listing on Redfin.com and the Redfin iOS and Android apps. Buyers browsing listings can now view average annual temperature, precipitation, snowfall, humidity, and UV index for each property's ZIP code, with the integration designed to address what a concurrent Redfin survey (Ipsos, May 2026; 4,000 US respondents) identified as the top two drivers of out-of-state relocation decisions: better weather (22% of movers) and lower climate/disaster risk (21%). The partnership expands The Weather Company's commercial data footprint beyond media and enterprise applications into the US residential real estate market, where climate risk analytics has been a rapidly growing product category — driven by Fannie Mae, Freddie Mac, and FHFA climate risk disclosure expectations and by the increasing salience of wildfire, flood, and hurricane risk to home buyers in exposed markets.
+      </p>
+      <span class="news-source"><a href="https://www.businesswire.com/news/home/20260715976542/en/Redfin-Partners-With-The-Weather-Company-to-Bring-Weather-Data-to-Every-Home-Listing" target="_blank" rel="noopener">BusinessWire / The Weather Company / Redfin</a></span>
+    </div>
+
+  </section>
+
+  <footer>
+    <h3>Archive</h3>
+    <ul>
+      <li><a href="archive/2026-07-15.html">15 July 2026</a></li>
+      <li><a href="archive/2026-07-14.html">14 July 2026</a></li>
+      <li><a href="archive/2026-07-13.html">13 July 2026</a></li>
+      <li><a href="archive/2026-07-12.html">12 July 2026</a></li>
+      <li><a href="archive/2026-07-11.html">11 July 2026</a></li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
