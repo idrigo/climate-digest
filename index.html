@@ -3,309 +3,839 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climate · Weather · Renewables — Daily Digest</title>
+<title>Climate Digest — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --climate: #6b7280;    /* gray */
-    --weather: #2563eb;    /* blue */
-    --renewables: #16a34a; /* green */
-    --industry: #d97706;   /* amber */
-    --text: #1f2937;
-    --muted: #6b7280;
-    --bg: #ffffff;
-    --border: #e5e7eb;
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
   }
-  * { box-sizing: border-box; }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
   body {
-    margin: 0;
-    padding: 48px 20px 80px;
     background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.55;
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 700px; margin: 0 auto; }
-  header { margin-bottom: 40px; }
-  header .date { font-size: 14px; color: var(--muted); margin-bottom: 4px; }
-  header h1 { font-size: 22px; margin: 0; font-weight: 600; }
-  nav.toc { margin: 16px 0 0; font-size: 14px; }
-  nav.toc a { color: var(--muted); text-decoration: none; margin-right: 16px; }
-  nav.toc a:hover { text-decoration: underline; }
 
-  section.topic { margin-bottom: 40px; }
-  section.topic h2 {
-    font-size: 16px;
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin: 0 0 12px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid var(--border);
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
   }
-  section.climate h2 { color: var(--climate); border-color: var(--climate); }
-  section.weather h2 { color: var(--weather); border-color: var(--weather); }
-  section.renewables h2 { color: var(--renewables); border-color: var(--renewables); }
-  section.industry h2 { color: var(--industry); border-color: var(--industry); }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
 
-  .summary { font-size: 15px; color: var(--text); margin-bottom: 14px; }
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
 
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
   .major-events {
-    background: #fff7ed;
-    border: 1px solid #fed7aa;
-    border-left: 4px solid var(--industry);
-    border-radius: 4px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
   }
   .major-events-label {
-    font-size: 11px;
-    font-weight: 700;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--industry);
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     margin-bottom: 8px;
   }
-  ul.event-list { list-style: none; margin: 0; padding: 0; }
-  ul.event-list li { padding: 6px 0; font-size: 14px; }
-  ul.event-list li + li { border-top: 1px solid #fed7aa; }
-  ul.event-list .event-name { display: block; font-weight: 600; }
-  ul.event-list .event-status { display: block; color: var(--industry); font-size: 13px; margin-top: 2px; }
-  ul.event-list .context { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
-
-  ul.links { list-style: none; margin: 0; padding: 0; }
-  ul.links li { padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
-  ul.links li:last-child { border-bottom: none; }
-  ul.links .source {
-    display: inline-block;
-    color: #ffffff;
-    background: var(--muted);
-    font-weight: 700;
-    font-size: 11px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    padding: 2px 7px;
-    border-radius: 3px;
-    margin-right: 8px;
-    vertical-align: middle;
-  }
-  section.climate ul.links .source { background: var(--climate); }
-  section.weather ul.links .source { background: var(--weather); }
-  section.renewables ul.links .source { background: var(--renewables); }
-  section.industry ul.links .source { background: var(--industry); }
-  ul.links a {
-    color: var(--text);
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 2px;
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
     font-weight: 600;
+    letter-spacing: -0.01em;
   }
-  ul.links a:hover { text-decoration-color: currentColor; }
-  ul.links .context { display: block; color: var(--muted); font-size: 13px; margin-top: 3px; margin-left: 0; }
-
-  .news-item { padding: 16px 0; border-bottom: 1px solid var(--border); }
-  .news-item:last-child { border-bottom: none; }
-  .news-title { font-size: 15px; font-weight: 700; margin: 0 0 6px; color: var(--text); }
-  .news-body { font-size: 14px; color: var(--text); margin: 0 0 8px; }
-  .news-body a {
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
     color: var(--industry);
-    text-decoration: underline;
-    text-decoration-color: var(--industry);
-    text-underline-offset: 2px;
     font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
   }
-  .news-source {
-    font-size: 12px;
-    color: #ffffff;
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
     background: var(--industry);
     display: inline-block;
-    padding: 2px 7px;
-    border-radius: 3px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+    padding: 2.5px 9px;
+    border-radius: 4px;
   }
-  .news-source a { color: #ffffff; text-decoration: none; }
+  .industry-source a { color: #fff; text-decoration: none; }
 
-  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); }
-  footer h3 { font-size: 13px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
-  footer ul { list-style: none; padding: 0; margin: 0; font-size: 13px; }
-  footer li { margin-bottom: 4px; }
-  footer a { color: var(--muted); }
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
 </style>
 </head>
-<body>
-<div class="wrap">
+<body data-digest-date="2026-07-19" class="lang-en">
 
-  <header>
-    <div class="date">19 July 2026</div>
-    <h1>Climate · Weather · Renewables — Daily Digest</h1>
-    <nav class="toc">
-      <a href="#climate">Climate</a>
-      <a href="#weather">Weather</a>
-      <a href="#renewables">Renewables</a>
-      <a href="#industry">Industry News</a>
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 190700Z JUL26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title">Climate Digest</h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
     </nav>
-  </header>
+  </div>
+</div>
 
-  <!-- ═══════════════════════════════════════════ CLIMATE ═══ -->
-  <section class="topic climate" id="climate">
-    <h2>Climate</h2>
-    <p class="summary">
-      The July 16–19 window is defined by the downstream parliamentary response to the European Commission's July 17 EU ETS reform proposal, as political groups in the European Parliament stake out initial negotiating positions before the multi-year co-legislative process begins. Environmental and legal organisations have sharply criticised the package as systematically weakening the EU's carbon price signal in exchange for industrial competitiveness concessions; parliamentary centre-left and Green groups are expected to challenge key provisions including the extended free permit timeline and the slower linear reduction factor. Separately, the C3S June 2026 monthly climate bulletin — published July 11 — established a troubling baseline for the current European heatwave context: June 2026 was the second-warmest June globally at 1.39°C above pre-industrial levels, with Western Europe logging its hottest June on record and global ocean surface temperatures exceeding June records for the second consecutive year.
-    </p>
-    <ul class="links">
-      <li>
-        <span class="source">Carbon Pulse</span>
-        <a href="https://carbon-pulse.com/530595/" target="_blank" rel="noopener">EU Parliament groups stake out diverging positions on ETS reform after Commission's July 17 proposal — EPP broadly supportive of extended free permits for heavy industry; Greens and S&amp;D signalling push for tighter cap reduction timelines; Parliament aims to adopt its position by end-2026; co-decision with Council targets legislative finalisation before end-2027 with new rules applying from 2030 compliance year</a>
-        <span class="context">Published ~July 17–18, 2026 (Carbon Pulse): The parliamentary positioning that began within 24 hours of the Commission's July 17 proposal reflects the political architecture of the 2024–2029 European Parliament, which is more centre-right than its predecessor. The EPP — the largest group — was the primary political driver behind the Commission's proposal to extend free permits through 2038 and lower the linear reduction factor, lobbying actively since January 2026 for these concessions to European steel, cement, aluminium, and glass manufacturers facing Chinese and US competitive pressure. The centre-left S&amp;D group and the Greens, which collectively won sufficient seats to block legislation that requires qualified majority plus Parliament consent, will argue that a slower cap-reduction rate locks in higher-than-necessary total EU industrial emissions across the 2030–2038 period, increasing the residual decarbonisation burden on the post-2038 phase when CBAM will need to fully bear the competitive-protection function that free permits are currently carrying. The 80/20 split (80% of free permits conditional on credible decarbonisation plans, 20% on verified delivery) — a Commission innovation designed as an accountability mechanism — will face scrutiny over the verification standards that will govern the 20% tranche. The timeline matters: any ETS reform adopted by end-2027 would affect the 2030 compliance year, overlapping with the first full year of CBAM's mandatory declaration period.</span>
-      </li>
-      <li>
-        <span class="source">Carbon Pulse</span>
-        <a href="https://carbon-pulse.com/528567/" target="_blank" rel="noopener">EU Parliament puts ETS Market Stability Reserve reform on hold pending review — Parliament votes to pause the separate legislative track revising the MSR (the automatic allowance supply-management mechanism) while the broader ETS revision is assessed; move reflects concern that MSR and ETS reforms must be co-designed to avoid unintended interactions that could undermine price stability</a>
-        <span class="context">Published approximately July 17, 2026 (Carbon Pulse): The ETS Market Stability Reserve (MSR) is the mechanism introduced in 2019 that automatically withdraws allowances from the market when the Total Number of Allowances in Circulation (TNAC) — a measure of surplus supply — exceeds 833 million, and reintroduces them when TNAC falls below 400 million. In practice, the MSR has been the single most important factor in EU carbon price recovery since 2018, progressively tightening supply by absorbing 24% of auctioned allowances per year when triggered. The Commission's proposal to extend free permits and slow the LRF will directly affect future TNAC projections; more free permits mean more allowances in the market, which could prevent MSR absorption from occurring as the mechanism is currently calibrated. Parliament's decision to pause the MSR reform track is therefore a defensive institutional move: without redesigning the MSR in concert with the new LRF and free-permit structure, the reserve could behave in unintended ways — either failing to absorb enough (weakening the price floor) or over-absorbing (creating an artificial shortage that would suppress industrial production before decarbonisation infrastructure is in place). The hold is expected to last through Q3 2026 while technical staff model the interaction effects.</span>
-      </li>
-      <li>
-        <span class="source">Copernicus C3S</span>
-        <a href="https://climate.copernicus.eu/copernicus-record-heatwave-brings-hottest-june-western-europe-during-second-warmest-june-globally" target="_blank" rel="noopener">C3S June 2026 Climate Bulletin: second-warmest June globally (1.39°C above pre-industrial); hottest June on record for Western Europe; global ocean SSTs highest on record for June — bulletin published July 11 establishes climate baseline underpinning the ongoing European heatwave emergency</a>
-        <span class="context">Published July 11, 2026 (Copernicus Climate Change Service C3S; Euronews July 9; DownToEarth July 12): The C3S bulletin's finding that June 2026 was the second-warmest June globally (at 1.39°C above the 1850–1900 pre-industrial baseline) — behind only June 2024 (1.44°C) — reflects the sustained El Niño-driven warmth that has characterised 2025–2026. The finding most directly relevant to the ongoing European heatwave crisis is that Western Europe logged its hottest June on record — a figure that represents the combined effect of long-range climate change background warming and the anomalous atmospheric circulation patterns (weakened Atlantic jet stream) that have allowed successive heat ridges to re-establish over the continent every 7–10 days since late May. The global SST record for June (extra-polar ocean average, 60°S–60°N) exceeded the prior June record (set in June 2024) by 0.01°C — the narrowest possible margin over a previous record, consistent with a global oceans system operating at sustained high temperature rather than continuing to accelerate. The Copernicus Marine Service separately published a press release noting persistent ocean warmth and expanding marine heatwaves across the first half of 2026, particularly in the North Atlantic and western Mediterranean — the basin directly supplying the moisture and energy that fuels European heatwave intensity. This bulletin provides the authoritative scientific baseline against which World Weather Attribution will conduct a rapid attribution study of the 2026 European heatwave events once the season concludes.</span>
-      </li>
-    </ul>
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      Brief 2-3 sentence overview of the period's main climate developments and why they matter.
+    </div>
+    <div class="overview" data-lang="ru">
+      Краткий обзор главных климатических событий периода — 1-2 предложения, суть без деталей.
+    </div>
+    <div class="card-grid">
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">Carbon Brief</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Headline of the story goes here</a>
+        <p class="card-summary" data-lang="en">One-line summary of why this matters to a practitioner.</p>
+        <p class="card-summary" data-lang="ru">Одна строка: почему это важно.</p>
+      </article>
+      <article class="card" data-date="2026-07-18">
+        <div class="card-top">
+          <span class="card-source">Copernicus</span>
+          <span class="card-date">18 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Another headline</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
+      </article>
+      <article class="card" data-date="2026-07-13">
+        <div class="card-top">
+          <span class="card-source">FT Climate</span>
+          <span class="card-date">13 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Older story — appears only in 7-day view</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
+      </article>
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
   </section>
 
-  <!-- ═══════════════════════════════════════════ WEATHER ════ -->
-  <section class="topic weather" id="weather">
-    <h2>Weather</h2>
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 014-4 5 5 0 019.6 1.5A3.5 3.5 0 0117 19H7a4 4 0 01-3-4z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
 
     <div class="major-events">
-      <div class="major-events-label">Major Events</div>
-      <ul class="event-list">
-        <li>
-          <span class="event-name">European Heatwave 2026 — Fourth Wave: GREECE "EXPLOSIVE COCKTAIL" NOW ACTIVE JULY 19–20; BUGEY UNIT 3 RESTART SCHEDULED TODAY; MODERATION FROM JULY 21</span>
-          <span class="event-status">PEAK DANGER PERIOD NOW UNDERWAY: The most dangerous 48-hour window of the 2026 European wildfire season is now active. Greek meteorologists' "explosive cocktail" warning — 40°C+ temperatures combined with strong northerly meltemia winds, the synoptic configuration most lethal for wildfire ignition and spread — is now the live forecast for July 19–20 across much of mainland Greece and the Aegean. Greece's fire service has pre-positioned maximum national resources. In France, EDF's Bugey Unit 3 (900 MW, Rhône valley) is scheduled to restart today, July 19, after being offline since the river-temperature emergency shutdown; the Economy Ministry's thermal discharge exemption — which allowed the reactor to operate above legal Rhône water temperature limits — expires July 20 with no meaningful river-temperature relief in forecast. A temperature moderation is expected across Greece from July 21 onward, with gradual northward propagation through the rest of the continent through early next week.</span>
-          <span class="context">The July 19–20 risk window in Greece is defined by the coincidence of peak fourth-wave heat and the Etesian meltemia wind regime — a combination that has driven Greece's most catastrophic historical fire seasons (2021, 2023). The Bugey restart today is a critical French grid security moment: if the unit restores its full 900 MW by tonight, it significantly eases supply margins before the July 20 exemption expiry. If the restart is delayed or the unit cannot operate at full capacity, grid operators face another day at the system limit. The moderation from July 21 — if confirmed — would mark the first meaningful thermal break for southern Europe in the fourth wave and begin reducing the extraordinary surface dryness that has accumulated since late May. Cumulative preliminary excess-death estimates for all four 2026 European heatwave events are now converging on figures above 20,000.</span>
-        </li>
-        <li>
-          <span class="event-name">Greece — Multi-Front Wildfires: "EXPLOSIVE COCKTAIL" NOW ACTIVE; ATTICA, THESSALONIKI CORRIDOR, AND EVROS ON HIGH ALERT; 112 SYSTEM ACTIVE NATIONWIDE</span>
-          <span class="event-status">MOST DANGEROUS PERIOD OF 2026 SEASON NOW UNDERWAY: Greek meteorologists have confirmed 40°C+ temperatures and strengthening meltemia winds are now affecting the country — the "explosive cocktail" configuration that produces the fastest-spreading wildfires and most limits aerial suppression operations. Greece's fire service is operating at maximum national deployment. Multiple active fire fronts — including those near Thessaloniki and in Evros (northeastern Greece) and Attica — are under elevated watch as the July 19–20 window peaks. The 112 emergency alert system remains active across multiple regions. Temperature relief is forecast from July 21, initially in northern Greece and gradually extending south.</span>
-          <span class="context">The meltemia (Etesian winds) arrive from the north-northwest at 30–50 km/h, dramatically increasing fire spread rates and creating crosswind turbulence that grounds Canadair and helicopter operations, removing aerial suppression capacity at the exact moment surface fire spread is fastest. Greece's fire service cannot compensate for lost aerial capacity with ground crews alone in terrain-heavy regions like Evros and the Attica hills. The 40°C+ temperatures combined with severely drought-stressed fuels from three prior 2026 heatwave episodes create fuel conditions comparable to or worse than the worst Greek fire seasons on record. Forecasters indicate some relief beginning July 21, but a full cooling to safe fire-risk levels is not expected before end-July at the earliest.</span>
-        </li>
-        <li>
-          <span class="event-name">Colorado — Aspen Acres Fire — 100,224 ACRES; 61% CONTAINED (STABLE); ~850 STRUCTURES DAMAGED OR DESTROYED; RECOVERY TRANSITION BEGINS JULY 20</span>
-          <span class="event-status">ACTIVE BUT TRANSITIONING TO RECOVERY: Containment has held at 61% through July 19 as the incident command's decisive gains on the northern flank have not been reversed despite continued hot, dry conditions. Total structure losses have been revised upward to approximately 850 damaged or destroyed across Beulah, Rye, Colorado City, and unincorporated areas of Pueblo and Custer counties — significantly higher than the 241 confirmed-destroyed figure reported July 18, as damage assessment teams accessed previously burned areas. The incident is officially transitioning: the Disaster Recovery Center is converting to a Recovery Assistance Center (RAC) at Beulah Heights Elementary (2670 Delphinium St.) beginning Monday July 20 to provide longer-term support services to affected households. 1,300+ animals displaced from Pueblo and Custer counties have begun returning home after sheltering at the Colorado State Fairgrounds. Red Flag Warning conditions — afternoon outflow winds, low relative humidity — continue through the weekend. The southwest corner near Rye remains the most active sector. Approximately 1,700+ personnel remain assigned. Full containment not expected before late July.</span>
-          <span class="context">The jump from "241 confirmed destroyed" (July 18) to "approximately 850 damaged or destroyed" reflects the difference between confirmed structural losses (verified by assessors with site access) and total damage accounting (which includes structures not yet fully assessed): as assessors have accessed more of the Beulah-Rye corridor, the damage count has risen substantially. The transition from disaster response to Recovery Assistance Center represents a formal incident management milestone — it signals that the acute life-safety emergency has passed and that the fire's remaining operational problem is containment, not evacuation and initial rescue. The RAC model provides coordinated access to SBA disaster loans, FEMA individual assistance, insurance adjuster coordination, and social services under one roof. The 1,300+ animals returning home include horses, cattle, and pets; livestock operations in Beulah and Rye had been particularly affected and the State Fairgrounds animal shelter operation was one of the largest in Colorado wildfire history.</span>
-        </li>
-        <li>
-          <span class="event-name">Eastern Pacific — TROPICAL STORM ELIDA — BELOW HURRICANE THRESHOLD NOW; POST-TROPICAL EXPECTED JULY 21; NO LAND THREAT</span>
-          <span class="event-status">WEAKENING RAPIDLY / THREAT SUBSIDING AHEAD OF SCHEDULE: Elida has fallen below the hurricane threshold to tropical storm status with maximum sustained winds near 65 mph (100 km/h), continuing to weaken as it traverses progressively cooler sea surface temperatures southwest of the Baja California peninsula. The accelerated weakening has pushed the post-tropical status forecast forward to approximately July 21 — one to two days earlier than the July 22–23 estimate in the July 18 digest. The storm is tracking northwestward before curving north and ultimately being absorbed into a deep-layer trough near the California coast. No coastal watches or warnings; high surf advisories along Mexico's Pacific resort coast (Jalisco, Nayarit, Colima) are subsiding through July 19. The 2026 eastern Pacific season, with Elida as the 5th named storm, remains well above historical average pace — a direct El Niño imprint.</span>
-          <span class="context">The earlier-than-expected weakening reflects SST conditions slightly cooler than the baseline NHC forecast anticipated west of 120°W longitude, accelerating the disruption of Elida's convective organisation. The NHC's track forecast — a north-curving arc as the system is absorbed by the California trough — is consistent with several historical late-July eastern Pacific tropical systems that completed a similar track. The swell hazard at Mexican Pacific beaches has largely passed. The 2026 eastern Pacific season's above-average pace (5 named storms by mid-July versus a historical average of approximately 3 by this date) aligns with the strong El Niño SST anomalies that have defined the season and that are expected to persist into Northern Hemisphere autumn.</span>
-        </li>
-        <li>
-          <span class="event-name">Atlantic Basin — NHC MONITORING TWO AREAS; GULF/SOUTHEAST COAST NOW UNDER AREA WATCH; BASIN STILL QUIET</span>
-          <span class="event-status">WATCHING / LOW DEVELOPMENT PROBABILITY: NHC has elevated monitoring of two Atlantic disturbances: (1) a tropical wave southeast of the Cape Verde Islands (approximately 10% development probability over 7 days) moving into a hostile dry-air environment, and (2) a disorganised area of convection associated with a Gulf/Southeast coast upper-level low that is now receiving "area watch" language for potential near-coast development — still at low probability (10–20%). No named storms in the 2026 Atlantic basin; next would be "Bertha." El Niño-driven wind shear remains the dominant inhibitor of Atlantic development; NOAA's below-normal 2026 season forecast (8–14 named storms, below the 14-storm historical average) remains in effect. No immediate threat to US or Caribbean coastlines from either disturbance.</span>
-          <span class="context">The "area watch" language for the Gulf/Southeast disturbance is a modest upgrade from the July 18 digest's "monitoring" language — NHC uses area watch to flag areas where development is possible within 48 hours at sufficient organization to warrant advance notice, even at low probability. The system is associated with an upper-level low rather than a well-defined surface disturbance and faces structural obstacles to rapid development. The Cape Verde wave is moving into progressively drier air that will likely prevent organization. The basin's quietness alongside the above-normal eastern Pacific activity (Elida as 5th named storm) illustrates the classic El Niño asymmetry. Tropical Storm Arthur (formed June 17, Texas coast, brief) remains the only 2026 Atlantic named storm.</span>
-        </li>
-        <li>
-          <span class="event-name">Texas — Big Bend / Trans-Pecos Flash Flooding — EXCESSIVE RAINFALL RISK CONTINUES THROUGH JULY 19–20</span>
-          <span class="event-status">ONGOING FLASH FLOOD THREAT: WPC's excessive rainfall outlook maintains elevated risk for the Big Bend / Trans-Pecos region through July 19–20 as the monsoonal moisture pattern persists. Southerly flow continues delivering above-normal Gulf of Mexico moisture into the western Texas highlands and Davis Mountains. Slot canyons and remote terrain in Big Bend National Park are particularly dangerous. The broader monsoonal Slight Risk area extends from West Texas and southern New Mexico northwestward through Arizona into southern Utah. No major casualty reports at time of compilation. Conditions expected to gradually ease through late weekend as the moisture plume shifts westward.</span>
-          <span class="context">The Big Bend / Trans-Pecos flash flood pattern is a recurring feature of the North American monsoon; the 2026 version is amplified by above-normal Gulf SSTs (a direct El Niño effect) delivering higher-than-historical average precipitable water values to the terrain-forced convection in this region. The remote terrain, narrow canyons, and limited road networks in Big Bend National Park concentrate the risk for rapid flash flooding with very limited warning time — conditions that the National Park Service consistently treats as a life-safety priority during monsoon season.</span>
-        </li>
-        <li>
-          <span class="event-name">Spain / France — Los Gallardos and Fontainebleau Fires — NO MATERIAL CHANGE</span>
-          <span class="event-status">STATUS UNCHANGED: Los Gallardos (Almería) — 13 confirmed dead; search operations in inaccessible terrain ongoing; judicial investigation continuing. Fontainebleau Forest — contained; ground crews and aerial support on scene; six suspects in custody (including volunteer firefighter who confessed). No material change from the July 18 assessment.</span>
-          <span class="context">No updates requiring re-listing under digest dedup policy beyond confirming no new developments in the July 18–19 period.</span>
-        </li>
-        <li>
-          <span class="event-name">China — Bavi and Guangxi Flooding — RECOVERY ADVANCING; NO NEW DEVELOPMENTS</span>
-          <span class="event-status">RECOVERY PHASE — IMPROVING: Bavi remnant fully dissipated; Kuancheng (Hebei) floodwaters continuing to recede; rail restoration on Shenyang and Jilin routes progressing. Guangxi Maysak recovery (39 dead, 130,000+ evacuated, Liulan Reservoir breach July 7) continuing; 5,700 rescue boats still deployed in isolated communities. No material change from July 18.</span>
-          <span class="context">Conditions improving across both recovery zones. No new compound rainfall risk active.</span>
-        </li>
-      </ul>
+      <div class="major-events-head">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="major-events-label"><span data-lang="en">Major Events</span><span data-lang="ru">Опасные явления</span></span>
+      </div>
+      <div class="event">
+        <div class="event-name">Hurricane Example — Gulf of Mexico</div>
+        <div class="event-status">CAT 3 · WARNING</div>
+        <div class="event-impact">Landfall expected within 48h; significant wind and storm-surge impact along the central Gulf coast.</div>
+      </div>
     </div>
 
-    <p class="summary">
-      July 19–20 is the most operationally critical 48-hour window of the 2026 European wildfire season: Greece is now in the "explosive cocktail" period — 40°C+ heat and meltemia winds simultaneously, the configuration that has driven every major Greek wildfire catastrophe since 2021 — while France's Bugey Unit 3 nuclear restart today and the thermal exemption expiry tomorrow represent the grid security test of the fourth heat wave. In Colorado, the Aspen Acres Fire holds at 61% containment with a recovery centre opening Monday, but a revised structure-damage count of approximately 850 damaged or destroyed tells a grimmer story of community loss. Tropical Storm Elida is weakening faster than forecast and is on track to become post-tropical by July 21.
-    </p>
-
-    <ul class="links">
-      <li>
-        <span class="source">FOX21 / InciWeb</span>
-        <a href="https://www.fox21news.com/news/aspen-acres-fire-containment-steadily-increases/" target="_blank" rel="noopener">Aspen Acres Fire recovery transition July 19–20: 61% contained at 100,224 acres; ~850 structures damaged or destroyed (revised upward from 241 confirmed destroyed); Recovery Assistance Center opens Beulah Heights Elementary July 20; 1,300+ animals returning from Colorado State Fairgrounds; Red Flag conditions persist through weekend; southwest corner near Rye remains most active sector</a>
-        <span class="context">Published July 18–19, 2026 (FOX21 News Colorado; KKTV July 18 animals-returning article; Denver Gazette July 17 on fire ranking; InciWeb incident page): The revision from 241 "confirmed destroyed" (July 18 digest) to approximately 850 "damaged or destroyed" reflects damage assessment teams completing their initial sweeps of the Beulah-Rye corridor. The Pueblo County fire alone saw 254 homes confirmed lost; Custer County added 83 more; additional properties in Colorado City and unincorporated areas bring the total toward or above 850 when damaged structures (those requiring major repair but still standing) are included alongside total losses. The RAC transition signals that active life-safety operations (evacuation support, search-and-rescue) are concluded and longer-term community recovery — debris removal, SBA loans, insurance processing — is now the operational priority.</span>
-      </li>
-      <li>
-        <span class="source">KeepTalkingGreece / Athens Times</span>
-        <a href="https://athens-times.com/weather-alert-heatwaves-thunderstorms-and-dangerous-meltemi-winds-this-weekend/" target="_blank" rel="noopener">Greece weather alert: "Explosive cocktail" of 40°C+ heat and dangerous meltemia winds now active July 19–20 — Greek fire service at maximum national deployment; Attica, Thessaloniki corridor, Evros on highest-level alert; 112 emergency alert system nationwide; temperature relief forecast from July 21 beginning in northern Greece</a>
-        <span class="context">Published July 18–19, 2026 (Athens Times; KeepTalkingGreece July 17; ProtoThema July 13): The Athens Times weekend alert article (published July 18–19) confirms that the meltemia winds are strengthening as forecast alongside the sustained heat dome, completing the "explosive cocktail" conditions that Greek meteorologists had been warning about since at least July 17. The phrase reflects the documented meteorological configuration in Greek fire science: meltemia winds arriving during a heat event with low relative humidity and drought-stressed fuels dramatically increases fire spread rates — in severe cases to 500 metres per minute or more — while simultaneously grounding aerial suppression. The July 21 moderation forecast for northern Greece is the earliest confirmed window for significant relief in any part of the country; southern Greece and the Aegean may not see meaningful cooling until July 22–23.</span>
-      </li>
-      <li>
-        <span class="source">Energynews.pro / EDF</span>
-        <a href="https://energynews.pro/en/la-centrale-nucleaire-du-bugey-obtient-une-derogation-thermique-jusquau-20-juillet" target="_blank" rel="noopener">France's Bugey Nuclear Plant Unit 3 (900 MW) thermal derogation valid until July 20 — unit scheduled restart today July 19 following heatwave shutdown; Economy Ministry exemption allows above-legal Rhône discharge temperature to enable restart; expiry July 20 creates grid security test if unit cannot reach full power before derogation expires</a>
-        <span class="context">From the Energynews.pro report (July 12–15, 2026) and EDF operational disclosures: The derogation (thermal exemption) allows Bugey Unit 3 to discharge cooling water into the Rhône above the legal environmental temperature limit — a condition triggered when the combined reactor discharge and river ambient temperature would otherwise cause the plant to exceed ecological limits and face regulatory shutdown. EDF scheduled the restart for July 19 to allow the unit to contribute to grid supply before the derogation expires July 20. If the unit restores 900 MW by the end of July 19, it significantly improves French grid margins heading into the derogation expiry. EDF has not confirmed publicly whether it will seek a further extension if the restart is delayed or if Rhône temperatures remain above threshold after July 20. The French grid operator RTE has been coordinating with German, UK, and Swiss grid operators as cross-border emergency power exchange capacity since early July, a more advanced pre-position than in 2022 when similar conditions caught neighbours off-guard.</span>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ══════════════════════════════════════════ RENEWABLES ══ -->
-  <section class="topic renewables" id="renewables">
-    <h2>Renewables</h2>
-    <p class="summary">
-      Two significant offshore wind developments define the July 16–19 renewables window. The European Commission's approval on July 13–14 of France's €63 billion state aid scheme for 11 offshore wind farms — one of the largest renewable energy support packages ever cleared under EU state aid rules, covering 11.1 GW of combined capacity — generated substantial logistics and supply chain follow-on coverage through the July 16–19 period, as the French offshore wind industry and port operators began planning for a transformative buildout spanning the North Sea, Atlantic, and Mediterranean. Separately, ECMWF's July 16 webinar on the AI Weather Quest competition outlined an expanded next phase of the world's most rigorous sub-seasonal AI weather forecasting benchmark, with direct implications for how the weather-dependent renewables sector — increasingly reliant on extended-range wind and solar generation forecasts — can leverage advances in AI prediction skill.
-    </p>
-    <ul class="links">
-      <li>
-        <span class="source">OffshoreWind.biz / EC</span>
-        <a href="https://www.offshorewind.biz/2026/07/14/european-commission-greenlights-frances-eur-63-billion-aid-scheme-to-build-11-offshore-wind-farms/" target="_blank" rel="noopener">EU Commission approves France's €63 billion state aid scheme for 11 offshore wind farms totalling 11.1 GW — 25-year two-way contracts for difference in the North Sea, Atlantic, and Mediterranean; expected to generate up to 47.8 TWh/yr (10.6% of French annual electricity consumption); cleared under Clean Industrial Deal State Aid Framework; one of the largest renewable energy support measures in EU history</a>
-        <span class="context">Published July 14, 2026 (OffshoreWind.biz; Concurrences July 14; Power Technology; Renewables Now July 14; WindInsider July 14): The €63 billion French offshore wind approval is structurally significant for multiple reasons. First, the scale: 11.1 GW of new offshore capacity across 11 projects sited in the North Sea (off Dunkirk and Normandy), Atlantic (off Brittany and the Bay of Biscay), and Mediterranean (off Languedoc and Provence) — a geographic spread that diversifies both wind resource characteristics and grid injection points across France's mainland grid. Second, the support mechanism: a two-way contract for difference (2-way CfD) means the French state receives payments back from generators when wholesale electricity prices exceed the strike price, limiting the net budget cost if offshore wind becomes a low-cost baseload provider as expected. Third, the Clean Industrial Deal State Aid Framework (CISAF) context: this is one of the first very large renewable energy packages cleared under the new CISAF, which replaced the old State Aid Guidelines in early 2026 to facilitate the EU's industrial decarbonisation agenda. Fourth, the Mediterranean dimension: as the WindEurope study published July 14 documented, the Mediterranean currently has near-zero offshore wind installed; France's Mediterranean projects will be among the first commercial-scale offshore installations in the basin and could catalyse permitting progress in Italy, Spain, and Greece. The 25-year contract duration provides the long-term revenue certainty that offshore developers and lenders require to finance projects whose capital cost remains higher than onshore wind or solar.</span>
-      </li>
-      <li>
-        <span class="source">Heavy Lift &amp; Project Forwarding Intl</span>
-        <a href="https://www.heavyliftpfi.com/offshore/2026/07/16/french-offshore-windfall-for-long-term-logistics/" target="_blank" rel="noopener">French €63B offshore wind approval generates immediate logistics and supply-chain planning activity (July 16) — port operators, heavy-lift vessel providers, and wind turbine installation contractors begin long-lead procurement and berth reservation for 11-farm buildout; French ports at Cherbourg, Saint-Nazaire, and Marseille named as likely installation and pre-assembly hubs</a>
-        <span class="context">Published July 16, 2026 (Heavy Lift &amp; Project Forwarding International): The logistics coverage that emerged July 16 — within 48 hours of the Commission's approval — reflects the offshore wind industry's experience with supply chain bottlenecks from the North Sea buildout: installation vessel availability, port berth capacity, and monopile/turbine pre-assembly lead times are all multi-year constraints. French port operators and heavy-lift contractors have been on standby for this approval since the projects were shortlisted; the approval now triggers formal long-lead equipment orders and berth reservation negotiations that typically take 18–24 months ahead of installation. Cherbourg (Normandy) is already established as a wind turbine pre-assembly hub (Siemens Gamesa and Vestas have existing facilities there); Saint-Nazaire (Loire-Atlantique) serves the Atlantic projects; Marseille and La Ciotat are the Mediterranean front-runners for southern projects including floating wind pilot components. The logistics supply chain is already under pressure from parallel UK, German, and Danish offshore buildouts competing for the same specialised installation vessels (jack-ups and semi-submersible crane vessels) with 2026–2030 schedules.</span>
-      </li>
-      <li>
-        <span class="source">ECMWF</span>
-        <a href="https://www.ecmwf.int/en/about/media-centre/science-blog/2026/ai-weather-quest-2026" target="_blank" rel="noopener">ECMWF's AI Weather Quest next phase announced July 16: expanded scientific scope, new participation model, transition to long-term benchmarking framework for sub-seasonal (day 19–32) AI weather forecasting — 250+ participants across 55+ teams; relevant to renewable energy planning at seasonal timescales</a>
-        <span class="context">July 16, 2026 webinar (ECMWF; IOP Science paper doi:10.1088/3049-4753/adf649; ECMWF newsletter 183): The AI Weather Quest's transition to a "long-term benchmarking and learning framework" signals ECMWF's conviction that sub-seasonal AI forecasting is now a persistent research frontier rather than a fixed competition with a defined end date. For the renewables sector, sub-seasonal forecasts — the gap between medium-range NWP (days 1–14, now reliably skilful) and seasonal climate outlooks (months 1–6, low spatial skill) — are the forecasting horizon most relevant for wind and solar energy planning: capacity auctions, long-term power purchase agreement valuation, grid balancing across European interconnects, and hydropower reservoir management all benefit from improved week 3–4 probabilistic guidance. The Quest's three target variables — 2-metre temperature, mean sea level pressure, and precipitation quintile probabilities — map directly onto the primary drivers of wind and solar generation and demand. The expanded scope in the next phase (beyond week 3–4 toward sub-seasonal scales) extends the challenge into territory where even the best ensemble NWP systems have limited skill, making AI approaches potentially most valuable. ECMWF's AIFS-SUBS model is the current state-of-the-art AI sub-seasonal benchmark against which Quest participants compete.</span>
-      </li>
-    </ul>
-  </section>
-
-  <!-- ═══════════════════════════════════════ INDUSTRY NEWS ══ -->
-  <section class="topic industry" id="industry">
-    <h2>Industry News</h2>
-
-    <p class="summary">
-      The July 16–19 window produced two IPO-pipeline developments with major implications for clean energy capital markets. Japan's JERA — the world's second-largest power producer by generation capacity, responsible for approximately 30% of Japan's electricity supply and carrying approximately $18.5 billion in annual revenue — formally began studying a potential US stock market listing on July 16, a move that would bring one of the largest energy companies outside the US into American public capital markets for the first time. In a parallel development, Argentina's YPF Energía Eléctrica (YPF Luz) saw its July 13 NYSE F-1 filing — for an estimated $300 million dual-listed offering — tracked in the IPOX market intelligence update of July 18, sustaining investor attention on a mixed thermal-wind-solar power producer from Argentina's energy reform era.
-    </p>
-
-    <div class="news-item">
-      <h3 class="news-title">JERA, Japan's Largest Power Producer, Begins Formal Study of US Stock Market Listing</h3>
-      <p class="news-body">
-        <a href="https://wtvbam.com/2026/07/16/exclusive-jera-begins-study-on-us-listing-as-it-steps-up-overseas-expansion-sources-say/" target="_blank" rel="noopener">JERA Co., Inc.</a>, Japan's largest power generation company and one of the world's largest LNG buyers — a joint venture of Tokyo Electric Power Holdings and Chubu Electric Power — has initiated a formal study exploring the US market as a potential listing venue for an initial public offering, multiple sources familiar with the matter told Reuters on July 16, 2026. The company, which holds 59 million kilowatts of domestic power generation capacity including projects under development and supplies approximately 30% of Japan's total electricity, had previously been preparing for a potential Tokyo Stock Exchange listing; the US study signals an intent to access a deeper global investor pool as JERA accelerates overseas investments in LNG, renewables, and low-carbon fuels including ammonia and hydrogen. Its wholly owned subsidiary JERA Global Energy Solutions, headquartered in Singapore, is already building international LNG and lower-carbon fuel positions. A US IPO would make JERA the first Japanese mega-utility to list on American exchanges and would represent one of the largest energy-sector public offerings from Asia-Pacific in recent memory. Timing, structure, and market valuation have not been determined; the board has delegated listing decisions to parent companies Tokyo Electric Power Holdings and Chubu Electric.
-      </p>
-      <span class="news-source"><a href="https://oilprice.com/Latest-Energy-News/World-News/Japans-LNG-Giant-Weighs-US-IPO-to-Accelerate-Global-Expansion.html" target="_blank" rel="noopener">Reuters / OilPrice.com / IPOX</a></span>
+    <div class="overview" data-lang="en">
+      Brief overview of weather developments in the period.
     </div>
-
-    <div class="news-item">
-      <h3 class="news-title">YPF Luz Files NYSE F-1 for ~$300 Million Dual Listing — Argentina's Largest Power Generator Enters US Capital Markets</h3>
-      <p class="news-body">
-        Argentina's <a href="https://www.renaissancecapital.com/IPO-Center/News/120440/Argentina-based-power-producer-YPF-Energia-Electrica-files-for-an-estimated" target="_blank" rel="noopener">YPF Energía Eléctrica (YPF Luz)</a>, the power-generation arm of state-controlled oil company YPF and Argentina's largest company dedicated solely to power generation, filed its Form F-1 with the SEC on July 13, 2026, targeting an estimated $300 million dual listing on the NYSE (ticker: YLUZ) and the Buenos Aires exchange. The company operates 17 generation plants with 3,764 MW of combined capacity including thermal, wind, and solar assets, accounting for approximately 8.2% of Argentina's connected grid, and reported Q1 2026 revenue of $217.2 million (up 45.8% year-on-year) and net profit of $66.5 million (up 53.2%). The offering is a secondary sale by YPF's existing shareholder rather than primary capital raising; a syndicate led by Goldman Sachs, BofA Securities, Citigroup, Itaú BBA, BNP Paribas, JPMorgan, and Santander is coordinating the transaction, tracked by IPOX in its July 18 market intelligence update. The listing joins a wave of Argentine energy companies seeking US capital access as investor confidence in Argentina has improved following President Milei's market-oriented reforms and the country's improving sovereign credit outlook.
-      </p>
-      <span class="news-source"><a href="https://www.ipox.com/ipox/the-ipox-update-07182026" target="_blank" rel="noopener">Renaissance Capital / IPOX July 18</a></span>
+    <div class="overview" data-lang="ru">
+      Краткий обзор погодных событий периода.
     </div>
-
+    <div class="card-grid">
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">NOAA</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Weather story headline</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
+      </article>
+      <article class="card" data-date="2026-07-18">
+        <div class="card-top">
+          <span class="card-source">ECMWF</span>
+          <span class="card-date">18 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Another weather story</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
+      </article>
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
   </section>
 
-  <footer>
-    <h3>Archive</h3>
-    <ul>
-      <li><a href="archive/2026-07-18.html">18 July 2026</a></li>
-      <li><a href="archive/2026-07-17.html">17 July 2026</a></li>
-      <li><a href="archive/2026-07-16.html">16 July 2026</a></li>
-      <li><a href="archive/2026-07-15.html">15 July 2026</a></li>
-      <li><a href="archive/2026-07-14.html">14 July 2026</a></li>
-    </ul>
-  </footer>
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M12 8l5-3M12 8L7 5M12 15l5 3M12 15l-5 3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      Brief overview of renewables developments in the period.
+    </div>
+    <div class="overview" data-lang="ru">
+      Краткий обзор событий в возобновляемой энергетике.
+    </div>
+    <div class="card-grid">
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">PV Magazine</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Solar story</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
+      </article>
+      <article class="card" data-date="2026-07-18">
+        <div class="card-top">
+          <span class="card-source">WindEurope</span>
+          <span class="card-date">18 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Wind story</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
+      </article>
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
 
-</div>
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      Brief overview of notable papers and research findings this period.
+    </div>
+    <div class="overview" data-lang="ru">
+      Краткий обзор заметных публикаций и исследований.
+    </div>
+    <div class="card-grid">
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="#">Paper title: ML-based Global Weather Forecasting at Sub-km Scale</a>
+        <p class="card-meta">Author et al. · physics.ao-ph · preprint</p>
+        <p class="card-summary" data-lang="en">One-line takeaway — what the paper shows and why it's significant.</p>
+        <p class="card-summary" data-lang="ru">Главный вывод работы одной строкой.</p>
+      </article>
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Time</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://time.com/article/2026/07/15/world-models-are-ai-s-next-frontier/">World Models Are AI's Next Frontier</a>
+        <p class="card-meta">Popular coverage · Time Magazine</p>
+        <p class="card-summary" data-lang="en">How world models are becoming the next major AI architecture, with implications for weather simulation and climate forecasting.</p>
+        <p class="card-summary" data-lang="ru">World models как следующая крупная архитектура ИИ — и что это значит для моделирования погоды и климата.</p>
+      </article>
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Новости индустрии</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-07-19">
+        <div class="industry-top">
+          <h3 class="industry-title">New Partnership: meteoblue × Resilens AG</h3>
+          <span class="industry-date">19 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://resilens.com/" target="_blank" rel="noopener">Resilens AG</a>,
+          a climate risk assessment and adaptation planning company, has entered a strategic
+          partnership with meteoblue to integrate high-resolution climate data into its platform.
+          The collaboration supports vulnerability analyses, exposure assessments, and the
+          prioritisation of climate adaptation measures for cities and infrastructure operators.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://resilens.com/" target="_blank" rel="noopener">Resilens AG</a>
+          (оценка климатических рисков и планирование адаптации) заключила стратегическое
+          партнёрство с meteoblue: климатические данные высокого разрешения будут интегрированы
+          в платформу Resilens для анализа уязвимости и приоритизации мер адаптации.
+        </p>
+        <span class="industry-source">meteoblue</span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-18">
+        <div class="industry-top">
+          <h3 class="industry-title">Weather Trading Gains Traction as Wind and Solar Grow</h3>
+          <span class="industry-date">18 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          As wind and solar capacity expands, power markets are increasingly exposed to short-term
+          weather swings, fuelling growth in weather-linked trading strategies and hedging products
+          among energy traders and financial institutions.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          С ростом ветровой и солнечной генерации энергорынки всё сильнее зависят от краткосрочных
+          колебаний погоды — растёт интерес трейдеров к погодным торговым стратегиям и хеджированию.
+        </p>
+        <span class="industry-source">
+          <a href="https://www.bloomberg.com/news/newsletters/2026-06-29/weather-trading-gains-traction-as-wind-and-solar-energy-grow" target="_blank" rel="noopener">Bloomberg</a>
+        </span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-07-18.html">2026-07-18</a></li>
+      <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
+      <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
 </body>
 </html>
