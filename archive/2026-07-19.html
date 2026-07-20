@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Climate Digest — Daily Synoptic Briefing</title>
+<title>Mostly Clear — Daily Synoptic Briefing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -227,6 +227,17 @@
     width: 3px;
     border-radius: 0 3px 3px 0;
   }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
   .s-climate    .overview::before { background: var(--climate); }
   .s-weather    .overview::before { background: var(--weather); }
   .s-renewables .overview::before { background: var(--renewables); }
@@ -504,7 +515,7 @@
   </svg>
   <div class="masthead-inner">
     <div class="masthead-metar">DIGEST 190700Z JUL26 · ROLLING 72H WINDOW</div>
-    <h1 class="masthead-title">Climate Digest</h1>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
     <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
     <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
   </div>
@@ -543,63 +554,39 @@
       <span class="section-count" data-count-for="climate"></span>
     </div>
     <div class="overview" data-lang="en">
-      June 2026 was both the second-warmest June in global records and the hottest June ever for western Europe, per Copernicus C3S, while Copernicus Marine confirmed that marine heatwaves now cover 82% of the global ocean — the largest extent since 2024. Carbon Brief documented more than 1,000 heat-related deaths in England and Wales during May–June directly attributable to climate change, and Bloomberg's data tracker shows concurrent attribution science confirming that the concurrent European and North American extreme heat events would have been "virtually impossible" without anthropogenic warming.
+      Every claim here links to its source — e.g. a <a href="#">landmark July report</a> found X, while <a href="#">separate data</a> showed Y. No unsourced assertions.
     </div>
     <div class="overview" data-lang="ru">
-      Июнь 2026 стал вторым в глобальной истории и абсолютным рекордом для Западной Европы по данным Copernicus; морские волны тепла охватили 82% мирового океана, а Carbon Brief подтвердил связь более 1 000 смертей от жары в Британии с климатическими изменениями.
+      Каждое утверждение — со ссылкой на источник, например <a href="#">июльский доклад</a> показал X. Без утверждений без ссылок.
     </div>
     <div class="card-grid">
-
-      <article class="card" data-date="2026-07-08">
-        <div class="card-top">
-          <span class="card-source">Copernicus C3S</span>
-          <span class="card-date">08 JUL</span>
-        </div>
-        <a class="card-headline" href="https://climate.copernicus.eu/copernicus-record-heatwave-brings-hottest-june-western-europe-during-second-warmest-june-globally">Copernicus: Record heatwave brings hottest June for western Europe during second-warmest June globally</a>
-        <p class="card-summary" data-lang="en">Global average June temperature reached 16.54°C — 1.39°C above pre-industrial baseline — while western Europe's June 2026 crushed the previous record (set in 2025) by 3.05°C above the 1991–2020 average; extra-polar ocean SSTs hit their highest June on record.</p>
-        <p class="card-summary" data-lang="ru">Средняя глобальная температура июня — 16,54°C, на 1,39°C выше доиндустриального уровня; Западная Европа превысила рекорд июня 2025 года на 3,05°C относительно нормы 1991–2020 годов.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-01">
-        <div class="card-top">
-          <span class="card-source">Copernicus CMEMS</span>
-          <span class="card-date">01 JUL</span>
-        </div>
-        <a class="card-headline" href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026">Persistent ocean warmth and expanding marine heatwaves mark the first half of 2026</a>
-        <p class="card-summary" data-lang="en">Marine heatwaves covered 82% of the global ocean by end of June — the second-largest extent on record after 2024 — with the Mediterranean nearly entirely (98%) affected, including 80% under "strong, severe or extreme" conditions that amplify wildfire risk and hurricane fuel.</p>
-        <p class="card-summary" data-lang="ru">К концу июня морские волны тепла охватили 82% мирового океана; в Средиземном море 80% акватории — в состоянии «сильных, очень сильных или экстремальных» тепловых аномалий.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-17">
+      <article class="card" data-date="2026-07-19">
         <div class="card-top">
           <span class="card-source">Carbon Brief</span>
-          <span class="card-date">17 JUL</span>
+          <span class="card-date">19 JUL</span>
         </div>
-        <a class="card-headline" href="https://www.carbonbrief.org/debriefed-17-july-2026-uk-firewave-fossil-fuelled-heat-deaths-londons-natural-history-museum-spotlights-climate/">Debriefed 17 July 2026: UK 'firewave' | Fossil-fuelled heat deaths | NHM spotlights climate</a>
-        <p class="card-summary" data-lang="en">More than 1,000 heat-related deaths in England and Wales during May–June 2026 have been attributed to climate change — nearly half of all heat deaths in the period; the UK has also logged 25 days above 30°C and 9 above 34°C this summer, a "firewave" pattern with no historical precedent.</p>
-        <p class="card-summary" data-lang="ru">Более 1 000 смертей от жары в Англии и Уэльсе в мае–июне 2026 связаны с климатическими изменениями; 25 дней выше 30°C и 9 выше 34°C создают беспрецедентный «пожарный» режим лета.</p>
+        <a class="card-headline" href="#">Headline of the story goes here</a>
+        <p class="card-summary" data-lang="en">One-line summary of why this matters to a practitioner.</p>
+        <p class="card-summary" data-lang="ru">Одна строка: почему это важно.</p>
       </article>
-
-      <article class="card" data-date="2026-07-14">
+      <article class="card" data-date="2026-07-18">
         <div class="card-top">
-          <span class="card-source">Bloomberg</span>
-          <span class="card-date">14 JUL</span>
+          <span class="card-source">Copernicus</span>
+          <span class="card-date">18 JUL</span>
         </div>
-        <a class="card-headline" href="https://www.bloomberg.com/graphics/2026-extreme-heat-climate-change-data/">Europe, US Extreme Heat Shocks Scientists Tracking Climate Impacts</a>
-        <p class="card-summary" data-lang="en">Bloomberg's interactive tracker shows concurrent extreme heat shattering baselines across Europe and the US; attribution science confirms the combined heat-and-humidity extremes would have been "virtually impossible" without anthropogenic climate change, with Spain's Fabra Observatory logging 40.5°C on July 8 — its hottest reading in over a century.</p>
-        <p class="card-summary" data-lang="ru">Интерактивный трекер Bloomberg фиксирует одновременную рекордную жару в Европе и США; наука атрибуции подтверждает: без антропогенного изменения климата такие события «практически невозможны».</p>
+        <a class="card-headline" href="#">Another headline</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
       </article>
-
-      <article class="card" data-date="2026-07-07">
+      <article class="card" data-date="2026-07-13">
         <div class="card-top">
-          <span class="card-source">Carbon Brief</span>
-          <span class="card-date">07 JUL</span>
+          <span class="card-source">FT Climate</span>
+          <span class="card-date">13 JUL</span>
         </div>
-        <a class="card-headline" href="https://www.carbonbrief.org/cited-7-july-2026-impossible-heat-global-ocean-record-climate-change-and-the-ozone-hole/">'Impossible' heat | Global ocean record | Climate change and the ozone hole — Cited 7 July 2026</a>
-        <p class="card-summary" data-lang="en">WWA finds the US heat-and-humidity event was "virtually impossible" without human warming; global ocean SSTs hit a new record for the date on June 21 per Copernicus, while new research links climate change to the ozone hole's interaction with Southern Hemisphere circulation.</p>
-        <p class="card-summary" data-lang="ru">WWA: жара в США «практически невозможна» без влияния человека; мировой океан установил рекорд ТПО 21 июня по данным Copernicus.</p>
+        <a class="card-headline" href="#">Older story — appears only in 7-day view</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
       </article>
-
     </div>
     <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
   </section>
@@ -619,98 +606,38 @@
         <span class="pulse-dot" aria-hidden="true"></span>
         <span class="major-events-label"><span data-lang="en">Major Events</span><span data-lang="ru">Опасные явления</span></span>
       </div>
-
       <div class="event">
-        <div class="event-name">Greece / Southern Europe — Multi-Front Wildfires: PEAK DANGER DAY JULY 19–20</div>
-        <div class="event-status">CRITICAL · EXPLOSIVE COCKTAIL</div>
-        <div class="event-impact">Greek meteorologists' predicted "explosive cocktail" arrives today: 40°C+ temperatures meeting meltemia winds across drought-stressed fuels — the most dangerous wildfire configuration of the 2026 season. Thessaloniki area under ongoing evacuation orders. Greece's fire service at maximum deployment after battling 60 simultaneous fires in a single day earlier this month. Modest temperature moderation expected from July 21 onward.</div>
+        <div class="event-name">Hurricane Example — Gulf of Mexico</div>
+        <div class="event-status">CAT 3 · WARNING</div>
+        <div class="event-impact">Landfall expected within 48h; significant wind and storm-surge impact along the central Gulf coast.</div>
       </div>
-
-      <div class="event">
-        <div class="event-name">Aspen Acres Fire — Colorado, USA: 100,244 ACRES · 61% CONTAINED</div>
-        <div class="event-status">ACTIVE · IMPROVING</div>
-        <div class="event-impact">Containment held at 61% as of July 18–19 after a decisive 26-point surge in 48 hours; fire remains Colorado's 7th (or 8th) largest on record. 241 structures confirmed destroyed in Beulah and Rye; fire perimeter 2 miles from Rye township. Evacuation orders remain in Huerfano, Pueblo, Custer, and Fremont counties. Red Flag conditions continue through the weekend; full containment still weeks away.</div>
-      </div>
-
-      <div class="event">
-        <div class="event-name">Eastern Pacific — Tropical Depression 6E: FORECAST TO INTENSIFY</div>
-        <div class="event-status">TD6E · DEVELOPING</div>
-        <div class="event-impact">Sixth disturbance of an above-normal 2026 eastern Pacific season formed south of Baja California on July 18; NHC forecasts intensification toward hurricane strength over open waters later this week. No land threat anticipated. Consistent with elevated eastern Pacific activity driven by El Niño SSTs, while the Atlantic basin remains suppressed.</div>
-      </div>
-
-      <div class="event">
-        <div class="event-name">Atlantic Basin — NHC: NO ACTIVE STORMS; LOW-PROBABILITY DISTURBANCES MONITORED</div>
-        <div class="event-status">QUIET · WATCHING</div>
-        <div class="event-impact">No named storms in the Atlantic. NHC monitoring a disorganized Cape Verde wave at ~10% 7-day development probability, moving into a drier environment. El Niño-driven wind shear continues to suppress Atlantic development; NOAA's below-normal 2026 Atlantic season forecast (8–14 named storms) remains in effect.</div>
-      </div>
-
-      <div class="event">
-        <div class="event-name">Western Pacific — INVEST 90W Near Micronesia: LOW PROBABILITY</div>
-        <div class="event-status">WATCHING · LOW PROB</div>
-        <div class="event-impact">JTWC monitoring INVEST 90W near Chuuk (7°N 152°E) in a marginally favorable environment — low wind shear, 29–30°C SSTs — but development probability remains low (5–10%) over the next 24–48 hours. No threat to land areas. No other active western Pacific cyclones.</div>
-      </div>
-
     </div>
 
     <div class="overview" data-lang="en">
-      July 19 marks the predicted peak of the most dangerous wildfire conditions in the 2026 European season as Greece faces the "explosive cocktail" of extreme heat and meltemia winds that fire scientists have been warning about for days. In the US, the Aspen Acres fire in Colorado made decisive containment progress even as it crossed 100,000 acres and confirmed itself as a historic event; a sixth eastern Pacific tropical depression formed, continuing that basin's above-normal pace.
+      Brief overview of weather developments in the period.
     </div>
     <div class="overview" data-lang="ru">
-      19 июля — пиковый день пожарной опасности в Европе: «взрывной коктейль» из жары выше 40°C и мельтеми в Греции. В Колорадо пожар Aspen Acres достиг 100 000 акров при 61% локализации; в восточной Пацифике сформировался 6-й тропический циклон сезона.
+      Краткий обзор погодных событий периода.
     </div>
-
     <div class="card-grid">
-
-      <article class="card" data-date="2026-07-17">
+      <article class="card" data-date="2026-07-19">
         <div class="card-top">
-          <span class="card-source">KeepTalkingGreece</span>
-          <span class="card-date">17 JUL</span>
+          <span class="card-source">NOAA</span>
+          <span class="card-date">19 JUL</span>
         </div>
-        <a class="card-headline" href="https://www.keeptalkinggreece.com/2026/07/17/greece-explosive-cocktail-geatwave-northern-winds-forest-fires-risk/">Greece faces "explosive cocktail" of 40°C+ heat and meltemia winds July 19–20 — highest fire risk of the 2026 season</a>
-        <p class="card-summary" data-lang="en">Greek meteorologists issued their highest-level wildfire risk advisory for July 19–20, warning that meltemia (Etesian) winds combining with extreme heat and drought-stressed fuels will create fire spread rates that ground crews cannot safely match and aerial suppression cannot safely operate in.</p>
-        <p class="card-summary" data-lang="ru">Греческие метеорологи объявили наивысший уровень пожарной опасности на 19–20 июля: ветры мельтеми и жара выше 40°C на иссушённых почвах — условия, при которых авиация не может эффективно работать.</p>
+        <a class="card-headline" href="#">Weather story headline</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
       </article>
-
       <article class="card" data-date="2026-07-18">
         <div class="card-top">
-          <span class="card-source">CBS Colorado</span>
+          <span class="card-source">ECMWF</span>
           <span class="card-date">18 JUL</span>
         </div>
-        <a class="card-headline" href="https://www.cbsnews.com/colorado/news/aspen-acres-fire-southern-colorado-surpasses-100000-acres/">Aspen Acres fire surpasses 100,000 acres and reaches 61% containment — Colorado's 7th largest wildfire on record</a>
-        <p class="card-summary" data-lang="en">Containment surged from 35% to 61% in 48 hours as crews made decisive gains on the northern flank, but 241 structures are confirmed destroyed in Beulah and Rye, 1,723 personnel remain assigned, and the fire is still actively threatening Rye township with Red Flag conditions persisting through the weekend.</p>
-        <p class="card-summary" data-lang="ru">Локализация выросла с 35% до 61% за 48 часов; 241 строение уничтожено в Беула и Рае; пожар остаётся активным в 3 км от Рая при сохраняющихся условиях «Красного флага».</p>
+        <a class="card-headline" href="#">Another weather story</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
       </article>
-
-      <article class="card" data-date="2026-07-16">
-        <div class="card-top">
-          <span class="card-source">Euronews</span>
-          <span class="card-date">16 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.euronews.com/video/2026/07/16/spain-battles-major-aragon-wildfire-amid-heatwave-and-climate-fears">Spain battles major Aragon wildfire amid heatwave and climate fears</a>
-        <p class="card-summary" data-lang="en">A fast-moving wildfire erupted in Spain's Aragon region on July 16 during the fourth consecutive European heat event of 2026, adding to a multi-front crisis that has already killed at least 14 people, forced tens of thousands to evacuate, and scorched portions of Spain, France, Portugal, Greece, Italy, and Turkey since early July.</p>
-        <p class="card-summary" data-lang="ru">Новый крупный пожар в Арагоне (Испания) 16 июля — на фоне четвёртой волны жары; с начала июля погибло не менее 14 человек в Южной Европе.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-07">
-        <div class="card-top">
-          <span class="card-source">InsideClimate News</span>
-          <span class="card-date">07 JUL</span>
-        </div>
-        <a class="card-headline" href="https://insideclimatenews.org/news/07072026/record-heat-drives-wildfires-in-europe-forces-thousands-to-evacuate/">Record Heat Drives Wildfires in Europe, Forces Thousands to Evacuate</a>
-        <p class="card-summary" data-lang="en">A comprehensive on-the-ground account of the early-July European wildfire crisis: the EU deployed a record 22 firefighting aircraft and cross-border personnel across Spain, France, Portugal, Greece, Italy, and Turkey as the third consecutive 2026 heatwave drove simultaneous fire outbreaks across southern Europe.</p>
-        <p class="card-summary" data-lang="ru">ЕС развернул рекордные 22 пожарных самолёта в шести странах Южной Европы; подробный репортаж о кризисе начала июля.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-18">
-        <div class="card-top">
-          <span class="card-source">NHC / NOAA</span>
-          <span class="card-date">18 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.nhc.noaa.gov/">Eastern Pacific Tropical Depression 6E forms — NHC forecasts intensification toward hurricane strength</a>
-        <p class="card-summary" data-lang="en">The sixth tropical disturbance of an above-normal 2026 eastern Pacific season formed south of the Baja California peninsula on July 18; with no land threat but continued intensification forecast over warm open-water SSTs, the system illustrates the classic El Niño pattern of enhanced eastern Pacific, suppressed Atlantic activity.</p>
-        <p class="card-summary" data-lang="ru">Шестое тропическое возмущение сезона 2026 года в восточной Пацифике сформировалось 18 июля; угрозы суше нет, но ожидается усиление над тёплыми водами.</p>
-      </article>
-
     </div>
     <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
   </section>
@@ -725,73 +652,30 @@
       <span class="section-count" data-count-for="renewables"></span>
     </div>
     <div class="overview" data-lang="en">
-      EU solar reached an all-time monthly high of 52 TWh (25% of bloc electricity) in June 2026, anchored by Germany's record H1 at 61.8% renewable share, even as the US market enters an uncertain new era following the expiry of federal wind and solar tax credits under the One Big Beautiful Bill Act on July 4. India's 28.9 GW of H1 renewable additions confirm the global buildout is accelerating far beyond its European and North American cores, with the Indo-Pacific now accounting for a majority of new capacity.
+      Brief overview of renewables developments in the period.
     </div>
     <div class="overview" data-lang="ru">
-      Солнечная генерация ЕС установила рекорд — 52 ТВт·ч (25% электроэнергии) в июне 2026 года; США вступают в новую эпоху без федеральных субсидий для ветра и солнца после принятия закона OBBBA; Индия подтверждает глобальный охват энергетического перехода — 28,9 ГВт ВИЭ за полгода.
+      Краткий обзор событий в возобновляемой энергетике.
     </div>
     <div class="card-grid">
-
-      <article class="card" data-date="2026-07-08">
+      <article class="card" data-date="2026-07-19">
         <div class="card-top">
-          <span class="card-source">Fraunhofer ISE</span>
-          <span class="card-date">08 JUL</span>
+          <span class="card-source">PV Magazine</span>
+          <span class="card-date">19 JUL</span>
         </div>
-        <a class="card-headline" href="https://solarquarter.com/2026/07/08/germanys-renewable-energy-share-reaches-61-8-as-solar-and-wind-set-new-records-in-h1-2026/">Germany's renewable energy share reaches 61.8% in H1 2026 — solar and wind set new records</a>
-        <p class="card-summary" data-lang="en">Fraunhofer ISE analysis: Germany's solar fleet generated a record 43.2 TWh in H1 (+10% YoY), offshore wind hit 14.6 TWh (record), and renewables covered 61.8% of net public electricity — the cleanest first half in the country's history, enabled by record new capacity added in 2024–2025.</p>
-        <p class="card-summary" data-lang="ru">Солнечные станции Германии выработали рекордные 43,2 ТВт·ч в I полугодии (+10%), морская ветроэнергетика — 14,6 ТВт·ч (рекорд); доля ВИЭ — 61,8%.</p>
+        <a class="card-headline" href="#">Solar story</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
       </article>
-
-      <article class="card" data-date="2026-07-14">
-        <div class="card-top">
-          <span class="card-source">Euronews / Ember</span>
-          <span class="card-date">14 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.euronews.com/2026/07/14/solar-generated-record-25-of-eu-power-in-june-with-germany-spain-and-poland-leading-the-ra">Solar generated a record 25% of EU power in June with Germany, Spain and Poland leading the race</a>
-        <p class="card-summary" data-lang="en">EU solar generation hit 52 TWh in June 2026 — 25% of monthly electricity, the highest share on record — as Germany, Spain, and Poland posted their strongest solar months, eclipsing natural gas as the bloc's second-largest generation source in the summer months.</p>
-        <p class="card-summary" data-lang="ru">В июне 2026 года солнечная энергия обеспечила рекордные 25% электроэнергии ЕС (52 ТВт·ч); Германия, Испания и Польша — лидеры месяца.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-06">
-        <div class="card-top">
-          <span class="card-source">White &amp; Case</span>
-          <span class="card-date">06 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.whitecase.com/insight-alert/amendments-to-ira-tax-credits-congressional-budget-bill-july-6">US wind and solar federal tax credits (45Y/48E) ended July 4 under the One Big Beautiful Bill Act</a>
-        <p class="card-summary" data-lang="en">The OBBBA eliminates the Section 45Y production credit and 48E investment credit for new wind and solar projects beginning construction after July 4, 2026 — closing a 35-year era of federal clean energy subsidies and creating urgent race-to-qualify pressure on projects currently in the pipeline.</p>
-        <p class="card-summary" data-lang="ru">Закон OBBBA отменил федеральные производственные и инвестиционные налоговые льготы для новых ветровых и солнечных проектов США с 4 июля 2026 года, завершив 35-летнюю эпоху субсидий.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-16">
-        <div class="card-top">
-          <span class="card-source">Renewables Now</span>
-          <span class="card-date">16 JUL</span>
-        </div>
-        <a class="card-headline" href="https://renewablesnow.com/news/india-adds-26-gw-of-solar-2-9-gw-of-wind-power-in-h1-2026-1297889/">India adds 26 GW of solar and 2.9 GW of wind power in H1 2026</a>
-        <p class="card-summary" data-lang="en">India's 28.9 GW combined renewable addition in H1 2026 makes it the world's second-largest new-deployment market after China; the solar run-rate of ~52 GW/year exceeds the pace required for India's 500 GW non-fossil target by 2030, though wind deployment remains constrained by land-acquisition and grid challenges.</p>
-        <p class="card-summary" data-lang="ru">Индия ввела 28,9 ГВт ВИЭ в I полугодии 2026 года — второй показатель в мире; темп солнечных установок (~52 ГВт/год) превышает необходимый для цели 500 ГВт к 2030 году.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-14">
+      <article class="card" data-date="2026-07-18">
         <div class="card-top">
           <span class="card-source">WindEurope</span>
-          <span class="card-date">14 JUL</span>
+          <span class="card-date">18 JUL</span>
         </div>
-        <a class="card-headline" href="https://windeurope.org/news/offshore-wind-in-the-mediterranean-new-study-sets-out-priorities-for-growth/">Offshore wind in the Mediterranean: new study sets out priorities for growth</a>
-        <p class="card-summary" data-lang="en">WindEurope/Politecnico di Torino identify permitting reform, grid readiness, and port infrastructure as the three barriers blocking Mediterranean offshore wind — a region with near-zero installed capacity despite significant floating-wind resource, where deployment would complement solar and reduce summer grid stress.</p>
-        <p class="card-summary" data-lang="ru">WindEurope и Politecnico di Torino: три барьера для морской ветроэнергетики Средиземноморья — разрешительные процедуры, готовность сетей и портовая инфраструктура.</p>
+        <a class="card-headline" href="#">Wind story</a>
+        <p class="card-summary" data-lang="en">One-line summary.</p>
+        <p class="card-summary" data-lang="ru">Краткое описание.</p>
       </article>
-
-      <article class="card" data-date="2026-07-11">
-        <div class="card-top">
-          <span class="card-source">Axios Pro</span>
-          <span class="card-date">11 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.axios.com/pro/climate-deals/2026/07/11/energy-climate-deals-vc-pe-ipos-july-6">Indonesia's PT Barito Renewables offers $5B+ to acquire Philippines geothermal giant Energy Development Corp</a>
-        <p class="card-summary" data-lang="en">PT Barito Renewables Energy's $5 billion-plus bid for Energy Development Corporation — the Philippines' dominant geothermal producer with over 1.4 GW of installed capacity — would create one of the world's largest geothermal power companies and accelerate Southeast Asia's emerging role in the global clean energy buildout.</p>
-        <p class="card-summary" data-lang="ru">Индонезийская PT Barito предложила более $5 млрд за крупнейшего геотермального производителя Филиппин Energy Development Corp (1,4+ ГВт); сделка создаст одного из крупнейших геотермальных операторов мира.</p>
-      </article>
-
     </div>
     <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
   </section>
@@ -806,68 +690,32 @@
       <span class="section-count" data-count-for="science"></span>
     </div>
     <div class="overview" data-lang="en">
-      ECMWF's formal publication of the AIFS 1.1.0 model description in Geoscientific Model Development marks a milestone for operational AI weather forecasting; paired with a June arXiv preprint arguing that ML has already "revolutionized" forecasting and the real remaining challenge is institutional workflow redesign, the research window reflects a field in rapid transition. Separately, a new conformal-prediction study reveals systematic over- and under-confidence in existing probabilistic AI forecasts — a calibration gap that practitioners need to account for in decision-support applications.
+      Brief overview of notable papers and research findings this period.
     </div>
     <div class="overview" data-lang="ru">
-      Публикация описания AIFS 1.1.0 в журнале Geoscientific Model Development фиксирует зрелость оперативного ИИ-прогнозирования ECMWF; препринт июня 2026 ставит вопрос о перестройке институциональных процессов, а исследование конформной предикции выявляет систематические погрешности калибровки вероятностных ИИ-моделей.
+      Краткий обзор заметных публикаций и исследований.
     </div>
     <div class="card-grid">
-
-      <article class="card" data-date="2026-07-10">
-        <div class="card-top">
-          <span class="card-source">Geosci. Model Dev.</span>
-          <span class="card-date">10 JUL</span>
-        </div>
-        <a class="card-headline" href="https://gmd.copernicus.org/articles/19/4703/2026/">AIFS Single 1.1.0: an update to ECMWF's machine-learned weather forecast model AIFS</a>
-        <p class="card-meta">Lang et al. · ECMWF · Geoscientific Model Development · peer-reviewed</p>
-        <p class="card-summary" data-lang="en">Peer-reviewed description of ECMWF's operational AIFS 1.1.0 — the first AI weather system running in real-time at a major forecasting centre — confirms skillful global medium-range performance with fully coupled atmosphere-ocean-sea-ice assimilation; wave and snow cover forecasts added in the 1.1.0 update show substantial skill improvement over the physical IFS.</p>
-        <p class="card-summary" data-lang="ru">Рецензируемое описание оперативной AIFS 1.1.0 ECMWF: модель показывает высокое качество глобального прогноза, добавлены прогнозы волнения и снежного покрова, превосходящие физическую модель IFS.</p>
-      </article>
-
-      <article class="card" data-date="2026-06-30">
+      <article class="card" data-date="2026-07-19">
         <div class="card-top">
           <span class="card-source">arXiv</span>
-          <span class="card-date">30 JUN</span>
+          <span class="card-date">19 JUL</span>
         </div>
-        <a class="card-headline" href="https://arxiv.org/abs/2606.25076">Machine learning is revolutionizing weather forecasting — the next step is a change in how we work</a>
-        <p class="card-meta">Bouallegue et al. · ECMWF · arXiv:2606.25076 · preprint</p>
-        <p class="card-summary" data-lang="en">Commentary-style preprint from ECMWF researchers arguing that as AI models take over the forecasting pipeline, the field's bottleneck has shifted from model performance to institutional workflow redesign — verification frameworks, ensemble production, and the role of the human forecaster all need rethinking from scratch.</p>
-        <p class="card-summary" data-lang="ru">Препринт ECMWF: ИИ уже «революционизировал» прогнозирование — главная задача теперь перестройка рабочих процессов (верификация, ансамбли, роль синоптика), а не улучшение моделей.</p>
+        <a class="card-headline" href="#">Paper title: ML-based Global Weather Forecasting at Sub-km Scale</a>
+        <p class="card-meta">Author et al. · physics.ao-ph · preprint</p>
+        <p class="card-summary" data-lang="en">One-line takeaway — what the paper shows and why it's significant.</p>
+        <p class="card-summary" data-lang="ru">Главный вывод работы одной строкой.</p>
       </article>
-
-      <article class="card" data-date="2026-06-28">
-        <div class="card-top">
-          <span class="card-source">arXiv</span>
-          <span class="card-date">28 JUN</span>
-        </div>
-        <a class="card-headline" href="https://arxiv.org/abs/2606.19642">Rigorous uncertainty quantification of probabilistic AI weather forecasts with conformal prediction</a>
-        <p class="card-meta">Anonymous et al. · arXiv:2606.19642 · preprint</p>
-        <p class="card-summary" data-lang="en">First systematic application of conformal prediction to probabilistic AI weather models (GenCast, AIFS-CRPS) reveals they are overconfident at short lead times and underconfident beyond day 5; a post-processing correction is proposed that yields theoretically guaranteed coverage — critical for decision-support use cases where miscalibrated uncertainty estimates carry real operational risk.</p>
-        <p class="card-summary" data-lang="ru">Первая оценка вероятностных ИИ-моделей погоды методом конформной предикции: переоценка уверенности на коротких заблаговременностях и недооценка после 5-го дня; предложена постобработочная коррекция с гарантированным покрытием.</p>
-      </article>
-
       <article class="card" data-date="2026-07-15">
         <div class="card-top">
-          <span class="card-source">ECMWF Blog</span>
+          <span class="card-source">Time</span>
           <span class="card-date">15 JUL</span>
         </div>
-        <a class="card-headline" href="https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models">Farewell to the external AI models — ECMWF retires GraphCast, Pangu-Weather from operational suite</a>
-        <p class="card-meta">ECMWF AIFS Blog · operational milestone</p>
-        <p class="card-summary" data-lang="en">With IFS Cycle 50r1 live, ECMWF formally discontinued real-time operation of all externally-developed AI models including GraphCast, Pangu-Weather, and FourCastNet — citing performance degradation after the IFS upgrade that rendered first-generation models increasingly out of date; AIFS now handles all in-house AI guidance.</p>
-        <p class="card-summary" data-lang="ru">ECMWF официально вывел из эксплуатации все внешние ИИ-модели (GraphCast, Pangu-Weather, FourCastNet) после обновления IFS 50r1 — исторический рубеж: AIFS теперь единственная оперативная ИИ-система прогноза в центре.</p>
+        <a class="card-headline" href="https://time.com/article/2026/07/15/world-models-are-ai-s-next-frontier/">World Models Are AI's Next Frontier</a>
+        <p class="card-meta">Popular coverage · Time Magazine</p>
+        <p class="card-summary" data-lang="en">How world models are becoming the next major AI architecture, with implications for weather simulation and climate forecasting.</p>
+        <p class="card-summary" data-lang="ru">World models как следующая крупная архитектура ИИ — и что это значит для моделирования погоды и климата.</p>
       </article>
-
-      <article class="card" data-date="2026-07-13">
-        <div class="card-top">
-          <span class="card-source">ScienceDaily / GRL</span>
-          <span class="card-date">13 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.sciencedaily.com/releases/2026/03/260309183208.htm">Scientists confirm global warming has accelerated significantly since 2015 — 0.35°C/decade, up 75%</a>
-        <p class="card-meta">Foster &amp; Rahmstorf (PIK) · Geophysical Research Letters · peer-reviewed · popular coverage</p>
-        <p class="card-summary" data-lang="en">Analysis across five global temperature datasets (NASA, NOAA, HadCRUT, Berkeley Earth, ERA5), removing El Niño, volcanic, and solar signals, finds warming has accelerated to ~0.35°C/decade since 2015 — about 75% faster than the 0.2°C/decade average since the 1970s — with over 98% statistical confidence. Popular science coverage note.</p>
-        <p class="card-summary" data-lang="ru">Анализ пяти глобальных наборов температурных данных с исключением естественной изменчивости: с 2015 года потепление ускорилось до 0,35°C/десятилетие — на 75% быстрее, чем в среднем с 1970-х; результат значим с вероятностью 98%. Популярное освещение.</p>
-      </article>
-
     </div>
     <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
   </section>
@@ -883,74 +731,44 @@
     </div>
     <div class="industry-cards">
 
-      <article class="industry-card" data-date="2026-07-13">
+      <article class="industry-card" data-date="2026-07-19">
         <div class="industry-top">
-          <h3 class="industry-title">Climate Tech Records $26 Billion in H1 2026 VC Funding — Busiest First Half on Record</h3>
-          <span class="industry-date">13 JUL</span>
+          <h3 class="industry-title">New Partnership: meteoblue × Resilens AG</h3>
+          <span class="industry-date">19 JUL</span>
         </div>
         <p class="industry-body" data-lang="en">
-          The global climate technology sector closed H1 2026 with a record <a href="https://www.bloomberg.com/news/articles/2026-07-13/climate-tech-ipo-market-gets-biggest-boost-since-2022" target="_blank" rel="noopener">$26.1 billion in venture capital investment</a> — up 55% from H1 2025 — and 153 public listings and acquisitions, a 70% year-on-year increase, per Bloomberg's mid-year market review and CTVC data. The surge was driven primarily by AI data-centre power demand, with energy infrastructure, advanced nuclear, and geothermal attracting outsized deal flow; Fervo Energy's $1.9 billion geothermal IPO (Nasdaq, +33% on debut) and X-Energy's $1 billion advanced nuclear listing were the marquee public-market exits. Despite the headline momentum, nearly two-thirds of energy companies that IPO'd this year or last are currently trading below their offer price — a caveat worth tracking as the back half of the year unfolds.
+          <a href="https://resilens.com/" target="_blank" rel="noopener">Resilens AG</a>,
+          a climate risk assessment and adaptation planning company, has entered a strategic
+          partnership with meteoblue to integrate high-resolution climate data into its platform.
+          The collaboration supports vulnerability analyses, exposure assessments, and the
+          prioritisation of climate adaptation measures for cities and infrastructure operators.
         </p>
         <p class="industry-body" data-lang="ru">
-          Мировой рынок климатических технологий закрыл I полугодие 2026 года с рекордными <a href="https://www.bloomberg.com/news/articles/2026-07-13/climate-tech-ipo-market-gets-biggest-boost-since-2022" target="_blank" rel="noopener">$26,1 млрд венчурных инвестиций</a> (+55% к 2025) и 153 сделками M&A/IPO (+70%); главный драйвер — спрос ЦОД на надёжную электроэнергию. Две трети эмитентов торгуются ниже цены размещения.
+          <a href="https://resilens.com/" target="_blank" rel="noopener">Resilens AG</a>
+          (оценка климатических рисков и планирование адаптации) заключила стратегическое
+          партнёрство с meteoblue: климатические данные высокого разрешения будут интегрированы
+          в платформу Resilens для анализа уязвимости и приоритизации мер адаптации.
         </p>
-        <span class="industry-source"><a href="https://www.esgtoday.com/climate-tech-funding-surges-in-h1-2026-on-growing-data-center-demand-for-low-carbon-power-report/" target="_blank" rel="noopener">Bloomberg / ESG Today</a></span>
-      </article>
-
-      <article class="industry-card" data-date="2026-07-07">
-        <div class="industry-top">
-          <h3 class="industry-title">Proxima Fusion Raises €411 Million from Google and RWE — Europe's Largest Private Fusion Round</h3>
-          <span class="industry-date">07 JUL</span>
-        </div>
-        <p class="industry-body" data-lang="en">
-          Munich-based <a href="https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion" target="_blank" rel="noopener">Proxima Fusion</a> secured a €411 million ($468 million) Series B on July 7 — the largest private fusion financing round in European history — led by XTX Ventures and East X Ventures, with Google and energy utility RWE as strategic investors. The round values the Max Planck Institute spin-out at €2.4 billion. Capital will fund completion of a Stellarator Model Coil, expansion of high-temperature superconducting magnet production, and construction of Alpha, a net-energy stellarator demonstrator near Munich co-developed with the state of Bavaria and the Max Planck Institute for Plasma Physics. The round follows General Fusion's Nasdaq listing (week of July 14–17) and positions Proxima as the leading European competitor in the global commercial fusion race.
-        </p>
-        <p class="industry-body" data-lang="ru">
-          <a href="https://www.proximafusion.com/press-news/proxima-fusion-raises-eu411-million-to-build-europes-commercial-fusion-champion" target="_blank" rel="noopener">Proxima Fusion</a> (Мюнхен, спин-офф Института Макса Планка) привлекла €411 млн от Google и RWE — крупнейший частный раунд в европейской термоядерной отрасли; оценка компании — €2,4 млрд. Средства направят на создание демонстратора чистой энергии Alpha.
-        </p>
-        <span class="industry-source"><a href="https://finance.yahoo.com/energy/articles/proxima-fusion-raises-411-million-060500150.html" target="_blank" rel="noopener">Yahoo Finance / Proxima Fusion PR</a></span>
-      </article>
-
-      <article class="industry-card" data-date="2026-07-08">
-        <div class="industry-top">
-          <h3 class="industry-title">Private Equity Funds Become "Heat Detectives" as Climate Analytics Market Targets $13 Billion</h3>
-          <span class="industry-date">08 JUL</span>
-        </div>
-        <p class="industry-body" data-lang="en">
-          As extreme heat becomes a direct threat to portfolio company earnings and asset valuations, private equity firms are racing to embed <a href="https://www.bloomberg.com/news/articles/2026-07-08/private-equity-funds-become-heat-detectives-as-climate-analytics-boom" target="_blank" rel="noopener">climate risk analytics</a> into their diligence and monitoring workflows, Bloomberg reports. BCG estimates the climate prediction and risk assessment market could double to $13 billion by 2030. Climate X, Jupiter Intelligence, and AI-native entrants are competing for institutional mandates, with PE firms now tracking heatwave forecasts, wildfire exposure, and flood probability across their portfolios in near-real time. The shift reflects a structural transition: climate risk has moved from an ESG disclosure item to a financial underwriting input.
-        </p>
-        <p class="industry-body" data-lang="ru">
-          Частные инвестиционные компании встраивают <a href="https://www.bloomberg.com/news/articles/2026-07-08/private-equity-funds-become-heat-detectives-as-climate-analytics-boom" target="_blank" rel="noopener">климатическую аналитику</a> в due diligence и мониторинг портфелей; рынок оценки климатических рисков может вырасти до $13 млрд к 2030 году по данным BCG. Climate X, Jupiter Intelligence и ИИ-стартапы борются за институциональные мандаты.
-        </p>
-        <span class="industry-source"><a href="https://www.bloomberg.com/news/articles/2026-07-08/private-equity-funds-become-heat-detectives-as-climate-analytics-boom" target="_blank" rel="noopener">Bloomberg</a></span>
-      </article>
-
-      <article class="industry-card" data-date="2026-07-14">
-        <div class="industry-top">
-          <h3 class="industry-title">Climentum Capital Launches €100M Fund II — First Close at €60M for Early-Stage European Climate Tech</h3>
-          <span class="industry-date">14 JUL</span>
-        </div>
-        <p class="industry-body" data-lang="en">
-          Copenhagen-based <a href="https://www.esgtoday.com/climentum-launches-new-climate-tech-venture-fund-with-e60-million-first-close/" target="_blank" rel="noopener">Climentum Capital</a> announced a €60 million first close on its second climate technology venture fund, targeting a total raise of €100 million to back early-stage startups across Northern and Central Europe. Fund II focuses on hard-tech and software solutions for climate mitigation and adaptation, continuing Fund I's portfolio in agricultural tech, industrial decarbonisation, and green materials. The launch highlights a structural tension in the 2026 climate VC market: while headline funding figures are record-high, early-stage (seed and Series A) financing for climate startups is actually contracting as later-stage capital concentrates in proven infrastructure assets and IPO-ready companies.
-        </p>
-        <p class="industry-body" data-lang="ru">
-          <a href="https://www.esgtoday.com/climentum-launches-new-climate-tech-venture-fund-with-e60-million-first-close/" target="_blank" rel="noopener">Climentum Capital</a> (Копенгаген) объявила первое закрытие второго фонда климатических технологий на €60 млн при цели €100 млн — инвестиции в ранние стадии в Северной и Центральной Европе. Запуск на фоне реального сокращения посевного финансирования в климаттехе.
-        </p>
-        <span class="industry-source"><a href="https://www.esgtoday.com/climentum-launches-new-climate-tech-venture-fund-with-e60-million-first-close/" target="_blank" rel="noopener">ESG Today</a></span>
+        <span class="industry-source">meteoblue</span>
       </article>
 
       <article class="industry-card" data-date="2026-07-18">
         <div class="industry-top">
-          <h3 class="industry-title">Axios Climate Deals Week of July 13: Blue Energy Gets Constellation Backing; Ardian Acquires Munich Electrification</h3>
+          <h3 class="industry-title">Weather Trading Gains Traction as Wind and Solar Grow</h3>
           <span class="industry-date">18 JUL</span>
         </div>
         <p class="industry-body" data-lang="en">
-          The week's notable transactions in the <a href="https://www.axios.com/pro/climate-deals/2026/07/18/energy-climate-deals-vc-pe-ipos-july-13" target="_blank" rel="noopener">energy and climate deal flow</a> included nuclear startup Blue Energy securing investment from Constellation Energy's venture capital arm — bringing one of the US's largest nuclear operators onto its cap table — and Paris-based Ardian acquiring a majority stake in Munich Electrification, a German battery management systems and power electronics firm serving the EV and stationary storage markets. StratX, a GHG reduction software startup, raised a $1.19 million seed round led by Neglected Climate Opportunities. ePointZero (Abu Dhabi) also closed its $2.25 billion acquisition of US midstream gas company Traverse Midstream Partners.
+          As wind and solar capacity expands, power markets are increasingly exposed to short-term
+          weather swings, fuelling growth in weather-linked trading strategies and hedging products
+          among energy traders and financial institutions.
         </p>
         <p class="industry-body" data-lang="ru">
-          Ядерный стартап Blue Energy получил инвестиции от венчурного подразделения Constellation Energy; Ardian приобрёл контрольный пакет Munich Electrification (системы управления батареями, Германия). StratX (ПО для сокращения выбросов) закрыл посевной раунд $1,19 млн от <a href="https://www.axios.com/pro/climate-deals/2026/07/18/energy-climate-deals-vc-pe-ipos-july-13" target="_blank" rel="noopener">Neglected Climate Opportunities</a>.
+          С ростом ветровой и солнечной генерации энергорынки всё сильнее зависят от краткосрочных
+          колебаний погоды — растёт интерес трейдеров к погодным торговым стратегиям и хеджированию.
         </p>
-        <span class="industry-source"><a href="https://www.axios.com/pro/climate-deals/2026/07/18/energy-climate-deals-vc-pe-ipos-july-13" target="_blank" rel="noopener">Axios Pro: Climate Deals</a></span>
+        <span class="industry-source">
+          <a href="https://www.bloomberg.com/news/newsletters/2026-06-29/weather-trading-gains-traction-as-wind-and-solar-energy-grow" target="_blank" rel="noopener">Bloomberg</a>
+        </span>
       </article>
 
     </div>
@@ -967,8 +785,6 @@
       <li><a href="archive/2026-07-18.html">2026-07-18</a></li>
       <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
       <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
-      <li><a href="archive/2026-07-15.html">2026-07-15</a></li>
-      <li><a href="archive/2026-07-14.html">2026-07-14</a></li>
     </ul>
     <p class="footer-credit" data-lang="en">
       Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
