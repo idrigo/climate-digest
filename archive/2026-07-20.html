@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
+
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
+  .major-events {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
+  }
+  .major-events-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
+    color: var(--industry);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2.5px 9px;
+    border-radius: 4px;
+  }
+  .industry-source a { color: #fff; text-decoration: none; }
+
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
+</style>
+</head>
+<body data-digest-date="2026-07-20" class="lang-en">
+
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 200700Z JUL26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
+    </nav>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      A <a href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026">Copernicus Marine Service analysis</a> found marine heatwaves blanketing 82% of the global ocean through H1 2026, while the <a href="https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/heatwave-continues-as-uk-records-unprecedented-run-of-35c-days">UK Met Office</a> confirmed Britain has broken its all-time record for most days above 35°C in a year. The <a href="https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/">US Climate Prediction Center</a> now places an 81% probability on the 2026–27 El Niño reaching a 3.6°C anomaly — nearly 1°C above the prior 2015–16 record — while the AI-infrastructure boom is simultaneously <a href="https://www.bloomberg.com/news/newsletters/2026-07-15/ai-surge-means-companies-are-falling-behind-on-climate-targets">derailing corporate climate targets</a> at Microsoft, Google, and Amazon, prompting <a href="https://insideclimatenews.org/news/14072026/new-york-first-data-center-moratorium/">New York</a> to impose the first statewide moratorium on new hyperscale data center permits in the US.
+    </div>
+    <div class="overview" data-lang="ru">
+      По данным <a href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026">Copernicus Marine Service</a>, в первом полугодии 2026 года морские волны тепла охватили 82% Мирового океана, а <a href="https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/">CPC</a> даёт 81% вероятность того, что Эль-Ниньо 2026–27 гг. станет рекордным с аномалией +3,6°C. Тем временем бум AI-инфраструктуры <a href="https://www.bloomberg.com/news/newsletters/2026-07-15/ai-surge-means-companies-are-falling-behind-on-climate-targets">срывает корпоративные климатические обязательства</a>, а <a href="https://insideclimatenews.org/news/14072026/new-york-first-data-center-moratorium/">Нью-Йорк</a> ввёл первый в США мораторий на новые гиперскейл-дата-центры.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">Carbon Brief</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.carbonbrief.org/debriefed-17-july-2026-uk-firewave-fossil-fuelled-heat-deaths-londons-natural-history-museum-spotlights-climate/">DeBriefed 17 July 2026: UK 'firewave' | Fossil-fuelled heat deaths | London's Natural History Museum spotlights climate</a>
+        <p class="card-summary" data-lang="en">Carbon Brief covers the UK's unprecedented "firewave" — 25 non-consecutive days above 30°C with nine above 34°C — and attribution research linking fossil fuel emissions to over 1,000 heat deaths in England and Wales this year.</p>
+        <p class="card-summary" data-lang="ru">Carbon Brief о беспрецедентной «огненной волне» в Великобритании (25 дней выше 30°C) и атрибуционных исследованиях, связывающих более 1 000 смертей от жары с выбросами ископаемого топлива.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Bloomberg Green</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.bloomberg.com/news/newsletters/2026-07-15/ai-surge-means-companies-are-falling-behind-on-climate-targets">AI Surge Means Companies Are Falling Behind on Climate Targets</a>
+        <p class="card-summary" data-lang="en">Microsoft (+27%), Google (+18%), and Amazon (+16%) posted large emissions increases as AI infrastructure build-out outpaces corporate decarbonization commitments, Bloomberg's Green Daily reports.</p>
+        <p class="card-summary" data-lang="ru">Microsoft (+27%), Google (+18%) и Amazon (+16%) резко увеличили выбросы из-за бума AI-инфраструктуры, срывая корпоративные климатические обязательства.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">Inside Climate News</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://insideclimatenews.org/news/14072026/new-york-first-data-center-moratorium/">New York Becomes First State in the Nation to Pause New Hyperscale Data Centers</a>
+        <p class="card-summary" data-lang="en">Governor Hochul signed a one-year moratorium on environmental permits for data centers of 50 MW or more — the first statewide pause of its kind in the US — citing AI-driven energy consumption and water-use concerns.</p>
+        <p class="card-summary" data-lang="ru">Губернатор Хокул ввела годовой мораторий на разрешения для дата-центров мощностью от 50 МВт — первый подобный запрет на уровне штата в США из-за потребления энергии и воды.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">Yale Climate</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/">This Could Be the Strongest El Niño on Record</a>
+        <p class="card-summary" data-lang="en">US CPC models give an 81% probability that the developing 2026–27 El Niño will peak at 3.6°C above normal — nearly 1°C above the 2015–16 record — bringing the event into genuinely uncharted territory.</p>
+        <p class="card-summary" data-lang="ru">По моделям CPC, вероятность того, что Эль-Ниньо 2026–27 гг. достигнет аномалии +3,6°C (почти на 1°C выше рекорда 2015–16 гг.), составляет 81% — территория, не имеющая аналогов.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Met Office</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/heatwave-continues-as-uk-records-unprecedented-run-of-35c-days">Heatwave Continues as UK Records Unprecedented Run of 35°C Days</a>
+        <p class="card-summary" data-lang="en">The UK has broken its all-time record for the most 35°C-or-above days in a single year during a third consecutive heatwave, surpassing records jointly held by 1976 and 2020.</p>
+        <p class="card-summary" data-lang="ru">Великобритания побила абсолютный рекорд по количеству дней выше 35°C в году в ходе третьей подряд волны жары, превзойдя показатели 1976 и 2020 годов.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-13">
+        <div class="card-top">
+          <span class="card-source">CMEMS</span>
+          <span class="card-date">13 JUL</span>
+        </div>
+        <a class="card-headline" href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026">Persistent Ocean Warmth and Expanding Marine Heatwaves Mark the First Half of 2026</a>
+        <p class="card-summary" data-lang="en">Copernicus Marine reports marine heatwaves expanded to cover 82% of the global ocean in H1 2026, with daily global sea surface temperatures at or above record levels every single day since June 21.</p>
+        <p class="card-summary" data-lang="ru">CMEMS: морские волны тепла охватили 82% Мирового океана в первом полугодии 2026 года; температура морской поверхности каждый день с 21 июня не опускается ниже рекордных значений.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 014-4 5 5 0 019.6 1.5A3.5 3.5 0 0117 19H7a4 4 0 01-3-4z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
+
+    <div class="major-events">
+      <div class="major-events-head">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="major-events-label"><span data-lang="en">Major Events</span><span data-lang="ru">Опасные явления</span></span>
+      </div>
+
+      <div class="event">
+        <div class="event-name">East Pacific TD 06-E — Eastern Pacific Ocean</div>
+        <div class="event-status">TROPICAL DEP · RAPID INTENSIFICATION</div>
+        <div class="event-impact">Forecast to reach Category 3 hurricane strength (~95 kt) by Mon–Tue; tracking well south of Baja California with no immediate land threat, but intensification warrants close monitoring.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Atlantic TD 2 (potential TS Bertha) — Northern Gulf of Mexico</div>
+        <div class="event-status">TROPICAL DEP · STRENGTHENING</div>
+        <div class="event-impact">Expected to intensify near the upper Gulf Coast over near-record-warm waters, bringing 50–200 mm of rainfall and coastal storm surge to Louisiana, Mississippi, and Alabama within 24–48 hours.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">European Heatwave 2026 — Iberian Peninsula &amp; Western Europe</div>
+        <div class="event-status">ACTIVE · EXTREME HEAT</div>
+        <div class="event-impact">Heat dome reloaded over Iberia with temperatures returning to 40–43°C; cumulative 2026 European heat death toll now exceeds 9,900; wildfires active across France and Spain.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Pacific Northwest Wildfires — United States</div>
+        <div class="event-status">PREPAREDNESS LVL 5 · MAXIMUM</div>
+        <div class="event-impact">73 large fires currently uncontained; 3.8 million acres burned in 2026; National Interagency Coordination Center at maximum preparedness, straining national aircraft and crew resources.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Flash Flooding &amp; Severe Storms — Utah / Arizona / Texas / Northeast US</div>
+        <div class="event-status">ACTIVE · FLASH FLOOD EMERGENCY</div>
+        <div class="event-impact">Flash floods killed at least 8 people across Utah, Arizona, and central Texas (July 17–19); damaging winds, large hail, and tornadoes struck the Northeast on July 18, canceling 1,000+ flights.</div>
+      </div>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The week was defined by compounding extremes across the US: a <a href="https://english.news.cn/20260719/2dca07c296f8431189fa9c853d9dc09d/c.html">maximum wildfire Preparedness Level 5</a> was declared with 3.8 million acres burned, while <a href="https://abcnews.com/US/severe-weather-threat-continues-us-flash-flooding-kills/story?id=134888707">flash flooding killed at least 8</a> from Utah to Texas and severe storms cancelled 1,000+ flights in the Northeast. In the tropics, <a href="https://weather.substack.com/p/july-19-2026-sunday-tropical-depression">East Pacific TD 06-E</a> is forecast to rapidly intensify to Category 3 hurricane strength, and <a href="https://yaleclimateconnections.org/2026/07/td-2-predicted-to-strengthen-near-upper-gulf-coast/">Atlantic TD 2</a> is approaching a northern Gulf Coast already battered by summer heat — all while a persistent <a href="https://www.severe-weather.eu/global-weather/heat-dome-europe-excessive-heatwave-july-summer-2026-forecast-mk/">European heatwave has surpassed 9,900 deaths</a>.
+    </div>
+    <div class="overview" data-lang="ru">
+      Неделя прошла под знаком экстремальных явлений в США: объявлен <a href="https://english.news.cn/20260719/2dca07c296f8431189fa9c853d9dc09d/c.html">максимальный (5-й) уровень готовности к пожарам</a>, <a href="https://abcnews.com/US/severe-weather-threat-continues-us-flash-flooding-kills/story?id=134888707">наводнения унесли жизни 8 человек</a>, а в тропиках <a href="https://weather.substack.com/p/july-19-2026-sunday-tropical-depression">тихоокеанский ТД 06-E</a> и <a href="https://yaleclimateconnections.org/2026/07/td-2-predicted-to-strengthen-near-upper-gulf-coast/">атлантический ТД 2</a> угрожают обоим побережьям. В Европе <a href="https://www.severe-weather.eu/global-weather/heat-dome-europe-excessive-heatwave-july-summer-2026-forecast-mk/">волна жары унесла более 9 900 жизней</a>.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-18">
+        <div class="card-top">
+          <span class="card-source">NIFC</span>
+          <span class="card-date">18 JUL</span>
+        </div>
+        <a class="card-headline" href="https://english.news.cn/20260719/2dca07c296f8431189fa9c853d9dc09d/c.html">US Raises Wildfire Preparedness to Highest Level as 73 Large Fires Burn</a>
+        <p class="card-summary" data-lang="en">The National Interagency Coordination Center declared Preparedness Level 5 — the maximum — with 40,560 fires burning 3.8 million acres in 2026; aircraft and crew resources are critically strained across the Pacific Northwest.</p>
+        <p class="card-summary" data-lang="ru">NICC объявил максимальный уровень готовности (5): в 2026 году насчитывается 40 560 пожаров на площади более 3,8 млн акров, ресурсы авиации и пожарных расчётов критически истощены.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">ABC News</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="https://abcnews.com/US/severe-weather-threat-continues-us-flash-flooding-kills/story?id=134888707">Severe Weather Threat Continues Across US; Flash Flooding Kills at Least 8</a>
+        <p class="card-summary" data-lang="en">Flash floods in Utah, Arizona, and central Texas killed at least eight people from July 17–19; an enhanced severe thunderstorm risk on July 18 brought damaging winds, large hail, and tornadoes to the Northeast, canceling 1,000+ flights.</p>
+        <p class="card-summary" data-lang="ru">Вспышки наводнений в Юте, Аризоне и Техасе унесли не менее 8 жизней; сильные грозы 18 июля с градом и смерчами на Северо-Востоке США отменили более 1 000 рейсов.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">NHC</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="https://weather.substack.com/p/july-19-2026-sunday-tropical-depression">East Pacific TD 06-E Forecast to Rapidly Intensify to Category 3 Hurricane</a>
+        <p class="card-summary" data-lang="en">NHC began tracking a sixth East Pacific tropical depression on July 19, with rapid intensification to tropical storm status within hours and Category 3 (~95 kt) hurricane intensity forecast by Monday–Tuesday; no land areas currently threatened.</p>
+        <p class="card-summary" data-lang="ru">NHC отслеживает 6-й тропический депрессион в восточной части Тихого океана; прогнозируется быстрая интенсификация до урагана 3-й категории (~95 уз.) к понедельнику–вторнику, угрозы для суши нет.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">Yale Climate</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="https://yaleclimateconnections.org/2026/07/td-2-predicted-to-strengthen-near-upper-gulf-coast/">TD 2 Predicted to Strengthen Near Upper Gulf Coast</a>
+        <p class="card-summary" data-lang="en">Atlantic TD 2 — forecast to become Tropical Storm Bertha — is expected to intensify over near-record-warm Gulf of Mexico waters, bringing storm surge and 2–8 inches of rain to the northern Gulf Coast within 48 hours.</p>
+        <p class="card-summary" data-lang="ru">Атлантический ТД 2 (возможное TS Bertha) усилится над аномально тёплыми водами Мексиканского залива и принесёт штормовой нагон и 50–200 мм осадков на северное побережье в течение 48 часов.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Severe-Wx.eu</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.severe-weather.eu/global-weather/heat-dome-europe-excessive-heatwave-july-summer-2026-forecast-mk/">Heat Dome Reloads Over Western Europe; Heatwave Death Toll Tops 9,900</a>
+        <p class="card-summary" data-lang="en">A fresh heat dome reloaded over Iberia in mid-July with temperatures returning to the low-to-mid 40s°C, extending a record multi-episode heatwave that has already killed more than 9,900 people across Europe while driving wildfires in France and Spain.</p>
+        <p class="card-summary" data-lang="ru">Новый тепловой купол усилился над Пиренейским полуостровом (до 40–43°C), продолжив многоэпизодную волну жары, унёсшую более 9 900 жизней в Европе и сопровождающуюся пожарами во Франции и Испании.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">ICIMOD</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.icimod.org/press-release/erratic-monsoon-and-rising-temperatures-heighten-flash-flood-risk-across-the-hindu-kush-himalaya">Erratic Monsoon and Rising Temperatures Heighten Flash Flood Risk Across Hindu Kush Himalaya</a>
+        <p class="card-summary" data-lang="en">ICIMOD warns that erratic 2026 monsoon behavior is dramatically increasing flash flood risk across the Hindu Kush Himalaya region, as monsoon-triggered landslides kill dozens in Bangladesh and India, including Rohingya refugee communities.</p>
+        <p class="card-summary" data-lang="ru">ICIMOD предупреждает о резком росте угрозы внезапных наводнений в Гиндукуш-Гималайском регионе на фоне нестабильного муссона; оползни уже унесли жизни десятков людей в Бангладеш и Индии.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M12 8l5-3M12 8L7 5M12 15l5 3M12 15l-5 3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      Solar shattered records on both sides of the Atlantic this week: <a href="https://ember-energy.org/latest-insights/a-quarter-of-eu-power-came-from-solar-for-the-first-time-in-june/">Ember data</a> confirmed solar supplied 25% of EU electricity in June 2026 — a historic first, topping every other generation source — while <a href="https://seia.org/blog/6-records-solar-and-storage-have-crushed-in-the-first-half-of-2026/">SEIA reported</a> US solar and storage broke six records in H1 2026, including a new national peak output of 35.4 GW on July 9 and California's battery fleet covering 36% of CAISO demand in a single evening. The output surge is already reshaping European electricity markets, driving <a href="https://www.pv-magazine.com/2026/07/15/europes-record-solar-output-drives-surge-in-negative-electricity-prices/">a sharp increase in negative-price hours</a> and prompting <a href="https://solarquarter.com/2026/07/16/solarpower-europe-solar-pv-saved-eu-e20-billion-in-gas-import-costs-became-largest-electricity-source-in-june/">SolarPower Europe</a> to estimate €20 billion in gas import savings in June alone.
+    </div>
+    <div class="overview" data-lang="ru">
+      По данным <a href="https://ember-energy.org/latest-insights/a-quarter-of-eu-power-came-from-solar-for-the-first-time-in-june/">Ember</a>, в июне 2026 года солнечная энергетика впервые обеспечила 25% электроэнергии ЕС, обогнав все прочие источники, а <a href="https://seia.org/blog/6-records-solar-and-storage-have-crushed-in-the-first-half-of-2026/">SEIA</a> зафиксировала шесть рекордов в США — в том числе пиковую мощность 35,4 ГВт 9 июля. Рекордная генерация уже вызвала <a href="https://www.pv-magazine.com/2026/07/15/europes-record-solar-output-drives-surge-in-negative-electricity-prices/">всплеск отрицательных цен</a> в Европе и позволила сэкономить <a href="https://solarquarter.com/2026/07/16/solarpower-europe-solar-pv-saved-eu-e20-billion-in-gas-import-costs-became-largest-electricity-source-in-june/">€20 млрд на импорте газа</a> за один месяц.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">Ember</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://ember-energy.org/latest-insights/a-quarter-of-eu-power-came-from-solar-for-the-first-time-in-june/">A Quarter of EU Power Came From Solar for the First Time in June</a>
+        <p class="card-summary" data-lang="en">Solar generated a record 52 TWh in June 2026, supplying 25% of EU electricity for the first time ever — topping nuclear, gas, wind, hydro, and coal to become the bloc's single largest power source for a calendar month.</p>
+        <p class="card-summary" data-lang="ru">В июне 2026 года солнечная генерация обеспечила 25% электроэнергии ЕС впервые в истории (52 ТВт·ч), обогнав ядерную, газовую, ветровую и гидроэнергетику.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">PV Magazine</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.pv-magazine.com/2026/07/14/france-italy-spain-set-daily-solar-records/">France, Italy and Spain Set New Daily Solar Generation Records</a>
+        <p class="card-summary" data-lang="en">Amid summer heat conditions, France, Italy, and Spain each posted new daily solar PV generation records, continuing a string of national milestones that has swept across the EU throughout 2026.</p>
+        <p class="card-summary" data-lang="ru">Франция, Италия и Испания обновили национальные рекорды суточной выработки солнечной электроэнергии на фоне летней жары — очередные в длинной серии рекордов ЕС в 2026 году.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">PV Magazine</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.pv-magazine.com/2026/07/15/europes-record-solar-output-drives-surge-in-negative-electricity-prices/">Europe's Record Solar Output Drives Surge in Negative Electricity Prices</a>
+        <p class="card-summary" data-lang="en">Record solar generation is producing a sharp increase in negative-price electricity hours across Europe — France alone recorded 370 such hours in H1 2026 — posing new grid integration and market design challenges.</p>
+        <p class="card-summary" data-lang="ru">Рекордная солнечная генерация резко увеличила число часов с отрицательными ценами на электроэнергию: только во Франции за первое полугодие их насчитывается уже 370.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-16">
+        <div class="card-top">
+          <span class="card-source">SolarPower EU</span>
+          <span class="card-date">16 JUL</span>
+        </div>
+        <a class="card-headline" href="https://solarquarter.com/2026/07/16/solarpower-europe-solar-pv-saved-eu-e20-billion-in-gas-import-costs-became-largest-electricity-source-in-june/">Solar PV Saved the EU €20 Billion in Gas Import Costs in June</a>
+        <p class="card-summary" data-lang="en">SolarPower Europe analysis finds that record June solar output displaced enough gas generation to save EU consumers an estimated €20 billion in gas import costs during a single calendar month.</p>
+        <p class="card-summary" data-lang="ru">По оценке SolarPower Europe, рекордная солнечная генерация в июне сэкономила потребителям ЕС около €20 млрд на импорте газа за один месяц.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-16">
+        <div class="card-top">
+          <span class="card-source">SEIA</span>
+          <span class="card-date">16 JUL</span>
+        </div>
+        <a class="card-headline" href="https://seia.org/blog/6-records-solar-and-storage-have-crushed-in-the-first-half-of-2026/">6 Records Solar and Storage Have Crushed in the First Half of 2026</a>
+        <p class="card-summary" data-lang="en">US solar peaked at 35.4 GW on July 9, California's battery fleet discharged a record 12.99 GW covering 36% of CAISO demand that same evening, and solar surpassed coal in US monthly generation for the first time ever in May 2026.</p>
+        <p class="card-summary" data-lang="ru">Американская солнечная генерация достигла пика в 35,4 ГВт (9 июля), аккумуляторы Калифорнии выдали рекордные 12,99 ГВт, а в мае 2026 года солнце впервые обогнало уголь по месячной выработке в США.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-18">
+        <div class="card-top">
+          <span class="card-source">CleanTechnica</span>
+          <span class="card-date">18 JUL</span>
+        </div>
+        <a class="card-headline" href="https://cleantechnica.com/2026/07/18/offshore-wind-china-reducing-costs-new-vessels/">New Offshore Wind Installation Vessels Drive Costs to $40–50/MWh</a>
+        <p class="card-summary" data-lang="en">A new wave of purpose-built installation vessels for XXL turbines — including Cadeler's Wind Ace — is driving offshore wind LCOE to $40–50/MWh, making the technology competitive with natural gas and cheaper than new coal.</p>
+        <p class="card-summary" data-lang="ru">Специализированные монтажные суда для сверхкрупных турбин (в т. ч. Wind Ace компании Cadeler) снижают LCOE офшорной ветроэнергетики до $40–50/МВт·ч — ниже стоимости новой угольной генерации.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      Two major AI weather model developments dominated the week: <a href="https://openmeteo.substack.com/p/google-weathernext-2-is-available">Google DeepMind's WeatherNext 2</a> — a generative ensemble producing hundreds of probabilistic members in under a minute — became publicly accessible via the Open-Meteo API, while <a href="https://arxiv.org/abs/2607.11457">ECMWF researchers published HourGlass</a>, a probabilistic temporal downscaler that reconstructs full hourly evolution between 6-hourly AI forecast states. A stark <a href="https://www.technologyreview.com/2026/07/17/1140622/weather-data-sabotage/">MIT Technology Review investigation</a> documented deliberate manipulation of physical weather stations to game prediction markets — including an incident at Paris CDG in spring 2026 — exposing systemic integrity risks as AI forecasting pipelines grow more dependent on real-time observations.
+    </div>
+    <div class="overview" data-lang="ru">
+      Две ключевые новости — <a href="https://openmeteo.substack.com/p/google-weathernext-2-is-available">WeatherNext 2 от Google DeepMind</a> (вероятностный ансамблевый прогноз 0–15 суток, сотни членов за минуту) стал доступен через API Open-Meteo, а <a href="https://arxiv.org/abs/2607.11457">ECMWF представила HourGlass</a> — вероятностную модель почасового даунскейлинга AI-прогнозов. <a href="https://www.technologyreview.com/2026/07/17/1140622/weather-data-sabotage/">MIT Technology Review</a> задокументировал намеренные манипуляции данными метеостанций для игры на рынках прогнозов, включая инцидент в парижском CDG.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-13">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">13 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2607.11457">HourGlass: A Probabilistic Data-Driven Temporal Downscaler for Global and Regional Weather Forecasting</a>
+        <p class="card-meta">Ingstad, Clare et al. (ECMWF) · arXiv:2607.11457 · physics.ao-ph / cs.LG · preprint</p>
+        <p class="card-summary" data-lang="en">HourGlass uses a CRPS-trained probabilistic model to reconstruct the full hourly evolution between 6-hourly AI forecast states, outperforming deterministic temporal interpolation while maintaining spatial and temporal consistency.</p>
+        <p class="card-summary" data-lang="ru">HourGlass (ECMWF) восстанавливает полную почасовую динамику между 6-часовыми шагами AI-прогнозов через вероятностную CRPS-обученную модель, превосходя детерминированную интерполяцию.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-16">
+        <div class="card-top">
+          <span class="card-source">Open-Meteo</span>
+          <span class="card-date">16 JUL</span>
+        </div>
+        <a class="card-headline" href="https://openmeteo.substack.com/p/google-weathernext-2-is-available">WeatherNext 2 Now Available via Open-Meteo Ensemble API</a>
+        <p class="card-meta">Google DeepMind (model) · Open-Meteo (integration) · Substack</p>
+        <p class="card-summary" data-lang="en">Google DeepMind's WeatherNext 2 — a Functional Generative Network producing hundreds of probabilistic ensemble members in under a minute, covering 0–15 day forecasts and outperforming prior AI models on 99.9% of variables — is now accessible through the open-source Open-Meteo API.</p>
+        <p class="card-summary" data-lang="ru">WeatherNext 2 (Google DeepMind) — вероятностная генеративная сеть для прогнозов 0–15 суток, сотни ансамблевых членов за &lt;1 мин — теперь доступна через открытый API Open-Meteo без Google Cloud.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">MIT Tech Review</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.technologyreview.com/2026/07/17/1140622/weather-data-sabotage/">The Risk of Weather Data Sabotage Is Rising</a>
+        <p class="card-meta">MIT Technology Review · investigative report</p>
+        <p class="card-summary" data-lang="en">Documented manipulation of physical weather stations to influence prediction-market payouts — including at Paris CDG in spring 2026 — highlights a new attack surface as AI forecasting systems grow more reliant on real-time observational data.</p>
+        <p class="card-summary" data-lang="ru">Задокументированные манипуляции с метеостанциями (в т. ч. в аэропорту Париж-CDG) обнажают системную уязвимость AI-прогнозирования, которое всё сильнее зависит от потоков наблюдений в реальном времени.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Nat. Clim. Change</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nature.com/articles/s41558-026-02709-7">Targeted Tropical Forest Restoration Can Offset Deforestation-Induced Water Flux Losses</a>
+        <p class="card-meta">Nature Climate Change · doi:10.1038/s41558-026-02709-7 · peer-reviewed</p>
+        <p class="card-summary" data-lang="en">Satellite observations reveal that forest gain increases evapotranspiration and precipitation more than equivalent forest loss reduces them — an asymmetry current climate models fail to reproduce — with the strongest signal over South America and Africa.</p>
+        <p class="card-summary" data-lang="ru">Спутниковые данные показывают: восстановление лесов увеличивает эвапотранспирацию и осадки сильнее, чем вырубка их снижает — асимметрия, которую не воспроизводят современные климатические модели.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Nat. Clim. Change</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nature.com/articles/s41558-026-02685-y">Future-Proofing Interpretations of the Paris Agreement's Well Below 2°C Limit</a>
+        <p class="card-meta">Lamboll &amp; Rogelj (Imperial College / IIASA) · Nature Climate Change · doi:10.1038/s41558-026-02685-y · peer-reviewed</p>
+        <p class="card-summary" data-lang="en">Standard probabilistic framings of "well below 2°C" become less stringent as climate uncertainty narrows over time; anchoring Paris targets to median warming (~1.65–1.8°C) is shown to be more robust and policy-stable.</p>
+        <p class="card-summary" data-lang="ru">Стандартные вероятностные трактовки цели «значительно ниже 2°C» слабеют по мере сужения климатической неопределённости; привязка к медианному потеплению (~1,65–1,8°C) оказывается устойчивее с точки зрения политики.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Новости индустрии</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-07-13">
+        <div class="industry-top">
+          <h3 class="industry-title">General Fusion Goes Public as First Fusion Energy Company on Nasdaq</h3>
+          <span class="industry-date">13 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://generalfusion.com/" target="_blank" rel="noopener">General Fusion</a> became the first pure-play fusion energy company to trade on a public stock exchange when it completed a SPAC merger with Spring Valley Acquisition Corp. III on July 13, debuting on Nasdaq under the ticker GFUZ with shares opening approximately 40% above the reference price. The company raised roughly $150 million through the transaction, bringing total funding to over $400 million, and has conducted more than 200,000 plasma experiments on its Magnetized Target Fusion technology over two decades of development. The listing is a landmark for climate-adjacent energy investing — public fusion equity now exists for the first time, offering direct market exposure to a technology that could reshape clean energy if it achieves commercial scale.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://generalfusion.com/" target="_blank" rel="noopener">General Fusion</a> стала первой в мире публичной компанией в сфере термоядерной энергетики: 13 июля она завершила слияние со SPAC и вышла на Nasdaq (тикер GFUZ), привлекая ~$150 млн и доводя совокупное финансирование до >$400 млн. Это переломный момент для инвестиций в климатически нейтральную энергетику: впервые в истории инвесторы получают прямой доступ к акциям термоядерной компании.
+        </p>
+        <span class="industry-source"><a href="https://techcrunch.com/2026/07/13/investors-send-general-fusion-soaring-in-debut-as-first-publicly-traded-fusion-energy-company/" target="_blank" rel="noopener">TechCrunch</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-15">
+        <div class="industry-top">
+          <h3 class="industry-title">Green Project Acquires Optera to Deepen Scope 3 Carbon Accounting</h3>
+          <span class="industry-date">15 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.greenproject.tech/" target="_blank" rel="noopener">Green Project Technologies</a>, the AI-powered corporate carbon management platform owned by Dutch environmental services group ACT Group, acquired <a href="https://www.optera.com/" target="_blank" rel="noopener">Optera</a>, an enterprise carbon accounting and supply-chain decarbonization company founded in 2006. The deal follows Green Project's 2025 acquisition of Emitwise and its June 2026 purchase of Zeroute — a rapid consolidation play building an end-to-end Scope 1, 2, and 3 emissions management suite. Optera's focus on Scope 3 supply-chain emissions — the category most enterprises struggle to track and report — makes it strategically central to the platform's roadmap.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.greenproject.tech/" target="_blank" rel="noopener">Green Project Technologies</a> (ACT Group, ИИ-платформа корпоративного углеродного учёта) приобрела <a href="https://www.optera.com/" target="_blank" rel="noopener">Optera</a> — платформу учёта выбросов цепочки поставок. Это уже третья сделка компании за 12 месяцев (после Emitwise и Zuroute), нацеленная на создание сквозного инструмента управления Scope 1, 2 и 3.
+        </p>
+        <span class="industry-source"><a href="https://www.esgtoday.com/green-project-technologies-acquires-carbon-accounting-platform-optera/" target="_blank" rel="noopener">ESG Today</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-14">
+        <div class="industry-top">
+          <h3 class="industry-title">BlackRock GIP Takes Controlling Stake in Community Solar Leader Summit Ridge Energy</h3>
+          <span class="industry-date">14 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.gipfund.com/" target="_blank" rel="noopener">Global Infrastructure Partners</a> — the infrastructure investment arm of BlackRock, the world's largest asset manager — agreed to acquire a majority, controlling interest in <a href="https://www.summitridgeenergy.com/" target="_blank" rel="noopener">Summit Ridge Energy</a>, one of the largest commercial and community solar operators in the United States with over 275 facilities and 60,000 customers across the Midwest, Mid-Atlantic, and New England. Summit Ridge had previously been backed by Apollo Global Management. The transaction signals deepening institutional conviction in distributed solar as a resilient, contract-backed asset class, with the world's largest asset manager now directly operating community solar at scale.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.gipfund.com/" target="_blank" rel="noopener">Global Infrastructure Partners</a> (инфраструктурное подразделение BlackRock) приобрела контрольный пакет в <a href="https://www.summitridgeenergy.com/" target="_blank" rel="noopener">Summit Ridge Energy</a> — крупнейшем операторе коммерческой и коммунальной солнечной генерации в США (275+ объектов, 60 000+ клиентов). Сделка отражает устойчивый интерес крупнейшего в мире управляющего активами к распределённой солнечной генерации как классу активов.
+        </p>
+        <span class="industry-source"><a href="https://www.esgtoday.com/blackrocks-gip-acquires-commercial-solar-platform-summit-ridge/" target="_blank" rel="noopener">ESG Today</a></span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-07-19.html">2026-07-19</a></li>
+      <li><a href="archive/2026-07-18.html">2026-07-18</a></li>
+      <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
+      <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
+      <li><a href="archive/2026-07-15.html">2026-07-15</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
+</body>
+</html>
