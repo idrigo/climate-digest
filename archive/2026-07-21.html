@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
+
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
+  .major-events {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
+  }
+  .major-events-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
+    color: var(--industry);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2.5px 9px;
+    border-radius: 4px;
+  }
+  .industry-source a { color: #fff; text-decoration: none; }
+
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
+</style>
+</head>
+<body data-digest-date="2026-07-21" class="lang-en">
+
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 210700Z JUL26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
+    </nav>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      <a href="https://www.bloomberg.com/news/newsletters/2026-07-20/burnham-s-government-faces-pressing-climate-issues-as-uk-heats-up">Andy Burnham became UK Prime Minister on 20 July</a> — inheriting three heatwaves, record heat deaths, and an unresolved North Sea drilling question — as a new <a href="https://www.nationalobserver.com/2026/07/20/news/ocean-heat-weather-impacts-el-nino">National Observer analysis</a> laid out the direct chain from record ocean heat (40% of global ocean area currently in marine heatwave) through the developing super El Niño to intensifying on-land extremes worldwide. <a href="https://www.carbonbrief.org/28-quotes-from-next-uk-leader-andy-burnham-on-climate-net-zero-and-fossil-fuels/">Carbon Brief's dossier</a> of Burnham's public climate statements revealed a mixed record that leaves his actual policy direction — particularly on fossil fuel licensing — genuinely uncertain.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://www.bloomberg.com/news/newsletters/2026-07-20/burnham-s-government-faces-pressing-climate-issues-as-uk-heats-up">Энди Бёрнэм стал премьером Великобритании 20 июля</a>, унаследовав три волны жары, тысячи климатических смертей и открытый вопрос о бурении в Северном море. <a href="https://www.nationalobserver.com/2026/07/20/news/ocean-heat-weather-impacts-el-nino">Расследование National Observer</a> наглядно показало, как рекордное тепло океана (40% площади в морской волне тепла) через Эль-Ниньо усиливает наземные экстремальные явления, а <a href="https://www.carbonbrief.org/28-quotes-from-next-uk-leader-andy-burnham-on-climate-net-zero-and-fossil-fuels/">досье Carbon Brief</a> обнажило двусмысленность климатической позиции нового премьера.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Bloomberg Green</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.bloomberg.com/news/newsletters/2026-07-20/burnham-s-government-faces-pressing-climate-issues-as-uk-heats-up">Burnham's Government Faces Pressing Climate Issues as UK Heats Up</a>
+        <p class="card-summary" data-lang="en">Andy Burnham, who became UK prime minister on July 20 following a Labour leadership contest, inherits three heatwave emergencies in a single year, thousands of heat-related deaths, damaged harvests, and a North Sea fossil fuel licensing decision his campaign conspicuously left unresolved.</p>
+        <p class="card-summary" data-lang="ru">Новый премьер Бёрнэм принял страну с тремя волнами жары за год, тысячами климатических смертей, ущербом урожаям и неурегулированным вопросом о новых лицензиях на добычу нефти и газа в Северном море.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">National Observer</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nationalobserver.com/2026/07/20/news/ocean-heat-weather-impacts-el-nino">The Oceans Are Full of Heat — and It's Coming Ashore</a>
+        <p class="card-summary" data-lang="en">Close to 40% of global ocean area is currently experiencing a marine heatwave, with Mediterranean and Pacific patches running more than 10°F above normal; the piece traces a direct mechanistic chain from this ocean heat surplus through El Niño's surface-warming redistribution to more intense cyclones, heavier rainfall, and more severe land-based heat events.</p>
+        <p class="card-summary" data-lang="ru">Около 40% Мирового океана охвачено морскими волнами тепла с аномалиями до +5,6°C; анализ прослеживает прямую цепочку от избытка тепла в океане через Эль-Ниньо к усилению ураганов, осадков и наземных волн жары.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">Carbon Brief</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.carbonbrief.org/28-quotes-from-next-uk-leader-andy-burnham-on-climate-net-zero-and-fossil-fuels/">28 Quotes From New UK Leader Andy Burnham on Climate, Net-Zero and Fossil Fuels</a>
+        <p class="card-summary" data-lang="en">Carbon Brief compiled Burnham's public record on climate: he backed the fossil fuel non-proliferation treaty in 2025 as "a lifeline," supports net-zero broadly, and is "politically close" to net-zero secretary Ed Miliband — but said he had "an open mind" on new North Sea drilling in June, leaving industry and climate advocates watching for policy clarity from his new government.</p>
+        <p class="card-summary" data-lang="ru">Carbon Brief собрал 28 высказываний Бёрнэма о климате: поддержка договора о нераспространении ископаемого топлива и нулевых выбросов соседствует с «открытым умом» по Северному морю — климатические активисты и нефтяная отрасль ждут сигналов от нового правительства.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 014-4 5 5 0 019.6 1.5A3.5 3.5 0 0117 19H7a4 4 0 01-3-4z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
+
+    <div class="major-events">
+      <div class="major-events-head">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="major-events-label"><span data-lang="en">Major Events</span><span data-lang="ru">Опасные явления</span></span>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Tropical Storm Bertha — Northern Gulf of Mexico <span data-lang="en">(↑ upgraded from TD2)</span><span data-lang="ru">(↑ усилился из ТД2)</span></div>
+        <div class="event-status">TROPICAL STORM · LANDFALL WEDNESDAY</div>
+        <div class="event-impact" data-lang="en">As of 0100 CDT Jul 21, located ~125 mi south of Panama City, FL with 50 mph max sustained winds; landfall forecast in Plaquemines Parish, SE Louisiana late Wednesday / early Thursday. Storm surge 2–4 ft at the mouth of the Mississippi, rainfall 2–8 in across SE Louisiana; tropical storm warnings in effect along the northern Gulf Coast.</div>
+        <div class="event-impact" data-lang="ru">По состоянию на 06:00 UTC 21 июля: ~200 км к югу от Панама-Сити (50 уз./85 км/ч); выход на берег — приход Плакеминс (Луизиана) поздней ночью среды / ранним утром четверга; нагон 60–120 см у дельты Миссисипи, осадки 50–200 мм по юго-востоку Луизианы.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">East Pacific Tropical Storm Six — Eastern Pacific Ocean</div>
+        <div class="event-status">TROPICAL STORM · RAPID INTENSIFICATION</div>
+        <div class="event-impact" data-lang="en">Rapidly intensifying; forecast to reach Category 3 hurricane strength (~95 kt) by Monday–Tuesday; tracking well south of Baja California with no current land threat.</div>
+        <div class="event-impact" data-lang="ru">Быстро интенсифицируется; прогноз — ураган 3-й категории (~95 уз.) к понедельнику–вторнику; движется значительно южнее Баха-Калифорнии, угрозы для суши нет.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">European Heatwave 2026 — Iberian Peninsula &amp; Western Europe</div>
+        <div class="event-status">ACTIVE · EXTREME HEAT</div>
+        <div class="event-impact" data-lang="en">Heat dome persists over Iberia with temperatures 40–43°C; cumulative 2026 EU heat death toll exceeds 9,900; UK's new PM Burnham inherits crisis; active wildfires in France and Spain.</div>
+        <div class="event-impact" data-lang="ru">Тепловой купол сохраняется над Пиренейским полуостровом (40–43°C); суммарное число жертв волны жары в Европе превысило 9 900; активные пожары во Франции и Испании.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Pacific Northwest Wildfires — United States</div>
+        <div class="event-status">PREPAREDNESS LVL 5 · MAXIMUM</div>
+        <div class="event-impact" data-lang="en">73+ large fires remain uncontained; 3.8 million acres burned in 2026 YTD; National Interagency Coordination Center at maximum preparedness with critically strained aircraft and crew resources.</div>
+        <div class="event-impact" data-lang="ru">73+ крупных пожара остаются неконтролируемыми; в 2026 году с начала года пройдено огнём более 3,8 млн акров; ресурсы авиации и расчётов критически истощены.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Canadian Wildfire Smoke — US Midwest &amp; Northeast</div>
+        <div class="event-status">IMPROVING · AQI EASING</div>
+        <div class="event-impact" data-lang="en">Peak smoke crisis (Jul 14–17) placed 120M+ Americans under AQI alerts; New York City briefly ranked as the world's worst air quality city. Smoke cleared sufficiently for the FIFA World Cup final at MetLife Stadium (Jul 19, AQI ~75). Monitoring continues as new plumes remain possible.</div>
+        <div class="event-impact" data-lang="ru">В период пика (14–17 июля) более 120 млн американцев находились под предупреждениями о качестве воздуха; Нью-Йорк временно стал городом с худшим AQI в мире. К финалу ЧМ 19 июля в Нью-Джерси воздух очистился (AQI ~75). Мониторинг продолжается.</div>
+      </div>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The dominant development of the last 24 hours is the official naming of <a href="https://www.nola.com/news/hurricane/tropical-storm-bertha-forms-gulf/article_9bb77059-c6b1-41dc-b2b2-ced02178bb03.html">Tropical Storm Bertha</a> — the Gulf's second named storm in five weeks — now forecast to make landfall in southeast Louisiana on Wednesday, bringing storm surge and heavy rain to communities still recovering from June's TS Arthur. Separately, the <a href="https://www.cnn.com/2026/07/14/weather/canada-wildfire-smoke-northeast-midwest-air-quality">Canadian wildfire smoke crisis</a> that placed more than 120 million Americans under AQI alerts from July 14–17, and threatened to disrupt the <a href="https://www.aljazeera.com/sports/2026/7/18/all-to-know-about-canadian-wildfire-smoke-air-quality-and-world-cup-final">FIFA World Cup final in New Jersey on July 19</a>, has eased — though the episode exposed an emerging planning gap for mass outdoor events in an era of chronic smoke seasons.
+    </div>
+    <div class="overview" data-lang="ru">
+      Главное за 24 часа — <a href="https://www.nola.com/news/hurricane/tropical-storm-bertha-forms-gulf/article_9bb77059-c6b1-41dc-b2b2-ced02178bb03.html">присвоение имени тропическому шторму Берта</a> в Мексиканском заливе (второй именной шторм за пять недель): выход на берег в юго-восточной Луизиане прогнозируется в среду. Кризис дыма от канадских пожаров, <a href="https://www.cnn.com/2026/07/14/weather/canada-wildfire-smoke-northeast-midwest-air-quality">охвативший 120 млн американцев</a> с 14 по 17 июля и поставивший под угрозу <a href="https://www.aljazeera.com/sports/2026/7/18/all-to-know-about-canadian-wildfire-smoke-air-quality-and-world-cup-final">финал ЧМ по футболу</a> 19 июля, рассеялся — но обнажил пробел в планировании массовых мероприятий в эпоху хронических пожарных сезонов.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">NHC / NOLA.com</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nola.com/news/hurricane/tropical-storm-bertha-forms-gulf/article_9bb77059-c6b1-41dc-b2b2-ced02178bb03.html">Tropical Storm Bertha Forms in Gulf, Heads for Louisiana</a>
+        <p class="card-summary" data-lang="en">TD2 was officially upgraded to Tropical Storm Bertha on July 20; as of 0100 CDT July 21 it was located ~125 miles south of Panama City, FL with 50 mph sustained winds, tracking northwest toward Plaquemines Parish with landfall expected late Wednesday. Storm surge warnings of 2–4 ft and 2–8 inches of rainfall are forecast for SE Louisiana.</p>
+        <p class="card-summary" data-lang="ru">ТД2 стал тропическим штормом Берта 20 июля; в 06:00 UTC 21 июля — в 200 км к югу от Панама-Сити (ветер 85 км/ч); выход на берег в приходе Плакеминс ожидается поздней ночью в среду: нагон 60–120 см, осадки 50–200 мм по ЮЗЛ.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">CNN</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.cnn.com/2026/07/14/weather/canada-wildfire-smoke-northeast-midwest-air-quality">Wildfire Smoke Will Drive Poor Air Quality Through Saturday as New Plumes Arrive From Canada</a>
+        <p class="card-summary" data-lang="en">Smoke from more than 800 wildfires burning across Canada drove PM2.5 to hazardous concentrations for over 120 million Americans in 18 states from July 14–17, with Chicago, Detroit, and Washington D.C. all recording unhealthy-to-hazardous air quality; New York City briefly registered the worst air quality index of any city on Earth.</p>
+        <p class="card-summary" data-lang="ru">Дым от 800+ лесных пожаров в Канаде поднял PM2.5 до опасных значений для более 120 млн американцев в 18 штатах; Нью-Йорк временно стал городом с худшим AQI в мире — вдоль «дымового коридора» от Чикаго до Вашингтона.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-18">
+        <div class="card-top">
+          <span class="card-source">Al Jazeera</span>
+          <span class="card-date">18 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.aljazeera.com/sports/2026/7/18/all-to-know-about-canadian-wildfire-smoke-air-quality-and-world-cup-final">World Cup Final: All to Know About Canadian Wildfire Smoke, NY Weather</a>
+        <p class="card-summary" data-lang="en">The 2026 FIFA World Cup final — Spain vs. Argentina at MetLife Stadium in East Rutherford, NJ on July 19 — faced a wildfire smoke threat that pushed local AQI to 245 on Thursday; a weekend weather system cleared the smoke in time for kickoff (AQI ~75 on Sunday), but the episode has prompted calls for formal air quality protocols at major outdoor sporting events.</p>
+        <p class="card-summary" data-lang="ru">Финал ЧМ-2026 (Испания — Аргентина, 19 июля, Нью-Джерси) чуть не сорвался из-за дыма (AQI 245 в четверг), но к воскресному старту воздух очистился (AQI ~75); инцидент ставит вопрос о формальных стандартах качества воздуха для массовых спортивных мероприятий.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M12 8l5-3M12 8L7 5M12 15l5 3M12 15l-5 3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">Bloomberg reported on July 20</a> that China's utility-scale wind and solar construction pipeline — 262 GW of solar and 251 GW of wind under construction — is outrunning grid capacity, with solar curtailment rising to 9.2% in early 2026 and grid build-times of 4–7 years structurally trailing the 18-month solar construction cycle. In Europe, <a href="https://www.euronews.com/my-europe/2026/07/15/are-batteries-the-solution-to-the-eus-wasted-renewable-energy">Euronews analysed the accelerating battery storage buildout</a> as the structural response to surging negative-price hours, with C&I battery capacity forecast to triple by 2028; the <a href="https://www.eia.gov/outlooks/steo/">EIA's July 2026 Short-Term Energy Outlook</a> confirms wind and solar will account for 93% of all new US generating capacity built in 2026.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">Bloomberg 20 июля</a> сообщил, что строительный портфель ВИЭ Китая (262 ГВт СЭС и 251 ГВт ВЭС) опережает возможности сетей: кёртейлмент солнечной генерации вырос до 9,2%. В Европе <a href="https://www.euronews.com/my-europe/2026/07/15/are-batteries-the-solution-to-the-eus-wasted-renewable-energy">Euronews зафиксировал</a> ускорение накопителей как ответ на рост числа часов с отрицательными ценами, а <a href="https://www.eia.gov/outlooks/steo/">прогноз EIA на июль 2026</a> подтвердил: 93% нового мощностного ввода в США в 2026 году придётся на ветер и солнце.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Bloomberg</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">China Expands Wind, Solar Construction Despite Rising Power Waste Risk</a>
+        <p class="card-summary" data-lang="en">China has 262 GW of utility-scale solar and 251 GW of wind under construction — more than the rest of the world combined — but solar curtailment rose to 9.2% in Q1 2026 (from 6.1% in Q1 2025) and wind curtailment to 8.5%; the root cause is that coal plants operate on fixed-price contracts with no incentive to back down, and new transmission lines take 4–7 years to build.</p>
+        <p class="card-summary" data-lang="ru">Китай строит больше ВЭС и СЭС, чем весь остальной мир, однако кёртейлмент солнечной генерации в Q1 2026 вырос до 9,2% (с 6,1% годом ранее), ветровой — до 8,5%: угольные блоки работают на фиксированных контрактах, а строительство линий занимает 4–7 лет.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Euronews</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.euronews.com/my-europe/2026/07/15/are-batteries-the-solution-to-the-eus-wasted-renewable-energy">Can Batteries Save the EU's Wasted Renewable Energy?</a>
+        <p class="card-summary" data-lang="en">As negative-price electricity hours surge across Europe (France alone logged 370 hours in H1 2026), Euronews surveys the battery storage buildout underway as the structural fix: commercial and industrial battery capacity is forecast to roughly triple from 9 GWh in 2026 to 24 GWh in 2028, with hybrid wind-battery and solar-battery parks multiplying across Northern Europe under the EU's first tripartite energy storage agreement.</p>
+        <p class="card-summary" data-lang="ru">На фоне роста часов с отрицательными ценами (370 часов в H1 2026 во Франции) промышленно-коммерческие BESS в ЕС должны вырасти с 9 ГВт·ч (2026) до 24 ГВт·ч (2028); гибридные парки СЭС/ВЭС + аккумулятор множатся по всей Северной Европе.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-14">
+        <div class="card-top">
+          <span class="card-source">EIA</span>
+          <span class="card-date">14 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.eia.gov/outlooks/steo/">EIA July 2026 Short-Term Energy Outlook: Wind and Solar to Claim 93% of New US Capacity</a>
+        <p class="card-summary" data-lang="en">The EIA's July 2026 STEO projects solar and wind together comprising 93% of all new US electricity-generating capacity added in 2026 — the highest quarterly share ever recorded — with solar PV on track to overtake natural gas as the single largest capacity source this year; crude oil and natural gas prices show modest easing from spring 2026 highs.</p>
+        <p class="card-summary" data-lang="ru">По прогнозу EIA, в 2026 году 93% нового мощностного ввода в США придётся на солнечную и ветровую генерацию (исторический максимум); солнечная генерация на пути к тому, чтобы обогнать газ по общей установленной мощности.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      <a href="https://arxiv.org/abs/2507.09703">Jua.ai's EPT-2 Technical Report</a> (arXiv:2507.09703) released this week sets a new benchmark for energy-relevant AI weather variables — outperforming Microsoft Aurora and ECMWF IFS HRES on 10 m wind, 100 m wind, and 2 m temperature across the full 0–240 h forecast horizon while training on just 8 H100 GPUs — and is already in live commercial production at Axpo, TotalEnergies, Statkraft, EDF, and Hydro-Québec. A <a href="https://www.nature.com/articles/d41586-026-00842-z">Nature analysis</a> published this week assessed whether AI weather models can yet reliably forecast the extreme events they are increasingly asked to predict, identifying convective-scale precipitation and rapidly-intensifying tropical cyclones as the current capability frontier.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://arxiv.org/abs/2507.09703">Технический отчёт EPT-2 от Jua.ai</a> (arXiv:2507.09703) установил новый эталон для энергетических AI-переменных — превзойдя Aurora и ECMWF IFS HRES по ветру 10 м/100 м и температуре 2 м на горизонтах 0–240 ч — и уже применяется в коммерческой среде у Axpo, TotalEnergies, Statkraft, EDF и Hydro-Québec. <a href="https://www.nature.com/articles/d41586-026-00842-z">Анализ Nature</a> оценил, насколько AI-модели уже способны надёжно прогнозировать экстремальные явления, определив конвективные осадки и быстроинтенсифицирующиеся циклоны как основные незакрытые задачи.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-21">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">21 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2507.09703">EPT-2 Technical Report</a>
+        <p class="card-meta">Jua.ai · arXiv:2507.09703 · cs.LG / physics.ao-ph · preprint</p>
+        <p class="card-summary" data-lang="en">EPT-2 (Earth Physics Transformer v2) outperforms Microsoft Aurora and ECMWF IFS HRES on 10 m wind speed, 100 m wind speed, and 2 m temperature across the full 0–240 h forecast horizon; pretrained on just 8 H100 GPUs over 10 days (vs Aurora's 32 A100s over 18 days); its probabilistic variant EPT-2e surpasses ECMWF ENS mean; validated on &gt;10,000 real ground stations via open-source StationBench. In production at Axpo, TotalEnergies, Statkraft, EnBW, EDF, and Hydro-Québec.</p>
+        <p class="card-summary" data-lang="ru">EPT-2 превосходит Aurora и ECMWF IFS HRES по ветру 10 м/100 м и температуре 2 м на горизонтах 0–240 ч; обучен на 8 GPU H100 за 10 дней; вероятностная версия EPT-2e превышает средний ENS ECMWF; валидирован на &gt;10 000 реальных метеостанций. В боевой эксплуатации у Axpo, TotalEnergies, Statkraft, EDF, Hydro-Québec.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-21">
+        <div class="card-top">
+          <span class="card-source">Nature</span>
+          <span class="card-date">21 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nature.com/articles/d41586-026-00842-z">Can AI Models Reliably Forecast Extreme Weather Events?</a>
+        <p class="card-meta">Nature News &amp; Views · 2026</p>
+        <p class="card-summary" data-lang="en">A Nature analysis finds that while AI weather models now match or exceed operational NWP for standard variables, reliable forecasting of extreme events — convective precipitation, rapid cyclone intensification, and climate-shifted tail events beyond training distributions — remains the hard frontier; the piece calls for systematic extreme-event benchmarking alongside headline RMSE scores.</p>
+        <p class="card-summary" data-lang="ru">Nature констатирует: AI-модели сравнялись с оперативными ЧПП по стандартным переменным, однако надёжное прогнозирование экстремальных явлений (конвективные осадки, быстрая интенсификация циклонов, выходы за пределы обучающих распределений) остаётся основной нерешённой задачей.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Новости индустрии</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-07-14">
+        <div class="industry-top">
+          <h3 class="industry-title">Climate Tech VC Hits 3-Year High at $26.1 Billion in H1 2026, Driven by Data Center Power Demand</h3>
+          <span class="industry-date">14 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/" target="_blank" rel="noopener">Currence's H1 2026 Mid-Year Climate Tech Investment Report</a> (formerly Sightline Climate / CTVC) found that venture capital investment in climate technology reached $26.1 billion in the first half of the year — up 55% year-on-year and the strongest H1 since 2022 — with data center-adjacent clean power technologies accounting for 34% of all capital deployed. Two mega-deals in the novel data center infrastructure space, <a href="https://www.esgtoday.com/climate-tech-funding-surges-in-h1-2026-on-growing-data-center-demand-for-low-carbon-power-report/" target="_blank" rel="noopener">DayOne ($4.5 billion) and Nscale ($2 billion)</a>, dominated a record Series C stage that totalled $10.5 billion. Deal count fell 25% to a five-year low as capital concentrated into fewer, later-stage rounds — a structural shift the report attributes to LP caution on early-stage climate bets and growing conviction in proven, infrastructure-linked clean-power business models. Climate management (monitoring, risk, adaptation) had its best H1 since 2022, rising 6%, driven by cheaper satellite capacity and growing corporate climate risk disclosure mandates.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          По данным <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/" target="_blank" rel="noopener">полугодового отчёта Currence</a>, венчурные инвестиции в климатические технологии в H1 2026 достигли $26,1 млрд (+55% г/г, трёхлетний максимум): 34% пришлось на чистую энергетику для дата-центров, включая мегасделки DayOne ($4,5 млрд) и Nscale ($2 млрд). Число сделок упало до пятилетнего минимума — <a href="https://www.esgtoday.com/climate-tech-funding-surges-in-h1-2026-on-growing-data-center-demand-for-low-carbon-power-report/" target="_blank" rel="noopener">капитал концентрируется</a> на поздних стадиях и инфраструктурных моделях; сегмент климатического управления (мониторинг, риски, адаптация) показал лучшее H1 с 2022 года (+6%).
+        </p>
+        <span class="industry-source"><a href="https://www.esgtoday.com/climate-tech-funding-surges-in-h1-2026-on-growing-data-center-demand-for-low-carbon-power-report/" target="_blank" rel="noopener">ESG Today</a></span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-07-20.html">2026-07-20</a></li>
+      <li><a href="archive/2026-07-19.html">2026-07-19</a></li>
+      <li><a href="archive/2026-07-18.html">2026-07-18</a></li>
+      <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
+      <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
+      <li><a href="archive/2026-07-15.html">2026-07-15</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
+</body>
+</html>
