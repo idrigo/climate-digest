@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
+
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
+  .major-events {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
+  }
+  .major-events-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
+    color: var(--industry);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2.5px 9px;
+    border-radius: 4px;
+  }
+  .industry-source a { color: #fff; text-decoration: none; }
+
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
+</style>
+</head>
+<body data-digest-date="2026-07-23" class="lang-en">
+
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 230700Z JUL26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
+    </nav>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The week's climate signal has sharpened considerably. <a href="https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/">Yale Climate Connections reports that NOAA now assigns 100% probability to El Niño persisting through February 2027</a>, with peak sea surface temperature anomalies forecast at approximately 3.6°C — nearly 1°C above the 2015–16 record and potentially the strongest El Niño in 145 years of instrumental observation. On the ground, West Africa absorbed the signal violently: coordinated rainfall extremes struck Ivory Coast, Ghana, and Togo simultaneously over 72 hours, killing at least 72 people as Ghana recorded 140mm in 24 hours with 7.5 million at risk. A rapid attribution study released Tuesday by <a href="https://www.carbonbrief.org/cited-21-july-2026-fossil-fuelled-firewave-us-attribution-report-west-africa-floods">World Weather Attribution confirmed the compound US heatwave-wildfire event of July 16–21 was "virtually impossible" without fossil-fuel warming</a> — and simultaneously attributed the West Africa floods to anthropogenic forcing — a finding cited in two active climate liability cases within 48 hours.
+    </div>
+    <div class="overview" data-lang="ru">
+      Климатический сигнал недели оформился отчётливо. По данным <a href="https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/">Yale Climate Connections</a>, NOAA с вероятностью 100% прогнозирует сохранение Эль-Ниньо до февраля 2027 с пиковой аномалией ТПО ~3,6°C — почти на 1°C выше рекорда 2015–16 и потенциально сильнейшего за 145 лет. Западная Африка приняла удар: скоординированные экстремальные осадки в Кот-д'Ивуаре, Гане и Того унесли жизни не менее 72 человек за 72 часа. Исследование <a href="https://www.carbonbrief.org/cited-21-july-2026-fossil-fuelled-firewave-us-attribution-report-west-africa-floods">WWA</a> подтвердило: составной кризис жары и пожаров в США 16–21 июля был «практически невозможен» без антропогенного потепления — вывод процитирован в двух федеральных исках в течение 48 часов.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-15">
+        <div class="card-top">
+          <span class="card-source">Yale Climate Connections</span>
+          <span class="card-date">15 JUL</span>
+        </div>
+        <a class="card-headline" href="https://yaleclimateconnections.org/2026/07/this-could-be-the-strongest-el-nino-on-record/">This Could Be the Strongest El Niño on Record</a>
+        <p class="card-summary" data-lang="en">NOAA has assigned 100% probability to El Niño persisting through February 2027, with state-of-the-art dynamical models now projecting a peak Niño 3.4 SST anomaly of approximately 3.6°C — nearly 1°C above the 2015–16 peak and well above the 1997–98 record — which would make the 2026–27 El Niño the strongest in over 145 years of instrumental records. Current atmospheric coupling indicators (Southern Oscillation Index, outgoing longwave radiation anomalies, and trade wind reversals) are all strengthening faster than at the comparable phase of 2015–16.</p>
+        <p class="card-summary" data-lang="ru">NOAA присвоило 100% вероятность Эль-Ниньо до февраля 2027; динамические модели прогнозируют пик аномалии ТПО ~3,6°C — почти на 1°C выше рекорда 2015–16 — что сделало бы это событие сильнейшим за 145 лет. Индикаторы атмосферной связи (ЮКО, ОДВ, пассаты) усиливаются быстрее, чем на аналогичной фазе 2015–16.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Climate Change News</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.climatechangenews.com/2026/07/20/flood-deaths-in-west-african-megacities-raise-fraught-issue-of-slum-evictions/">Flood Deaths in West African Megacities Raise Fraught Issue of Slum Evictions</a>
+        <p class="card-summary" data-lang="en">Coordinated extreme rainfall struck Ivory Coast, Ghana, and Togo within 72 hours: 59 people were killed and 24,000 displaced in Ivory Coast as Abidjan recorded its highest single-day rainfall total in five years; Ghana recorded 140mm in 24 hours killing 13 and flooding 30,000 homes, with 7.5 million at risk across the country's coastal belt; additional deaths were confirmed in Togo. The article examines how flood response — including emergency government shelter relocations — is deepening conflict over slum evictions targeting low-income informal settlements on high-risk floodplains.</p>
+        <p class="card-summary" data-lang="ru">За 72 часа: 59 погибших и 24 000 перемещённых в Кот-д'Ивуаре (рекордный суточный ливень в Абиджане за 5 лет); 140 мм/сутки в Гане — 13 смертей, 30 000 домов затоплены, 7,5 млн в зоне риска; жертвы в Того. Материал анализирует, как меры реагирования обостряют конфликт вокруг сноса трущоб на затопляемых территориях.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-21">
+        <div class="card-top">
+          <span class="card-source">Carbon Brief / WWA</span>
+          <span class="card-date">21 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.carbonbrief.org/cited-21-july-2026-fossil-fuelled-firewave-us-attribution-report-west-africa-floods">WWA: US Heatwave-Wildfire 'Firewave' Was "Virtually Impossible" Without Fossil-Fuel Warming</a>
+        <p class="card-summary" data-lang="en">A rapid attribution study by World Weather Attribution found the compound "firewave" — the simultaneous record-breaking heatwave and wildfire outbreak across the US West, July 16–21 — was "virtually impossible" without fossil-fuel warming; human-caused climate change made temperatures at least 4°C hotter and wildfire risk two-to-four times higher. The study was cited within 48 hours in two active federal climate liability cases. A simultaneous attribution analysis of the West Africa floods found comparable anthropogenic fingerprints on extreme rainfall probabilities across the Sahel and Gulf of Guinea.</p>
+        <p class="card-summary" data-lang="ru">WWA установила: «огненная волна» (рекордная жара + вспышки пожаров на западе США, 16–21 июля) была «практически невозможна» без антропогенного потепления; температуры оказались минимум на 4°C выше, риск пожаров — в 2–4 раза выше. В течение 48 часов процитировано в двух федеральных исках о климатической ответственности. Параллельное исследование подтвердило антропогенный след в наводнениях Западной Африки.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 014-4 5 5 0 019.6 1.5A3.5 3.5 0 0117 19H7a4 4 0 01-3-4z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
+
+    <div class="major-events">
+      <div class="major-events-head">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="major-events-label"><span data-lang="en">Major Events</span><span data-lang="ru">Опасные явления</span></span>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Tropical Storm Bertha — Louisiana / Texas Gulf Coast</div>
+        <div class="event-status">LANDFALL COMPLETE · TRACKING TO TEXAS</div>
+        <div class="event-impact" data-lang="en">Made landfall in St. Bernard Parish, Louisiana at approximately 2 p.m. CDT July 22 with 45 mph maximum sustained winds; now tracking northwest toward Texas at ~8 mph. Tropical storm warnings remain in effect from Cameron, LA to Sargent, TX; storm surge of 1–3 ft along coastal southeast Louisiana; flash flood watches across the region. System continuing to weaken over land.</div>
+        <div class="event-impact" data-lang="ru">Вышел на берег в приходе Сент-Бернард (Луизиана) 22 июля ~14:00 ЦДВ с ветром 45 миль/ч; движется на СЗ в направлении Техаса; нагон 30–90 см вдоль побережья; предупреждения о тропическом шторме от Камерона (Луизиана) до Сарджента (Техас); продолжает ослабевать над сушей.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Kaiser Canyon Fire — Okanogan County, Washington</div>
+        <div class="event-status">~80,000 ACRES · 1% CONTAINED</div>
+        <div class="event-impact" data-lang="en">Grew from 62,872 acres at zero containment to approximately 80,000 acres with 1% containment since the previous digest. Thirteen structures confirmed destroyed. Level 3 "Go Now" evacuations remain in effect for Nespelem, Buffalo Lake, and surrounding areas on the Colville Indian Reservation. Air quality across central and eastern Washington at Unhealthy to Very Unhealthy levels. 500+ personnel deployed.</div>
+        <div class="event-impact" data-lang="ru">Вырос с 62 872 до ~80 000 акров (1% сдерживания); 13 строений подтверждённо уничтожены; эвакуации «немедленно» для Неспелема и окрестностей сохраняются; качество воздуха — «нездоровое» – «очень нездоровое»; 500+ пожарных задействованы.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">West Africa Floods — Ivory Coast, Ghana &amp; Togo</div>
+        <div class="event-status">ACTIVE · 72+ DEATHS</div>
+        <div class="event-impact" data-lang="en">Coordinated extreme rainfall over three countries in 72 hours: 59 deaths and 24,000 displaced in Ivory Coast; 13 deaths and 30,000 homes flooded in Ghana (140mm/24h; 7.5 million at risk); additional deaths in Togo. Emergency management operations underway in all three countries. WWA rapid attribution study confirmed anthropogenic forcing as a key driver of the extreme rainfall probabilities.</div>
+        <div class="event-impact" data-lang="ru">Скоординированные экстремальные осадки в трёх странах за 72 часа: 59 погибших и 24 000 перемещённых в Кот-д'Ивуаре; 13 погибших и 30 000 затопленных домов в Гане (140 мм/сутки; 7,5 млн в зоне риска); жертвы также в Того. Атрибутирован антропогенным потеплением (WWA).</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">European Heatwave 2026 — Iberian Peninsula &amp; Western Europe</div>
+        <div class="event-status">ACTIVE · THIRD SURGE BUILDING</div>
+        <div class="event-impact" data-lang="en">A new thermal plume building over the Atlantic is forecast to push Portugal and southern Spain back to 43°C this week while France and the Benelux countries brace for another heat surge; cumulative 2026 EU heat death toll approaching 10,000. Active wildfires continue in France and Spain; French nuclear output constrained by river cooling-water temperature limits.</div>
+        <div class="event-impact" data-lang="ru">Новый тепловой выброс над Атлантикой прогнозирует 43°C для Иберийского полуострова, следующая волна в Франции и Бенилюксе; суммарное число жертв жары в ЕС в 2026 году приближается к 10 000; активные пожары во Франции и Испании.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Pacific Northwest Heat &amp; Wildfires — US West</div>
+        <div class="event-status">ONGOING · SMOKE HAZARD</div>
+        <div class="event-impact" data-lang="en">Portland International Airport recorded 100°F (37.8°C) on July 21, breaking the 2026 summer high; combined heat-smoke conditions across Washington and Oregon with PM2.5 at hazardous levels at multiple monitoring stations. Four large fires burn east of the Cascades in Washington. No significant relief forecast before end of week.</div>
+        <div class="event-impact" data-lang="ru">Портленд зафиксировал рекорд сезона 37,8°C 21 июля; PM2.5 достигает опасных уровней по всему тихоокеанскому северо-западу; 4 крупных неконтролируемых пожара в восточном Вашингтоне; облегчения до конца недели не ожидается.</div>
+      </div>
+    </div>
+
+    <div class="overview" data-lang="en">
+      <a href="https://www.accuweather.com/en/hurricane/live-news/tropical-storm-bertha-live-updates-storm-makes-landfall-in-st-bernard-parish-louisiana/1913848">Tropical Storm Bertha made landfall in St. Bernard Parish, Louisiana on July 22</a> at 45 mph — slightly below forecast peak due to dry air and wind shear — and is now tracking northwest toward Texas; the Gulf Coast's second named storm in five weeks. The Kaiser Canyon Fire in Okanogan County, WA has grown to approximately 80,000 acres with 1% containment, up from 62,872 acres at zero containment two days ago, with 13 structures confirmed destroyed. <a href="https://www.gbcghanaonline.com/africa/ivory-coast-floods/2026/">West Africa enters the digest as a third active major event</a>: simultaneous extreme rainfall in Ivory Coast, Ghana, and Togo killed at least 72 people in 72 hours. In Europe, a third surge of the 2026 heatwave is building toward Iberia; across the Pacific Northwest, Portland's smoke and heat emergency continues with no significant relief forecast through the end of the week.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://www.accuweather.com/en/hurricane/live-news/tropical-storm-bertha-live-updates-storm-makes-landfall-in-st-bernard-parish-louisiana/1913848">«Берта» вышла на берег в приходе Сент-Бернард 22 июля</a> с ветром 45 миль/ч и движется к Техасу — второй именной шторм Мексиканского залива за пять недель. Пожар Kaiser Canyon вырос до ~80 000 акров (1% сдерживания), 13 строений уничтожены. <a href="https://www.gbcghanaonline.com/africa/ivory-coast-floods/2026/">Западная Африка входит в дайджест как третье крупное активное событие</a>: одновременные осадки в Кот-д'Ивуаре, Гане и Того унесли жизни не менее 72 человек за 72 часа. В Европе — третья волна зноя; на тихоокеанском северо-западе США — чрезвычайная ситуация с жарой и дымом.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-22">
+        <div class="card-top">
+          <span class="card-source">AccuWeather / NHC</span>
+          <span class="card-date">22 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.accuweather.com/en/hurricane/live-news/tropical-storm-bertha-live-updates-storm-makes-landfall-in-st-bernard-parish-louisiana/1913848">Tropical Storm Bertha Makes Landfall in St. Bernard Parish, Louisiana; Tracking Northwest Toward Texas</a>
+        <p class="card-summary" data-lang="en">Tropical Storm Bertha made landfall at approximately 2 p.m. CDT on July 22 in St. Bernard Parish, Louisiana — south of New Orleans — with maximum sustained winds of 45 mph, slightly below forecast peak due to dry air entrainment and wind shear. Now tracking northwest at approximately 8 mph toward Texas; storm surge of 1–3 feet along coastal southeast Louisiana from Plaquemines to Cameron parishes; tropical storm warnings in effect from Cameron, LA to Sargent, TX; flash flood watches across southeast Louisiana. NHC projects continued weakening over land.</p>
+        <p class="card-summary" data-lang="ru">«Берта» вышла на берег в приходе Сент-Бернард 22 июля (~14:00 ЦДВ) с ветром 45 миль/ч; движется на СЗ ~13 км/ч в сторону Техаса. Нагон 30–90 см на юго-восточном побережье Луизианы; предупреждения о тропическом шторме от Камерона до Сарджента; NHC прогнозирует дальнейшее ослабление над сушей.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-23">
+        <div class="card-top">
+          <span class="card-source">IQAir</span>
+          <span class="card-date">23 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.iqair.com/newsroom/wildfire-map-spotlight-kaiser-canyon-fire-washington">Kaiser Canyon Fire Grows to ~80,000 Acres in Washington; 13 Structures Destroyed, 1% Contained</a>
+        <p class="card-summary" data-lang="en">The Kaiser Canyon Fire in Okanogan County, WA has grown to approximately 80,000 acres as of July 23 with 1% containment — up from 62,872 acres at zero containment two days ago. Thirteen structures have been confirmed destroyed and Level 3 "Go Now" evacuations remain in effect for Nespelem, Buffalo Lake, and surrounding areas on the Colville Indian Reservation. Air quality across central and eastern Washington has deteriorated to Unhealthy to Very Unhealthy levels as smoke spreads west toward Puget Sound. State wildfire mobilization remains active with 500+ personnel deployed.</p>
+        <p class="card-summary" data-lang="ru">Пожар Kaiser Canyon вырос до ~80 000 акров (1% сдерживания) по состоянию на 23 июля — 13 строений уничтожены. Эвакуации «немедленно» для Неспелема и окрестностей; качество воздуха в центральном и восточном Вашингтоне — «нездоровое» – «очень нездоровое»; дым движется к Пьюджет-Саунд; 500+ пожарных задействованы.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">GBC Ghana</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.gbcghanaonline.com/africa/ivory-coast-floods/2026/">Ivory Coast, Ghana, and Togo Floods Kill at Least 72; Ghana Records 140mm in 24 Hours</a>
+        <p class="card-summary" data-lang="en">Coordinated extreme rainfall across Ivory Coast, Ghana, and Togo killed at least 72 people over a 72-hour period beginning July 19: 59 deaths confirmed in Ivory Coast with 24,000 displaced in Abidjan (highest single-day rainfall in five years); 13 people died in Ghana after 140mm fell in 24 hours, flooding more than 30,000 homes with an estimated 7.5 million at risk from coastal and riverine flooding; additional deaths reported in Togo. Emergency management operations underway in all three countries.</p>
+        <p class="card-summary" data-lang="ru">Экстремальные осадки в трёх странах за 72 часа с 19 июля: 59 погибших, 24 000 перемещённых в Кот-д'Ивуаре (рекордный суточный ливень за 5 лет в Абиджане); 140 мм/сутки в Гане — 13 смертей, 30 000+ домов затоплены, 7,5 млн в зоне риска; жертвы также в Того. МЧС всех трёх стран ведут экстренные операции.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M12 8l5-3M12 8L7 5M12 15l5 3M12 15l-5 3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      China's clean energy buildout is running into its first systemic wall: <a href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">Bloomberg reports that 262 GW of solar and 251 GW of wind are under construction simultaneously</a> even as curtailment rates hit 9.2% for solar and 8.5% for wind nationally — approaching the 10% policy ceiling that historically triggers construction slowdowns, with western provinces already exceeding 30%. The tension between buildout pace and grid absorption capacity is the defining story in global clean energy this week. In Europe, <a href="https://www.rechargenews.com/policy/wind-and-solar-sectors-voice-worries-over-latest-eu-energy-policy-spree/2-1-2017255">the wind and solar industry issued coordinated warnings that revised EU ETS rules risk undermining the decarbonisation path</a>, calling the current electrification plan "unreachable" under the proposed changes.
+    </div>
+    <div class="overview" data-lang="ru">
+      Китайский строительный бум ВИЭ упирается в первую системную стену: по данным <a href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">Bloomberg</a>, 262 ГВт СЭС и 251 ГВт ВЭС строятся одновременно, тогда как нагрузка достигает 9,2% (солнце) и 8,5% (ветер), приближаясь к законодательному потолку в 10%; западные провинции уже превышают 30%. В Европе <a href="https://www.rechargenews.com/policy/wind-and-solar-sectors-voice-worries-over-latest-eu-energy-policy-spree/2-1-2017255">ветровая и солнечная отрасли предупредили</a>, что пересмотр правил ETS делает план электрификации ЕС «недостижимым».
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Bloomberg</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">China's Still Building Wind and Solar Despite Mounting Curtailment Threat</a>
+        <p class="card-summary" data-lang="en">Despite rapidly rising curtailment rates — 9.2% for solar and 8.5% for wind nationally in H1 2026 — China continues to break records on new clean energy construction: 262 GW of utility-scale solar and 251 GW of wind are simultaneously under construction as of mid-2026, enough to add the equivalent of the entire US power grid in two years. The 10% curtailment threshold has historically marked the point at which Chinese regulators intervene with construction slowdowns; western provinces including Gansu, Xinjiang, and Qinghai are already exceeding 30%, raising questions about whether grid absorption will constrain the buildout that has driven global clean energy cost curves for the past decade.</p>
+        <p class="card-summary" data-lang="ru">Несмотря на рост нагрузки (9,2% — солнце, 8,5% — ветер в H1 2026), Китай устанавливает рекорды нового строительства: 262 ГВт СЭС и 251 ГВт ВЭС в стройке одновременно. Исторически 10% — порог вмешательства регуляторов; западные провинции уже превышают 30%, ставя под вопрос темп buildout, который определял глобальные кривые стоимости ВИЭ последнее десятилетие.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Recharge News</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.rechargenews.com/policy/wind-and-solar-sectors-voice-worries-over-latest-eu-energy-policy-spree/2-1-2017255">Wind and Solar Sectors Warn EU Electrification Plan Is "Unreachable" Under New ETS Rules</a>
+        <p class="card-summary" data-lang="en">WindEurope and SolarPower Europe published coordinated policy responses to the EU's proposed ETS revisions, warning that new mechanisms reducing carbon price signals during periods of high gas prices risk undermining the economic case for electrification and making the EU's binding 2030 renewable energy targets effectively "unreachable." The associations called for structural reforms to ensure decarbonisation incentives remain coherent as carbon prices face increased volatility from the new policy parameters.</p>
+        <p class="card-summary" data-lang="ru">WindEurope и SolarPower Europe предупредили: новые механизмы ETS снижают ценовые сигналы CO₂ в периоды высоких цен на газ, подрывая экономику электрификации и делая обязательные цели ВИЭ 2030 «недостижимыми». Ассоциации призвали к структурным реформам для сохранения когерентности стимулов.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      The <a href="https://www.nationalacademies.org/projects/DELS-BASCPR-23-02">National Academies of Sciences, Engineering, and Medicine published a landmark 254-page consensus report</a> updating the foundational 2016 attribution guidance — adding high-confidence attribution for wildfires and compound events and introducing "impact attribution," which quantifies deaths and economic losses attributable to specific fractions of total warming rather than broad "climate change." The report was cited in two active federal liability cases within 48 hours of publication. A companion paper in <a href="https://www.science.org/doi/10.1126/sciadv.aea1277">Science Advances from UC Merced</a> establishes the mechanistic link: 42% of the western US burned area since 2000 occurred during or after heatwave conditions that occupy only 12–15% of total days. Two new preprints extend the frontier of AI-ready climate data infrastructure: <a href="https://arxiv.org/abs/2607.03298">WorldTensor</a> harmonises a 0.25°-resolution global dataset for Earth system foundation models, while a <a href="https://arxiv.org/abs/2607.18298">DMDc-based approach</a> enables physics-interpretable separation of forced and internal climate variability without large model ensembles.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://www.nationalacademies.org/projects/DELS-BASCPR-23-02">NASEM опубликовала 254-страничный консенсусный доклад</a> — обновление руководства 2016 года с высококонфидентной атрибуцией пожаров, составных событий и нового понятия «атрибуции воздействий» (смерти и потери по долям потепления). Процитирован в двух федеральных исках за 48 часов. Статья в <a href="https://www.science.org/doi/10.1126/sciadv.aea1277">Science Advances</a> (Калифорнийский университет в Мерседе) устанавливает механизм: 42% площади западных пожаров США с 2000 года приходится на волны жары (12–15% дней). Два препринта расширяют инфраструктуру AI-климатических данных: <a href="https://arxiv.org/abs/2607.03298">WorldTensor</a> и <a href="https://arxiv.org/abs/2607.18298">DMDc-метод разделения вынужденной и внутренней изменчивости</a>.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-16">
+        <div class="card-top">
+          <span class="card-source">NASEM</span>
+          <span class="card-date">16 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nationalacademies.org/projects/DELS-BASCPR-23-02">National Academies: 254-Page Report Sets New Framework for Attribution Science, Introduces Impact Attribution</a>
+        <p class="card-meta">National Academies of Sciences, Engineering, and Medicine · consensus report · climate attribution · 2026</p>
+        <p class="card-summary" data-lang="en">The NASEM released a landmark 254-page consensus report updating the foundational 2016 attribution guidance — the most comprehensive update to the field's evidentiary standards in a decade. Key advances: high confidence on attribution of observed changes in wildfire behavior and compound events (simultaneous heat-drought-fire); introduction of "impact attribution," which quantifies mortality, economic losses, and infrastructure damage attributable to specific fractions of total warming; and formal guidance on using attribution science in legal and regulatory contexts. The report was cited in two active US federal climate liability case filings within 48 hours of publication.</p>
+        <p class="card-summary" data-lang="ru">254-страничный консенсусный доклад NASEM — обновление руководства 2016 года. Ключевые нововведения: высокая уверенность атрибуции изменений в поведении пожаров и составных событий (жара–засуха–огонь); «атрибуция воздействий» — количественная оценка смертей и потерь, причисляемых к конкретным долям потепления; руководство по применению в правовых контекстах. Процитирован в двух федеральных климатических исках в течение 48 часов.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-16">
+        <div class="card-top">
+          <span class="card-source">Science Advances</span>
+          <span class="card-date">16 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.science.org/doi/10.1126/sciadv.aea1277">Heatwaves Enable Wildfire Activity Across the Western US, Driving 42% of Total Burned Area</a>
+        <p class="card-meta">Turco et al. · Science Advances · DOI: 10.1126/sciadv.aea1277 · UC Merced · 2026</p>
+        <p class="card-summary" data-lang="en">Using satellite-derived fire data from 2000–2024, this study finds that heatwave conditions — temperatures exceeding the local 90th percentile for at least three consecutive days — co-occur with or immediately precede 42% of all western US burned area despite occurring on only 12–15% of total days; 64% of the 2.5-fold increase in western burn rates since 2000 is attributed to increased frequency and intensity of heatwave-fire co-occurrences. The primary identified ignition mechanism is lightning co-occurrence during convective activity embedded within heatwaves — closing a key evidentiary gap in the NASEM attribution framework released simultaneously.</p>
+        <p class="card-summary" data-lang="ru">Спутниковые данные о пожарах 2000–2024 гг.: волны жары (T > 90-й перцентиль ≥3 суток) сопутствуют или предшествуют 42% площади западных пожаров США при занятии лишь 12–15% дней; 64% двукратного роста выжженных площадей с 2000 года объясняется ростом частоты совместных событий жара–пожар. Ключевой механизм — молнии в конвективных системах внутри волн жары.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-23">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">23 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2607.03298">WorldTensor: Harmonised 0.25° Multi-Domain Dataset for Earth System Foundation Models</a>
+        <p class="card-meta">Rodriguez-Pardo &amp; Tavoni · arXiv:2607.03298 · 2026</p>
+        <p class="card-summary" data-lang="en">Rodriguez-Pardo and Tavoni introduce WorldTensor, a harmonised global dataset at 0.25° horizontal resolution integrating climate, land use, ocean, natural hazard, and socioeconomic variables into a single consistent tensor framework designed as training data for Earth system foundation models. The dataset covers 1940–2023 from ERA5 and over 40 additional observational and reanalysis sources, with a standardised preprocessing pipeline for alignment across domains. The authors argue that the lack of harmonised multi-domain training data has been the primary bottleneck preventing foundation models from learning coupled Earth system dynamics rather than individual variable patterns.</p>
+        <p class="card-summary" data-lang="ru">Rodriguez-Pardo и Tavoni представляют WorldTensor — гармонизированный глобальный датасет (0,25°), объединяющий климатические, земельные, океанические, природно-опасные и социально-экономические переменные для обучения фундаментальных моделей системы Земли. Охватывает 1940–2023 (ERA5 + 40+ источников) с унифицированным пайплайном. Авторы: отсутствие гармонизированных мультидоменных данных — главный барьер для изучения связанной динамики системы Земли.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-13">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">13 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2607.18298">Disentangling Forced and Internal Climate Variability Using Dynamic Mode Decomposition With Control</a>
+        <p class="card-meta">Mankovich, Gavrilov &amp; Camps-Valls · arXiv:2607.18298 · 2026</p>
+        <p class="card-summary" data-lang="en">Mankovich, Gavrilov, and Camps-Valls propose using Dynamic Mode Decomposition with Control (DMDc) — a data-driven method adapted from fluid dynamics — to separate externally forced climate responses from internal variability in single model runs or observational records without requiring large multi-model ensembles. The method extracts physically interpretable spatial patterns corresponding to known teleconnection structures (ENSO, NAO) and consistently outperforms EOF-based separation techniques in synthetic validation experiments, suggesting a pathway to attribution-quality signal separation that is computationally accessible and does not require the statistical power of a full CMIP6-class ensemble.</p>
+        <p class="card-summary" data-lang="ru">Mankovich, Gavrilov и Camps-Valls предлагают DMDc (Dynamic Mode Decomposition with Control) — метод из гидродинамики — для разделения вынужденной реакции климата (тренды ПГ) и внутренней изменчивости (ЭНСО, СКО) в отдельных прогонах без больших ансамблей. Выделяет физически интерпретируемые паттерны телесвязей и превосходит EOF-разделение в синтетических тестах.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Новости индустрии</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-07-15">
+        <div class="industry-top">
+          <h3 class="industry-title">NextEra and Dominion's $67B Merger Filing Starts 180-Day Regulatory Clock Across Four States</h3>
+          <span class="industry-date">15 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.utilitydive.com/news/senator-king-ferc-nextera-dominion-merger-necec/824073/" target="_blank" rel="noopener">NextEra Energy and Dominion Energy</a> filed their $67 billion all-stock merger applications with FERC, the NRC, and state commissions in Virginia, North Carolina, South Carolina, and Connecticut on July 15, starting a 180-day regulatory review clock. If approved, the merged entity would become the world's largest regulated electric and gas utility by customer count — serving approximately 10 million customers — and the largest by installed generation capacity at 110 GW, with a combined market capitalization approaching $150 billion. Senator Angus King immediately filed a letter urging FERC to reject the merger on grid reliability and market concentration grounds, while consumer advocates in all four states cited the $2.25 billion customer credit package as inadequate. Analysts expect the review process to run through H1 2027 with the transaction closing in H2 2027 at the earliest.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.utilitydive.com/news/senator-king-ferc-nextera-dominion-merger-necec/824073/" target="_blank" rel="noopener">NextEra Energy и Dominion Energy</a> 15 июля подали заявки на слияние за $67 млрд (обмен акциями) в FERC, NRC и регуляторам четырёх штатов, запустив 180-дневный цикл проверки. Объединённая компания станет крупнейшей регулируемой электросетевой компанией мира (~10 млн абонентов, 110 ГВт). Сенатор Кинг призвал FERC отклонить сделку; потребители назвали пакет компенсаций $2,25 млрд недостаточным. Закрытие — не ранее H2 2027.
+        </p>
+        <span class="industry-source"><a href="https://www.utilitydive.com/news/senator-king-ferc-nextera-dominion-merger-necec/824073/" target="_blank" rel="noopener">Utility Dive</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-17">
+        <div class="industry-top">
+          <h3 class="industry-title">Holtec Nuclear Files S-1 for Nasdaq IPO Targeting ~$2 Billion in Proceeds</h3>
+          <span class="industry-date">17 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          Holtec International's nuclear subsidiary <a href="https://www.bloomberg.com/news/articles/2026-07-10/nuclear-energy-services-firm-holtec-joins-sector-s-ipo-rush" target="_blank" rel="noopener">Holtec Nuclear</a> filed its S-1 registration statement with the SEC on July 10 for a proposed Nasdaq listing under the ticker "HNUC," targeting approximately $2 billion in proceeds with JPMorgan Chase, Goldman Sachs, and Citigroup as joint bookrunners. The company reported $576.6 million in revenue and $386.6 million in net income for fiscal year 2025; proceeds are earmarked primarily for accelerating the SMR-300 small modular reactor program toward NRC design certification and construction permit. The filing makes Holtec the third nuclear-focused company to go public in 2026, joining X-Energy ($1B IPO, May) and Kairos Power (Nasdaq, March), as AI-driven electricity demand turns nuclear into the decade's hottest infrastructure investment category.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.bloomberg.com/news/articles/2026-07-10/nuclear-energy-services-firm-holtec-joins-sector-s-ipo-rush" target="_blank" rel="noopener">Holtec Nuclear</a> 10 июля подала S-1 для листинга на Nasdaq («HNUC») с целевым привлечением ~$2 млрд; организаторы — JPMorgan, Goldman Sachs, Citi. Выручка 2025 — $576,6 млн, чистая прибыль — $386,6 млн; средства направятся на программу SMR-300. Третье ядерное IPO 2026 года после X-Energy и Kairos Power на фоне спроса дата-центров на электроэнергию.
+        </p>
+        <span class="industry-source"><a href="https://www.bloomberg.com/news/articles/2026-07-10/nuclear-energy-services-firm-holtec-joins-sector-s-ipo-rush" target="_blank" rel="noopener">Bloomberg</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-13">
+        <div class="industry-top">
+          <h3 class="industry-title">Stryten Energy Acquires C&amp;D Technologies and Trojan Battery to Build Integrated US Battery Platform</h3>
+          <span class="industry-date">13 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.businesswire.com/news/home/20260713252973/en/Stryten-Energy-Announces-Acquisition-of-CD-Trojan-to-Expand-Global-Battery-Manufacturing-and-Strengthen-U.S.-Energy-Security" target="_blank" rel="noopener">Stryten Energy</a>, the Atlas Holdings-owned battery manufacturer formerly known as Exide Technologies, has agreed to acquire C&amp;D Technologies and its Trojan Battery subsidiary from KPS Capital Partners in a transaction with undisclosed financial terms expected to close in Q3 2026. C&amp;D Technologies produces flooded and VRLA lead-acid batteries for telecom and UPS applications; Trojan Battery is the leading brand in deep-cycle lead-acid batteries for golf carts, floor care equipment, and renewable energy storage. The combined platform gives Stryten a vertically integrated lead and lithium battery manufacturing presence spanning automotive, motive, stationary, and renewable storage applications — positioning it as the US supply chain alternative to Asian battery manufacturers as federal procurement rules increasingly favor domestic content.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.businesswire.com/news/home/20260713252973/en/Stryten-Energy-Announces-Acquisition-of-CD-Trojan-to-Expand-Global-Battery-Manufacturing-and-Strengthen-U.S.-Energy-Security" target="_blank" rel="noopener">Stryten Energy</a> (Atlas Holdings, бывшая Exide Technologies) приобретает C&amp;D Technologies и Trojan Battery у KPS Capital Partners (условия не раскрываются, закрытие — Q3 2026). C&amp;D — свинцово-кислотные батареи для телекоммуникаций и ИБП; Trojan — лидер глубокоразрядных батарей для ВИЭ и гольф-каров. Объединённая платформа создаёт вертикально интегрированного производителя батарей для всех применений — американскую альтернативу азиатским поставщикам в условиях роста требований к отечественному содержанию.
+        </p>
+        <span class="industry-source"><a href="https://www.businesswire.com/news/home/20260713252973/en/Stryten-Energy-Announces-Acquisition-of-CD-Trojan-to-Expand-Global-Battery-Manufacturing-and-Strengthen-U.S.-Energy-Security" target="_blank" rel="noopener">BusinessWire</a></span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-07-22.html">2026-07-22</a></li>
+      <li><a href="archive/2026-07-21.html">2026-07-21</a></li>
+      <li><a href="archive/2026-07-20.html">2026-07-20</a></li>
+      <li><a href="archive/2026-07-19.html">2026-07-19</a></li>
+      <li><a href="archive/2026-07-18.html">2026-07-18</a></li>
+      <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
+      <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
+      <li><a href="archive/2026-07-15.html">2026-07-15</a></li>
+      <li><a href="archive/2026-07-14.html">2026-07-14</a></li>
+      <li><a href="archive/2026-07-13.html">2026-07-13</a></li>
+      <li><a href="archive/2026-07-12.html">2026-07-12</a></li>
+      <li><a href="archive/2026-07-11.html">2026-07-11</a></li>
+      <li><a href="archive/2026-07-10.html">2026-07-10</a></li>
+      <li><a href="archive/2026-07-09.html">2026-07-09</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
+</body>
+</html>
