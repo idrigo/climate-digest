@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
+
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
+  .major-events {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
+  }
+  .major-events-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
+    color: var(--industry);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2.5px 9px;
+    border-radius: 4px;
+  }
+  .industry-source a { color: #fff; text-decoration: none; }
+
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
+</style>
+</head>
+<body data-digest-date="2026-07-25" class="lang-en">
+
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 250700Z JUL26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
+    </nav>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The <a href="https://climate.copernicus.eu/copernicus-record-heatwave-brings-hottest-june-western-europe-during-second-warmest-june-globally">Copernicus Climate Change Service confirmed this month</a> that June 2026 was the second-warmest June in the global record (+1.39°C above the 1850–1900 pre-industrial baseline) and the hottest June on record for Western Europe (+3.05°C above the 1991–2020 average), with global ocean surface temperatures registering their highest June values since records began — data that directly underpins the ongoing third European heatwave surge. The <a href="https://wmo.int/news/media-centre/el-nino-forecast-intensify-increasing-likelihood-of-extreme-weather">WMO's July Global Seasonal Climate Update</a> independently corroborates the IRI/NOAA El Niño assessment, projecting central and eastern equatorial Pacific SST anomalies above +2°C through the boreal autumn and an "overwhelming likelihood" of above-average temperatures across nearly all populated land areas between 60°S and 60°N through October 2026.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://climate.copernicus.eu/copernicus-record-heatwave-brings-hottest-june-western-europe-during-second-warmest-june-globally">Copernicus C3S подтвердил</a>: июнь 2026 — второй по теплу в глобальной истории (+1,39°C к доиндустриальному уровню) и самый жаркий июнь для Западной Европы (+3,05°C к средней 1991–2020). <a href="https://wmo.int/news/media-centre/el-nino-forecast-intensify-increasing-likelihood-of-extreme-weather">ВМО (июльский Global Seasonal Climate Update)</a> прогнозирует аномалию ТПО в центрально-восточной Пацифике выше +2°C и «подавляющую вероятность» тепловых аномалий на большей части суши (60°Ю–60°С) до октября 2026 года.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">IRI / NOAA CPC</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://iri.columbia.edu/our-expertise/climate/forecasts/enso/current/">El Niño 2026–27 Crosses the +2°C Threshold: 81% Chance of "Very Strong" Event by Fall</a>
+        <p class="card-summary" data-lang="en">The July 2026 IRI/NOAA ENSO update shows the Niño 3.4 index for the week centred July 15 reaching +2.1°C — the first crossing of the "very strong" threshold in the current event — with 23 of 26 models forecasting a very strong El Niño (Niño 3.4 ≥ +2.0°C) during the October–December 2026 peak season. NOAA assigns 81% probability to the "very strong" category and 97% probability that El Niño conditions persist through early spring 2027. The WMO July update independently confirms rapid intensification, projecting SST anomalies exceeding +2°C and above-average temperatures across nearly all populated land areas through Q4 2026. West Africa, South Asia, southern Africa, and Australia all enter the most anomalous rainfall-distribution corridors.</p>
+        <p class="card-summary" data-lang="ru">Индекс Ниньо 3.4 за неделю с 15 июля достиг +2,1°C; 23 из 26 моделей прогнозируют пик в октябре–декабре. Вероятность «очень сильного» Эль-Ниньо — 81%, сохранения до весны 2027 — 97%. ВМО подтверждает быстрое усиление: ТПО >+2°C, почти все населённые районы (60°Ю–60°С) теплее нормы до октября 2026.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">Limnology &amp; Oceanography / Scripps</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="https://aslopubs.onlinelibrary.wiley.com/doi/10.1002/lno.70434">Aquatic Deoxygenation Should Become the 10th Planetary Boundary, Scripps Study Argues</a>
+        <p class="card-meta">Ferrer et al. · Limnology and Oceanography · DOI: 10.1002/lno.70434 · Scripps / UC San Diego · 2026</p>
+        <p class="card-summary" data-lang="en">A review paper in Limnology and Oceanography led by Erica Ferrer (Scripps Institution of Oceanography, UC San Diego) argues that the accelerating loss of dissolved oxygen from oceans, coastal waters, rivers, and lakes satisfies the criteria for a tenth planetary boundary. Current oxygen depletion trajectories across multiple ocean basins are already in the framework's "unsafe" zone, with cascading consequences including weakening of the biological carbon pump (reducing ocean CO₂ uptake), expansion of hypoxic dead zones, fishery collapse, and amplified nitrogen cycling feedbacks. Deep-basin oxygen recovery spans centuries to millennia. The authors call for treating aquatic oxygen loss with the same policy urgency as atmospheric CO₂ or biodiversity loss.</p>
+        <p class="card-summary" data-lang="ru">Обзор Ferrer et al. (Scripps/UCSD) в Limnology and Oceanography: потеря растворённого O₂ из океанов, рек и озёр соответствует критериям десятой планетарной границы — уже в «опасной» зоне. Последствия: ослабление биологической углеродной помпы, расширение мёртвых зон, обрушение рыбных запасов. Восстановление занимает века–тысячелетия.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 15a4 4 0 014-4 5 5 0 019.6 1.5A3.5 3.5 0 0117 19H7a4 4 0 01-3-4z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
+
+    <div class="major-events">
+      <div class="major-events-head">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span class="major-events-label"><span data-lang="en">Major Events</span><span data-lang="ru">Опасные явления</span></span>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Typhoon Noul (11W/Kiyapo) — Guangdong Province, China</div>
+        <div class="event-status">TYPHOON · ORANGE ALERT · LANDFALL SAT NIGHT</div>
+        <div class="event-impact" data-lang="en">Upgraded from tropical storm to typhoon on July 24 during rapid intensification over the South China Sea, Noul is making landfall along the Guangdong coast between Zhuhai and Raoping on Saturday evening local time (July 25–26) with maximum sustained winds of 151 km/h. China's National Meteorological Centre issued an orange alert (second-highest tier) and authorities evacuated more than 20,000 people in Guangdong Province; rail and air services in Shenzhen were suspended. Cumulative rainfall of 300–500 mm is forecast in eastern Guangdong and southern Fujian, with localised totals up to 600 mm. The system is expected to weaken rapidly after landfall over the Chinese mainland.</div>
+        <div class="event-impact" data-lang="ru">Ноул усилился до тайфуна 24 июля; выход на берег — между Чжухаем и Раопином (Гуандун) в субботу вечером (25–26 июля), ветер 151 км/ч. Оранжевое предупреждение, 20 000+ эвакуированных, Шэньчжэнь закрыл ж/д и авиасообщение. Прогноз: 300–500 мм осадков в вост. Гуандуне и юж. Фуцзяне (до 600 мм). После выхода на берег — быстрое ослабление.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Kaiser Canyon Fire — Okanogan &amp; Ferry Counties, Washington</div>
+        <div class="event-status">90,928 ACRES · 3% CONTAINED (↑9,400 ACRES)</div>
+        <div class="event-impact" data-lang="en">The fire expanded approximately 9,400 acres overnight to 90,928 acres as of July 25 with containment holding at 3%, as forecast warmer, drier, and windier conditions drove increased fire activity. Level 3 "Go Now" evacuations remain in force for communities on the Colville Indian Reservation. Fire continues burning near the Columbia River, Owhi Flats, and the State Route 155 corridor; air quality across central and eastern Washington ranges from Unhealthy to Very Unhealthy.</div>
+        <div class="event-impact" data-lang="ru">К 25 июля пожар вырос на ~9 400 акров до 90 928 акров (3% сдерживания) на фоне жаркой, сухой и ветреной погоды. Эвакуации «немедленно» на резервации Кольвилл сохраняются. Огонь — вдоль Колумбии, Owhi Flats и дороги 155; дым — «нездоровый» – «очень нездоровый».</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">European Heatwave 2026 — Iberian Peninsula &amp; Western Europe</div>
+        <div class="event-status">THIRD SURGE · HEAT DOME ≥1 WEEK FORECAST</div>
+        <div class="event-impact" data-lang="en">The third thermal surge of the 2026 European heatwave remains active with a heat dome locked over Western and Southwestern Europe forecast to persist for at least another week. The Iberian Peninsula expects highs of 40–43°C; the cumulative 2026 EU excess death toll has exceeded 10,000, the majority among adults 65 and older. Active wildfires continue in France and Spain; French nuclear output remains constrained by river cooling-water temperature limits.</div>
+        <div class="event-impact" data-lang="ru">Третья волна жары: купол над Западной Европой — прогноз минимум ещё на неделю; Иберийский полуостров: до +43°C. Суммарный избыток смертей в ЕС от жары 2026 — свыше 10 000 человек (большинство — 65+). Пожары во Франции и Испании; АЭС Франции ограничены температурой охлаждающих рек.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">West Africa Floods — Ivory Coast, Ghana &amp; Togo</div>
+        <div class="event-status">ACTIVE · 72+ DEATHS · RESCUE OPERATIONS</div>
+        <div class="event-impact" data-lang="en">Flooding and rescue operations continue across three countries as the peak of the rainy season approaches. Confirmed deaths remain at 72 (59 in Ivory Coast, 13 in Ghana) with 24,000 displaced. OCHA estimates 7.5 million people remain at risk. Intensive rescue operations continue across the region as access to cut-off communities improves.</div>
+        <div class="event-impact" data-lang="ru">Паводки продолжаются на подходе к пику сезона дождей. Подтверждено 72 погибших (59 Кот-д'Ивуар, 13 Гана), 24 000 перемещённых. УКГД ООН: 7,5 млн человек под угрозой. Спасательные операции продолжаются по мере улучшения доступа к отрезанным районам.</div>
+      </div>
+
+      <div class="event">
+        <div class="event-name">Tropical Storm Bertha — Gulf Coast (Louisiana / Texas)</div>
+        <div class="event-status">DISSIPATED · NO FATALITIES REPORTED</div>
+        <div class="event-impact" data-lang="en">Tropical Storm Bertha dissipated over Texas on July 24–25 after making two landfalls along the northern Gulf Coast — first grazing southern Louisiana, then making a second landfall approximately 75 miles northeast of Galveston, Texas. No deaths or significant damage were reported. All storm watches and warnings have been discontinued; residual rainfall of 1–3 inches may trigger isolated flash flooding in coastal and south Texas. No further Atlantic tropical activity is anticipated.</div>
+        <div class="event-impact" data-lang="ru">ТС «Берта» рассеялась 24–25 июля после двух выходов на берег (юж. Луизиана, затем ~120 км к СВ от Гэлвестона). Жертв и значимого ущерба нет. Все предупреждения сняты; остаточные осадки 25–75 мм могут вызвать локальные вспышечные паводки в Южном Техасе. Новых тропических систем в Атлантике не прогнозируется.</div>
+      </div>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The dominant development since yesterday is <a href="https://www.scmp.com/news/china/politics/article/3361828/rail-and-air-services-cancelled-and-schools-shut-southern-china-braces-typhoon-noul">Typhoon Noul making landfall on China's Guangdong coast</a> Saturday evening — upgraded from tropical storm to typhoon after rapid intensification over the South China Sea, now packing 151 km/h sustained winds, with a Chinese orange alert issued and more than 20,000 residents evacuated from Guangdong Province ahead of forecast 300–500 mm rainfall. In Washington state, the <a href="https://currentwildfires.com/en/fire/kaiser-canyon-fire-wa-2026/">Kaiser Canyon Fire expanded by roughly 9,400 acres overnight to 90,928 acres</a> with containment still at 3% under worsening fire weather. <a href="https://www.news4jax.com/news/national/2026/07/24/tropical-storm-bertha-dissipates-after-landfalls-in-louisiana-texas-no-more-activity-in-atlantic-nhc-says/">Tropical Storm Bertha dissipated</a> after making landfall twice along the northern Gulf Coast without causing fatalities; no further Atlantic activity is forecast.
+    </div>
+    <div class="overview" data-lang="ru">
+      Главное событие — <a href="https://www.scmp.com/news/china/politics/article/3361828/rail-and-air-services-cancelled-and-schools-shut-southern-china-braces-typhoon-noul">тайфун Ноул выходит на берег Гуандуна</a> в субботу вечером: ветер 151 км/ч, оранжевое предупреждение, 20 000+ эвакуированных, прогноз осадков 300–500 мм. <a href="https://currentwildfires.com/en/fire/kaiser-canyon-fire-wa-2026/">Kaiser Canyon вырос до 90 928 акров</a> (3% сдерживания). <a href="https://www.news4jax.com/news/national/2026/07/24/tropical-storm-bertha-dissipates-after-landfalls-in-louisiana-texas-no-more-activity-in-atlantic-nhc-says/">«Берта» рассеялась</a> над Техасом без жертв.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-25">
+        <div class="card-top">
+          <span class="card-source">SCMP / CMA / JTWC</span>
+          <span class="card-date">25 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.scmp.com/news/china/politics/article/3361828/rail-and-air-services-cancelled-and-schools-shut-southern-china-braces-typhoon-noul">Typhoon Noul Makes Landfall on Guangdong Coast; Orange Alert Issued, 20,000+ Evacuated as 151 km/h Winds and 500 mm Rainfall Forecast</a>
+        <p class="card-summary" data-lang="en">After rapid intensification over the South China Sea, Tropical Storm Noul was upgraded to typhoon status on July 24 and is making landfall between Zhuhai and Raoping in Guangdong Province on Saturday evening, July 25, with maximum sustained winds of 151 km/h. China's National Meteorological Centre renewed an orange typhoon alert — the second-highest level in its four-tier system — and authorities evacuated more than 20,000 people ahead of the storm. Rail and air services in Shenzhen were suspended; schools across Guangdong and parts of Fujian closed. Cumulative rainfall of 300–500 mm is forecast in eastern Guangdong and southern Fujian, with localised totals potentially reaching 600 mm. Noul is expected to weaken rapidly after landfall over the Chinese mainland.</p>
+        <p class="card-summary" data-lang="ru">Ноул усилился до тайфуна над ЮКМ и выходит на берег Гуандуна между Чжухаем и Раопином (25 июля, вечер) при ветре 151 км/ч. Оранжевое предупреждение, 20 000+ эвакуированных, отменены ж/д и авиарейсы в Шэньчжэне, закрыты школы в Гуандуне и Фуцзяне. Прогноз осадков: 300–500 мм в восточном Гуандуне, до 600 мм — местами в Фуцзяне. После выхода на берег — быстрое ослабление.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-25">
+        <div class="card-top">
+          <span class="card-source">InciWeb / Current Wildfires</span>
+          <span class="card-date">25 JUL</span>
+        </div>
+        <a class="card-headline" href="https://currentwildfires.com/en/fire/kaiser-canyon-fire-wa-2026/">Kaiser Canyon Fire Expands to 90,928 Acres Overnight; Worsening Fire Weather Threatens Further Growth</a>
+        <p class="card-summary" data-lang="en">The Kaiser Canyon Fire in Okanogan and Ferry counties, Washington, grew approximately 9,400 acres overnight to 90,928 acres as of July 25, with containment remaining at 3% as forecast warmer, drier, and windier conditions drove increased fire activity. The fire — sparked by lightning on July 16 in Colville Agency lands — continues to burn near the Columbia River, Owhi Flats, and the State Route 155 corridor. Level 3 "Go Now" evacuations remain in effect for communities on the Colville Indian Reservation; smoke conditions across central and eastern Washington remain Unhealthy to Very Unhealthy. Firefighters are using ground resources, heavy equipment, and aircraft to protect homes and critical infrastructure.</p>
+        <p class="card-summary" data-lang="ru">Kaiser Canyon (начало — 16 июля, молния) вырос за ночь на ~9 400 акров до 90 928 акров (3% сдерживания) на фоне ухудшения погоды. Огонь — вдоль Колумбии, Owhi Flats, трассы 155. Эвакуации «немедленно» в резервации Кольвилл в силе; дым в центральном и восточном Вашингтоне — «нездоровый»–«очень нездоровый».</p>
+      </article>
+
+      <article class="card" data-date="2026-07-24">
+        <div class="card-top">
+          <span class="card-source">NHC / News4Jax</span>
+          <span class="card-date">24 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.news4jax.com/news/national/2026/07/24/tropical-storm-bertha-dissipates-after-landfalls-in-louisiana-texas-no-more-activity-in-atlantic-nhc-says/">Tropical Storm Bertha Dissipates After Twin Landfalls in Louisiana and Texas; No Fatalities Reported</a>
+        <p class="card-summary" data-lang="en">Tropical Storm Bertha weakened and dissipated on July 24–25 after making two landfalls along the northern Gulf Coast — first grazing southern Louisiana, then making a second landfall approximately 75 miles northeast of Galveston, Texas, where it was briefly downgraded to a tropical depression before dissipating. No deaths or significant damage were reported from the storm, which formed in the Gulf of Mexico south of the Florida Panhandle on July 21. Residual rainfall of 1–3 inches, with isolated totals up to 4 inches, may trigger flash flooding in coastal and south Texas; all storm watches and warnings have been discontinued. No further Atlantic tropical activity is forecast.</p>
+        <p class="card-summary" data-lang="ru">ТС «Берта» рассеялась 24–25 июля после выходов на берег в Луизиане и затем в ~120 км к СВ от Гэлвестона. Жертв и значимого ущерба нет. Остаточные осадки 25–100 мм могут вызвать вспышечные паводки в Южном Техасе. Все предупреждения сняты. Новых тропических систем в Атлантике не ожидается.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M12 3v18M12 8l5-3M12 8L7 5M12 15l5 3M12 15l-5 3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      China fired three interlocking policy signals this week that collectively reshape its renewable trajectory: the National Development and Reform Commission published its <a href="https://www.bloomberg.com/news/articles/2026-07-23/china-aims-to-boost-renewable-energy-consumption-53-by-2030">first-ever legally binding renewable consumption target</a> on July 23 — a 53% jump in wind and solar use to 1.8 billion TCE by 2030 — while simultaneously <a href="https://www.pv-magazine.com/2026/07/17/china-imposes-new-consumption-tax-on-pv-cells-batteries-amid-industry-consolidation-push/">imposing a consumption tax on solar cells and lithium batteries</a> (2% from September 2026, rising to 4% by 2027) to force consolidation in oversupplied manufacturing sectors; yet a <a href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">July 20 Bloomberg analysis</a> found the country still has 262 GW of solar and 251 GW of wind under construction despite curtailment rates already above 9%, highlighting grid bottlenecks that could undermine the new targets.
+    </div>
+    <div class="overview" data-lang="ru">
+      Три взаимосвязанных китайских политических сигнала: 23 июля НКРР опубликовал <a href="https://www.bloomberg.com/news/articles/2026-07-23/china-aims-to-boost-renewable-energy-consumption-53-by-2030">первый юридически обязывающий таргет по ВИЭ</a> (+53%, до 1,8 млрд т у.т. к 2030 году); одновременно введён <a href="https://www.pv-magazine.com/2026/07/17/china-imposes-new-consumption-tax-on-pv-cells-batteries-amid-industry-consolidation-push/">потребительский налог</a> на СЭ-ячейки и литий-ионные АКБ (2% с сентября 2026, 4% с 2027) для консолидации перенасыщенных производств; при этом <a href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">анализ Bloomberg (20 июля)</a> показывает 262 ГВт солнца и 251 ГВт ветра в строительстве на фоне сброса >9% генерации — сетевые узкие места рискуют подорвать амбициозные цели.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">European Commission</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://commission.europa.eu/news-and-media/news/plan-make-europe-first-electro-continent-2026-07-17-0_en">EU Electrification Action Plan Targets 46% Electricity Share by 2040; Paired With €100 Billion ETS Overhaul</a>
+        <p class="card-summary" data-lang="en">The European Commission released its Electrification Action Plan on July 17, setting a legally binding indicative target for electricity to reach 46% of EU final energy consumption by 2040 — nearly doubling the current 23% share. The plan pairs with a major reform of the EU Emissions Trading System backed by more than €100 billion in industrial decarbonisation funding and is designed to save Europe €260 billion per year in fossil fuel import costs. Energy storage targets are set at 200 GW by 2030 and 400 GW by 2040. WindEurope welcomed the plan but warned that meeting the target requires a more stable EU ETS carbon price than current reform proposals deliver.</p>
+        <p class="card-summary" data-lang="ru">Электрификационный план ЕК 17 июля: обязывающая цель — 46% электроэнергии в конечном потреблении к 2040 году (с 23% сегодня), реформа ETS >€100 млрд, экономия €260 млрд/год на импорте ТЭК. Хранение: 200 ГВт к 2030, 400 ГВт к 2040. WindEurope: нужна более стабильная углеродная цена ETS.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-23">
+        <div class="card-top">
+          <span class="card-source">Bloomberg / NDRC</span>
+          <span class="card-date">23 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.bloomberg.com/news/articles/2026-07-23/china-aims-to-boost-renewable-energy-consumption-53-by-2030">China Sets First-Ever Binding Renewable Energy Target: 53% Jump in Wind and Solar Consumption by 2030</a>
+        <p class="card-summary" data-lang="en">China's National Development and Reform Commission published a five-year renewable energy plan on July 23 requiring renewable energy consumption to rise 53% to approximately 1.8 billion tonnes of coal equivalent by 2030 — the first time China has made its green power target legally binding. The plan adds dispatch requirements alongside the capacity target: by 2030, wind and solar backed by storage must be able to supply 8% of installed capacity during peak demand and cover 20% of electricity use during demand spikes; China also targets more than 300 GW of renewable peaking capacity by 2030. The plan arrives as China also began imposing consumption taxes on solar cells and lithium batteries to force manufacturing consolidation in severely overcrowded sectors.</p>
+        <p class="card-summary" data-lang="ru">НКРР КНР 23 июля опубликовал первый юридически обязывающий пятилетний план по ВИЭ: +53% потребления к 2030 году (до ~1,8 млрд т у.т.). Новые требования: ВИЭ+хранение — 8% мощности в пиках и 20% потребления в пиках; цель по манёврирующим мощностям — >300 ГВт к 2030 году. Принят одновременно со введением потребительского налога на СЭ и АКБ.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">PV Magazine / Bloomberg</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.pv-magazine.com/2026/07/17/china-imposes-new-consumption-tax-on-pv-cells-batteries-amid-industry-consolidation-push/">China Imposes First-Ever Consumption Tax on Solar Cells and Lithium Batteries to Force Industry Consolidation</a>
+        <p class="card-summary" data-lang="en">China ended a decade-long consumption tax exemption for solar cells and lithium-ion batteries on July 17, imposing a 2% tax on lithium batteries from September 2026 (rising to 4% in September 2027) and a 2% tax on solar cells from April 2027 (rising to 4% in April 2028). The policy is designed to hasten consolidation in China's severely overcrowded solar and battery manufacturing sectors. Sodium-ion batteries, solid-state cells, and fuel cells are exempt through the end of 2028, signaling a policy tilt toward next-generation technologies. Stocks of CATL (+4.3%) and Longi (+2.4%) rose on the news, as investors welcomed the prospect of reduced price-destructive competition.</p>
+        <p class="card-summary" data-lang="ru">Китай с 17 июля ввёл потребительский налог: литий-ионные АКБ — 2% с сентября 2026 (4% с сентября 2027); СЭ-ячейки — 2% с апреля 2027 (4% с апреля 2028). Конец 10-летней льготы. Цель — консолидация перенасыщенных рынков. Натрий-ион, твёрдотельные АКБ и ТЭ — освобождены до конца 2028. CATL +4,3%, Longi +2,4%.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Bloomberg</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.bloomberg.com/news/articles/2026-07-20/china-s-still-building-wind-and-solar-despite-threat-of-waste">China Pushes Ahead With World's Largest Renewables Buildout Despite Curtailment Rates Above 9%</a>
+        <p class="card-summary" data-lang="en">China had approximately 262 GW of solar and 251 GW of wind under construction in June 2026 — by far the world's largest renewable buildout pipeline — even as solar curtailment rates climbed to 9.2% in the first two months of 2026 (from 6.1% in the same period of 2025) and wind curtailment rose to 8.5% (from 6.2%). The paradox is driven not by insufficient demand for clean energy but by misaligned incentive structures and a chronic shortage of transmission capacity: provinces continue to approve and fund new installations regardless of grid absorption capacity. The new binding 53% consumption target announced July 23 includes dispatch requirements, but analysts say the binding constraint remains grid infrastructure investment, not the size of the generation pipeline.</p>
+        <p class="card-summary" data-lang="ru">Июнь 2026: 262 ГВт солнечных и 251 ГВт ветровых мощностей в строительстве — крупнейший в мире портфель ВИЭ-строительства, — несмотря на рост сброса солнечной генерации до 9,2% (с 6,1%) и ветровой до 8,5% (с 6,2%) в янв–фев 2026. Причина — рассогласованные стимулы и нехватка сетевой инфраструктуры. Новый таргет включает требования по диспетчеризации, но ключевым ограничением остаются инвестиции в сети.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+    <div class="overview" data-lang="en">
+      Two new arXiv papers dissect the theoretical foundations of machine-learned weather prediction this week. <a href="https://arxiv.org/abs/2607.19161">arXiv:2607.19161</a> from ECMWF finds that multivariate scoring rules — particularly a graph-based energy score tied to local grid-node neighbourhood structure — match or outperform CRPS-based training for global probabilistic NWP models, performing better in the tropics; the companion <a href="https://www.nature.com/articles/s44387-026-00073-7">AIFS-CRPS paper has concurrently been peer-reviewed in npj Artificial Intelligence</a>, giving the model formal journal status alongside its operational use at ECMWF. A philosophical analysis from UC San Diego (<a href="https://arxiv.org/abs/2607.05045">arXiv:2607.05045</a>) argues that modern MLWP has uncritically inherited the initial-value-problem framing from NWP, constraining architecture choices and leaving genuinely data-native spatiotemporal modeling largely unexplored. A <a href="https://www.nature.com/articles/s41558-026-02696-9">new Nature Climate Change study</a> shows that seasonal pile-driving restrictions combined with noise-attenuation devices can substantially protect critically endangered North Atlantic right whales during offshore wind construction at minimal additional cost to project developers — directly addressing one of the main regulatory barriers to US East Coast wind development.
+    </div>
+    <div class="overview" data-lang="ru">
+      Два новых препринта arXiv об основах ML-прогнозирования погоды. <a href="https://arxiv.org/abs/2607.19161">arXiv:2607.19161</a> (ECMWF): многомерные scoring rules (прежде всего graph energy score) сравнимы с CRPS в экстратропиках и лучше в тропиках; <a href="https://www.nature.com/articles/s44387-026-00073-7">AIFS-CRPS опубликован в npj AI</a>. <a href="https://arxiv.org/abs/2607.05045">arXiv:2607.05045</a> (UC San Diego): современный MLWP некритично унаследовал IVP-фреймворк NWP — data-native архитектуры недоисследованы. Исследование в <a href="https://www.nature.com/articles/s41558-026-02696-9">Nature Climate Change</a>: сезонные ограничения забивки свай + шумоподавление защищают NARW при строительстве морских ВЭС с минимальными затратами для девелоперов.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-17">
+        <div class="card-top">
+          <span class="card-source">Google DeepMind</span>
+          <span class="card-date">17 JUL</span>
+        </div>
+        <a class="card-headline" href="https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-2/">Google DeepMind Weather Lab Integrates WeatherNext 2 With Cyclone Tracking and Point Forecasts</a>
+        <p class="card-meta">Google DeepMind · Weather Lab update · WeatherNext 2 · July 17, 2026</p>
+        <p class="card-summary" data-lang="en">Google DeepMind updated its Weather Lab interactive platform on July 17 to fully integrate WeatherNext 2 — its most advanced AI weather model — including global forecast maps, cyclone tracking, historical forecasts up to 15 days back, and point forecasts for specific locations. WeatherNext 2 runs 8× faster than its predecessor while achieving higher accuracy on 99.9% of variables and demonstrably improved tropical cyclone track prediction accurate up to three days ahead. Weather Lab data now feeds Google Search, Pixel Weather, and the Google Maps Platform Weather API.</p>
+        <p class="card-summary" data-lang="ru">17 июля DeepMind обновил Weather Lab: полная интеграция WeatherNext 2 с отслеживанием циклонов, историческими прогнозами (до 15 дней) и точечными прогнозами. WeatherNext 2: в 8× быстрее предшественника, точнее на 99,9% переменных, улучшенный трек ТЦ до 3 суток. Данные поступают в Google Search, Pixel Weather, Maps Platform.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-19">
+        <div class="card-top">
+          <span class="card-source">Limnology &amp; Oceanography / Scripps</span>
+          <span class="card-date">19 JUL</span>
+        </div>
+        <a class="card-headline" href="https://aslopubs.onlinelibrary.wiley.com/doi/10.1002/lno.70434">Abundant Feedbacks Between Aquatic Deoxygenation and Planetary Boundaries Point to "Unsafe" Oxygen Loss</a>
+        <p class="card-meta">Ferrer et al. · Limnology and Oceanography · DOI: 10.1002/lno.70434 · Scripps Institution of Oceanography / UC San Diego · 2026</p>
+        <p class="card-summary" data-lang="en">A comprehensive review in Limnology and Oceanography by Erica Ferrer and colleagues at Scripps/UC San Diego identifies abundant interactions between aquatic deoxygenation and all nine existing planetary boundaries — from climate change to biosphere integrity to freshwater flows — arguing that oxygen loss from oceans, coastal waters, rivers, and lakes satisfies the criteria for a tenth planetary boundary. Current trajectories are already in the "unsafe" zone for multiple ocean basins, with consequences including weakening of the biological carbon pump, expansion of hypoxic dead zones, fishery collapse, and amplified nitrogen cycling feedbacks; deep-basin oxygen recovery occurs on century-to-millennial timescales.</p>
+        <p class="card-summary" data-lang="ru">Обзор Ferrer et al. (Scripps/UCSD): водная деоксигенация взаимодействует со всеми девятью существующими планетарными границами и удовлетворяет критериям десятой. Текущие траектории — в «опасной» зоне: ослабление биологической углеродной помпы, расширение мёртвых зон, обрушение рыбных запасов. Восстановление — века–тысячелетия.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-21">
+        <div class="card-top">
+          <span class="card-source">arXiv / npj AI (ECMWF)</span>
+          <span class="card-date">21 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2607.19161">Multivariate Scoring Rules Match or Beat CRPS for Probabilistic NWP Training, ECMWF Study Finds</a>
+        <p class="card-meta">ECMWF team · arXiv:2607.19161 · physics.ao-ph / cs.LG · also published in npj Artificial Intelligence · July 21, 2026</p>
+        <p class="card-summary" data-lang="en">Researchers at ECMWF systematically compare versions of the AIFS-CRPS global probabilistic weather model trained on different univariate and multivariate scoring rules: the (nearly) fair CRPS, a fair global energy score, and a graph energy score based on local grid-node neighbourhood structure. In the extratropics all three objectives produce similar forecast skill; in the tropics the graph energy score outperforms CRPS while the global energy score shows some degradation — suggesting multivariate scoring rules are a viable and potentially superior alternative to CRPS-based training for global ML weather forecasting. The AIFS-CRPS architecture paper has concurrently been peer-reviewed in npj Artificial Intelligence, formalising the model's status alongside its operational deployment at ECMWF.</p>
+        <p class="card-summary" data-lang="ru">Команда ECMWF сравнила AIFS-CRPS, обученный на трёх scoring rules: почти честный CRPS, честный глобальный energy score и graph energy score (структура соседства сетки). В экстратропиках навык сходен; в тропиках graph energy score лучше, глобальный — незначительно хуже. Вывод: многомерные функции потерь — жизнеспособная альтернатива CRPS для глобального ML-прогнозирования. AIFS-CRPS опубликован в npj Artificial Intelligence.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-06">
+        <div class="card-top">
+          <span class="card-source">arXiv (UC San Diego)</span>
+          <span class="card-date">06 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2607.05045">On the Genealogy of Machine Learning Weather Prediction: How NWP's Initial-Value-Problem Frame Constrains ML Architecture</a>
+        <p class="card-meta">Mohammad Hassan Erfani · UC San Diego · arXiv:2607.05045 · physics.ao-ph · July 6, 2026</p>
+        <p class="card-summary" data-lang="en">Mohammad Hassan Erfani (UC San Diego) surveys how modern machine-learning weather prediction inherited the initial-value-problem framing of numerical weather prediction — treating forecasting as a learned autoregressive time-stepping problem mapping an initial state forward in time — and argues this inheritance implicitly constrains architecture selection while limiting exploration of alternative paradigms. The paper distinguishes two traditions: "scientific surrogate modeling," where ML respects the physical constraints of the NWP system, and "free-form data-driven modeling," where atmospheric fields are treated as spatiotemporal sequences without explicit physical constraints. The analysis argues that current MLWP sits between the two but leans so heavily on the IVP frame that genuinely data-native architectures remain underexplored — a framing the author suggests will become important as the field reaches the limits of imitation-of-physics approaches.</p>
+        <p class="card-summary" data-lang="ru">Эрфани (UC San Diego) прослеживает, как современный MLWP унаследовал IVP-фреймворк NWP — авторегрессионный шаг по времени, — что неявно ограничивает выбор архитектур. Разграничены «научный суррогатный моделинг» (ML внутри физических ограничений NWP) и «свободно-данные-ориентированный» подход (атмосфера как пространственно-временная последовательность). Истинно data-native архитектуры в MLWP недоисследованы.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Nature Climate Change</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nature.com/articles/s41558-026-02696-9">Offshore Wind Construction Can Protect North Atlantic Right Whales at Minimal Cost, Nature Climate Change Study Finds</a>
+        <p class="card-meta">· Nature Climate Change · DOI: 10.1038/s41558-026-02696-9 · 2026</p>
+        <p class="card-summary" data-lang="en">A modelling study in Nature Climate Change develops an optimization framework for protecting critically endangered North Atlantic right whales (NARW) during offshore wind construction off the US East Coast, using pile-driving noise simulation and whale density surface models across ten mitigation scenarios. The analysis finds that a combination of seasonal pile-driving restrictions — timed to avoid peak NARW habitat use periods — and noise-attenuating devices (bubble curtains or equivalent) can substantially reduce the number of whales exposed to harmful noise levels while imposing only marginal additional costs on project developers. The result directly addresses one of the principal regulatory barriers to US East Coast offshore wind deployment, where NARW protection requirements under the Marine Mammal Protection Act have delayed or blocked multiple projects.</p>
+        <p class="card-summary" data-lang="ru">Моделирование в Nature Climate Change: комбинация сезонных ограничений забивки свай (вне пиков присутствия NARW) и шумоподавляющих устройств (пузырьковые завесы и аналоги) существенно снижает число китов, подверженных опасному шуму, с минимальными дополнительными затратами для девелоперов. Результат снимает один из ключевых регуляторных барьеров для offshore wind на востоке США.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Новости индустрии</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-07-24">
+        <div class="industry-top">
+          <h3 class="industry-title">Climate X Launches Global Probabilistic Wildfire Model for Financial Institutions, Covering 93% of Global GDP</h3>
+          <span class="industry-date">24 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.reinsurancene.ws/climate-x-introduces-global-wildfire-risk-model-for-financial-and-asset-level-decision-making/" target="_blank" rel="noopener">Climate X</a>, the London-based climate resilience analytics firm, launched its Global Wildfire probabilistic model on July 24 — a tool designed for insurers, asset managers, banks, and public sector organisations seeking to assess wildfire exposure across global portfolios. The model covers 93% of global GDP across eight regions, accounting for variation in ignition points, fire size, and spread direction to enable cross-portfolio benchmarking with a consistent global methodology. Swiss Re estimates wildfire losses could reach $40 billion in 2025; the launch follows growing TCFD and IFRS S2 regulatory pressure requiring financial institutions to disclose physical climate risk at the asset level. The Climate X launch comes three days after KatRisk unveiled a US-focused cat model at 30-metre resolution built on Technosylva's physics engine — two wildfire risk products in four days reflects accelerating financial-sector demand for forward-calibrated fire risk tools.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          Лондонский <a href="https://www.reinsurancene.ws/climate-x-introduces-global-wildfire-risk-model-for-financial-and-asset-level-decision-making/" target="_blank" rel="noopener">Climate X</a> 24 июля запустил вероятностную модель Global Wildfire для страховщиков, управляющих активами, банков и госсектора: охват — 93% мирового ВВП в восьми регионах с единой методологией. Swiss Re оценивает глобальные убытки от пожаров 2025 года в $40 млрд; запуск последовал под давлением требований TCFD/IFRS S2 по раскрытию физических климатических рисков. Вторая крупная модель пожарных рисков за четыре дня (KatRisk — 21 июля) — признак растущего спроса финансового сектора на передовые инструменты оценки рисков.
+        </p>
+        <span class="industry-source"><a href="https://www.reinsurancene.ws/climate-x-introduces-global-wildfire-risk-model-for-financial-and-asset-level-decision-making/" target="_blank" rel="noopener">Reinsurance News / The Insurer</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-22">
+        <div class="industry-top">
+          <h3 class="industry-title">MN8 Energy to Acquire Greenbacker Renewable Energy in $375 Million Deal, Creating Top 3 US Clean Power Platform</h3>
+          <span class="industry-date">22 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.power-technology.com/news/mn8-to-buy-greenbacker/" target="_blank" rel="noopener">MN8 Energy</a> agreed on July 22 to acquire Greenbacker Renewable Energy Company in a cash-and-equity transaction valued at up to $375 million — $350 million at closing, with up to $25 million in additional milestone-linked payments. The combined platform will hold more than 6 GW of operating and under-construction renewable capacity across 33 US states, placing the merged entity among the three largest independent clean power producers in the country. The deal has been unanimously approved by both boards and is expected to close in Q4 2026 pending Greenbacker shareholder approval and regulatory clearances; management identified up to $20 million in annual run-rate cost synergies by the end of 2028 across procurement, operations, and EPC leverage.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.power-technology.com/news/mn8-to-buy-greenbacker/" target="_blank" rel="noopener">MN8 Energy</a> 22 июля объявила о приобретении Greenbacker Renewable Energy за до $375 млн ($350 млн при закрытии + до $25 млн по вехам), создавая объединённую платформу >6 ГВт в 33 штатах США — в тройке крупнейших независимых производителей чистой энергии страны. Закрытие — Q4 2026; синергии затрат — до $20 млн/год к 2028 году.
+        </p>
+        <span class="industry-source"><a href="https://www.themiddlemarket.com/latest-news/mn8-energy-acquires-greenbacker-renewable-energy-in-375m-deal" target="_blank" rel="noopener">The Middle Market / Power Technology</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-21">
+        <div class="industry-top">
+          <h3 class="industry-title">KatRisk Launches Next-Generation Wildfire Catastrophe Model Powered by Technosylva Physics Engine</h3>
+          <span class="industry-date">21 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          <a href="https://www.globenewswire.com/news-release/2026/07/21/3330622/0/en/katrisk-launches-next-generation-wildfire-risk-capabilities-powered-by-technosylva-s-operational-fire-science.html" target="_blank" rel="noopener">KatRisk</a>, the catastrophe risk modeling firm, launched a next-generation US wildfire risk modeling capability on July 21 built on Technosylva's physics-based wildfire behavior engine — developed over 30 years and deployed by ~80% of Fortune 500 utilities and fire agencies including CAL FIRE and the US Forest Service. The new model delivers 30-metre resolution wildfire spread modeling across the continental US, advanced urban conflagration analytics validated against the 2025 Los Angeles Palisades and Eaton fires, and a high-speed portfolio analytics engine capable of processing event sets spanning more than 50,000 simulation years in seconds. The model is calibrated to current and emerging fire conditions rather than historical burn patterns, providing underwriters with a defensible forward-looking risk assessment designed to close the actuarial gap that drove major insurers to exit California markets.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://www.globenewswire.com/news-release/2026/07/21/3330622/0/en/katrisk-launches-next-generation-wildfire-risk-capabilities-powered-by-technosylva-s-operational-fire-science.html" target="_blank" rel="noopener">KatRisk</a> 21 июля запустил новое поколение катмодели пожаров для США: физический движок Technosylva (30+ лет, ~80% Fortune 500 в энергетике, CAL FIRE), разрешение 30 м, обработка >50 000 лет событийного набора за секунды. Калибровка на текущие и будущие пожарные условия, а не исторические паттерны — для заполнения актуарного разрыва, вынудившего страховщиков покинуть Калифорнию.
+        </p>
+        <span class="industry-source"><a href="https://www.theinsurer.com/ti/news/exclusive-katrisk-launches-wildfire-model-that-addresses-gaps-exposed-by-2026-07-20/" target="_blank" rel="noopener">The Insurer / GlobeNewswire</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-20">
+        <div class="industry-top">
+          <h3 class="industry-title">Nextpower Completes $365 Million Acquisition of Prevalon Energy, Launches Battery Storage Business Targeting AI Data Centers</h3>
+          <span class="industry-date">20 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">
+          Solar developer <a href="https://pv-magazine-usa.com/2026/07/20/nextpower-launches-energy-storage-business-after-completion-of-prevalon-acquisition/" target="_blank" rel="noopener">Nextpower</a> completed its acquisition of Prevalon Energy on July 20 for total consideration of up to $365 million — approximately $150 million in cash at closing, $50 million in stock issued one year post-closing, and up to $165 million contingent on commercial milestones. Prevalon, originally established as a joint venture by Mitsubishi Power Americas and EES, has deployed more than 6 GWh of large-scale battery energy storage systems and lifecycle services globally. The acquisition gives Nextpower a direct route into the AI data center power market and positions the company to offer integrated solar-plus-storage solutions for hyperscalers and grid operators alongside its core utility-scale solar platform.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          Солнечный девелопер <a href="https://pv-magazine-usa.com/2026/07/20/nextpower-launches-energy-storage-business-after-completion-of-prevalon-acquisition/" target="_blank" rel="noopener">Nextpower</a> завершил приобретение Prevalon Energy за до $365 млн (€150 млн при закрытии + $50 млн акциями + до $165 млн по вехам), запустив направление BESS. Prevalon (JV Mitsubishi Power Americas + EES) — 6+ ГВт·ч развёрнутых систем хранения. Nextpower получает выход на рынок питания ИИ-дата-центров и интегрированные решения солнце+накопители для гиперскейлеров.
+        </p>
+        <span class="industry-source"><a href="https://pv-magazine-usa.com/2026/07/20/nextpower-launches-energy-storage-business-after-completion-of-prevalon-acquisition/" target="_blank" rel="noopener">PV Magazine USA</a></span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-07-24.html">2026-07-24</a></li>
+      <li><a href="archive/2026-07-23.html">2026-07-23</a></li>
+      <li><a href="archive/2026-07-22.html">2026-07-22</a></li>
+      <li><a href="archive/2026-07-21.html">2026-07-21</a></li>
+      <li><a href="archive/2026-07-20.html">2026-07-20</a></li>
+      <li><a href="archive/2026-07-19.html">2026-07-19</a></li>
+      <li><a href="archive/2026-07-18.html">2026-07-18</a></li>
+      <li><a href="archive/2026-07-17.html">2026-07-17</a></li>
+      <li><a href="archive/2026-07-16.html">2026-07-16</a></li>
+      <li><a href="archive/2026-07-15.html">2026-07-15</a></li>
+      <li><a href="archive/2026-07-14.html">2026-07-14</a></li>
+      <li><a href="archive/2026-07-13.html">2026-07-13</a></li>
+      <li><a href="archive/2026-07-12.html">2026-07-12</a></li>
+      <li><a href="archive/2026-07-11.html">2026-07-11</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
+</body>
+</html>
