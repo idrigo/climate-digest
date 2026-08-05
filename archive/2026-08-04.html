@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
+
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
+  .major-events {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
+  }
+  .major-events-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
+    color: var(--industry);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2.5px 9px;
+    border-radius: 4px;
+  }
+  .industry-source a { color: #fff; text-decoration: none; }
+
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
+</style>
+</head>
+<body data-digest-date="2026-08-04" class="lang-en">
+
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 040700Z AUG26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
+    </nav>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      A peer-reviewed study in Geophysical Research Letters by <a href="https://www.sciencedaily.com/releases/2026/08/260801093239.htm">Foster &amp; Rahmstorf (PIK) detects a sharp acceleration in the global warming rate</a> — 0.35°C per decade since 2015 versus 0.2°C per decade from 1970 to 2015 — with >98% confidence, implying the Paris 1.5°C threshold arrives around 2030. The acceleration is already visible from orbit: <a href="https://science.nasa.gov/earth/earth-observatory/heat-dome-broils-the-western-u-s/">NASA Earth Observatory satellite land-surface temperature retrievals</a> show anomalies of 40°F or more stretching from Arizona to Montana, with Spokane's wildfire smoke visible as a thick ochre plume across Washington and Idaho. Simultaneously, <a href="https://atmosphere.copernicus.eu/extreme-wildfires-western-europe-expose-millions-dangerous-air-pollution-levels">CAMS/Copernicus reports that extreme wildfires in western Europe are exposing millions to dangerous air pollution</a>, with France's 2026 wildfire emissions among the worst recorded since 2002 and smoke plumes reaching the Iberian Peninsula. On the ground in the US, <a href="https://ktar.com/arizona-health-news/maricopa-county-heat-deaths-surge">Maricopa County's heat-related death toll is on track to triple the 2025 total</a>, with 18 confirmed and 215 under investigation by early July against a full-year 2025 total of 427.
+    </div>
+    <div class="overview" data-lang="ru">
+      Рецензируемое исследование в GRL (<a href="https://www.sciencedaily.com/releases/2026/08/260801093239.htm">Foster &amp; Rahmstorf, PIK</a>): скорость глобального потепления ускорилась с 0,2°C/дек. (1970–2015) до 0,35°C/дек. (с 2015 г.) при достоверности >98%; рубеж 1,5°C Парижского соглашения — около 2030 года. Из космоса: <a href="https://science.nasa.gov/earth/earth-observatory/heat-dome-broils-the-western-u-s/">NASA Earth Observatory</a> фиксирует аномалии ТПП +40°F от Аризоны до Монтаны; дым спокейнских пожаров виден со спутника. <a href="https://atmosphere.copernicus.eu/extreme-wildfires-western-europe-expose-millions-dangerous-air-pollution-levels">CAMS/Copernicus</a>: лесные пожары в Западной Европе — выбросы 2026 года одни из худших с 2002-го; дым достигает Пиренейского полуострова. В округе Марикопа: <a href="https://ktar.com/arizona-health-news/maricopa-county-heat-deaths-surge">смертность от жары идёт к утроению показателя 2025 года</a>.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-01">
+        <div class="card-top">
+          <span class="card-source">ScienceDaily / GRL</span>
+          <span class="card-date">01 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.sciencedaily.com/releases/2026/08/260801093239.htm">Scientists Detect Sharp Acceleration in Global Warming Rate — 0.35°C/Decade Since 2015 vs. 0.2°C/Decade Prior; Paris 1.5°C Threshold ~2030</a>
+        <p class="card-summary" data-lang="en">A study published in Geophysical Research Letters by Grant Foster and Stefan Rahmstorf (Potsdam Institute for Climate Impact Research) finds that the global mean surface temperature warming rate has sharply accelerated since approximately 2015, rising to 0.35°C per decade — nearly double the 0.2°C per decade pace observed from 1970 to 2015. The authors demonstrate the acceleration with greater than 98% statistical confidence, ruling out internal variability as the primary driver and attributing the shift to continued greenhouse gas forcing combined with the reduction of cooling sulfate aerosol emissions from shipping following 2020 IMO regulations. At the current accelerated pace, the 1.5°C warming threshold specified in the Paris Agreement is projected to be crossed around 2030, roughly five years earlier than most prior central estimates.</p>
+        <p class="card-summary" data-lang="ru">Исследование GRL (Foster &amp; Rahmstorf, PIK): скорость глобального потепления с ~2015 г. составляет 0,35°C/дек. против 0,2°C/дек. в 1970–2015 гг. Достоверность превышения >98%; основной фактор — парниковые газы плюс сокращение охлаждающих сульфатных аэрозолей после правил ИМО-2020. При нынешнем темпе порог 1,5°C будет пройден около 2030 г. — на ~5 лет раньше прежних медианных оценок.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-02">
+        <div class="card-top">
+          <span class="card-source">NASA Earth Observatory</span>
+          <span class="card-date">02 AUG</span>
+        </div>
+        <a class="card-headline" href="https://science.nasa.gov/earth/earth-observatory/heat-dome-broils-the-western-u-s/">Heat Dome Broils the Western U.S. — NASA Satellite LST Anomalies 40°F+ From Arizona to Montana; Spokane Wildfire Smoke Visible From Orbit</a>
+        <p class="card-summary" data-lang="en">NASA Earth Observatory published satellite-derived land surface temperature anomaly maps on August 2 showing anomalies of 40°F or more stretching from southern Arizona north through Nevada, Utah, Idaho, and into Montana — the thermal footprint of the persistent upper-level ridge dominating western North America. False-color imagery from the MODIS instrument on Aqua and Terra captures the extreme surface heating in desert basins and urban areas, where LST anomalies exceed 15°C versus the 2001–2020 climatological mean for the date. A thick ochre and grey wildfire smoke plume originating from the Spokane Area Fires complex is visible across eastern Washington and northern Idaho, with transport extending southeast into Wyoming and Colorado. The imagery reinforces the direct connection between the heat dome, extreme fire-weather conditions, and the wildfire outbreak simultaneously unfolding on the ground.</p>
+        <p class="card-summary" data-lang="ru">NASA Earth Observatory опубликовало карты аномалий ТПП (2 августа): отклонения +40°F и более от Аризоны до Монтаны — тепловой след высотного гребня. По данным MODIS (Aqua/Terra) аномалии ТПП превышают +15°C к норме 2001–2020 гг. Дымовой шлейф от пожаров Spokane Area Fires видимо охватывает восток Вашингтона, север Айдахо и простирается на юго-восток до Вайоминга.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-02">
+        <div class="card-top">
+          <span class="card-source">CAMS / Copernicus</span>
+          <span class="card-date">02 AUG</span>
+        </div>
+        <a class="card-headline" href="https://atmosphere.copernicus.eu/extreme-wildfires-western-europe-expose-millions-dangerous-air-pollution-levels">Extreme Wildfires in Western Europe Expose Millions to Dangerous Air Pollution — France 2026 Emissions Among Worst Since 2002; Smoke Reaches Iberian Peninsula</a>
+        <p class="card-summary" data-lang="en">The EU Copernicus Atmosphere Monitoring Service (CAMS) reports that extreme wildfires burning across western Europe — with the most significant active fire in France's Pyrénées-Orientales département — are exposing millions of people to dangerous concentrations of particulate matter and ozone. CAMS's atmospheric reanalysis and real-time monitoring show that France's 2026 wildfire season has already produced fire radiative power and carbon emissions among the highest recorded since the modern satellite record began in 2002, with the PM2.5 plume extending southwest across the Iberian Peninsula and reaching population centers in northeastern Spain. The service's air quality forecast shows elevated particulate concentrations persisting through at least August 6 across a broad corridor from southern France through Catalonia and Aragon, with health authorities in affected regions issuing guidance to vulnerable populations to limit outdoor exposure.</p>
+        <p class="card-summary" data-lang="ru">CAMS/Copernicus: лесные пожары Западной Европы (главный очаг — Пиренеи-Ориенталь, Франция) экспонируют миллионы людей опасным концентрациям PM2.5 и озона. Выбросы 2026 года — одни из самых высоких с 2002 г. Шлейф PM2.5 достигает Каталонии и Арагона; повышенные концентрации сохранятся как минимум до 6 августа.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-31">
+        <div class="card-top">
+          <span class="card-source">KTAR</span>
+          <span class="card-date">31 JUL</span>
+        </div>
+        <a class="card-headline" href="https://ktar.com/arizona-health-news/maricopa-county-heat-deaths-surge">Maricopa County Heat Deaths on Track to Triple 2025 Total — 18 Confirmed + 215 Under Investigation by Early July; 2025 Full-Year Total Was 427</a>
+        <p class="card-summary" data-lang="en">Maricopa County's Medical Examiner's Office reported 18 confirmed heat-related deaths and 215 additional deaths under investigation as heat-related by early July 2026 — a pace that puts the full-year total on track to roughly triple the county's 2025 total of 427 confirmed heat deaths, which was itself a record at the time. The county is experiencing its hottest summer on record, with Phoenix recording its highest sustained overnight minimum temperatures since reliable weather records began; the combination of extreme overnight lows above 80°F and multiple consecutive weeks above 110°F is dramatically compressing the recovery window for the human body and particularly endangering outdoor workers, elderly residents in housing without air conditioning, and people experiencing homelessness.</p>
+        <p class="card-summary" data-lang="ru">К началу июля 2026 г. в округе Марикопа подтверждены 18 смертей от жары и ещё 215 — под расследованием; при таком темпе годовой итог утроит рекорд 2025 г. (427 смертей). Феникс фиксирует наибольшие ночные минимумы за всю историю наблюдений; несколько недель подряд с максимумами выше 110°F при ночах выше 80°F критически сокращают период восстановления организма.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The Spokane Area Fires complex has escalated overnight: <a href="https://www.foxweather.com/live-news/live-updates-spokane-wildfires-destroy-600-structures-as-thousands-remain-under-evacuation">the structure count has risen to 700+ destroyed and 65,000+ residents remain under evacuation orders</a> as the fire grew to approximately 8,026 acres — and investigators have made an arson arrest. <a href="https://www.cnn.com/2026/08/03/us/live-news/spokane-washington-wildfires">Aaron Farinacci, 37, was charged with first-degree arson in connection with the Old Trails Fire</a>, one of the three blazes that merged into the complex; bail was set at $1 million. Cooler air and reduced winds are forecast to arrive August 5–6, which would provide the first meaningful window for aerial suppression since the outbreak began. In the western Pacific, <a href="https://wxtech.weathernews.com/en/news/20260803-01/">Typhoon Dolphin (12W) is approaching Chichijima and the Ogasawara Islands today</a>, tracking toward Amami Oshima around August 7 and Okinawa approximately August 8, with JMA typhoon warnings in effect. <a href="https://www.connexionfrance.com/news/france-wildfire-update-blazes-continue-across-south-as-red-alerts-raised/800611">France's Pyrénées-Orientales wildfire has grown to approximately 5,000 ha</a>, with 12,000 residents evacuated and firefighters reporting the perimeter is forming — the fire has stopped spreading to new areas for the first time since ignition.
+    </div>
+    <div class="overview" data-lang="ru">
+      Комплекс Spokane Area Fires: <a href="https://www.foxweather.com/live-news/live-updates-spokane-wildfires-destroy-600-structures-as-thousands-remain-under-evacuation">700+ строений уничтожено, 65 000+ эвакуировано</a>, площадь ~8 026 акров. <a href="https://www.cnn.com/2026/08/03/us/live-news/spokane-washington-wildfires">Арестован подозреваемый в поджоге (Aaron Farinacci, 37 лет, залог $1 млн)</a>; облегчение ожидается 5–6 августа. Тайфун «Дельфин»: <a href="https://wxtech.weathernews.com/en/news/20260803-01/">сегодня — Тисидзима, 7-го — Амами-Осима, ~8-го — Окинава</a>; предупреждения JMA активны. Пожар в Пиренеях-Ориенталь: <a href="https://www.connexionfrance.com/news/france-wildfire-update-blazes-continue-across-south-as-red-alerts-raised/800611">~5 000 га, 12 000 эвакуировано, периметр формируется</a>.
+    </div>
+
+    <div class="major-events">
+      <div class="major-events-head">
+        <span class="pulse-dot"></span>
+        <span class="major-events-label" data-lang="en">Major Active Weather Events</span>
+        <span class="major-events-label" data-lang="ru">Крупные активные погодные явления</span>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Spokane Area Fires (WA) — ARSON ARREST</span>
+        <span class="event-status">CRITICAL / 0% CONTAINED</span>
+        <p class="event-impact" data-lang="en">700+ structures destroyed, 65,000+ evacuated, ~8,026 acres at 0% containment. Aaron Farinacci (37) arrested August 3 on first-degree arson charges linked to the Old Trails Fire; $1M bail. National Guard activated, federal emergency declaration in effect. Cooler temperatures and reduced winds forecast for August 5–6 — first potential window for meaningful aerial suppression since outbreak.</p>
+        <p class="event-impact" data-lang="ru">700+ строений уничтожено, 65 000+ эвакуировано, ~8 026 акров при 0% сдерживания. 3 августа задержан Aaron Farinacci (37 л.) по статье об умышленном поджоге (Old Trails Fire); залог $1 млн. Нацгвардия задействована. Облегчение ожидается 5–6 августа — первая возможность для авиационного тушения с начала вспышки.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Western US Heat Dome</span>
+        <span class="event-status">EXCESSIVE HEAT WARNING</span>
+        <p class="event-impact" data-lang="en">Phoenix reached 118°F on August 3, confirming record highs across the Southwest. Excessive Heat Warnings remain in effect for millions across AZ, NV, CA, UT, and the Pacific Northwest. Frontal passage expected August 5–6 will break the heat dome and bring the first meaningful overnight temperature relief. Dozens of daily and monthly records confirmed broken from California to Montana.</p>
+        <p class="event-impact" data-lang="ru">Феникс 3 августа достиг 118°F; рекорды подтверждены по всему Юго-Западу. Предупреждения об экстремальной жаре сохраняются для AZ, NV, CA, UT и Северо-Запада. Ожидаемый фронтальный проход 5–6 августа разрушит купол и принесёт первое ночное облегчение. Подтверждены десятки суточных и месячных рекордов от Калифорнии до Монтаны.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Typhoon Dolphin (12W) — NW Pacific</span>
+        <span class="event-status">CAT 2–3 / TYPHOON WARNING</span>
+        <p class="event-impact" data-lang="en">Tracking WNW at ~45 m/s (945 hPa), passing near Chichijima/Ogasawara today (August 4). JMA typhoon warnings extend to Amami Oshima (forecast August 7) and Okinawa Prefecture (approximately August 8). Gradual weakening expected as storm crosses marginally cooler water north of the main tropics. High surf and potentially damaging winds on approach to the Ryukyu chain.</p>
+        <p class="event-impact" data-lang="ru">Движение ЗСЗ, ~45 м/с (945 гПа), сегодня проходит вблизи Тисидзимы/Огасавара. Предупреждения JMA охватывают Амами-Осима (~7 августа) и Окинаву (~8 августа). Постепенное ослабление при пересечении более прохладных вод севернее тропиков. Опасный прибой и возможные разрушительные ветра при подходе к Рюкю.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Kaiser Canyon Fire — Colville Reservation, WA</span>
+        <span class="event-status">38% CONTAINED</span>
+        <p class="event-impact" data-lang="en">134,167 acres on the Colville Reservation; 38% containment holding. No significant change from August 3 — suppression crews are consolidating gains on the south and east flanks while protecting unburned structures along SR-155 (still closed, 32-mile stretch). Conditions forecast to improve August 5–6 with the approaching frontal boundary, which should increase relative humidity and reduce fire spread.</p>
+        <p class="event-impact" data-lang="ru">134 167 акров, 38% сдерживания — без значительных изменений. Бригады закрепляют позиции на южном и восточном флангах; SR-155 (32 мили) закрыто. Улучшение условий ожидается 5–6 августа с приближением фронтального раздела.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">France Pyrénées-Orientales Wildfire</span>
+        <span class="event-status">PERIMETER FORMING</span>
+        <p class="event-impact" data-lang="en">~5,000 ha burned; 12,000 residents evacuated. Firefighters report the perimeter is now forming and the fire has stopped spreading to new areas for the first time since ignition — a significant positive development. EU Civil Protection air tankers from Cyprus and Sweden remain on scene. Red alert continues across Pyrénées-Orientales and parts of Gard. Full containment not expected before August 8.</p>
+        <p class="event-impact" data-lang="ru">~5 000 га; 12 000 эвакуированных. Впервые с начала пожара периметр формируется, распространение на новые территории остановлено — значительное улучшение. Авиатанкеры EU Civil Protection остаются на месте. Красный алерт сохраняется в Пиренеях-Ориенталь и части Гара. Полное сдерживание — не раньше 8 августа.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Assam Monsoon Floods — India</span>
+        <span class="event-status">~80 DEAD / 200K+ DISPLACED</span>
+        <p class="event-impact" data-lang="en">Approximately 80 confirmed dead, 200,000+ displaced across eight districts. 17,198 ha of crops submerged. IMD's extended-range forecast continues to show heavy rainfall risk over Assam and the broader northeastern states through at least August 8, maintaining flood conditions. River levels in Dibrugarh, Lakhimpur, and Jorhat districts remain above danger marks.</p>
+        <p class="event-impact" data-lang="ru">~80 погибших, 200 000+ перемещённых в 8 округах; 17 198 га посевов затоплено. Прогноз ИМД на расширенный диапазон: риск ливней над Ассамом и Северо-Востоком сохраняется как минимум до 8 августа. Уровни рек в Дибругархе, Лакхимпуре и Джорхате остаются выше отметок опасности.</p>
+      </div>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-03">
+        <div class="card-top">
+          <span class="card-source">CNN / KOMO</span>
+          <span class="card-date">03 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.cnn.com/2026/08/03/us/live-news/spokane-washington-wildfires">Arson Arrest in Spokane Fires: Aaron Farinacci, 37, Charged With First-Degree Arson in Old Trails Fire — $1M Bail Set</a>
+        <p class="card-summary" data-lang="en">Spokane County investigators announced the arrest of Aaron Farinacci, 37, on first-degree arson charges in connection with the Old Trails Fire — the fire that, fanned by 35–45 mph winds on August 2, jumped the Spokane River and ignited the broader Spokane Area Fires complex. Farinacci was booked into Spokane County Jail on August 3; a judge set bail at $1 million. The arrest comes as the combined complex has destroyed more than 700 structures and forced over 65,000 residents from their homes. Officials caution that the investigation is ongoing and that the full circumstances of ignition for all three fires in the complex have not yet been determined.</p>
+        <p class="card-summary" data-lang="ru">Сыщики округа Споукан арестовали Аарона Фариначчи (37 л.) по обвинению в умышленном поджоге (Old Trails Fire — один из трёх пожаров, образовавших комплекс). Залог установлен в $1 млн. Комплекс уничтожил 700+ строений; 65 000+ остаются эвакуированными. Следствие продолжается: обстоятельства возгорания других двух пожаров ещё устанавливаются.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-04">
+        <div class="card-top">
+          <span class="card-source">FoxWeather / NBC News</span>
+          <span class="card-date">04 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.foxweather.com/live-news/live-updates-spokane-wildfires-destroy-600-structures-as-thousands-remain-under-evacuation">Spokane Fires: 700+ Structures Destroyed, 65,000+ Still Evacuated — Cooler Air Forecast August 5–6 to Aid Containment Efforts</a>
+        <p class="card-summary" data-lang="en">Morning August 4 briefings confirm the Spokane Area Fires complex has destroyed more than 700 structures — up from the initial estimate of 600 on August 2 — and that more than 65,000 residents remain under evacuation orders spanning portions of Spokane and Spokane Valley. The fire perimeter has stabilized near 8,026 acres with 0% official containment, though crews have been constructing dozer lines along the eastern and southern flanks. The most significant development in today's forecast is the arrival of a cold front expected August 5–6 that will drop temperatures into the 80s–90°F range from the current 100–115°F pattern and bring relative humidity from the current teens into the 25–40% range, substantially improving conditions for aerial suppression and hand-line construction.</p>
+        <p class="card-summary" data-lang="ru">Утреннее брифинг 4 августа: 700+ строений уничтожено (уточнение оценки от 2 августа); 65 000+ остаются эвакуированными; площадь ~8 026 акров, 0% сдерживания. Ключевое изменение в прогнозе: фронтальный проход 5–6 августа опустит максимумы до 80–90°F (с 100–115°F) и поднимет влажность с подростковых значений до 25–40%, открывая первое окно для авиационного тушения.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-03">
+        <div class="card-top">
+          <span class="card-source">Weathernews</span>
+          <span class="card-date">03 AUG</span>
+        </div>
+        <a class="card-headline" href="https://wxtech.weathernews.com/en/news/20260803-01/">Typhoon Dolphin Approaches Chichijima/Ogasawara Today — Amami Oshima August 7, Okinawa ~August 8; JMA Typhoon Warnings Active</a>
+        <p class="card-summary" data-lang="en">Weathernews tracking update for Typhoon Dolphin (12W) confirms the storm is moving west-northwest at sustained intensity near 45 m/s (central pressure approximately 945 hPa), approaching the Chichijima and Ogasawara island groups on August 4. The forecast track then brings the typhoon toward Amami Oshima approximately August 7 and toward the main Okinawa island group approximately August 8, with JMA typhoon warnings in effect for Okinawa Prefecture. Gradual weakening is expected as the storm tracks north of the peak warm water into waters with slightly lower ocean heat content, though the pace of weakening remains uncertain. Residents across the Ryukyu chain are urged to complete preparations well before the storm's arrival.</p>
+        <p class="card-summary" data-lang="ru">По данным Weathernews, тайфун «Дельфин» (12W) движется ЗСЗ при интенсивности ~45 м/с (давление ~945 гПа), сегодня (4 августа) — вблизи Тисидзимы/Огасавара. Далее: Амами-Осима ~7 августа, Окинава ~8 августа при активных предупреждениях JMA. Постепенное ослабление ожидается, но темп неопределённый. Жителям Рюкю рекомендовано завершить подготовку заблаговременно.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-03">
+        <div class="card-top">
+          <span class="card-source">Connexion France</span>
+          <span class="card-date">03 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.connexionfrance.com/news/france-wildfire-update-blazes-continue-across-south-as-red-alerts-raised/800611">France Wildfire Update: ~5,000 ha Burned, 12,000 Evacuated — Perimeter Now Forming; Fire No Longer Spreading to New Areas</a>
+        <p class="card-summary" data-lang="en">The Connexion France provides an August 3 update on the ongoing wildfire in the Pyrénées-Orientales département: the burned area has grown to approximately 5,000 hectares, up from 4,600 ha as of August 1, and the evacuation order now covers approximately 12,000 residents from multiple communes including Ille-sur-Têt and surrounding villages. The most significant development is that fire officials report the perimeter is now forming and the blaze has stopped spreading to previously unburned areas for the first time since ignition — though the fire remains active within the existing perimeter. More than 800 firefighters remain deployed along with EU Civil Protection air tankers. Red weather alerts continue across Pyrénées-Orientales and parts of neighboring Gard and Hérault departments.</p>
+        <p class="card-summary" data-lang="ru">Обновление Connexion France от 3 августа: площадь пожара выросла до ~5 000 га (с 4 600 га на 1 августа); эвакуировано ~12 000 жителей из нескольких коммун, включая Иль-сюр-Тэт. Главная новость: периметр формируется, распространение на новые участки остановлено впервые с начала пожара — при том что огонь продолжается внутри периметра. 800+ пожарных и авиатанкеры EU Civil Protection остаются на месте. Красные предупреждения по-прежнему активны.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      This week's heat wave is forcing a long-overdue rethink of how US utilities plan for grid resilience: <a href="https://www.axios.com/2026/07/31/us-electric-grid-extreme-weather">Axios reports that operators are shifting from single-peak-hour planning to multi-day endurance frameworks</a>, deploying 24 GW of new battery additions this year alongside virtual power plant aggregators and AI-driven load forecasting to manage the kind of prolonged multi-day extreme-demand events that now define the grid challenge. The structural context comes from the IEA's July electricity mid-year update: <a href="https://electrek.co/2026/07/22/iea-global-power-demand-is-surging-and-renewables-are-passing-coal/">renewables have overtaken coal globally in 2026 for the first time</a>, with solar on track to surpass wind as the largest renewable source and global electricity demand growing at +3.6% — the highest rate since 2010 — driven by heat-related air conditioning load, electric vehicle charging, and data-center expansion. Both stories point to a single underlying dynamic: the pace of demand growth is testing whether the clean energy buildout can stay ahead of need.
+    </div>
+    <div class="overview" data-lang="ru">
+      Нынешняя волна жары вынуждает американских сетевых операторов пересмотреть подход к устойчивости сети: <a href="https://www.axios.com/2026/07/31/us-electric-grid-extreme-weather">Axios сообщает о переходе от планирования одного пикового часа к многосуточным режимам нагрузки</a> — с 24 ГВт новых накопителей в 2026 году, агрегаторами виртуальных электростанций и ИИ-прогнозами нагрузки. Структурный контекст — обновление IEA за полгода: <a href="https://electrek.co/2026/07/22/iea-global-power-demand-is-surging-and-renewables-are-passing-coal/">ВИЭ впервые обогнали уголь глобально в 2026 году</a>; спрос растёт на +3,6% — максимум с 2010-го.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-07-31">
+        <div class="card-top">
+          <span class="card-source">Axios</span>
+          <span class="card-date">31 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.axios.com/2026/07/31/us-electric-grid-extreme-weather">The US Electric Grid Is Adapting to Extreme Weather — 24 GW Battery Additions in 2026; Utilities Shift From Peak-Hour to Multi-Day Resilience Planning</a>
+        <p class="card-summary" data-lang="en">As the current western US heat dome stretches into its second week, Axios examines how utilities and grid operators are fundamentally rethinking grid resilience in response to a new extreme-weather paradigm. The traditional planning model — sizing generation and transmission capacity around a single peak demand hour — is being replaced by multi-day endurance frameworks that account for heat domes lasting five to ten days, high overnight minimums that prevent load recovery, and simultaneous wildfire-driven transmission outages. Battery storage is the primary adaptation tool: approximately 24 GW of new battery additions are being commissioned or connected to the US grid in 2026, alongside the rapid growth of virtual power plant aggregators — technology that dispatches distributed resources like smart thermostats, commercial HVAC, and EV chargers — and AI-driven real-time load forecasting that improves demand prediction accuracy at the sub-hourly timescale critical for extreme-event management.</p>
+        <p class="card-summary" data-lang="ru">На фоне купола жары над западом США Axios анализирует, как операторы сетей пересматривают модели устойчивости. Традиционное планирование «под один пиковый час» сменяется многосуточными рамками: 5–10-дневные купола жары, ночные минимумы без снижения нагрузки, одновременные отключения ЛЭП из-за пожаров. Ответ: 24 ГВт новых накопителей в 2026 году, агрегаторы виртуальных ЭС и ИИ-прогнозирование нагрузки в субчасовом масштабе.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-22">
+        <div class="card-top">
+          <span class="card-source">IEA / Electrek</span>
+          <span class="card-date">22 JUL</span>
+        </div>
+        <a class="card-headline" href="https://electrek.co/2026/07/22/iea-global-power-demand-is-surging-and-renewables-are-passing-coal/">IEA Mid-Year Electricity Update: Renewables Overtake Coal Globally in 2026 for First Time — Solar to Pass Wind; Demand Up 3.6%, Fastest Since 2010</a>
+        <p class="card-summary" data-lang="en">The International Energy Agency's mid-year electricity market update finds that renewable energy sources have overtaken coal-fired generation globally in 2026 for the first time in the modern era — a structural milestone driven by the continued rapid deployment of utility-scale solar and wind capacity. Within renewables, solar photovoltaic generation is on track to surpass wind power as the largest single renewable source within the next twelve months, as the pace of new solar additions continues to outpace all other electricity technologies combined. Global electricity demand grew by approximately 3.6% in the first half of 2026 — the fastest growth rate since 2010 — driven by heat-related air conditioning load surge across Europe, Asia, and North America, accelerating EV fleet growth, and the sustained data-center construction boom driven by generative AI infrastructure expansion.</p>
+        <p class="card-summary" data-lang="ru">Промежуточный доклад МЭА: ВИЭ впервые в современной истории обогнали уголь по глобальной выработке в 2026 году. Солнечная генерация вот-вот превзойдёт ветровую как крупнейший возобновляемый источник. Спрос на электроэнергию вырос на 3,6% в I полугодии — рекорд с 2010-го: движущие силы — жара, ЭТ и дата-центры ИИ.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The headline peer-reviewed result this week is the <a href="https://www.sciencedaily.com/releases/2026/08/260801093239.htm">Foster &amp; Rahmstorf (PIK) GRL paper detecting a near-doubling of the global warming rate since 2015</a>, which has immediate implications for decadal climate projections and the Paris timeline — covered in full in the Climate section above. On the AI weather modeling front, a <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JH000837">JGR-ML paper demonstrates lightweight decoder fine-tuning of Microsoft's Aurora foundation model</a> to predict hydrological variables absent from the pretraining distribution — showing that large pre-trained weather transformers can be adapted to new physical domains without full retraining, a critical capability for operational hydrology applications. Providing essential taxonomy context, <a href="https://arxiv.org/abs/2501.06907v1">Shi et al.'s IJCAI 2026 survey covers 100+ deep learning and foundation models for weather prediction</a>, from deterministic approaches (PanguWeather, GraphCast) through probabilistic frameworks to pre-training paradigms (Aurora, AIFS) — the most comprehensive classification of the current model landscape available.
+    </div>
+    <div class="overview" data-lang="ru">
+      Главный рецензируемый результат недели — <a href="https://www.sciencedaily.com/releases/2026/08/260801093239.htm">статья Foster &amp; Rahmstorf в GRL об ускорении потепления</a> (подробнее — в разделе «Климат»). В области ИИ-прогнозирования: <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JH000837">статья JGR-ML доказывает, что лёгкие декодеры позволяют дообучить Aurora</a> на гидрологические переменные, отсутствовавшие при предобучении, — без полного переобучения. <a href="https://arxiv.org/abs/2501.06907v1">Обзор Shi et al. (IJCAI 2026)</a> охватывает 100+ DL- и foundation-моделей для прогноза погоды — от PanguWeather и GraphCast до Aurora и AIFS.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-01">
+        <div class="card-top">
+          <span class="card-source">GRL / PIK</span>
+          <span class="card-date">01 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.sciencedaily.com/releases/2026/08/260801093239.htm">GRL: Global Warming Rate Has Nearly Doubled Since 2015 — Foster &amp; Rahmstorf Detect 0.35°C/Decade vs. 0.2°C/Decade Prior, >98% Confidence (GRL 53:5, 10.1029/2025GL118804)</a>
+        <p class="card-summary" data-lang="en">Grant Foster and Stefan Rahmstorf (Potsdam Institute for Climate Impact Research) publish in Geophysical Research Letters (53:5, DOI 10.1029/2025GL118804) a statistical analysis of the global mean surface temperature record through mid-2026, finding a statistically significant acceleration of the warming trend that began around 2015. The pre-2015 warming rate from 1970–2015 was approximately 0.2°C per decade; the post-2015 rate is approximately 0.35°C per decade — a near-doubling. The authors demonstrate the acceleration with greater than 98% statistical confidence using multiple independent methods, ruling out El Niño alone as the explanation and attributing the step-change in forcing to the combined effect of continued CO₂ accumulation and the 2020 IMO sulfur regulations that reduced the cooling masking effect of shipping aerosols. At the accelerated pace, the 1.5°C Paris threshold is projected around 2030.</p>
+        <p class="card-summary" data-lang="ru">Foster &amp; Rahmstorf в GRL (53:5, DOI 10.1029/2025GL118804): с ~2015 г. темп потепления составляет ~0,35°C/дек. против ~0,2°C/дек. в 1970–2015 гг. Достоверность >98%; объяснение: продолжение накопления CO₂ плюс правила ИМО-2020, снизившие аэрозольное охлаждение от судоходства. При нынешнем темпе порог 1,5°C ожидается около 2030 г.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-28">
+        <div class="card-top">
+          <span class="card-source">JGR-ML / AGU</span>
+          <span class="card-date">28 JUL</span>
+        </div>
+        <a class="card-headline" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025JH000837">JGR-ML: Fine-Tuning Aurora Weather Foundation Model With Lightweight Decoders for Unseen Hydrological Variables (DOI 10.1029/2025JH000837)</a>
+        <p class="card-summary" data-lang="en">A paper published in JGR: Machine Learning (DOI 10.1029/2025JH000837) demonstrates a parameter-efficient approach for extending Microsoft's Aurora large-scale weather foundation model to predict hydrological variables — specifically soil moisture and runoff — that were not included in the original pretraining distribution. The method attaches lightweight task-specific decoder heads to Aurora's frozen encoder backbone, training only the new parameters while preserving the model's learned atmospheric representations. The approach achieves strong skill on the target hydrological variables while requiring only a fraction of the compute of full model retraining, providing a practical path for operational hydrological forecasting centers to leverage pre-trained large weather models for flood, soil moisture, and agricultural drought applications without prohibitive computational cost.</p>
+        <p class="card-summary" data-lang="ru">Статья JGR-ML (DOI 10.1029/2025JH000837): лёгкие декодеры, прикреплённые к замороженному кодировщику Aurora, обеспечивают точный прогноз гидрологических переменных (влажность почвы, поверхностный сток), отсутствовавших при предобучении. Подход требует лишь долю вычислительных затрат полного переобучения и открывает путь к оперативной гидрологии на базе крупных атмосферных трансформеров.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-28">
+        <div class="card-top">
+          <span class="card-source">arXiv / IJCAI 2026</span>
+          <span class="card-date">28 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2501.06907v1">IJCAI 2026 Survey: Deep Learning and Foundation Models for Weather Prediction — 100+ Models Across Deterministic, Probabilistic, and Pre-Training Paradigms (arXiv 2501.06907)</a>
+        <p class="card-summary" data-lang="en">Shi et al. (Florida International University, UIUC, NYU Shanghai, Arizona State University, Columbia University) present a comprehensive survey of deep learning and foundation model approaches to weather prediction, published at IJCAI 2026 and available as arXiv 2501.06907. The survey covers more than 100 models organized into a three-tier taxonomy: deterministic approaches (PanguWeather, GraphCast, FourCastNet), probabilistic and ensemble-based frameworks (GenCast, AIFS-ENS, NeuralGCM), and large-scale pre-training paradigms (Aurora, AIFS Single, Prithvi-WxC). Each tier is analyzed across architecture, training data, evaluation metrics, and operational deployment status. The paper provides the most complete classification of the current AI NWP landscape available, including discussion of hybrid physics-ML approaches, extreme-event skill, and the gap between benchmark performance and operational readiness.</p>
+        <p class="card-summary" data-lang="ru">Shi et al. (FIU, UIUC, NYU Shanghai, ASU, Колумбия) — обзор IJCAI 2026 (arXiv 2501.06907): 100+ DL- и FM-моделей прогноза погоды в трёхуровневой таксономии — детерминированные (PanguWeather, GraphCast), вероятностные (GenCast, AIFS-ENS) и предобученные крупные модели (Aurora, AIFS, Prithvi-WxC). Обсуждаются архитектуры, метрики, операционный статус и разрыв между бенчмарком и оперативным применением.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Индустрия</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      No new climate-tech or weather-industry transactions were announced in the 72-hour or 7-day window this week — the most significant deal activity falls outside the filter. Two stories worth noting in the archive: KatRisk and Technosylva launched a next-generation wildfire catastrophe model (July 21) with 30-meter CONUS resolution and physics-based fire spread — directly addressing the modeling gaps exposed by the 2025 Los Angeles wildfires. And CTVC/Currence's H1 2026 climate-tech funding report (July 13) found that the sector raised $26.1 billion in the first half of the year, up 55% year-over-year, with data-center-related clean power accounting for 34% of total deployment. Both items are archived below with accurate publication dates.
+    </div>
+    <div class="overview" data-lang="ru">
+      Новых крупных сделок в климатическом секторе в семидневном окне не зафиксировано. Два важных материала в архиве: запуск KatRisk + Technosylva нового катастрофического 30-м-моделирования лесных пожаров (21 июля) и доклад CTVC/Currence за первое полугодие 2026 года ($26,1 млрд климатических инвестиций, +55% г/г; 34% — дата-центры). Обе карточки — ниже, с точными датами публикации.
+    </div>
+
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-07-21">
+        <div class="industry-top">
+          <h3 class="industry-title">KatRisk + Technosylva: Next-Generation Wildfire Catastrophe Model — 30m CONUS Resolution, Physics-Based Fire Spread, Addresses 2025 LA Fire Gaps</h3>
+          <span class="industry-date">21 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">KatRisk and Technosylva have jointly launched a next-generation wildfire risk and catastrophe modeling capability for the continental US, featuring <a href="https://www.globenewswire.com/news-release/2026/07/21/3330622/0/en/katrisk-launches-next-generation-wildfire-risk-capabilities-powered-by-technosylva-s-operational-fire-science.html">30-meter spatial resolution across CONUS and physics-based fire spread</a> derived from Technosylva's operational fire science platform used by fire suppression agencies. The collaboration directly targets the catastrophe modeling gaps exposed by the January 2025 Los Angeles wildfires — including wind-driven ember transport in wildland-urban interface zones, spot fire propagation ahead of the main front, and the interaction between fire behavior and real-time weather inputs. The model integrates KatRisk's probabilistic hazard and exposure framework with Technosylva's physics engine, enabling (re)insurers and climate risk managers to assess WUI exposure with significantly higher resolution than prior-generation statistical cat models.</p>
+        <p class="industry-body" data-lang="ru">KatRisk и Technosylva совместно представили новый инструмент катастрофного моделирования лесных пожаров: <a href="https://www.globenewswire.com/news-release/2026/07/21/3330622/0/en/katrisk-launches-next-generation-wildfire-risk-capabilities-powered-by-technosylva-s-operational-fire-science.html">разрешение 30 м по CONUS, физическое моделирование распространения огня</a> на основе оперативной платформы Technosylva. Продукт напрямую закрывает пробелы, выявленные пожарами Лос-Анджелеса в январе 2025 г.: перенос углей ветром в зонах WUI, пятнистое распространение огня, взаимодействие с реальными метеоданными.</p>
+        <span class="industry-source"><a href="https://www.globenewswire.com/news-release/2026/07/21/3330622/0/en/katrisk-launches-next-generation-wildfire-risk-capabilities-powered-by-technosylva-s-operational-fire-science.html" target="_blank" rel="noopener">GlobeNewswire</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-13">
+        <div class="industry-top">
+          <h3 class="industry-title">CTVC / Currence H1 2026: Climate Tech VC Hits $26.1B, Up 55% — Data Centers 34% of Total; Fervo $1.89B IPO, X-Energy $1B IPO Lead Exits</h3>
+          <span class="industry-date">13 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">CTVC and Currence's H1 2026 climate-tech funding report finds that the sector raised <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/">$26.1 billion in the first half of the year, a 55% increase year-over-year</a> — the strongest first half since 2022's record pace. Data-center-related clean energy infrastructure accounted for approximately 34% of total deployment, reflecting the continued surge in AI compute demand and the race to contract renewable power to meet hyperscaler sustainability commitments. Notable exit events include Fervo Energy's $1.89 billion IPO (enhanced geothermal) and X-Energy's $1 billion IPO (small modular reactors), representing the first significant clean-energy IPO wave since 2021. The report projects that full-year 2026 climate-tech investment will comfortably exceed 2022's prior record of $46 billion at the current pace.</p>
+        <p class="industry-body" data-lang="ru">Доклад CTVC/Currence за I полугодие 2026 г.: климатический технологический сектор привлёк <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/">$26,1 млрд (+55% г/г)</a> — сильнейшее первое полугодие с 2022-го. Доля дата-центров — 34% от всех инвестиций. Крупнейшие выходы: IPO Fervo Energy ($1,89 млрд, улучшенная геотермальная энергетика) и X-Energy ($1 млрд, малые модульные реакторы). Прогноз: годовой итог превысит рекорд 2022 года ($46 млрд).</p>
+        <span class="industry-source"><a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/" target="_blank" rel="noopener">CTVC</a></span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-08-03.html">2026-08-03</a></li>
+      <li><a href="archive/2026-08-01.html">2026-08-01</a></li>
+      <li><a href="archive/2026-07-31.html">2026-07-31</a></li>
+      <li><a href="archive/2026-07-30.html">2026-07-30</a></li>
+      <li><a href="archive/2026-07-29.html">2026-07-29</a></li>
+      <li><a href="archive/2026-07-28.html">2026-07-28</a></li>
+      <li><a href="archive/2026-07-27.html">2026-07-27</a></li>
+      <li><a href="archive/2026-07-26.html">2026-07-26</a></li>
+      <li><a href="archive/2026-07-25.html">2026-07-25</a></li>
+      <li><a href="archive/2026-07-24.html">2026-07-24</a></li>
+      <li><a href="archive/2026-07-23.html">2026-07-23</a></li>
+      <li><a href="archive/2026-07-22.html">2026-07-22</a></li>
+      <li><a href="archive/2026-07-21.html">2026-07-21</a></li>
+      <li><a href="archive/2026-07-20.html">2026-07-20</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
+</body>
+</html>
