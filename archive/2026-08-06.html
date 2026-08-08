@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ═══ Header: synoptic chart motif ═══ */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead-isolines {
+    position: absolute;
+    inset: 0;
+    opacity: .14;
+    pointer-events: none;
+  }
+  .masthead-inner {
+    position: relative;
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 28px 36px;
+  }
+  .masthead-metar {
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: #7da2d4;
+    margin-bottom: 10px;
+  }
+  .masthead-title {
+    font-family: var(--display);
+    font-size: clamp(30px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+  }
+  .masthead-sub {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #9db4d4;
+    max-width: 560px;
+  }
+
+  /* ═══ Control bar ═══ */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+  }
+  .controls-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 10px 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .window-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .toggle-btn {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+
+  .lang-toggle {
+    display: inline-flex;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
+  body.lang-en [data-lang="ru"] { display: none !important; }
+  body.lang-ru [data-lang="en"] { display: none !important; }
+
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 4px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .15s, border-color .15s;
+  }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover    { border-color: var(--climate); }
+  .np-weather:hover    { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover    { border-color: var(--science); }
+  .np-industry:hover   { border-color: var(--industry); }
+
+  /* ═══ Layout ═══ */
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+
+  /* Section header: weather-map legend style */
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .section-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+  }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .s-climate    .section-swatch { background: var(--climate); }
+  .s-weather    .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science    .section-swatch { background: var(--science); }
+  .s-industry   .section-swatch { background: var(--industry); }
+
+  /* Overview */
+  .overview {
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: #344054;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .overview::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 12px; bottom: 12px;
+    width: 3px;
+    border-radius: 0 3px 3px 0;
+  }
+  .overview a {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 2px;
+  }
+  .s-climate    .overview a { color: var(--climate); }
+  .s-weather    .overview a { color: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); }
+  .s-science    .overview a { color: var(--science); }
+  .s-climate    .overview::before { background: var(--climate); }
+  .s-weather    .overview::before { background: var(--weather); }
+  .s-renewables .overview::before { background: var(--renewables); }
+  .s-science    .overview::before { background: var(--science); }
+
+  /* ═══ Major Events ═══ */
+  .major-events {
+    background: var(--alert-bg);
+    border: 1px solid var(--alert-line);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 18px;
+  }
+  .major-events-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--alert);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
+    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
+  }
+  .major-events-label {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--alert);
+  }
+  .event {
+    padding: 12px 0;
+    border-top: 1px solid var(--alert-line);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 16px;
+  }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type  { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--alert);
+    background: #fff;
+    border: 1px solid var(--alert-line);
+    border-radius: 4px;
+    padding: 2px 8px;
+    align-self: start;
+    white-space: nowrap;
+  }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
+
+  /* ═══ Card grid ═══ */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s, transform .18s;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .25s ease;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(16,24,40,.07);
+    transform: translateY(-1px);
+  }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate    .card::before { background: var(--climate); }
+  .s-weather    .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science    .card::before { background: var(--science); }
+
+  .card-top {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    padding: 2.5px 8px;
+    border-radius: 4px;
+  }
+  .s-climate    .card-source { background: var(--climate); }
+  .s-weather    .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science    .card-source { background: var(--science); }
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+  }
+  .card-headline {
+    font-family: var(--display);
+    font-size: 15.5px;
+    font-weight: 600;
+    line-height: 1.35;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .card-summary {
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+
+  /* ═══ Industry: narrative cards ═══ */
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow .18s;
+  }
+  .industry-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 3px;
+    background: var(--industry);
+    opacity: .35;
+    transition: opacity .2s;
+  }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .industry-date {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    color: var(--faint);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+  .industry-body {
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+  .industry-body a {
+    color: var(--industry);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+  .industry-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .07em;
+    color: #fff;
+    background: var(--industry);
+    display: inline-block;
+    padding: 2.5px 9px;
+    border-radius: 4px;
+  }
+  .industry-source a { color: #fff; text-decoration: none; }
+
+  /* ═══ Empty state ═══ */
+  .no-results {
+    display: none;
+    font-size: 13.5px;
+    color: var(--faint);
+    font-style: italic;
+    padding: 12px 2px;
+  }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
+
+  /* ═══ Footer ═══ */
+  .site-footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+  }
+  .footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+  }
+  .footer-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--faint);
+    margin-bottom: 14px;
+  }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    transition: border-color .15s, color .15s;
+  }
+  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit {
+    margin-top: 28px;
+    font-size: 12.5px;
+    color: var(--faint);
+  }
+  .footer-credit a { color: var(--muted); }
+</style>
+</head>
+<body data-digest-date="2026-08-06" class="lang-en">
+
+<!-- ═══ Masthead ═══ -->
+<header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
+  <div class="masthead-inner">
+    <div class="masthead-metar">DIGEST 060700Z AUG26 · ROLLING 72H WINDOW</div>
+    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
+    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
+    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+  </div>
+</header>
+
+<!-- ═══ Controls ═══ -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
+      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate"    class="nav-pill np-climate">Climate</a>
+      <a href="#weather"    class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science"    class="nav-pill np-science">Science</a>
+      <a href="#industry"   class="nav-pill np-industry">Industry</a>
+    </nav>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══ Climate ═══ -->
+  <section class="digest-section s-climate" id="climate">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
+      <span class="section-count" data-count-for="climate"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      Against the backdrop of a strengthening El Niño — <a href="https://watchers.news/2026/08/04/noaa-confirms-strengthening-el-nino-with-81-chance-of-very-strong-conditions-in-october-december-2026/">now given an 81% probability of reaching "very strong" (RONI ≥2°C) by October–December 2026</a> — the global temperature story has a split character this week. <a href="https://lasvegassun.com/news/2026/aug/05/this-summer-isnt-breaking-heat-records-globally-ye/">An AP analysis published August 5 finds that 2026 is currently the third-warmest year on record</a>, not a new all-time high, because the El Niño signal arrives in atmospheric temperatures with a six-to-eight-week lag behind its ocean forcing. But the ocean is already emphatic: <a href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026">Copernicus Marine's H1 2026 assessment found approximately 82% of the global ocean surface experiencing marine heatwave conditions by end of June</a> — the second-largest extent ever observed, with global mean SST averaging 20.94°C. <a href="https://www.mercator-ocean.eu/bulletin/marine-heatwave-bulletin-1-august-2026/">Mercator Ocean's August 1 bulletin</a> confirms active systems remain stable-to-intensifying in the Southern Ocean, Atlantic, and Bering Sea as the calendar approaches peak El Niño season.
+    </div>
+    <div class="overview" data-lang="ru">
+      На фоне усиления Эль-Ниньо — <a href="https://watchers.news/2026/08/04/noaa-confirms-strengthening-el-nino-with-81-chance-of-very-strong-conditions-in-october-december-2026/">81% вероятность достижения RONI ≥2°C в октябре–декабре 2026 г.</a> — глобальная температурная картина неоднозначна. <a href="https://lasvegassun.com/news/2026/aug/05/this-summer-isnt-breaking-heat-records-globally-ye/">По данным AP от 5 августа, 2026 год пока занимает 3-е место</a> в истории наблюдений: атмосферный отклик на океанский сигнал запаздывает на 6–8 недель. Зато океан фиксирует изменения отчётливо: <a href="https://marine.copernicus.eu/press/press-releases/persistent-ocean-warmth-and-expanding-marine-heatwaves-mark-first-half-2026">к концу июня 82% поверхности Мирового океана переживало морские волны тепла</a> — 2-й по величине показатель за всю историю наблюдений, средняя SST H1 — 20,94°C. <a href="https://www.mercator-ocean.eu/bulletin/marine-heatwave-bulletin-1-august-2026/">Бюллетень Mercator Ocean от 1 августа</a> подтверждает: несколько систем стабильны или усиливаются по мере приближения пика сезона Эль-Ниньо.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-04">
+        <div class="card-top">
+          <span class="card-source">The Watchers / NOAA</span>
+          <span class="card-date">04 AUG</span>
+        </div>
+        <a class="card-headline" href="https://watchers.news/2026/08/04/noaa-confirms-strengthening-el-nino-with-81-chance-of-very-strong-conditions-in-october-december-2026/">NOAA Confirms Strengthening El Niño — 81% Chance of Very Strong Conditions (RONI ≥2°C) in Oct–Dec 2026; 97% Probability Persisting Into 2027</a>
+        <p class="card-summary" data-lang="en">NOAA's August 2026 seasonal outlook confirms El Niño conditions are strengthening rapidly, raising the probability of the Oceanic Niño Index reaching the 2°C threshold to 81% for October–December. The outlook places the probability of El Niño persisting through Q1 2027 at 97%, a substantial upgrade from the June outlook, carrying major implications for winter precipitation patterns across North America, Atlantic hurricane season suppression, and tropical precipitation anomalies across South and Southeast Asia.</p>
+        <p class="card-summary" data-lang="ru">Сезонный прогноз NOAA (август 2026): вероятность превышения RONI ≥2°C в октябре–декабре составляет 81% — значительное повышение по сравнению с июньским прогнозом. Вероятность сохранения Эль-Ниньо до I квартала 2027 г. — 97%. Ожидаемые последствия: влажный Юго-Запад США / сухой Северо-Запад, подавление активности ураганов в Атлантике, аномалии осадков в Южной и Юго-Восточной Азии.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-28">
+        <div class="card-top">
+          <span class="card-source">Carbon Brief</span>
+          <span class="card-date">28 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.carbonbrief.org/state-of-the-climate-strong-el-nino-puts-2026-on-track-for-second-warmest-year">State of the Climate: Strong El Niño Puts 2026 on Track for Second-Warmest Year — New All-Time Record Probability Now 35%, Up From 19% in April</a>
+        <p class="card-summary" data-lang="en">Carbon Brief's July state-of-the-climate assessment finds that the combination of long-term warming and the rapidly strengthening El Niño places 2026 firmly on track as the second-warmest year in the instrumental record, behind only 2025. The probability of 2026 setting a new all-time global annual temperature record has risen to 35% — nearly double the 19% estimate from April — driven by the El Niño signal compounding with record sea-surface temperatures in the North Atlantic and Indian Ocean. The 2024–2026 three-year period is likely to represent the warmest three consecutive years in recorded history.</p>
+        <p class="card-summary" data-lang="ru">Июльская оценка Carbon Brief: совокупность долгосрочного тренда и усиливающегося Эль-Ниньо вывела 2026 год на второе место в истории наблюдений. Вероятность нового рекорда — 35% (против 19% в апреле): сигнал Эль-Ниньо накладывается на аномально тёплые SST в Северной Атлантике и Индийском океане. Трёхлетие 2024–2026 гг. станет самым тёплым за всё время наблюдений.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-05">
+        <div class="card-top">
+          <span class="card-source">AP / Las Vegas Sun</span>
+          <span class="card-date">05 AUG</span>
+        </div>
+        <a class="card-headline" href="https://lasvegassun.com/news/2026/aug/05/this-summer-isnt-breaking-heat-records-globally-ye/">This Summer Isn't Breaking Heat Records Globally — Yet. Scientists Warn the Real Records Arrive When El Niño Peaks This Fall</a>
+        <p class="card-summary" data-lang="en">An AP analysis explains why 2026 is currently tracking as the third-warmest year on record rather than the hottest: the El Niño signal propagates to global-mean atmospheric temperature with a roughly six-to-eight-week lag behind its ocean forcing, meaning the full impact of the event building in the tropical Pacific won't register in surface temperature anomalies until Q4. Scientists including former NASA chief climate scientist James Hansen project that once the lag resolves, the compounding effect of long-term warming and the intensifying El Niño will produce a surge in global mean temperature — potentially pushing 2026 past 2024's all-time annual record. Crucially, ocean temperatures are already showing the signal: global SSTs have been at or above 2024 record levels nearly every day since June, and 82% of the ocean surface is currently experiencing marine heatwave conditions per Copernicus Marine.</p>
+        <p class="card-summary" data-lang="ru">AP объясняет, почему 2026 г. пока на третьем месте, а не на первом: атмосферный отклик на Эль-Ниньо запаздывает на 6–8 недель. Когда задержка разрешится в Q4, эффект накопится: экс-главный климатолог NASA Джеймс Хансен прогнозирует, что 2026 год превзойдёт рекорд 2024 г. Уже сейчас SST на уровне рекордов 2024 года или выше — почти каждый день с июня; 82% поверхности океана — в режиме морских волн тепла по данным Copernicus Marine.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-01">
+        <div class="card-top">
+          <span class="card-source">Mercator Ocean</span>
+          <span class="card-date">01 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.mercator-ocean.eu/bulletin/marine-heatwave-bulletin-1-august-2026/">Marine Heatwave Bulletin (1 August 2026): Active Systems Stable-to-Intensifying in Southern Ocean, Mid-Atlantic, and Bering Sea</a>
+        <p class="card-summary" data-lang="en">Mercator Ocean International's weekly marine heatwave bulletin for August 1 documents ongoing active systems across four major ocean basins. In the Southern Ocean (50–80°E longitude, 45–60°S), a moderate-to-strong system remains stable in both area and intensity. In the mid-Atlantic, a large heatwave stretching from the central Atlantic to the Caribbean is decreasing in extent but intensifying north of the Caribbean — a divergent spatial pattern indicating internal reorganization rather than dissipation. Near the British Isles and west of Morocco, a separate Atlantic system is declining in extent but maintaining intensity. In the southern Bering Sea (~50°N), the North Pacific heatwave is expanding in area while sustaining moderate-to-strong intensity. This bulletin contextualizes the CMEMS H1 2026 mid-year assessment, which found that approximately 82% of the global ocean surface experienced marine heatwave conditions by end of June — the second-largest extent on record — with global mean SST at 20.94°C for the first half.</p>
+        <p class="card-summary" data-lang="ru">Еженедельный бюллетень Mercator Ocean (1 августа): активные морские тепловые волны в четырёх океанских бассейнах. В Южном океане (50–80°E, 45–60°S) — стабильная умеренно-сильная аномалия. В Атлантике система от центрального Атлантического океана до Карибского уменьшается в площади, но усиливается к северу от Карибов. Близ Британских островов — отдельная система снижается в площади, но сохраняет интенсивность. В южной части Берингова моря (~50°N) — расширение площади при стабильно сильной интенсивности.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-05">
+        <div class="card-top">
+          <span class="card-source">The Conversation</span>
+          <span class="card-date">05 AUG</span>
+        </div>
+        <a class="card-headline" href="https://theconversation.com/why-the-spokane-wildfires-became-so-catastrophic-288895">Why the Spokane Wildfires Became So Catastrophic — Record Snowpack Deficit, Compound Drought, WUI Expansion, and the Heat Dome: A Forensic Analysis</a>
+        <p class="card-summary" data-lang="en">The Conversation publishes a forensic climate-science analysis identifying four converging factors behind the Spokane Area Fires: Pacific Northwest snowpack at 40-year lows eliminating the late-summer moisture buffer; compound multi-year drought desiccating surface fuels to critically low dead-fuel moisture levels; aggressive wildland-urban interface development placing tens of thousands of structures in high-risk terrain; and the sustained heat dome driving temperatures to 100–118°F for over a week, reducing live-fuel moisture to record lows. The paper situates Spokane within the broader Pacific Northwest fire season (50+ large uncontained fires, worst in 30 years) and argues the scale of destruction was climatologically predictable given the compound preconditions.</p>
+        <p class="card-summary" data-lang="ru">The Conversation: четыре сходящихся фактора катастрофы в Спокане — снежный покров на 40-летнем минимуме, двухлетняя составная засуха, агрессивная застройка зон WUI, купол жары 38–48°C в течение недели. Авторы помещают Споукан в контекст всего сезона на Северо-Западе (50+ пожаров, худший год за 30 лет) и указывают, что масштаб ущерба был климатологически предсказуем.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Weather ═══ -->
+  <section class="digest-section s-weather" id="weather">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
+      <span class="section-count" data-count-for="weather"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      The most significant development in the last 24 hours is the Spokane Complex Fires' transition from zero containment to initial fire-line establishment: <a href="https://www.kxly.com/news/firefighters-gain-some-containment-on-all-three-spokane-wildfires/article_56f122fe-6ff6-45bf-a552-ad0db2914e62.html">approximately 900 firefighters achieved 5% containment on the Fairview Fire and 13% on both the Old Trails and Autumn Lane fires</a>, with fire lines now fully drawn around all three complexes under the improved post-front conditions. Meanwhile, <a href="https://wxtech.weathernews.com/en/news/20260805-01/">Typhoon Dolphin (12W) continues its direct westward approach toward Okinawa at 85 knots sustained and 945 hPa</a>, with landfall forecast for the afternoon of August 7; after clearing the Ryukyu chain, the storm is projected to weaken in the East China Sea and bring heavy rainfall to China's eastern coast around August 9–10.
+    </div>
+    <div class="overview" data-lang="ru">
+      Главный сдвиг за последние 24 часа: <a href="https://www.kxly.com/news/firefighters-gain-some-containment-on-all-three-spokane-wildfires/article_56f122fe-6ff6-45bf-a552-ad0db2914e62.html">около 900 пожарных достигли первых показателей сдерживания — 5% для Fairview и 13% для Old Trails и Autumn Lane</a>, периметры вокруг всех трёх пожаров проведены. Тем временем <a href="https://wxtech.weathernews.com/en/news/20260805-01/">тайфун «Дельфин» (12W) продолжает движение к Окинаве: 85 уз, 945 гПа</a>, посадка — 7 августа во второй половине дня; после прохода над Рюкю — угроза для восточного побережья Китая около 9–10 августа.
+    </div>
+
+    <div class="major-events">
+      <div class="major-events-head">
+        <span class="pulse-dot"></span>
+        <span class="major-events-label" data-lang="en">Major Active Weather Events</span>
+        <span class="major-events-label" data-lang="ru">Крупные активные погодные явления</span>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Spokane Complex Fires (WA)</span>
+        <span class="event-status">5–13% CONTAINED / IMPROVING</span>
+        <p class="event-impact" data-lang="en">First containment achieved on all three fires after the cold front: 5% on Fairview, 13% on Old Trails and Autumn Lane. Fire lines fully drawn around all three complexes. ~900 firefighters deployed. Conditions remain improved — temperatures in the mid-80s°F, relative humidity above 30%. Officials cautiously optimistic about further evacuation downgradings August 6. Still 700+ structures destroyed; 65,000+ displaced. Full containment not expected before mid-August.</p>
+        <p class="event-impact" data-lang="ru">Первые показатели сдерживания: 5% — Fairview, 13% — Old Trails и Autumn Lane. Периметры проведены вокруг всех трёх пожаров, ~900 пожарных задействовано. Условия улучшились: температуры ~29°C, влажность >30%. Возможно дальнейшее снижение уровней эвакуации 6 августа. 700+ строений уничтожено, 65 000+ по-прежнему эвакуированы. Полное сдерживание — ориентировочно не ранее середины августа.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Typhoon Dolphin (12W) — NW Pacific / Okinawa</span>
+        <span class="event-status">85 KT / 945 hPa · LANDFALL AUG 7</span>
+        <p class="event-impact" data-lang="en">As of 09:00 JST August 5: located 25.5°N, 138.3°E; moving westward at 9 knots; central pressure 945 hPa; maximum sustained winds 85 knots (approx. 160 km/h); gusts to 120 knots (222 km/h). Track: Okinawa main island landfall forecast for afternoon of August 7. Wide storm-force wind radius means prolonged dangerous conditions before and after the center passage. After Okinawa, storm projected to weaken over the East China Sea and track toward China's eastern coast around August 9–10. All residents ordered to complete preparations before August 6 evening. Ferry and flight cancellations across the Ryukyu chain.</p>
+        <p class="event-impact" data-lang="ru">По состоянию на 09:00 JST 5 августа: 25,5°N, 138,3°E; движение на запад, 9 уз; давление 945 гПа; максимальный ветер 85 уз (~160 км/ч), порывы 120 уз (222 км/ч). Трек: посадка на Окинаву 7 августа во второй половине дня. Широкий радиус штормового ветра означает продолжительные опасные условия до и после прохода центра. Затем ослабление над Восточно-Китайским морем и угроза для восточного побережья Китая около 9–10 августа. Все жители должны завершить приготовления до вечера 6 августа; паромы и рейсы отменены по всей цепи Рюкю.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Pacific Northwest Wildfire Season — OR/WA</span>
+        <span class="event-status">RECORD SEASON · ANNUAL RECORD BROKEN</span>
+        <p class="event-impact" data-lang="en">Oregon officially broke its all-time annual wildfire acreage record by early August, with more than 2 million acres burned statewide — surpassing the previous record set in 2024, and doing so with nearly two full months of fire season remaining. Fifty large uncontained fires burning across Oregon and Washington as of August 5. Conditions driving continued extreme fire behavior: compound drought, record-low snowpack, and elevated temperatures well above seasonal normals despite the frontal passage near Spokane. NIFC has elevated incident management resources to Type 1 for multiple complexes.</p>
+        <p class="event-impact" data-lang="ru">Орегон официально побил абсолютный рекорд площади пожаров: 2+ млн акров сгорело к началу августа — предыдущий рекорд (2024 г.) превышен, причём остаётся ещё почти два месяца сезона. 50 крупных неконтролируемых пожаров в Орегоне и Вашингтоне. Условия сохраняются: составная засуха, рекордно низкий снежный покров, аномальная жара. NIFC задействовала ресурсы 1-го типа для нескольких комплексов.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">France Pyrénées-Orientales Wildfire</span>
+        <span class="event-status">PERIMETER HOLDING</span>
+        <p class="event-impact" data-lang="en">~5,000 ha; 12,000 residents evacuated; 800+ firefighters deployed. No new spread since the perimeter formed on August 3 — the fire remains active within the existing perimeter but is no longer extending to new areas. EU Civil Protection air tankers from Cyprus and Sweden remain on scene. Authorities caution that the situation remains fragile given elevated temperatures forecast through August 8. Red alert continues across Pyrénées-Orientales and neighboring Gard.</p>
+        <p class="event-impact" data-lang="ru">~5 000 га; 12 000 эвакуированных; 800+ пожарных. С момента формирования периметра 3 августа — без новых прорывов. Авиатанкеры EU Civil Protection остаются на месте. Власти предупреждают о рисках из-за сохраняющейся жары до 8 августа. Красный алерт в Пиренеях-Ориенталь и части Гара.</p>
+      </div>
+
+      <div class="event">
+        <span class="event-name">Assam Monsoon Floods — India</span>
+        <span class="event-status">87 DEAD · ACTIVE</span>
+        <p class="event-impact" data-lang="en">Death toll 87; 1.28 lakh (128,000) people still affected across 7 districts; 380 villages inundated; 14,230 ha of crops submerged. IMD's extended-range forecast continues to show heavy rainfall risk over Assam through August 8. River levels in Dibrugarh, Lakhimpur, and Jorhat districts remain above danger marks. State disaster management authorities have deployed rescue teams across all affected districts.</p>
+        <p class="event-impact" data-lang="ru">87 погибших; 1,28 лакха (128 000) пострадавших в 7 округах; 380 деревень затоплено; 14 230 га посевов под водой. Прогноз ИМД: ливни над Ассамом сохраняются до 8 августа. Уровни рек в Дибругархе, Лакхимпуре, Джорхате — выше отметок опасности. Спасательные группы развёрнуты во всех затронутых округах.</p>
+      </div>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-06">
+        <div class="card-top">
+          <span class="card-source">KXLY / MyNorthwest</span>
+          <span class="card-date">06 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.kxly.com/news/firefighters-gain-some-containment-on-all-three-spokane-wildfires/article_56f122fe-6ff6-45bf-a552-ad0db2914e62.html">Spokane Complex Fires Achieve First Containment — 5% Fairview, 13% Old Trails and Autumn Lane; Fire Lines Drawn Around All Three; 900 Firefighters Working</a>
+        <p class="card-summary" data-lang="en">KXLY and MyNorthwest report that the Spokane Complex Fires have achieved their first official containment figures after the cold front improved conditions overnight: 5% containment on the Fairview Fire and 13% on both the Old Trails and Autumn Lane fires, with fire lines now fully established around all three complexes. Approximately 900 firefighters are working the complex. Favorable weather — temperatures in the mid-80s°F, relative humidity above 30%, reduced spotting potential — has allowed suppression crews to make meaningful progress on the ground and aerial operations have resumed. Fire officials are cautiously optimistic about further downgrading evacuation levels on August 6, which could allow more of the 65,000+ displaced residents to return to assess property damage. The structure loss total remains at 700+.</p>
+        <p class="card-summary" data-lang="ru">KXLY и MyNorthwest: первые показатели сдерживания для пожаров в Спокане — 5% для Fairview, 13% для Old Trails и Autumn Lane; периметры проведены вокруг всех трёх. Около 900 пожарных задействовано. Улучшенные условия — ~29°C, влажность >30% — позволили продвинуться на земле и возобновить авиационные операции. 6 августа возможно снижение уровней эвакуации, что позволит части из 65 000+ эвакуированных вернуться. Число разрушенных строений — по-прежнему 700+.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-05">
+        <div class="card-top">
+          <span class="card-source">Weathernews</span>
+          <span class="card-date">05 AUG</span>
+        </div>
+        <a class="card-headline" href="https://wxtech.weathernews.com/en/news/20260805-01/">Typhoon Dolphin Tracks Directly Toward Okinawa Main Island — 945 hPa, 85 kt Sustained; Landfall August 7 Afternoon; East China Sea Crossing, China Coast Threat Aug 9–10</a>
+        <p class="card-summary" data-lang="en">Weathernews' August 5 analysis places Typhoon Dolphin (12W) at 25.5°N, 138.3°E at 09:00 JST moving westward at 9 knots, with central pressure 945 hPa and maximum sustained winds 85 knots (approx. 160 km/h) with gusts to 120 knots (222 km/h). The storm is described as "large and very strong" — its wide storm-force wind radius means Okinawa will experience prolonged dangerous conditions before, during, and after center passage. Okinawa landfall is forecast for the afternoon of August 7. After clearing the Ryukyu chain, the storm is projected to weaken progressively over the East China Sea before shifting its rainfall threat to China's eastern and northern coasts around August 9–10, bringing potentially significant precipitation to parts of eastern Zhejiang, Jiangsu, and Shandong provinces. JMA and JTWC typhoon warnings are active for the entire Ryukyu chain; Okinawa authorities have ordered all preparations completed before August 6 evening.</p>
+        <p class="card-summary" data-lang="ru">Weathernews (5 августа): тайфун «Дельфин» (12W) на 09:00 JST — 25,5°N, 138,3°E, движение на запад, 9 уз; давление 945 гПа, ветер 85 уз (~160 км/ч), порывы 120 уз. «Крупный и очень сильный» — широкий радиус штормового ветра гарантирует длительно опасные условия до, во время и после прохода. Посадка на Окинаву — 7 августа вторая половина дня. Затем ослабление над ВКМ и угроза ливней для восточного Китая (Чжэцзян, Цзянсу, Шаньдун) около 9–10 августа. Предупреждения JMA/JTWC активны для всей цепи Рюкю.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-05">
+        <div class="card-top">
+          <span class="card-source">NBC News</span>
+          <span class="card-date">05 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.nbcnews.com/news/us-news/cooler-temps-aid-battle-spokane-fires-forced-hundreds-homes-rcna590876">Cooler Temperatures Aid Battle Against Spokane Fires — Cold Front Drops Temps to Mid-80s°F, Two Fires Record Zero Overnight Growth; Evacuations Downgraded</a>
+        <p class="card-summary" data-lang="en">NBC News reports that the cold front arriving overnight August 4–5 produced the first meaningfully improved conditions for firefighters since the complex ignited. Temperatures dropped from the 100–115°F range to the mid-80s°F and relative humidity climbed from single-digit levels to above 30%, dramatically reducing fire-weather danger. Two of the three fires recorded zero overnight growth. Multiple evacuation zones were downgraded from Level 3 (Leave Now) to Level 2 (Be Ready to Leave), allowing some residents to return to assess property damage. Official containment remains at 0% at time of publication; suppression crews expected to resume aggressive operations August 5 morning.</p>
+        <p class="card-summary" data-lang="ru">NBC News: холодный фронт ночью с 4 на 5 августа принёс первые улучшенные условия. Температуры упали с 38–46°C до ~29°C, влажность — с единичных значений до >30%. Два из трёх пожаров не выросли за ночь. Несколько зон эвакуации переведены с уровня 3 на уровень 2. Официальное сдерживание — 0% на момент публикации; с утра 5 августа возобновлено активное тушение.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-04">
+        <div class="card-top">
+          <span class="card-source">InsideClimate News</span>
+          <span class="card-date">04 AUG</span>
+        </div>
+        <a class="card-headline" href="https://insideclimatenews.org/news/04082026/spokane-fire-part-of-record-wildfire-season/">As Spokane Burns, a Record Northwestern Fire Season Shows No Signs of Slowing — 50 Large Fires, 2M+ Acres in Oregon; Worst in 30 Years</a>
+        <p class="card-summary" data-lang="en">InsideClimate News places the Spokane Area Fires within the broader context of what is shaping up as the worst Pacific Northwest wildfire season in 30 years. As of August 4, there are 50 large uncontained fires across Oregon and Washington, with Oregon having exceeded 2 million acres burned — a figure that historically represents a full active season, reached only partway through August. Fire behavior analysts with NIFC describe the 2026 season as defined by "record fuel aridity," with dead fuel moisture levels at historically low levels following two consecutive dry winters and the heat dome. The Pacific Northwest has experienced a 400% increase in the area burned by large fires since the 1970s, with sharp acceleration since 2015.</p>
+        <p class="card-summary" data-lang="ru">InsideClimate News: пожары в Спокане — часть самого страшного сезона на Северо-Западе за 30 лет. На 4 августа: 50 крупных неконтролируемых пожаров; Орегон превысил 2 млн акров. Аналитики NIFC: «рекордная аридность топлива» после двух засушливых зим и купола жары. С 1970-х площадь крупных пожаров на Северо-Западе выросла на 400%, с резким ускорением с 2015 года.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-04">
+        <div class="card-top">
+          <span class="card-source">The Federal</span>
+          <span class="card-date">04 AUG</span>
+        </div>
+        <a class="card-headline" href="https://thefederal.com/category/states/north-east/assam/assam-flood-death-toll-rises-to-87-128-lakh-still-affected-252452">Assam Flood Death Toll Rises to 87 — 1.28 Lakh Still Affected Across 7 Districts; 380 Villages Inundated, 14,230 ha Crops Submerged</a>
+        <p class="card-summary" data-lang="en">The Federal reports the Assam monsoon flood death toll has risen to 87, with 1.28 lakh (128,000) people still affected across seven districts including Dibrugarh, Lakhimpur, Jorhat, Golaghat, Charaideo, Sivasagar, and Tinsukia. The floods have inundated 380 villages and submerged 14,230 hectares of crops. River levels remain above danger marks at multiple gauging stations, and the IMD's extended-range forecast continues to indicate heavy rainfall over Assam through at least August 8, maintaining flood risk. State disaster management authorities have deployed rescue teams across all affected districts.</p>
+        <p class="card-summary" data-lang="ru">The Federal: 87 погибших от паводков в Ассаме; 1,28 лакха пострадавших в 7 округах (Дибругарх, Лакхимпур, Джорхат, Голагхат, Чараидео, Шивасагар, Тинсукиа); 380 деревень затоплено, 14 230 га посевов под водой. Уровни рек выше отметок опасности; прогноз ИМД: ливни над Ассамом до 8 августа. Спасательные группы развёрнуты во всех округах.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Renewables ═══ -->
+  <section class="digest-section s-renewables" id="renewables">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
+      <span class="section-count" data-count-for="renewables"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      <a href="https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q3-fy-2026.html">Siemens Energy's Q3 FY2026 results, released August 5, delivered the clearest signal yet that the European wind industry's multi-year restructuring is working</a>: Siemens Gamesa posted its first quarterly profit since fiscal year 2022, while the parent company achieved record orders of €17.9 billion and tripled net profit to €1.62 billion, driven equally by the Gamesa turnaround and surging AI data-center demand for power infrastructure. Meanwhile, <a href="https://ember-energy.org/latest-insights/eu-battery-storage-is-ready-for-its-moment-in-the-sun/">Europe's 29 GW battery storage fleet is now six days from its most public test to date</a>: the August 12 total solar eclipse, which will temporarily reduce solar output by tens of gigawatts across Spain, France, and Italy in a four-minute window — the first European eclipse managed primarily by storage rather than fossil fuel reserve capacity.
+    </div>
+    <div class="overview" data-lang="ru">
+      <a href="https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q3-fy-2026.html">Результаты Siemens Energy за III квартал 2026 г. (5 августа) — яснейший сигнал того, что реструктуризация европейской ветроиндустрии работает</a>: Siemens Gamesa впервые с 2022 г. показала квартальную прибыль, а материнская компания зафиксировала рекордные заказы в €17,9 млрд и утроила чистую прибыль до €1,62 млрд. Тем временем <a href="https://ember-energy.org/latest-insights/eu-battery-storage-is-ready-for-its-moment-in-the-sun/">29 ГВт европейских накопителей</a> через шесть дней пройдут главное публичное испытание — затмение 12 августа.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-05">
+        <div class="card-top">
+          <span class="card-source">Renewables Now / Siemens Energy</span>
+          <span class="card-date">05 AUG</span>
+        </div>
+        <a class="card-headline" href="https://renewablesnow.com/news/siemens-gamesa-moves-back-into-profit-in-q3-1299241/">Siemens Gamesa Returns to Profit for First Time Since Fiscal 2022 — €75M Q3 Before Special Items vs. €438M Loss; Parent Posts Record €17.9B Orders, Triples Net Profit</a>
+        <p class="card-summary" data-lang="en">Siemens Energy's Q3 FY2026 earnings (released August 5) delivered the milestone the European wind industry has been waiting for: Siemens Gamesa posted €75 million in profit before special items, compared with a €438 million loss a year earlier — the wind turbine subsidiary's first quarterly operating profit since fiscal year 2022. Revenue for the wind segment increased 14% year-on-year to €2.7 billion. The broader Siemens Energy group achieved record orders of €17.9 billion (highest in company history), revenue up 19% to €11.4 billion, and net profit of €1.62 billion — more than triple the €497 million posted in Q3 FY2025 — driven equally by the Gamesa turnaround and surging demand for gas turbines and grid technology from AI data centers and Middle East power infrastructure projects. Siemens Gamesa is now on track to achieve full-year break-even for FY2026.</p>
+        <p class="card-summary" data-lang="ru">Siemens Energy (5 августа): Siemens Gamesa — €75 млн прибыли до особых статей против убытка в €438 млн год назад; первая квартальная операционная прибыль с 2022 г. Выручка ветрового сегмента: +14% г/г до €2,7 млрд. Группа в целом: рекордные заказы €17,9 млрд, выручка +19% до €11,4 млрд, чистая прибыль €1,62 млрд (в 3 раза выше г/г). Siemens Gamesa выходит на безубыточность по итогам 2026 г.</p>
+      </article>
+
+      <article class="card" data-date="2026-08-04">
+        <div class="card-top">
+          <span class="card-source">Ember</span>
+          <span class="card-date">04 AUG</span>
+        </div>
+        <a class="card-headline" href="https://ember-energy.org/latest-insights/eu-battery-storage-is-ready-for-its-moment-in-the-sun/">EU Battery Storage Is Ready for Its Moment in the Sun — 29 GW Fleet Primed for August 12 Eclipse; Four-Minute Totality to Remove Tens of GW of Solar Generation</a>
+        <p class="card-summary" data-lang="en">Ember publishes a pre-eclipse analysis of how Europe's dramatically expanded battery storage fleet changes the grid-management picture for the August 12 solar eclipse. The path of totality crosses Spain, France, and Italy during evening peak hours; the four-minute totality window will temporarily remove tens of gigawatts of solar generation from the grid. The EU's current 29 GW battery fleet, charged through the preceding sunny afternoon, can absorb the solar dropout and the subsequent ramp-back without frequency deviation or thermal plant intervention — the first European eclipse managed primarily by battery storage rather than fossil fuel reserve capacity, demonstrating how the storage buildout has changed grid operations in just three years.</p>
+        <p class="card-summary" data-lang="ru">Ember: 29 ГВт аккумуляторов ЕС готовы к затмению 12 августа. Путь тени пройдёт через Испанию, Францию и Италию в вечерний пик; выпадение десятков ГВт солнечной генерации в четырёхминутное окно впервые будет компенсировано накопителями, а не резервными газовыми мощностями — реальная демонстрация роли хранилищ в масштабе континентальной сети.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Science & Research ═══ -->
+  <section class="digest-section s-science" id="science">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
+      <span class="section-count" data-count-for="science"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      Two new papers expand the frontier this week. <a href="https://arxiv.org/abs/2608.01864">A preprint from August 3 (arXiv 2608.01864)</a> demonstrates that treating internal climate variability as structured signal rather than noise substantially improves probabilistic drought forecasting with deep learning — directly addressing a recognized weakness in operational seasonal outlooks. <a href="https://www.nature.com/articles/s41561-026-02034-w">A satellite-based Nature Geoscience study</a> quantifies a 20% increase in global riverine particulate organic carbon export to the ocean over four decades, driven by tropical deforestation and Arctic permafrost thaw — a significant update to the marine carbon cycle budget not yet captured in current Earth system models. On the ML forecasting front, ECMWF's <a href="https://arxiv.org/abs/2607.05100">AIFS-SUBS</a> remains the landmark operationally deployed ML model for sub-seasonal prediction, while ETH Zurich's <a href="https://arxiv.org/abs/2605.30184">year-long rollout benchmark</a> continues to define the stability envelope for current AI weather models.
+    </div>
+    <div class="overview" data-lang="ru">
+      Два новых исследования этой недели. <a href="https://arxiv.org/abs/2608.01864">Препринт от 3 августа (arXiv 2608.01864)</a>: трактовка внутренней климатической изменчивости как структурированного сигнала существенно улучшает вероятностные прогнозы засухи с глубоким обучением. <a href="https://www.nature.com/articles/s41561-026-02034-w">Nature Geoscience</a>: спутниковые данные фиксируют рост глобального речного выноса взвешенного органического углерода в океан на 20% за 40 лет — данные, которые модели ESM пока не учитывают. В сфере ML-прогнозов: <a href="https://arxiv.org/abs/2607.05100">AIFS-SUBS ECMWF</a> — первая оперативная субсезонная ML-модель; <a href="https://arxiv.org/abs/2605.30184">ETH Zurich</a> — три режима отказа ИИ-моделей при длинных роллаутах.
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-03">
+        <div class="card-top">
+          <span class="card-source">arXiv / LMU Munich</span>
+          <span class="card-date">03 AUG</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2608.01864">Probabilistic Deep Learning for Drought Forecasting: Treating Internal Climate Variability as Signal, Not Noise (arXiv 2608.01864)</a>
+        <p class="card-meta">arXiv 2608.01864 · Funk, Gruber, Kauermann, Küchenhoff, Mittermeier · Preprint · 03 Aug 2026</p>
+        <p class="card-summary" data-lang="en">Funk, Gruber, Kauermann, Küchenhoff, and Mittermeier present a probabilistic deep learning framework for drought forecasting that explicitly treats internal climate variability as structured, predictable signal rather than noise to be filtered out. The approach leverages the spatial, seasonal, and temporal structure of internal variability modes — including ENSO teleconnections and soil moisture memory — to improve skill at monthly to seasonal lead times. The paper directly addresses a recognized weakness in both operational seasonal outlooks and ML-based climate prediction: the tendency to average over variability modes that carry real forecast skill, leading to overconfident climatological means and underestimation of tail drought risk. The framework shows improved reliability and resolution relative to both climatological baselines and deterministic deep learning approaches across multiple biomes and lead times — a finding directly relevant to early warning systems and water resource planning under the current El Niño.</p>
+        <p class="card-summary" data-lang="ru">Funk et al.: вероятностный фреймворк глубокого обучения для прогноза засух, явно учитывающий внутреннюю климатическую изменчивость как структурированный сигнал, а не шум. Метод использует пространственную, сезонную и временную структуру мод изменчивости (телесвязи ЭНСО, память почвенной влаги). Улучшает надёжность и разрешение по сравнению с климатологическими базовыми линиями и детерминированными моделями — актуально для систем раннего предупреждения и водохозяйственного планирования в условиях текущего Эль-Ниньо.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-20">
+        <div class="card-top">
+          <span class="card-source">Nature Geoscience</span>
+          <span class="card-date">20 JUL</span>
+        </div>
+        <a class="card-headline" href="https://www.nature.com/articles/s41561-026-02034-w">Satellite Data Reveal 20% Rise in Global Riverine Particulate Organic Carbon Export to Ocean Over 40 Years — Tropical Deforestation and Permafrost Thaw Drive Increase</a>
+        <p class="card-meta">Nature Geoscience · July 2026 · doi:10.1038/s41561-026-02034-w</p>
+        <p class="card-summary" data-lang="en">A satellite-based study published in Nature Geoscience finds that global riverine particulate organic carbon (POC) export from land to ocean increased by approximately 20% over the past four decades — from approximately 144 ± 29 million tonnes per year in the 1980s to 171 ± 35 Mt yr⁻¹ in the 2010s. The analysis covers near-surface POC flux trends for 2,409 individual rivers globally, with 47% showing statistically significant temporal trends and 33% showing increasing trends. The primary drivers are tropical deforestation (accelerating erosion and mobilization of terrestrial organic matter) and Arctic permafrost thaw (releasing ancient frozen carbon into river systems that export it to the ocean). The 20% increase represents a substantial shift in the land-to-ocean organic carbon flux not yet fully captured in current Earth system models, with implications for the ocean's biological carbon pump efficiency and net CO₂ uptake — and for understanding the role of rivers as climate feedback amplifiers.</p>
+        <p class="card-summary" data-lang="ru">Nature Geoscience: спутниковый анализ 2 409 рек мира за 40 лет выявил рост глобального речного выноса взвешенного органического углерода (ОВУ) в океан на 20% — с 144 ± 29 до 171 ± 35 млн т/год. Главные причины: вырубка тропических лесов и таяние арктической мерзлоты. Рост не отражён в текущих моделях ESM, что влечёт погрешности в оценках эффективности биологического насоса и чистого поглощения CO₂ океаном.</p>
+      </article>
+
+      <article class="card" data-date="2026-07-07">
+        <div class="card-top">
+          <span class="card-source">ECMWF / arXiv</span>
+          <span class="card-date">07 JUL</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2607.05100">AIFS-SUBS: First Operational ML Sub-Seasonal Forecast Model — Matches IFS Probabilistic Skill, Extends MJO Lead by 8 Days, 200× Less Energy at Inference (arXiv 2607.05100)</a>
+        <p class="card-meta">arXiv 2607.05100 · Schuster et al. · ECMWF · 07 Jul 2026</p>
+        <p class="card-summary" data-lang="en">Schuster et al. (ECMWF) introduce AIFS-SUBS — the first machine learning model deployed operationally at a major global weather forecast center for the sub-seasonal (weeks 2–6) prediction range. AIFS-SUBS matches or exceeds the probabilistic skill of ECMWF's IFS ensemble on key teleconnection indices including the Madden-Julian Oscillation and North Atlantic Oscillation, extending the skillful MJO forecast lead time by approximately 8 days relative to the IFS operational baseline. At inference, the model consumes approximately 200× less energy than the full IFS ensemble required to produce equivalent sub-seasonal guidance. The architecture is an autoregressive transformer with week-scale temporal aggregation layers specifically designed to capture slowly evolving large-scale forcing patterns driving weeks 2–6 predictability.</p>
+        <p class="card-summary" data-lang="ru">Schuster et al. (ECMWF): AIFS-SUBS — первая ML-модель, оперативно развёрнутая в крупном прогностическом центре для субсезонного диапазона (недели 2–6). Навык на индексах МДО и САК — сопоставим или выше ансамбля IFS; горизонт полезного прогноза МДО увеличен на 8 дней. При инференсе потребляет в 200 раз меньше энергии по сравнению с полным ансамблем IFS.</p>
+      </article>
+
+      <article class="card" data-date="2026-06-05">
+        <div class="card-top">
+          <span class="card-source">arXiv / ETH Zurich</span>
+          <span class="card-date">05 JUN</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2605.30184">Can AI Weather Models Predict Beyond Two Weeks? Year-Long Rollout Benchmark Reveals Three Failure Modes Across 9 Models (arXiv 2605.30184)</a>
+        <p class="card-meta">arXiv 2605.30184 · Lehmann et al. · ETH Zurich · 05 Jun 2026</p>
+        <p class="card-summary" data-lang="en">Lehmann et al. (ETH Zurich) systematically evaluate nine state-of-the-art AI weather models — including GraphCast, Pangu-Weather, FourCastNet, NeuralGCM, and AIFS — in year-long autoregressive rollouts, far beyond the typical 10–15 day evaluation window. Three distinct failure modes emerge: numerical blow-up (abrupt model divergence within weeks), slow climatological drift (gradual departure from mean state over months), and loss of seasonal cycle (failure to maintain the annual signal at long lead times). Model stability in long-range rollouts depends critically on treatment of small spatio-temporal scales — models that smooth these scales tend to drift slowly, while those that preserve them risk blow-up. None of the nine models maintained full skill at the sub-seasonal range without some form of temporal recalibration.</p>
+        <p class="card-summary" data-lang="ru">Lehmann et al. (ETH Zurich): оценка 9 ИИ-моделей в годовых авторегрессивных роллаутах. Три режима отказа: численный взрыв (недели), медленный дрейф климатологии (месяцы), потеря сезонного цикла (длинные лиды). Устойчивость коррелирует с обработкой малых пространственно-временных масштабов; ни одна из 9 моделей не сохранила полный навык на субсезонном диапазоне без рекалибровки.</p>
+      </article>
+
+      <article class="card" data-date="2026-06-23">
+        <div class="card-top">
+          <span class="card-source">arXiv / ECMWF + CICERO</span>
+          <span class="card-date">23 JUN</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2606.25076">Machine Learning Is Revolutionizing Weather Forecasting — The Next Step Is a Change in How We Work (arXiv 2606.25076)</a>
+        <p class="card-meta">arXiv 2606.25076 · Dueben et al. · ECMWF, CICERO, DKRZ · 23 Jun 2026</p>
+        <p class="card-summary" data-lang="en">Dueben, Bauer, Fuhrer, Koldunov, Kristiansen et al. (ECMWF, CICERO, DKRZ) argue that ML is not merely improving individual NWP components but fundamentally restructuring the entire forecasting value chain across five dimensions: model development (physics-based code to data-driven pipelines), data exploitation (curated assimilation to broad novel observation ingestion), infrastructure (specialized HPC to GPU/TPU cloud), verification (deterministic skill scores to probabilistic calibration metrics), and service delivery (static output to adaptive user-facing products). The paper calls for forecast centers to rethink organizational structures and warns that centers treating ML as a drop-in NWP replacement risk missing the broader opportunity.</p>
+        <p class="card-summary" data-lang="ru">Dueben et al. (ECMWF, CICERO, DKRZ): ИИ меняет не только точность моделей, но всю цепочку прогностических услуг по пяти измерениям: разработка моделей, эксплуатация данных, инфраструктура, верификация, доставка прогнозов. Центры, относящиеся к ML лишь как к замене модулей NWP, упустят более широкие возможности.</p>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+  <!-- ═══ Industry News ═══ -->
+  <section class="digest-section s-industry" id="industry">
+    <div class="section-head">
+      <span class="section-swatch" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+      </span>
+      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Индустрия</span></h2>
+      <span class="section-count" data-count-for="industry"></span>
+    </div>
+
+    <div class="overview" data-lang="en">
+      Two deals released August 5 signal divergent dynamics within clean energy. <a href="https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q3-fy-2026.html">Siemens Energy's record quarter</a> — headlined by Siemens Gamesa's return to profitability for the first time since fiscal 2022 — suggests the European wind industry has finally emerged from its worst industrial crisis in a decade. On the project development side, <a href="https://www.globenewswire.com/news-release/2026/08/05/3339358/0/en/heelstone-renewable-energy-a-qualitas-energy-company-acquires-188-mwp-solar-pv-project-in-texas-from-azimuth-renewables.html">Heelstone Renewable Energy's acquisition of a 188 MWp Texas solar project from Azimuth Renewables</a> continues the steady consolidation of the U.S. solar development pipeline under pan-European owners leveraging IRA incentives and rising data-center-driven PPA prices.
+    </div>
+    <div class="overview" data-lang="ru">
+      Две сделки 5 августа отражают разные динамики: <a href="https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q3-fy-2026.html">рекордный квартал Siemens Energy</a> — Siemens Gamesa возвращается к прибыли впервые с 2022 г. — свидетельствует о выходе европейской ветроиндустрии из кризиса. <a href="https://www.globenewswire.com/news-release/2026/08/05/3339358/0/en/heelstone-renewable-energy-a-qualitas-energy-company-acquires-188-mwp-solar-pv-project-in-texas-from-azimuth-renewables.html">Heelstone Renewable Energy (Qualitas Energy) приобретает 188 МВт-пиковый техасский проект</a> у Azimuth Renewables — продолжение консолидации конвейера разработки в США европейскими игроками.
+    </div>
+
+    <div class="industry-cards">
+
+      <article class="industry-card" data-date="2026-08-05">
+        <div class="industry-top">
+          <h3 class="industry-title">Siemens Energy Posts Record Q3 — Siemens Gamesa Swings to Profit for First Time Since Fiscal 2022; Group Orders Hit €17.9B, Net Profit Triples</h3>
+          <span class="industry-date">05 AUG</span>
+        </div>
+        <p class="industry-body" data-lang="en">Siemens Energy reported Q3 FY2026 results on August 5 that the company described as its best quarter on record: orders reached €17.9 billion (highest in company history), revenue rose 19% year-on-year to €11.4 billion, and <a href="https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q3-fy-2026.html">net profit more than tripled to €1.62 billion</a> from €497 million a year earlier, driven by surging demand from AI data centers and Middle East power infrastructure alongside the wind unit's long-awaited turnaround. The headline milestone is Siemens Gamesa's return to profitability: the wind turbine subsidiary posted €75 million in profit before special items versus a €438 million loss in Q3 FY2025 — its first quarterly operating profit since fiscal year 2022, after an extended restructuring that forced write-downs, warranty provisions, and a full capacity pullback on the onshore turbine business. Gamesa is now on track to achieve full-year break-even for FY2026 — an outcome that would mark the end of the costliest restructuring episode in European wind sector history.</p>
+        <p class="industry-body" data-lang="ru">Siemens Energy (5 августа): рекордные квартальные показатели — заказы €17,9 млрд, выручка +19% до €11,4 млрд, <a href="https://www.siemens-energy.com/global/en/home/press-releases/earnings-release-q3-fy-2026.html">чистая прибыль €1,62 млрд (в 3 раза выше г/г)</a>. Главный итог: Siemens Gamesa — €75 млн прибыли до особых статей против убытка €438 млн год назад; первая квартальная операционная прибыль с 2022 г. после многолетней реструктуризации с многомиллиардными списаниями. Gamesa выходит на безубыточность по итогам FY2026 — завершение крупнейшего реструктурирования в европейской ветроиндустрии.</p>
+        <span class="industry-source"><a href="https://renewablesnow.com/news/siemens-gamesa-moves-back-into-profit-in-q3-1299241/" target="_blank" rel="noopener">Renewables Now / Siemens Energy</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-08-05">
+        <div class="industry-top">
+          <h3 class="industry-title">Heelstone Renewable Energy (Qualitas Energy) Acquires 188 MWp Development-Stage Solar Project in Texas From Azimuth Renewables</h3>
+          <span class="industry-date">05 AUG</span>
+        </div>
+        <p class="industry-body" data-lang="en"><a href="https://www.globenewswire.com/news-release/2026/08/05/3339358/0/en/heelstone-renewable-energy-a-qualitas-energy-company-acquires-188-mwp-solar-pv-project-in-texas-from-azimuth-renewables.html">Heelstone Renewable Energy</a>, the U.S. development arm of Spain's Qualitas Energy, announced August 5 the acquisition of the Cypress Pointe Solar project — a development-stage solar PV installation in Sabine County, Texas, with planned capacity of approximately 188 megawatt-peak. The project is located within the Southwest Power Pool market, positioned in a region where Heelstone expects electricity demand to grow significantly as data-center expansions and manufacturing buildout drive load growth in eastern Texas. The seller is Austin-based Azimuth Renewables. Financial terms were not disclosed. The deal continues Qualitas Energy's deliberate expansion of its U.S. solar development pipeline, leveraging Inflation Reduction Act investment tax credits and rising power purchase agreement prices driven by technology-sector electricity demand across the Sun Belt.</p>
+        <p class="industry-body" data-lang="ru"><a href="https://www.globenewswire.com/news-release/2026/08/05/3339358/0/en/heelstone-renewable-energy-a-qualitas-energy-company-acquires-188-mwp-solar-pv-project-in-texas-from-azimuth-renewables.html">Heelstone Renewable Energy</a> (Qualitas Energy, Испания) приобрела 5 августа проект Cypress Pointe Solar — солнечная СЭС на стадии разработки в округе Сабин, Техас, плановая мощность ~188 МВт-пик. Проект расположен в зоне Southwest Power Pool, где Heelstone ожидает роста электропотребления от дата-центров и промышленной застройки. Продавец — Azimuth Renewables (Остин). Сумма сделки не раскрыта. Qualitas Energy последовательно расширяет конвейер разработки в США, используя льготы IRA и растущие тарифы PPA.</p>
+        <span class="industry-source"><a href="https://www.globenewswire.com/news-release/2026/08/05/3339358/0/en/heelstone-renewable-energy-a-qualitas-energy-company-acquires-188-mwp-solar-pv-project-in-texas-from-azimuth-renewables.html" target="_blank" rel="noopener">GlobeNewswire</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-08-03">
+        <div class="industry-top">
+          <h3 class="industry-title">TotalEnergies Acquires Shell's 4 GW European Renewables Portfolio; Sells 50% of 1.2 GW Operational Assets to KKR for €1.8B</h3>
+          <span class="industry-date">03 AUG</span>
+        </div>
+        <p class="industry-body" data-lang="en">TotalEnergies announced a double transaction on August 3 that reshapes the European onshore renewables landscape. First, it acquires <a href="https://totalenergies.com/newsroom/renewables-in-europe-totalenergies-acquires-shells-renewables-business-and-sells-a-50-stake-in-a-portfolio-of-developed-assets-to-kkr/?lang=eng">Shell's European onshore renewables business: 500 MW of operational assets in Italy and the Netherlands plus a 3.5 GW development pipeline across Italy, the UK, and Spain</a>. Simultaneously, TotalEnergies is selling a 50% stake in a separate 1.2 GW portfolio of its own operational European assets — in Germany, Spain, France, and Poland — to KKR for €1.8 billion. The net effect consolidates TotalEnergies as one of the largest onshore wind and solar operators in continental Europe while recycling capital for further development. Both transactions are expected to close by end-2026, subject to regulatory approval.</p>
+        <p class="industry-body" data-lang="ru">3 августа TotalEnergies объявила о двойной сделке. Первое: приобретение <a href="https://totalenergies.com/newsroom/renewables-in-europe-totalenergies-acquires-shells-renewables-business-and-sells-a-50-stake-in-a-portfolio-of-developed-assets-to-kkr/?lang=eng">европейского ВИЭ-бизнеса Shell — 500 МВт операционных активов + трубопровод 3,5 ГВт</a>. Второе: продажа KKR 50% в 1,2 ГВт собственных операционных активов за €1,8 млрд. TotalEnergies становится одним из крупнейших наземных ВИЭ-операторов в континентальной Европе при возврате капитала для дальнейшего развития.</p>
+        <span class="industry-source"><a href="https://totalenergies.com/newsroom/renewables-in-europe-totalenergies-acquires-shells-renewables-business-and-sells-a-50-stake-in-a-portfolio-of-developed-assets-to-kkr/?lang=eng" target="_blank" rel="noopener">TotalEnergies Press Release</a></span>
+      </article>
+
+      <article class="industry-card" data-date="2026-07-07">
+        <div class="industry-top">
+          <h3 class="industry-title">Adaptive Insurance Closes Additional $5M Financing (Total $10M) — AI-Driven Specialty MGA for WUI and Climate Risk Assets as Traditional Carriers Exit</h3>
+          <span class="industry-date">07 JUL</span>
+        </div>
+        <p class="industry-body" data-lang="en">Adaptive Insurance announced the closing of an additional $5 million in financing (bringing total raised to $10 million) to expand its AI-driven specialty insurance MGA, which focuses on <a href="https://www.globenewswire.com/news-release/2026/07/07/3323146/0/en/Adaptive-Insurance-Closes-Additional-5M-Financing-to-Expand-Specialty-Insurance-Products-Addressing-Emerging-Risks.html">wildland-urban interface and climate risk assets where traditional property carriers are reducing capacity or withdrawing entirely</a>. New investors include IAG Firemark Ventures, Sunna Ventures, Room &amp; Pillar, and Connecticut Innovations; existing investors Congruent Ventures and Seraphim Space also participated. Adaptive uses AI-driven underwriting models to price WUI wildfire, flood, and heat-related property risks that have become uninsurable in standard markets — a need in acute focus given the Spokane Area Fires disaster (700+ structures destroyed, 65,000+ displaced) in a WUI-heavy region.</p>
+        <p class="industry-body" data-lang="ru">Adaptive Insurance закрыла дополнительный раунд в $5 млн (итого $10 млн). MGA ориентирована на <a href="https://www.globenewswire.com/news-release/2026/07/07/3323146/0/en/Adaptive-Insurance-Closes-Additional-5M-Financing-to-Expand-Specialty-Insurance-Products-Addressing-Emerging-Risks.html">WUI-риски и климатически уязвимые объекты, покидаемые традиционными страховщиками</a>. Новые инвесторы: IAG Firemark Ventures, Sunna Ventures, Room &amp; Pillar, Connecticut Innovations; участвовали Congruent Ventures и Seraphim Space. Adaptive применяет ИИ-андеррайтинг для рисков, ставших нестрахуемыми на стандартном рынке, — потребность, резко обострившаяся на фоне катастрофы в Спокане.</p>
+        <span class="industry-source"><a href="https://www.globenewswire.com/news-release/2026/07/07/3323146/0/en/Adaptive-Insurance-Closes-Additional-5M-Financing-to-Expand-Specialty-Insurance-Products-Addressing-Emerging-Risks.html" target="_blank" rel="noopener">GlobeNewswire</a></span>
+      </article>
+
+    </div>
+    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+  </section>
+
+</main>
+
+<!-- ═══ Footer ═══ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+    <ul class="archive-list">
+      <li><a href="archive/2026-08-05.html">2026-08-05</a></li>
+      <li><a href="archive/2026-08-04.html">2026-08-04</a></li>
+      <li><a href="archive/2026-08-03.html">2026-08-03</a></li>
+      <li><a href="archive/2026-08-01.html">2026-08-01</a></li>
+      <li><a href="archive/2026-07-31.html">2026-07-31</a></li>
+      <li><a href="archive/2026-07-30.html">2026-07-30</a></li>
+      <li><a href="archive/2026-07-29.html">2026-07-29</a></li>
+      <li><a href="archive/2026-07-28.html">2026-07-28</a></li>
+      <li><a href="archive/2026-07-27.html">2026-07-27</a></li>
+      <li><a href="archive/2026-07-26.html">2026-07-26</a></li>
+      <li><a href="archive/2026-07-25.html">2026-07-25</a></li>
+      <li><a href="archive/2026-07-24.html">2026-07-24</a></li>
+      <li><a href="archive/2026-07-23.html">2026-07-23</a></li>
+      <li><a href="archive/2026-07-22.html">2026-07-22</a></li>
+    </ul>
+    <p class="footer-credit" data-lang="en">
+      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
+    </p>
+    <p class="footer-credit" data-lang="ru">
+      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
+    </p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var digestDate = new Date(document.body.dataset.digestDate);
+  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+
+  function applyFilter(days) {
+    var cutoff = new Date(digestDate.getTime() - days * 86400000);
+    sections.forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var show = new Date(card.dataset.date) >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+    });
+  }
+
+  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      applyFilter(parseInt(btn.dataset.days, 10));
+    });
+  });
+
+  applyFilter(3);
+
+  // ── Language toggle ──
+  function setLang(lang) {
+    document.body.classList.remove('lang-en', 'lang-ru');
+    document.body.classList.add('lang-' + lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.langBtn === lang);
+    });
+    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
+  if (saved === 'ru' || saved === 'en') setLang(saved);
+})();
+</script>
+
+</body>
+</html>
