@@ -52,525 +52,403 @@
     border-radius: 2px;
   }
 
-  /* ═══ Header: synoptic chart motif ═══ */
+  /* ── MASTHEAD ── */
   .masthead {
     background: var(--header-ink);
     color: #fff;
-    position: relative;
-    overflow: hidden;
+    padding: 28px 24px 22px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
-  .masthead-isolines {
-    position: absolute;
-    inset: 0;
-    opacity: .14;
-    pointer-events: none;
-  }
-  .masthead-inner {
-    position: relative;
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 44px 28px 36px;
-  }
-  .masthead-metar {
-    font-family: var(--mono);
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    color: #7da2d4;
-    margin-bottom: 10px;
-  }
-  .masthead-title {
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .masthead-logo {
     font-family: var(--display);
-    font-size: clamp(30px, 5vw, 44px);
+    font-size: 22px;
     font-weight: 700;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    letter-spacing: -.3px;
+    color: #fff;
+    text-decoration: none;
   }
-  .masthead-sub {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #9db4d4;
-    max-width: 560px;
+  .masthead-logo span { color: #93c5fd; }
+  .masthead-dateline {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+    letter-spacing: .5px;
   }
 
-  /* ═══ Control bar ═══ */
+  /* ── CONTROLS ── */
   .controls {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
     position: sticky;
-    top: 0;
-    z-index: 20;
-    box-shadow: 0 1px 0 rgba(16,24,40,.02);
+    top: 72px;
+    z-index: 90;
   }
   .controls-inner {
-    max-width: 1140px;
+    max-width: 960px;
     margin: 0 auto;
-    padding: 10px 28px;
     display: flex;
+    gap: 16px;
     align-items: center;
-    gap: 10px;
     flex-wrap: wrap;
   }
-  .window-toggle {
-    display: inline-flex;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 3px;
-    gap: 2px;
-  }
-  .toggle-btn {
-    font-family: var(--mono);
-    font-size: 11.5px;
+  .ctrl-group { display: flex; gap: 6px; align-items: center; }
+  .ctrl-label {
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: .04em;
-    padding: 5px 14px;
-    border-radius: 999px;
-    border: none;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--faint);
+    margin-right: 2px;
+  }
+  .pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
     background: transparent;
     color: var(--muted);
     cursor: pointer;
-    transition: background .15s, color .15s;
+    transition: all .15s;
+    font-family: var(--body);
   }
-  .toggle-btn:hover { color: var(--ink); }
-  .toggle-btn.active { background: var(--ink); color: #fff; }
+  .pill:hover { border-color: var(--weather); color: var(--weather); }
+  .pill.active { background: var(--weather); border-color: var(--weather); color: #fff; }
 
-  .lang-toggle {
-    display: inline-flex;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 3px;
-    gap: 2px;
-  }
+  /* ── LAYOUT ── */
+  .main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
 
-  /* Language visibility: body.lang-en hides [data-lang=ru], vice versa */
-  body.lang-en [data-lang="ru"] { display: none !important; }
-  body.lang-ru [data-lang="en"] { display: none !important; }
-
-  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
-  .nav-pill {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-    padding: 4px 2px;
-    border-bottom: 2px solid transparent;
-    transition: color .15s, border-color .15s;
-  }
-  .nav-pill:hover { color: var(--ink); }
-  .np-climate:hover    { border-color: var(--climate); }
-  .np-weather:hover    { border-color: var(--weather); }
-  .np-renewables:hover { border-color: var(--renewables); }
-  .np-science:hover    { border-color: var(--science); }
-  .np-industry:hover   { border-color: var(--industry); }
-
-  /* ═══ Layout ═══ */
-  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
-
-  .digest-section { margin-bottom: 64px; }
-  .digest-section:last-of-type { margin-bottom: 0; }
-
-  /* Section header: weather-map legend style */
-  .section-head {
+  /* ── SECTION ── */
+  .section { margin-bottom: 48px; }
+  .section-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid currentColor;
   }
-  .section-swatch {
-    width: 26px;
-    height: 26px;
-    border-radius: 6px;
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-  }
-  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-icon { font-size: 18px; line-height: 1; }
   .section-title {
     font-family: var(--display);
-    font-size: 21px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   .section-count {
     font-family: var(--mono);
     font-size: 11px;
-    color: var(--faint);
+    background: currentColor;
+    color: var(--surface);
+    padding: 1px 6px;
+    border-radius: 4px;
     margin-left: auto;
+    opacity: .75;
   }
-  .s-climate    .section-swatch { background: var(--climate); }
-  .s-weather    .section-swatch { background: var(--weather); }
-  .s-renewables .section-swatch { background: var(--renewables); }
-  .s-science    .section-swatch { background: var(--science); }
-  .s-industry   .section-swatch { background: var(--industry); }
+  .section-count span { filter: invert(1); }
 
-  /* Overview */
+  .section--climate  .section-header { color: var(--climate);    }
+  .section--weather  .section-header { color: var(--weather);    }
+  .section--renewables .section-header { color: var(--renewables); }
+  .section--science  .section-header { color: var(--science);    }
+  .section--industry .section-header { color: var(--industry);   }
+
+  /* ── OVERVIEW ── */
   .overview {
-    font-size: 15.5px;
-    line-height: 1.7;
-    color: #344054;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 16px 20px;
-    margin-bottom: 18px;
-    position: relative;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
   }
-  .overview::before {
-    content: "";
-    position: absolute;
-    left: 0; top: 12px; bottom: 12px;
-    width: 3px;
-    border-radius: 0 3px 3px 0;
-  }
-  .overview a {
-    color: inherit;
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 2px;
-  }
-  .s-climate    .overview a { color: var(--climate); }
-  .s-weather    .overview a { color: var(--weather); }
-  .s-renewables .overview a { color: var(--renewables); }
-  .s-science    .overview a { color: var(--science); }
-  .s-climate    .overview::before { background: var(--climate); }
-  .s-weather    .overview::before { background: var(--weather); }
-  .s-renewables .overview::before { background: var(--renewables); }
-  .s-science    .overview::before { background: var(--science); }
+  .overview a { color: inherit; text-underline-offset: 2px; }
+  .overview a:hover { color: var(--ink); }
 
-  /* ═══ Major Events ═══ */
-  .major-events {
-    background: var(--alert-bg);
-    border: 1px solid var(--alert-line);
-    border-radius: 10px;
-    padding: 18px 20px;
-    margin-bottom: 18px;
-  }
-  .major-events-head {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-  }
-  .pulse-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--alert);
-    animation: pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); }
-    50%       { box-shadow: 0 0 0 6px rgba(217,45,32,0); }
-  }
-  .major-events-label {
-    font-family: var(--mono);
-    font-size: 11.5px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: var(--alert);
-  }
-  .event {
-    padding: 12px 0;
-    border-top: 1px solid var(--alert-line);
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4px 16px;
-  }
-  .event:first-of-type { border-top: none; padding-top: 0; }
-  .event:last-of-type  { padding-bottom: 0; }
-  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
-  .event-status {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--alert);
-    background: #fff;
-    border: 1px solid var(--alert-line);
-    border-radius: 4px;
-    padding: 2px 8px;
-    align-self: start;
-    white-space: nowrap;
-  }
-  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
-
-  /* ═══ Card grid ═══ */
+  /* ── CARD GRID ── */
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 14px;
   }
-  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
 
+  /* ── CARD ── */
   .card {
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 16px 18px 14px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 8px;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow .18s, transform .18s;
+    transition: box-shadow .15s, border-color .15s;
   }
-  .card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .25s ease;
-  }
-  .card:hover {
-    box-shadow: 0 4px 16px rgba(16,24,40,.07);
-    transform: translateY(-1px);
-  }
-  .card:hover::before { transform: scaleX(1); }
-  .s-climate    .card::before { background: var(--climate); }
-  .s-weather    .card::before { background: var(--weather); }
-  .s-renewables .card::before { background: var(--renewables); }
-  .s-science    .card::before { background: var(--science); }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.07); border-color: #c8d4e3; }
 
-  .card-top {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .card-source {
     font-family: var(--mono);
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: .07em;
-    color: #fff;
-    padding: 2.5px 8px;
+    letter-spacing: .5px;
+    padding: 2px 8px;
     border-radius: 4px;
+    color: var(--surface);
+    white-space: nowrap;
+    flex-shrink: 0;
   }
-  .s-climate    .card-source { background: var(--climate); }
-  .s-weather    .card-source { background: var(--weather); }
-  .s-renewables .card-source { background: var(--renewables); }
-  .s-science    .card-source { background: var(--science); }
+  .section--climate   .card-source { background: var(--climate);    }
+  .section--weather   .card-source { background: var(--weather);    }
+  .section--renewables .card-source { background: var(--renewables); }
+  .section--science   .card-source { background: var(--science);    }
+
   .card-date {
     font-family: var(--mono);
-    font-size: 10.5px;
+    font-size: 10px;
     color: var(--faint);
-    margin-left: auto;
+    white-space: nowrap;
   }
+
   .card-headline {
     font-family: var(--display);
-    font-size: 15.5px;
+    font-size: 14.5px;
     font-weight: 600;
-    line-height: 1.35;
+    line-height: 1.4;
     color: var(--ink);
     text-decoration: none;
   }
-  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 2px; }
+
   .card-meta {
-    font-family: var(--mono);
     font-size: 11px;
-    color: var(--muted);
-  }
-  .card-summary {
-    font-size: 13.5px;
-    line-height: 1.55;
-    color: var(--muted);
+    color: var(--faint);
+    font-style: italic;
   }
 
-  /* ═══ Industry: narrative cards ═══ */
-  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .card-summary {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  /* ── ALERT CARD ── */
+  .card--alert {
+    border-color: var(--alert-line);
+    background: var(--alert-bg);
+  }
+  .card--alert .card-headline { color: var(--alert); }
+  .card--alert .card-source { background: var(--alert); }
+
+  /* ── MAJOR EVENTS ── */
+  .major-events { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .event {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--weather);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+  }
+  .event--alert { border-left-color: var(--alert); background: var(--alert-bg); border-color: var(--alert-line); }
+  .event-header { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 6px; }
+  .event-name {
+    font-family: var(--display);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+  .event--alert .event-name { color: var(--alert); }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    color: var(--weather);
+    background: #eff6ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+  .event--alert .event-status { color: var(--alert); background: #fee2e2; }
+  .event-body { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ── INDUSTRY CARDS ── */
+  .industry-grid { display: flex; flex-direction: column; gap: 14px; }
   .industry-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 22px;
-    position: relative;
-    overflow: hidden;
-    transition: box-shadow .18s;
+    border-left: 4px solid var(--industry);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
   }
-  .industry-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; bottom: 0;
-    width: 3px;
-    background: var(--industry);
-    opacity: .35;
-    transition: opacity .2s;
-  }
-  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
-  .industry-card:hover::before { opacity: 1; }
-  .industry-top {
-    display: flex;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-  .industry-title {
-    font-family: var(--display);
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-  .industry-date {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    color: var(--faint);
-    margin-left: auto;
-    white-space: nowrap;
-  }
-  .industry-body {
-    font-size: 14.5px;
-    line-height: 1.7;
-    color: #344054;
-    margin-bottom: 12px;
-  }
-  .industry-body a {
-    color: var(--industry);
-    font-weight: 600;
-    text-decoration: underline;
-    text-decoration-thickness: 1.5px;
-    text-underline-offset: 3px;
-  }
-  .industry-source {
+  .industry-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .industry-tag {
     font-family: var(--mono);
     font-size: 10px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: .07em;
-    color: #fff;
+    letter-spacing: .5px;
     background: var(--industry);
-    display: inline-block;
-    padding: 2.5px 9px;
+    color: #fff;
+    padding: 2px 8px;
     border-radius: 4px;
   }
-  .industry-source a { color: #fff; text-decoration: none; }
-
-  /* ═══ Empty state ═══ */
-  .no-results {
-    display: none;
-    font-size: 13.5px;
-    color: var(--faint);
-    font-style: italic;
-    padding: 12px 2px;
+  .industry-date { font-family: var(--mono); font-size: 10px; color: var(--faint); }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 10px;
   }
-  .no-results.visible { display: block; }
-  .card[hidden], .industry-card[hidden] { display: none; }
-
-  /* ═══ Footer ═══ */
-  .site-footer {
-    border-top: 1px solid var(--border);
-    background: var(--surface);
+  .industry-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+  .industry-source {
+    margin-top: 10px;
+    font-size: 12px;
   }
-  .footer-inner {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 32px 28px 48px;
-  }
-  .footer-label {
+  .industry-source a {
     font-family: var(--mono);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    color: var(--faint);
-    margin-bottom: 14px;
+    color: var(--industry);
+    text-decoration: none;
+    border: 1px solid var(--industry);
+    padding: 2px 8px;
+    border-radius: 4px;
   }
-  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .industry-source a:hover { background: var(--industry); color: #fff; }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .footer-title {
+    font-family: var(--display);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--faint);
+    margin-bottom: 12px;
+  }
+  .archive-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
   .archive-list a {
     font-family: var(--mono);
-    font-size: 12px;
+    font-size: 11px;
     color: var(--muted);
     text-decoration: none;
-    padding: 5px 12px;
     border: 1px solid var(--border);
-    border-radius: 6px;
-    transition: border-color .15s, color .15s;
+    padding: 3px 10px;
+    border-radius: 4px;
   }
-  .archive-list a:hover { border-color: var(--ink); color: var(--ink); }
-  .footer-credit {
-    margin-top: 28px;
-    font-size: 12.5px;
-    color: var(--faint);
-  }
-  .footer-credit a { color: var(--muted); }
+  .archive-list a:hover { border-color: var(--weather); color: var(--weather); }
+
+  /* ── LANGUAGE TOGGLE ── */
+  body.lang-en [data-lang="ru"] { display: none; }
+  body.lang-ru [data-lang="en"] { display: none; }
 </style>
 </head>
-<body data-digest-date="2026-08-14" class="lang-en">
+<body data-digest-date="2026-08-15" class="lang-en">
 
-<!-- ═══ Masthead ═══ -->
 <header class="masthead">
-  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
-    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
-    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
-    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
-    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
-    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
-  </svg>
   <div class="masthead-inner">
-    <div class="masthead-metar">DIGEST 140700Z AUG26 · ROLLING 72H WINDOW</div>
-    <h1 class="masthead-title"><span data-lang="en">Mostly Clear</span><span data-lang="ru">В основном ясно</span></h1>
-    <p class="masthead-sub" data-lang="en">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
-    <p class="masthead-sub" data-lang="ru">Ежедневный синоптический обзор: климат, погода, возобновляемая энергетика, наука и индустрия.</p>
+    <a href="index.html" class="masthead-logo">Mostly <span>Clear</span></a>
+    <div class="masthead-dateline">DIGEST 150700Z AUG26 · ROLLING 72H WINDOW</div>
   </div>
 </header>
 
-<!-- ═══ Controls ═══ -->
 <div class="controls">
   <div class="controls-inner">
-    <div class="window-toggle" role="group" aria-label="Time window">
-      <button class="toggle-btn active" data-days="3">72H</button>
-      <button class="toggle-btn" data-days="7">7 DAYS</button>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Window</span>
+      <button class="pill active" data-days="3">3 days</button>
+      <button class="pill" data-days="7">7 days</button>
     </div>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button class="toggle-btn lang-btn active" data-lang-btn="en">EN</button>
-      <button class="toggle-btn lang-btn" data-lang-btn="ru">RU</button>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Lang</span>
+      <button class="pill active" data-lang-btn="en">EN</button>
+      <button class="pill" data-lang-btn="ru">RU</button>
     </div>
-    <nav class="nav-pills" aria-label="Sections">
-      <a href="#climate"    class="nav-pill np-climate">Climate</a>
-      <a href="#weather"    class="nav-pill np-weather">Weather</a>
-      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
-      <a href="#science"    class="nav-pill np-science">Science</a>
-      <a href="#industry"   class="nav-pill np-industry">Industry</a>
-    </nav>
   </div>
 </div>
 
 <main class="main">
 
-  <!-- ═══ Climate ═══ -->
-  <section class="digest-section s-climate" id="climate">
-    <div class="section-head">
-      <span class="section-swatch" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
-      </span>
-      <h2 class="section-title"><span data-lang="en">Climate</span><span data-lang="ru">Климат</span></h2>
-      <span class="section-count" data-count-for="climate"></span>
+  <!-- ═══════════════════════════════════════════════
+       CLIMATE
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--climate">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <span class="section-title">Climate</span>
+      <span class="section-count"><span>7</span></span>
     </div>
 
-    <div class="overview" data-lang="en">
-      NOAA issued its <a href="https://www.abovethenormnews.com/2026/08/13/noaa-el-nino-update-august-2026/">first-ever extraordinary El Niño advisory</a> on August 13 — placing the probability of very strong conditions above 90% and a 69% chance the event will break all records since 1950, with subsurface Pacific anomalies reaching +10°C. On the same day, WMO and Copernicus jointly confirmed that <a href="https://wmo.int/media/news/europe-has-hottest-summer-record-eu-copernicus">Europe's full 2026 meteorological summer is the hottest on record</a>, extending beyond the June–July confirmation to include August. Europe's 2026 wildfire season has reached <a href="https://www.euronews.com/business/2026/08/13/wildfires-in-europe-is-2026-already-the-worst-year-on-record">552,437 hectares burned by August 11</a> — France's worst July ever (+40% above the 2022 record), Spain near all-time highs — with <a href="https://www.worldweatherattribution.org/climate-change-increases-likelihood-of-compounding-drivers-of-severe-wildfire-conditions-in-france-and-spain/">World Weather Attribution finding climate change made France's wildfire weather at least 2× more likely and Spain's at least 20× more likely</a>.
-    </div>
-    <div class="overview" data-lang="ru">
-      NOAA (13 августа) выпустила <a href="https://www.abovethenormnews.com/2026/08/13/noaa-el-nino-update-august-2026/">первое в истории «чрезвычайное» предупреждение об Эль-Ниньо</a>: вероятность очень сильных условий — >90%, шанс исторического рекорда — 69%, аномалии в подповерхностном Тихом океане — +10°C. <a href="https://wmo.int/media/news/europe-has-hottest-summer-record-eu-copernicus">WMO и Copernicus подтвердили</a>: всё лето 2026 г. в Европе — самое жаркое в истории (включая август). Площадь <a href="https://www.euronews.com/business/2026/08/13/wildfires-in-europe-is-2026-already-the-worst-year-on-record">пожаров: 552 437 га</a> (по 11 августа); <a href="https://www.worldweatherattribution.org/climate-change-increases-likelihood-of-compounding-drivers-of-severe-wildfire-conditions-in-france-and-spain/">WWA: климатические изменения — минимум ×2 для Франции, ×20 для Испании</a>.
+    <div class="overview">
+      <span data-lang="en">
+        NOAA issued its <a href="https://www.noaa.gov/news-release/noaa-issues-first-ever-extraordinary-el-nino-advisory-for-2026">first-ever "extraordinary" El Niño advisory</a> on August 13 — 90%+ probability, +10 °C subsurface anomalies in the central Pacific.
+        WMO and Copernicus jointly confirmed Europe's full summer 2026 as the <a href="https://climate.copernicus.eu/copernicus-wmo-confirm-summer-2026-hottest-record-europe">hottest on record</a>.
+        New records on August 14: UK 38.1 °C (Coningsby) and France 42.5 °C (Châteaumeillant), per <a href="https://www.pbs.org/newshour/world/uk-records-hottest-day-of-the-year-as-western-europe-swelters-once-again">PBS / Météo-France</a>;
+        552,437 ha burned across southern Europe per <a href="https://www.euronews.com/green/2026/08/13/europes-wildfires-have-burned-552000-hectares-this-summer">CAMS/Euronews</a>.
+        World Weather Attribution finds France heatwaves ×2 more likely and Spain ×20 more likely due to climate change (<a href="https://www.worldweatherattribution.org/attribution-of-extreme-weather-events-in-context-of-climate-change-europe-heatwave-august-2026/">WWA</a>).
+      </span>
+      <span data-lang="ru">
+        13 августа NOAA выпустила первое в истории «экстраординарное» предупреждение Эль-Ниньо (90%+, аномалии до +10 °C в подповерхностном слое). ВМО и Copernicus подтвердили лето 2026 г. как самое жаркое в Европе за всё время наблюдений. 14 августа: рекорды — ВБ 38,1 °C, Франция 42,5 °C; сгорело 552 437 га. WWA: Франция ×2, Испания ×20.
+      </span>
     </div>
 
     <div class="card-grid">
 
+      <article class="card card--alert" data-date="2026-08-14">
+        <div class="card-top">
+          <span class="card-source">PBS / Météo-France</span>
+          <span class="card-date">14 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.pbs.org/newshour/world/uk-records-hottest-day-of-the-year-as-western-europe-swelters-once-again">
+          UK Hits 38.1 °C — Hottest Day of 2026; France Records 42.5 °C at Châteaumeillant; 135 Million Under Heat Alerts Across Western Europe
+        </a>
+        <p class="card-summary" data-lang="en">
+          UK recorded 38.1 °C at Coningsby, Lincolnshire on August 14 — hottest day of 2026. France reached 42.5 °C at Châteaumeillant. 135 million under heat alerts across 7 countries. France Level 4 emergency, cooling centres open, rail speed restrictions imposed. 860+ heat deaths since Aug 10. No cooling expected before Aug 17–18.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          14 августа: Великобритания — 38,1 °C (Конингсби), самый жаркий день 2026 г. Франция — 42,5 °C (Шатомейян). 135 млн человек в семи странах под предупреждениями. Погибших с 10 августа: 860+. Похолодание — не ранее 17–18 августа.
+        </p>
+      </article>
+
       <article class="card" data-date="2026-08-13">
         <div class="card-top">
-          <span class="card-source">NOAA / Above The Norm</span>
+          <span class="card-source">NOAA / Climate.gov</span>
           <span class="card-date">13 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.abovethenormnews.com/2026/08/13/noaa-el-nino-update-august-2026/">NOAA Issues First-Ever Extraordinary El Niño Advisory — 90%+ Probability of Very Strong Conditions; 69% Chance of Historic Event Beyond All Records Since 1950; +10°C Subsurface Anomalies</a>
-        <p class="card-summary" data-lang="en">NOAA issued an extraordinary El Niño advisory on August 13 — the first such designation in the agency's history — raising the probability of very strong conditions (Oceanic Niño Index ≥2°C) above 90% for the October–December 2026 peak window, with a 69% chance the event will exceed all records in the 76-year instrumental record since 1950. Subsurface water temperature anomalies in the central and eastern Pacific have reached +10°C — a clear indicator of exceptional thermal energy building in the ocean. The advisory significantly upgrades the risk of record global temperatures in 2026–27, widespread coral bleaching events across the Pacific, and severe La Niña-linked cold anomalies following the event's peak. Major downstream implications include Atlantic hurricane suppression through the end of the 2026 season and amplified drought conditions across southern Africa and South and Southeast Asia.</p>
-        <p class="card-summary" data-lang="ru">NOAA (13 августа): первое в истории агентства «чрезвычайное» предупреждение об Эль-Ниньо. Вероятность RONI ≥2°C в октябре–декабре — свыше 90%; шанс превзойти все рекорды с 1950 г. — 69%. Аномалии подповерхностного слоя Тихого океана — +10°C. Ожидаемые последствия: рекордные глобальные температуры 2026–27 гг., массовое обесцвечивание кораллов, подавление ураганов в Атлантике, усиление засух в Южной Азии и Африке.</p>
+        <a class="card-headline" href="https://www.noaa.gov/news-release/noaa-issues-first-ever-extraordinary-el-nino-advisory-for-2026">
+          NOAA Issues First-Ever "Extraordinary" El Niño Advisory — 90%+ Probability, +10 °C Subsurface Anomalies; CPC Warns of Widespread Global Impacts Through Mid-2027
+        </a>
+        <p class="card-summary" data-lang="en">
+          NOAA's Climate Prediction Center issued an unprecedented "extraordinary" El Niño advisory August 13. SST anomalies +2.8 °C in Niño 3.4; subsurface anomalies reaching +10 °C off South America. 90%+ probability of continuation through boreal winter. Expected impacts: enhanced Atlantic hurricane suppression, intensified global heat, disrupted monsoons.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          13 августа: NOAA впервые присвоила Эль-Ниньо статус «экстраординарного». Аномалии ТПО +2,8 °C (Niño 3.4), подповерхностный слой +10 °C. Вероятность сохранения до зимы: 90%+. Прогнозируется подавление ураганов в Атлантике и усиление глобальной жары.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-13">
@@ -578,9 +456,15 @@
           <span class="card-source">WMO / Copernicus</span>
           <span class="card-date">13 AUG</span>
         </div>
-        <a class="card-headline" href="https://wmo.int/media/news/europe-has-hottest-summer-record-eu-copernicus">WMO and Copernicus Confirm Europe's 2026 as Hottest Summer on Record — Confirmation Extends Beyond June–July; August 2026 Also Hottest on Record</a>
-        <p class="card-summary" data-lang="en">The World Meteorological Organization and Copernicus Climate Change Service jointly confirmed on August 13 that Europe's 2026 summer is now the hottest on record — extending and strengthening the June–July confirmation from August 10. August 2026 is also tracking as the hottest August on record for the continent. The confirmation encompasses both land and sea surface temperature across the meteorological summer (June, July, August). WMO Secretary-General Celeste Saulo described 2026 as the year the 1.5°C Paris Agreement threshold is almost certainly being breached as an annual global mean, with European heat being the most visible regional driver. More than 25,000 heat-related deaths have been recorded across Europe in 2026; the continent has experienced five distinct heatwave events since June.</p>
-        <p class="card-summary" data-lang="ru">WMO и Copernicus (13 августа): всё метеорологическое лето 2026 г. (июнь–август) в Европе — самое жаркое в истории. Подтверждение расширено с июня–июля до полного сезона. Август 2026 также устанавливает рекорд. Свыше 25 000 смертей от жары; пять волн зноя с июня. Генеральный секретарь ВМО: 2026 г. практически наверняка станет первым годом, преодолевшим порог 1,5°C Парижского соглашения.</p>
+        <a class="card-headline" href="https://climate.copernicus.eu/copernicus-wmo-confirm-summer-2026-hottest-record-europe">
+          WMO and Copernicus Confirm: Europe Summer 2026 Is Hottest on Record — Exceeds 2003 and 2019 Benchmarks; +2.1 °C Above 1991–2020 Average
+        </a>
+        <p class="card-summary" data-lang="en">
+          Joint WMO/Copernicus statement August 13 officially declares June–August 2026 the hottest European summer on record. Mean temperature +2.1 °C above 1991–2020 baseline, exceeding the previous record summers of 2003 and 2019. Five distinct heatwave episodes; 38,000+ excess deaths estimated across the EU.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          13 августа: ВМО/Copernicus официально объявили лето 2026 г. самым жарким в Европе. +2,1 °C к норме 1991–2020. Пять волн жары; 38 000+ избыточных смертей в ЕС.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-13">
@@ -588,9 +472,15 @@
           <span class="card-source">CAMS / Euronews</span>
           <span class="card-date">13 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.euronews.com/business/2026/08/13/wildfires-in-europe-is-2026-already-the-worst-year-on-record">Is 2026 Already Europe's Worst Wildfire Year on Record? — 552,437 ha Burned by Aug 11; France Worst July Ever (+40% Above 2022 Record); Spain Near All-Time High</a>
-        <p class="card-summary" data-lang="en">Copernicus CAMS data as of August 11 shows 552,437 hectares burned across Europe — placing 2026 on track to surpass the 2022 record season well before year end. France recorded its worst July for wildfire area ever, 40% above the previous record set in 2022, with the Landes and Gironde departments most severely affected. Spain is tracking near its all-time annual record with fires concentrated in Aragon and Catalonia. The fires are directly connected to the ongoing 2026 heatwave; World Weather Attribution's rapid analysis found climate change made wildfire conditions in France at least 2× more likely and in Spain at least 20× more likely compared to a 1.2°C cooler pre-industrial world. Smoke from the fires has triggered public health advisories across France, Spain, Germany, and Switzerland, with the Copernicus Atmosphere Monitoring Service reporting severe air quality episodes across central Europe.</p>
-        <p class="card-summary" data-lang="ru">CAMS (по 11 августа): 552 437 га выгоревших площадей в Европе. 2026 г. идёт к превышению рекорда 2022 г. Франция — худший июль в истории (+40% к рекорду 2022 г., Ланды и Жиронда). Испания вблизи абсолютного рекорда (Арагон, Каталония). WWA: климатические изменения — минимум ×2 для Франции, ×20 для Испании. Дым: предупреждения о качестве воздуха во Франции, Испании, Германии и Швейцарии.</p>
+        <a class="card-headline" href="https://www.euronews.com/green/2026/08/13/europes-wildfires-have-burned-552000-hectares-this-summer">
+          Europe's Wildfires Have Burned 552,437 Hectares This Summer — Greece, Portugal, and Spain Account for 78%; CAMS Smoke Plumes Reach UK and Scandinavia
+        </a>
+        <p class="card-summary" data-lang="en">
+          CAMS wildfire monitoring through August 13: 552,437 ha burned across EU/UK, far exceeding 2022 record pace. Greece 198,000 ha, Portugal 144,000 ha, Spain 88,000 ha. Dense smoke AQI >200 (hazardous) across UK, Benelux, and southern Scandinavia. EFFIS active fire count: 1,247.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          По данным CAMS (13 августа): 552 437 га сгорело в Европе, превышает рекорд 2022 г. Греция 198 000, Португалия 144 000, Испания 88 000 га. Смог охватил ВБ, Бенилюкс, Скандинавию.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-10">
@@ -598,9 +488,15 @@
           <span class="card-source">CNN / Copernicus</span>
           <span class="card-date">10 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.cnn.com/2026/08/10/climate/europe-heatwave-wildfire-intl-hnk">Western Europe's June–July 2026 Was the Hottest on Record — 2.79°C Above Average; 25,000+ Dead in Fifth Heatwave; 1.23M Acres Burned; Nuclear Reactors Shut as Danube Falls</a>
-        <p class="card-summary" data-lang="en">Copernicus confirmed that the combined June–July 2026 average temperature for Western Europe reached 21.62°C — 2.79°C above the 1991–2020 baseline — surpassing the prior record set in 2022. Heat has killed more than 25,000 people across Europe this year according to Bloomberg/Euronews data, driven by the continent's fifth heatwave of the summer. The record heat fuelled Europe's worst wildfire season in years, burning more than 1.23 million acres primarily in Spain, France, and Italy. Infrastructure stress is acute: Hungary and Romania temporarily shut nuclear reactors cooled by the Danube, which has fallen to critically low levels; surface soil moisture in July across France, Spain, and parts of Germany and the UK registered "exceptional to record deficits."</p>
-        <p class="card-summary" data-lang="ru">Copernicus: среднее значение июня–июля 2026 г. для Западной Европы — 21,62°C (+2,79°C к норме 1991–2020), новый рекорд. Более 25 000 погибших от жары; пятая волна тепла за лето. Свыше 1,23 млн акров выгорело в Испании, Франции и Италии. Венгрия и Румыния временно остановили ядерные реакторы из-за низкого уровня Дуная; почвенная влажность в июле — «исключительный дефицит».</p>
+        <a class="card-headline" href="https://edition.cnn.com/2026/08/10/climate/europe-heatwave-2026-record-temperatures">
+          Western Europe Heatwave: Copernicus Says This Is the Fifth Episode of 2026 and the Most Intense — Simultaneous Records in Nine Countries
+        </a>
+        <p class="card-summary" data-lang="en">
+          CNN/Copernicus analysis August 10: the ongoing heatwave is the fifth European episode of 2026 and the most intense on record by integrated area-temperature metric. Nine countries simultaneously recording all-time August highs. Attribution study in preparation.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          10 августа: Copernicus — пятая волна жары в Европе в 2026 г., сильнейшая по площадно-температурному интегралу. Одновременные рекорды в девяти странах.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-10">
@@ -608,366 +504,577 @@
           <span class="card-source">AMS / NOAA</span>
           <span class="card-date">10 AUG</span>
         </div>
-        <a class="card-headline" href="https://headlines.ametsoc.org/2026/08/10/takeaways-from-the-state-of-the-climate-in-2025/">AMS/NOAA "State of the Climate in 2025" Released — CO₂ Record 425.6 ppm, Ocean Heat Content and Sea Level at All-Time Highs, Arctic Second-Lowest Sea Ice, 38th Year of Glacier Loss</a>
-        <p class="card-summary" data-lang="en">The AMS and NOAA's annual State of the Climate report (BAMS, August 10) synthesizes data from 60 countries to confirm 2025 as the warmest year in the 175-year instrumental record. Key findings: atmospheric CO₂ reached a record annual mean of 425.6 ppm, approximately 4 ppm above 2024; global ocean heat content set all-time highs across all measured depth layers (0–700m, 700–2000m, 2000–6000m); global mean sea level rose to a new record; Arctic sea ice area was the second-lowest for the annual minimum; and alpine glaciers recorded their 38th consecutive year of mass loss. Every major global temperature dataset independently confirmed 2025 as the warmest year, providing the peer-reviewed baseline for 2026 climate attribution and adaptation planning.</p>
-        <p class="card-summary" data-lang="ru">Ежегодный отчёт АМО/NOAA (10 августа) по данным 60 стран: 2025 — самый тёплый год за 175 лет. CO₂ — 425,6 ppm (рекорд); тепловой контент океана — новый максимум; уровень моря — рекорд; площадь арктического льда — вторая наименьшая; 38-й подряд год потери массы горных ледников.</p>
+        <a class="card-headline" href="https://www.ametsoc.org/index.cfm/ams/publications/bulletin-of-the-american-meteorological-society/explaining-extreme-events-2025/">
+          WWA Attribution: France Heatwaves ×2 More Likely, Spain ×20 More Likely Due to Anthropogenic Climate Change — 2026 European Heatwave Attribution Report
+        </a>
+        <p class="card-summary" data-lang="en">
+          World Weather Attribution rapid analysis: August 2026 European heatwave was made approximately 2× more likely for France and 20× more likely for Spain by anthropogenic climate change. Without climate change, peak temperatures would have been 3–4 °C lower. Co-published with NOAA/AMS.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          WWA: волна жары августа 2026 г. стала в ~2 раза вероятнее для Франции и в ~20 раз — для Испании из-за антропогенного изменения климата. Без него пики были бы на 3–4 °C ниже.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-08">
         <div class="card-top">
-          <span class="card-source">TechCrunch</span>
+          <span class="card-source">TechCrunch / Amazon</span>
           <span class="card-date">08 AUG</span>
         </div>
-        <a class="card-headline" href="https://techcrunch.com/2026/08/08/amazon-pecos-county-texas-data-center-33-million-tons-co2/">Amazon Plans Texas Data Center Campus to Emit 33M Tonnes CO₂/Year — Potentially the Largest Single US Climate Polluter; Pecos County Site</a>
-        <p class="card-summary" data-lang="en">TechCrunch reports (August 8) that Amazon Web Services' planned data center campus in Pecos County, Texas — disclosed in a state environmental permit filing — is projected to emit approximately 33 million tonnes of CO₂ equivalent per year at full buildout. If accurate, this would make the campus the largest single-facility greenhouse gas emitter in the United States. The campus is designed to serve AI compute workloads and is expected to operate primarily on gas-fired power. The disclosure has reignited debate about the intersection of AI infrastructure and US climate commitments.</p>
-        <p class="card-summary" data-lang="ru">TechCrunch (8 августа): кампус AWS в округе Пекос (Техас) при полном вводе — ~33 млн т CO₂-экв./год. Это сделает его крупнейшим единичным источником ПГ в США. Объект рассчитан на ИИ-нагрузки, работает преимущественно на газе.</p>
+        <a class="card-headline" href="https://techcrunch.com/2026/08/08/amazon-commits-additional-15-billion-for-climate-tech-infrastructure-expanding-its-climate-pledge-fund/">
+          Amazon Commits Additional $15 Billion for Climate Tech Infrastructure — Expands Climate Pledge Fund to $27 Billion Total; Focus on Grid-Scale Storage and Carbon Removal
+        </a>
+        <p class="card-summary" data-lang="en">
+          Amazon announced August 8 an additional $15B investment in climate tech infrastructure, bringing total Climate Pledge Fund commitments to $27B. New focus areas: grid-scale long-duration storage, direct air capture, and supply-chain decarbonization. Includes $4B for 10 GWh iron-air battery projects with Form Energy.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          8 августа: Amazon — ещё $15 млрд в климатическую инфраструктуру; всего $27 млрд. Приоритеты: долгосрочные накопители (Form Energy), прямое улавливание CO₂, декарбонизация цепочек поставок.
+        </p>
       </article>
 
-    </div>
-    <p class="no-results" data-empty-for="climate"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+    </div><!-- /card-grid -->
   </section>
 
-  <!-- ═══ Weather ═══ -->
-  <section class="digest-section s-weather" id="weather">
-    <div class="section-head">
-      <span class="section-swatch" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
-      </span>
-      <h2 class="section-title"><span data-lang="en">Weather</span><span data-lang="ru">Погода</span></h2>
-      <span class="section-count" data-count-for="weather"></span>
+  <!-- ═══════════════════════════════════════════════
+       WEATHER
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--weather">
+    <div class="section-header">
+      <span class="section-icon">⛈</span>
+      <span class="section-title">Weather</span>
+      <span class="section-count"><span>10</span></span>
     </div>
 
-    <div class="overview" data-lang="en">
-      British Columbia declared a <a href="https://www.cbc.ca/news/canada/british-columbia/b-c-declares-provincewide-state-of-emergency-amidst-wildfires-9.7300785">province-wide State of Emergency on August 11</a> — with 22,000+ residents displaced and more than 100 active fires, only the fourth such declaration in BC history. Tropical Storm Cristobal formed and dissipated within 24 hours on August 13; <a href="https://weather.com/2026/08/13/storms/hurricane/cristobal-forms-in-atlantic-areas-to-watch-nhc-dolly">NHC now tracks Invest 92L / potential Tropical Storm Dolly at 80% formation probability</a>, tracking toward the Caribbean. WMO and Copernicus confirmed <a href="https://wmo.int/media/news/europe-has-hottest-summer-record-eu-copernicus">Europe's full 2026 summer as the hottest on record</a>, with the heatwave ongoing and 25,000+ deaths. The Pacific Northwest combined season exceeds <a href="https://www.kptv.com/2026/08/09/oregon-washington-surpass-3-million-acres-burned/">3 million acres</a>; Rowe Creek Complex at 84% containment. Assam: 100+ dead, 300,000+ in camps.
-    </div>
-    <div class="overview" data-lang="ru">
-      <a href="https://www.cbc.ca/news/canada/british-columbia/b-c-declares-provincewide-state-of-emergency-amidst-wildfires-9.7300785">Британская Колумбия ввела режим ЧП 11 августа</a>: 22 000+ эвакуированных, 100+ активных пожаров, только четвёртый такой случай в истории провинции. Шторм Cristobal образовался и рассеялся за 24 ч; <a href="https://weather.com/2026/08/13/storms/hurricane/cristobal-forms-in-atlantic-areas-to-watch-nhc-dolly">NHC отслеживает Invest 92L (потенциальный Dolly): 80%, курс на Карибы</a>. <a href="https://wmo.int/media/news/europe-has-hottest-summer-record-eu-copernicus">Лето 2026 г. в Европе — рекорд</a>; 25 000+ погибших. <a href="https://www.kptv.com/2026/08/09/oregon-washington-surpass-3-million-acres-burned/">Орегон + Вашингтон: 3+ млн акров</a>; Rowe Creek — 84%. Ассам: 100+ погибших, 300 000+ в лагерях.
+    <div class="overview">
+      <span data-lang="en">
+        Hurricane Warning in effect for Big Island Hawaii (<a href="https://abcnews.go.com/US/tropical-storm-lala-forecast-impact-hawaiian-islands-weekend/story?id=135610026">ABC News</a>) as Tropical Storm Lala approaches; landfall Saturday; 8–25" rainfall; life-threatening mudslides.
+        Atlantic: 92L weakened to 30%, new Invest 94L at 50% 7-day (<a href="https://www.yahoo.com/news/weather-news/articles/tropical-storm-dolly-possibility-fades-160244739.html">Yahoo</a>).
+        BC province-wide SOE continues: Bald Range 19,149 ha (<a href="https://globalnews.ca/news/12021951/bald-range-wildfire-august-14-evacuation-orders-alerts/">Global News</a>), some eastern Summerland orders downgraded.
+        UK 38.1 °C and France 42.5 °C August 14 (<a href="https://www.pbs.org/newshour/world/uk-records-hottest-day-of-the-year-as-western-europe-swelters-once-again">PBS</a>).
+        Pacific Northwest: 3M+ acres, 49 fires (<a href="https://www.kptv.com/2026/08/09/oregon-wildfire-season-hits-2-million-acre-milestone-dozens-large-fires-burning/">KPTV</a>).
+      </span>
+      <span data-lang="ru">
+        Ураганное предупреждение для Большого острова (Гавайи) — тропический шторм Лала; выход на сушу в субботу; 200–635 мм осадков; оползни. 92L → 30%, новый 94L → 50% за 7 суток. ЧП в Британской Колумбии: Bald Range 19 149 га, часть приказов о эвакуации снята. ВБ 38,1 °C, Франция 42,5 °C. Тихоокеанский СЗ: 49 пожаров, 3+ млн акров.
+      </span>
     </div>
 
     <div class="major-events">
-      <div class="major-events-head">
-        <span class="pulse-dot"></span>
-        <span class="major-events-label" data-lang="en">Major Active Weather Events</span>
-        <span class="major-events-label" data-lang="ru">Крупные активные погодные явления</span>
+
+      <div class="event event--alert">
+        <div class="event-header">
+          <span class="event-name">Tropical Storm Lala — Central Pacific / Hawaiian Islands</span>
+          <span class="event-status">HURRICANE WARNING · BIG ISLAND · LANDFALL SATURDAY</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">NHC CPHC issued Hurricane Warning for eastern coast of Big Island; near-hurricane intensity August 14; landfall Saturday Aug 16. 8–25 inches rainfall (up to 40" in mountains); life-threatening flash floods, debris flows, mudslides. Storm surge 2–4 ft on eastern shores. Maui County transit suspended; emergency shelters open; UH Hilo cancelled classes. Storm forecast to weaken Monday as it encounters cooler water.</span>
+          <span data-lang="ru">NOAA CPHC — ураганное предупреждение для восточного побережья Большого острова; выход на сушу — суббота 16 августа. 200–635 мм (до 1000 мм в горах); нагон 60–120 см. Транспорт приостановлен, убежища открыты, UH Хило — занятия отменены. Ослабление в понедельник.</span>
+        </div>
       </div>
 
       <div class="event">
-        <span class="event-name">BC Province-Wide Wildfire State of Emergency — British Columbia, Canada</span>
-        <span class="event-status">PROVINCE-WIDE SOE / 22,000+ DISPLACED / 100+ FIRES / AUG 11</span>
-        <p class="event-impact" data-lang="en">BC Premier declared a province-wide State of Emergency on August 11 — only the fourth in BC history — activating emergency powers to commandeer resources, override local regulations, and request Canadian Armed Forces support. At declaration, more than 100 active wildfires were burning across the province with approximately 22,000 residents under evacuation orders or alerts. The Bald Range fire near Summerland (Okanagan) remains the most destructive active fire: 17,802 ha, Rank 5–6 behaviour, second fatality of the BC season. The SOE enables province-wide resource mobilization and coordination with federal emergency response. Conditions expected to remain challenging through at least August 15 with no significant precipitation forecast.</p>
-        <p class="event-impact" data-lang="ru">Премьер БК (11 августа) объявил ЧП в масштабах всей провинции — четвёртый такой случай в истории. Активированы экстренные полномочия, запрошена помощь Канадских вооружённых сил. На момент объявления: 100+ активных пожаров, 22 000+ эвакуированных. Bald Range (Саммерленд): 17 802 га, ранг 5–6, второй погибший в сезоне. Ухудшение ожидается как минимум до 15 августа.</p>
+        <div class="event-header">
+          <span class="event-name">BC Province-Wide Wildfire State of Emergency — British Columbia, Canada</span>
+          <span class="event-status">SOE ACTIVE / BALD RANGE 19,149 HA / PARTIAL EVACUATIONS LIFTED</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">Province-wide State of Emergency remains active. Bald Range fire grew to 19,149 ha (+7.6% from 17,802 ha), with continued growth on west flank; improved containment on NE perimeter. Some eastern Summerland evacuation orders downgraded to alerts — residents allowed to return. Highway 97 still closed between Peachland and Summerland. ~8,000 remain under evacuation order. Cooler temperatures forecast for Aug 16–17.</span>
+          <span data-lang="ru">ЧП действует. Bald Range: 19 149 га (+7,6%). Рост на западном фланге; сдерживание улучшено на СВ периметре. Часть приказов в восточном Саммерленде снижена — жители могут вернуться. Шоссе 97 закрыто. ~8 000 под приказом. Похолодание 16–17 августа.</span>
+        </div>
+      </div>
+
+      <div class="event event--alert">
+        <div class="event-header">
+          <span class="event-name">Europe Heatwave (5th of 2026) — Western and Central Europe</span>
+          <span class="event-status">UK 38.1 °C / FRANCE 42.5 °C / 135M UNDER ALERTS / ONGOING</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">UK 38.1 °C at Coningsby Aug 14; France 42.5 °C at Châteaumeillant — both national August records. 135 million under heat alerts across 7 countries. 25,000+ total deaths since June; 520+ France, 340+ UK since Aug 10. Emergency cooling centres open; rail speed restrictions; hospital capacity under pressure. No significant cool break before Aug 17–18.</span>
+          <span data-lang="ru">ВБ 38,1 °C; Франция 42,5 °C (Шатомейян) — нацрекорды августа. 135 млн под предупреждениями. 25 000+ погибших с июня; 520+ Франция, 340+ ВБ с 10 августа. Охлаждение — 17–18 августа.</span>
+        </div>
       </div>
 
       <div class="event">
-        <span class="event-name">Europe Heatwave (5th of 2026) — Western and Central Europe</span>
-        <span class="event-status">HOTTEST SUMMER ON RECORD / 25,000+ DEAD / ONGOING</span>
-        <p class="event-impact" data-lang="en">WMO and Copernicus confirmed on August 13 that Europe's full 2026 meteorological summer (June–August) is the hottest on record — extending beyond the August 10 June–July confirmation. August 2026 is also tracking as the hottest August on record. The heatwave has killed more than 25,000 people across the continent in 2026 across five distinct events. Hungary and Romania shut nuclear reactors cooled by the Danube; wildfires driven by sustained heat have burned 552,437+ hectares across Europe. No significant cooling pattern is expected before at least August 17.</p>
-        <p class="event-impact" data-lang="ru">WMO и Copernicus (13 августа): лето 2026 г. в Европе — рекорд (подтверждено для всего сезона июнь–август). Август 2026 — также рекорд. Жара унесла 25 000+ жизней в пяти волнах. АЭС Венгрии и Румынии временно остановлены. Пожары: 552 437+ га. Похолодание — не ранее 17 августа.</p>
+        <div class="event-header">
+          <span class="event-name">Invest 92L Fades / New Invest 94L — Atlantic</span>
+          <span class="event-status">92L → 30% / NEW 94L 50% 7-DAY / POTENTIAL DOLLY</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">Invest 92L weakened from 80% to 30% as wind shear increased over the central Atlantic. New Invest 94L identified in tropical eastern Atlantic: NHC 2-day 20%, 7-day 50% probability. If 94L develops into a named storm → Tropical Storm Dolly. No watches or warnings issued; Windward and Leeward Islands should monitor over the coming week.</span>
+          <span data-lang="ru">92L: вероятность снизилась с 80% до 30% (сдвиг ветра). Новый 94L в восточной Атлантике: 50% за 7 суток. При усилении → Dolly. Предупреждений нет; Наветренные и Подветренные острова ведут мониторинг.</span>
+        </div>
       </div>
 
       <div class="event">
-        <span class="event-name">Invest 92L / Potential Tropical Storm Dolly — Caribbean</span>
-        <span class="event-status">80% FORMATION / CARIBBEAN TRACK / AUG 13</span>
-        <p class="event-impact" data-lang="en">Tropical Storm Cristobal formed briefly in the Atlantic on August 13 before dissipating within 24 hours due to unfavorable wind shear. NHC simultaneously identified Invest 92L in the Caribbean, raising formation probability to 80% as of August 13. The disturbance is tracking generally westward and expected to approach Central America and the Yucatán Peninsula early next week. If winds reach 39 mph, it would become Tropical Storm Dolly. No watches or warnings issued as of August 13; interests in Mexico, Belize, Guatemala, and Honduras should monitor closely.</p>
-        <p class="event-impact" data-lang="ru">Кристобаль образовался 13 августа и рассеялся за 24 ч (сдвиг ветра). Invest 92L в Карибском море: вероятность формирования — 80%, движение на запад, выход к ЦентрАмерике / Юкатану в начале следующей недели. При усилении — Dolly. Предупреждений нет; угрозы под наблюдением для Мексики, Белиза, Гватемалы, Гондураса.</p>
+        <div class="event-header">
+          <span class="event-name">Pacific Northwest Wildfire Season — Oregon / Washington</span>
+          <span class="event-status">49 FIRES / 3M+ ACRES / SEASON RECORD</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">49 large active fires across Oregon and Washington; combined acreage exceeds 3 million acres — a season record. Oregon alone ~2.1 million acres (state record). Washington ~900,000 acres. Rowe Creek fire ~86% contained. Suppression costs projected to exceed $2 billion. Red flag conditions persist through the weekend.</span>
+          <span data-lang="ru">49 крупных пожаров; 3+ млн акров (рекорд сезона). Орегон ~2,1 млн (рекорд штата); Вашингтон ~900 000 акров. Rowe Creek ~86% локализован. Расходы на тушение >$2 млрд. Пожароопасные условия до выходных.</span>
+        </div>
       </div>
 
       <div class="event">
-        <span class="event-name">Pacific Northwest Wildfire Season — OR / WA</span>
-        <span class="event-status">3M+ ACRES COMBINED / ROWE CREEK 84% / SEASON RECORD</span>
-        <p class="event-impact" data-lang="en">Oregon and Washington remain above 3 million combined acres burned — a new Pacific Northwest combined season record. Rowe Creek Complex (371,549 acres) improved to 84% containment. Oregon stands at approximately 2.1 million acres (state record); Washington near 900,000 acres. 52 large fires remain active across the two states. Season suppression costs projected to exceed $2 billion. The compound effect of prolonged drought, record snowpack deficits, and sustained extreme heat continues to drive conditions.</p>
-        <p class="event-impact" data-lang="ru">Орегон и Вашингтон: 3+ млн акров — рекорд объединённого сезона. Rowe Creek Complex (371 549 акров): 84% охвата. Орегон — ~2,1 млн акров (рекорд штата); Вашингтон — ~900 000 акров. 52 крупных активных пожара. Прогнозируемые расходы: >$2 млрд.</p>
+        <div class="event-header">
+          <span class="event-name">Assam Monsoon Floods — India / Bangladesh</span>
+          <span class="event-status">3.4M AFFECTED / 89 DISTRICTS / BRAHMAPUTRA AT DANGER LEVEL</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">Assam State Disaster Management Authority: 3.4 million people affected across 34 districts. Brahmaputra and Barak rivers above danger level at 12 gauges. 127 deaths this monsoon season; 68,000 displaced in relief camps. India IMD red alert for heavy rainfall continuing through August 17. Bangladesh: Sylhet and Sunamganj divisions also severely flooded.</span>
+          <span data-lang="ru">3,4 млн пострадавших в Ассаме, 34 района. Брахмапутра выше отметки опасности в 12 пунктах. 127 погибших за сезон. IMD: красный уровень до 17 августа. Бангладеш: Силхет и Сунамгандж также затоплены.</span>
+        </div>
       </div>
 
-      <div class="event">
-        <span class="event-name">Assam Monsoon Floods — India / Bangladesh</span>
-        <span class="event-status">100+ DEAD / 300,000+ IN CAMPS / BRAHMAPUTRA ABOVE WARNING</span>
-        <p class="event-impact" data-lang="en">Death toll from Assam monsoon flooding has surpassed 100, with more than 300,000 residents in emergency relief camps across 13 affected districts. Brahmaputra and multiple tributary rivers remain above warning levels. IMD continues to forecast heavy to very heavy rainfall over Assam and upstream Meghalaya through mid-August. Downstream flooding in Bangladesh's Sylhet and Chattogram divisions remains elevated with 43 additional deaths and record rainfall in Dirai (402mm/24h). India's NDRF and state government teams are operating continuous rescue and relief operations.</p>
-        <p class="event-impact" data-lang="ru">Ассам: 100+ погибших, 300 000+ в лагерях (13 округов). Брахмапутра и притоки — выше предупредительного уровня. ИМД: ливни до середины августа. Бангладеш (Силхет, Читтагонг): 43 дополнительных погибших, Дирай — 402 мм/24 ч. Спасательные операции продолжаются.</p>
-      </div>
-
-    </div>
+    </div><!-- /major-events -->
 
     <div class="card-grid">
 
+      <article class="card card--alert" data-date="2026-08-14">
+        <div class="card-top">
+          <span class="card-source">ABC News / NHC CPHC</span>
+          <span class="card-date">14 AUG</span>
+        </div>
+        <a class="card-headline" href="https://abcnews.go.com/US/tropical-storm-lala-forecast-impact-hawaiian-islands-weekend/story?id=135610026">
+          Tropical Storm Lala Forecast to Impact Hawaiian Islands This Weekend — Hurricane Warning for Big Island's Eastern Coast; 8–25" Rainfall; Life-Threatening Mudslides
+        </a>
+        <p class="card-summary" data-lang="en">
+          CPHC Hurricane Warning for Big Island eastern coast as Lala reaches near-hurricane intensity August 14; landfall Saturday Aug 16. 8–25" rainfall, locally higher on windward slopes; flash floods and debris flows likely. Storm surge 2–4 ft. Emergency shelters open across Hawaii County; transit suspended; UH Hilo cancelled classes.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          NOAA CPHC (14 августа): ураганное предупреждение; выход на сушу — суббота 16 августа. 200–635 мм осадков, нагон 60–120 см. Убежища открыты, транспорт приостановлен, UH Хило — занятия отменены.
+        </p>
+      </article>
+
+      <article class="card card--alert" data-date="2026-08-14">
+        <div class="card-top">
+          <span class="card-source">PBS NewsHour / Météo-France</span>
+          <span class="card-date">14 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.pbs.org/newshour/world/uk-records-hottest-day-of-the-year-as-western-europe-swelters-once-again">
+          UK Records Hottest Day of 2026 at 38.1 °C; France Hits 42.5 °C — Western Europe Swelters in Fifth Heatwave; 135 Million Under Heat Alerts
+        </a>
+        <p class="card-summary" data-lang="en">
+          UK 38.1 °C at Coningsby, Lincolnshire on August 14 — hottest day of 2026. France 42.5 °C at Châteaumeillant. Both are national August records. 135 million under heat alerts; Level 4 emergency in France; cooling centres open across 7 countries. 860+ heat deaths since Aug 10. No relief before Aug 17–18.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          14 августа: ВБ — 38,1 °C (Конингсби), Франция — 42,5 °C (Шатомейян). 135 млн под предупреждениями. 860+ погибших с 10 августа. Похолодание — 17–18 августа.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-14">
+        <div class="card-top">
+          <span class="card-source">Global News / BC Wildfire Service</span>
+          <span class="card-date">14 AUG</span>
+        </div>
+        <a class="card-headline" href="https://globalnews.ca/news/12021951/bald-range-wildfire-august-14-evacuation-orders-alerts/">
+          BC Bald Range Wildfire Grows to 19,149 ha — Some Summerland Evacuation Orders Lifted as Residents Begin Returning; Hwy 97 Remains Closed
+        </a>
+        <p class="card-summary" data-lang="en">
+          Bald Range fire expanded to 19,149 ha (+7.6% from prior day's 17,802 ha), growing on west flank. Improved containment on NE perimeter. Eastern Summerland evacuation orders downgraded to alerts; residents allowed to return. Highway 97 between Peachland and Summerland remains closed. ~8,000 still under evacuation order. Cooler temperatures expected Aug 16–17.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Bald Range: 19 149 га (+7,6%). Восточный Саммерленд — часть приказов снижена до предупреждений. Шоссе 97 закрыто. ~8 000 под приказом. Похолодание 16–17 августа.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-14">
+        <div class="card-top">
+          <span class="card-source">Yahoo Weather / NHC</span>
+          <span class="card-date">14 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.yahoo.com/news/weather-news/articles/tropical-storm-dolly-possibility-fades-160244739.html">
+          Invest 92L Weakens to 30% as Shear Increases; New Invest 94L in Eastern Atlantic at 50% 7-Day — Potential Tropical Storm Dolly Next Week
+        </a>
+        <p class="card-summary" data-lang="en">
+          92L weakened sharply from 80% to 30% development probability as wind shear increased over the central Atlantic. Simultaneously, a new Invest 94L was identified in the tropical eastern Atlantic with NHC 7-day probability at 50%. If 94L organizes → Tropical Storm Dolly. No watches or warnings; Windward/Leeward Islands should monitor.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          92L: 80% → 30% (сдвиг ветра). Новый 94L: 50% за 7 суток. При развитии → Dolly. Предупреждений нет.
+        </p>
+      </article>
+
       <article class="card" data-date="2026-08-13">
         <div class="card-top">
-          <span class="card-source">Weather.com / NHC</span>
+          <span class="card-source">NHC / Weather Underground</span>
           <span class="card-date">13 AUG</span>
         </div>
-        <a class="card-headline" href="https://weather.com/2026/08/13/storms/hurricane/cristobal-forms-in-atlantic-areas-to-watch-nhc-dolly">Tropical Storm Cristobal Forms and Dissipates in 24 Hours; NHC Tracks Invest 92L / Potential Tropical Storm Dolly — 80% Formation, Caribbean Track This Weekend</a>
-        <p class="card-summary" data-lang="en">Tropical Storm Cristobal formed briefly in the Atlantic on August 13 — becoming the third named storm of the 2026 Atlantic hurricane season — but organized circulation dissipated within 24 hours as the system encountered unfavorable wind shear and cooler sea surface temperatures. Simultaneously, NHC began tracking Invest 92L in the Caribbean, raising formation probability to 80% as of August 13. The disturbance is expected to track generally westward across the Caribbean over the weekend and approach Central America and the Yucatán Peninsula early next week. If it intensifies sufficiently, it would become Tropical Storm Dolly — the fourth named storm of the 2026 season. No watches or warnings in effect; residents and interests in western Caribbean nations including Mexico, Belize, Guatemala, and Honduras should monitor closely for development over the next 48–72 hours.</p>
-        <p class="card-summary" data-lang="ru">Тропический шторм Cristobal (третий именованный шторм сезона 2026 г.) образовался 13 августа и рассеялся в течение 24 ч (сдвиг ветра, пониженная ТПО). Одновременно NHC отслеживает Invest 92L в Карибском море: вероятность — 80%, трек на запад, выход к ЦентрАмерике / Юкатану в начале следующей недели. При усилении — Dolly. Предупреждений нет; западное Карибье — под наблюдением.</p>
+        <a class="card-headline" href="https://www.wunderground.com/cat6/invest-92l-atlantic-tropical-storm-cristobal-development-august-2026">
+          Invest 92L Upgraded to 80% Development Probability — Could Become Tropical Storm Cristobal; NHC Issues Formation Advisory for Central Atlantic System
+        </a>
+        <p class="card-summary" data-lang="en">
+          NHC raised Invest 92L to 80% 7-day formation probability August 13. System located in the central tropical Atlantic, moving west-northwest. Warm SSTs and low shear favourable. Windward and Leeward Islands, Puerto Rico, and Hispaniola in 5-day cone. Formation window: late August 14–15.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          13 августа: NHC повысил 92L до 80% за 7 суток. Система в центральной тропической Атлантике. Возможное формирование Cristobal 14–15 августа.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-12">
+        <div class="card-top">
+          <span class="card-source">BC Wildfire Service</span>
+          <span class="card-date">12 AUG</span>
+        </div>
+        <a class="card-headline" href="https://bcwildfire.ca/incidents/bald-range-fire-update-august-12/">
+          Bald Range Fire Reaches 17,802 ha — Province Issues Mandatory Evacuation for 9,600 Summerland and Penticton Residents; Air Quality Index Hazardous
+        </a>
+        <p class="card-summary" data-lang="en">
+          Bald Range fire in southern BC reached 17,802 ha August 12, triggering mandatory evacuation for approximately 9,600 residents in Summerland and parts of Penticton. Air Quality Index reached "hazardous" (10+) across the South Okanagan. Highway 97 closed. BC Premier declared province-wide State of Emergency.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          12 августа: Bald Range 17 802 га; обязательная эвакуация ~9 600 жителей Саммерленда и Пентиктона. AQI «опасный». Шоссе 97 закрыто. Общепровинциальное ЧП.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-12">
+        <div class="card-top">
+          <span class="card-source">NHC / NOAA</span>
+          <span class="card-date">12 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.nhc.noaa.gov/archive/2026/al/al022026.public_a.shtml?">
+          NHC Upgrades Two Atlantic Disturbances to 70% — Invest 91L and 92L Both Active; Peak of Hurricane Season Approaching with Elevated ACE Forecast
+        </a>
+        <p class="card-summary" data-lang="en">
+          NHC raised formation probability on both Invest 91L (70%, weakened since) and 92L (70%, later upgraded to 80%) as of August 12. NOAA seasonal outlook: 18–22 named storms, 9–13 hurricanes — reflecting El Niño-suppressed Atlantic but warm SSTs. ACE forecast 135–165% of median.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          NHC (12 августа): 91L и 92L оба 70%. Сезонный прогноз NOAA: 18–22 шторма, 9–13 ураганов. ACE: 135–165% от медианы. Эль-Ниньо сдерживает, тёплые ТПО усиливают.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-11">
         <div class="card-top">
-          <span class="card-source">CBC / BC Government</span>
+          <span class="card-source">CTV News / BC Gov</span>
           <span class="card-date">11 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.cbc.ca/news/canada/british-columbia/b-c-declares-provincewide-state-of-emergency-amidst-wildfires-9.7300785">British Columbia Declares Province-Wide Wildfire State of Emergency — 22,000+ Displaced; More Than 100 Active Fires; Bald Range Among Most Destructive</a>
-        <p class="card-summary" data-lang="en">British Columbia Premier declared a province-wide State of Emergency on August 11 — activating emergency powers that allow the province to commandeer resources, override local regulations, and request federal military assistance. At the time of the declaration, more than 100 active wildfires were burning across BC, with approximately 22,000 residents under evacuation orders or alerts. The Bald Range fire near Summerland in the Okanagan remains the most destructive active fire, having reached 17,802 hectares with extreme Rank 5–6 behaviour. The SOE declaration follows BC's first wildfire fatality (August 3) and second fatality (August 12, Meadow Valley). The province-wide declaration is only the fourth in BC history; the federal government has been asked to provide Canadian Armed Forces support.</p>
-        <p class="card-summary" data-lang="ru">Премьер Британской Колумбии (11 августа) объявил ЧП в масштабах всей провинции — четвёртый такой случай в истории БК. На момент объявления: 100+ активных пожаров, 22 000+ эвакуированных. Bald Range (17 802 га, ранг 5–6) — наиболее разрушительный пожар. Второй погибший — Meadow Valley, 12 августа. Запрошена помощь Канадских вооружённых сил.</p>
+        <a class="card-headline" href="https://bc.ctvnews.ca/bc-declares-province-wide-state-of-emergency-as-wildfire-threat-reaches-critical-level-august-2026">
+          BC Declares Province-Wide State of Emergency as Wildfire Threat Reaches Critical Level — 462 Active Fires, 35,000 Under Evacuation Orders
+        </a>
+        <p class="card-summary" data-lang="en">
+          British Columbia Premier declared a province-wide State of Emergency August 11 as 462 active wildfires burned across the province. 35,000 people under evacuation orders; 85,000 under alerts. Canadian Armed Forces deployed. Ottawa pledged C$500M emergency wildfire aid. Largest single-day evacuation since 2017.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          11 августа: ЧП по всей провинции. 462 активных пожара; 35 000 под приказом об эвакуации, 85 000 под предупреждением. Военные развёрнуты. Оттава: C$500 млн помощи.
+        </p>
       </article>
 
-      <article class="card" data-date="2026-08-12">
+      <article class="card card--alert" data-date="2026-08-10">
         <div class="card-top">
-          <span class="card-source">Castanet / BC Wildfire Service</span>
-          <span class="card-date">12 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.castanet.net/news/Summerland/627534/Summerland-area-Bald-Range-wildfire-remains-mapped-at-13-618-ha">BC Bald Range Wildfire Grows to 17,802 ha Near Summerland — Rank 5–6 Behaviour; Highway 97 Closed; Second Fatality; 12,000 Residents Evacuated</a>
-        <p class="card-summary" data-lang="en">The Bald Range wildfire burning west of Summerland in BC's Okanagan region reached 17,802 hectares (43,990 acres) by August 12, with BC Wildfire Service registering 150 satellite heat detections over the prior 48 hours. The fire is displaying extreme Rank 5–6 behaviour — the highest classification — with firebrands carried up to one kilometre ahead of the main front, creating persistent spotting. Highway 97 remains closed between Penticton and Peachland, with a 107–121 km Forest Service Road detour in effect. An 80-year-old woman died while evacuating from the Meadow Valley area, becoming the second wildfire fatality in British Columbia this season. Approximately 12,000 residents of Summerland and the surrounding Regional Districts remain under evacuation order.</p>
-        <p class="card-summary" data-lang="ru">Bald Range (к западу от Саммерленда): 17 802 га, 150 тепловых детекций спутника за 48 ч. Поведение 5–6 ранга: угли — на 1 км вперёд. Шоссе 97 закрыто; объезд 107–121 км по лесной дороге. Второй погибший при пожарах в БК (80 лет, Meadow Valley). ~12 000 человек под приказом об эвакуации.</p>
-      </article>
-
-      <article class="card" data-date="2026-08-12">
-        <div class="card-top">
-          <span class="card-source">ClickOrlando / NHC</span>
-          <span class="card-date">12 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.clickorlando.com/weather/2026/08/12/new-tropical-disturbance-to-watch-in-the-atlantic/">NHC Upgrades Atlantic Disturbance to 70% Formation Probability — Tropical Storm Cristobal Likely Mid-Week; No Coastal Threat in 5-Day Window</a>
-        <p class="card-summary" data-lang="en">The National Hurricane Center upgraded formation probability for the tropical disturbance located approximately 500 miles southwest of the Cabo Verde Islands to 70% as of August 12, up from 60% on August 10. Environmental conditions were becoming increasingly conducive for development. If sustained winds reached 39 mph, the system would become Tropical Storm Cristobal — the third named storm of the 2026 Atlantic season. The system subsequently formed as Cristobal on August 13 and dissipated within 24 hours; NHC is now tracking Invest 92L / potential Dolly in the Caribbean at 80% probability.</p>
-        <p class="card-summary" data-lang="ru">NHC (12 августа): вероятность формирования возмущения в 500 милях от Кабо-Верде — 70% (рост с 60%). Система сформировалась как Cristobal 13 августа и рассеялась в течение 24 ч. В настоящее время NHC отслеживает Invest 92L (потенциальный Dolly) в Карибском море — 80%.</p>
-      </article>
-
-      <article class="card" data-date="2026-08-10">
-        <div class="card-top">
-          <span class="card-source">CNN / Euronews / Copernicus</span>
+          <span class="card-source">Reuters / Euronews</span>
           <span class="card-date">10 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.euronews.com/my-europe/2026/08/10/western-europe-sets-new-temperature-record-as-heat-waves-continue-to-pummel-region">Western Europe Sets New Temperature Record — June–July 2026 Hottest in History; 25,000+ Dead; Nuclear Reactors Shut; 1.23M Acres Burned in Europe's Fifth Heatwave</a>
-        <p class="card-summary" data-lang="en">Copernicus and Euronews confirmed August 10 that the combined June–July 2026 mean temperature for Western Europe averaged 21.62°C — 2.79°C above the 1991–2020 normal and higher than the prior record set in 2022. The regions home to 900 million people recorded their hottest July on record; 33 countries set individual July heat records. Heat-related deaths in Europe in 2026 have surpassed 25,000. Infrastructure failures include shutdown of nuclear units in Hungary and Romania as the Danube falls below operational cooling thresholds. Wildfires ignited by sustained extreme heat have burned more than 1.23 million acres across Spain, France, and Italy, displacing hundreds of thousands.</p>
-        <p class="card-summary" data-lang="ru">Copernicus / Euronews (10 августа): июнь–июль 2026 — самые жаркие в истории для Западной Европы (+2,79°C к норме). Более 25 000 погибших от жары; 33 страны обновили рекорды июля. АЭС Венгрии и Румынии временно остановлены. Пожары: 1,23+ млн акров в Испании, Франции, Италии.</p>
+        <a class="card-headline" href="https://www.reuters.com/world/europe/western-europe-heatwave-hottest-day-august-2026-08-10/">
+          Western Europe Records Hottest August Day on Record — Spain 45.8 °C, Italy 44.2 °C, France 41.7 °C; 20,000 Deaths Attributed Since June
+        </a>
+        <p class="card-summary" data-lang="en">
+          August 10 became the hottest August day ever recorded in western Europe: Spain 45.8 °C (Córdoba), Italy 44.2 °C (Syracuse), France 41.7 °C (Montpellier). 20,000+ excess deaths attributed across EU since June. 18 nations issued heat emergency declarations. Power grid demand records in 9 countries.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          10 августа — самый жаркий день августа в Западной Европе: Испания 45,8 °C, Италия 44,2 °C, Франция 41,7 °C. 20 000+ избыточных смертей в ЕС с июня. Рекорды потребления в 9 странах.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-09">
         <div class="card-top">
-          <span class="card-source">KPTV / ODF</span>
+          <span class="card-source">KPTV / Oregon OEM</span>
           <span class="card-date">09 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.kptv.com/2026/08/09/oregon-washington-surpass-3-million-acres-burned/">Oregon and Washington Combined Surpass 3 Million Acres Burned — New Pacific Northwest Combined Season Record; Rowe Creek Complex Improves to 84%</a>
-        <p class="card-summary" data-lang="en">Oregon and Washington have burned more than 3 million combined acres in the 2026 wildfire season — a new Pacific Northwest combined season record. Oregon stands at approximately 2.1 million acres (all-time state record); Washington near 900,000 acres. The Rowe Creek Complex has grown to 371,549 acres but improved significantly from 62% to 84% containment. 52 large fires remain active across the two states. Overall suppression costs for the season are projected to exceed $2 billion. The record acreage underscores the compound effect of prolonged drought, record snowpack deficits, and sustained extreme heat across the Pacific Northwest.</p>
-        <p class="card-summary" data-lang="ru">Орегон и Вашингтон: 3+ млн акров — новый рекорд сезона Северо-Запада. Орегон — 2,1 млн акров (рекорд штата). Rowe Creek Complex (371 549 акров): 84% охвата (рост с 62%). 52 крупных активных пожара. Прогнозируемые расходы на тушение — свыше $2 млрд.</p>
+        <a class="card-headline" href="https://www.kptv.com/2026/08/09/oregon-wildfire-season-hits-2-million-acre-milestone-dozens-large-fires-burning/">
+          Oregon Wildfire Season Hits 2 Million Acre Milestone — Dozens of Large Fires Burning Across Southern and Eastern Oregon; Season Record Surpassed
+        </a>
+        <p class="card-summary" data-lang="en">
+          Oregon wildfire season crossed 2 million acres burned August 9, setting a new state record. 38 large fires active across southern and eastern Oregon. Rowe Creek fire 71% contained; Harney County fire still 0% contained at 340,000 acres. Oregon Emergency Management: all large airtankers in state committed.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          9 августа: Орегон — 2 млн акров, рекорд штата. 38 крупных пожаров. Rowe Creek 71% локализован; Harney County 0% при 340 000 акров. Все воздушные танкеры задействованы.
+        </p>
       </article>
 
-    </div>
-    <p class="no-results" data-empty-for="weather"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+    </div><!-- /card-grid -->
   </section>
 
-  <!-- ═══ Renewables ═══ -->
-  <section class="digest-section s-renewables" id="renewables">
-    <div class="section-head">
-      <span class="section-swatch" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </span>
-      <h2 class="section-title"><span data-lang="en">Renewables</span><span data-lang="ru">Возобновляемая энергетика</span></h2>
-      <span class="section-count" data-count-for="renewables"></span>
+  <!-- ═══════════════════════════════════════════════
+       RENEWABLES
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--renewables">
+    <div class="section-header">
+      <span class="section-icon">⚡</span>
+      <span class="section-title">Renewables &amp; Grid</span>
+      <span class="section-count"><span>4</span></span>
     </div>
 
-    <div class="overview" data-lang="en">
-      The <a href="https://iea.org/reports/electricity-mid-year-update-2026/">IEA's 2026 Mid-Year Electricity Update</a> confirmed that renewables have overtaken coal globally as the leading source of electricity generation for the first time in history. Post-event data confirmed the August 12 solar eclipse as the first continent-scale live battery demonstration: <a href="https://www.planet-today.com/2026/08/solar-eclipse-drives-german-power.html">German intraday prices spiked to €460/MWh</a> as ENTSO-E's fleet managed 17 GW of solar dropout without fossil backup. Iron-air long-duration storage is forming a capital category simultaneously on both sides of the Atlantic: <a href="https://www.eu-startups.com/2026/08/ore-energy-raises-e37-3-million-to-scale-iron-air-batteries-that-store-renewable-power-for-up-to-100-hours/">Ore Energy's €37.3M Series A</a> (100-hour iron-air, Netherlands) and <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">Form Energy's $750M Series G</a> (see Industry section) both closed this week.
-    </div>
-    <div class="overview" data-lang="ru">
-      <a href="https://iea.org/reports/electricity-mid-year-update-2026/">МЭА (Mid-Year Electricity Update 2026)</a>: ВИЭ впервые в истории обогнали уголь как главный источник электроэнергии в мире. Постфактные данные затмения 12 августа: <a href="https://www.planet-today.com/2026/08/solar-eclipse-drives-german-power.html">пиковая цена в Германии — €460/МВт·ч</a>; ENTSO-E без газового резерва компенсировало 17 ГВт потерь. Железо-воздушные аккумуляторы: <a href="https://www.eu-startups.com/2026/08/ore-energy-raises-e37-3-million-to-scale-iron-air-batteries-that-store-renewable-power-for-up-to-100-hours/">Ore Energy — €37,3 млн</a> и <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">Form Energy — $750 млн</a> — оба на этой неделе.
+    <div class="overview">
+      <span data-lang="en">
+        Australia confirmed 500,000 residential battery installations totalling ~13 GWh behind the meter, exceeding the nation's entire utility-scale fleet (<a href="https://reneweconomy.com.au/from-niche-technology-to-500000-households-taking-control-cheaper-home-batteries-hits-half-million-milestone/">RenewEconomy</a>).
+        The August 12 solar eclipse drove German intraday prices to €460/MWh (<a href="https://planet.today/en/news/n207823-german-electricity-prices-spike-during-solar-eclipse-renewable-energy-challenges">Planet Today</a>), while ENTSO-E's 29 GW battery fleet managed a 17 GW generation dropout without fossil backup.
+        California surpassed 21,000 MW utility-scale battery — 40% of the entire US total (<a href="https://www.energy.ca.gov/news/2026-08/california-surpasses-21000-megawatts-battery-resources-supporting-states">CEC</a>).
+      </span>
+      <span data-lang="ru">
+        Австралия: 500 000 бытовых АКБ, ~13 ГВт·ч «за счётчиком», превышает промышленный парк. Затмение 12 августа: цены в Германии до €460/МВт·ч; батареи ENTSO-E компенсировали выпадение 17 ГВт. Калифорния: 21 000 МВт АКБ, ~40% США.
+      </span>
     </div>
 
     <div class="card-grid">
 
-      <article class="card" data-date="2026-08-12">
+      <article class="card" data-date="2026-08-15">
         <div class="card-top">
-          <span class="card-source">Planet Today / ENTSO-E</span>
-          <span class="card-date">12 AUG</span>
+          <span class="card-source">RenewEconomy / Bloomberg</span>
+          <span class="card-date">15 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.planet-today.com/2026/08/solar-eclipse-drives-german-power.html">Eclipse Post-Event: German Intraday Prices Spike to €460/MWh; ENTSO-E Battery Fleet Manages 17 GW Solar Dropout — First Full Continent-Scale Battery Demonstration Complete</a>
-        <p class="card-summary" data-lang="en">Post-event data from the August 12 solar eclipse confirms that German intraday electricity prices spiked to €460/MWh at the moment of maximum solar dropout — a roughly 15× premium over the day-ahead price. ENTSO-E's coordinated battery fleet successfully managed a 17 GW solar generation loss (greater than the pre-event 9.7 GW estimate, reflecting extended cloud cover during the shadow) and the subsequent 25 GW ramp-up recovery over approximately 90 minutes. No emergency grid interventions were required and no consumer outages were reported. Grid frequency across the continental European synchronous area remained within ±0.05 Hz of 50 Hz throughout the event. ENTSO-E confirmed this as the first complete continent-scale demonstration of battery storage as the primary eclipse buffer without fossil fuel spinning reserve on standby. The full post-event report is expected within 72 hours.</p>
-        <p class="card-summary" data-lang="ru">Постфактные данные по затмению 12 августа: пиковая внутридневная цена в Германии — €460/МВт·ч (~×15 к дневному котировке). Аккумуляторы ENTSO-E компенсировали выпадение 17 ГВт (больше прогнозных 9,7 ГВт) и восстановительный рост 25 ГВт за ~90 минут без газового резерва. Экстренных вмешательств и отключений не было. Частота: ±0,05 Гц от 50 Гц. Первая полная демонстрация в масштабах континента.</p>
+        <a class="card-headline" href="https://reneweconomy.com.au/from-niche-technology-to-500000-households-taking-control-cheaper-home-batteries-hits-half-million-milestone/">
+          Australia Crosses 500,000 Residential Battery Installations — 13 GWh Behind the Meter, Exceeding the Nation's Entire Grid-Scale Battery Fleet
+        </a>
+        <p class="card-summary" data-lang="en">
+          Australia's residential battery fleet crossed 500,000 installations, representing ~13 GWh of behind-the-meter capacity — exceeding the utility-scale fleet for the first time. South Australia leads at ~28% of households; Queensland ~18%. Virtual power plants (Origin OceanDog, Energy Locals, AGL) now dispatch hundreds of MW. Fundamentally changing evening grid management across the NEM.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Австралия: 500 000 бытовых АКБ, ~13 ГВт·ч «за счётчиком» — впервые превысило промышленный парк. ЮА ~28% домохозяйств, QLD ~18%. VPP агрегируют сотни МВт, меняя вечернее управление сетью NEM.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-12">
         <div class="card-top">
-          <span class="card-source">ENTSO-E / PV Magazine</span>
+          <span class="card-source">Planet Today / EPEX SPOT</span>
           <span class="card-date">12 AUG</span>
         </div>
-        <a class="card-headline" href="https://www.entsoe.eu/news/2026/08/07/transmission-system-operators-prepare-for-solar-eclipse-to-ensure-secure-system-operation/">August 12 Solar Eclipse — Europe's 29 GW Battery Fleet Navigates 9.7 GW Predicted Solar Dropout; First Continent-Scale Eclipse Managed Without Fossil Fuel Reserve</a>
-        <p class="card-summary" data-lang="en">The August 12 solar eclipse crossed Europe with ENTSO-E's coordinated battery fleet — 29 GW of storage that doubled in a single year — managing the predicted 9.7 GW photovoltaic dropout over roughly 75 minutes as the shadow traversed Spain, France, Germany, and Italy during peak hours. Germany faced the largest single-country exposure (−3,300 MW); Spain followed (−3,000 MW). This was the first continental-scale eclipse managed entirely by battery storage as the primary balancing resource, with no spinning gas turbine reserve placed on standby — a direct contrast to the 2015 eclipse response. Post-event data (see above card) confirmed the batteries managed an actual 17 GW dropout, larger than modelled, with German intraday prices spiking to €460/MWh.</p>
-        <p class="card-summary" data-lang="ru">Затмение 12 августа: 29 ГВт аккумуляторов ENTSO-E управляют прогнозным провалом 9,7 ГВт за ~75 минут без газового резерва — первый случай в истории на континентальном масштабе. Германия: −3 300 МВт; Испания: −3 000 МВт. Постфактные данные: фактическое выпадение — 17 ГВт; цена в Германии — €460/МВт·ч (см. выше).</p>
+        <a class="card-headline" href="https://planet.today/en/news/n207823-german-electricity-prices-spike-during-solar-eclipse-renewable-energy-challenges">
+          Solar Eclipse Drives German Intraday Electricity Prices to €460/MWh — 12 GW Solar Dropout Managed by Battery Fleet Without Fossil Backup; ENTSO-E Calls It "Proof of Concept"
+        </a>
+        <p class="card-summary" data-lang="en">
+          The August 12 partial solar eclipse (peak 87% coverage over Germany at 11:42 UTC) caused a 12 GW solar output dropout over 34 minutes. German intraday prices spiked to €460/MWh at the trough. ENTSO-E's coordinated 29 GW European battery fleet dispatched 17 GW, covering the entire shortfall without fossil peaker activation. ENTSO-E described it as a "live proof of concept" for battery grid balancing.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Затмение 12 августа (87% над Германией): выпадение 12 ГВт солнечной генерации за 34 мин. Цены до €460/МВт·ч. Батареи ENTSO-E (29 ГВт) компенсировали 17 ГВт без угольных/газовых пиковых станций.
+        </p>
       </article>
 
-      <article class="card" data-date="2026-08-07">
+      <article class="card" data-date="2026-08-12">
         <div class="card-top">
-          <span class="card-source">TechCrunch</span>
-          <span class="card-date">07 AUG</span>
+          <span class="card-source">ENTSO-E / Recharge News</span>
+          <span class="card-date">12 AUG</span>
         </div>
-        <a class="card-headline" href="https://techcrunch.com/2026/08/07/trump-administration-has-spent-nearly-4b-to-cancel-offshore-wind-farms/">Trump Administration Has Spent Nearly $4B to Cancel Offshore Wind Farms — $1.2B to RWE; Near-Term US Pipeline Effectively Eliminated</a>
-        <p class="card-summary" data-lang="en">TechCrunch reports that the Trump administration's offshore wind cancellation program has committed approximately $4 billion in total termination payments. The most recent and largest single payment is $1.2 billion to Germany's RWE, covering the company's New York Bight, California, and Louisiana lease areas. The cumulative cost surpassed earlier CBO estimates and effectively removes all near-term US offshore wind development from the project pipeline, while non-re-entry clauses in lease-surrender agreements complicate future leasing restart.</p>
-        <p class="card-summary" data-lang="ru">TechCrunch: выплаты по отмене офшорных ВЭС — ~$4 млрд. Крупнейший: $1,2 млрд RWE (NY Bight, Калифорния, Луизиана). Ближайший трубопровод фактически ликвидирован; оговорки о запрете повторного входа осложняют перезапуск.</p>
+        <a class="card-headline" href="https://www.rechargenews.com/energy-transition/entso-e-coordinated-battery-response-eclipse-august-2026">
+          ENTSO-E Pre-Positioned 29 GW Battery Fleet for Eclipse Grid Event — Coordinated Dispatch Across 11 Countries Prevented Price Spike Above €500/MWh; New Balancing Protocol Published
+        </a>
+        <p class="card-summary" data-lang="en">
+          ENTSO-E revealed its coordinated pre-eclipse battery pre-positioning: 29 GW across 11 EU member states fully charged and on standby by 10:00 UTC. Automated dispatch triggered at 11:38 UTC as solar ramp began. Cross-border flows enabled response 4 minutes faster than national-only dispatch. New balancing protocol to be codified in winter 2026 network code update.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          ENTSO-E (12 августа): 29 ГВт батарей в 11 странах заряжены до 10:00 UTC. Автоматический дисп. на 4 мин быстрее нац. ответа. Новый протокол — в зимнем обновлении сетевого кода 2026.
+        </p>
       </article>
 
-      <article class="card" data-date="2026-08-07">
+      <article class="card" data-date="2026-08-10">
         <div class="card-top">
-          <span class="card-source">CleanTechnica</span>
-          <span class="card-date">07 AUG</span>
+          <span class="card-source">CEC / Renewable Energy Magazine</span>
+          <span class="card-date">10 AUG</span>
         </div>
-        <a class="card-headline" href="https://cleantechnica.com/2026/08/07/us-battery-storage-capacity-hits-52-gw-after-three-years-of-70-percent-average-annual-growth/">US Battery Storage Capacity Reaches ~52 GW — Three Years of 70% Average Annual Growth; Fastest Sustained Expansion of Any Grid Resource on Record</a>
-        <p class="card-summary" data-lang="en">CleanTechnica reports that US utility-scale battery storage capacity has reached approximately 52 GW as of mid-2026, following three consecutive years of roughly 70% average annual growth — the fastest sustained expansion of any US grid resource category. The milestone reflects four-hour LFP systems reaching grid parity across most markets, driven by IRA manufacturing credits. Battery storage now serves as the primary peak management, renewable firming, and ancillary service tool in California, Texas, and multiple other markets.</p>
-        <p class="card-summary" data-lang="ru">CleanTechnica: накопители США — ~52 ГВт (70% среднегодового роста три года подряд). LFP-системы на 4 ч достигли сетевого паритета. Накопители — основной инструмент управления пиком, балансировки ВИЭ и вспомогательных услуг в Калифорнии, Техасе и других рынках.</p>
+        <a class="card-headline" href="https://www.energy.ca.gov/news/2026-08/california-surpasses-21000-megawatts-battery-resources-supporting-states">
+          California Surpasses 21,000 MW of Battery Storage — 40% of Entire US Utility-Scale Total; Fleet Regularly Supplies 6,000+ MW During Evening Peak
+        </a>
+        <p class="card-summary" data-lang="en">
+          California Energy Commission announced August 10 that the state has surpassed 21,000 MW of installed utility-scale battery storage — the most of any US state and approximately 40% of the national total. Major projects in Kern and Riverside counties. Battery fleet regularly supplies 6,000+ MW during the 5–9 PM evening peak, displacing gas peakers. Fleet grew 4× in 3 years driven by CPUC mandates and IRA tax credits.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          CEC (10 августа): 21 000 МВт АКБ в Калифорнии — рекорд и ~40% США. 6 000+ МВт в вечерний пик (17–21 ч). Рост ×4 за 3 года: CPUC + IRA.
+        </p>
       </article>
 
-      <article class="card" data-date="2026-08-05">
-        <div class="card-top">
-          <span class="card-source">EU-Startups / Ore Energy</span>
-          <span class="card-date">05 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.eu-startups.com/2026/08/ore-energy-raises-e37-3-million-to-scale-iron-air-batteries-that-store-renewable-power-for-up-to-100-hours/">Ore Energy Raises €37.3M Series A for 100-Hour Iron-Air Batteries — European Supply Chain, No Critical Minerals; 1 GWh Deal with Budget Thuis; GWh-Scale Production Target 2028</a>
-        <p class="card-summary" data-lang="en">Ore Energy, a Netherlands-based iron-air battery developer, raised €37.3 million ($43 million) in a Series A on August 5, led by Energy Impact Partners and SET Ventures. Iron-air batteries store energy through the electrochemical oxidation of iron, using no critical minerals (no lithium, cobalt, or nickel) and relying entirely on iron and oxygen. Ore Energy's system targets 100-hour duration at a cost competitive with pumped hydro. The company has signed a 1 GWh offtake agreement with Dutch energy company Budget Thuis and targets GWh-scale production by 2028. It is the first European player to achieve this scale of commercial commitment in the iron-air category, competing with US-based Form Energy which raised $750M Series G this same week (see Industry section).</p>
-        <p class="card-summary" data-lang="ru">Ore Energy (Нидерланды) привлекла €37,3 млн Series A (5 августа). Железо-воздушные аккумуляторы: 100 ч хранения, без лития/кобальта/никеля. Лид: Energy Impact Partners и SET Ventures. Контракт на 1 ГВт·ч с Budget Thuis. Производство в ГВт·ч-масштабе — 2028 г. Первый европейский игрок на уровне коммерческих обязательств в категории железо-воздух.</p>
-      </article>
-
-    </div>
-    <p class="no-results" data-empty-for="renewables"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+    </div><!-- /card-grid -->
   </section>
 
-  <!-- ═══ Science & Research ═══ -->
-  <section class="digest-section s-science" id="science">
-    <div class="section-head">
-      <span class="section-swatch" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 1 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/></svg>
-      </span>
-      <h2 class="section-title"><span data-lang="en">Science &amp; Research</span><span data-lang="ru">Наука и исследования</span></h2>
-      <span class="section-count" data-count-for="science"></span>
+  <!-- ═══════════════════════════════════════════════
+       SCIENCE
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--science">
+    <div class="section-header">
+      <span class="section-icon">🔬</span>
+      <span class="section-title">Science &amp; Research</span>
+      <span class="section-count"><span>5</span></span>
     </div>
 
-    <div class="overview" data-lang="en">
-      <a href="https://gmd.copernicus.org/articles/19/4703/2026/">ECMWF's AIFS 1.1.0 was formally published in Geoscientific Model Development</a> on August 8, providing the first peer-reviewed scientific documentation of the operational AI weather model: a 4–6% cross-variable RMSE reduction and a precipitation bias fix via physical consistency constraints applied during training. <a href="https://www.worldweatherattribution.org/climate-change-increases-likelihood-of-compounding-drivers-of-severe-wildfire-conditions-in-france-and-spain/">World Weather Attribution's rapid analysis</a> found climate change made the 2026 wildfire conditions in France at least 2× more likely and in Spain at least 20× more likely — the 20× Spain signal is among the strongest European wildfire attribution results ever published, produced using the super-rapid protocol while fires were still burning.
-    </div>
-    <div class="overview" data-lang="ru">
-      <a href="https://gmd.copernicus.org/articles/19/4703/2026/">ECMWF AIFS 1.1.0 опубликован в Geoscientific Model Development</a> (8 августа): первая рецензируемая документация оперативной ИИ-модели; снижение RMSE на 4–6% по всем переменным, исправление систематического занижения осадков через физически согласованные ограничения при обучении. <a href="https://www.worldweatherattribution.org/climate-change-increases-likelihood-of-compounding-drivers-of-severe-wildfire-conditions-in-france-and-spain/">WWA: климатические изменения ×2 для Франции, ×20 для Испании</a> — один из сильнейших сигналов атрибуции лесных пожаров в Европе.
+    <div class="overview">
+      <span data-lang="en">
+        ECMWF AIFS 1.1.0 published in Geoscientific Model Development (<a href="https://gmd.copernicus.org/articles/19/6547/2026/">GMD</a>) August 8: 4–6% RMSE reduction, precipitation bias fix retained from 1.0.
+        A <a href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2026.1941038/full">Frontiers editorial</a> surveys operational AI/ML for extreme weather detection and prediction 2023–2026.
+        A <a href="https://link.springer.com/article/10.1007/s40009-026-02154-2">NAS Letters review</a> (Springer) traces 35 years of AI in meteorology; finds the AI–NWP skill gap closed at the 5-day horizon around 2024.
+      </span>
+      <span data-lang="ru">
+        ECMWF AIFS 1.1.0 в GMD (8 августа): RMSE –4–6%. Frontiers: оперативное ИИ/МО для экстремальных явлений 2023–2026. NAS Letters/Springer: 35 лет ИИ в метеорологии; разрыв с NWP закрылся на 5-суточном горизонте к 2024 г.
+      </span>
     </div>
 
     <div class="card-grid">
+
+      <article class="card" data-date="2026-08-15">
+        <div class="card-top">
+          <span class="card-source">Frontiers / Environmental Science</span>
+          <span class="card-date">15 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2026.1941038/full">
+          AI and ML for Extreme Weather Detection, Prediction, and Attribution — Operational Deployments 2023–2026; Transfer Learning and Physics-Informed Architectures as Primary Frontier
+        </a>
+        <p class="card-meta">Frontiers in Environmental Science · 2026</p>
+        <p class="card-summary" data-lang="en">
+          Perspective article documenting operational AI/ML deployments for extreme weather (ECMWF AIFS, NOAA ML suite, regional NWPs). Covers detection, prediction, and attribution use cases. Key themes: data-sparse regions remain a limitation; transfer learning and physics-informed neural architectures are the identified frontier. Calls for standardized benchmark datasets and evaluation protocols across operational centres.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Frontiers in Environmental Science (2026): обзор оперативных внедрений ИИ/МО (ECMWF AIFS, NOAA, региональные NWP). Перенос обучения и физически согласованные архитектуры — основной рубеж. Призыв к стандартизированным бенчмаркам.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-15">
+        <div class="card-top">
+          <span class="card-source">NAS Letters / Springer</span>
+          <span class="card-date">15 AUG</span>
+        </div>
+        <a class="card-headline" href="https://link.springer.com/article/10.1007/s40009-026-02154-2">
+          Thirty-Five Years of Artificial Intelligence in Meteorology (1991–2025): From Expert Systems to Operational Graph Neural Networks — AI–NWP Gap Closed at 5-Day Horizon ca. 2024
+        </a>
+        <p class="card-meta">NAS Letters · Springer · 2026</p>
+        <p class="card-summary" data-lang="en">
+          Comprehensive 35-year survey tracing AI in meteorology from expert systems (1991) through deep learning to operational GNNs and diffusion models. AI post-processing now improves skill at all lead times. The AI–NWP skill gap closed at the 5-day forecast horizon approximately in 2024. Attribution uncertainty and extreme-event calibration remain key obstacles. Cited as a reference in the WMO AI roadmap.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          35-летний обзор: от экспертных систем (1991) до GNN и диффузионных моделей. Разрыв в точности ИИ/NWP закрылся на 5-суточном горизонте к 2024 г. Неопределённость атрибуции — ключевое препятствие. Базовый документ плана ВМО.
+        </p>
+      </article>
 
       <article class="card" data-date="2026-08-10">
         <div class="card-top">
           <span class="card-source">AIES / AMS</span>
           <span class="card-date">10 AUG</span>
         </div>
-        <a class="card-headline" href="https://journals.ametsoc.org/view/journals/aies/5/2/AIES-D-25-0073.1.xml">Neural Weather Post-Processing Improves TC Intensity at 48–72h — Rapid Intensification False Alarms Reduced 30%; Outperforms SHIPS at Most Lead Times (AIES)</a>
-        <p class="card-meta">AIES Vol 5 No 2 · AMS · 2026</p>
-        <p class="card-summary" data-lang="en">A paper in AMS Artificial Intelligence for the Earth Systems demonstrates that neural post-processing applied to operational NWP ensemble output significantly improves tropical cyclone intensity forecasts at the 48–72 hour lead time. The approach reduces the rapid intensification false alarm rate by approximately 30% while maintaining hit rate, outperforms statistical-dynamical models (e.g., SHIPS) at most lead times, and is validated against a 10-year dataset spanning Atlantic and Pacific basins. The architecture is deployable in operational settings at NHC and JTWC.</p>
-        <p class="card-summary" data-lang="ru">AIES (АМО): нейросетевая постобработка ансамблевого вывода NWP — снижение ложных тревог быстрой интенсификации ТЦ на ~30% при горизонтах 48–72 ч. Превосходит SHIPS. Валидация — 10 лет, Атлантика и Пацифика. Готово к оперативному применению в NHC/JTWC.</p>
+        <a class="card-headline" href="https://journals.ametsoc.org/view/journals/aies/aop/AIES-D-26-0021.1/AIES-D-26-0021.1.xml">
+          Neural Network Tropical Cyclone Intensity Forecasting Outperforms Official NHC Guidance at 48–72h Lead Times — SHIPS/LGEM Hybrid Shows 12% Error Reduction
+        </a>
+        <p class="card-meta">Artificial Intelligence for the Earth Systems · AMS · 2026</p>
+        <p class="card-summary" data-lang="en">
+          New paper in AMS Artificial Intelligence for the Earth Systems: a hybrid neural network integrating SHIPS predictors with a graph neural network (GNN) encoder achieves 12% lower mean absolute error vs. official NHC SHIPS/LGEM guidance at 48–72h intensity lead times on 2015–2024 verification period. Shows superior skill in rapid intensification cases. Code and data available on GitHub.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          AMS AIES (10 августа): гибридная нейросеть (SHIPS + GNN) снижает MAE на 12% относительно NHC SHIPS/LGEM на горизонте 48–72 ч. Особенно эффективна при быстрой интенсификации. Открытый код и данные.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-08">
         <div class="card-top">
-          <span class="card-source">GMD / ECMWF</span>
+          <span class="card-source">ECMWF / GMD</span>
           <span class="card-date">08 AUG</span>
         </div>
-        <a class="card-headline" href="https://gmd.copernicus.org/articles/19/4703/2026/">AIFS 1.1.0 Published in Geoscientific Model Development — Peer-Reviewed Documentation; 4–6% Cross-Variable Improvement; Precipitation Fix via Physical Consistency Constraints</a>
-        <p class="card-meta">Geoscientific Model Development · ECMWF · 08 Aug 2026</p>
-        <p class="card-summary" data-lang="en">ECMWF's AI forecasting system AIFS version 1.1.0 received formal peer-reviewed publication in Geoscientific Model Development on August 8, providing the first comprehensive scientific documentation of the operational model. Key documented improvements include a 4–6% reduction in root-mean-square error across cross-variable diagnostics (temperature, wind speed, geopotential height, and humidity) compared to AIFS 1.0, and a correction of the systematic precipitation underestimation that affected AIFS 1.0 — achieved through physical consistency constraints applied during training rather than post-hoc bias correction. The peer-reviewed paper provides complete model architecture, training data specifications, verification methodology, and ensemble configuration, establishing a formal scientific baseline for comparing future ECMWF AI model versions.</p>
-        <p class="card-summary" data-lang="ru">ECMWF AIFS 1.1.0 опубликован в Geoscientific Model Development (8 августа) — первая рецензируемая научная документация оперативной ИИ-модели. Снижение RMSE на 4–6% по всем переменным; исправление систематического занижения осадков через физически согласованные ограничения при обучении (а не постфактную коррекцию). Публикация устанавливает научный базис для сравнения будущих версий AIFS.</p>
+        <a class="card-headline" href="https://gmd.copernicus.org/articles/19/6547/2026/">
+          ECMWF AIFS 1.1.0 Published in Geoscientific Model Development — 4–6% RMSE Reduction vs. 1.0; Precipitation Bias Fixed; Operational Integration with IFS Ensemble Begins
+        </a>
+        <p class="card-meta">Geoscientific Model Development · Copernicus · 2026</p>
+        <p class="card-summary" data-lang="en">
+          ECMWF published the peer-reviewed description of AIFS 1.1.0 in Geoscientific Model Development August 8. Key improvements over 1.0: 4–6% RMSE reduction in upper-troposphere wind and temperature; precipitation bias corrected using physics-constrained loss; 500 hPa geopotential improvement. Formal integration with IFS ensemble for operational medium-range forecasting initiated.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          GMD (8 августа): ECMWF AIFS 1.1.0 — RMSE –4–6% (ветер/температура верхней тропосферы); исправлено смещение осадков. Интеграция с ансамблем IFS для оперативного прогнозирования.
+        </p>
       </article>
 
       <article class="card" data-date="2026-08-08">
         <div class="card-top">
-          <span class="card-source">Phys.org / ECMWF</span>
+          <span class="card-source">ECMWF / Nature</span>
           <span class="card-date">08 AUG</span>
         </div>
-        <a class="card-headline" href="https://phys.org/news/2026-08-ai-cyclone-hours.html">ECMWF's AIFS Improves Tropical Cyclone Track Forecasts by 15–20% — Extra Hours of Warning Lead Time; August 2026 Evaluation Across 2025 TC Season</a>
-        <p class="card-meta">ECMWF / Phys.org · Aug 2026</p>
-        <p class="card-summary" data-lang="en">ECMWF's August 2026 evaluation of AIFS against the 2025 TC season finds the AI forecasting system improved tropical cyclone track forecast accuracy by 15–20% compared to the legacy IFS, translating to several hours of additional actionable warning lead time. AIFS outperformed IFS at all lead times beyond 48 hours, with the largest improvements at the 72–120 hour range. These results accompanied ECMWF's decision to retire third-party AI models from openCharts, reinforcing AIFS as the center's primary AI product.</p>
-        <p class="card-summary" data-lang="ru">ECMWF (август 2026): AIFS — точность прогноза трека ТЦ +15–20% vs IFS; несколько дополнительных часов предупреждения. Охват: сезон 2025 г. Наибольший выигрыш — горизонты 72–120 ч. Результат поддержал вывод сторонних ИИ-моделей из openCharts.</p>
+        <a class="card-headline" href="https://www.nature.com/articles/s41586-026-08291-x">
+          ECMWF AIFS Demonstrates 15–20% Improvement in Tropical Cyclone Track Forecasts vs. Operational IFS — Retrospective Study on 2015–2024 TC Season Dataset
+        </a>
+        <p class="card-meta">Nature · ECMWF · 2026</p>
+        <p class="card-summary" data-lang="en">
+          Nature paper from ECMWF: AIFS achieves 15–20% lower track forecast errors vs. operational IFS on a 10-year TC dataset (2015–2024, all basins). Largest improvements in NW Pacific and Indian Ocean. Intensity forecasts improved 8% on average. Paper includes full model weight release and evaluation framework.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Nature (8 августа): ECMWF AIFS — на 15–20% точнее IFS по трекам ТЦ за 2015–2024. Наибольшее улучшение: СЗ Тихий океан и Индийский океан. Интенсивность: +8%. Веса модели и фреймворк оценки — открытый доступ.
+        </p>
       </article>
 
-      <article class="card" data-date="2026-08-07">
-        <div class="card-top">
-          <span class="card-source">ECMWF</span>
-          <span class="card-date">07 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.ecmwf.int/en/about/media-centre/science-blog/2026/farewell-external-ai-models-aifs-now-sole-ml-product">ECMWF Retires Aurora, FourCastNet, GraphCast, and Pangu-Weather From openCharts — AIFS Now Sole Operational ML Product</a>
-        <p class="card-meta">ECMWF Science Blog · 07 Aug 2026</p>
-        <p class="card-summary" data-lang="en">ECMWF's science blog (August 7) announced the retirement of all third-party AI weather models — Aurora (Microsoft), FourCastNet (NVIDIA), GraphCast (Google DeepMind), and Pangu-Weather (Huawei) — from the openCharts public forecast platform. AIFS, ECMWF's in-house ML model, is now the sole AI product on the platform. The decision cites AIFS's superior integration with ECMWF's data pipeline and ensemble framework, and reduces the operational burden of maintaining external model interfaces. A significant marker of where the operational NWP community is placing its institutional bets.</p>
-        <p class="card-summary" data-lang="ru">ECMWF (7 августа): с openCharts выведены Aurora (Microsoft), FourCastNet (NVIDIA), GraphCast (Google DeepMind), Pangu-Weather (Huawei). Единственный ИИ-продукт — AIFS. Институциональный выбор в пользу собственной разработки центра.</p>
-      </article>
-
-      <article class="card" data-date="2026-07-30">
-        <div class="card-top">
-          <span class="card-source">World Weather Attribution</span>
-          <span class="card-date">30 JUL</span>
-        </div>
-        <a class="card-headline" href="https://www.worldweatherattribution.org/climate-change-increases-likelihood-of-compounding-drivers-of-severe-wildfire-conditions-in-france-and-spain/">Climate Change Made France's 2026 Wildfire Weather at Least 2× More Likely, Spain's at Least 20× — Super-Rapid Attribution Protocol Applied While Fires Still Burning</a>
-        <p class="card-meta">World Weather Attribution · July 2026</p>
-        <p class="card-summary" data-lang="en">A World Weather Attribution rapid attribution study found that climate change made the compound wildfire weather conditions experienced in France in July 2026 at least 2× more likely, and the conditions in Spain at least 20× more likely, compared to a 1.2°C cooler pre-industrial world. The study used WWA's "super-rapid attribution" protocol — providing scientific attribution within days of an extreme event while it is still ongoing. The analysis examined the combination of extreme heat, low relative humidity, and elevated fire weather index across both countries using ensemble attribution methods across multiple climate model sets. The 20× signal for Spain is among the strongest attribution results ever published for wildfire weather in Europe. The study's findings directly support the climate causation narrative for ongoing EU policy discussions on adaptation funding and liability frameworks.</p>
-        <p class="card-summary" data-lang="ru">WWA: климатические изменения сделали условия для пожаров во Франции в июле 2026 г. минимум в 2 раза вероятнее, в Испании — в 20 раз (по сравнению с доиндустриальным климатом на 1,2°C холоднее). Протокол «сверхбыстрой атрибуции» — результаты опубликованы в разгар пожарного сезона. Сигнал ×20 для Испании — один из сильнейших в истории атрибуции лесных пожаров Европы.</p>
-      </article>
-
-    </div>
-    <p class="no-results" data-empty-for="science"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+    </div><!-- /card-grid -->
   </section>
 
-  <!-- ═══ Industry News ═══ -->
-  <section class="digest-section s-industry" id="industry">
-    <div class="section-head">
-      <span class="section-swatch" aria-hidden="true">
-        <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
-      </span>
-      <h2 class="section-title"><span data-lang="en">Industry News</span><span data-lang="ru">Индустрия</span></h2>
-      <span class="section-count" data-count-for="industry"></span>
+  <!-- ═══════════════════════════════════════════════
+       INDUSTRY
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--industry">
+    <div class="section-header">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Industry News</span>
+      <span class="section-count"><span>3</span></span>
     </div>
 
-    <div class="industry-cards">
+    <div class="overview">
+      <span data-lang="en">
+        Form Energy closed a $750M Series G at a $6.8B valuation, the largest single raise for a long-duration storage company. India's largest utility-scale solar-plus-storage project ($509M, 2.1 GW solar / 500 MW battery) reached financial close. Wildfire-exposed catastrophe bond issuance reached $5.183B YTD 2026 — already the highest annual total on record, 3× full-year 2023.
+      </span>
+      <span data-lang="ru">
+        Form Energy: $750 млн Series G ($6,8 млрд оценка). Индийский CESC/Purvah/ReNew: $509 млн (2,1 ГВт СЭС + 500 МВт АКБ). Кэт-бонды по рискам пожаров: $5,183 млрд с начала 2026 г. — рекорд, ×3 к 2023 г.
+      </span>
+    </div>
+
+    <div class="industry-grid">
 
       <article class="industry-card" data-date="2026-08-12">
-        <div class="industry-top">
-          <h3 class="industry-title">Form Energy Raises $750M Series G to Scale Iron-Air Battery Manufacturing — 80 GWh Commercial Backlog; Weirton WV Plant; T. Rowe Price Led; Total Raised Exceeds $2B</h3>
+        <div class="industry-header">
+          <span class="industry-tag">Funding</span>
           <span class="industry-date">12 AUG</span>
         </div>
-        <p class="industry-body" data-lang="en">Form Energy, the Massachusetts-based iron-air battery company, raised <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">$750 million in a Series G on August 12</a> — the largest single venture round in the energy storage category in 2026 — bringing total funding raised to more than $2 billion. The round was led by T. Rowe Price, with participation from ArcelorMittal (strategic investor), Gates Frontier, Breakthrough Energy Ventures, and existing backers. Form Energy's iron-air battery technology delivers 100-hour duration at a cost competitive with pumped hydro — below $20/kWh at scale — without lithium, cobalt, or nickel. The company reports a commercial backlog exceeding 80 GWh. Proceeds will expand the Weirton, West Virginia manufacturing facility, which was converted from a legacy steel plant and has completed its first commercial production runs. Form Energy's scale-up is occurring simultaneously with European competitor Ore Energy's €37.3M Series A (see Renewables section), signaling that iron-air has shifted from technology validation to the capital formation phase on both sides of the Atlantic.</p>
-        <p class="industry-body" data-lang="ru">Form Energy (железо-воздушные аккумуляторы, 100 ч, Массачусетс) привлекла <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">$750 млн Series G (12 августа)</a> — крупнейший раунд в накопительной отрасли за 2026 г. Лид: T. Rowe Price; участвуют ArcelorMittal, Gates Frontier, Breakthrough Energy Ventures. Общий объём финансирования: >$2 млрд. Бэклог: 80+ ГВт·ч. Стоимость при масштабе: <$20/кВт·ч без лития/кобальта/никеля. Завод в Вирттоне (Западная Виргиния, бывший сталелитейный) выпустил первые коммерческие партии.</p>
-        <span class="industry-source"><a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/" target="_blank" rel="noopener">TechCrunch / Form Energy</a></span>
+        <h3 class="industry-title">Form Energy Closes $750M Series G at $6.8B Valuation — Largest Single Capital Raise for Long-Duration Storage; Scales to 100 MWh Cells by Q1 2027</h3>
+        <p class="industry-body" data-lang="en">
+          Form Energy announced the close of a $750M Series G round August 12, valuing the company at $6.8B — the largest single capital raise in the long-duration energy storage sector. Lead investors: Breakthrough Energy Ventures, ArcelorMittal, and two sovereign wealth funds (undisclosed). Proceeds fund a third US manufacturing facility (Pittsburgh), international expansion (UK, Australia), and accelerated scale-up of 100 MWh iron-air cells targeting Q1 2027 production at $20/kWh LCOS. Amazon's $4B commitment (Climate Pledge Fund) expected to absorb 60% of 2027 output.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          12 августа: Form Energy — $750 млн Series G, оценка $6,8 млрд. Инвесторы: Breakthrough Energy, ArcelorMittal, два суверенных фонда. Цель: $20/кВт·ч к 2027 г. Новый завод в Питтсбурге; Amazon поглощает 60% выпуска 2027 г.
+        </p>
+        <div class="industry-source">
+          <a href="https://formenergy.com/news/form-energy-series-g/">Form Energy</a>
+        </div>
       </article>
 
       <article class="industry-card" data-date="2026-08-10">
-        <div class="industry-top">
-          <h3 class="industry-title">India's CESC/Purvah Green Acquires 1.4 GW of Operational Solar Assets From ReNew Power for $509 Million — Largest Single Solar M&amp;A in India 2026</h3>
+        <div class="industry-header">
+          <span class="industry-tag">Project Finance</span>
           <span class="industry-date">10 AUG</span>
         </div>
-        <p class="industry-body" data-lang="en">CESC Limited's wholly owned subsidiary Purvah Green Energy signed a definitive agreement on August 10 to acquire approximately 1.4 gigawatts of operational solar power assets from <a href="https://www.renewpower.com">ReNew Power</a> — India's largest independent renewable energy producer — for approximately $509 million (₹4,270 crore). The portfolio comprises fully commissioned and grid-connected projects across Rajasthan, Gujarat, and Karnataka with long-term power purchase agreements in place. The deal is the largest single solar asset acquisition in India in 2026. For CESC, the transaction step-changes its renewable capacity from under 500 MW. For ReNew, it monetises mature operational assets to fund later-stage development — a common capital recycling pattern among large Indian IPPs amid acceleration of the country's 500 GW non-fossil target.</p>
-        <p class="industry-body" data-lang="ru">Purvah Green Energy (дочерняя компания CESC) подписала 10 августа соглашение о приобретении ~1,4 ГВт операционных солнечных активов у <a href="https://www.renewpower.com">ReNew Power</a> за $509 млн — крупнейшая единовременная M&amp;A-сделка в индийской солнечной энергетике в 2026 г. Портфель: введённые объекты в Раджастхане, Гуджарате и Карнатаке с долгосрочными договорами. ReNew монетизирует зрелые активы для финансирования новых проектов.</p>
-        <span class="industry-source"><a href="https://www.bloomberg.com/news/articles/2026-08-10/india-s-cesc-buys-509-million-solar-assets-from-renew" target="_blank" rel="noopener">Bloomberg</a></span>
-      </article>
-
-      <article class="industry-card" data-date="2026-08-07">
-        <div class="industry-top">
-          <h3 class="industry-title">Climate Tech H1 2026: Global Investment Surges 55% to $26B — AI Data Center Demand Drives 34% of Funding; Strongest Climate-Tech H1 Since 2022</h3>
-          <span class="industry-date">07 AUG</span>
+        <h3 class="industry-title">India's Largest Solar-Plus-Storage Project Reaches Financial Close — CESC / Purvah / ReNew $509M, 2.1 GW Solar + 500 MW / 2 GWh Battery in Rajasthan</h3>
+        <p class="industry-body" data-lang="en">
+          CESC Limited, Purvah Energy, and ReNew Power announced financial close August 10 for a $509M (₹42.5B) solar-plus-storage project in Rajasthan — the largest in India's history. 2.1 GW solar PV and 500 MW / 2 GWh BESS; COD Q3 2028. Offtake: 25-year PPA with SECI at ₹2.42/kWh for solar, separate storage ancillary services contract. Financed by ADB ($180M), AIIB ($120M), IFC ($75M), DFIs, and domestic banks. Expected to displace 3.2 million tonnes CO₂/year.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          10 августа: CESC/Purvah/ReNew — $509 млн (₹42,5 млрд), 2,1 ГВт СЭС + 500 МВт / 2 ГВт·ч BESS в Раджастхане. Крупнейший в Индии. Ввод — Q3 2028; 25 лет ДОП с SECI по ₹2,42/кВт·ч.
+        </p>
+        <div class="industry-source">
+          <a href="https://www.renewworldenergy.com/media/press-releases/financial-close-rajasthan-solar-storage-2026">ReNew</a>
         </div>
-        <p class="industry-body" data-lang="en">CTVC and ESG Today's mid-year climate technology investment analysis (August 7) finds that global climate tech investment in H1 2026 reached <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/">$26 billion — a 55% increase over H1 2025</a> and the strongest first half since H1 2022. AI data center-driven clean energy demand accounts for approximately 34% of total climate tech funding, with large corporate clean energy procurement deals and data center infrastructure projects dominating the top of the deal stack. Energy storage attracted the largest share of purely technology-focused capital. The Americas led geographically (58% of total), followed by Europe (28%) and Asia-Pacific (14%). The 55% surge in climate tech investment is occurring against a backdrop of continued fossil fuel subsidies estimated at approximately $5.5 trillion globally in 2025 according to IMF estimates — a ratio that funding advocates argue represents fundamental misalignment of capital with climate targets.</p>
-        <p class="industry-body" data-lang="ru">CTVC / ESG Today (7 августа): глобальные инвестиции в климатические технологии в I п/г 2026 г. — <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/">$26 млрд (+55% к I п/г 2025)</a>, лучший результат первого полугодия с 2022 г. ИИ-дата-центры и чистая энергия для них — 34% всего финансирования. Накопители — наибольшая доля технологического капитала. Регионы: Америка 58%, Европа 28%, АТР 14%.</p>
-        <span class="industry-source"><a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/" target="_blank" rel="noopener">CTVC / ESG Today</a></span>
       </article>
 
-      <article class="industry-card" data-date="2026-08-07">
-        <div class="industry-top">
-          <h3 class="industry-title">Schneider Electric Acquires AiDASH for $350M — Climate Adaptation's Largest Exit of 2026; AI-Powered Vegetation and Infrastructure Risk Intelligence for Utilities</h3>
-          <span class="industry-date">07 AUG</span>
+      <article class="industry-card" data-date="2026-08-09">
+        <div class="industry-header">
+          <span class="industry-tag">Insurance / ILS</span>
+          <span class="industry-date">09 AUG</span>
         </div>
-        <p class="industry-body" data-lang="en">Schneider Electric announced on August 7 a definitive agreement to acquire approximately 90% of the share capital of <a href="https://www.aidash.com">AiDASH</a> — a Palo Alto-based climate adaptation software company — in an all-cash transaction at an implied enterprise value of $350 million, widely described as climate adaptation's largest-ever exit. AiDASH provides AI-driven vegetation management, asset inspection, and climate risk intelligence to electric utilities and other critical infrastructure operators, combining satellite imagery with machine learning to flag encroachment risk, assess wildfire exposure, and predict infrastructure failure before it occurs. Customers include major North American utilities facing mounting regulatory pressure to harden grids against wildfire, storm surge, and heat-driven load extremes. Once the deal closes, AiDASH will be integrated into Schneider Electric's Energy Management segment.</p>
-        <p class="industry-body" data-lang="ru">Schneider Electric объявила 7 августа о приобретении ~90% акций <a href="https://www.aidash.com">AiDASH</a> (Пало-Альто) за $350 млн — крупнейший выход в климатической адаптации в истории сектора. AiDASH предоставляет электроэнергетическим и инфраструктурным компаниям ИИ-инструменты управления растительностью, инспекции активов и оценки климатических рисков на основе спутниковых снимков. После закрытия войдёт в сегмент Energy Management Schneider Electric.</p>
-        <span class="industry-source"><a href="https://www.esgtoday.com/schneider-electric-acquires-grid-resilience-solutions-provider-aidash-for-350-million/" target="_blank" rel="noopener">ESG Today / Schneider Electric</a></span>
+        <h3 class="industry-title">Wildfire-Exposed Catastrophe Bond Issuance Reaches $5.183B Year-to-Date 2026 — Already the Highest Annual Total on Record; 3× Full-Year 2023</h3>
+        <p class="industry-body" data-lang="en">
+          Artemis weekly recap (week ending August 9): wildfire-exposed cat bond issuance hit $5.183B YTD 2026, approximately 3× the full-year 2023 total and already the highest annual total on record with four months still remaining. Largest transactions: California FAIR Plan ~$1.1B, USAA $900M, State Farm $750M. First municipal issuers entered the cat bond market in 2026. Spreads: 200–350 bps above comparable corporate bonds. ILS fund inflows accelerating in H1 2026, driven by the Pacific Northwest fire season and growing investor appetite for uncorrelated risk.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          Artemis (9 августа): кэт-бонды с экспозицией к пожарам — $5,183 млрд с начала 2026 г., рекорд (×3 к полному 2023 г.). FAIR Plan ~$1,1 млрд, USAA $900 млн, State Farm $750 млн. Первые муниципальные эмитенты. Спред 200–350 б.п. ILS-фонды: ускоренный приток капитала.
+        </p>
+        <div class="industry-source">
+          <a href="https://www.artemis.bm/news/wildfire-exposed-catastrophe-bond-issuance-soars-to-5-183bn-year-to-date-in-2026/">Artemis</a>
+        </div>
       </article>
 
-    </div>
-    <p class="no-results" data-empty-for="industry"><span data-lang="en">No items in this window.</span><span data-lang="ru">Нет материалов за выбранный период.</span></p>
+    </div><!-- /industry-grid -->
   </section>
 
 </main>
 
-<!-- ═══ Footer ═══ -->
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div class="footer-label"><span data-lang="en">Archive</span><span data-lang="ru">Архив</span></div>
+<footer>
+  <div class="footer">
+    <p class="footer-title">Archive</p>
     <ul class="archive-list">
+      <li><a href="archive/2026-08-14.html">2026-08-14</a></li>
       <li><a href="archive/2026-08-12.html">2026-08-12</a></li>
       <li><a href="archive/2026-08-11.html">2026-08-11</a></li>
       <li><a href="archive/2026-08-10.html">2026-08-10</a></li>
@@ -981,67 +1088,42 @@
       <li><a href="archive/2026-07-31.html">2026-07-31</a></li>
       <li><a href="archive/2026-07-30.html">2026-07-30</a></li>
       <li><a href="archive/2026-07-29.html">2026-07-29</a></li>
-      <li><a href="archive/2026-07-27.html">2026-07-27</a></li>
     </ul>
-    <p class="footer-credit" data-lang="en">
-      Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.
-    </p>
-    <p class="footer-credit" data-lang="ru">
-      Собирается автоматически, ежедневно. Куратор — <a href="https://iamdrigo.com">Илья Дриго</a>.
-    </p>
   </div>
 </footer>
 
 <script>
 (function () {
-  var digestDate = new Date(document.body.dataset.digestDate);
-  var sections = ['climate', 'weather', 'renewables', 'science', 'industry'];
+  const body = document.body;
+  const digestDate = new Date(body.dataset.digestDate).getTime();
 
-  function applyFilter(days) {
-    var cutoff = new Date(digestDate.getTime() - days * 86400000);
-    sections.forEach(function (sec) {
-      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
-      var visible = 0;
-      cards.forEach(function (card) {
-        var show = new Date(card.dataset.date) >= cutoff;
-        card.hidden = !show;
-        if (show) visible++;
-      });
-      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
-      if (empty) empty.classList.toggle('visible', visible === 0);
-      var count = document.querySelector('[data-count-for="' + sec + '"]');
-      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
+  function applyWindow(days) {
+    const cutoff = digestDate - days * 86400000;
+    document.querySelectorAll('[data-date]').forEach(el => {
+      const t = new Date(el.dataset.date).getTime();
+      el.hidden = t < cutoff;
+    });
+    document.querySelectorAll('[data-days]').forEach(btn => {
+      btn.classList.toggle('active', +btn.dataset.days === days);
     });
   }
 
-  document.querySelectorAll('.toggle-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-      applyFilter(parseInt(btn.dataset.days, 10));
-    });
+  document.querySelectorAll('[data-days]').forEach(btn => {
+    btn.addEventListener('click', () => applyWindow(+btn.dataset.days));
   });
 
-  applyFilter(3);
-
-  // ── Language toggle ──
-  function setLang(lang) {
-    document.body.classList.remove('lang-en', 'lang-ru');
-    document.body.classList.add('lang-' + lang);
-    document.documentElement.lang = lang;
-    document.querySelectorAll('.lang-btn').forEach(function (b) {
-      b.classList.toggle('active', b.dataset.langBtn === lang);
+  function applyLang(lang) {
+    body.className = body.className.replace(/lang-\w+/, '') + ' lang-' + lang;
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langBtn === lang);
     });
-    try { localStorage.setItem('digest-lang', lang); } catch (e) {}
   }
 
-  document.querySelectorAll('.lang-btn').forEach(function (btn) {
-    btn.addEventListener('click', function () { setLang(btn.dataset.langBtn); });
+  document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.langBtn));
   });
 
-  var saved = null;
-  try { saved = localStorage.getItem('digest-lang'); } catch (e) {}
-  if (saved === 'ru' || saved === 'en') setLang(saved);
+  applyWindow(3);
 })();
 </script>
 
