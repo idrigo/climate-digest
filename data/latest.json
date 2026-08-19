@@ -1,0 +1,119 @@
+{
+  "digest_date": "2026-08-19",
+  "metar": "DIGEST 190700Z AUG26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "The <a href=\"https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml\" target=\"_blank\" rel=\"noopener\">BAMS State of the Climate 2025</a> report confirms record greenhouse gases, sea level, and ocean heat in 2025. The Balkans heatwave, which drove <a href=\"https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/\" target=\"_blank\" rel=\"noopener\">over 28,000 EU excess deaths</a>, has fully dissipated as of August 19.",
+      "items": [
+        {
+          "source": "NOAA CPC",
+          "date": "2026-08-13",
+          "headline": "Extraordinary August 2026 ENSO Diagnostic: Subsurface Pacific Heat Reaches +10°C",
+          "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml",
+          "summary": "69% probability the 2026/27 El Niño exceeds every event since 1950."
+        },
+        {
+          "source": "Copernicus C3S",
+          "date": "2026-08-12",
+          "headline": "August 2026 Tracking as Third-Warmest August on Record Globally",
+          "url": "https://climate.copernicus.eu/copernicus-southwestern-europe-faces-extreme-heat-during-third-warmest-august-globally",
+          "summary": "SW Europe posts its most intense August heat anomaly in the ERA5 record back to 1940."
+        },
+        {
+          "source": "Severe Weather EU",
+          "date": "2026-08-19",
+          "headline": "Balkans Heatwave Fully Ends — All Heat Alerts Lifted",
+          "url": "https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/",
+          "summary": "Episode attributed to over 28,000 EU excess deaths since June — deadliest since 2003."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Hurricane Lala — Central Pacific",
+          "status": "CAT 2 · 110 MPH",
+          "impact": "Re-intensified; threatens NW Hawaiian atolls with dangerous surf beginning Wednesday."
+        },
+        {
+          "name": "Tropical Depression 17W (Saudel) — near Guam",
+          "status": "TYPHOON BY THU",
+          "impact": "Rapidly organizing at low latitude with minimal shear; super typhoon potential."
+        },
+        {
+          "name": "US South Heat Dome — Texas to Carolinas",
+          "status": "70M+ UNDER ALERTS",
+          "impact": "Heat indices above 110°F through August 21; dozens of records threatened."
+        }
+      ],
+      "overview_html": "<a href=\"https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml\" target=\"_blank\" rel=\"noopener\">Hurricane Lala</a> has re-intensified to Category 2 in the central Pacific. A <a href=\"https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast\" target=\"_blank\" rel=\"noopener\">dangerous heat dome</a> is baking the US South with heat indices above 110°F.",
+      "items": [
+        {
+          "source": "NHC",
+          "date": "2026-08-19",
+          "headline": "Hurricane Lala Reaches Category 2 With 110-MPH Winds in Central Pacific",
+          "url": "https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml",
+          "summary": "NW Hawaiian atolls face dangerous surf and inundation threat beginning Wednesday UTC."
+        },
+        {
+          "source": "JTWC / Dr. Maue",
+          "date": "2026-08-19",
+          "headline": "Tropical Depression 17W Rapidly Organizing Near Guam",
+          "url": "https://weather.substack.com/p/august-18-2026-tuesday-tropical-update",
+          "summary": "Classic El Niño deep-tropics system; typhoon status expected by Thursday."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "<a href=\"https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html\" target=\"_blank\" rel=\"noopener\">Copenhagen Infrastructure Partners' Growth Markets Fund II</a> closed at $3 billion, nearly triple its predecessor.",
+      "items": [
+        {
+          "source": "GlobeNewswire",
+          "date": "2026-08-14",
+          "headline": "CIP Closes Growth Markets Fund II at $3B",
+          "url": "https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html",
+          "summary": "Targets solar, wind, storage, and grid infrastructure across 15 emerging economies."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "A new <a href=\"https://www.nature.com/articles/s41558-026-02730-w\" target=\"_blank\" rel=\"noopener\">Nature Climate Change paper</a> finds AMOC stability depends on the rate of warming, not just its level — collapsing at +2°C under fast forcing.",
+      "items": [
+        {
+          "source": "BAMS",
+          "date": "2026-08-12",
+          "headline": "State of the Climate in 2025: Record Greenhouse Gases, Sea Level, Ocean Heat",
+          "url": "https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml",
+          "meta": "625 authors · BAMS Vol. 107, No. 8",
+          "summary": "2025 ranks among the three warmest years since 1850 despite La Niña."
+        },
+        {
+          "source": "Nature Climate Change",
+          "date": "2026-08-14",
+          "headline": "Rate of Warming, Not Just Temperature Level, Determines AMOC Collapse Risk",
+          "url": "https://www.nature.com/articles/s41558-026-02730-w",
+          "meta": "DOI:10.1038/s41558-026-02730-w",
+          "summary": "Slow CO2 ramps keep AMOC stable to +5.5°C; fast ramps collapse it at +2°C."
+        },
+        {
+          "source": "ECMWF",
+          "date": "2026-08-18",
+          "headline": "ECMWF Discontinues Daily Runs of External AI Weather Models",
+          "url": "https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models",
+          "meta": "AIFS Blog",
+          "summary": "Pangu-Weather, GraphCast, Aurora, FourCastNet phased out as in-house AIFS matures."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-08-12",
+          "title": "Form Energy Raises $750M Series G to Scale Iron-Air Battery Manufacturing",
+          "body_html": "<a href=\"https://formenergy.com/form-energy-secures-750m-in-series-g-financing/\" target=\"_blank\" rel=\"noopener\">Form Energy</a>, maker of 100-hour iron-air batteries, closed a $750M Series G led by T. Rowe Price, with Sequoia and Franklin Templeton joining. The round brings total equity raised past $2 billion. Commercial backlog quadrupled this year to 80 GWh, including contracts with Xcel Energy and Google.",
+          "source_html": "<a href=\"https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/\" target=\"_blank\" rel=\"noopener\">TechCrunch</a>"
+        }
+      ]
+    }
+  }
+}

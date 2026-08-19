@@ -28,812 +28,358 @@
     --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition: none !important; animation: none !important; }
   }
+  body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--weather); outline-offset: 2px; border-radius: 2px; }
 
-  body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--body);
-    font-size: 15px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-  }
+  .masthead { background: var(--header-ink); color: #fff; position: relative; overflow: hidden; }
+  .masthead-isolines { position: absolute; inset: 0; opacity: .14; pointer-events: none; }
+  .masthead-inner { position: relative; max-width: 1140px; margin: 0 auto; padding: 44px 28px 36px; }
+  .masthead-metar { font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; color: #7da2d4; margin-bottom: 10px; }
+  .masthead-title { font-family: var(--display); font-size: clamp(30px, 5vw, 44px); font-weight: 700; letter-spacing: -0.02em; line-height: 1.05; }
+  .masthead-sub { margin-top: 10px; font-size: 14px; color: #9db4d4; max-width: 560px; }
 
-  a:focus-visible, button:focus-visible {
-    outline: 2px solid var(--weather);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
+  .controls { background: var(--surface); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 20; box-shadow: 0 1px 0 rgba(16,24,40,.02); }
+  .controls-inner { max-width: 1140px; margin: 0 auto; padding: 10px 28px; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .window-toggle { display: inline-flex; background: var(--bg); border: 1px solid var(--border); border-radius: 999px; padding: 3px; gap: 2px; }
+  .toggle-btn { font-family: var(--mono); font-size: 11.5px; font-weight: 600; letter-spacing: .04em; padding: 5px 14px; border-radius: 999px; border: none; background: transparent; color: var(--muted); cursor: pointer; transition: background .15s, color .15s; }
+  .toggle-btn:hover { color: var(--ink); }
+  .toggle-btn.active { background: var(--ink); color: #fff; }
+  .nav-pills { margin-left: auto; display: flex; gap: 14px; flex-wrap: wrap; }
+  .nav-pill { font-family: var(--mono); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; text-decoration: none; color: var(--muted); padding: 4px 2px; border-bottom: 2px solid transparent; transition: color .15s, border-color .15s; }
+  .nav-pill:hover { color: var(--ink); }
+  .np-climate:hover { border-color: var(--climate); }
+  .np-weather:hover { border-color: var(--weather); }
+  .np-renewables:hover { border-color: var(--renewables); }
+  .np-science:hover { border-color: var(--science); }
+  .np-industry:hover { border-color: var(--industry); }
 
-  /* ── MASTHEAD ── */
-  .masthead {
-    background: var(--header-ink);
-    color: #fff;
-    padding: 28px 24px 22px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-  .masthead-inner { max-width: 960px; margin: 0 auto; }
-  .masthead-logo {
-    font-family: var(--display);
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: -.3px;
-    color: #fff;
-    text-decoration: none;
-  }
-  .masthead-logo span { color: #93c5fd; }
-  .masthead-dateline {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: #94a3b8;
-    margin-top: 4px;
-    letter-spacing: .5px;
-  }
+  .main { max-width: 1140px; margin: 0 auto; padding: 44px 28px 90px; }
+  .digest-section { margin-bottom: 64px; }
+  .digest-section:last-of-type { margin-bottom: 0; }
+  .section-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .section-swatch { width: 26px; height: 26px; border-radius: 6px; flex-shrink: 0; display: grid; place-items: center; }
+  .section-swatch svg { width: 15px; height: 15px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .section-title { font-family: var(--display); font-size: 21px; font-weight: 600; letter-spacing: -0.01em; }
+  .section-count { font-family: var(--mono); font-size: 11px; color: var(--faint); margin-left: auto; }
+  .s-climate .section-swatch { background: var(--climate); }
+  .s-weather .section-swatch { background: var(--weather); }
+  .s-renewables .section-swatch { background: var(--renewables); }
+  .s-science .section-swatch { background: var(--science); }
+  .s-industry .section-swatch { background: var(--industry); }
 
-  /* ── CONTROLS ── */
-  .controls {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    padding: 10px 24px;
-    position: sticky;
-    top: 72px;
-    z-index: 90;
-  }
-  .controls-inner {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .ctrl-group { display: flex; gap: 6px; align-items: center; }
-  .ctrl-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .6px;
-    color: var(--faint);
-    margin-right: 2px;
-  }
-  .pill {
-    font-size: 12px;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 20px;
-    border: 1.5px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all .15s;
-    font-family: var(--body);
-  }
-  .pill:hover { border-color: var(--weather); color: var(--weather); }
-  .pill.active { background: var(--weather); border-color: var(--weather); color: #fff; }
+  .overview { font-size: 15.5px; line-height: 1.7; color: #344054; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 18px; position: relative; }
+  .overview::before { content: ""; position: absolute; left: 0; top: 12px; bottom: 12px; width: 3px; border-radius: 0 3px 3px 0; }
+  .overview a { color: inherit; font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+  .s-climate .overview a { color: var(--climate); } .s-climate .overview::before { background: var(--climate); }
+  .s-weather .overview a { color: var(--weather); } .s-weather .overview::before { background: var(--weather); }
+  .s-renewables .overview a { color: var(--renewables); } .s-renewables .overview::before { background: var(--renewables); }
+  .s-science .overview a { color: var(--science); } .s-science .overview::before { background: var(--science); }
 
-  /* ── LAYOUT ── */
-  .main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+  .major-events { background: var(--alert-bg); border: 1px solid var(--alert-line); border-radius: 10px; padding: 18px 20px; margin-bottom: 18px; }
+  .major-events-head { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+  .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--alert); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); } 50% { box-shadow: 0 0 0 6px rgba(217,45,32,0); } }
+  .major-events-label { font-family: var(--mono); font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--alert); }
+  .event { padding: 12px 0; border-top: 1px solid var(--alert-line); display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; }
+  .event:first-of-type { border-top: none; padding-top: 0; }
+  .event:last-of-type { padding-bottom: 0; }
+  .event-name { font-family: var(--display); font-weight: 600; font-size: 15.5px; grid-column: 1; }
+  .event-status { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--alert); background: #fff; border: 1px solid var(--alert-line); border-radius: 4px; padding: 2px 8px; align-self: start; white-space: nowrap; }
+  .event-impact { grid-column: 1 / -1; font-size: 13.5px; color: #7a3a34; }
 
-  /* ── SECTION ── */
-  .section { margin-bottom: 48px; }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid currentColor;
-  }
-  .section-icon { font-size: 18px; line-height: 1; }
-  .section-title {
-    font-family: var(--display);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .section-count {
-    font-family: var(--mono);
-    font-size: 11px;
-    background: currentColor;
-    color: var(--surface);
-    padding: 1px 6px;
-    border-radius: 4px;
-    margin-left: auto;
-    opacity: .75;
-  }
-  .section-count span { filter: invert(1); }
+  .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  @media (max-width: 720px) { .card-grid { grid-template-columns: 1fr; } }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px 14px; display: flex; flex-direction: column; gap: 8px; position: relative; overflow: hidden; transition: box-shadow .18s, transform .18s; }
+  .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; transform: scaleX(0); transform-origin: left; transition: transform .25s ease; }
+  .card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); transform: translateY(-1px); }
+  .card:hover::before { transform: scaleX(1); }
+  .s-climate .card::before { background: var(--climate); }
+  .s-weather .card::before { background: var(--weather); }
+  .s-renewables .card::before { background: var(--renewables); }
+  .s-science .card::before { background: var(--science); }
+  .card-top { display: flex; align-items: center; gap: 8px; }
+  .card-source { font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: #fff; padding: 2.5px 8px; border-radius: 4px; }
+  .s-climate .card-source { background: var(--climate); }
+  .s-weather .card-source { background: var(--weather); }
+  .s-renewables .card-source { background: var(--renewables); }
+  .s-science .card-source { background: var(--science); }
+  .card-date { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-left: auto; }
+  .card-headline { font-family: var(--display); font-size: 15.5px; font-weight: 600; line-height: 1.35; color: var(--ink); text-decoration: none; }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .card-meta { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+  .card-summary { font-size: 13.5px; line-height: 1.55; color: var(--muted); }
 
-  .section--climate  .section-header { color: var(--climate);    }
-  .section--weather  .section-header { color: var(--weather);    }
-  .section--renewables .section-header { color: var(--renewables); }
-  .section--science  .section-header { color: var(--science);    }
-  .section--industry .section-header { color: var(--industry);   }
+  .industry-cards { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 20px 22px; position: relative; overflow: hidden; transition: box-shadow .18s; }
+  .industry-card::before { content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: var(--industry); opacity: .35; transition: opacity .2s; }
+  .industry-card:hover { box-shadow: 0 4px 16px rgba(16,24,40,.07); }
+  .industry-card:hover::before { opacity: 1; }
+  .industry-top { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+  .industry-title { font-family: var(--display); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; }
+  .industry-date { font-family: var(--mono); font-size: 10.5px; color: var(--faint); margin-left: auto; white-space: nowrap; }
+  .industry-body { font-size: 14.5px; line-height: 1.7; color: #344054; margin-bottom: 12px; }
+  .industry-body a { color: var(--industry); font-weight: 600; text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  .industry-source { font-family: var(--mono); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em; color: #fff; background: var(--industry); display: inline-block; padding: 2.5px 9px; border-radius: 4px; }
+  .industry-source a { color: #fff; text-decoration: none; }
 
-  /* ── OVERVIEW ── */
-  .overview {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 18px;
-    font-size: 14px;
-    color: var(--muted);
-    line-height: 1.65;
-    margin-bottom: 20px;
-  }
-  .overview a { color: inherit; text-underline-offset: 2px; }
-  .overview a:hover { color: var(--ink); }
+  .no-results { display: none; font-size: 13.5px; color: var(--faint); font-style: italic; padding: 12px 2px; }
+  .no-results.visible { display: block; }
+  .card[hidden], .industry-card[hidden] { display: none; }
 
-  /* ── CARD GRID ── */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 14px;
-  }
+  .site-footer { border-top: 1px solid var(--border); background: var(--surface); }
+  .footer-inner { max-width: 1140px; margin: 0 auto; padding: 32px 28px 48px; }
+  .footer-label { font-family: var(--mono); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em; color: var(--faint); margin-bottom: 14px; }
+  .archive-list { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; }
+  .archive-list a, .archive-list button { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; padding: 5px 12px; border: 1px solid var(--border); border-radius: 6px; transition: border-color .15s, color .15s; background: none; cursor: pointer; }
+  .archive-list a:hover, .archive-list button:hover { border-color: var(--ink); color: var(--ink); }
+  .footer-credit { margin-top: 28px; font-size: 12.5px; color: var(--faint); }
+  .footer-credit a { color: var(--muted); }
 
-  /* ── CARD ── */
-  .card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    transition: box-shadow .15s, border-color .15s;
-  }
-  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.07); border-color: #c8d4e3; }
-
-  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-  .card-source {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    padding: 2px 8px;
-    border-radius: 4px;
-    color: var(--surface);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-  .section--climate   .card-source { background: var(--climate);    }
-  .section--weather   .card-source { background: var(--weather);    }
-  .section--renewables .card-source { background: var(--renewables); }
-  .section--science   .card-source { background: var(--science);    }
-
-  .card-date {
-    font-family: var(--mono);
-    font-size: 10px;
-    color: var(--faint);
-    white-space: nowrap;
-  }
-
-  .card-headline {
-    font-family: var(--display);
-    font-size: 14.5px;
-    font-weight: 600;
-    line-height: 1.4;
-    color: var(--ink);
-    text-decoration: none;
-  }
-  .card-headline:hover { text-decoration: underline; text-underline-offset: 2px; }
-
-  .card-meta {
-    font-size: 11px;
-    color: var(--faint);
-    font-style: italic;
-  }
-
-  .card-summary {
-    font-size: 13.5px;
-    color: var(--muted);
-    line-height: 1.6;
-    flex: 1;
-  }
-
-  /* ── ALERT CARD ── */
-  .card--alert {
-    border-color: var(--alert-line);
-    background: var(--alert-bg);
-  }
-  .card--alert .card-headline { color: var(--alert); }
-  .card--alert .card-source { background: var(--alert); }
-
-  /* ── MAJOR EVENTS ── */
-  .major-events { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
-  .event {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--weather);
-    border-radius: 0 8px 8px 0;
-    padding: 14px 16px;
-  }
-  .event--alert { border-left-color: var(--alert); background: var(--alert-bg); border-color: var(--alert-line); }
-  .event-header { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 6px; }
-  .event-name {
-    font-family: var(--display);
-    font-size: 13.5px;
-    font-weight: 700;
-    color: var(--ink);
-    flex: 1;
-  }
-  .event--alert .event-name { color: var(--alert); }
-  .event-status {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: .4px;
-    color: var(--weather);
-    background: #eff6ff;
-    padding: 2px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    align-self: flex-start;
-  }
-  .event--alert .event-status { color: var(--alert); background: #fee2e2; }
-  .event-body { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
-
-  /* ── INDUSTRY CARDS ── */
-  .industry-grid { display: flex; flex-direction: column; gap: 14px; }
-  .industry-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-left: 4px solid var(--industry);
-    border-radius: 0 10px 10px 0;
-    padding: 18px 20px;
-  }
-  .industry-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
-  .industry-tag {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    background: var(--industry);
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-  .industry-date { font-family: var(--mono); font-size: 10px; color: var(--faint); }
-  .industry-title {
-    font-family: var(--display);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--ink);
-    line-height: 1.4;
-    margin-bottom: 10px;
-  }
-  .industry-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
-  .industry-source {
-    margin-top: 10px;
-    font-size: 12px;
-  }
-  .industry-source a {
-    font-family: var(--mono);
-    font-size: 10px;
-    font-weight: 600;
-    color: var(--industry);
-    text-decoration: none;
-    border: 1px solid var(--industry);
-    padding: 2px 8px;
-    border-radius: 4px;
-  }
-  .industry-source a:hover { background: var(--industry); color: #fff; }
-
-  /* ── FOOTER ── */
-  .footer {
-    border-top: 1px solid var(--border);
-    padding: 32px 24px;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-  .footer-title {
-    font-family: var(--display);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .8px;
-    color: var(--faint);
-    margin-bottom: 12px;
-  }
-  .archive-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .archive-list a {
-    font-family: var(--mono);
-    font-size: 11px;
-    color: var(--muted);
-    text-decoration: none;
-    border: 1px solid var(--border);
-    padding: 3px 10px;
-    border-radius: 4px;
-  }
-  .archive-list a:hover { border-color: var(--weather); color: var(--weather); }
-
-  /* ── LANGUAGE TOGGLE ── */
-  body.lang-en [data-lang="ru"] { display: none; }
-  body.lang-ru [data-lang="en"] { display: none; }
+  .load-state { max-width: 1140px; margin: 0 auto; padding: 44px 28px; font-family: var(--mono); font-size: 13px; color: var(--muted); }
+  .viewing-archive-banner { max-width: 1140px; margin: 16px auto 0; padding: 0 28px; }
+  .viewing-archive-banner div { background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 16px; font-size: 13px; display: flex; align-items: center; gap: 10px; }
+  .viewing-archive-banner button { font-family: var(--mono); font-size: 11.5px; font-weight: 600; background: var(--ink); color: #fff; border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; margin-left: auto; }
 </style>
 </head>
-<body data-digest-date="2026-08-19" class="lang-en">
+<body>
 
 <header class="masthead">
+  <svg class="masthead-isolines" viewBox="0 0 1200 220" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M-20,180 C150,120 280,200 450,150 S760,60 920,110 S1150,180 1240,140" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,140 C160,90 300,160 470,115 S770,30 930,80 S1140,150 1240,105" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,100 C170,60 320,120 490,80 S780,0 940,50 S1130,120 1240,70" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <path d="M-20,60 C180,30 340,80 510,45 S790,-30 950,20 S1120,90 1240,35" fill="none" stroke="#6a93cc" stroke-width="1.2"/>
+    <circle cx="330" cy="128" r="3" fill="#6a93cc"/>
+    <circle cx="860" cy="72" r="3" fill="#6a93cc"/>
+  </svg>
   <div class="masthead-inner">
-    <a href="index.html" class="masthead-logo">Mostly <span>Clear</span></a>
-    <div class="masthead-dateline">DIGEST 190700Z AUG26 · ROLLING 72H WINDOW</div>
+    <div class="masthead-metar" id="metar-line">DIGEST · LOADING…</div>
+    <h1 class="masthead-title">Mostly Clear</h1>
+    <p class="masthead-sub">Daily synoptic briefing on climate, weather, renewables, research, and the companies building around them.</p>
   </div>
 </header>
 
 <div class="controls">
   <div class="controls-inner">
-    <div class="ctrl-group">
-      <span class="ctrl-label">Window</span>
-      <button class="pill active" data-days="3">3 days</button>
-      <button class="pill" data-days="7">7 days</button>
+    <div class="window-toggle" role="group" aria-label="Time window">
+      <button class="toggle-btn active" data-days="3">72H</button>
+      <button class="toggle-btn" data-days="7">7 DAYS</button>
     </div>
-    <div class="ctrl-group">
-      <span class="ctrl-label">Lang</span>
-      <button class="pill active" data-lang-btn="en">EN</button>
-      <button class="pill" data-lang-btn="ru">RU</button>
-    </div>
+    <nav class="nav-pills" aria-label="Sections">
+      <a href="#climate" class="nav-pill np-climate">Climate</a>
+      <a href="#weather" class="nav-pill np-weather">Weather</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#science" class="nav-pill np-science">Science</a>
+      <a href="#industry" class="nav-pill np-industry">Industry</a>
+    </nav>
   </div>
 </div>
 
-<main class="main">
+<div class="viewing-archive-banner" id="archive-banner" hidden>
+  <div>
+    <span>Viewing archived issue — <strong id="archive-banner-date"></strong></span>
+    <button id="archive-banner-back">Back to latest</button>
+  </div>
+</div>
 
-  <!-- ═══════════════════════════════════════════════
-       CLIMATE
-  ═══════════════════════════════════════════════ -->
-  <section class="section section--climate">
-    <div class="section-header">
-      <span class="section-icon">🌍</span>
-      <span class="section-title">Climate</span>
-      <span class="section-count"><span>3</span></span>
-    </div>
-
-    <div class="overview">
-      <span data-lang="en">
-        The <a href="https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml">BAMS State of the Climate in 2025</a> (published August 12 by 625 scientists across 60 countries) confirms that greenhouse gas concentrations, global sea level, and ocean heat content all reached record highs in 2025, with global temperatures ranking among the three warmest years since 1850 despite La Niña conditions — underscoring the relentless upward pressure of background warming.
-        <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml">NOAA's August ENSO diagnostic</a> continues to show unprecedented subsurface Pacific heat building toward what may be the strongest El Niño on record since 1950, with a 69% probability of exceeding every prior event.
-        The devastating Balkans heatwave — which drove more than <a href="https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/">28,000 EU excess deaths</a> since June — has now fully dissipated as of August 19, with all heat alerts lifted and temperatures returning to seasonal norms.
-      </span>
-      <span data-lang="ru">
-        <a href="https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml">BAMS State of the Climate 2025</a> (12 авг, 625 учёных, 60 стран): ПГ, уровень моря и теплосодержание океана — рекорды 2025 г.; температуры — в тройке тепломах с 1850 г. несмотря на Ла-Нинью.
-        <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml">ENSO NOAA</a>: подповерхностное тепло Тихого океана без прецедентов; 69% вероятность рекордного Эль-Ниньо.
-        Балканская волна тепла (<a href="https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/">&gt;28 000 избыточных смертей ЕС</a> с июня) полностью диссипировала 19 августа.
-      </span>
-    </div>
-
-    <div class="card-grid">
-
-      <article class="card" data-date="2026-08-13">
-        <div class="card-top">
-          <span class="card-source">NOAA CPC</span>
-          <span class="card-date">13 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml">
-          NOAA Extraordinary August 2026 ENSO Diagnostic: Subsurface Pacific Heat Reaches +10°C — 69% Probability of Record-Breaking El Niño; Largest Subsurface Anomaly Ever Recorded for This Time of Year
-        </a>
-        <p class="card-summary" data-lang="en">
-          NOAA's Climate Prediction Center August 2026 ENSO Diagnostic reveals subsurface Pacific heat anomalies in the upper 200 m reaching approximately +10°C locally — the largest departure recorded for this time of year in the observational record, exceeding even the 1997/98 pre-event buildup. The diagnostic assigns a 69% probability that the 2026/27 El Niño will exceed every event since 1950, with &gt;90% probability of the event qualifying as "very strong" (Niño 3.4 ≥ +1.5°C). If the subsurface heat continues migrating to the surface at its current rate, the WMO ASO 2026 peak projection of +2.9°C may prove conservative.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          ENSO Diagnostic CPC NOAA (13 авг): аномалии тепла в верхних 200 м ~+10°C — исторический максимум для данного времени года. Вероятность превышения рекорда с 1950 г.: 69%; «очень сильного» события: &gt;90%. При текущем темпе всплывания тёплого слоя прогноз ВМО ASO (+2,9°C) может оказаться консервативным.
-        </p>
-      </article>
-
-      <article class="card" data-date="2026-08-12">
-        <div class="card-top">
-          <span class="card-source">Copernicus C3S</span>
-          <span class="card-date">12 AUG</span>
-        </div>
-        <a class="card-headline" href="https://climate.copernicus.eu/copernicus-southwestern-europe-faces-extreme-heat-during-third-warmest-august-globally">
-          Copernicus: August 2026 Tracking as Third-Warmest August on Record Globally — SW Europe Heat Exceptional in ERA5 Record; Daily Global SSTs Continue Breaking Records for Time of Year
-        </a>
-        <p class="card-summary" data-lang="en">
-          The Copernicus Climate Change Service August 2026 update confirms this August is on track to be the third-warmest in the global surface temperature record, behind only 2024 and 2023 — extending an unbroken streak of top-three monthly temperature anomalies since June 2023. Southwestern Europe recorded its most intense and persistent August heat anomaly in the ERA5 dataset extending back to 1940. C3S attributes the compounding of the El Niño signal with record-warm Atlantic and Indian Ocean baseline SSTs as the primary driver of concurrent land heatwaves and marine heat anomalies.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          C3S Copernicus (август 2026): август 2026 — 3-й самый тёплый в истории (после 2024 и 2023 гг.); серия топ-3 не прерывается с июня 2023 г. ЮЗ Европа — рекорд ERA5 (с 1940 г.) по интенсивности тепловой аномалии. Причина: Эль-Ниньо × рекордно тёплые фоновые ТПО Атлантики и Индийского океана.
-        </p>
-      </article>
-
-      <article class="card" data-date="2026-08-19">
-        <div class="card-top">
-          <span class="card-source">Severe Weather EU / ECMWF</span>
-          <span class="card-date">19 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/">
-          Balkans Heatwave Fully Ends — All Heat Alerts Lifted, Temperatures at Seasonal Norms; Greece Health Emergency Lifted; Episode Attributed &gt;28,000 EU Excess Deaths Since June
-        </a>
-        <p class="card-summary" data-lang="en">
-          The European heat dome has fully dissipated as of August 19, with temperatures across Greece, Serbia, Bulgaria, and Romania returning to seasonal norms ahead of the ECMWF-forecast August 20–21 breakdown date. Severe thunderstorms swept parts of Romania and northern Bulgaria on August 18–19 as cold air from the northwest replaced the warm blocking ridge. Athens formally lifted its health emergency, which had been in effect since June, and outdoor work bans have been rescinded. The episode running from late June through August 19 — peaking at 41.2°C in Larissa on August 17 — is now attributed with more than 28,000 EU excess deaths, making it the deadliest European heat event since 2003.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          Тепловой купол над Балканами полностью рассеялся 19 августа (раньше прогноза ECMWF 20–21 авг). Грозы — Румыния и Болгария (18–19 авг). Афины сняли режим ЧС здоровья; запреты на работы отменены. Эпизод (июнь — 19 авг, пик 41,2°C в Ларисе 17 авг): &gt;28 000 избыточных смертей в ЕС — тяжелейшее событие с 2003 г.
-        </p>
-      </article>
-
-    </div><!-- /card-grid -->
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       WEATHER
-  ═══════════════════════════════════════════════ -->
-  <section class="section section--weather">
-    <div class="section-header">
-      <span class="section-icon">⛈</span>
-      <span class="section-title">Weather</span>
-      <span class="section-count"><span>3</span></span>
-    </div>
-
-    <div class="overview">
-      <span data-lang="en">
-        <a href="https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml">Hurricane Lala</a> has defied the dissipation forecast and re-intensified to Category 2 (110 mph, 966 mb) in the central Pacific, now threatening <a href="https://www.star.nesdis.noaa.gov/goes/floater.php?stormid=CP012026">low-lying Northwestern Hawaiian atolls</a> from French Frigate Shoals to Maro Reef with large surf beginning Wednesday.
-        <a href="https://weather.substack.com/p/august-18-2026-tuesday-tropical-update">Tropical Depression 17W</a> is rapidly organizing near Guam into what may become Super Typhoon Saudel — a classic El Niño-fueled deep-tropics system with typhoon intensity expected by Thursday.
-        A <a href="https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast">dangerous heat dome</a> is baking the US South from Texas through the Carolinas with heat indices above 110°F and more than 70 million Americans under heat alerts through August 21, with dozens of records threatened.
-      </span>
-      <span data-lang="ru">
-        <a href="https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml">Ураган Лала</a> вновь усилился до категории 2 (110 миль/ч, 966 мбар) — угрожает <a href="https://www.star.nesdis.noaa.gov/goes/floater.php?stormid=CP012026">атоллам СЗ Гавайев</a> с раннего утра среды.
-        <a href="https://weather.substack.com/p/august-18-2026-tuesday-tropical-update">TD 17W</a> близ Гуама → возможный супертайфун Саудел к четвергу.
-        <a href="https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast">Опасный тепловой купол</a> — юг США (Техас–Каролины): тепловой индекс &gt;43°C, &gt;70 млн под предупреждениями до 21 авг.
-      </span>
-    </div>
-
-    <div class="major-events">
-
-      <div class="event event--alert">
-        <div class="event-header">
-          <span class="event-name">Hurricane Lala — Central Pacific, Re-Intensified to Category 2</span>
-          <span class="event-status">CAT 2 · 110 MPH · WNW AT 9 MPH · NW HAWAIIAN ISLANDS THREATENED</span>
-        </div>
-        <div class="event-body">
-          <span data-lang="en">Tropical Storm Lala — which struck Hawaii's Big Island on August 15–16 as a Category 1 hurricane — has defied the weakening forecast and re-intensified to Category 2 hurricane status by August 19, with maximum sustained winds of 110 mph and a minimum central pressure of 966 mb. NHC's latest public advisory places Lala at approximately 20.4°N, 163–167°W, moving west-northwest at 9 mph. A turn toward the northwest, then north, is forecast beginning Thursday, and Lala is expected to remain a hurricane for the next several days. Large dangerous surf is beginning to affect the Papahanaumokuakea Marine National Monument — including vulnerable low-lying atolls from French Frigate Shoals to Maro Reef — from early Wednesday UTC, with some inundation of the lowest islands possible. Ongoing disaster response continues on the Big Island: HECO still estimates 2+ months to full power restoration in remote districts; FEMA individual assistance is authorised; the Governor's disaster declaration remains active.</span>
-          <span data-lang="ru">Лала (удар о Хавайи кат. 1, 15–16 авг) вновь усилилась до категории 2 (110 миль/ч, 966 мбар) 19 авг. Движение: запад-северо-запад, 9 миль/ч; поворот на СЗ, затем на С — с четверга; ожидается ураганная интенсивность ещё несколько суток. Угроза: прибой и нагон для атоллов Папаханаумокуакеа (от French Frigate Shoals до Maro Reef) с ранней среды UTC. Хавайи: HECO — &gt;2 мес. до полного восстановления ЭС; FEMA активна; декларация катастрофы действует.</span>
-        </div>
-      </div>
-
-      <div class="event event--alert">
-        <div class="event-header">
-          <span class="event-name">Tropical Depression 17W (Saudel) — Western Pacific, Rapidly Intensifying Near Guam</span>
-          <span class="event-status">TD 17W ACTIVE · TYPHOON BY THU · SUPER TYPHOON POSSIBLE · LOW LATITUDE</span>
-        </div>
-        <div class="event-body">
-          <span data-lang="en">Tropical Depression 17W, which formed in the western Pacific near Guam on August 18–19, is the highest-priority emerging tropical system globally as of August 19. Meteorologist Dr. Ryan Maue's August 18 tropical update describes 17W as a low-latitude (9°N) deep-tropics system with a vast expanse of El Niño-warmed pool ahead and essentially no vertical wind shear — ideal conditions for rapid intensification. Typhoon status is expected by Thursday, with super typhoon potential on the extended track. The system structurally resembles classic El Niño-fueled western Pacific typhoons. JTWC and JMA advisories are being closely monitored by emergency managers across Micronesia, the Mariana Islands, the Philippines, southern Japan, and Taiwan. The current track is not yet well-established; all communities across the western Pacific should monitor updates closely through the week.</span>
-          <span data-lang="ru">TD 17W (Гуам, 18–19 авг) — главная развивающаяся тропическая угроза в Мировом океане. Dr. Maue (18 авг): 9°N, обширный тёплый бассейн (Эль-Ниньо), минимальный сдвиг → быстрое усиление. Тайфунный статус — четверг; суперчайфун — возможен при благоприятном треке. Под наблюдением: Микронезия, Марианские острова, Филиппины, юг Японии, Тайвань. Трек не установлен — необходимо следить за обновлениями.</span>
-        </div>
-      </div>
-
-      <div class="event event--alert">
-        <div class="event-header">
-          <span class="event-name">Southern US Heat Dome — Dangerous Heat From Texas to the Carolinas</span>
-          <span class="event-status">70M+ UNDER ALERTS · AUG 19-21 PEAK · HEAT INDEX 110°F+ · DOZENS OF RECORDS</span>
-        </div>
-        <div class="event-body">
-          <span data-lang="en">A powerful heat dome entrenched over the southern United States is producing dangerous conditions on August 19, with triple-digit air temperatures and oppressive humidity driving heat indices to 105–115°F from Texas through the Florida Panhandle and up to the Carolinas. NWS/WPC has issued "high risk" excessive heat outlooks for parts of the South-Central US for August 19–21 — the most dangerous category. Among the most threatened records: Borger, TX (forecast 102°F vs. the 101°F record set in 2025), San Angelo, TX (112°F record possible), and Charleston, SC (forecast 98–100°F vs. the 96°F record from 2023). Texas and Oklahoma have each accumulated over 45 days above 100°F in 2026. NOAA warns the dangerous heat may persist through the end of August. Overnight lows remain in the 80s°F in major urban areas, preventing recovery.</span>
-          <span data-lang="ru">Тепловой купол над югом США (19 авг): температура &gt;38°C, тепловой индекс 43–46°C от Техаса до Каролин. WPC/NWS: «высокий риск» с 19 по 21 авг. Рекорды под угрозой: Боргер TX (39°C), Сан-Анджело TX (~44°C), Чарлстон SC (~37–38°C). Техас и Оклахома: &gt;45 дней выше 38°C в 2026 г. NOAA: жара может продолжаться до конца августа. Ночные минимумы &gt;27°C в городах — без восстановления.</span>
-        </div>
-      </div>
-
-      <div class="event">
-        <div class="event-header">
-          <span class="event-name">BC Bald Range Wildfire — Stable but Deterioration Window Aug 19–20</span>
-          <span class="event-status">STABLE · ~18,450 HA · THREAT WINDOW AUG 19-20 · BCWS CAUTIONS</span>
-        </div>
-        <div class="event-body">
-          <span data-lang="en">The Bald Range wildfire remains stable at approximately 18,450 ha following the August 18 improvement, when the Central Okanagan Emergency Operations Centre downgraded evacuation orders and lifted all remaining alerts. BC Wildfire Service is flagging August 19–20 as the next deterioration window as hot, dry southerly air returns to the Okanagan — residents who evacuated are urged to await formal all-clear before returning. Province-wide State of Emergency remains active. Highway 97 remains open to convoy traffic.</span>
-          <span data-lang="ru">Bald Range: ~18 450 га, стабилизация (после понижения приказов и снятия предупреждений 18 авг). BCWS: ухудшение 19–20 авг (жаркий сухой воздух с юга) — возвращение преждевременно. ЧП провинции: действует. Шоссе 97: конвой.</span>
-        </div>
-      </div>
-
-      <div class="event">
-        <div class="event-header">
-          <span class="event-name">Assam / Bangladesh Monsoon Floods — Brahmaputra Peak Discharge Passing</span>
-          <span class="event-status">3.4M AFFECTED · PEAK PASSING · SOME IMPROVEMENT EXPECTED</span>
-        </div>
-        <div class="event-body">
-          <span data-lang="en">Assam State Disaster Management Authority: 3.4 million people across 34 districts remain affected as of August 18–19. The Brahmaputra FFWC projects the main-stem peak discharge from India will pass Bahadurabad station in Bangladesh by August 19–20, offering some downstream relief to Sylhet and Sunamganj divisions where the Surma River reached its second-highest level in 15 years, inundating over 400,000 homes. Confirmed monsoon-season deaths in Assam: 127; approximately 68,000 remain in relief camps. IMD red alerts for heavy rainfall across Assam, Meghalaya, and Manipur were extended through August 18–19.</span>
-          <span data-lang="ru">ASDMA: 3,4 млн пострадавших в 34 районах Ассама (18–19 авг). FFWC: пик Брахмапутры пройдёт Бахадурабад 19–20 авг → облегчение в Силхете/Сунамгандже (Сурма: 2-й рекорд за 15 лет, 400 000+ домов). Ассам: 127 погибших, ~68 000 в лагерях. IMD: красные уровни продлены до 18–19 авг.</span>
-        </div>
-      </div>
-
-    </div><!-- /major-events -->
-
-    <div class="card-grid">
-
-      <article class="card card--alert" data-date="2026-08-19">
-        <div class="card-top">
-          <span class="card-source">NHC</span>
-          <span class="card-date">19 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml">
-          Hurricane Lala Reaches Category 2 With 110-MPH Winds in Central Pacific — NW Hawaiian Atolls Face Dangerous Surf and Inundation Threat Beginning Wednesday UTC
-        </a>
-        <p class="card-summary" data-lang="en">
-          Contrary to forecast dissipation, Tropical Storm Lala has intensified to Category 2 hurricane status with 110 mph sustained winds and a central pressure of 966 mb as of August 19, moving WNW at 9 mph. NHC forecasts a turn toward the northwest and then north beginning Thursday; Lala is expected to remain a hurricane for the next several days. Large dangerous surf is forecast to begin affecting the Papahanaumokuakea Marine National Monument's low-lying atolls — particularly French Frigate Shoals, Maro Reef, and Laysan — from early Wednesday UTC, with inundation possible for the lowest islands. The Big Island remains in active federal disaster response, with HEMA coordinating FEMA individual assistance programs.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          Лала — категория 2 (110 миль/ч, 966 мбар, 19 авг), движение ЗСЗ 9 миль/ч. NHC: поворот на СЗ → С в четверг; ожидается ураганная интенсивность ещё несколько суток. Опасный прибой и нагон для атоллов Папаханаумокуакеа (French Frigate Shoals, Maro Reef, Laysan) с ранней среды UTC. Хавайи: FEMA + HEMA ведут федеральный отклик.
-        </p>
-      </article>
-
-      <article class="card card--alert" data-date="2026-08-19">
-        <div class="card-top">
-          <span class="card-source">JTWC / Dr. Ryan Maue</span>
-          <span class="card-date">19 AUG</span>
-        </div>
-        <a class="card-headline" href="https://weather.substack.com/p/august-18-2026-tuesday-tropical-update">
-          Tropical Depression 17W Rapidly Organizing Near Guam — Typhoon Saudel Expected by Thursday; Classic El Niño Deep-Tropics System With Super Typhoon Potential
-        </a>
-        <p class="card-summary" data-lang="en">
-          Tropical Depression 17W, tracked by the Joint Typhoon Warning Center and highlighted in Dr. Ryan Maue's August 18 tropical update, is rapidly organizing in the western Pacific near Guam and is expected to attain typhoon status by Thursday. The system is forming at a very low latitude (9°N) with access to a vast expanse of El Niño-warmed sea surface temperatures and essentially no vertical wind shear — conditions that facilitate rapid intensification. Super typhoon intensity cannot be ruled out as the system tracks westward through the warm deep-tropics over the coming week. Emergency managers across Micronesia, the Mariana Islands, the Philippines, and Taiwan are closely monitoring the evolving track and intensity forecasts.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          TD 17W (JTWC + Dr. Maue, 18 авг): формирование близ Гуама. Тайфунный статус — четверг. Позиция 9°N, тёплый бассейн (Эль-Ниньо), минимальный сдвиг → быстрое усиление; суперчайфун — не исключён. Микронезия, Марианские острова, Филиппины, Тайвань — под наблюдением.
-        </p>
-      </article>
-
-      <article class="card card--alert" data-date="2026-08-19">
-        <div class="card-top">
-          <span class="card-source">NWS/WPC / weather.com</span>
-          <span class="card-date">19 AUG</span>
-        </div>
-        <a class="card-headline" href="https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast">
-          Dangerous Heat Dome Bakes US South — Heat Indices Top 110°F From Texas to Carolinas; 70M+ Under Alerts as Dozens of Records Threatened Through Aug 21
-        </a>
-        <p class="card-summary" data-lang="en">
-          A powerful heat dome entrenched over the southern United States is generating dangerous conditions on August 19, with heat indices reaching 105–115°F across southern Georgia, coastal South Carolina, the Florida Panhandle, and the Mid-South. NWS/WPC has issued "high risk" excessive heat outlooks for parts of the South-Central US for August 19–21. Among the records threatened: Borger, TX (forecast 102°F vs. 2025 record 101°F), San Angelo, TX (112°F possible), and Charleston, SC (forecast 98–100°F vs. 2023 record of 96°F). NOAA warns this dangerous pattern may persist through the end of August. Texas has recorded 45+ days above 100°F in 2026; Oklahoma has matched that figure for the first time since 2011.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          Тепловой купол США-Юг (19 авг): тепловой индекс 43–46°C от Техаса до Каролин. WPC: «высокий риск» 19–21 авг. Угрозы рекордам: Боргер TX, Сан-Анджело TX, Чарлстон SC. NOAA: жара может сохраняться до конца августа. Техас: 45+ дней &gt;38°C в 2026 г. — Оклахома достигла того же показателя впервые с 2011 г.
-        </p>
-      </article>
-
-    </div><!-- /card-grid -->
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       RENEWABLES
-  ═══════════════════════════════════════════════ -->
-  <section class="section section--renewables">
-    <div class="section-header">
-      <span class="section-icon">⚡</span>
-      <span class="section-title">Renewables &amp; Grid</span>
-      <span class="section-count"><span>1</span></span>
-    </div>
-
-    <div class="overview">
-      <span data-lang="en">
-        This week's primary renewable energy infrastructure story is <a href="https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html">Copenhagen Infrastructure Partners' Growth Markets Fund II</a> final close at $3 billion (August 14) — nearly triple its predecessor — targeting large-scale solar, wind, storage, and grid infrastructure across 15 high-growth emerging economies in Eastern Europe, Asia, and Latin America. The long-duration storage sector's investment milestone (Form Energy's $750M Series G, August 12) is covered in Industry News.
-      </span>
-      <span data-lang="ru">
-        Главное событие недели в секторе ВИЭ-инфраструктуры — закрытие <a href="https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html">Growth Markets Fund II CIP</a> на $3 млрд (14 авг) — втрое больше предшественника, 15 формирующихся рынков. Инвестиции в долгосрочное хранение (Form Energy $750 млн, 12 авг) — в разделе Industry News.
-      </span>
-    </div>
-
-    <div class="card-grid">
-
-      <article class="card" data-date="2026-08-14">
-        <div class="card-top">
-          <span class="card-source">GlobeNewswire / PV Tech</span>
-          <span class="card-date">14 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html">
-          Copenhagen Infrastructure Partners Closes Growth Markets Fund II at $3B — Nearly Triple Predecessor, Targeting Renewables in 15 Emerging Economies Across Eastern Europe, Asia, and Latin America
-        </a>
-        <p class="card-summary" data-lang="en">
-          Copenhagen Infrastructure Partners (CIP) announced on August 14 the final close of its Growth Markets Fund II (GMF II) at $3 billion in commitments — nearly triple the size of its GMF I predecessor — targeting large-scale solar, wind, energy storage, and grid infrastructure across 15 selected high-growth middle-income markets in Eastern Europe, Asia, and Latin America. CIP already committed $1.6 billion across nine investments at the time of close. The fund is backed by more than 200 of the world's largest institutional investors and signals continued institutional conviction in emerging-market clean energy at scale. CIP manages approximately €43 billion across 15 funds and is one of the world's largest dedicated energy infrastructure fund managers.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          CIP (14 авг): Growth Markets Fund II — $3 млрд (втрое больше GMF I). 15 рынков (Вост. Европа, Азия, Лат. Америка): СЭС, ВЭС, хранение, сетевая инфраструктура. На момент закрытия: $1,6 млрд вложены в 9 проектов. &gt;200 институциональных инвесторов; CIP — ~€43 млрд СЧА.
-        </p>
-      </article>
-
-    </div><!-- /card-grid -->
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       SCIENCE
-  ═══════════════════════════════════════════════ -->
-  <section class="section section--science">
-    <div class="section-header">
-      <span class="section-icon">🔬</span>
-      <span class="section-title">Science &amp; Research</span>
-      <span class="section-count"><span>4</span></span>
-    </div>
-
-    <div class="overview">
-      <span data-lang="en">
-        The <a href="https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml">BAMS State of the Climate in 2025</a> (August 12), compiled by 625 scientists in 60 countries, confirms record-high CO₂, CH₄, and N₂O concentrations, global sea level, and ocean heat content in 2025 — with temperatures among the three warmest years since 1850 despite La Niña. A new <a href="https://www.nature.com/articles/s41558-026-02730-w">Nature Climate Change paper</a> (August 14) finds that AMOC stability depends critically on the rate of warming — collapsing at as little as +2°C under fast forcing but remaining stable to +5.5°C under slow forcing — fundamentally reframing what constitutes a safe climate pathway. ECMWF is completing production of the <a href="https://www.ecmwf.int/en/about/media-centre/news/2026/new-oras6-ocean-reanalysis">ORAS6 ocean reanalysis</a> (1950–present) this month, providing the ocean foundation for the forthcoming ERA6 global dataset.
-      </span>
-      <span data-lang="ru">
-        <a href="https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml">BAMS State of Climate 2025</a> (12 авг): рекорды CO₂/CH₄/N₂O, уровня моря и теплосодержания; температуры — топ-3 с 1850 г. <a href="https://www.nature.com/articles/s41558-026-02730-w">Nature Climate Change</a> (14 авг): устойчивость AMOC зависит от скорости потепления — коллапс при +2°C (быстрый сценарий), но стабильность до +5,5°C (медленный). ECMWF завершает производство <a href="https://www.ecmwf.int/en/about/media-centre/news/2026/new-oras6-ocean-reanalysis">ORAS6</a> (1950 — н.в.) — основа ERA6.
-      </span>
-    </div>
-
-    <div class="card-grid">
-
-      <article class="card" data-date="2026-08-12">
-        <div class="card-top">
-          <span class="card-source">BAMS / AMS</span>
-          <span class="card-date">12 AUG</span>
-        </div>
-        <a class="card-headline" href="https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml">
-          BAMS State of the Climate in 2025: Record Greenhouse Gases, Sea Level, and Ocean Heat; 2025 Ranks Among Three Warmest Years Despite La Niña
-        </a>
-        <p class="card-meta">625 scientists · 60 countries · Bulletin of the American Meteorological Society Vol. 107, No. 8 · August 2026</p>
-        <p class="card-summary" data-lang="en">
-          The 36th annual State of the Climate report, published August 12 in BAMS (Volume 107, Issue 8), brings contributions from 625 scientists across 60 countries. Key findings: all three dominant greenhouse gases — CO₂, CH₄, and N₂O — reached new record atmospheric concentrations in 2025; global mean sea level set a new annual high; ocean heat content in the upper 2,000 m reached its fourth consecutive record; and the Greenland Ice Sheet lost approximately 129 gigatons. Despite cool ENSO-neutral and weak La Niña conditions for much of 2025, global temperatures still ranked among the three warmest years in the instrumental record (since 1850), underscoring the relentless upward pressure of greenhouse warming independent of natural variability.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          36-й ежегодный BAMS State of the Climate (12 авг, Vol. 107, №8, 625 учёных, 60 стран). Ключевые выводы: CO₂, CH₄, N₂O — новые рекорды атмосферных концентраций; уровень мирового океана — рекорд; теплосодержание 2000 м — рекорд 4-й год подряд; Гренландия: ~129 Гт льда. Несмотря на Ла-Нинью, 2025 г. — в тройке теплейших с 1850 г.
-        </p>
-      </article>
-
-      <article class="card" data-date="2026-08-14">
-        <div class="card-top">
-          <span class="card-source">Nature Climate Change</span>
-          <span class="card-date">14 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.nature.com/articles/s41558-026-02730-w">
-          Failure to Track a Stable AMOC State Under Rapid Climate Change — Rate of Warming, Not Just Temperature Level, Determines Collapse Risk
-        </a>
-        <p class="card-meta">Nature Climate Change · August 14, 2026 · DOI:10.1038/s41558-026-02730-w</p>
-        <p class="card-summary" data-lang="en">
-          A study published August 14 in Nature Climate Change demonstrates that the widely cited +4°C threshold for AMOC collapse is not a fixed target: Atlantic Meridional Overturning Circulation stability depends critically on the rate of radiative forcing change, not merely on the temperature level reached. Under a slow CO₂ ramp simulation, a stabilizing mechanism — enhanced ocean evaporation and reduced sea-ice extent — keeps the AMOC intact to +5.5°C of global warming. Under fast CO₂ ramps representing present-day or higher emission trajectories, the AMOC collapses at as little as +2°C. The finding implies that Paris Agreement compliance pathways cannot guarantee AMOC stability if warming occurs rapidly, fundamentally reframing what constitutes a "safe" trajectory for ocean circulation.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          Nature Climate Change (14 авг): порог коллапса AMOC — не фиксированная температура. При медленном CO₂: стабильность до +5,5°C (испарение + сокращение льда компенсируют дестабилизацию). При быстром CO₂ (современные траектории): коллапс при +2°C. Вывод: соответствие Парижскому соглашению не гарантирует устойчивость AMOC — критически важный результат для климатических стратегий.
-        </p>
-      </article>
-
-      <article class="card" data-date="2026-08-18">
-        <div class="card-top">
-          <span class="card-source">ECMWF / AIFS Blog</span>
-          <span class="card-date">18 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models">
-          ECMWF Discontinues Daily Runs of External AI Weather Models — Pangu-Weather, GraphCast, Aurora, FourCastNet Phased Out as AIFS Reaches Operational Maturity
-        </a>
-        <p class="card-meta">ECMWF AIFS Blog · August 2026</p>
-        <p class="card-summary" data-lang="en">
-          ECMWF published a blog post announcing the discontinuation of its daily experimental operational runs of four external AI weather prediction systems: Pangu-Weather (Huawei), GraphCast (Google DeepMind), Aurora (Microsoft Research), and FourCastNet (NVIDIA). The models had been run daily since 2023 on ECMWF's openCharts platform as a community benchmarking resource. The decision reflects ECMWF's own Artificial Intelligence Forecasting System (AIFS) reaching operational maturity as the primary in-house AI NWP system, completing the centre's transition from evaluating external partner models to running its own production AI forecast. All four external models remain open-source and continue to be developed by their originators.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          ECMWF (блог AIFS, август 2026): прекращение ежедневных операционных запусков 4 внешних ИИ-моделей прогноза — Pangu-Weather (Huawei), GraphCast (DeepMind), Aurora (Microsoft), FourCastNet (NVIDIA), — работавших на openCharts с 2023 г. Причина: собственный AIFS достиг операционной зрелости. Все 4 модели остаются открытыми и развиваются вне ECMWF.
-        </p>
-      </article>
-
-      <article class="card" data-date="2026-08-19">
-        <div class="card-top">
-          <span class="card-source">ECMWF</span>
-          <span class="card-date">19 AUG</span>
-        </div>
-        <a class="card-headline" href="https://www.ecmwf.int/en/about/media-centre/news/2026/new-oras6-ocean-reanalysis">
-          ECMWF Completing ORAS6 — Sixth-Generation Ensemble Ocean Reanalysis Extending to 1950 Forms Backbone of Forthcoming ERA6 Global Dataset
-        </a>
-        <p class="card-meta">ECMWF · August 2026</p>
-        <p class="card-summary" data-lang="en">
-          ECMWF's sixth-generation ensemble ocean and sea-ice reanalysis system (ORAS6) is completing production of its historical data stream from 1950 to present in August 2026. ORAS6 advances over its predecessor ORAS5 by introducing ensemble-based data assimilation for the first time, allowing direct assimilation of sea-surface temperature observations and producing 11 ensemble members to quantify ocean state uncertainty. The system is forced by hourly ERA5 atmospheric fields and will serve as the ocean and sea-ice initial condition system for ERA6 — the forthcoming next-generation global atmospheric reanalysis produced by ECMWF for the EU Copernicus Climate Change Service. ERA6 is expected to eventually supersede ERA5 as the reference reanalysis for climate monitoring, impact assessment, and AI weather model training.
-        </p>
-        <p class="card-summary" data-lang="ru">
-          ECMWF (август 2026): завершается производство ORAS6 — ансамблевого реанализа океана и льда 6-го поколения (1950 — н.в.). Ключевые улучшения: ансамблевая ассимиляция, прямое включение ТПО, 11-элементный ансамбль. Основа для ERA6 (следующий глобальный атмосферный реанализ C3S) — будущая замена ERA5 для климатического мониторинга, оценки воздействий и обучения ИИ-моделей.
-        </p>
-      </article>
-
-    </div><!-- /card-grid -->
-  </section>
-
-  <!-- ═══════════════════════════════════════════════
-       INDUSTRY
-  ═══════════════════════════════════════════════ -->
-  <section class="section section--industry">
-    <div class="section-header">
-      <span class="section-icon">🏭</span>
-      <span class="section-title">Industry News</span>
-      <span class="section-count"><span>1</span></span>
-    </div>
-
-    <div class="overview">
-      <span data-lang="en">
-        The standout deal of the week is <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">Form Energy's $750M Series G</a> (August 12) — the largest single funding round for a long-duration energy storage company to date in 2026 — as the iron-air battery maker scales manufacturing with a commercial backlog that has grown fourfold this year to 80 GWh.
-      </span>
-      <span data-lang="ru">
-        Главная сделка недели — <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">Series G Form Energy на $750 млн</a> (12 авг) — крупнейший раунд для компании долгосрочного хранения энергии в 2026 г.: портфель заказов вырос втрое до 80 ГВт·ч.
-      </span>
-    </div>
-
-    <div class="industry-grid">
-
-      <article class="industry-card" data-date="2026-08-12">
-        <div class="industry-header">
-          <span class="industry-tag">Funding · Series G</span>
-          <span class="industry-date">12 AUG</span>
-        </div>
-        <h3 class="industry-title">Form Energy Raises $750M Series G to Scale Iron-Air 100-Hour Battery Manufacturing — Backlog Reaches 80 GWh; T. Rowe Price Leads, Sequoia Joins</h3>
-        <p class="industry-body" data-lang="en">
-          <a href="https://formenergy.com/form-energy-secures-750m-in-series-g-financing/">Form Energy</a>, the Somerville, MA-based manufacturer of iron-air batteries capable of storing electricity for up to 100 hours, announced a $750 million oversubscribed Series G on August 12 — led by T. Rowe Price, with Sequoia Capital, Janus Henderson, Franklin Templeton, and PEAK6 Investments joining as new investors. The round brings total equity raised to over $2 billion. The raise coincides with Form Energy's commercial backlog growing fourfold from approximately 20 GWh to 80 GWh, including contracted projects with Xcel Energy, Google, and FuturEnergy Ireland. Iron-air chemistry — which stores electricity by oxidizing and reducing iron in a water-based electrolyte — delivers a levelized cost well below lithium-ion at storage durations exceeding 10 hours, making it directly competitive with gas peakers for multi-day grid balancing. Proceeds fund manufacturing scale-up at the company's West Virginia facility, which began production in 2025. Climate tech VC investment reached $26.1 billion in H1 2026 (up 55% year-on-year) per <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/">CTVC</a>, with grid storage attracting increased capital as renewable penetration accelerates.
-        </p>
-        <p class="industry-body" data-lang="ru">
-          <a href="https://formenergy.com/form-energy-secures-750m-in-series-g-financing/">Form Energy</a> (12 авг): $750 млн Series G (T. Rowe Price, Sequoia Capital, Janus Henderson, Franklin Templeton, PEAK6); суммарно &gt;$2 млрд. Портфель заказов вырос в 4 раза до 80 ГВт·ч (Xcel Energy, Google, FuturEnergy Ireland). Железо-воздушная химия: хранение до 100 ч, низкая LCOE vs. литий-ион при продолжительности &gt;10 ч. Использование: расширение производства (Западная Вирджиния, работает с 2025 г.). Климат-технологии в целом: <a href="https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/">CTVC</a> — $26,1 млрд за H1 2026 (+55% г/г).
-        </p>
-        <div class="industry-source">
-          <a href="https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/">TechCrunch</a>
-        </div>
-      </article>
-
-    </div><!-- /industry-grid -->
-  </section>
-
+<main class="main" id="main-content">
+  <div class="load-state" id="load-state">Loading digest…</div>
 </main>
 
-<footer>
-  <div class="footer">
-    <p class="footer-title">Archive</p>
-    <ul class="archive-list">
-      <li><a href="archive/2026-08-18.html">2026-08-18</a></li>
-      <li><a href="archive/2026-08-17.html">2026-08-17</a></li>
-      <li><a href="archive/2026-08-16.html">2026-08-16</a></li>
-      <li><a href="archive/2026-08-15.html">2026-08-15</a></li>
-      <li><a href="archive/2026-08-14.html">2026-08-14</a></li>
-      <li><a href="archive/2026-08-12.html">2026-08-12</a></li>
-      <li><a href="archive/2026-08-11.html">2026-08-11</a></li>
-      <li><a href="archive/2026-08-10.html">2026-08-10</a></li>
-      <li><a href="archive/2026-08-09.html">2026-08-09</a></li>
-      <li><a href="archive/2026-08-08.html">2026-08-08</a></li>
-      <li><a href="archive/2026-08-06.html">2026-08-06</a></li>
-      <li><a href="archive/2026-08-05.html">2026-08-05</a></li>
-      <li><a href="archive/2026-08-04.html">2026-08-04</a></li>
-      <li><a href="archive/2026-08-03.html">2026-08-03</a></li>
-    </ul>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-label">Archive</div>
+    <ul class="archive-list" id="archive-list"></ul>
+    <p class="footer-credit">Compiled automatically, daily. Curated by <a href="https://iamdrigo.com">Ilya Drigo</a>.</p>
   </div>
 </footer>
 
 <script>
 (function () {
-  const body = document.body;
-  const digestDate = new Date(body.dataset.digestDate).getTime();
+  var SECTION_META = {
+    climate:    { title: 'Climate',           icon: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/>' },
+    weather:    { title: 'Weather',           icon: '<path d="M4 15a4 4 0 014-4 5 5 0 019.6 1.5A3.5 3.5 0 0117 19H7a4 4 0 01-3-4z"/>' },
+    renewables: { title: 'Renewables',        icon: '<path d="M12 3v18M12 8l5-3M12 8L7 5M12 15l5 3M12 15l-5 3"/>' },
+    science:    { title: 'Science & Research',icon: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 002 3h10a2 2 0 002-3l-5-9V3"/>' }
+  };
 
-  function applyWindow(days) {
-    const cutoff = digestDate - days * 86400000;
-    document.querySelectorAll('[data-date]').forEach(el => {
-      const t = new Date(el.dataset.date).getTime();
-      el.hidden = t < cutoff;
-    });
-    document.querySelectorAll('[data-days]').forEach(btn => {
-      btn.classList.toggle('active', +btn.dataset.days === days);
+  function esc(s) { return (s || '').toString(); } // content is trusted (own generated JSON), inline HTML allowed for links
+
+  function fmtDateShort(iso) {
+    var d = new Date(iso + 'T00:00:00Z');
+    var months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+    return d.getUTCDate() + ' ' + months[d.getUTCMonth()];
+  }
+
+  function renderCard(sectionKey, item) {
+    var extraMeta = item.meta ? '<p class="card-meta">' + esc(item.meta) + '</p>' : '';
+    return '<article class="card" data-date="' + esc(item.date) + '">' +
+      '<div class="card-top"><span class="card-source">' + esc(item.source) + '</span>' +
+      '<span class="card-date">' + fmtDateShort(item.date) + '</span></div>' +
+      '<a class="card-headline" href="' + esc(item.url) + '" target="_blank" rel="noopener">' + esc(item.headline) + '</a>' +
+      extraMeta +
+      '<p class="card-summary">' + esc(item.summary) + '</p>' +
+    '</article>';
+  }
+
+  function renderIndustryCard(item) {
+    return '<article class="industry-card" data-date="' + esc(item.date) + '">' +
+      '<div class="industry-top"><h3 class="industry-title">' + esc(item.title) + '</h3>' +
+      '<span class="industry-date">' + fmtDateShort(item.date) + '</span></div>' +
+      '<p class="industry-body">' + item.body_html + '</p>' +
+      '<span class="industry-source">' + item.source_html + '</span>' +
+    '</article>';
+  }
+
+  function renderSection(key, data) {
+    if (!data) return '';
+    var meta = SECTION_META[key];
+    var html = '<section class="digest-section s-' + key + '" id="' + key + '">';
+    html += '<div class="section-head"><span class="section-swatch" aria-hidden="true"><svg viewBox="0 0 24 24">' + meta.icon + '</svg></span>';
+    html += '<h2 class="section-title">' + meta.title + '</h2><span class="section-count" data-count-for="' + key + '"></span></div>';
+
+    if (key === 'weather' && data.major_events) {
+      html += '<div class="major-events"><div class="major-events-head"><span class="pulse-dot"></span><span class="major-events-label">Major Events</span></div>';
+      if (data.major_events.length === 0) {
+        html += '<div class="event"><div class="event-name">No major weather events currently active.</div></div>';
+      } else {
+        data.major_events.forEach(function (ev) {
+          html += '<div class="event"><div class="event-name">' + esc(ev.name) + '</div>' +
+            '<div class="event-status">' + esc(ev.status) + '</div>' +
+            '<div class="event-impact">' + esc(ev.impact) + '</div></div>';
+        });
+      }
+      html += '</div>';
+    }
+
+    html += '<div class="overview">' + (data.overview_html || esc(data.overview) || '') + '</div>';
+
+    if (data.items && data.items.length) {
+      html += '<div class="card-grid">';
+      data.items.forEach(function (item) { html += renderCard(key, item); });
+      html += '</div>';
+    }
+    html += '<p class="no-results" data-empty-for="' + key + '">No items in this window.</p>';
+    html += '</section>';
+    return html;
+  }
+
+  function renderIndustry(data) {
+    if (!data) return '';
+    var html = '<section class="digest-section" id="industry">';
+    html += '<div class="section-head"><span class="section-swatch" aria-hidden="true" style="background:var(--industry)"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></span>';
+    html += '<h2 class="section-title">Industry News</h2><span class="section-count" data-count-for="industry"></span></div>';
+    html += '<div class="industry-cards">';
+    (data.items || []).forEach(function (item) { html += renderIndustryCard(item); });
+    html += '</div>';
+    html += '<p class="no-results" data-empty-for="industry">No items in this window.</p>';
+    html += '</section>';
+    return html;
+  }
+
+  function render(data) {
+    var main = document.getElementById('main-content');
+    var order = ['climate', 'weather', 'renewables', 'science'];
+    var html = '';
+    order.forEach(function (key) { html += renderSection(key, data.sections[key]); });
+    html += renderIndustry(data.sections.industry);
+    main.innerHTML = html;
+
+    document.getElementById('metar-line').textContent = data.metar || ('DIGEST ' + data.digest_date);
+
+    applyFilter(getActiveDays());
+    document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+      btn.onclick = function () {
+        document.querySelectorAll('.toggle-btn').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFilter(parseInt(btn.dataset.days, 10));
+      };
     });
   }
 
-  document.querySelectorAll('[data-days]').forEach(btn => {
-    btn.addEventListener('click', () => applyWindow(+btn.dataset.days));
-  });
+  function getActiveDays() {
+    var active = document.querySelector('.toggle-btn.active');
+    return active ? parseInt(active.dataset.days, 10) : 3;
+  }
 
-  function applyLang(lang) {
-    body.className = body.className.replace(/lang-\w+/, '') + ' lang-' + lang;
-    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.langBtn === lang);
+  var currentDigestDate = null;
+
+  function applyFilter(days) {
+    if (!currentDigestDate) return;
+    var cutoff = currentDigestDate - days * 86400000;
+    ['climate', 'weather', 'renewables', 'science', 'industry'].forEach(function (sec) {
+      var cards = document.querySelectorAll('#' + sec + ' .card, #' + sec + ' .industry-card');
+      var visible = 0;
+      cards.forEach(function (card) {
+        var d = new Date(card.dataset.date + 'T00:00:00Z').getTime();
+        var show = d >= cutoff;
+        card.hidden = !show;
+        if (show) visible++;
+      });
+      var empty = document.querySelector('[data-empty-for="' + sec + '"]');
+      if (empty) empty.classList.toggle('visible', visible === 0 && cards.length > 0);
+      var count = document.querySelector('[data-count-for="' + sec + '"]');
+      if (count) count.textContent = visible + (visible === 1 ? ' item' : ' items');
     });
   }
 
-  document.querySelectorAll('[data-lang-btn]').forEach(btn => {
-    btn.addEventListener('click', () => applyLang(btn.dataset.langBtn));
-  });
+  function renderArchiveList(dates, activeDate) {
+    var ul = document.getElementById('archive-list');
+    ul.innerHTML = '';
+    dates.forEach(function (d) {
+      if (d === activeDate) return;
+      var li = document.createElement('li');
+      var btn = document.createElement('button');
+      btn.textContent = d;
+      btn.onclick = function () { loadDigest(d); history.pushState({}, '', '?d=' + d); };
+      li.appendChild(btn);
+      ul.appendChild(li);
+    });
+  }
 
-  applyWindow(3);
+  function showArchiveBanner(date, isArchive) {
+    var banner = document.getElementById('archive-banner');
+    if (isArchive) {
+      document.getElementById('archive-banner-date').textContent = date;
+      banner.hidden = false;
+    } else {
+      banner.hidden = true;
+    }
+  }
+  document.getElementById('archive-banner-back').onclick = function () {
+    history.pushState({}, '', location.pathname);
+    loadDigest(null);
+  };
+
+  function loadDigest(date) {
+    var url = date ? ('data/archive/' + date + '.json') : 'data/latest.json';
+    document.getElementById('main-content').innerHTML = '<div class="load-state" id="load-state">Loading digest…</div>';
+    fetch(url, { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error('not found'); return r.json(); })
+      .then(function (data) {
+        currentDigestDate = new Date(data.digest_date + 'T00:00:00Z').getTime();
+        render(data);
+        showArchiveBanner(data.digest_date, !!date);
+        return fetch('data/archive-index.json', { cache: 'no-cache' })
+          .then(function (r) { return r.ok ? r.json() : []; })
+          .then(function (dates) { renderArchiveList(dates, data.digest_date); })
+          .catch(function () {});
+      })
+      .catch(function (err) {
+        document.getElementById('main-content').innerHTML =
+          '<div class="load-state">Could not load the digest' + (date ? (' for ' + date) : '') + '. <a href="' + location.pathname + '">Back to latest</a></div>';
+      });
+  }
+
+  var params = new URLSearchParams(location.search);
+  var requestedDate = params.get('d');
+  loadDigest(requestedDate);
 })();
 </script>
 
