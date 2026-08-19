@@ -1,16 +1,30 @@
 {
   "digest_date": "2026-08-19",
-  "metar": "DIGEST 190700Z AUG26 · ROLLING 72H WINDOW",
+  "metar": "DIGEST 191200Z AUG26 · ROLLING 72H WINDOW",
   "sections": {
     "climate": {
-      "overview_html": "The <a href=\"https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml\" target=\"_blank\" rel=\"noopener\">BAMS State of the Climate 2025</a> report confirms record greenhouse gases, sea level, and ocean heat in 2025. The Balkans heatwave, which drove <a href=\"https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/\" target=\"_blank\" rel=\"noopener\">over 28,000 EU excess deaths</a>, has fully dissipated as of August 19.",
+      "overview_html": "The <a href=\"https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/worsening-drought-and-record-heat-grip-europe-fuelling-extraordinary-wildfires-and-extremely-low-2026-08-12_en\" target=\"_blank\" rel=\"noopener\">EU Joint Research Centre</a> reports over 505,000 hectares burned across Europe in 2026, already ahead of 2025's pace, as compounding drought and heat drive unprecedented fire conditions. A new <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL118804\" target=\"_blank\" rel=\"noopener\">Geophysical Research Letters analysis</a> by Foster &amp; Rahmstorf confirms global warming has accelerated to 0.35°C per decade since 2015 — nearly double the 1970–2015 rate — placing the Paris 1.5°C ceiling before 2030. The <a href=\"https://wmo.int/resources/publication-series/global-seasonal-climate-update/gscu-aso2026\" target=\"_blank\" rel=\"noopener\">WMO ASO-2026 seasonal update</a> forecasts a record-smashing El Niño averaging +2.9°C sea-surface anomaly through October, and the Balkans heatwave linked to <a href=\"https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/\" target=\"_blank\" rel=\"noopener\">over 28,000 EU excess deaths</a> has finally ended.",
       "items": [
         {
-          "source": "NOAA CPC",
+          "source": "EU Joint Research Centre",
+          "date": "2026-08-12",
+          "headline": "Europe 2026: 505,000+ Hectares Burned, Rivers at Record Lows as Drought and Heat Compound",
+          "url": "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/worsening-drought-and-record-heat-grip-europe-fuelling-extraordinary-wildfires-and-extremely-low-2026-08-12_en",
+          "summary": "Wildfire burnt area already exceeds 2025 pace. Loire, Po, Rhine, and Danube at record-low flows. Extreme fire danger stretches from Germany through Poland to the Balkans."
+        },
+        {
+          "source": "Washington Post",
           "date": "2026-08-13",
-          "headline": "Extraordinary August 2026 ENSO Diagnostic: Subsurface Pacific Heat Reaches +10°C",
-          "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml",
-          "summary": "69% probability the 2026/27 El Niño exceeds every event since 1950."
+          "headline": "Record El Niño Could Fast-Forward Planet's Temperature by a Decade",
+          "url": "https://www.washingtonpost.com/weather/2026/08/13/record-el-nio-could-fast-forward-planets-temperature-by-decade/",
+          "summary": "WMO forecasts +2.9°C Pacific SST anomaly for ASO 2026. Combination with El Niño, hot ocean waters, and jet-stream changes temporarily pushes global temps to late-2030s levels."
+        },
+        {
+          "source": "ScienceDaily / GRL",
+          "date": "2026-08-01",
+          "headline": "Scientists Confirm Sharp Acceleration in Global Warming Since 2015",
+          "url": "https://www.sciencedaily.com/releases/2026/08/260801093239.htm",
+          "summary": "Foster &amp; Rahmstorf (Geophysical Research Letters) find 0.35°C/decade since 2015 vs. 0.2°C/decade in prior decades — with >98% statistical confidence. Paris 1.5°C limit on track before 2030."
         },
         {
           "source": "Copernicus C3S",
@@ -20,11 +34,32 @@
           "summary": "SW Europe posts its most intense August heat anomaly in the ERA5 record back to 1940."
         },
         {
+          "source": "WMO / UN News",
+          "date": "2026-01-14",
+          "headline": "11-Year Streak of Record Global Warming Continues — 2026 Among Four Hottest Years",
+          "url": "https://news.un.org/en/story/2026/01/1166758",
+          "summary": "2015–2025 confirmed as the hottest 11-year period on record. 2026 projected comparable to 2023–2025, approaching the 2024 record at 1.55°C above pre-industrial baseline."
+        },
+        {
+          "source": "NASA / NSIDC",
+          "date": "2026-04-30",
+          "headline": "Arctic Winter Sea-Ice Extent Sets New Record Low for 2026",
+          "url": "https://nsidc.org/news-analyses/news-stories/arctic-sea-ice-record-low-maximum-strikes-again",
+          "summary": "Winter maximum reached 13.76 million km² on March 13 — narrowly below 2025's record. Second consecutive year at record low; Sea of Okhotsk and Baffin Bay both anomalously open."
+        },
+        {
           "source": "Severe Weather EU",
           "date": "2026-08-19",
-          "headline": "Balkans Heatwave Fully Ends — All Heat Alerts Lifted",
+          "headline": "Balkans Heatwave Fully Ends — All Heat Alerts Lifted Across EU",
           "url": "https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/",
-          "summary": "Episode attributed to over 28,000 EU excess deaths since June — deadliest since 2003."
+          "summary": "Episode attributed to over 28,000 EU excess deaths since June — deadliest since 2003. All major heat alerts now lifted as Atlantic trough breaks pattern."
+        },
+        {
+          "source": "NOAA CPC",
+          "date": "2026-08-13",
+          "headline": "Extraordinary August 2026 ENSO Diagnostic: Subsurface Pacific Heat Reaches +10°C",
+          "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml",
+          "summary": "69% probability the 2026/27 El Niño exceeds every prior event since 1950 in peak amplitude."
         }
       ]
     },
@@ -33,59 +68,108 @@
         {
           "name": "Hurricane Lala — Central Pacific",
           "status": "CAT 2 · 110 MPH",
-          "impact": "Re-intensified; threatens NW Hawaiian atolls with dangerous surf beginning Wednesday."
+          "impact": "Re-intensified; threatens NW Hawaiian atolls with dangerous surf and inundation beginning Wednesday UTC."
         },
         {
-          "name": "Tropical Depression 17W (Saudel) — near Guam",
+          "name": "Tropical Depression 17W (Saudel) — Near Guam",
           "status": "TYPHOON BY THU",
-          "impact": "Rapidly organizing at low latitude with minimal shear; super typhoon potential."
+          "impact": "Rapidly organizing at low latitude with minimal wind shear; super-typhoon potential flagged by JTWC."
         },
         {
           "name": "US South Heat Dome — Texas to Carolinas",
           "status": "70M+ UNDER ALERTS",
-          "impact": "Heat indices above 110°F through August 21; dozens of records threatened."
+          "impact": "Heat indices 110–115°F through August 21; dozens of daily and all-time records threatened across TX, GA, SC, FL panhandle."
         }
       ],
-      "overview_html": "<a href=\"https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml\" target=\"_blank\" rel=\"noopener\">Hurricane Lala</a> has re-intensified to Category 2 in the central Pacific. A <a href=\"https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast\" target=\"_blank\" rel=\"noopener\">dangerous heat dome</a> is baking the US South with heat indices above 110°F.",
+      "overview_html": "<a href=\"https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml\" target=\"_blank\" rel=\"noopener\">Hurricane Lala</a> (CAT 2, 110 mph) re-intensified in the central Pacific and threatens the NW Hawaiian atolls with dangerous surf beginning Wednesday. Near Guam, <a href=\"https://weather.substack.com/p/august-18-2026-tuesday-tropical-update\" target=\"_blank\" rel=\"noopener\">Tropical Depression 17W</a> is rapidly organizing and is expected to reach typhoon strength by Thursday, with super-typhoon potential in a low-shear, deep-tropics environment. In the US, a <a href=\"https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast\" target=\"_blank\" rel=\"noopener\">dangerous heat dome</a> is baking 70+ million people from Texas to the Carolinas with heat indices topping 115°F.",
       "items": [
         {
           "source": "NHC",
           "date": "2026-08-19",
           "headline": "Hurricane Lala Reaches Category 2 With 110-MPH Winds in Central Pacific",
           "url": "https://www.nhc.noaa.gov/mobile/text/refresh/HFOTCPCP2+html/152056.shtml",
-          "summary": "NW Hawaiian atolls face dangerous surf and inundation threat beginning Wednesday UTC."
+          "summary": "NW Hawaiian atolls face dangerous surf and inundation threat beginning Wednesday UTC. Track forecast to curve northwest, keeping landfall risk to uninhabited atolls."
         },
         {
-          "source": "JTWC / Dr. Maue",
-          "date": "2026-08-19",
-          "headline": "Tropical Depression 17W Rapidly Organizing Near Guam",
+          "source": "Dr. Ryan Maue / JTWC",
+          "date": "2026-08-18",
+          "headline": "Tropical Depression 17W Rapidly Organizing Near Guam — Super-Typhoon Potential",
           "url": "https://weather.substack.com/p/august-18-2026-tuesday-tropical-update",
-          "summary": "Classic El Niño deep-tropics system; typhoon status expected by Thursday."
+          "summary": "Classic El Niño deep-tropics system; typhoon status expected by Thursday. Minimal wind shear and record-warm SSTs support rapid intensification. 2026 season's Sinlaku already set 905 hPa record."
+        },
+        {
+          "source": "Weather.com",
+          "date": "2026-08-18",
+          "headline": "US South Heat Dome: 70+ Million Under Alerts as Heat Indices Top 115°F",
+          "url": "https://weather.com/2026/08/18/forecast/regional/south-heat-wave-records-forecast",
+          "summary": "Heat indices peak 110–115°F from Memphis to the Florida Panhandle, coastal South Carolina, and southern Georgia. Dozens of records threatened through August 21."
+        },
+        {
+          "source": "Wikipedia / NWS",
+          "date": "2026-08-14",
+          "headline": "2026 North American Heat Wave: Ongoing — Texas, Midwest, Southeast All Affected",
+          "url": "https://en.wikipedia.org/wiki/2026_North_American_heat_wave",
+          "summary": "Multi-week heat event driven by a persistent upper-level ridge. Combination of El Niño-boosted background temperatures and a stalled synoptic pattern producing duration records as well as intensity records."
+        },
+        {
+          "source": "NPR",
+          "date": "2026-08-04",
+          "headline": "Europe's Heatwave Fuels Drought, Wildfires and Record-Low River Levels",
+          "url": "https://www.npr.org/2026/08/04/nx-s1-5919214/europe-heatwave-danube-rhine-wildfires",
+          "summary": "Danube, Rhine, Loire, and Po at historically low levels. Shipping and hydropower generation disrupted. Wildfire smoke measured across much of western and central Europe."
         }
       ]
     },
     "renewables": {
-      "overview_html": "<a href=\"https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html\" target=\"_blank\" rel=\"noopener\">Copenhagen Infrastructure Partners' Growth Markets Fund II</a> closed at $3 billion, nearly triple its predecessor.",
+      "overview_html": "The Trump administration's <a href=\"https://fortune.com/2026/08/06/rwes-1-22b-exit-marks-the-latest-in-trumps-billion-dollar-offshore-wind-buyoutsnow-topping-3b-to-redirect-developers-to-fossil-fuels/\" target=\"_blank\" rel=\"noopener\">$1.22B settlement with RWE</a> — the fifth US offshore wind buyout, now totaling $3.9B in public funds — contrasts with a record <a href=\"https://www.pv-tech.org/eia-us-add-record-43-4gw-new-utility-scale-solar-pv-capacity-2026/\" target=\"_blank\" rel=\"noopener\">43.4 GW of US utility-scale solar PV forecast for 2026</a>. <a href=\"https://www.bloomberg.com/news/articles/2026-08-15/us-battery-storage-projects-stall-as-utilities-struggle-with-grid-upgrades\" target=\"_blank\" rel=\"noopener\">Grid-scale battery storage</a> is surging but stalling in interconnection queues as transformer and switchgear lead times stretch.",
       "items": [
         {
-          "source": "GlobeNewswire",
+          "source": "Fortune / Maritime Executive",
+          "date": "2026-08-06",
+          "headline": "Trump Pays RWE $1.22B to Cancel US Offshore Wind Leases — Fifth Buyout, $3.9B Total",
+          "url": "https://fortune.com/2026/08/06/rwes-1-22b-exit-marks-the-latest-in-trumps-billion-dollar-offshore-wind-buyoutsnow-topping-3b-to-redirect-developers-to-fossil-fuels/",
+          "summary": "RWE relinquishes leases off New York, New Jersey, northern California, and the Gulf of Mexico — ~7 GW capacity. In exchange, RWE redirects investment to Louisiana LNG. Interior Dept. total offshore wind buyouts now $3.9B."
+        },
+        {
+          "source": "CT Mirror / Ørsted",
+          "date": "2026-08-13",
+          "headline": "Revolution Wind Now 95% Complete — 61 of 65 Turbines Installed Off Connecticut",
+          "url": "https://ctmirror.org/2026/08/13/revolution-wind-completed-2026-orsted/",
+          "summary": "Final four turbines on track to close out before year-end, bringing the project to full commercial operation and delivering on a $2.9B development first announced in 2019."
+        },
+        {
+          "source": "Bloomberg",
+          "date": "2026-08-15",
+          "headline": "US Big Battery Projects Pile Up as Grid Upgrade Delays Stall Interconnection",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-15/us-battery-storage-projects-stall-as-utilities-struggle-with-grid-upgrades",
+          "summary": "Con Edison reports 300% growth in storage projects awaiting connection over two years. LFP cell prices at $55–75/kWh — below most analyst expectations — but transformer shortages, not economics, are the primary bottleneck."
+        },
+        {
+          "source": "PV Tech / EIA",
+          "date": "2026-08-01",
+          "headline": "EIA Forecasts Record 43.4 GW US Utility-Scale Solar PV Additions in 2026",
+          "url": "https://www.pv-tech.org/eia-us-add-record-43-4gw-new-utility-scale-solar-pv-capacity-2026/",
+          "summary": "A 60% year-on-year jump driven by falling panel costs and accelerating corporate clean-power demand from data centers. Wind expected to provide ~11% of 2026 US generation; solar ~8%."
+        },
+        {
+          "source": "GlobeNewswire / CIP",
           "date": "2026-08-14",
-          "headline": "CIP Closes Growth Markets Fund II at $3B",
+          "headline": "Copenhagen Infrastructure Partners Closes Growth Markets Fund II at $3B",
           "url": "https://www.globenewswire.com/news-release/2026/08/14/3345235/0/en/copenhagen-infrastructure-partners-growth-markets-fund-ii-closes-at-usd-3-billion.html",
-          "summary": "Targets solar, wind, storage, and grid infrastructure across 15 emerging economies."
+          "summary": "Nearly triple its predecessor fund. Targets solar, wind, storage, and grid infrastructure across 15 emerging economies. Largest dedicated emerging-market clean-energy close of 2026."
         }
       ]
     },
     "science": {
-      "overview_html": "A new <a href=\"https://www.nature.com/articles/s41558-026-02730-w\" target=\"_blank\" rel=\"noopener\">Nature Climate Change paper</a> finds AMOC stability depends on the rate of warming, not just its level — collapsing at +2°C under fast forcing.",
+      "overview_html": "The peer-reviewed version of <a href=\"https://gmd.copernicus.org/articles/19/4703/2026/\" target=\"_blank\" rel=\"noopener\">ECMWF's AIFS 1.1.0</a> appears in <em>Geoscientific Model Development</em>, showing 4–6% skill gains and major precipitation improvements from hard physical constraints. <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL118804\" target=\"_blank\" rel=\"noopener\">Foster &amp; Rahmstorf (GRL)</a> confirm warming has accelerated to 0.35°C/decade since 2015 with &gt;98% confidence. <a href=\"https://link.springer.com/article/10.1007/s00376-026-5876-0\" target=\"_blank\" rel=\"noopener\">Ocean heat content in 2025</a> rose another 24 ZJ above 2024, a new record. <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL119877\" target=\"_blank\" rel=\"noopener\">Allen Institute's ACE2</a> matches physics-based seasonal forecast skill at 1,000× less compute.",
       "items": [
         {
           "source": "BAMS",
           "date": "2026-08-12",
-          "headline": "State of the Climate in 2025: Record Greenhouse Gases, Sea Level, Ocean Heat",
+          "headline": "State of the Climate in 2025: Record Greenhouse Gases, Sea Level, and Ocean Heat",
           "url": "https://journals.ametsoc.org/view/journals/bams/107/8/2026BAMSStateoftheClimate.1.xml",
           "meta": "625 authors · BAMS Vol. 107, No. 8",
-          "summary": "2025 ranks among the three warmest years since 1850 despite La Niña."
+          "summary": "2025 ranks among the three warmest years since 1850 despite a fading La Niña. Every major climate indicator — CO₂, CH₄, sea level, ocean heat — set new records for the second consecutive year."
         },
         {
           "source": "Nature Climate Change",
@@ -93,25 +177,102 @@
           "headline": "Rate of Warming, Not Just Temperature Level, Determines AMOC Collapse Risk",
           "url": "https://www.nature.com/articles/s41558-026-02730-w",
           "meta": "DOI:10.1038/s41558-026-02730-w",
-          "summary": "Slow CO2 ramps keep AMOC stable to +5.5°C; fast ramps collapse it at +2°C."
+          "summary": "Slow CO₂ ramps keep AMOC stable to +5.5°C; fast ramps collapse it at +2°C. Finding reframes risk assessment: stabilization rate and trajectory matter as much as endpoint temperature."
         },
         {
-          "source": "ECMWF",
-          "date": "2026-08-18",
-          "headline": "ECMWF Discontinues Daily Runs of External AI Weather Models",
-          "url": "https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models",
-          "meta": "AIFS Blog",
-          "summary": "Pangu-Weather, GraphCast, Aurora, FourCastNet phased out as in-house AIFS matures."
+          "source": "Geoscientific Model Development",
+          "date": "2026-07-15",
+          "headline": "AIFS Single 1.1.0: Formal Validation of ECMWF's Machine-Learned Weather Forecast Model",
+          "url": "https://gmd.copernicus.org/articles/19/4703/2026/",
+          "meta": "GMD Vol. 19 · DOI:10.5194/gmd-19-4703-2026",
+          "summary": "Hard physical-consistency constraints in training substantially improve precipitation skill. Soil and energy-flux variables added. Consistent 4–6% improvements across lead times and variables vs. AIFS 1.0."
+        },
+        {
+          "source": "Geophysical Research Letters",
+          "date": "2026-03-09",
+          "headline": "Global Warming Has Accelerated Significantly Since 2015",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL118804",
+          "meta": "Foster &amp; Rahmstorf · GRL 2026 · DOI:10.1029/2025GL118804",
+          "summary": "After removing ENSO, volcanic, and solar signals from five major datasets, warming rate of 0.35°C/decade since 2015 is confirmed with >98% confidence — ~75% faster than 1970–2015. At this pace, long-term 1.5°C exceedance before 2030."
+        },
+        {
+          "source": "Advances in Atmospheric Sciences",
+          "date": "2026-01-15",
+          "headline": "Ocean Heat Content Sets Another Record in 2025 — Up 24 ZJ Above 2024",
+          "url": "https://link.springer.com/article/10.1007/s00376-026-5876-0",
+          "summary": "Full-depth global ocean heat content rose 481 ± 48 ZJ above 1960 baseline. About 33% of global ocean area ranked in top-3 warmest years; tropical Atlantic and Mediterranean especially anomalous."
+        },
+        {
+          "source": "NASA / NSIDC",
+          "date": "2026-04-30",
+          "headline": "Arctic Winter Sea Ice Sets Another Record Low Maximum in 2026",
+          "url": "https://nsidc.org/news-analyses/news-stories/arctic-sea-ice-record-low-maximum-strikes-again",
+          "meta": "National Snow and Ice Data Center",
+          "summary": "Annual maximum 13.76 million km² on March 13 — edge below 2025 record, second consecutive year at satellite-era record low. Sea of Okhotsk and Baffin Bay both anomalously open."
+        },
+        {
+          "source": "Nature Climate Change",
+          "date": "2026-07-28",
+          "headline": "Global Ocean Heat Monitoring Critically Dependent on Argo Float Network Density",
+          "url": "https://www.nature.com/articles/s41558-026-02661-6",
+          "meta": "DOI:10.1038/s41558-026-02661-6",
+          "summary": "Sampling gaps in the Southern Ocean and tropical Pacific introduce up to 15% uncertainty in decadal heat-content estimates. Paper calls for expanded Argo deployment and better coverage metrics in IPCC reporting."
+        },
+        {
+          "source": "Artificial Intelligence for the Earth Systems (AIES)",
+          "date": "2026-02-10",
+          "headline": "Severe Weather Forecasts from AI Weather Prediction Models: Skill Comparable to ML-Guidance Products",
+          "url": "https://journals.ametsoc.org/view/journals/aies/5/1/AIES-D-25-0065.1.xml",
+          "meta": "AIES Vol. 5, No. 1",
+          "summary": "Random forests applied to AI model outputs achieve 1–8-day severe weather prediction skill on par with existing operational ML products. AI models (GraphCast, AIFS) lag on extreme precipitation and convective initiation but perform well on large-scale dynamics."
+        },
+        {
+          "source": "Geophysical Research Letters / Allen Institute",
+          "date": "2026-06-18",
+          "headline": "ACE2 ML Emulator Matches Physics-Based Seasonal Forecast Skill at 1,000× Less Compute",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2025GL119877",
+          "meta": "Baxter et al. · GRL 2026 · DOI:10.1029/2025GL119877",
+          "summary": "Ai2's ACE2 atmospheric emulator achieves wintertime NAO correlation ~0.5, comparable to physics-based ensembles. Stable 100-year simulations capture MJO and ENSO variability. 4-month seasonal forecast in 2 minutes on a single GPU."
         }
       ]
     },
     "industry": {
       "items": [
         {
+          "date": "2026-08-05",
+          "title": "WindBorne Systems Raises $37M Series B — Claims World's Most Accurate Weather Forecast Model",
+          "body_html": "<a href=\"https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/\" target=\"_blank\" rel=\"noopener\">WindBorne Systems</a> closed a $37M Series B co-led by Khosla Ventures and Galvanize (valuation: $250M, total raised: $62M+). The company operates over 600 autonomous long-duration sensing balloons and feeds proprietary atmospheric profiles into its <strong>WeatherMesh-6</strong> model, which it claims beats ECMWF HRES, GFS, and rival AI models on public benchmarks. Proceeds fund balloon constellation expansion and next-generation model development.",
+          "source_html": "<a href=\"https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/\" target=\"_blank\" rel=\"noopener\">TechCrunch</a>"
+        },
+        {
+          "date": "2026-08-03",
+          "title": "Base Power Raises $1B Series D at $13B Valuation to Scale Backyard Battery Network",
+          "body_html": "<a href=\"https://techcrunch.com/2026/08/03/base-power-raises-another-1b-to-save-the-grid-using-backyard-batteries/\" target=\"_blank\" rel=\"noopener\">Base Power</a> raised another $1B less than a year after its previous billion-dollar round, reaching a $13B post-money valuation. The Austin-based company installs ~100 home batteries per day in Texas and Illinois, aggregating them into a virtual power plant. It simultaneously launched the <strong>Base Core</strong>, a 39.2 kWh home battery manufactured in Texas — significantly larger than competitors' units.",
+          "source_html": "<a href=\"https://www.canarymedia.com/articles/batteries/base-power-raises-1b-to-get-big-batteries-into-more-homes\" target=\"_blank\" rel=\"noopener\">Canary Media</a>"
+        },
+        {
+          "date": "2026-08-03",
+          "title": "MSCI Completes $120M Acquisition of First Street to Expand Physical Climate Risk Analytics",
+          "body_html": "<a href=\"https://www.esgtoday.com/msci-acquires-climate-risk-data-provider-first-street/\" target=\"_blank\" rel=\"noopener\">MSCI</a> closed its acquisition of <strong>First Street</strong>, a climate risk data provider with flood, wildfire, hurricane, and heat models covering 2.4B+ structures worldwide. The $120M cash deal (announced June 24, closed August 3) integrates First Street's physical hazard layer into MSCI's institutional investor and real-estate analytics suite. Additional earnout payments are contingent on two-year revenue performance.",
+          "source_html": "<a href=\"https://www.citybiz.co/article/883093/msci-completes-first-street-acquisition-to-expand-climate-risk-analytics-platform/\" target=\"_blank\" rel=\"noopener\">CityBiz / ESG Today</a>"
+        },
+        {
           "date": "2026-08-12",
           "title": "Form Energy Raises $750M Series G to Scale Iron-Air Battery Manufacturing",
-          "body_html": "<a href=\"https://formenergy.com/form-energy-secures-750m-in-series-g-financing/\" target=\"_blank\" rel=\"noopener\">Form Energy</a>, maker of 100-hour iron-air batteries, closed a $750M Series G led by T. Rowe Price, with Sequoia and Franklin Templeton joining. The round brings total equity raised past $2 billion. Commercial backlog quadrupled this year to 80 GWh, including contracts with Xcel Energy and Google.",
+          "body_html": "<a href=\"https://formenergy.com/form-energy-secures-750m-in-series-g-financing/\" target=\"_blank\" rel=\"noopener\">Form Energy</a>, maker of 100-hour iron-air batteries, closed a $750M Series G led by T. Rowe Price, with Sequoia and Franklin Templeton joining. Total equity raised past $2B. Commercial backlog quadrupled in 2026 to 80 GWh, including contracts with Xcel Energy and Google.",
           "source_html": "<a href=\"https://techcrunch.com/2026/08/12/form-energy-raises-750m-to-build-more-100-hour-batteries-for-the-grid/\" target=\"_blank\" rel=\"noopener\">TechCrunch</a>"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "H1 2026 Climate Tech VC Hits $26B — Up 55% — as Data Center Power Demand Drives Surge",
+          "body_html": "Climate tech venture funding reached <a href=\"https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/\" target=\"_blank\" rel=\"noopener\">$26.1B in H1 2026</a>, up 55% vs. H1 2025 and the strongest first-half since 2022. Data center-related technologies claimed 34% of all climate funding — up from just 3% the prior year. Capital concentrated into fewer companies: average round size jumped to $27M, while total deal count hit a record low, per <a href=\"https://www.esgtoday.com/climate-tech-funding-surges-in-h1-2026-on-growing-data-center-demand-for-low-carbon-power-report/\" target=\"_blank\" rel=\"noopener\">ESG Today</a>.",
+          "source_html": "<a href=\"https://www.ctvc.co/h126-climate-tech-funding-up-55-to-26bn-thanks-to-data-centers/\" target=\"_blank\" rel=\"noopener\">CTVC</a>"
+        },
+        {
+          "date": "2026-06-26",
+          "title": "All Aboard Coalition — $60B VC Alliance — Backs $300M Fund for Climate-Tech Scale-Up",
+          "body_html": "A consortium of VC and PE firms managing $60B in assets <a href=\"https://carboncredits.com/60b-venture-capital-alliance-backs-300m-fund-for-climate-tech-startups/\" target=\"_blank\" rel=\"noopener\">launched a $300M fund</a> to bridge the pilot-to-commercial gap for climate-tech startups, targeting energy storage, carbon removal, and grid technology. The vehicle focuses on companies that have proven technology but lack the capital for first commercial deployments — the \"valley of death\" stage that has stalled many 2022–2024 cohort companies.",
+          "source_html": "<a href=\"https://carboncredits.com/60b-venture-capital-alliance-backs-300m-fund-for-climate-tech-startups/\" target=\"_blank\" rel=\"noopener\">CarbonCredits.com</a>"
         }
       ]
     }
