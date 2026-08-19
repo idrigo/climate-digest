@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mostly Clear — Daily Synoptic Briefing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --climate:    #58697d;
+    --weather:    #1a5cc8;
+    --renewables: #178a4c;
+    --science:    #7a4bd6;
+    --industry:   #c07716;
+    --alert:      #d92d20;
+    --alert-bg:   #fef3f2;
+    --alert-line: #fecdca;
+    --bg:         #f2f5f9;
+    --surface:    #ffffff;
+    --ink:        #101828;
+    --muted:      #667085;
+    --faint:      #98a2b3;
+    --border:     #e4e9f0;
+    --header-ink: #0b1526;
+    --display: 'Space Grotesk', -apple-system, sans-serif;
+    --body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--weather);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  /* ── MASTHEAD ── */
+  .masthead {
+    background: var(--header-ink);
+    color: #fff;
+    padding: 28px 24px 22px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .masthead-inner { max-width: 960px; margin: 0 auto; }
+  .masthead-logo {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -.3px;
+    color: #fff;
+    text-decoration: none;
+  }
+  .masthead-logo span { color: #93c5fd; }
+  .masthead-dateline {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: #94a3b8;
+    margin-top: 4px;
+    letter-spacing: .5px;
+  }
+
+  /* ── CONTROLS ── */
+  .controls {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 24px;
+    position: sticky;
+    top: 72px;
+    z-index: 90;
+  }
+  .controls-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .ctrl-group { display: flex; gap: 6px; align-items: center; }
+  .ctrl-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: var(--faint);
+    margin-right: 2px;
+  }
+  .pill {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all .15s;
+    font-family: var(--body);
+  }
+  .pill:hover { border-color: var(--weather); color: var(--weather); }
+  .pill.active { background: var(--weather); border-color: var(--weather); color: #fff; }
+
+  /* ── LAYOUT ── */
+  .main { max-width: 960px; margin: 0 auto; padding: 32px 24px 64px; }
+
+  /* ── SECTION ── */
+  .section { margin-bottom: 48px; }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid currentColor;
+  }
+  .section-icon { font-size: 18px; line-height: 1; }
+  .section-title {
+    font-family: var(--display);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .section-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    background: currentColor;
+    color: var(--surface);
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-left: auto;
+    opacity: .75;
+  }
+  .section-count span { filter: invert(1); }
+
+  .section--climate  .section-header { color: var(--climate);    }
+  .section--weather  .section-header { color: var(--weather);    }
+  .section--renewables .section-header { color: var(--renewables); }
+  .section--science  .section-header { color: var(--science);    }
+  .section--industry .section-header { color: var(--industry);   }
+
+  /* ── OVERVIEW ── */
+  .overview {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .overview a { color: inherit; text-underline-offset: 2px; }
+  .overview a:hover { color: var(--ink); }
+
+  /* ── CARD GRID ── */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 14px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: box-shadow .15s, border-color .15s;
+  }
+  .card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.07); border-color: #c8d4e3; }
+
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .card-source {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: var(--surface);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .section--climate   .card-source { background: var(--climate);    }
+  .section--weather   .card-source { background: var(--weather);    }
+  .section--renewables .card-source { background: var(--renewables); }
+  .section--science   .card-source { background: var(--science);    }
+
+  .card-date {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--faint);
+    white-space: nowrap;
+  }
+
+  .card-headline {
+    font-family: var(--display);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .card-headline:hover { text-decoration: underline; text-underline-offset: 2px; }
+
+  .card-meta {
+    font-size: 11px;
+    color: var(--faint);
+    font-style: italic;
+  }
+
+  .card-summary {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  /* ── ALERT CARD ── */
+  .card--alert {
+    border-color: var(--alert-line);
+    background: var(--alert-bg);
+  }
+  .card--alert .card-headline { color: var(--alert); }
+  .card--alert .card-source { background: var(--alert); }
+
+  /* ── MAJOR EVENTS ── */
+  .major-events { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+  .event {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--weather);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+  }
+  .event--alert { border-left-color: var(--alert); background: var(--alert-bg); border-color: var(--alert-line); }
+  .event-header { display: flex; gap: 10px; align-items: flex-start; flex-wrap: wrap; margin-bottom: 6px; }
+  .event-name {
+    font-family: var(--display);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+  .event--alert .event-name { color: var(--alert); }
+  .event-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .4px;
+    color: var(--weather);
+    background: #eff6ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    align-self: flex-start;
+  }
+  .event--alert .event-status { color: var(--alert); background: #fee2e2; }
+  .event-body { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+
+  /* ── INDUSTRY CARDS ── */
+  .industry-grid { display: flex; flex-direction: column; gap: 14px; }
+  .industry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--industry);
+    border-radius: 0 10px 10px 0;
+    padding: 18px 20px;
+  }
+  .industry-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+  .industry-tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    background: var(--industry);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .industry-date { font-family: var(--mono); font-size: 10px; color: var(--faint); }
+  .industry-title {
+    font-family: var(--display);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 10px;
+  }
+  .industry-body { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+  .industry-source {
+    margin-top: 10px;
+    font-size: 12px;
+  }
+  .industry-source a {
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--industry);
+    text-decoration: none;
+    border: 1px solid var(--industry);
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .industry-source a:hover { background: var(--industry); color: #fff; }
+
+  /* ── FOOTER ── */
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 32px 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .footer-title {
+    font-family: var(--display);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: var(--faint);
+    margin-bottom: 12px;
+  }
+  .archive-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .archive-list a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+  .archive-list a:hover { border-color: var(--weather); color: var(--weather); }
+
+  /* ── LANGUAGE TOGGLE ── */
+  body.lang-en [data-lang="ru"] { display: none; }
+  body.lang-ru [data-lang="en"] { display: none; }
+</style>
+</head>
+<body data-digest-date="2026-08-18" class="lang-en">
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="masthead-logo">Mostly <span>Clear</span></a>
+    <div class="masthead-dateline">DIGEST 180700Z AUG26 · ROLLING 72H WINDOW</div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="controls-inner">
+    <div class="ctrl-group">
+      <span class="ctrl-label">Window</span>
+      <button class="pill active" data-days="3">3 days</button>
+      <button class="pill" data-days="7">7 days</button>
+    </div>
+    <div class="ctrl-group">
+      <span class="ctrl-label">Lang</span>
+      <button class="pill active" data-lang-btn="en">EN</button>
+      <button class="pill" data-lang-btn="ru">RU</button>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- ═══════════════════════════════════════════════
+       CLIMATE
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--climate">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <span class="section-title">Climate</span>
+      <span class="section-count"><span>3</span></span>
+    </div>
+
+    <div class="overview">
+      <span data-lang="en">
+        NOAA's <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml">August 2026 ENSO Diagnostic</a> (August 13) reveals subsurface Pacific heat anomalies in the upper 200m reaching approximately +10°C — the largest departure ever recorded for this time of year — locking in a 69% probability that the 2026/27 El Niño will exceed every event on record since 1950 and a &gt;90% probability of a very strong event.
+        <a href="https://climate.copernicus.eu/copernicus-southwestern-europe-faces-extreme-heat-during-third-warmest-august-globally">Copernicus C3S</a> confirms August 2026 is tracking as the third-warmest August in the global record, behind only 2024 and 2023, with daily ocean SSTs continuing to break records for the time of year.
+        The <a href="https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/">European heat dome</a> that peaked across the Balkans on August 17 is entering its dissipation phase, with ECMWF maintaining its forecast for full ridge breakdown by August 20–21.
+      </span>
+      <span data-lang="ru">
+        <a href="https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_disc_aug2026/ensodisc.shtml">ENSO Diagnostic NOAA</a> (13 августа): подповерхностные тепловые аномалии Тихого океана ~+10°C — исторический рекорд для данного времени года; вероятность превышения рекорда с 1950 г. — 69%, «очень сильного» события — &gt;90%.
+        <a href="https://climate.copernicus.eu/copernicus-southwestern-europe-faces-extreme-heat-during-third-warmest-august-globally">C3S Copernicus</a>: август 2026 — 3-й самый тёплый август в истории; ТПО — рекорды для сезона.
+        <a href="https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/">Тепловой купол</a> над Балканами (пик 17 авг) диссипирует; ECMWF: полный распад блокирования 20–21 авг.
+      </span>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-13">
+        <div class="card-top">
+          <span class="card-source">NOAA CPC</span>
+          <span class="card-date">13 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.abovethenormnews.com/2026/08/13/noaa-el-nino-update-august-2026/">
+          NOAA Extraordinary August 2026 ENSO Diagnostic: Subsurface Pacific Heat Reaches +10°C — 69% Probability of Record-Breaking El Niño; Largest Subsurface Anomaly Ever Recorded for This Time of Year
+        </a>
+        <p class="card-summary" data-lang="en">
+          NOAA's Climate Prediction Center August 2026 ENSO Diagnostic (August 13) reveals subsurface Pacific heat anomalies in the upper 200m reaching approximately +10°C locally — the largest departure recorded for this time of year in the observational record, exceeding even the 1997/98 pre-event buildup. The CPC cross-section shows sustained warmth extending through much of the upper 200m — a deep heat reservoir that will continue fuelling surface warming as it upwells over coming months. The diagnostic assigns a 69% probability that the 2026/27 El Niño will exceed every El Niño event since 1950, with &gt;90% probability of the event qualifying as "very strong" (Niño 3.4 ≥ +1.5°C threshold). If the subsurface heat continues migrating to the surface at its current rate, the WMO ASO 2026 peak projection of +2.9°C may prove conservative.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          ENSO Diagnostic CPC NOAA (13 августа): аномалии тепла в верхних 200 м Тихого океана достигают ~+10°C — исторический максимум для данного времени года, превышает разгон перед рекордом 1997/98. Глубокий тёплый слой продолжит подпитывать поверхностное потепление по мере подъёма в ближайшие месяцы. Вероятность превышения рекорда с 1950 г.: 69%; «очень сильного» события: &gt;90%. При текущем темпе всплывания тёплого слоя прогноз ВМО ASO (+2,9°C) может оказаться консервативным.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-12">
+        <div class="card-top">
+          <span class="card-source">Copernicus C3S</span>
+          <span class="card-date">12 AUG</span>
+        </div>
+        <a class="card-headline" href="https://climate.copernicus.eu/copernicus-southwestern-europe-faces-extreme-heat-during-third-warmest-august-globally">
+          Copernicus: August 2026 Tracking as Third-Warmest August on Record Globally — SW Europe Heat Exceptional in ERA5 Record; Daily Global SSTs Continue Breaking Records for Time of Year
+        </a>
+        <p class="card-summary" data-lang="en">
+          The Copernicus Climate Change Service August 2026 update confirms this August is on track to be the third-warmest August in the global surface temperature record, behind only 2024 and 2023 — extending an unbroken streak of top-three monthly temperature anomalies since June 2023. Southwestern Europe recorded its most intense and persistent August heat anomaly in the ERA5 reanalysis dataset extending back to 1940. Daily global ocean surface temperatures have continued to break records for the time of year throughout August, a pattern sustained continuously since April 2023. C3S attributes the compounding of the El Niño signal with record-warm Atlantic and Indian Ocean baseline SSTs as the primary driver of both the concurrent land heatwave and the marine heat anomalies.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          C3S Copernicus (август 2026): август 2026 — 3-й самый тёплый в истории глобально (после 2024 и 2023 гг.); серия лучших трёх не прерывается с июня 2023 г. ЮЗ Европа — рекорд ERA5 (с 1940 г.) по интенсивности и продолжительности августовской тепловой аномалии. Суточные ТПО Мирового океана: рекорды для сезона (непрерывно с апреля 2023 г.). Причина: Эль-Ниньо × рекордно тёплые фоновые ТПО Атлантики и Индийского океана.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-18">
+        <div class="card-top">
+          <span class="card-source">Severe Weather EU / ECMWF</span>
+          <span class="card-date">18 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.severe-weather.eu/global-weather/heat-dome-heatwave-europe-balkan-august-2026-mk/">
+          European Heatwave Enters Dissipation Phase — Balkans Temperatures Returning to Seasonal Norms; Severe Thunderstorm Warnings Replace Heat Alerts in Romania and Bulgaria
+        </a>
+        <p class="card-summary" data-lang="en">
+          The European heat dome that produced record temperatures across 11 EU member states — peaking at 41.2°C in Greece's Larissa and 40.1°C in Serbia's Niš on August 17 — is visibly breaking down as of August 18. Temperatures across most of Greece, Serbia, and Bulgaria are trending back toward seasonal norms as the mid-tropospheric blocking high weakens. Severe thunderstorm warnings are now active across parts of Romania and northern Bulgaria as cold air advances from the northwest. ECMWF's operational 10-day ensemble maintains its forecast of full ridge breakdown and Balkan heat relief by August 20–21. Athens' formal health emergency remains in effect through August 20, with outdoor work bans expected to lift August 19. The EU excess mortality estimate attributable to the extended episode — spanning June through August — has risen above 28,000.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          18 августа: тепловой купол над Балканами (пик 41,2°C в Ларисе, 40,1°C в Нише, 17 авг) разрушается. Температуры в Греции, Сербии и Болгарии снижаются к сезонной норме. Грозовые предупреждения — Румыния, сев. Болгария (холодный воздух с СЗ). ECMWF: полный распад блокирования и облегчение жары 20–21 авг. Афины: ЧС до 20 авг; наружные работы ожидается разрешить 19-го. Избыточная смертность ЕС (июнь–август): &gt;28 000.
+        </p>
+      </article>
+
+    </div><!-- /card-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       WEATHER
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--weather">
+    <div class="section-header">
+      <span class="section-icon">⛈</span>
+      <span class="section-title">Weather</span>
+      <span class="section-count"><span>3</span></span>
+    </div>
+
+    <div class="overview">
+      <span data-lang="en">
+        Tropical Storm Lala — previously forecast to dissipate — is showing signs of potential re-intensification over the central Pacific, with the <a href="https://weather.com/2026/08/17/storms/hurricane/hawaii-hurricane-tropical-storm-lala-forecast">latest NHC advisory</a> indicating it could regain Category 1 hurricane status by Tuesday night, representing a significant track revision.
+        The <a href="https://www.coemergency.ca/updates/evacuation-order-downgraded-alerts-lifted-bald-range-wildfire">BC Bald Range wildfire</a> has seen its evacuation order downgraded and all alerts lifted as improved fire weather holds — a material improvement from August 17.
+        Invest 94L has <a href="https://www.nhc.noaa.gov/gtwo.php">failed to develop into Tropical Storm Dolly</a> as strong wind shear and dry Saharan air suppress Atlantic tropical activity even as peak season begins August 20.
+      </span>
+      <span data-lang="ru">
+        Тропический шторм Лала (ожидалось рассеивание) проявляет признаки повторного усиления: <a href="https://weather.com/2026/08/17/storms/hurricane/hawaii-hurricane-tropical-storm-lala-forecast">последний советник NHC</a> допускает возврат к категории 1 к вечеру вторника.
+        <a href="https://www.coemergency.ca/updates/evacuation-order-downgraded-alerts-lifted-bald-range-wildfire">Bald Range</a>: приказ понижен, предупреждения сняты — существенное улучшение.
+        Invest 94L <a href="https://www.nhc.noaa.gov/gtwo.php">не развился</a> в шторм Dolly: сдвиг и сухой воздух подавляют тропическую активность Атлантики накануне пика сезона (20 авг).
+      </span>
+    </div>
+
+    <div class="major-events">
+
+      <div class="event event--alert">
+        <div class="event-header">
+          <span class="event-name">Tropical Storm Lala — Central Pacific, Potential Re-Intensification</span>
+          <span class="event-status">TS ACTIVE · CENTRAL PACIFIC · POSSIBLE REHURRICANE TUE NIGHT</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">Tropical Storm Lala — downgraded after striking Hawaii's Big Island on August 15–16 as a Category 1 hurricane — has tracked westward into the central Pacific and, contrary to the weakening trajectory expected August 17 morning, is showing signs of possible re-intensification as upper-level wind conditions improve over slightly warmer central Pacific SSTs (~26°C). NHC's August 17 advisory indicates Lala could regain Category 1 hurricane intensity by Tuesday night or early Wednesday UTC. Damage response on the Big Island continues: 100+ homes destroyed in Naalehu and Ka'ū, one confirmed death in Puna, and HECO warns full power restoration to remote districts could take well over two months. Hilo International Airport operates limited commercial service; Kona Airport remains closed. Governor's disaster declaration is active; FEMA individual assistance is authorised.</span>
+          <span data-lang="ru">Тропический шторм Лала (понижен после удара как ураган кат. 1 о Хавайи 15–16 авг) движется на запад в центральную часть Тихого океана. Вопреки прогнозу ослабления, признаки повторного усиления над ТПО ~26°C (улучшение верхних ветров). NHC (17 авг): возможна категория 1 к вечеру вторника–среде UTC. Ущерб: 100+ домов в Наалеу/Кау, 1 погибший в Пуне; HECO: &gt;2 мес. на восстановление ЭС. Аэропорт Хило: ограниченные рейсы; Кона закрыт. Декларация катастрофы + FEMA активны.</span>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-header">
+          <span class="event-name">Balkans &amp; Eastern Mediterranean — Heatwave Dissipating</span>
+          <span class="event-status">BREAKING DOWN · TEMPS NORMALISING · FULL RELIEF AUG 20–21</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">The heat dome that produced the August 17 peak — 41.2°C in Greece (Larissa), 40.1°C in Serbia (Niš), 39.8°C in Romania (Craiova) — is breaking down as of August 18, with temperatures across most of Greece, Serbia, and Bulgaria trending back toward seasonal norms as the mid-tropospheric blocking ridge weakens. Severe thunderstorm warnings are now active across parts of Romania and northern Bulgaria. Athens' health emergency remains in effect through August 20 but outdoor work bans are expected to lift August 19. ECMWF's operational ensemble maintains its August 20–21 forecast for full Balkan heat relief. The episode's confirmed EU excess mortality has risen above 28,000 since the June onset.</span>
+          <span data-lang="ru">Тепловой купол (пик 17 авг: 41,2°C Лариса, 40,1°C Ниш, 39,8°C Крайова) разрушается 18 авг — температуры в Греции, Сербии и Болгарии снижаются к норме. Грозовые предупреждения — Румыния, сев. Болгария. Афины: ЧС до 20 авг; запрет работ снимается 19-го. ECMWF: полное облегчение 20–21 авг. Избыточная смертность ЕС с июня: &gt;28 000.</span>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-header">
+          <span class="event-name">BC Bald Range Wildfire — Evacuation Orders Downgraded, Alerts Lifted</span>
+          <span class="event-status">IMPROVING · ORDER DOWNGRADED · ALERTS LIFTED · ~18,450 HA</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">The Central Okanagan Emergency Operations Centre announced August 18 that the Bald Range wildfire evacuation order has been downgraded to evacuation alert status and all remaining evacuation alerts have been lifted for additional affected areas — a material improvement from August 17, when approximately 4,500 residents remained under formal evacuation order. The fire is stable at approximately 18,450 ha. Highway 97 remains open to convoy traffic. Province-wide State of Emergency remains active. The next deterioration window — hot, dry air returning from the south — is forecast for August 19–20, with BC Wildfire Service cautioning against premature community returns before the threat window passes.</span>
+          <span data-lang="ru">COEM (18 авг): приказ об эвакуации понижен до статуса предупреждения; оставшиеся предупреждения сняты для дополнительных районов (ранее ~4 500 под приказом). Площадь: ~18 450 га. Шоссе 97: конвойное движение. ЧП провинции действует. Ухудшение (сухой жаркий воздух с юга) — 19–20 авг: BCWS предостерегает от преждевременного возвращения.</span>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-header">
+          <span class="event-name">Atlantic Tropics — Invest 94L Fails to Develop; Dolly Not Formed</span>
+          <span class="event-status">DOLLY NOT FORMED · 4 WAVES TRACKED · SHEAR SUPPRESSING ACTIVITY</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">Invest 94L — which carried a 50% 7-day development probability as recently as August 16 — has failed to consolidate as strong vertical wind shear and dry Saharan air layer intrusion disrupted convective organisation. NHC has not designated Tropical Storm Dolly as of August 18. Four additional tropical waves in the Atlantic and Caribbean basin are being tracked at low probability. August 20 marks the beginning of the climatologically most active period of the Atlantic hurricane season; NHC notes conditions may become progressively more favourable for tropical development over the following 2–3 weeks. Windward and Leeward Islands, the Greater Antilles, and the Gulf Coast should maintain readiness.</span>
+          <span data-lang="ru">Invest 94L (был 50% за 7 суток, 16 авг) не развился: сдвиг ветра + сухой сахарский воздух разрушили конвективную организацию. Dolly не сформировалась (18 авг). 4 волны — низкая вероятность. 20 авг — начало пика климатологической активности; NHC: условия могут стать прогрессивно более благоприятными в ближайшие 2–3 недели. Наветренные, Подветренные острова и побережье Мексиканского залива: поддерживать готовность.</span>
+        </div>
+      </div>
+
+      <div class="event">
+        <div class="event-header">
+          <span class="event-name">Assam / Bangladesh Monsoon Floods — Brahmaputra Peak Discharge Passing</span>
+          <span class="event-status">3.4M AFFECTED · PEAK PASSING · SOME IMPROVEMENT EXPECTED</span>
+        </div>
+        <div class="event-body">
+          <span data-lang="en">Assam State Disaster Management Authority: 3.4 million people across 34 districts remain affected as of August 17–18. The Brahmaputra FFWC (Flood Forecasting and Warning Centre) projects the main-stem peak discharge from India will pass Bahadurabad station in Bangladesh by August 19–20, offering some downstream relief to Sylhet and Sunamganj divisions where the Surma River recently reached its second-highest level in 15 years, inundating over 400,000 homes. IMD red alerts for heavy rainfall across Assam, Meghalaya, and Manipur were extended through August 18. Confirmed monsoon-season deaths in Assam: 127; 68,000 remain in relief camps.</span>
+          <span data-lang="ru">ASDMA: 3,4 млн пострадавших в 34 районах Ассама (17–18 авг). FFWC: пик сброса по Брахмапутре пройдёт Бахадурабад 19–20 авг — ожидается облегчение в Силхете и Сунамгандже (Сурма: 2-й рекорд за 15 лет; 400 000+ домов). IMD: красные уровни до 18 авг. Ассам: 127 погибших за сезон, 68 000 в лагерях.</span>
+        </div>
+      </div>
+
+    </div><!-- /major-events -->
+
+    <div class="card-grid">
+
+      <article class="card card--alert" data-date="2026-08-17">
+        <div class="card-top">
+          <span class="card-source">NHC / weather.com</span>
+          <span class="card-date">17 AUG</span>
+        </div>
+        <a class="card-headline" href="https://weather.com/2026/08/17/storms/hurricane/hawaii-hurricane-tropical-storm-lala-forecast">
+          Forecast Reversal: Tropical Storm Lala May Regain Hurricane Strength by Tuesday Night — NHC Advisory Shows Re-intensification Potential Over Central Pacific
+        </a>
+        <p class="card-summary" data-lang="en">
+          Contrary to the dissipation scenario forecast August 17 morning, NHC's latest advisory for Tropical Storm Lala indicates the storm may re-intensify over the central Pacific as upper-level wind conditions improve — with the possibility of reaching Category 1 hurricane strength by Tuesday night or early Wednesday UTC. Big Island disaster response continues: FEMA individual assistance is authorised, National Guard units support infrastructure repair in Puna and Ka'ū, and HECO's estimate of two-plus months for full power restoration to remote areas stands.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Коррекция прогноза: NHC (17 авг, последний советник) допускает повторное усиление Тропического шторма Лала до категории 1 к вечеру вторника–среде UTC на фоне улучшения верхних ветров. Ликвидация на Хавайи: FEMA, Нацгвардия восстанавливает ЭС в Пуне/Кау; прогноз HECO — &gt;2 месяца на полное восстановление электроснабжения.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-18">
+        <div class="card-top">
+          <span class="card-source">COEM / BC Wildfire Service</span>
+          <span class="card-date">18 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.coemergency.ca/updates/evacuation-order-downgraded-alerts-lifted-bald-range-wildfire">
+          BC Bald Range: Evacuation Order Downgraded, All Alerts Lifted — Major Improvement as Fire Holds at ~18,450 ha; Next Threat Window August 19–20
+        </a>
+        <p class="card-summary" data-lang="en">
+          Central Okanagan Emergency Operations Centre (COEM) announced August 18 that the Bald Range wildfire's evacuation order has been downgraded to alert status and all remaining evacuation alerts have been lifted for additional communities, materially reducing the population under formal displacement from the approximately 4,500 under order on August 17. The fire perimeter is stable at approximately 18,450 ha after improved relative humidity and overnight cooling held through August 17–18. Highway 97 remains open to convoy traffic. BC Wildfire Service cautions the next deterioration window — hot, dry southerly air — arrives August 19–20; residents are urged not to return prematurely.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          COEM (18 авг): приказ об эвакуации Bald Range понижен до предупреждения; все предупреждения сняты для дополнительных районов (было ~4 500 под приказом). Площадь: ~18 450 га — стабильно (влажность + ночное охлаждение). Шоссе 97: конвой. ЧП провинции: действует. Ухудшение: 19–20 авг (южный жаркий воздух) — возвращение преждевременно.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-08-18">
+        <div class="card-top">
+          <span class="card-source">NHC</span>
+          <span class="card-date">18 AUG</span>
+        </div>
+        <a class="card-headline" href="https://www.nhc.noaa.gov/gtwo.php">
+          Invest 94L Fails to Develop; Dolly Not Formed — Wind Shear and Dry Air Suppress Atlantic Tropics as Peak Season Begins August 20; Four Waves Monitored at Low Probability
+        </a>
+        <p class="card-summary" data-lang="en">
+          Invest 94L, which NHC had assigned a 50% 7-day development probability as recently as August 16, has failed to consolidate into a tropical depression as strong vertical wind shear and dry Saharan air layer intrusion disrupted convective organisation. Tropical Storm Dolly has not formed as of August 18. NHC's August 18 tropical weather outlook monitors four additional waves in the Atlantic and Caribbean at low probability. August 20 marks the climatological start of peak season; forecasters expect synoptic conditions to become progressively more favourable for development over the following 2–3 weeks.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Invest 94L (50% за 7 суток 16 авг) не организовался: сильный сдвиг + сухой воздух САС. Dolly не сформировалась (18 авг). 4 волны — низкая вероятность. Пик сезона: 20 авг; синоптические условия, вероятно, станут благоприятнее в течение 2–3 недель.
+        </p>
+      </article>
+
+    </div><!-- /card-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       RENEWABLES
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--renewables">
+    <div class="section-header">
+      <span class="section-icon">⚡</span>
+      <span class="section-title">Renewables &amp; Grid</span>
+      <span class="section-count"><span>1</span></span>
+    </div>
+
+    <div class="overview">
+      <span data-lang="en">
+        India's renewable sector saw its largest single operating-asset transaction of 2026: <a href="https://solarquarter.com/2026/08/10/purvah-green-power-to-acquire-1-4-gw-renewable-energy-portfolio-from-renew-for-inr-4859-crore/">Purvah Green Power</a> (RPSG Group/CESC) signed an agreement August 10 to acquire 1.4 GWp of operating solar and wind assets from <a href="https://www.pv-magazine-india.com/2026/08/10/rpsg-groups-purvah-green-to-acquire-1-4-gwp-operating-solar-portfolio-for-inr-4859-crore-from-renew/">ReNew Solar Power</a> for ₹4,859 crore (~$509M USD), reflecting broad consolidation as mid-scale developers monetise stable operating portfolios to recycle capital for new development.
+      </span>
+      <span data-lang="ru">
+        Крупнейшая сделка по действующим ВИЭ-активам в Индии в 2026 г.: <a href="https://solarquarter.com/2026/08/10/purvah-green-power-to-acquire-1-4-gw-renewable-energy-portfolio-from-renew-for-inr-4859-crore/">Purvah Green Power</a> (RPSG Group/CESC, 10 авг) приобретает 1,4 ГВт у <a href="https://www.pv-magazine-india.com/2026/08/10/rpsg-groups-purvah-green-to-acquire-1-4-gwp-operating-solar-portfolio-for-inr-4859-crore-from-renew/">ReNew Solar Power</a> за ₹4 859 крор (~$509 млн) — консолидация сектора: монетизация стабильных портфелей для финансирования новых проектов.
+      </span>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-10">
+        <div class="card-top">
+          <span class="card-source">Solar Quarter / PV Magazine India</span>
+          <span class="card-date">10 AUG</span>
+        </div>
+        <a class="card-headline" href="https://solarquarter.com/2026/08/10/purvah-green-power-to-acquire-1-4-gw-renewable-energy-portfolio-from-renew-for-inr-4859-crore/">
+          Purvah Green Power to Acquire ReNew's 1.4 GWp Operating Solar Portfolio for ₹4,859 Crore (~$509M) — Largest Operating Solar Asset Sale in India in 2026; SECI-Backed PPAs; Close by October 31
+        </a>
+        <p class="card-summary" data-lang="en">
+          RPSG Group subsidiary Purvah Green Power Private Limited announced August 10 it will acquire six ReNew Solar Power entities encompassing approximately 1,411 MW of operating installed capacity across Rajasthan (ReNew Hans Urja, 810 MW) and Karnataka (506 MW), plus 95 MW of wind assets, at an enterprise value of ₹4,859 crore (~$509M USD). More than 90% of the capacity is secured under long-term power purchase agreements with India's Solar Energy Corporation of India (SECI). The deal is expected to close before October 31, 2026, and will lift Purvah's total operational capacity beyond 4.8 GWp. ReNew is divesting stabilised operating assets to redeploy capital into its active development pipeline.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          Purvah Green Power (RPSG Group, 10 августа): покупка 6 компаний ReNew — ~1 411 МВт действующих СЭС в Раджастхане (810 МВт) и Карнатаке (506 МВт) + 95 МВт ветра. Стоимость: ₹4 859 крор (~$509 млн). &gt;90% мощности — по долгосрочным ДКП с SECI. Закрытие: до 31 октября 2026. Purvah после сделки: &gt;4,8 ГВт. ReNew реинвестирует выручку в новые проекты.
+        </p>
+      </article>
+
+    </div><!-- /card-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       SCIENCE
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--science">
+    <div class="section-header">
+      <span class="section-icon">🔬</span>
+      <span class="section-title">Science &amp; Research</span>
+      <span class="section-count"><span>4</span></span>
+    </div>
+
+    <div class="overview">
+      <span data-lang="en">
+        ECMWF published a landmark <a href="https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models">AIFS blog post</a> formally discontinuing daily operational runs of the four external AI weather models — Pangu-Weather, GraphCast, Aurora, and FourCastNet — as its own AIFS system matures into operational readiness, marking a structural inflection point in institutional AI weather prediction.
+        A <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL118804">landmark GRL study</a> by Foster &amp; Rahmstorf finds the background warming rate has nearly doubled since 2015 to ~0.35°C/decade — more than double the 1970–2015 pace — with statistical certainty exceeding 98%.
+        New arXiv preprints address key gaps in regional AI weather forecasting: the <a href="https://arxiv.org/abs/2604.16643">WP-MIP</a> intercomparison project and a <a href="https://arxiv.org/abs/2507.18378">stretched-grid vs. limited-area architecture comparison</a>.
+      </span>
+      <span data-lang="ru">
+        ECMWF опубликовал <a href="https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models">ключевой пост AIFS</a>, прекратив операционные запуски внешних ИИ-моделей (Pangu, GraphCast, Aurora, FourCastNet) — структурный перелом в институциональном ИИ-прогнозировании.
+        <a href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL118804">GRL (Foster &amp; Rahmstorf)</a>: фоновая скорость потепления удвоилась до ~0,35°C/дек. с 2015 г. (достоверность &gt;98%).
+        Новые препринты arXiv: <a href="https://arxiv.org/abs/2604.16643">WP-MIP</a> и сравнение архитектур для <a href="https://arxiv.org/abs/2507.18378">регионального ИИ-прогнозирования</a>.
+      </span>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="card" data-date="2026-08-18">
+        <div class="card-top">
+          <span class="card-source">ECMWF / AIFS Blog</span>
+          <span class="card-date">AUG 2026</span>
+        </div>
+        <a class="card-headline" href="https://www.ecmwf.int/en/about/media-centre/aifs-blog/2026/farewell-external-ai-models">
+          ECMWF Discontinues Daily Runs of External AI Weather Models — Pangu-Weather, GraphCast, Aurora, FourCastNet Phased Out as AIFS Reaches Operational Maturity
+        </a>
+        <p class="card-meta">ECMWF AIFS Blog · 2026</p>
+        <p class="card-summary" data-lang="en">
+          ECMWF published a blog post formally announcing the discontinuation of its daily experimental operational runs of four external AI weather prediction systems: Pangu-Weather (Huawei), GraphCast (Google DeepMind), Aurora (Microsoft Research), and FourCastNet (NVIDIA). The models had been run daily since 2023, with output published on ECMWF's openCharts platform as a community benchmarking resource. The decision reflects ECMWF's own Artificial Intelligence Forecasting System (AIFS) reaching sufficient operational maturity to serve as the primary in-house AI NWP system, completing the centre's transition from evaluating external partner models to running its own production AI forecast. ECMWF acknowledges each external model's critical role in building community trust in data-driven modelling; all four remain open-source and continue to be developed independently by their originators.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          ECMWF (блог AIFS, 2026): прекращение ежедневных операционных запусков 4 внешних ИИ-моделей прогнозирования погоды — Pangu-Weather (Huawei), GraphCast (DeepMind), Aurora (Microsoft), FourCastNet (NVIDIA), — работавших с 2023 г. на openCharts. Причина: собственный AIFS достиг операционной зрелости как основная ИИ-система прогноза. ECMWF признаёт вклад каждой модели в формирование доверия к data-driven-подходу; все 4 остаются открытыми и развиваются вне ECMWF.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-03-09">
+        <div class="card-top">
+          <span class="card-source">GRL / Carbon Brief</span>
+          <span class="card-date">09 MAR</span>
+        </div>
+        <a class="card-headline" href="https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2025GL118804">
+          GRL: Global Warming Rate Has Nearly Doubled Since 2015 — Foster &amp; Rahmstorf Find Background Rate of ~0.35°C/Decade After Removing ENSO, Volcanic, and Solar Signals
+        </a>
+        <p class="card-meta">Foster G. &amp; Rahmstorf S. · Geophysical Research Letters · 2026 · DOI:10.1029/2025GL118804</p>
+        <p class="card-summary" data-lang="en">
+          A study by Grant Foster and Stefan Rahmstorf published in Geophysical Research Letters (2026, 53:5) applies a statistical filter to remove known temperature influences of ENSO, major volcanic eruptions, and solar variation from the global temperature record. After removal, the residual background warming rate since approximately 2015 is approximately 0.35°C per decade — compared with roughly 0.2°C/decade for the 1970–2015 period — an acceleration with statistical significance exceeding 98%. The authors describe the finding as consistent with but not unexpected from climate models, and flag it as evidence that Paris Agreement 1.5°C targets may be breached before 2030 if the current rate continues. Widely covered by Carbon Brief, The Japan Times, Mongabay, ScienceDaily, and the Potsdam Institute for Climate Impact Research.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          GRL 2026 (53:5): Foster &amp; Rahmstorf фильтруют влияние ЭНСО, вулканизма и солнечной активности из глобального температурного ряда. Фоновая скорость потепления с ~2015 г.: ~0,35°C/дек. (против ~0,2°C/дек. за 1970–2015 гг.); статзначимость &gt;98%. Соответствует климатическим моделям — тревожный сигнал: порог 1,5°C Парижского соглашения может быть превышен до 2030 г. при текущем темпе. Широко освещалось Carbon Brief, Потсдамским институтом, ScienceDaily.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-04-16">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">16 APR</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2604.16643">
+          WP-MIP: First Community Intercomparison of AI-Based, Hybrid, and Physics-Based Weather Prediction Models on Common Hindcast Cases
+        </a>
+        <p class="card-meta">arXiv:2604.16643 · April 2026</p>
+        <p class="card-summary" data-lang="en">
+          The Weather Prediction Model Intercomparison Project (WP-MIP) is a community-coordinated initiative providing the first systematic evaluation of AI-based, hybrid (physics+ML), and purely physics-based numerical weather prediction models against a shared set of hindcast test cases spanning multiple weather regimes and both hemispheres. By enforcing identical initial conditions, observation input, and evaluation metrics across all participating models, WP-MIP addresses the methodological inconsistencies that have made direct performance comparisons across the published literature unreliable. The project represents an analogue to established model intercomparison projects (CMIP, HighResMIP) for the new generation of AI and hybrid NWP systems and is coordinated through an open benchmarking platform.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          WP-MIP (arXiv:2604.16643, апрель 2026): первый скоординированный проект межмодельного сравнения ИИ, гибридных и физических моделей прогнозирования погоды на единых гиндкаст-кейсах. Единые начальные условия, наблюдения и метрики устраняют методологическую несопоставимость литературы. Аналог CMIP/HighResMIP для ИИ и гибридных NWP-систем; открытая бенчмарк-платформа.
+        </p>
+      </article>
+
+      <article class="card" data-date="2026-07-24">
+        <div class="card-top">
+          <span class="card-source">arXiv</span>
+          <span class="card-date">JUL 2026</span>
+        </div>
+        <a class="card-headline" href="https://arxiv.org/abs/2507.18378">
+          arXiv: Stretched-Grid vs. Limited-Area Modelling for Data-Driven Regional Weather Forecasting — Architecture Guidance for Sub-Global AI Forecast Systems
+        </a>
+        <p class="card-meta">arXiv:2507.18378 · July 2026</p>
+        <p class="card-summary" data-lang="en">
+          A preprint posted to arXiv in July 2026 provides a systematic architectural comparison of two approaches to regional AI weather forecasting: (1) limited-area models (LAM), which focus inference over a geographic subdomain cut out from the global grid; and (2) stretched-grid models, which retain global coverage but locally increase resolution over the target region. The paper evaluates both strategies on regional verification metrics and skill scores, offering practical architectural guidance for meteorological services developing sub-global AI NWP systems — a question of direct relevance to European and other regional operational centres considering AIFS-style regional adaptations.
+        </p>
+        <p class="card-summary" data-lang="ru">
+          arXiv:2507.18378 (июль 2026): архитектурное сравнение двух подходов к региональному ИИ-прогнозированию — (1) модели ограниченной области (LAM): инференс только над выбранным регионом; (2) «растянутые сетки»: глобальный охват с локально повышенным разрешением. Оценка по региональным верификационным метрикам; практическое руководство для служб с региональными мандатами (релевантно для европейских центров).
+        </p>
+      </article>
+
+    </div><!-- /card-grid -->
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       INDUSTRY
+  ═══════════════════════════════════════════════ -->
+  <section class="section section--industry">
+    <div class="section-header">
+      <span class="section-icon">🏭</span>
+      <span class="section-title">Industry News</span>
+      <span class="section-count"><span>1</span></span>
+    </div>
+
+    <div class="overview">
+      <span data-lang="en">
+        The week's standout weather-sector deal was <a href="https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/">WindBorne Systems</a>' $37M Series B (August 5), co-led by Khosla Ventures and Galvanize — the most significant commercial funding round for an upper-air atmospheric sensing and AI forecasting company this year, bringing a fleet of 600 autonomous long-duration weather balloons into direct commercial competition with government numerical weather prediction systems.
+      </span>
+      <span data-lang="ru">
+        Ключевая сделка недели в секторе погодных технологий — Series B <a href="https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/">WindBorne Systems</a> на $37 млн (5 авг), Khosla Ventures + Galvanize: 600 автономных долгоживущих метеозондов + ИИ-платформа WeatherMesh — первый коммерческий масштабный аналог государственных сетей аэрологического зондирования.
+      </span>
+    </div>
+
+    <div class="industry-grid">
+
+      <article class="industry-card" data-date="2026-08-05">
+        <div class="industry-header">
+          <span class="industry-tag">Funding</span>
+          <span class="industry-date">05 AUG</span>
+        </div>
+        <h3 class="industry-title">WindBorne Systems Raises $37M Series B to Scale AI Weather Intelligence Platform — 600-Balloon Atmospheric Network Feeds WeatherMesh; Valued at $250M</h3>
+        <p class="industry-body" data-lang="en">
+          Redwood City-based <a href="https://windbornesystems.com/blog/windborne-systems-raises-37-million-to-build-the-worlds-weather-intelligence-infrastructure">WindBorne Systems</a> closed a $37 million oversubscribed Series B on August 5, co-led by Khosla Ventures and Galvanize, with TransLink Capital and Lux Capital participating, at a post-money valuation of $250 million — bringing total funding to more than $62 million. WindBorne operates a global network of approximately 600 autonomous long-duration weather balloons launched from 20 sites worldwide; the balloons collect upper-air observations at altitudes and frequencies that polar-orbiting satellites cannot match, feeding the company's proprietary WeatherMesh AI forecasting platform. TechCrunch reported that WeatherMesh outperforms government forecasts on several standard skill metrics at multiple lead times. Proceeds fund atmospheric network expansion and next-generation WeatherMesh model development.
+        </p>
+        <p class="industry-body" data-lang="ru">
+          <a href="https://windbornesystems.com/blog/windborne-systems-raises-37-million-to-build-the-worlds-weather-intelligence-infrastructure">WindBorne Systems</a> (Рэдвуд-Сити, 5 августа): $37 млн Series B, Khosla Ventures + Galvanize (TransLink Capital, Lux Capital), оценка $250 млн; суммарное финансирование &gt;$62 млн. 600 автономных долгоживущих зондов с 20 стартовых площадок — аэрологические наблюдения, недоступные полярно-орбитальным спутникам, → ИИ-платформа WeatherMesh. По данным TechCrunch, WeatherMesh превосходит государственные прогнозы по ряду стандартных метрик. Цели: расширение сети зондов и следующее поколение WeatherMesh.
+        </p>
+        <div class="industry-source">
+          <a href="https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/">TechCrunch</a>
+        </div>
+      </article>
+
+    </div><!-- /industry-grid -->
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer">
+    <p class="footer-title">Archive</p>
+    <ul class="archive-list">
+      <li><a href="archive/2026-08-17.html">2026-08-17</a></li>
+      <li><a href="archive/2026-08-16.html">2026-08-16</a></li>
+      <li><a href="archive/2026-08-15.html">2026-08-15</a></li>
+      <li><a href="archive/2026-08-14.html">2026-08-14</a></li>
+      <li><a href="archive/2026-08-12.html">2026-08-12</a></li>
+      <li><a href="archive/2026-08-11.html">2026-08-11</a></li>
+      <li><a href="archive/2026-08-10.html">2026-08-10</a></li>
+      <li><a href="archive/2026-08-09.html">2026-08-09</a></li>
+      <li><a href="archive/2026-08-08.html">2026-08-08</a></li>
+      <li><a href="archive/2026-08-06.html">2026-08-06</a></li>
+      <li><a href="archive/2026-08-05.html">2026-08-05</a></li>
+      <li><a href="archive/2026-08-04.html">2026-08-04</a></li>
+      <li><a href="archive/2026-08-03.html">2026-08-03</a></li>
+      <li><a href="archive/2026-08-01.html">2026-08-01</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const body = document.body;
+  const digestDate = new Date(body.dataset.digestDate).getTime();
+
+  function applyWindow(days) {
+    const cutoff = digestDate - days * 86400000;
+    document.querySelectorAll('[data-date]').forEach(el => {
+      const t = new Date(el.dataset.date).getTime();
+      el.hidden = t < cutoff;
+    });
+    document.querySelectorAll('[data-days]').forEach(btn => {
+      btn.classList.toggle('active', +btn.dataset.days === days);
+    });
+  }
+
+  document.querySelectorAll('[data-days]').forEach(btn => {
+    btn.addEventListener('click', () => applyWindow(+btn.dataset.days));
+  });
+
+  function applyLang(lang) {
+    body.className = body.className.replace(/lang-\w+/, '') + ' lang-' + lang;
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.langBtn === lang);
+    });
+  }
+
+  document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+    btn.addEventListener('click', () => applyLang(btn.dataset.langBtn));
+  });
+
+  applyWindow(3);
+})();
+</script>
+
+</body>
+</html>
