@@ -1,0 +1,260 @@
+{
+  "digest_date": "2026-10-14",
+  "metar": "DIGEST 141000Z OCT26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "<a href=\"https://uk.lapresse.it/environment-en/2026/10/12/copernicus-september-2026-was-the-second-hottest-september-on-record/\" target=\"_blank\" rel=\"noopener\">Copernicus C3S confirmed September 2026 as the second-hottest September on record globally &mdash; 16.27&deg;C average, or 1.63&deg;C above pre-industrial levels &mdash; while global sea surface temperature set an all-time September record at 21.05&deg;C</a>; <a href=\"https://phys.org/news/2026-10-el-nio-temperature-key-pacific.html\" target=\"_blank\" rel=\"noopener\">Copernicus director Carlo Buontempo warned the above-1.5&deg;C anomaly run is likely to persist into 2027 as the 2026 Super El Ni&ntilde;o strengthens toward its December peak</a>. <a href=\"https://www.carbonbrief.org/ipcc-frustrating-and-disappointing-meeting-leaves-ar7-timeline-in-deadlock\" target=\"_blank\" rel=\"noopener\">IPCC-65 is now in its third day in Addis Ababa with the AR7 delivery-timeline deadlock still unresolved</a>; <a href=\"https://wwf.panda.org/discover/our_focus/climate_and_energy_practice/?16378941%2FWWF-Delaying-IPCC-Reports-Could-Leave-Climate-Decisions-Behind-The-Science=\" target=\"_blank\" rel=\"noopener\">WWF called this session &ldquo;perhaps the last chance&rdquo; to schedule all three Working Group reports before the 2028 Global Stocktake</a>. <a href=\"https://news.un.org/en/story/2026/10/1168555\" target=\"_blank\" rel=\"noopener\">COP31 in Antalya (9&ndash;20&nbsp;November 2026) now stands as the next critical milestone</a>, with the UN Secretary-General urging Parties not to abandon 1.5&deg;C despite UNEP&rsquo;s finding the goal will likely be exceeded.",
+      "items": [
+        {
+          "source": "Copernicus C3S / France 24 / Bernama",
+          "date": "2026-10-12",
+          "headline": "Copernicus C3S: September 2026 Second-Hottest September on Record at 1.63&deg;C Above Pre-Industrial; Global SST Hits All-Time September Record 21.05&deg;C; Second Consecutive Month Above +1.5&deg;C in 2026; Director Warns Anomaly May Persist Through 2027",
+          "url": "https://uk.lapresse.it/environment-en/2026/10/12/copernicus-september-2026-was-the-second-hottest-september-on-record/",
+          "summary": "Copernicus Climate Change Service (C3S) reported on October 12, 2026 that September 2026 was the second-hottest September on record globally, with an average temperature of 16.27°C — 0.82°C above the 1991–2020 baseline and 1.63°C above the pre-industrial (1850–1900) average; 0.11°C below the all-time September record set in 2023. Global average sea surface temperatures hit a new all-time September record at 21.05°C, surpassing the previous high of 20.92°C from September 2023. September was the second consecutive month in 2026 where global temperatures exceeded +1.5°C above pre-industrial levels. Copernicus director Carlo Buontempo stated the 1.5°C anomaly run is likely to extend into 2027 given the El Niño's continued strengthening toward its projected December peak. Western Europe experienced its joint-warmest September on record; Europe as a whole ranked third."
+        },
+        {
+          "source": "WMO / phys.org",
+          "date": "2026-10-08",
+          "headline": "WMO October 2026 El Ni&ntilde;o Update: Ni&ntilde;o&nbsp;3.4 Observed +3.34&deg;C (6&nbsp;Oct), Projected +3.7&deg;C Peak December &mdash; Would Be Strongest on Record; Central Pacific Exceeds 30&deg;C for First Time; Near-100% Probability Through February 2027",
+          "url": "https://phys.org/news/2026-10-sea-surface-temperatures-el-nio.html",
+          "summary": "The WMO Global Seasonal Climate Update (October 7–8, 2026) reports the Niño 3.4 anomaly reached +3.34°C on October 6 and is projected to average approximately +3.7°C for October–December 2026, peaking around December — far above the prior record of +2.6°C from November 2015–January 2016. The central Pacific exceeded 30°C (86°F) for the first time in the continuous SST record. WMO Secretary-General Celeste Saulo stated near-100% probability of persistence through February 2027. Compound drought–flood anomalies are forecast across Australasia, southern Africa, South America and South Asia through northern spring 2027."
+        },
+        {
+          "source": "IPCC Secretariat / Carbon Brief",
+          "date": "2026-10-12",
+          "headline": "IPCC-65 Day Three in Addis Ababa (12&ndash;16&nbsp;Oct): AR7 Timeline Deadlock Still Unresolved; WWF Calls Session &ldquo;Last Chance&rdquo; for All Three WG Reports Before 2028 Stocktake",
+          "url": "https://www.carbonbrief.org/ipcc-frustrating-and-disappointing-meeting-leaves-ar7-timeline-in-deadlock",
+          "summary": "IPCC-65, running October 12–16 at the UN Economic Commission for Africa in Addis Ababa, entered its third day on October 14 with the AR7 delivery-timeline deadlock still unresolved — now across six consecutive plenaries. Chair Jim Skea is pressing for a decision before the session closes October 16. WWF stated on October 13 that this session may be 'the last chance' to schedule all three Working Group reports for completion by 2028, before the second Global Stocktake. Primary divide: EU and small island states want all reports by mid-2028; a second bloc including major emerging economies seeks WG2 and WG3 deferred to 2029. The COP31 co-presidency (Turkey/Australia) held a virtual consultation with IPCC delegates on October 14."
+        },
+        {
+          "source": "University of Bristol / The Lancet",
+          "date": "2026-10-09",
+          "headline": "Bristol &amp; <em>Lancet</em>: Five Priority Steps for Public-Health Emergency Preparedness Under 2026 Super El Ni&ntilde;o; Infectious Disease, Malnutrition and Heat-Stress Risks Flagged Across Tropics and Subtropics",
+          "url": "https://www.bristol.ac.uk/news/2026/october/top-climate-scientists-set-out-five-steps-to-prepare-for-super-el-nio.html",
+          "summary": "A University of Bristol-led team published five priority preparedness steps in The Lancet for the 2026 Super El Niño's health impacts. The paper calls for (1) UN-coordinated public health emergency declaration, (2) national government health assessments and early-warning deployments, (3) scaled-up El Niño-focused climate-health attribution research, plus steps on malnutrition surveillance and heat-stress interventions. Health risks include accelerated spread of malaria, dengue, cholera and diarrhoeal diseases in flood-affected zones, malnutrition from drought-linked crop failure, and heat stress across tropical Africa, South Asia and South America."
+        },
+        {
+          "source": "Turkish Minute / Climate Change News",
+          "date": "2026-10-08",
+          "headline": "COP31 Co-Presidency Circulates Draft Cover Decision Text; T&uuml;rkiye and Australia Seek &ldquo;Ambitious&rdquo; Action Language; 1.5&deg;C Framing, Fossil Fuel Phase-Out and Finance Pledges Remain Contested",
+          "url": "https://www.turkishminute.com/2026/10/08/turkey-australia-seek-ambitious-climate-action-with-draft-text-for-cop31/",
+          "summary": "Turkey and Australia circulated draft COP31 cover decision text on October 8, building on the Fiji Pre-COP framework. Key fault lines: 1.5°C overshoot language; fossil fuel phase-out; and new finance pledges versus implementation of existing commitments. COP31 co-president Turkey's Murat Kurum called 1.5°C 'a matter of survival' for the Pacific. Turkey frames COP31 as an 'implementation COP' focused on delivering existing commitments rather than announcing new targets."
+        },
+        {
+          "source": "phys.org / Nature Geoscience / Rutgers RCEI",
+          "date": "2026-10-08",
+          "headline": "<em>Nature Geoscience</em> (Kopp et al.): Antarctic Ice Loss &ldquo;Very Likely&rdquo; on All 2100 Emissions Pathways; Highest-Ambition Paris Pathway Reduces Upper-End SLR ~50%; 95th-Percentile Very High Emissions: 25.4&nbsp;cm by 2100",
+          "url": "https://phys.org/news/2026-10-today-emissions-choices-limit-antarctic.html",
+          "summary": "A Nature Geoscience study led by Rutgers climate scientist Robert Kopp finds Antarctic ice loss contributing to global sea-level rise by 2100 is 'very likely' under all studied emissions scenarios. Under very high emissions, the 95th-percentile Antarctic SLR contribution reaches 25.4 cm by 2100 (median 15.7 cm). The highest-ambition Paris-consistent pathway carries at least 89% probability of producing less Antarctic ice loss by century's end, reducing the upper-end contribution by roughly half."
+        },
+        {
+          "source": "NASA / NSIDC",
+          "date": "2026-10-08",
+          "headline": "2026 Arctic Sea Ice Minimum: 4.6&nbsp;Million km&sup2; (12&nbsp;Sep) &mdash; Tied 10th Lowest in 47 Years; All 20 Lowest Satellite-Era Summer Minima Occurred During 2007&ndash;2026",
+          "url": "https://science.nasa.gov/science-research/earth-science/climate-science/sea-ice/arctic-sea-ice-2026-min/",
+          "summary": "NASA and NSIDC confirmed the 2026 Arctic sea ice minimum at approximately 4.6 million km² on September 12, tying 2008, 2010 and 2025 for the 10th lowest in 47 years — 1.21 million km² above the 2012 all-time record low. All 20 lowest Arctic summer minima in the satellite record have now occurred in the last 20 years (2007–2026), reflecting a roughly stable record-low regime established since the 2007 step-change."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Hurricane Simon + Tropical Storm Trudy (Eastern Pacific) &mdash; DUAL CONCURRENT THREATS TO MEXICO&rsquo;S PACIFIC COAST; SIMON OFFSHORE APPROACHING JALISCO WEDNESDAY&ndash;THURSDAY; TRUDY RAPIDLY INTENSIFYING TO MAJOR HURRICANE; COMBINED DEATH TOLL 6",
+          "status": "ACTIVE &mdash; DUAL THREAT &mdash; <a href=\"https://abcnews.com/International/wireStory/death-toll-rises-6-hurricane-simon-rachel-remnants-137236894\" target=\"_blank\" rel=\"noopener\">The combined death toll from Hurricane Simon and Tropical Storm Rachel remnants has risen to at least six (five in Ensenada, Baja California; one in Guerrero), with five missing</a>; <a href=\"https://www.cbsnews.com/news/hurricane-simon-still-hitting-western-mexico-tropical-systems/\" target=\"_blank\" rel=\"noopener\">Simon remains offshore Mexico&rsquo;s west-central coast, weakened to near-Category&nbsp;1 strength, with the NHC tracking an approach to the Cabo Corrientes&ndash;Jalisco coast around Wednesday&ndash;Thursday October 14&ndash;15</a>; <a href=\"https://www.upi.com/Top_News/World-News/2026/10/13/mexico-Trudy-storm/1401791940552\" target=\"_blank\" rel=\"noopener\">Tropical Storm Trudy formed Tuesday October 13 approximately 440 miles south-southeast of Acapulco and is forecast by NHC to rapidly intensify into a major hurricane by Thursday, threatening Mexico&rsquo;s southwestern Pacific coast as a second concurrent system</a>",
+          "impact": "Combined death toll at least 6; 5 people missing; 32 rescued by helicopter; life-threatening flooding and mudslides across Jalisco, Colima, Nayarit, Michoacán and Baja California from Simon and Rachel; waves up to 5 m (16 ft) along coastal areas; Simon's continued offshore approach brings additional heavy rainfall potential for Jalisco–Sinaloa corridor Wednesday–Thursday; Trudy adds a separate rapid-intensification threat for Guerrero, Oaxaca and the Michoacán coast by late week; Mexico's Pacific coast faces concurrent tropical threats for the first time this season"
+        },
+        {
+          "name": "Southeast Asian Haze &mdash; ONGOING; AERIAL FIREFIGHTING HAMPERED BY DENSE SMOG; SINGAPORE MEDICAL SUBSIDIES IN PLACE; 60,000 FIREFIGHTERS DEPLOYED; SCHOOL CLOSURES ~2&nbsp;MILLION STUDENTS",
+          "status": "ONGOING &mdash; <a href=\"https://www.bloomberg.com/news/articles/2026-10-13/haze-from-indonesia-fires-hinders-efforts-to-battle-the-blazes\" target=\"_blank\" rel=\"noopener\">Bloomberg (13&nbsp;October) reports Indonesia&rsquo;s aerial firefighting has been hampered for more than a week by the dense haze it seeks to extinguish: smog has grounded water-bombing and cloud-seeding operations in Central Kalimantan, forcing reliance on 60,000 ground personnel</a>; <a href=\"https://licas.news/2026/10/13/el-nino-deepens-regional-strain-as-southeast-asia-battles-fires-and-power-risks\" target=\"_blank\" rel=\"noopener\">Singapore has announced government subsidies for haze-illness medical treatment; tens of thousands ill; orangutan rescues ongoing</a>; <a href=\"https://www.aljazeera.com/news/2026/10/9/malaysia-shuts-schools-as-haze-from-indonesian-fires-chokes-southeast-asia\" target=\"_blank\" rel=\"noopener\">school closures affecting approximately 2&nbsp;million students continue across Malaysia</a>",
+          "impact": "60,000 Indonesian firefighters deployed across Sumatra and Kalimantan; aerial firefighting compromised by haze-related visibility; more than 200,000 hectares burned; more than 170,000 respiratory infection cases recorded in Indonesia; Singapore PSI at Very Unhealthy levels with government medical subsidies now in place; school closures affecting ~2 million students in Malaysia; bilateral Indonesia–Malaysia coordination elevated to PM/presidential level; El Niño-linked dry conditions are the primary driver"
+        },
+        {
+          "name": "Typhoon Koguma (JTWC 27W) &mdash; EXTRATROPICAL TRANSITION COMPLETE AS OF ~14&nbsp;OCTOBER; POST-TROPICAL REMNANT TRACKING NORTHEAST OVER OPEN NORTH PACIFIC; NO THREAT TO LAND",
+          "status": "POST-TROPICAL &mdash; <a href=\"https://sea.weathernews.com/resources/202610/269\" target=\"_blank\" rel=\"noopener\">WeatherNews Japan and JTWC confirm Koguma&rsquo;s extratropical transition completed approximately on schedule around 14&nbsp;October</a>; <a href=\"https://zoom.earth/storms/koguma-2026/\" target=\"_blank\" rel=\"noopener\">the post-tropical remnant is tracking northeast over the open North Pacific, well clear of Japan, with no watches or warnings in effect for any land area</a>",
+          "impact": "Elevated North Pacific swell propagating eastward; shipping lane advisories now lifting for east-coast Japan seas; Koguma completes a historically notable October sequence — three simultaneous Western Pacific tropical systems for the first time in five years, partly attributable to anomalously warm tropical Pacific SSTs from the 2026 Super El Niño; no further tropical threat to land areas"
+        }
+      ],
+      "overview_html": "As of Wednesday 14&nbsp;October, Mexico&rsquo;s Pacific coast faces a rare simultaneous dual tropical threat. <a href=\"https://abcnews.com/International/wireStory/death-toll-rises-6-hurricane-simon-rachel-remnants-137236894\" target=\"_blank\" rel=\"noopener\">The combined death toll from Hurricane Simon and Rachel remnants has risen to at least six</a>, with Simon still offshore before an expected approach to the Cabo Corrientes&ndash;Jalisco corridor Wednesday&ndash;Thursday. <a href=\"https://www.upi.com/Top_News/World-News/2026/10/13/mexico-Trudy-storm/1401791940552\" target=\"_blank\" rel=\"noopener\">Tropical Storm Trudy formed Tuesday south-southeast of Acapulco and is forecast to rapidly intensify into a major hurricane by Thursday 15&nbsp;October</a>, threatening the southern Mexican Pacific coast as a second concurrent system. <a href=\"https://www.bloomberg.com/news/articles/2026-10-13/haze-from-indonesia-fires-hinders-efforts-to-battle-the-blazes\" target=\"_blank\" rel=\"noopener\">The Southeast Asian haze crisis continues its second week with aerial firefighting still compromised by dense smog</a>. <a href=\"https://sea.weathernews.com/resources/202610/269\" target=\"_blank\" rel=\"noopener\">Typhoon Koguma completed extratropical transition as forecast around 14&nbsp;October</a> and poses no further tropical threat to land areas.",
+      "items": [
+        {
+          "source": "UPI / NHC / SMN / Rolling Out",
+          "date": "2026-10-13",
+          "headline": "Tropical Storm Trudy Forms in Eastern Pacific (440 Miles SSE of Acapulco); NHC Forecasts Rapid Intensification to Major Hurricane by Thursday 15&nbsp;Oct; Second Concurrent Tropical Threat to Mexico&rsquo;s Pacific Coast",
+          "url": "https://www.upi.com/Top_News/World-News/2026/10/13/mexico-Trudy-storm/1401791940552",
+          "summary": "Tropical Storm Trudy formed in the eastern Pacific on Tuesday October 13, 2026, approximately 440 miles south-southeast of Acapulco, per NHC Advisory No. 3. Maximum sustained winds were approximately 45 mph at formation, moving northwest at about 8 mph. The NHC forecast rapid intensification over the coming days, projecting major hurricane strength by Thursday October 15. Mexico's SMN projected Category 1 hurricane strength in the early hours of Thursday. No watches or warnings were issued as of Tuesday evening, but authorities urged residents of Guerrero, Oaxaca and the Michoacán coast to monitor developments. Trudy's formation creates a rare simultaneous dual-threat scenario alongside Hurricane Simon to the north; both systems are intensifying over anomalously warm Super El Niño-enhanced Pacific SSTs."
+        },
+        {
+          "source": "ABC News / CBS News / phys.org / NHC",
+          "date": "2026-10-13",
+          "headline": "Hurricane Simon + Rachel: Death Toll Rises to 6; 5 Missing; 32 Rescued by Helicopter; Simon Expected to Approach Cabo Corrientes&ndash;Jalisco Coast Wednesday&ndash;Thursday; Waves to 5&nbsp;Metres",
+          "url": "https://abcnews.com/International/wireStory/death-toll-rises-6-hurricane-simon-rachel-remnants-137236894",
+          "summary": "The combined death toll from Hurricane Simon and Tropical Storm Rachel remnants has risen to at least six as of October 13, 2026: five fatalities in Ensenada, Baja California (flash flooding from Rachel's remnants) and one in Guerrero. Five more people remain missing; security forces rescued 32 people by helicopter. Hurricane Simon, weakened to near-Category 1 strength, remained offshore Mexico's west-central coast on October 13. The NHC forecast Simon to approach Mexico's Pacific coast around Cabo Corrientes (southern Jalisco) Wednesday–Thursday October 14–15, with additional significant rainfall, flooding and waves up to 5 metres (16 feet) expected along coastal areas. The storm is expected to continue weakening over cooler inshore SSTs."
+        },
+        {
+          "source": "Bloomberg / LiCAS.news / Al Jazeera",
+          "date": "2026-10-13",
+          "headline": "SE Asian Haze Day 15+: Dense Smog Prevents Aerial Firefighting and Cloud Seeding in Kalimantan; Singapore Announces Haze-Illness Medical Subsidies; Tens of Thousands Ill; Orangutan Rescues Ongoing",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-13/haze-from-indonesia-fires-hinders-efforts-to-battle-the-blazes",
+          "summary": "Bloomberg reported on October 13, 2026 that Indonesia's aerial firefighting has been hampered for more than a week by the dense haze — poor visibility has grounded water-bombing and cloud-seeding flights in Central Kalimantan. Ground crews (60,000 personnel) remain the primary response. LiCAS.news (October 13) reports Singapore's government announced subsidies to offset medical costs for haze-related respiratory illness treatment. Tens of thousands have fallen ill across the region. Conservation organisations have rescued dozens of orangutans trapped by smoke and flames in Borneo. El Niño-linked dry conditions in Borneo and South Sumatra are identified as the primary meteorological driver."
+        },
+        {
+          "source": "WeatherNews Japan / JTWC / Zoom Earth",
+          "date": "2026-10-14",
+          "headline": "Typhoon Koguma (JTWC 27W): Extratropical Transition Completes ~14&nbsp;October as Forecast; Post-Tropical Remnant Tracking Northeast; No Japan Mainland Threat; North Pacific Swell Propagating East",
+          "url": "https://sea.weathernews.com/resources/202610/269",
+          "summary": "Typhoon Koguma completed its extratropical transition as forecast around October 14, 2026. The post-tropical remnant is tracking northeast over the open North Pacific, well east of Japan, with no tropical warnings or watches remaining in effect for any land area. Significant North Pacific swell generated during Koguma's peak intensity continues to propagate eastward into the North Pacific basin. Koguma's track completes a historically notable October sequence: three simultaneous Western Pacific tropical systems for the first time in five years, partly attributable to anomalously warm equatorial Pacific SSTs from the 2026 Super El Niño."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "<a href=\"https://renewablesnow.com/news/totalenergies-kkr-add-700-mw-of-solar-to-north-american-jv-1302817/\" target=\"_blank\" rel=\"noopener\">TotalEnergies and KKR agreed on 12&nbsp;October to add three Texas and Ohio utility-scale solar assets (700&nbsp;MW, enterprise value $1.2&nbsp;billion) to their 50:50 US renewables joint venture, expanding it to approximately 2.1&nbsp;GW</a>. <a href=\"https://solarquarter.com/2026/10/08/indias-solar-capacity-crosses-171-gw-as-over-35-gw-added-in-nine-months-of-2026/\" target=\"_blank\" rel=\"noopener\">India added 35.2&nbsp;GW solar and 4.69&nbsp;GW wind in the first nine months of 2026, pushing cumulative solar above 171&nbsp;GW</a>; Wood Mackenzie projects full-year solar above 50&nbsp;GW. <a href=\"https://offshoresource.com/news/renewables/cadeler-finishes-turbine-installation-at-baltic-power-offshore-wind-farm/\" target=\"_blank\" rel=\"noopener\">Poland&rsquo;s first offshore wind farm, Baltic Power (76 Vestas V236-15&nbsp;MW turbines, ~1.1&nbsp;GW), completed all installations and is in final commissioning</a>. <a href=\"https://www.pv-tech.org/grenergy-secures-us460-million-financing-for-446mw-solar-plus-storage-portfolio-in-chile/\" target=\"_blank\" rel=\"noopener\">Grenergy closed US$460&nbsp;million for 446&nbsp;MW solar + 1.8&nbsp;GWh storage in Chile</a>. <a href=\"https://www.bloomberg.com/news/articles/2026-10-07/german-energy-ministry-dissolves-key-wind-and-solar-division\" target=\"_blank\" rel=\"noopener\">Germany&rsquo;s Federal Ministry dissolved its key wind and solar industry-liaison division effective 2&nbsp;October</a> &mdash; a structural reversal of the team built under Habeck.",
+      "items": [
+        {
+          "source": "RenewablesNow / Enerdata / Investing.com",
+          "date": "2026-10-12",
+          "headline": "TotalEnergies and KKR Expand US Solar Joint Venture by 700&nbsp;MW (Texas + Ohio); Enterprise Value $1.2&nbsp;Billion; Combined JV Capacity to Reach ~2.1&nbsp;GW; Assets Target Q1 2027 Commercial Operations",
+          "url": "https://renewablesnow.com/news/totalenergies-kkr-add-700-mw-of-solar-to-north-american-jv-1302817/",
+          "summary": "TotalEnergies and KKR agreed on October 12, 2026 to contribute a portfolio of three utility-scale solar assets in Texas and Ohio (combined 700 MW) to their existing 50:50 US joint venture at an enterprise value of approximately $1.2 billion. The assets are expected to begin commercial operations in Q1 2027. The addition expands the JV's total capacity from approximately 1.4 GW to around 2.1 GW. TotalEnergies will continue as operator after closing, which is expected to complete in 2026 subject to customary conditions. Electricity from the added assets is already sold to third parties or will be marketed by TotalEnergies."
+        },
+        {
+          "source": "JMK Research / SolarQuarter / MNRE",
+          "date": "2026-10-08",
+          "headline": "India Adds 35.2&nbsp;GW Solar and 4.69&nbsp;GW Wind in First Nine Months of 2026; Cumulative Solar Exceeds 171&nbsp;GW; Wood Mackenzie Projects Full-Year Solar Above 50&nbsp;GW",
+          "url": "https://solarquarter.com/2026/10/08/indias-solar-capacity-crosses-171-gw-as-over-35-gw-added-in-nine-months-of-2026/",
+          "summary": "JMK Research and MNRE data published October 8, 2026 confirm India added 35.2 GW of solar and 4.69 GW of wind capacity in the first nine months of 2026, bringing cumulative installed solar capacity above 171 GW. Wood Mackenzie projects full-year solar installations will exceed 50 GW, surpassing the prior year's record of approximately 49 GW. India is on track to meet and potentially exceed its interim renewable energy targets ahead of 2030 goals."
+        },
+        {
+          "source": "Bloomberg",
+          "date": "2026-10-07",
+          "headline": "Germany&rsquo;s Federal Ministry for Economic Affairs Dissolves Key Wind and Solar Industry-Liaison Division Effective 2&nbsp;October; Structural Reversal of Team Built During Habeck Era",
+          "url": "https://www.bloomberg.com/news/articles/2026-10-07/german-energy-ministry-dissolves-key-wind-and-solar-division",
+          "summary": "Germany's Federal Ministry for Economic Affairs and Energy dissolved its dedicated wind and solar industry-liaison division, effective October 2, 2026. The division was established under former Economy Minister Robert Habeck to accelerate renewables permitting and coordinate between industry and government. The dissolution marks a structural reversal under the current ministry reorganisation. Wind and solar industry associations have expressed concern about reduced direct access to ministry decision-makers at a critical period for German renewables build-out."
+        },
+        {
+          "source": "OffshoreSource / Cadeler / OE Digital",
+          "date": "2026-10-07",
+          "headline": "Baltic Power: Cadeler Completes All 76 Vestas V236-15&nbsp;MW Turbine Installations at Poland&rsquo;s First Offshore Wind Farm (~1.1&nbsp;GW); Final Commissioning Underway",
+          "url": "https://offshoresource.com/news/renewables/cadeler-finishes-turbine-installation-at-baltic-power-offshore-wind-farm/",
+          "summary": "Cadeler announced October 7, 2026 the completion of all 76 turbine installations at Baltic Power — Poland's first offshore wind farm — using jack-up vessels Wind Osprey and Wind Mover. Turbines are 76 Vestas V236-15 MW units; capacity is reported as 1.1–1.2 GW. The farm is jointly owned by Northland Power and PKN Orlen under a 25-year contract-for-difference subsidy. Baltic Power delivered first power to Poland's grid in July 2026; the project is now in final commissioning."
+        },
+        {
+          "source": "Offshore Wind / Proximo Infrastructure",
+          "date": "2026-10-09",
+          "headline": "Norway Revises Utsira Nord Floating Wind Support Terms: Reduced Pre-FID Withdrawal Penalty, Earlier State Aid Payments; Total Cap Unchanged at NOK&nbsp;35&nbsp;Billion (~&euro;3.3&nbsp;Billion)",
+          "url": "https://offshorewind.biz/2026/10/09/norway-revises-utsira-nord-floating-wind-support-terms",
+          "summary": "Norway's government revised support terms for the Utsira Nord 500 MW floating wind project on October 9, 2026, via the 2027 state budget. The financial penalty for withdrawing before a final investment decision is reduced; part of state aid payments will be advanced earlier in the project lifecycle. The total support cap remains unchanged at NOK 35 billion (~€3.3 billion). Revisions are linked to increased uncertainty from the immature floating wind supply chain."
+        },
+        {
+          "source": "PV Tech / RenewablesNow / Grenergy",
+          "date": "2026-10-09",
+          "headline": "Grenergy Closes ~US$460&nbsp;Million Non-Recourse Financing for 446&nbsp;MW Solar and 1.8&nbsp;GWh Storage in Chile; BNP&nbsp;Paribas-Led Six-Bank Consortium; Largest Grenergy Project Financing",
+          "url": "https://www.pv-tech.org/grenergy-secures-us460-million-financing-for-446mw-solar-plus-storage-portfolio-in-chile/",
+          "summary": "Grenergy closed approximately US$460 million in non-recourse senior financing on October 9, 2026 for the Algarrobal platform (242 MW solar + 1.5 GWh BESS) and the Palmas cluster (204 MW solar + 289 MWh BESS) in Chile. BNP Paribas coordinated; BBVA, J.P. Morgan Chase, MUFG, Santander and Bank of Nova Scotia participated. The deal is Grenergy's largest single project financing, bringing total Chilean non-recourse debt beyond US$2.4 billion."
+        },
+        {
+          "source": "PV Tech / SolarQuarter",
+          "date": "2026-10-07",
+          "headline": "Clearway Energy Group Breaks Ground on 650&nbsp;MW Swan Energy Center (Missouri) After Closing $1.5&nbsp;Billion Financing; 20-Year Google PPA; CIBC/DNB/NAB Consortium; Target COD 2028",
+          "url": "https://www.pv-tech.org/clearway-secures-financing-starts-construction-on-650mw-missouri-solar-project/",
+          "summary": "Clearway Energy Group closed $1.5 billion in project financing and commenced construction on the 650 MW Swan Energy Center in Bates County, Missouri on October 7, 2026. Banking consortium: CIBC, DNB Bank and National Australia Bank. The project carries a 20-year PPA with Google, with Blattner Energy as construction partner. Target commercial operations 2028; project generates more than $80 million for local schools via PILOT agreement."
+        },
+        {
+          "source": "SolarQuarter / Power Grid Corporation of India",
+          "date": "2026-10-12",
+          "headline": "Power Grid Corporation of India Acquires Lakadia&nbsp;II Transmission Project SPV from REC Power Development; Supports Gujarat&rsquo;s 7,500&nbsp;MW Renewable Energy Zone",
+          "url": "https://solarquarter.com/2026/10/13/power-grid-acquires-lakadia-ii-transmission-project-for-gujarats-7500-mw-renewable-energy-zone",
+          "summary": "Power Grid Corporation of India completed the acquisition of the Lakadia II transmission project special purpose vehicle from REC Power Development and Consultancy on October 12, 2026. The project forms part of the green energy corridor supporting Gujarat's planned 7,500 MW renewable energy zone. Power Grid will own and operate the transmission assets interconnecting large-scale solar and wind generation in Gujarat to the national grid."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "<a href=\"https://arxiv.org/abs/2610.09770\" target=\"_blank\" rel=\"noopener\">Beucler et al.&rsquo;s 13-author review (arXiv:2610.09770, submitted to <em>Science Advances</em>) identifies explicit external-forcing representation as the critical gap between AI weather and climate timescales</a>, and notes AI weather models risk underperforming on unprecedented extremes outside their training distribution &mdash; a particular vulnerability given the 2026 Super El Ni&ntilde;o&rsquo;s record character. <a href=\"https://phys.org/news/2026-10-today-emissions-choices-limit-antarctic.html\" target=\"_blank\" rel=\"noopener\">Kopp et al. in <em>Nature Geoscience</em></a> confirm Antarctic SLR is &ldquo;very likely&rdquo; on all 2100 emissions pathways. A <a href=\"https://phys.org/news/2026-10-climate.html\" target=\"_blank\" rel=\"noopener\"><em>PNAS</em> meta-analysis of 20,736 tipping-point papers</a> finds permafrost abrupt thaw covered in only 0.7% of the literature versus 20% for Greenland &mdash; a structural attention disparity with direct policy implications. <a href=\"https://www.bristol.ac.uk/news/2026/october/top-climate-scientists-set-out-five-steps-to-prepare-for-super-el-nio.html\" target=\"_blank\" rel=\"noopener\">A Bristol/<em>Lancet</em> team published five El Ni&ntilde;o public-health preparedness steps</a> for the record event now unfolding.",
+      "items": [
+        {
+          "source": "arXiv / Science Advances (submitted)",
+          "date": "2026-10-07",
+          "headline": "Artificial Intelligence Pathways from Weather to Climate (arXiv:2610.09770, Beucler et al.): Explicit External Forcing Required to Bridge Forecast and Climate Timescales; AI Models Risk Underperforming on Unprecedented Extremes Outside Training Distribution",
+          "url": "https://arxiv.org/abs/2610.09770",
+          "meta": "Tom Beucler, David Neelin, Hui Su, Ignacio Lopez-Gomez, Chris Bretherton, Oliver Watt-Meyer, Tapio Schneider, Costa Christopoulos, Will Chapman, Laure Zanna, Aditya Grover, Adam Subel et al. (UNIL/UCLA/Google Research/Caltech/NYU/AI2/UC Boulder) &middot; arXiv:2610.09770 (physics.ao-ph, cs.AI, cs.LG) &middot; Submitted to Science Advances 7 October 2026",
+          "summary": "Beucler et al. identify the critical gap between weather and climate AI: models must represent external forcings (greenhouse gases, aerosols, land-use change) explicitly before medium-range forecast gains can extend to climate projection skill. Key findings: AI models are not intrinsically more efficient than GPU-ported dynamical models once architectural complexity is accounted for; data-driven models have recently approached dynamical models on subseasonal timescales in probabilistic benchmarks; but AI weather models risk underperforming dynamical models on unprecedented, record-breaking extremes not seen during training — a critical vulnerability directly relevant to 2026 Super El Niño forecasting applications."
+        },
+        {
+          "source": "Nature",
+          "date": "2026-10-07",
+          "headline": "<em>Nature</em> Feature: &ldquo;Are We Really Headed for a &lsquo;Super&rsquo; El Ni&ntilde;o? What the Science Says&rdquo; &mdash; Reviews Model Agreement, Uncertainty Bounds and Expected Teleconnections for 2026&ndash;27",
+          "url": "https://www.nature.com/articles/d41586-026-01538-0",
+          "summary": "A Nature feature reviews the scientific basis for the 2026 Super El Niño designation: model agreement underpinning the WMO's +3.7°C Niño 3.4 projection, residual uncertainty, and how expected teleconnections (drought in Australasia and southern Africa; flooding in South America and the Horn of Africa; warmer European winters) are likely to play out through northern spring 2027. The article addresses the superposition of El Niño forcing with the long-term greenhouse warming trend, and what that means for expected 2026–27 global temperature records."
+        },
+        {
+          "source": "phys.org / Nature Geoscience / Rutgers RCEI",
+          "date": "2026-10-08",
+          "headline": "<em>Nature Geoscience</em> (Kopp et al.): Antarctic Ice Loss &ldquo;Very Likely&rdquo; on All 2100 Emissions Pathways; Highest-Ambition Paris Pathway Halves Upper-End SLR vs. Very High Emissions; 95th Percentile Very High: 25.4&nbsp;cm by 2100",
+          "url": "https://phys.org/news/2026-10-today-emissions-choices-limit-antarctic.html",
+          "meta": "Robert Kopp et al. (Rutgers University RCEI) &middot; Nature Geoscience &middot; Published October 2026",
+          "summary": "A Nature Geoscience study (Kopp et al., Rutgers) finds Antarctic ice loss contributing to global sea-level rise by 2100 is 'very likely' under all studied emissions scenarios. Under very high emissions, the 95th-percentile Antarctic SLR contribution reaches 25.4 cm by 2100 (median 15.7 cm). The highest-ambition Paris-consistent pathway carries at least 89% probability of producing less Antarctic ice loss by century's end, reducing the upper-end contribution by roughly half. Near-term emissions choices still meaningfully bound long-term Antarctic SLR risk despite committed ice loss being unavoidable."
+        },
+        {
+          "source": "phys.org / PNAS",
+          "date": "2026-10-08",
+          "headline": "<em>PNAS</em> Meta-Analysis (20,736 Papers): Greenland Dominates Tipping Research (20%); Permafrost Abrupt Thaw Covered in Only 0.7%; Structural Scientific Attention Disparity May Skew Policy Prioritisation",
+          "url": "https://phys.org/news/2026-10-climate.html",
+          "meta": "PNAS &middot; Published October 2026",
+          "summary": "A PNAS meta-analysis of 20,736 publications on 14 climate tipping elements found the Greenland ice sheet appearing in 4,141 papers (20%). By contrast, abrupt thaw of permafrost in boreal forests appeared in only 139 papers (0.7%). High-risk tipping elements including permafrost carbon feedback and West African monsoon shifts are substantially understudied relative to their potential climate impact, creating a potential structural bias in the evidence base informing climate policy."
+        },
+        {
+          "source": "University of Bristol / The Lancet",
+          "date": "2026-10-09",
+          "headline": "Bristol &amp; <em>Lancet</em>: Five Priority Steps for Public-Health Emergency Preparedness Under the 2026 Super El Ni&ntilde;o; Malaria, Dengue, Cholera, Malnutrition and Heat-Stress Risks Flagged Across Tropics and Subtropics",
+          "url": "https://www.bristol.ac.uk/news/2026/october/top-climate-scientists-set-out-five-steps-to-prepare-for-super-el-nio.html",
+          "summary": "A University of Bristol-led team published five priority health preparedness steps in The Lancet for the 2026 Super El Niño. The paper calls for: (1) UN-coordinated public health emergency declaration; (2) national government health assessments and early-warning system deployments; (3) scaled-up El Niño-focused climate-health attribution research; plus steps on malnutrition surveillance and heat-stress interventions. Identified risks include accelerated transmission of malaria, dengue, cholera and diarrhoeal diseases in flood-affected zones; malnutrition from drought-linked crop failure across sub-Saharan Africa and South Asia; and heat stress across tropical regions through northern spring 2027."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-10-13",
+          "title": "Copenhagen Infrastructure Partners Acquires 25% Stake in Five Estuaries Offshore Wind (1.1&nbsp;GW Consented, UK) from Macquarie-Led Consortium; Second Major Ownership Change at Same Project in Five Days",
+          "body_html": "<a href=\"https://prnewswire.com/news-releases/copenhagen-infrastructure-partners-acquires-25-stake-in-five-estuaries-offshore-wind-farm-302906693.html\" target=\"_blank\" rel=\"noopener\">Copenhagen Infrastructure Partners (CIP) announced on 13&nbsp;October 2026 that it has acquired the 25% stake in the Five Estuaries offshore wind project held by the Macquarie-led consortium</a>. <a href=\"https://www.rwe.com/en/press/rwe-offshore-wind-gmbh/2026-10-08-rwe-completes-sale-of-shares-in-five-estuaries-offshore-wind-farm/\" target=\"_blank\" rel=\"noopener\">The acquisition follows RWE&rsquo;s sale of its 33.33% developer stake to EDF on 8&nbsp;October</a>, marking the second significant ownership change at the consented 1.1&nbsp;GW southern North Sea project within five days. Remaining partners: EDF Power Solutions (33.33%, lead developer), ESB (20.83%) and Sumitomo Corporation (20.83%). Financial terms were not disclosed.",
+          "source_html": "<a href=\"https://prnewswire.com/news-releases/copenhagen-infrastructure-partners-acquires-25-stake-in-five-estuaries-offshore-wind-farm-302906693.html\" target=\"_blank\" rel=\"noopener\">PRNewswire</a>"
+        },
+        {
+          "date": "2026-10-12",
+          "title": "Ørsted to Buy Back Remaining 49.9% of Gunfleet Sands Offshore Wind Farm (172&nbsp;MW, UK) from JERA and Development Bank of Japan for ~&pound;15&nbsp;Million; Full Ownership Enables Late-Life Extension Options; Closing November 2026",
+          "body_html": "<a href=\"https://orsted.com/en/media/news/2026/10/orsted-to-take-full-ownership-of-gunfleet-sands-1--1519524911\" target=\"_blank\" rel=\"noopener\">Ørsted announced on 12&nbsp;October 2026 it will exercise a buyback right to acquire the remaining 49.9% of the Gunfleet Sands 1 &amp; 2 offshore wind farm off the Essex coast for approximately &pound;15&nbsp;million</a>, purchasing 24.95% each from JERA and the Development Bank of Japan. <a href=\"https://www.oedigital.com/news/543606-rsted-to-buy-remaining-gunfleet-sands-offshore-wind-stake\" target=\"_blank\" rel=\"noopener\">Full ownership will let Ørsted evaluate late-life options including a potential lifetime extension for the 172&nbsp;MW site, which has operated since 2010 and currently powers over 125,000 UK homes</a>. Closing is expected November 2026, subject to customary conditions.",
+          "source_html": "<a href=\"https://orsted.com/en/media/news/2026/10/orsted-to-take-full-ownership-of-gunfleet-sands-1--1519524911\" target=\"_blank\" rel=\"noopener\">Ørsted Press Office</a>"
+        },
+        {
+          "date": "2026-10-12",
+          "title": "TotalEnergies and KKR Expand US Solar Joint Venture by 700&nbsp;MW (Texas + Ohio); $1.2&nbsp;Billion Enterprise Value; Combined JV to Reach ~2.1&nbsp;GW",
+          "body_html": "<a href=\"https://renewablesnow.com/news/totalenergies-kkr-add-700-mw-of-solar-to-north-american-jv-1302817/\" target=\"_blank\" rel=\"noopener\">TotalEnergies and KKR agreed on 12&nbsp;October 2026 to contribute three utility-scale solar assets in Texas and Ohio (combined 700&nbsp;MW) to their existing 50:50 US joint venture at an enterprise value of approximately $1.2&nbsp;billion</a>. <a href=\"https://www.investing.com/news/stock-market-news/totalenergies-and-kkr-expand-us-solar-joint-venture-by-700-mw-93CH-4943506\" target=\"_blank\" rel=\"noopener\">The assets are expected to begin commercial operations in Q1 2027, expanding the JV from approximately 1.4&nbsp;GW to 2.1&nbsp;GW</a>. TotalEnergies will continue as operator; closing expected in 2026.",
+          "source_html": "<a href=\"https://renewablesnow.com/news/totalenergies-kkr-add-700-mw-of-solar-to-north-american-jv-1302817/\" target=\"_blank\" rel=\"noopener\">RenewablesNow</a>"
+        },
+        {
+          "date": "2026-10-12",
+          "title": "WindBorne Systems Wins Hefty US Air Force Contract for Balloon Weather Data; Total Government Value Could Reach ~$50&nbsp;Million; Builds on $37&nbsp;Million Series B (Aug&nbsp;2026)",
+          "body_html": "<a href=\"https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data\" target=\"_blank\" rel=\"noopener\">TechCrunch reports (12&nbsp;October 2026) that WindBorne Systems won a US Air Force contract for its long-duration balloon atmospheric data, with the total government contract value potentially reaching approximately $50&nbsp;million</a>. WindBorne operates a constellation of roughly 600 long-duration weather balloons from 20 global launch sites; its AI-driven forecast models ingest the data for numerical weather prediction. <a href=\"https://techcrunch.com/2026/08/05/ai-makes-weather-prediction-better-can-windborne-make-it-lucrative/\" target=\"_blank\" rel=\"noopener\">The company raised a $37&nbsp;million Series B in August 2026 led by Khosla Ventures and Galvanize at a $250&nbsp;million valuation</a>; the Air Force contract adds significant non-dilutive government revenue to its commercial data-as-a-service business.",
+          "source_html": "<a href=\"https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data\" target=\"_blank\" rel=\"noopener\">TechCrunch</a>"
+        },
+        {
+          "date": "2026-10-09",
+          "title": "Enel Green Power North America Finalises Acquisition of 270&nbsp;MW US Solar Portfolio (Seven Plants in Virginia, North Carolina and South Carolina) for ~$140&nbsp;Million; First Enel Presence in Three States",
+          "body_html": "<a href=\"https://www.renewableenergymagazine.com/pv_solar/enel-finalises-the-acquisition-of-a-portfolio-20261009\" target=\"_blank\" rel=\"noopener\">Enel Green Power North America finalised on 9&nbsp;October 2026 the acquisition of seven operational solar PV plants totalling approximately 270&nbsp;MW from a US utility, at an enterprise value of about $140&nbsp;million</a>. <a href=\"https://renewablewatch.in/2026/10/05/enel-acquires-270-mw-solar-portfolio-in-the-us/\" target=\"_blank\" rel=\"noopener\">The portfolio spans Virginia (&gt;120&nbsp;MW), North Carolina (&gt;90&nbsp;MW) and South Carolina (~50&nbsp;MW), marking Enel&rsquo;s first operational presence in all three states</a>. Enel estimates an annual ordinary EBITDA contribution of about $20&nbsp;million. The original agreement was signed in May 2026.",
+          "source_html": "<a href=\"https://www.renewableenergymagazine.com/pv_solar/enel-finalises-the-acquisition-of-a-portfolio-20261009\" target=\"_blank\" rel=\"noopener\">Renewable Energy Magazine</a>"
+        },
+        {
+          "date": "2026-10-09",
+          "title": "Grenergy Closes ~US$460&nbsp;Million Non-Recourse Senior Financing for 446&nbsp;MW Solar + 1.8&nbsp;GWh Storage Portfolio in Chile; BNP&nbsp;Paribas-Led Six-Bank Consortium; Total Chilean Non-Recourse Debt Exceeds US$2.4&nbsp;Billion",
+          "body_html": "<a href=\"https://www.pv-tech.org/grenergy-secures-us460-million-financing-for-446mw-solar-plus-storage-portfolio-in-chile/\" target=\"_blank\" rel=\"noopener\">Grenergy closed approximately US$460&nbsp;million in non-recourse senior financing on 9&nbsp;October 2026</a> for the Algarrobal platform (fifth phase of Oasis de Atacama: 242&nbsp;MW solar + 1.5&nbsp;GWh BESS) and the Palmas cluster (204&nbsp;MW solar + 289&nbsp;MWh BESS) in Chile. <a href=\"https://renewablesnow.com/news/grenergy-secures-usd-457m-for-chilean-solar-storage-platforms-1302722/\" target=\"_blank\" rel=\"noopener\">BNP Paribas coordinated and underwrote; BBVA, J.P.&nbsp;Morgan Chase, MUFG Bank, Santander and Bank of Nova Scotia co-participated</a>. This is Grenergy&rsquo;s largest single project financing, bringing total Chilean non-recourse debt beyond US$2.4&nbsp;billion.",
+          "source_html": "<a href=\"https://www.pv-tech.org/grenergy-secures-us460-million-financing-for-446mw-solar-plus-storage-portfolio-in-chile/\" target=\"_blank\" rel=\"noopener\">PV Tech</a>"
+        },
+        {
+          "date": "2026-10-07",
+          "title": "Sonnedix Acquires 54&nbsp;MW Italy Solar Portfolio from EOS ReNewable Infrastructure Fund&nbsp;II (Macchiareddu, Sardinia + Aprilia, Lazio); Italian Operating Capacity Exceeds 1.3&nbsp;GW",
+          "body_html": "<a href=\"https://www.pv-tech.org/sonnedix-adds-54mw-of-italian-solar-assets-taking-operational-portfolio-above-1-3gw/\" target=\"_blank\" rel=\"noopener\">Sonnedix acquired two solar PV assets totalling 54&nbsp;MW from EOS ReNewable Infrastructure Fund&nbsp;II on 7&nbsp;October 2026</a>: Macchiareddu (46.5&nbsp;MW, Sardinia) and Aprilia (7.5&nbsp;MW, Lazio), financed by a European bank consortium. <a href=\"https://www.energyglobal.com/solar/08102026/sonnedix-acquires-two-solar-photovoltaics-assets-in-italy-totalling-54-mw/\" target=\"_blank\" rel=\"noopener\">The transaction lifts Sonnedix&rsquo;s Italian operational portfolio above 1.3&nbsp;GW</a> &mdash; its third Italian acquisition in 2026 following a 194&nbsp;MW portfolio in March and a 260&nbsp;MW Tuscania battery storage portfolio in July.",
+          "source_html": "<a href=\"https://www.pv-tech.org/sonnedix-adds-54mw-of-italian-solar-assets-taking-operational-portfolio-above-1-3gw/\" target=\"_blank\" rel=\"noopener\">PV Tech</a>"
+        }
+      ]
+    }
+  }
+}
