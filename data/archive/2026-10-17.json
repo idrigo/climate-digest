@@ -1,0 +1,223 @@
+{
+  "digest_date": "2026-10-17",
+  "metar": "DIGEST 171000Z OCT26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "A new <a href=\"https://academic.oup.com/bioscience/advance-article/doi/10.1093/biosci/biag125/8836482\" target=\"_blank\" rel=\"noopener\">annual State of the Climate report published in <em>BioScience</em> on 14&nbsp;October found seven of 16 planetary vital signs at record extremes in 2026</a> &mdash; including global ocean heat content, sea level, glacier mass, and atmospheric concentrations of CO&#8322; (428&nbsp;ppm, &asymp;50% above pre-industrial), CH&#8324;, and N&#8322;O &mdash; with lead authors William Ripple and Christopher Wolf warning of growing instability and possible irreversible threshold crossings. The backdrop is the record-setting Super El&nbsp;Ni&ntilde;o: <a href=\"https://www.carbonbrief.org/analysis-super-el-nino-reaches-remarkable-all-time-record\" target=\"_blank\" rel=\"noopener\">Carbon Brief confirmed the Ni&ntilde;o&nbsp;3.4 anomaly at a +3.34&deg;C all-time record</a>, with Berkeley Earth placing the probability of 2026 setting a new annual temperature record at 93%. IPCC-65 concluded in Addis Ababa on 16&nbsp;October <a href=\"https://www.ipcc.ch/2026/10/12/ipcc-sixty-fifth-plenary-addis-ababa/\" target=\"_blank\" rel=\"noopener\">without formal agreement on the AR7 delivery timeline &mdash; the sixth consecutive plenary deadlock</a>. With COP31 (Antalya, 9&ndash;20&nbsp;November) now three weeks away, <a href=\"https://www.briefs.co/news/eu-doubles-down-on-emissions-cuts-push-at-cop31-as-un-flags/\" target=\"_blank\" rel=\"noopener\">the EU has confirmed its position calling for a Mitigation Work Programme extension to 2040 and delivery of the New Collective Quantified Goal on climate finance</a>.",
+      "items": [
+        {
+          "source": "BioScience / OSU / EurekaAlert / Eos",
+          "date": "2026-10-14",
+          "headline": "2026 State of the Climate Report (<em>BioScience</em>): Seven of 16 Planetary Vital Signs at Record Extremes; CO&#8322; at 428&nbsp;ppm (&asymp;50% Above Pre-Industrial); Warming Rate Tripled Since 1970; Record Ocean Heat and Sea Level",
+          "url": "https://academic.oup.com/bioscience/advance-article/doi/10.1093/biosci/biag125/8836482",
+          "summary": "The seventh annual State of the Climate planetary vital-signs assessment, led by William Ripple and Christopher Wolf (Oregon State University) and published in BioScience on October 14, found that seven of 16 climate-related planetary vital signs are now at record extremes: global sea level, global ocean heat content, worldwide glacier thickness, Greenland ice-sheet mass, and atmospheric concentrations of CO₂ (428 ppm, ~50% above pre-industrial), CH₄, and N₂O. Atmospheric CO₂ passed 428 ppm in May 2026. The report documents an accelerating warming rate: approximately 0.05°C per decade (1880–1970), 0.19°C per decade (1970–2010), and 0.36°C per decade (2010–2024). Global tree-cover loss from fires reached 10.8 million hectares in 2025, the third-highest on record. The authors also note positive developments — rapid growth in renewable energy, battery storage, adaptation planning and ecosystem restoration — framing the report as a current-state diagnosis rather than an irreversible forecast."
+        },
+        {
+          "source": "Carbon Brief",
+          "date": "2026-10-13",
+          "headline": "Carbon Brief Analysis: 2026 Super El Ni&ntilde;o Reaches &ldquo;Remarkable&rdquo; All-Time SST Record (+3.34&deg;C Ni&ntilde;o&nbsp;3.4 Anomaly); Copernicus Director Says 2026 Could Still Become Hottest Year; Berkeley Earth Puts Probability at 93%",
+          "url": "https://www.carbonbrief.org/analysis-super-el-nino-reaches-remarkable-all-time-record",
+          "summary": "Carbon Brief's October 13 analysis reported the 2026 El Niño has reached a 'remarkable' all-time record for Niño 3.4 SST anomaly at approximately +3.34°C, exceeding the peaks of the 2015–16 event and all previous strong El Niños in the instrumental record. Copernicus director Carlo Buontempo stated 2026 could become the hottest year ever recorded, though the final outcome hinges on October–December conditions. A separate Berkeley Earth assessment (August 2026) placed the probability of 2026 becoming the hottest year at 93%, with the likely annual mean falling between 1.536 and 1.642°C above the 1850–1900 baseline. El Niño's surface temperature signal typically lags the SST peak by 3–6 months, so its largest global temperature impact is projected for early 2027, with 2027 projected at approximately 1.7°C above pre-industrial."
+        },
+        {
+          "source": "IPCC Secretariat / Carbon Brief",
+          "date": "2026-10-16",
+          "headline": "IPCC-65 Addis Ababa Concludes Without AR7 Timeline Agreement; Sixth Consecutive Plenary Deadlock; Chair Skea September&nbsp;2028 Proposal Blocked by India-Led Bloc; No Formal Outcome Published",
+          "url": "https://www.ipcc.ch/2026/10/12/ipcc-sixty-fifth-plenary-addis-ababa/",
+          "summary": "IPCC-65 ran October 12–16 at the UN Economic Commission for Africa in Addis Ababa and concluded without formal agreement on the Seventh Assessment Report delivery timeline — the sixth consecutive plenary to fail to resolve the schedule. The central dispute remains whether all three Working Group reports can be approved by September 2028 (supported by the EU, UK, small island states and most developed countries) or whether WG2 and WG3 must be deferred to 2029 (the position of India and several major emerging economies). Climate Analytics and the Earth Negotiations Bulletin noted Addis Ababa was likely the last session at which a 2028-compatible schedule could realistically be agreed. No formal outcome had been published as of digest compilation."
+        },
+        {
+          "source": "Briefs / EnergyMonitor / IndexBox",
+          "date": "2026-10-14",
+          "headline": "EU Doubles Down on COP31 Position: Mitigation Work Programme Extension to 2040 and New Climate Finance Goal Top Demands; EU ETS Eases to ~&euro;86/Tonne After EU Council Discussions",
+          "url": "https://www.briefs.co/news/eu-doubles-down-on-emissions-cuts-push-at-cop31-as-un-flags/",
+          "summary": "The EU reinforced its COP31 negotiating priorities following the UN Environment Programme's annual Emissions Gap Report, which found existing NDCs place the world on a roughly 3°C pathway. The EU's top COP31 asks: extending the Mitigation Work Programme beyond 2030 to at least 2040; delivering the New Collective Quantified Goal on climate finance; and advancing Article 6 carbon market operationalisation. EU ETS allowances, which peaked at €88.3/tonne on October 12 — the highest since late January — eased to approximately €86/tonne following the EU Council (October 15–16) where Italy and Czechia sought ETS reform and ETS2 delay; the European Commission maintained ETS2 will proceed to its planned 2028 launch."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Hurricane Trudy (Eastern Pacific) &mdash; Forecast to Peak Category&nbsp;4 (~145&nbsp;mph); Passing Near Michoac&aacute;n&ndash;Jalisco Coast Saturday&ndash;Sunday; Compound Flood and Mudslide Risk",
+          "status": "As of 17&nbsp;Oct: Trudy is forecast to intensify to near Category&nbsp;4 (~145&nbsp;mph) Saturday before approaching Mexico&rsquo;s southwestern and west-central coast; hurricane watch in effect from Punta San Telmo (Michoac&aacute;n) to Cabo Corrientes (Jalisco); most models keep the centre just offshore &mdash; high pressure building over Mexico steers it parallel to the coast &mdash; but the US GFS model brings it inland; heavy coastal impacts and life-threatening rainfall expected regardless of whether the centre makes landfall",
+          "impact": "Torrential rain of 10&ndash;20+&nbsp;cm (4&ndash;8+&nbsp;in) with extreme orographic enhancement; life-threatening mudslides in steep terrain of Colima, Jalisco and Michoac&aacute;n; dangerous coastal surf and storm-surge flooding along SW Mexico coast; compound hazard severe &mdash; soils remain fully saturated from Hurricane Simon&rsquo;s prior rains; fishing and port operations closed along SW coast; region still recovering from Simon impacts"
+        },
+        {
+          "name": "Typhoon Champi &mdash; Cat&nbsp;2/3 Typhoon; Forecast to Pass Over or Near Southern Guam Sunday 18&nbsp;Oct Morning; Ports Closed; Flights Cancelled; Governor Orders Residents Indoors",
+          "status": "As of 17&nbsp;Oct: Champi forecast to pass directly over or very near southern Guam early Sunday 18&nbsp;Oct; Guam GHS Advisory No.&nbsp;3 projects Category&nbsp;2 conditions; JTWC forecast reflected Category&nbsp;3 intensity at closest approach; sustained winds expected 105&ndash;120&nbsp;mph, gusts to 155&nbsp;mph; damaging winds begin overnight Saturday; commercial port shut; United Airlines cancelled Sunday&ndash;Monday flights; Governor Le&oacute;n Guerrero ordered all residents to shelter in place; coastal and flood-prone evacuations ordered in southern Guam; post-Guam track uncertain &mdash; Philippines, Taiwan, Japan all in range next week",
+          "impact": "Rainfall of 12&ndash;20&nbsp;inches (305&ndash;508&nbsp;mm) forecast &mdash; life-threatening flash flooding in low-lying and urban areas; storm surge along south and SE Guam coastline; Guam still has active recovery from Super Typhoon Bavi (July 2026; federal major disaster declaration issued 7&nbsp;Oct); critical infrastructure vulnerabilities elevated after back-to-back major strikes; rapid intensification uncertainty could produce a stronger typhoon than currently forecast before Guam passage"
+        },
+        {
+          "name": "SE Asian Haze / Indonesian Peatland Wildfires (Day&nbsp;19+) &mdash; ASMC Raises Highest Alert Level&nbsp;3 for Southern ASEAN; Singapore Names 7 Companies; 354 Fire Hotspots 17&nbsp;Oct",
+          "status": "As of 17&nbsp;Oct: ASMC raised its highest regional alert &mdash; Level&nbsp;3 &mdash; for southern ASEAN; 354 high-confidence hotspots detected in Indonesia (down from 799 on 16&nbsp;Oct, sharpest drop in Central Kalimantan); South Sumatra still active; smoke now reaching Jakarta, Banten and West Java; Singapore named seven companies it holds responsible for concession fires and plans to order them to halt burning and submit prevention plans; Indonesia deployed 61 aircraft for water-bombing and cloud seeding; poor visibility continuing across Palangkaraya and Kalimantan corridor",
+          "impact": "Four deaths confirmed; schools closed in Malaysia and East Timor; hundreds of thousands treated for respiratory illness across Central Kalimantan, South Sumatra and Papua; domestic flights cancelled across Indonesia over poor visibility; Kuala Lumpur and Singapore remain among world&rsquo;s most polluted major cities; El Ni&ntilde;o dry-season extension risks fires continuing into November; Level-3 ASMC alert is the highest designation in the ASEAN haze protocol framework"
+        }
+      ],
+      "overview_html": "<a href=\"https://www.theweathernetwork.com/en/news/weather/severe/storm-hurricane-trudy-eyes-category-4-strength-as-mexico-braces-for-heavy-rain-thunder-raining-wind-flood-flooding-mudslide-risk\" target=\"_blank\" rel=\"noopener\">Hurricane Trudy is forecast to peak near Category&nbsp;4 (~145&nbsp;mph) Saturday before passing near Mexico&rsquo;s Michoac&aacute;n&ndash;Jalisco coast; even an offshore track carries life-threatening flooding and mudslide risk</a> with soils still saturated from Hurricane Simon. Simultaneously, <a href=\"https://www.postguam.com/news/local/champi-forecast-to-pass-over-or-near-guam-as-category-3-typhoon-sunday/article_55874cf7-5c6f-408e-a294-582124812a75.html\" target=\"_blank\" rel=\"noopener\">Typhoon Champi is forecast to pass directly over or near southern Guam as a Cat&nbsp;2/3 typhoon Sunday morning</a>, with 12&ndash;20&nbsp;inches of rain, winds gusting to 155&nbsp;mph and ports closed. In Southeast Asia, <a href=\"https://www.malaymail.com/news/world/2026/10/17/indonesia-fires-trigger-highest-level-regional-haze-alert-as-pollution-spreads-across-southeast-asia/239454\" target=\"_blank\" rel=\"noopener\">the ASEAN Specialised Meteorological Centre raised its highest-level haze alert (Level&nbsp;3) for the southern ASEAN region on 17&nbsp;October</a>; <a href=\"https://www.scmp.com/news/asia/southeast-asia/article/3371188/singapore-targets-7-companies-over-wildfires-indonesia-toxic-haze-worsens\" target=\"_blank\" rel=\"noopener\">Singapore named seven companies it holds responsible for fires and is pursuing legal action under the Transboundary Haze Pollution Act</a>. Four dead; hundreds of thousands receiving respiratory treatment.",
+      "items": [
+        {
+          "source": "The Weather Network / NHC / Fox Weather",
+          "date": "2026-10-17",
+          "headline": "Hurricane Trudy Forecast to Peak Category&nbsp;4 (~145&nbsp;mph) Saturday; NHC Track Keeps Centre Near but Offshore of Michoac&aacute;n&ndash;Jalisco Coast; Flooding and Mudslide Risk Life-Threatening Regardless of Landfall",
+          "url": "https://www.theweathernetwork.com/en/news/weather/severe/storm-hurricane-trudy-eyes-category-4-strength-as-mexico-braces-for-heavy-rain-thunder-raining-wind-flood-flooding-mudslide-risk",
+          "summary": "Hurricane Trudy is forecast to peak near 145 mph (Category 4) on Saturday October 17 before approaching Mexico's southwestern to west-central coast. A hurricane watch is in effect from Punta San Telmo (Michoacán) to Cabo Corrientes (Jalisco). The NHC consensus and most ensemble models keep the centre just offshore, steered parallel to the coast by high pressure over Mexico; however, the US GFS model brings it inland. Fox Weather and The Weather Network noted that even a near-miss will drive life-threatening rainfall of 4–8 inches (up to 20+ cm on terrain-forced ascent) and mudslides in Colima, Michoacán and Jalisco. The compound flood risk is severe — soils are already saturated from Hurricane Simon's prior rains. The dual simultaneous threat with Typhoon Champi threatening Guam was flagged by Fox Weather as an unusual El Niño-fuelled coincidence in the Eastern and Western Pacific."
+        },
+        {
+          "source": "Post Guam / Guam GHS / NWS Tiyan / Isla Public",
+          "date": "2026-10-17",
+          "headline": "Typhoon Champi Cat&nbsp;2/3 Forecast to Pass Over or Near Southern Guam Sunday 18&nbsp;Oct; Ports Closed; Flights Cancelled; Governor Orders Shelter-in-Place; 12&ndash;20&rdquo; Rain; Guam Still Recovering from Super Typhoon Bavi",
+          "url": "https://www.postguam.com/news/local/champi-forecast-to-pass-over-or-near-guam-as-category-3-typhoon-sunday/article_55874cf7-5c6f-408e-a294-582124812a75.html",
+          "summary": "Typhoon Champi is forecast to pass over or very near southern Guam early Sunday October 18. Guam Homeland Security Advisory No. 3 projected Category 2 conditions; JTWC's 7 a.m. forecast reflected Category 3 intensity at closest approach, with sustained winds of 105–120 mph and gusts to 155 mph. Governor Lourdes Leon Guerrero placed the island under its highest typhoon readiness condition and ordered all residents to shelter indoors. Evacuations were ordered for southern coastal and flood-prone areas. The commercial port was closed and United Airlines cancelled all Sunday and Monday flights. Storm-total rainfall of 12–20 inches creates life-threatening flash flood risk in low-lying areas. Guam is still recovering from Super Typhoon Bavi (July 2026; federal major disaster declaration issued October 7). After Guam, Champi's track remains uncertain, with the Philippines, Taiwan and Japan all in potential range the following week."
+        },
+        {
+          "source": "Malay Mail / Business Today Malaysia / SCMP / Manila Times",
+          "date": "2026-10-17",
+          "headline": "ASMC Raises Highest Regional Haze Alert Level&nbsp;3 for Southern ASEAN; Singapore Names 7 Companies for Legal Action; 354 Hotspots Detected in Indonesia; Smoke Reaches Jakarta and West Java",
+          "url": "https://www.malaymail.com/news/world/2026/10/17/indonesia-fires-trigger-highest-level-regional-haze-alert-as-pollution-spreads-across-southeast-asia/239454",
+          "summary": "The ASEAN Specialised Meteorological Centre raised its highest regional alert — Level 3 — for the southern ASEAN region on October 17 as Indonesia's wildfire-driven haze crisis entered its 19th day. Indonesia detected 354 high-confidence fire hotspots on October 17, down from 799 the previous day, with the sharpest reduction in Central Kalimantan; South Sumatra remained active and smoke had spread to Jakarta, Banten and West Java. Indonesia's Forestry Ministry reported 61 aircraft deployed. Singapore's environment ministry identified seven companies it holds responsible for fires on their concessions and announced plans to order them to halt burning and submit fire prevention plans — the most direct legal action under the Transboundary Haze Pollution Act since 2015. Four deaths confirmed; hundreds of thousands have sought respiratory treatment; schools remain closed in Malaysia and East Timor; domestic flights cancelled across Indonesia."
+        },
+        {
+          "source": "AccuWeather / NPR / CBS News",
+          "date": "2026-10-10",
+          "headline": "Hurricane Isaias (Cat&nbsp;2, 105&nbsp;mph) Gulf Coast Aftermath: Boil-Water Notices Persist Across Florida Panhandle; Four Dead; Recovery Ongoing from Near-Destin Landfall",
+          "url": "https://www.accuweather.com/en/hurricane/live-news/live-hurricane-isaias-makes-landfall-power-outages-surge-along-gulf-coast/1943589",
+          "summary": "Hurricane Isaias made landfall near Destin, Florida, at approximately 8:30 pm CDT on October 10 with sustained winds of 105 mph (Category 2), killing four people and causing peak outages of approximately 900,000 customers. Power restoration had progressed significantly by October 12–13 but boil-water notices remained in effect across parts of the Florida Panhandle as of mid-week, with water system repairs ongoing. Florida, Alabama and Georgia are in various stages of debris removal, infrastructure repair and insurance claims processing."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "<a href=\"https://www.irena.org/News/pressreleases/2026/Oct/Electrification-with-Renewables-Holds-Key-to-Worlds-Energy-Needs\" target=\"_blank\" rel=\"noopener\">IRENA&rsquo;s World Energy Transition Outlook 2026, released 13&nbsp;October, calls for global renewable capacity to grow from 5.2&nbsp;TW today to 18.4&nbsp;TW by 2035 and 38.2&nbsp;TW by 2050, with average annual grid investment doubling to ~US$1&nbsp;trillion/year</a>; the agency warned that despite record 2025 renewable additions, grid enhancements and efficiency improvements remain far below the 1.5&deg;C-compatible pace. The Trump administration&rsquo;s Interior Department <a href=\"https://ctmirror.org/2026/10/13/trump-administration-seeks-to-rescind-approval-for-revolution-wind/\" target=\"_blank\" rel=\"noopener\">filed again in federal court to rescind the operating approval for the near-complete 704&nbsp;MW Revolution Wind offshore project</a> &mdash; the third attempt. Australia&rsquo;s ARENA <a href=\"https://www.pv-magazine-australia.com/2026/10/15/up-the-ante-on-ambition-250-million-solar-sunshot-round-3-now-open/\" target=\"_blank\" rel=\"noopener\">launched Solar Sunshot Round&nbsp;3 (A$250&nbsp;M)</a>. In China, <a href=\"https://renewablesnow.com/news/chinas-renewable-power-capacity-reaches-2-5-tw-1302959/\" target=\"_blank\" rel=\"noopener\">installed renewable capacity has reached 2.496&nbsp;TW, or 60.8% of total power capacity</a>.",
+      "items": [
+        {
+          "source": "IRENA",
+          "date": "2026-10-13",
+          "headline": "IRENA World Energy Transition Outlook 2026: Renewable Capacity Must Reach 18.4&nbsp;TW by 2035 and 38.2&nbsp;TW by 2050; Grid Investment Must Double to ~US$1&nbsp;Trillion/Year; 2026&ndash;2035 Is Critical Window",
+          "url": "https://www.irena.org/News/pressreleases/2026/Oct/Electrification-with-Renewables-Holds-Key-to-Worlds-Energy-Needs",
+          "summary": "IRENA's annual World Energy Transition Outlook, released October 13 in Abu Dhabi, makes electrification powered by renewables the central priority for the decade to 2035. Under the 1.5°C pathway, global installed renewable capacity must grow from approximately 5.2 TW in 2025 to approximately 18.4 TW by 2035 and 38.2 TW by 2050, with more than 80% of electricity coming from solar and wind by mid-century. Electricity's share of global final energy consumption would need to rise from approximately 23% today to 35% by 2035 and above 50% by 2050. Average annual grid investment must nearly double from approximately US$0.5 trillion today to approximately US$1 trillion per year over 2026–2035. The report noted that 2025 saw record renewable additions, but grid enhancements and energy efficiency improvements remain well below required rates. Total investment need from 2026–2050 is approximately US$256 trillion, or approximately US$10.3 trillion annually. IRENA framed the next decade as the critical window for displacing fossil-fuel systems rather than merely adding renewable capacity alongside them."
+        },
+        {
+          "source": "Offshore Wind Biz / RenewableWatch / OE Digital",
+          "date": "2026-10-12",
+          "headline": "&Oslash;rsted Exercises Buyback Right to Acquire Remaining 49.9% of 172&nbsp;MW Gunfleet Sands 1&nbsp;&amp;&nbsp;2 Offshore Wind Farm for ~&pound;15&nbsp;M; Partners JERA Nex BP and DBJ Exit; Close Expected November 2026",
+          "url": "https://offshorewind.biz/2026/10/12/orsted-to-buy-back-remaining-stake-in-gunfleet-sands-offshore-wind-farm",
+          "summary": "Ørsted announced on October 12 that it will exercise a pre-existing contractual buyback right to acquire the remaining 49.9% stake in the Gunfleet Sands 1 & 2 offshore wind farm from JERA Nex BP (24.95%) and the Development Bank of Japan (24.95%) for approximately £15 million (roughly US$19.8 million). Ørsted already holds 50.1%. The 172 MW farm sits approximately 7 km off the Essex coast and has been operational since 2010. Full ownership provides operational flexibility and facilitates evaluation of a potential lifetime extension. Closing expected November 2026."
+        },
+        {
+          "source": "PV Magazine Australia / ARENA",
+          "date": "2026-10-15",
+          "headline": "ARENA Solar Sunshot Round&nbsp;3 Opens (A$250&nbsp;M, EOI from 2&nbsp;Nov); Round&nbsp;2 Awards A$14.5&nbsp;M to Built Robotics and A$17.8&nbsp;M to Luminous Robotics for Solar Manufacturing Facilities",
+          "url": "https://www.pv-magazine-australia.com/2026/10/15/up-the-ante-on-ambition-250-million-solar-sunshot-round-3-now-open/",
+          "summary": "Australia's ARENA opened expressions of interest for Solar Sunshot Round 3 on October 15, allocating approximately A$250 million for advanced solar technologies, manufacturing and deployment. EOIs open formally on November 2. The Solar Sunshot programme, backed by a total A$1 billion government commitment, seeks to establish an Australian solar supply chain competitive with imported modules. On October 13, ARENA named Round 2 successful applicants: Built Robotics received A$14.5 million and Luminous Robotics received A$17.8 million, both to establish new solar manufacturing facilities in Australia."
+        },
+        {
+          "source": "RenewableWatch",
+          "date": "2026-10-16",
+          "headline": "Vikram Solar Secures 187&nbsp;MW Solar Module Supply Order for Projects in Karnataka and Tamil Nadu; Plans Battery Storage Assembly Plant in Tamil Nadu",
+          "url": "https://renewablewatch.in/2026/10/16/vikram-solar-secures-187-mw-solar-module-supply-order/",
+          "summary": "Indian solar module manufacturer Vikram Solar secured a 187 MW solar module supply order for utility-scale projects in Karnataka and Tamil Nadu on October 16 and confirmed plans to establish a battery storage assembly plant in Tamil Nadu, extending its product line into energy storage aligned with India's accelerating battery storage procurement and its 500 GW renewable capacity target by 2030."
+        },
+        {
+          "source": "Renewables Now / China NEA",
+          "date": "2026-10-14",
+          "headline": "China Renewable Capacity Reaches 2.496&nbsp;TW by End-August 2026 (60.8% of Total Power Capacity); Solar 1.274&nbsp;TW, Wind 679&nbsp;GW; NEA Targets 3.5&nbsp;TW by 2030",
+          "url": "https://renewablesnow.com/news/chinas-renewable-power-capacity-reaches-2-5-tw-1302959/",
+          "summary": "China's National Energy Administration confirmed installed renewable power capacity reached 2.496 TW by end-August 2026 — 60.8% of the country's total installed generation capacity. Solar reached 1.274 TW, wind 679 GW, hydropower 454 GW. The pace of additions is tracking significantly ahead of the 15th Five-Year Plan target of 3.5 TW by 2030, which is likely to be surpassed ahead of schedule. China's total power capacity at end-August was approximately 4.11 TW."
+        },
+        {
+          "source": "CT Mirror / CleanTechnica",
+          "date": "2026-10-13",
+          "headline": "Trump Administration Files in Federal Court to Rescind Revolution Wind&rsquo;s Operating Approval; Project ~80% Complete and Already Delivering Power to New England; Third Legal Attempt to Halt the 704&nbsp;MW Farm",
+          "url": "https://ctmirror.org/2026/10/13/trump-administration-seeks-to-rescind-approval-for-revolution-wind/",
+          "summary": "The US Department of the Interior filed in federal court on October 13 seeking to rescind the three-year-old federal operating approval for Revolution Wind, a 704 MW offshore wind farm off Connecticut and Rhode Island already delivering electricity to New England. Two prior stop-work orders were overturned by courts in 2025. The project is expected to reach full commercial output by end-2026. The action is the latest in the Trump administration's broader offshore wind rollback targeting five projects."
+        },
+        {
+          "source": "B&ouml;rsen-Zeitung / ms-aktuell.de",
+          "date": "2026-10-14",
+          "headline": "PNE AG Cuts 2026 Adjusted EBITDA Guidance ~40% (New Range: &euro;65&ndash;80&nbsp;M vs. Prior &euro;110&ndash;140&nbsp;M); Wind Project Sale Delays and Permitting Backlogs Cited; Revenue Shifts to 2027",
+          "url": "https://www.boersen-zeitung.de/unternehmen-branchen/windparkprojektierer-pne-kappt-ergebnisziele",
+          "summary": "German SDax-listed wind park developer PNE AG issued a significant earnings guidance cut on October 14, reducing its 2026 adjusted EBITDA forecast to €65–80 million from the prior range of €110–140 million — a reduction of approximately 40% at midpoint. The company cited delays in planned wind park project sales, delayed permitting approvals, and a strategic decision to retain some operating wind parks. Revenue expected in 2026 will now shift into 2027, reflecting the continuing difficulty of the German wind development market."
+        },
+        {
+          "source": "Energy Storage News (ESS News)",
+          "date": "2026-10-15",
+          "headline": "Fingrid (Finland) Mandates Grid-Forming Capability for New Large-Scale Wind and Solar in Converter-Dominated Grid Regions; Requirements Published 15&nbsp;October 2026",
+          "url": "https://ess-news.com/2026/10/15/finland-demands-grid-forming-support-for-new-wind-solar-in-weak-grids",
+          "summary": "Finnish TSO Fingrid published mandatory technical requirements on October 15 obliging new large-scale wind and solar plants connected in converter-dominated portions of its network to provide grid-forming control. Converter-connected generation was supplying roughly 65% of Finland's system power at peak times in 2026. Grid-following inverters require synchronous generation to maintain stable voltage and frequency; without grid-forming capability, adding more converter-based capacity in weak grid areas risks instability. Finland had approximately 8,885 MW of installed wind and ~1,500 MW of solar as of mid-2026."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "The flagship paper this week is <a href=\"https://news.mit.edu/2026/researchers-improve-weather-forecasts-looking-two-six-weeks-out-1014\" target=\"_blank\" rel=\"noopener\">the Microsoft Research / MIT probabilistic bias correction (PBC) framework published 14&nbsp;October in <em>Nature</em></a>, which reportedly doubled subseasonal forecast skill for the ECMWF AI system and underpins MicroDuet&rsquo;s lead in the ECMWF AI Weather Quest. A new arXiv preprint (<a href=\"https://arxiv.org/abs/2610.22077\" target=\"_blank\" rel=\"noopener\">2610.22077, 15&nbsp;October</a>) provides the first systematic benchmark of probabilistic AI weather models on tropical cyclone tracks and intensities, finding AI beats IFS-ENS on tracking but remains weak on intensity and ensemble spread &mdash; a limitation made vivid by the simultaneous rapid intensification of Trudy and Champi this week. The annual <a href=\"https://academic.oup.com/bioscience/advance-article/doi/10.1093/biosci/biag125/8836482\" target=\"_blank\" rel=\"noopener\"><em>BioScience</em> State of the Climate report (14&nbsp;Oct) confirmed seven of 16 planetary vital signs at record extremes</a>, with CO&#8322; at 428&nbsp;ppm. <a href=\"https://www.carbonbrief.org/analysis-super-el-nino-reaches-remarkable-all-time-record\" target=\"_blank\" rel=\"noopener\">Carbon Brief&rsquo;s analysis placed the 2026 El Ni&ntilde;o Ni&ntilde;o&nbsp;3.4 anomaly at an all-time record +3.34&deg;C</a>, with 2027 projected to bring the largest surface temperature signal.",
+      "items": [
+        {
+          "source": "Microsoft Research / MIT / Nature",
+          "date": "2026-10-14",
+          "headline": "Microsoft Research / MIT Probabilistic Bias Correction Framework Doubles Subseasonal Forecast Skill; Published in <em>Nature</em> 14&nbsp;Oct; MicroDuet Leads ECMWF AI Weather Quest; Open-Source Code Released",
+          "url": "https://news.mit.edu/2026/researchers-improve-weather-forecasts-looking-two-six-weeks-out-1014",
+          "meta": "13 authors incl. Hannah Guan, Soukayna Mouatadid, Lester Mackey (MSR); Judah Cohen (MIT) &middot; Nature, 14 Oct 2026 &middot; DOI:&nbsp;10.1038/s41586-026-11126-x",
+          "summary": "A 13-author team led by Microsoft Research, with MIT's Judah Cohen as co-author, published a Probabilistic Bias Correction (PBC) framework in Nature on October 14 that corrects systematic errors in existing AI and physics-based weather models at the 2–6 week (subseasonal) range. The method identifies recurring systematic biases in model output rather than training a new forecaster from scratch. Against ECMWF's operationally debiased output, PBC raised temperature RPSS by 26–37% and pressure RPSS by 16–32% at S2S lead times; one account describes this as doubling the subseasonal forecasting accuracy of ECMWF's AI system. The team found that all six major operational forecasting centres' models show negative precipitation skill at S2S ranges without such correction. Open-source code has been released; Kenya's meteorological office has reportedly been among the first to inquire about implementation. In the ECMWF AI Weather Quest competition, MicroDuet — the Microsoft Research/MIT model incorporating PBC — leads all weather variables and lead times across the first two competition periods."
+        },
+        {
+          "source": "BioScience / OSU / EurekaAlert",
+          "date": "2026-10-14",
+          "headline": "2026 State of the Climate Report (<em>BioScience</em>): Seven of 16 Planetary Vital Signs at Record Extremes; CO&#8322; at 428&nbsp;ppm; Warming Rate at 0.36&deg;C/Decade Since 2010; Record Ocean Heat and Sea Level",
+          "url": "https://eos.org/research-and-developments/2026-state-of-the-climate-report-shows-a-planet-reaching-its-limits",
+          "meta": "William Ripple, Christopher Wolf et al. &middot; BioScience, DOI:&nbsp;10.1093/biosci/biag125 &middot; 14 Oct 2026",
+          "summary": "The seventh annual State of the Climate planetary vital-signs report, published in BioScience on October 14 by a team led by William Ripple and Christopher Wolf (Oregon State University), found seven of 16 climate-related planetary vital signs at record extremes: global sea level, ocean heat content, worldwide glacier thickness, Greenland ice-sheet mass, and atmospheric concentrations of CO₂ (428 ppm), CH₄ and N₂O. The warming rate has accelerated from ~0.05°C/decade (1880–1970) to ~0.19°C/decade (1970–2010) to ~0.36°C/decade (2010–2024). Global tree-cover loss from fires reached 10.8 million hectares in 2025, third-highest on record. The authors also highlight positive signals: rapid advances in renewable energy, battery storage, adaptation planning and ecosystem restoration."
+        },
+        {
+          "source": "arXiv / cs.LG / physics.ao-ph",
+          "date": "2026-10-15",
+          "headline": "arXiv:2610.22077 &mdash; Can AI Forecast the Extremes? Benchmarking Probabilistic Weather Models on Tropical Cyclones: AI Beats IFS-ENS on Tracking; Intensity and Ensemble Spread Remain Weak",
+          "url": "https://arxiv.org/abs/2610.22077",
+          "meta": "arXiv:2610.22077v1 [cs.LG, physics.ao-ph] &middot; 15 Oct 2026",
+          "summary": "A preprint submitted October 15 provides the first systematic benchmark of leading probabilistic AI weather models — including GraphCast, Pangu-Weather, FourCastNet and Aurora — specifically against tropical cyclone tracks and intensities, compared with ECMWF IFS-ENS. Key findings: AI models broadly outperform IFS-ENS on tropical cyclone track error at medium-range lead times (1–7 days), suggesting the data-driven models have learned large-scale steering dynamics well. However, intensity forecasts remain substantially weaker than IFS-ENS, and AI ensemble spreads systematically under-represent the range of plausible intensification outcomes — a critical limitation given that rapid intensification (as exemplified by Trudy and Champi this week) is the highest-impact failure mode. The paper applies uncertainty quantification methods to characterise both systematic and sampling uncertainty in the AI forecasts and calls for dedicated training targets for extreme wind speeds in future AI model generations."
+        },
+        {
+          "source": "Carbon Brief",
+          "date": "2026-10-13",
+          "headline": "Carbon Brief Analysis: 2026 Super El Ni&ntilde;o Ni&ntilde;o&nbsp;3.4 Anomaly at All-Time Record +3.34&deg;C; Global Temperature Peak Expected Early 2027; 2026 Annual Mean Projected 1.536&ndash;1.642&deg;C Above Pre-Industrial",
+          "url": "https://www.carbonbrief.org/analysis-super-el-nino-reaches-remarkable-all-time-record",
+          "meta": "Carbon Brief &middot; Analysis, 13 October 2026",
+          "summary": "Carbon Brief's October 13 analysis describes the 2026 El Niño as having reached an all-time record for the Niño 3.4 SST anomaly (+3.34°C), exceeding all previous strong El Niños in the instrumental record. El Niño's surface temperature signal typically lags the SST peak by 3–6 months, so the largest warming boost to global mean temperatures is projected for early 2027, with Carbon Brief projecting 2027 at approximately 1.7°C above pre-industrial. Berkeley Earth placed the probability of 2026 breaking the annual record at 93%, with the likely range 1.536–1.642°C above the 1850–1900 baseline."
+        },
+        {
+          "source": "ECMWF",
+          "date": "2026-10-10",
+          "headline": "ECMWF AI Weather Quest 2026: Half of 39 Submitted Models Are Purely Data-Driven; Probabilistic Debiasing Emerges as Critical Differentiator for Subseasonal Skill; MicroDuet Leads All Variables and Lead Times",
+          "url": "https://www.ecmwf.int/en/about/media-centre/science-blog/2026/ai-weather-quest-2026",
+          "meta": "ECMWF Science Blog &middot; October 2026",
+          "summary": "ECMWF's science blog on the AI Weather Quest — the first public S2S prediction competition under the WMO Subseasonal-to-Seasonal Prediction Project — reported roughly half of 39 submitted models are purely data-driven AI systems, with the remainder being postprocessing methods or hybrid physics-AI systems. MicroDuet (Microsoft Research/MIT) leads all weather variables and lead times. ECMWF's institutional assessment highlighted probabilistic debiasing as the critical bottleneck for AI model utility at the 2–6 week range: AI models trained on raw ensemble output systematically under-represent uncertainty at S2S timescales, and the competition's calibrated scoring metric is accelerating adoption of bias-correction methods across the community."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-10-15",
+          "title": "Rabot Energy Raises &euro;50&nbsp;M (~US$55&nbsp;M) Series B to Scale Virtual Power Plant Platform; Led by Endeit Capital; Targets Growth from 200,000 to 1&nbsp;Million Customers Aggregating Home Batteries, Heat Pumps and EVs",
+          "body_html": "<a href=\"https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/\" target=\"_blank\" rel=\"noopener\">Hamburg-based Rabot Energy closed a &euro;50&nbsp;million (~US$55&nbsp;M) Series&nbsp;B on 15&nbsp;October 2026, led by Endeit Capital with the German DeepTech &amp; Climate Fonds (DTCF)</a>, plus existing investors HV Capital, HTGF, Bosch Ventures, CNI, Acurio Ventures and vent.io. Rabot&rsquo;s platform combines a dynamic electricity tariff, smart meter and plug-and-play battery storage unit (the Rabot Flow product, launched June 2026) to <a href=\"https://techfundingnews.com/rabot-energy-raises-50m-series-b-virtual-power-plant-endeit-capital/\" target=\"_blank\" rel=\"noopener\">aggregate home batteries, heat pumps and EV wall-boxes into a networked virtual power plant that earns grid-flexibility revenue</a>. The product requires no rooftop solar and is designed for renters as well as homeowners. Funds will be used to grow from 200,000 to one million customers across Germany. The round is directly aligned with Germany&rsquo;s growing need for residential grid-balancing capacity as converter-dominated renewable generation displaces synchronous plant.",
+          "source_html": "<a href=\"https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/\" target=\"_blank\" rel=\"noopener\">tech.eu</a>"
+        },
+        {
+          "date": "2026-10-12",
+          "title": "WindBorne Systems Wins Up-to-US$49&nbsp;M US Air Force Sole-Source Contract for Autonomous Balloon Atmospheric Data; 700+ Balloons Globally; Air Force Cites No-Competition Sole-Source Determination",
+          "body_html": "<a href=\"https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/\" target=\"_blank\" rel=\"noopener\">WindBorne Systems (Redwood City, CA) was awarded a sole-source contract by the US Air Force with a ceiling of up to US$48.7&nbsp;million on 12&nbsp;October 2026</a>, with the ordering period running through September 2033; approximately US$1.7&nbsp;million has been ordered to date by the 557th Weather Wing and 16th Weather Squadron. The Air Force determined WindBorne was the sole provider able to meet its atmospheric-sensing requirements. WindBorne currently operates more than 700 autonomous smart-balloons simultaneously, selling atmospheric profile data to commercial and government clients while feeding it into its <a href=\"https://secure.businesswire.com/news/home/20260805866322/en/WindBorne-Systems-Raises-%2437-Million-to-Build-the-Worlds-Weather-Intelligence-Infrastructure\" target=\"_blank\" rel=\"noopener\">WeatherMesh AI forecasting model; the company raised a US$37&nbsp;M Series B (Khosla Ventures / Galvanize) in August 2026</a>. The contract comes as staffing cuts at NOAA/NWS led to suspended radiosonde launches in western Alaska, creating growing demand for private atmospheric-sensing infrastructure.",
+          "source_html": "<a href=\"https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/\" target=\"_blank\" rel=\"noopener\">TechCrunch</a>"
+        },
+        {
+          "date": "2026-10-13",
+          "title": "CarbonFarm Raises &euro;7&nbsp;M (&sim;US$7.8&nbsp;M) Series A to Scale AI-Assisted Methane MRV for Rice Cultivation Globally; &gt;100,000&nbsp;Ha Deployed Across 8+ Countries",
+          "body_html": "<a href=\"https://tech.eu/2026/10/13/carbonfarm-raises-eur7m-to-tackle-methane-emissions-from-rice-cultivation/\" target=\"_blank\" rel=\"noopener\">CarbonFarm, a Paris-based startup using satellite data and AI to measure, report and verify methane reductions from rice farming, closed an oversubscribed &euro;7&nbsp;million (approximately US$7.8&nbsp;M) Series A round on 13&nbsp;October 2026</a>. The round was led by <a href=\"https://www.greenqueen.com.hk/carbonfarm-rice-decarbonisation-carbon-credits-methane-water-emissions-funding/\" target=\"_blank\" rel=\"noopener\">Colam Impact, with Proparco, Suma Capital, elea, Working Capital Fund, Albo and BPI France also participating</a>. The company&rsquo;s MRV platform covers more than 100,000 hectares in 8+ countries; its credits are accepted in most regulated carbon markets. Rice cultivation produces approximately 12% of human-caused methane; improved water management can cut rice methane emissions by up to 50%.",
+          "source_html": "<a href=\"https://tech.eu/2026/10/13/carbonfarm-raises-eur7m-to-tackle-methane-emissions-from-rice-cultivation/\" target=\"_blank\" rel=\"noopener\">tech.eu</a> / <a href=\"https://www.greenqueen.com.hk/carbonfarm-rice-decarbonisation-carbon-credits-methane-water-emissions-funding/\" target=\"_blank\" rel=\"noopener\">Green Queen</a>"
+        },
+        {
+          "date": "2026-10-14",
+          "title": "Wildfire-Exposed Catastrophe Bond Issuance Reaches US$5.183&nbsp;Billion YTD in 2026, Approaching Full-Year Record; Broader ILS Market at ~US$65.6&nbsp;Billion Outstanding",
+          "body_html": "<a href=\"https://www.artemis.bm/\" target=\"_blank\" rel=\"noopener\">Wildfire-exposed catastrophe bond issuance has reached US$5.183&nbsp;billion year-to-date in 2026, according to Artemis.bm</a>, rapidly approaching the full-year record of US$5.55&nbsp;billion set in 2025. The surge reflects insurers and reinsurers accelerating use of the capital markets to transfer wildfire risk, driven by escalating insured losses across California, the Mountain West and Southern Europe. The broader ILS market hit a record outstanding of approximately US$65.6&nbsp;billion in mid-2026. The growth trajectory aligns with <a href=\"https://www.artemis.bm/\" target=\"_blank\" rel=\"noopener\">vendor model updates from Verisk and Moody&rsquo;s incorporating climate-adjusted hazard frequencies and changing fire behaviour</a>, raising modelled annual expected losses for wildfire perils.",
+          "source_html": "<a href=\"https://www.artemis.bm/\" target=\"_blank\" rel=\"noopener\">Artemis.bm</a>"
+        }
+      ]
+    }
+  }
+}
