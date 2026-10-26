@@ -1,0 +1,280 @@
+{
+  "digest_date": "2026-10-26",
+  "metar": "DIGEST 261200Z OCT26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "With COP31 opening in Antalya in 14 days, pre-conference positioning hardened across all major blocs. The <a href=\"https://www.unep.org/en/publications/report/emissions-gap-report-2026\" target=\"_blank\" rel=\"noopener\">UNEP Emissions Gap Report 2026</a> declared 1.5&deg;C overshoot now inevitable and set the bar for what Antalya must produce. The <a href=\"https://carbon-pulse.com/556277/\" target=\"_blank\" rel=\"noopener\">European Parliament adopted a mandate (50&ndash;16) calling for a fossil fuel non-proliferation treaty and faster phase-out</a>, setting up a direct confrontation with oil exporters. Only <a href=\"https://www.climatechangenews.com/2026/10/23/early-speakers-list-suggests-few-powerful-leaders-will-attend-cop31/\" target=\"_blank\" rel=\"noopener\">77 world leaders are registered to attend the World Leaders&rsquo; Summit</a>&nbsp;&mdash; down a third from COP28. And <a href=\"https://oilprice.com/Energy/Energy-General/COP31-Host-Urges-NATO-Nations-to-Spend-More-on-Climate-Than-Defense.html\" target=\"_blank\" rel=\"noopener\">Turkey&rsquo;s COP31 president Kurum urged NATO nations to outspend their defence budgets on climate</a> while conspicuously declining to back explicit fossil fuel phase-out language, signalling the host&rsquo;s unwillingness to alienate major hydrocarbon exporters.",
+      "items": [
+        {
+          "source": "UNEP / DownToEarth / Nature News",
+          "date": "2026-10-21",
+          "headline": "UNEP Emissions Gap Report 2026 &ldquo;The Point of Return&rdquo;: 1.5&deg;C Overshoot Now Inevitable; Global Emissions Flat at 58.4&nbsp;GtCO<sub>2</sub>e in 2025; Current Policies Track to 2.6&ndash;2.8&deg;C; US Leads G20 Emissions Rise",
+          "url": "https://www.unep.org/en/publications/report/emissions-gap-report-2026",
+          "summary": "UNEP's annual Emissions Gap Report, released October 21 and titled 'The Point of Return', officially declares that the opportunity to limit warming to 1.5°C with 'no or limited' overshoot has been lost. Global GHG emissions were approximately 58.4 GtCO₂e in 2025 — essentially unchanged from 2024. A lowest-possible-overshoot path requires cuts of 18% by 2030, 45% by 2035, and 69% by 2040, plus removal of approximately 320 Gt CO₂. Among G20 nations, the US logged the largest emissions increase (+133 Mt CO₂e). Solar PV capacity has grown seven times faster than projected since Paris."
+        },
+        {
+          "source": "Carbon Pulse / Brussels Times / EU Parliament",
+          "date": "2026-10-22",
+          "headline": "European Parliament Adopts COP31 Negotiating Mandate: Fossil Fuel Non-Proliferation Treaty, Faster Phase-Out, Greater Climate Finance for Vulnerable Nations; 50&ndash;16 Committee Vote",
+          "url": "https://carbon-pulse.com/556277/",
+          "summary": "The European Parliament adopted its formal negotiating position for COP31 on October 22, calling for the EU to take a leading role toward a fossil fuel non-proliferation treaty, a clear and specific timetable to phase out fossil fuel production, and an end to fossil fuel subsidies. The mandate also calls for climate finance that does not worsen developing countries' debt burdens and opposes double-counting of existing funds toward the new collective quantified goal. A European Parliament delegation led by MEP Lídia Pereira will be on-site at Antalya from November 16–20."
+        },
+        {
+          "source": "Climate Change News",
+          "date": "2026-10-23",
+          "headline": "Only 77 Leaders Registered to Speak at COP31 World Leaders&rsquo; Summit &mdash; Down a Third from COP28&rsquo;s 116; France, Germany, Italy, India, Canada, Japan Absent; Former UN Climate Chief Calls Low Turnout a &ldquo;Poor Signal&rdquo;",
+          "url": "https://www.climatechangenews.com/2026/10/23/early-speakers-list-suggests-few-powerful-leaders-will-attend-cop31/",
+          "summary": "An early provisional UN speakers' list shows only 77 heads of state or government registered for the COP31 World Leaders' Summit in Antalya on November 11–12, down from 116 at COP28 and 144 at COP27. Notable absentees include the leaders of France, Germany, Italy, India, Russia, Canada and Japan. China is expected to be represented by Vice-Premier Ding Xuexiang rather than President Xi. Former UN climate secretariat chief Yvo de Boer called it a 'poor signal'."
+        },
+        {
+          "source": "The Climate Watch / aa.com.tr",
+          "date": "2026-10-22",
+          "headline": "COP31 Names 10 Co-Facilitators: Bowen Appoints Five Ministerial Pairs Covering Finance, Adaptation, Mitigation, Just Transition and Oceans; Turkey Expects 85 World Leaders, Record 159 Pavilions",
+          "url": "https://theclimatewatch.com/cop31-names-10-co-facilitators-to-steer-key-climate-talks-in-antalya/",
+          "summary": "Australian Climate Change Minister Chris Bowen announced ten co-facilitators — five ministerial pairs — for COP31's key negotiating tracks: climate finance, adaptation, mitigation, just transition, and oceans. Turkish Environment Minister Murat Kurum said Turkey expects 85 world leaders and a record 159 pavilions. Turkey is framing COP31 as a 'policies implementation' summit focused on operationalising the Baku Finance Goal, Loss and Damage Fund, and Article 6 carbon markets."
+        },
+        {
+          "source": "CGTN / Table.media",
+          "date": "2026-10-22",
+          "headline": "China Sets COP31 Priorities: Demands Detailed Roadmap for US$300&nbsp;Billion Annual Climate Finance Goal, Opposes Carbon Border Mechanisms, Pledges to Speak for Developing Nations",
+          "url": "https://table.media/en/china/news/2026-10-22-cop31-china-opposes-trade-barriers",
+          "summary": "China's Vice Minister of Ecology and Environment Li Gao outlined Beijing's COP31 positions: (1) a concrete implementation roadmap for the US$300 billion annual climate finance goal; (2) opposing the EU's Carbon Border Adjustment Mechanism as a violation of UNFCCC common-but-differentiated responsibilities; (3) demanding the global stocktake focus on developed-nation implementation gaps; (4) tripling adaptation finance."
+        },
+        {
+          "source": "Yahoo News / OilPrice.com",
+          "date": "2026-10-11",
+          "headline": "COP31 Host Turkey Urges NATO Nations to Outspend Defence on Climate: &ldquo;The Climate Issue Is the Security Issue Itself&rdquo;; Kurum Declines to Back Fossil Fuel Phase-Out Language",
+          "url": "https://oilprice.com/Energy/Energy-General/COP31-Host-Urges-NATO-Nations-to-Spend-More-on-Climate-Than-Defense.html",
+          "summary": "Speaking in Fiji on October 9, COP31 President Murat Kurum told wealthy nations they must invest significantly more in climate action than the 5% of GDP projected for NATO defence. He framed climate as itself a security issue: 'What does it mean to spend 5% for defence if you don't have a country to live on?' However, Kurum conspicuously declined to back explicit fossil fuel phase-out language at COP31, saying rigid terminology could alienate major hydrocarbon exporters — a notable hedge by a host nation that is also a growing gas corridor for Europe."
+        },
+        {
+          "source": "United Nations / Manila Times",
+          "date": "2026-10-21",
+          "headline": "UN Secretary-General Guterres: World Falling &ldquo;Dangerously Short&rdquo; on Climate Action; El Ni&ntilde;o and Record Heat Amplify Urgency Ahead of COP31",
+          "url": "https://manilatimes.net/2026/10/21/world/world-falling-dangerously-short-on-climate-action-un-chief/2450441",
+          "summary": "UN Secretary-General António Guterres called the world 'dangerously short' on climate action, referencing record-breaking heat, devastating floods, and an unprecedented El Niño as making accelerated action 'ever more urgent'. With COP31 in Antalya opening November 9, diplomatic pressure is intensifying."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Typhoon Champi &mdash; Extratropical Cyclone South of Jeju 26&nbsp;Oct; 200&nbsp;mm Rain Forecast Kyushu&ndash;Shikoku; One Fatality Taiwan",
+          "status": "As of 26&nbsp;Oct: <a href=\"https://news.sbs.co.kr/english/article.do?news_id=N1008814278\" target=\"_blank\" rel=\"noopener\">Champi degenerated into an extratropical cyclone over the waters south of Jeju Island early Monday morning</a> and is tracking north-northeast toward southern Kyushu. <a href=\"https://www.alojapan.com/1558155/typhoon-champi-leaves-trail-of-damage-in-okinawa-and-taiwan-heavy-rain-forecast-across-japan/\" target=\"_blank\" rel=\"noopener\">JMA forecasts up to 200&nbsp;mm of rain for northern Kyushu and Shikoku in the 24&nbsp;hours to daytime Monday, with heavy rain continuing into Kanto through Tuesday 27&nbsp;October</a>. One person died in Taiwan after being swept away by high waves during the earlier Taiwan coast passage. <a href=\"https://www.koreajoongangdaily.com/korea/typhoon-champi-brings-heavy-rain-strong-winds-and-travel-disruptions-to-jeju/12936570\" target=\"_blank\" rel=\"noopener\">Jeju Island saw flights grounded, ferries halted, and all hiking trails on Mount Halla closed</a> as the system passed. The extratropical transition reduces but does not eliminate significant rain and wind risk across southwestern Japan.",
+          "impact": "Taiwan: one fatality (swept away by high waves); power outages northeastern coast. Okinawa: 567 mm 48-hour rainfall record at Iriomote. Jeju: flights grounded, ferries halted, Mount Halla closed. Japan: JMA heavy rain advisories for Kyushu, Shikoku, Kinki, Hokuriku, Kanto through Tuesday; up to 200 mm forecast northern Kyushu and Shikoku in 24h to daytime Monday."
+        },
+        {
+          "name": "Cyclone Arnab &mdash; Very Severe Cyclonic Storm; IMD RED ALERT Andhra Pradesh &amp; South Odisha; Landfall Bapatla&ndash;Visakhapatnam 28&nbsp;Oct; 570,000 Evacuations Ordered; 140&nbsp;kph Gusts",
+          "status": "As of 26&nbsp;Oct: <a href=\"https://www.freepressjournal.in/india/cyclone-arnab-intensifies-over-bay-of-bengal-imd-issues-red-alert-for-andhra-pradesh-south-odisha-coasts-ahead-of-october-28-landfall\" target=\"_blank\" rel=\"noopener\">Cyclone Arnab &mdash; India&rsquo;s first named cyclone of 2026, formerly Invest 98B &mdash; has intensified to a Very Severe Cyclonic Storm; IMD issued RED ALERTS for Andhra Pradesh and South Odisha</a>. IMD projects landfall between Bapatla and Visakhapatnam by the forenoon of 28&nbsp;October with sustained winds 115&ndash;125&nbsp;kph gusting to 140&nbsp;kph. <a href=\"https://www.brecorder.com/news/40445964/india-to-evacuate-thousands-as-cyclone-arnab-nears-eastern-coast\" target=\"_blank\" rel=\"noopener\">The Andhra Pradesh government has identified 570,000 people as vulnerable and ordered evacuations beginning Monday evening</a>. 10 NDRF + 11 SDRF teams deployed. <a href=\"https://www.nationalheraldindia.com/national/cyclone-arnab-intensifies-over-bay-of-bengal-red-alert-issued-for-andhra-pradesh-odisha\" target=\"_blank\" rel=\"noopener\">Districts most at risk: Kakinada, Anakapalli, Visakhapatnam, Konaseema, East Godavari</a>; coastal winds expected from morning of 27&nbsp;October.",
+          "impact": "Andhra Pradesh: RED ALERT; 570,000 ordered to evacuate from coastal districts (Kakinada, Anakapalli, Visakhapatnam, Konaseema, East Godavari); strong winds from morning Oct 27, landfall Oct 28 forenoon at 140 kph gusts. Odisha (south): heavy rain and wind alerts. West Bengal, Jharkhand, Bihar: heavy rain alerts. Tamil Nadu, Karnataka: heavy rain alerts. Rainfall expected to be heavy to extremely heavy across northern and central coastal Andhra Pradesh."
+        },
+        {
+          "name": "SE Asian Peatland Haze (Indonesia/Borneo/Sumatra) &mdash; 1.9&nbsp;Million Hectares Burned; SE Asia Tourism Down 80%; 2,600+ Flights Disrupted; ASMC Level&nbsp;3 Continues",
+          "status": "As of 26&nbsp;Oct: <a href=\"https://en.sedaily.com/international/2026/10/26/haze-from-indonesian-fires-guts-southeast-asia-tourism\" target=\"_blank\" rel=\"noopener\">Seoul Economic Daily reports haze has cut Southeast Asia travel bookings by up to 80% and disrupted more than 2,600 Indonesian flights</a>. <a href=\"https://theborneopost.com/2026/10/26/southeast-asias-annual-haze-indonesia-must-accept-responsibility\" target=\"_blank\" rel=\"noopener\">The Borneo Post (Sarawak) calls on Jakarta to accept responsibility</a> as independent monitoring platform Nusantara Atlas puts burned area at nearly 1.9&nbsp;million hectares through end-September (unconfirmed by the Indonesian government). 283,270+ respiratory illness cases; estimated 1,700+ deaths from haze pollution; 162 arrests. Foreign assistance from neighbouring countries now approved by President Prabowo. Gradual monsoon onset not expected until late October/November. ASMC Level&nbsp;3 alert in force.",
+          "impact": "Indonesia: ~1.9 million hectares burned (independent estimate); 283,270+ respiratory illness cases (7 provinces); ~1,700 estimated deaths from haze pollution; 2,600+ flight disruptions; 162 arrests for fire-starting. SE Asia tourism: bookings down up to 80%. Malaysia: school closures. Singapore: Transboundary Haze Pollution Act active. Timor-Leste: school closures. ~40 million people exposed across Kalimantan and Sumatra."
+        }
+      ],
+      "overview_html": "Three concurrent high-impact events on 26&nbsp;October. <a href=\"https://news.sbs.co.kr/english/article.do?news_id=N1008814278\" target=\"_blank\" rel=\"noopener\">Typhoon Champi degenerated into an extratropical cyclone south of Jeju Island</a> but JMA still forecasts up to 200&nbsp;mm of rain for Kyushu and Shikoku through Monday &mdash; one person died in Taiwan during its earlier passage. The far more acute developing threat is <a href=\"https://www.freepressjournal.in/india/cyclone-arnab-intensifies-over-bay-of-bengal-imd-issues-red-alert-for-andhra-pradesh-south-odisha-coasts-ahead-of-october-28-landfall\" target=\"_blank\" rel=\"noopener\">Cyclone Arnab, which intensified to a Very Severe Cyclonic Storm with IMD RED ALERTS for Andhra Pradesh and South Odisha</a>; <a href=\"https://www.brecorder.com/news/40445964/india-to-evacuate-thousands-as-cyclone-arnab-nears-eastern-coast\" target=\"_blank\" rel=\"noopener\">570,000 people are being evacuated ahead of an October 28 landfall between Bapatla and Visakhapatnam at 140&nbsp;kph gusts</a>. Simultaneously, <a href=\"https://en.sedaily.com/international/2026/10/26/haze-from-indonesian-fires-guts-southeast-asia-tourism\" target=\"_blank\" rel=\"noopener\">Indonesia&rsquo;s peatland haze crisis &mdash; 1.9&nbsp;million hectares burned, SE Asia tourism down 80%</a>&nbsp;&mdash; continues with no monsoon relief in sight.",
+      "items": [
+        {
+          "source": "SBS Korea / Alo Japan / JMA / Korea JoongAng Daily",
+          "date": "2026-10-26",
+          "headline": "Typhoon Champi Becomes Extratropical Cyclone South of Jeju Island; 200&nbsp;mm Rain Forecast Kyushu&ndash;Shikoku Monday; One Fatality Taiwan; Jeju Flights and Ferries Halted",
+          "url": "https://news.sbs.co.kr/english/article.do?news_id=N1008814278",
+          "summary": "Typhoon Champi degenerated into an extratropical cyclone over the waters south of Jeju Island early on October 26, following its passage past Taiwan's northeast coast (one fatality — a person swept away by high waves) and a 567 mm 48-hour rainfall record on Iriomote Island, Okinawa. JMA forecasts up to 200 mm of rain for northern Kyushu and Shikoku in the 24 hours to daytime Monday, with heavy rain continuing into the Kanto region through October 27. Jeju Island saw flights grounded, ferries halted, and all hiking trails on Mount Halla closed. The extratropical transition reduces the tropical-strength wind threat but does not eliminate significant rain risk across southwestern Japan."
+        },
+        {
+          "source": "Free Press Journal / Business Recorder / National Herald India / IMD",
+          "date": "2026-10-26",
+          "headline": "Cyclone Arnab Intensifies to Very Severe Cyclonic Storm; IMD RED ALERT AP &amp; South Odisha; Landfall Bapatla&ndash;Visakhapatnam 28&nbsp;Oct; 570,000 People Ordered Evacuated; 140&nbsp;kph Gusts",
+          "url": "https://www.freepressjournal.in/india/cyclone-arnab-intensifies-over-bay-of-bengal-imd-issues-red-alert-for-andhra-pradesh-south-odisha-coasts-ahead-of-october-28-landfall",
+          "summary": "Cyclone Arnab — India's first named cyclone of 2026, formerly Invest 98B — intensified to a Very Severe Cyclonic Storm on October 26. IMD issued RED ALERTS for the Andhra Pradesh and South Odisha coasts, projecting landfall between Bapatla and Visakhapatnam by the forenoon of October 28 with sustained winds of 115–125 kph and gusts to 140 kph. The Andhra Pradesh government has identified 570,000 people as vulnerable and ordered evacuations beginning Monday evening. Ten NDRF and 11 SDRF teams are deployed. Districts most at risk: Kakinada, Anakapalli, Visakhapatnam, Konaseema, and East Godavari. Coastal winds are expected to begin strengthening from the morning of October 27."
+        },
+        {
+          "source": "Seoul Economic Daily / The Borneo Post / Down to Earth / Malay Mail",
+          "date": "2026-10-26",
+          "headline": "Indonesia Haze Day&nbsp;35+: 1.9&nbsp;Million Hectares Burned (Nusantara Atlas); SE Asia Travel Bookings Down 80%; 2,600+ Flights Disrupted; Tourism Sector Gutted; Regional Pressure Mounts on Jakarta",
+          "url": "https://en.sedaily.com/international/2026/10/26/haze-from-indonesian-fires-guts-southeast-asia-tourism",
+          "summary": "Indonesia's ongoing peatland haze crisis — the worst in over a decade — has now burned nearly 1.9 million hectares through end-September per independent monitoring platform Nusantara Atlas (unconfirmed by the Indonesian government). The haze has devastated regional tourism, cutting Southeast Asia travel bookings by up to 80% and disrupting more than 2,600 Indonesian flights. The Borneo Post published an editorial on October 26 calling on Jakarta to accept responsibility. As of October 26: 283,270+ respiratory illness cases across seven provinces; estimated 1,700+ deaths from pollution; 162 arrests for allegedly starting fires; foreign assistance now approved by President Prabowo. Gradual monsoon onset across Sumatra and Kalimantan is not expected until late October/November."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "New deals and infrastructure decisions on 25&ndash;26&nbsp;October. <a href=\"https://www.gulftoday.ae/business/2026/10/25/masdar-expands-portfolio-in-greece-with-major-solar-project-acquisition\" target=\"_blank\" rel=\"noopener\">Masdar expanded its Greek renewable portfolio with a 550+&nbsp;MW solar project acquisition</a>, continuing the consolidation of its Terna Energy platform. Germany&rsquo;s maritime agency published a <a href=\"https://greentechlead.com/energy-news/renewables-news-jyoti-structures-germanys-offshore-wind-grid-plan-renewable-capacity-in-italy-56158\" target=\"_blank\" rel=\"noopener\">preliminary 70&nbsp;GW offshore wind plan for 2045 that drops five planned grid connections</a> to save tens of billions of euros. <a href=\"https://www.mercomindia.com/fourth-partner-energy-secures-%E2%82%B97-5-billion-to-finance-wind-solar-project\" target=\"_blank\" rel=\"noopener\">India&rsquo;s Fourth Partner Energy secured &#8377;7.5&nbsp;billion from Tata Capital</a> for a 300&nbsp;MW solar + 50&nbsp;MW wind + 750&nbsp;MWh BESS hybrid in Maharashtra. Elsewhere, the EirGrid curtailment data and China Huaneng&rsquo;s 960&nbsp;MW hybrid grid connection illustrate the divergent grid readiness challenges facing the renewables build-out.",
+      "items": [
+        {
+          "source": "Gulf Today / Abu Dhabi Media Office / Masdar",
+          "date": "2026-10-25",
+          "headline": "Masdar Expands Greek Renewable Portfolio: Acquires 550+&nbsp;MW Solar Project, Building on Terna Energy Platform; Operations Expected by End 2026",
+          "url": "https://www.gulftoday.ae/business/2026/10/25/masdar-expands-portfolio-in-greece-with-major-solar-project-acquisition",
+          "summary": "Abu Dhabi-based Masdar announced on October 24–25 the acquisition of a solar project exceeding 550 MW in Greece, with operations expected by end of 2026. The deal expands Masdar's Greek renewable energy portfolio built on its 2024 acquisition of TERNA ENERGY (completed in April 2025 at full ownership). Masdar is targeting 6 GW of operational renewable capacity by 2029, with Greece as a key growth market in its European expansion."
+        },
+        {
+          "source": "GreentechLead / BSH (German Federal Maritime and Hydrographic Agency)",
+          "date": "2026-10-26",
+          "headline": "Germany&rsquo;s Maritime Agency Publishes Preliminary 70&nbsp;GW Offshore Wind Plan for 2045: Drops Five Planned Grid Connections, Saving Tens of Billions of Euros; Grid Lag Remains Key Risk",
+          "url": "https://greentechlead.com/energy-news/renewables-news-jyoti-structures-germanys-offshore-wind-grid-plan-renewable-capacity-in-italy-56158",
+          "summary": "Germany's Federal Maritime and Hydrographic Agency (BSH) published a preliminary spatial plan for offshore wind development to 2045, retaining Germany's 70 GW target while dropping five planned offshore grid connections. The decision is primarily cost-driven — the removed connections are expected to save tens of billions of euros in grid infrastructure spending. The trade-off is reduced flexibility for siting and connecting new offshore capacity, with potential implications for financing certainty. Germany added approximately 8.2 GWh of new battery storage in the first nine months of 2026, signalling growing grid flexibility investment alongside renewable capacity expansion."
+        },
+        {
+          "source": "Mercom India",
+          "date": "2026-10-23",
+          "headline": "Fourth Partner Energy Secures &#8377;7.5&nbsp;Billion from Tata Capital for 300&nbsp;MW Solar + 50&nbsp;MW Wind + 750&nbsp;MWh BESS Hybrid Project in Maharashtra",
+          "url": "https://www.mercomindia.com/fourth-partner-energy-secures-%E2%82%B97-5-billion-to-finance-wind-solar-project",
+          "summary": "Fourth Partner Energy, a Hyderabad-based C&I renewable energy firm backed by Norfund and TPG's RISE Fund, secured ₹7.5 billion (approximately USD 90 million) in project financing from Tata Capital to build a 300 MW solar, 50 MW wind, and 750 MWh battery storage hybrid project in Maharashtra. The deal extends Fourth Partner's approximately 1.5 GWp portfolio and adds to Tata Capital's growing lending in large-scale C&I hybrid renewable projects in India."
+        },
+        {
+          "source": "GreentechLead / Applied Digital / Soluna",
+          "date": "2026-10-22",
+          "headline": "Applied Digital and Soluna Holdings Sign Definitive Agreement for 50&nbsp;MW AI Data Centre at Briscoe County, Texas, Co-Located with 150&nbsp;MW Briscoe Wind Farm; Wind + Grid Hybrid Power for AI Compute",
+          "url": "https://greentechlead.com/energy-news/renewables-news-applied-digital-soluna-solar-energy-corporation-briscoe-wind-farm-56116",
+          "summary": "Applied Digital Corporation and Soluna Holdings signed a definitive agreement to jointly develop a 50 MW AI data centre in Briscoe County, Texas. The facility will be co-located adjacent to the 150 MW Briscoe Wind Farm and draw power from a combination of wind generation and grid electricity, designed to absorb curtailment periods while providing firm compute capacity for AI workloads."
+        },
+        {
+          "source": "TaiyangNews / now.solar",
+          "date": "2026-10-21",
+          "headline": "China Huaneng Fully Grid-Connects 960&nbsp;MW Wind-Solar-Storage Hybrid in Inner Mongolia: 810&nbsp;MW Wind + 150&nbsp;MW Solar + 60&nbsp;MW/240&nbsp;MWh Grid-Forming BESS; First Integrated Coal-Renewables Retrofit of This Scale in China",
+          "url": "https://taiyangnews.info/markets/china-solar-pv-news-snippets-october-21-2026",
+          "summary": "China Huaneng announced the full grid connection of a 960 MW wind-solar-storage project at Ulanqab, Inner Mongolia, comprising 810 MW wind, 150 MW solar PV, a 60 MW/240 MWh grid-forming BESS, and a 20 Mvar STATCOM, paired with a coal-fired plant in flexible dispatch mode. Described as the first project of this kind in China; expected annual output approximately 2.3 billion kWh."
+        },
+        {
+          "source": "RTÉ / EirGrid / Wind Energy Ireland",
+          "date": "2026-10-21",
+          "headline": "EirGrid Data: 15% of Ireland&rsquo;s Wind Electricity Wasted H1 2026 Due to Grid Constraints; Enough to Power 667,000 Homes; 13%+ of All Renewables Curtailed First Nine Months",
+          "url": "https://www.rte.ie/news/2026/1021/1596197-renewable-electricity-ireland/",
+          "summary": "EirGrid figures reveal that more than 13% of available wind and solar electricity in Ireland during the first nine months of 2026 could not be used due to grid constraints. In H1 alone, 15% of wind electricity was dispatched down — enough to power approximately 667,000 Irish homes — worsening from 2025 curtailment rates. Experts cite a multi-year lag between accelerating renewable capacity additions and major transmission infrastructure investment."
+        },
+        {
+          "source": "GreentechLead / AMEA Power",
+          "date": "2026-10-20",
+          "headline": "AMEA Power Signs 250&nbsp;MW/1,000&nbsp;MWh Battery Storage Project Agreements for Uzbekistan&rsquo;s Bukhara Region; Central Asia&rsquo;s Largest Battery Commitment of 2026",
+          "url": "https://greentechlead.com/energy-news/renewables-news-amea-power-enertrag-tesla-battery-project-56057",
+          "summary": "UAE-based AMEA Power signed project agreements for a 250 MW / 1,000 MWh BESS in Uzbekistan's Bukhara region. This adds to AMEA Power's existing 150 MW / 300 MWh BESS under construction near Tashkent, bringing total committed Uzbekistan storage to 400 MW / 1,300 MWh. No deal price disclosed."
+        },
+        {
+          "source": "PV Magazine Australia / Baker McKenzie",
+          "date": "2026-10-19",
+          "headline": "Atmos Renewables Acquires BayWa&nbsp;r.e.&rsquo;s Australian Portfolio &mdash; Yatpool Solar (106&nbsp;MW), Hughenden Solar (20&nbsp;MW), Bullawah Wind Development (~800&nbsp;MW) &mdash; Total Capacity Exceeds 2&nbsp;GW",
+          "url": "https://www.pv-magazine-australia.com/2026/10/19/atmos-adds-baywa-r-e-projects-to-expanding-renewables-portfolio/",
+          "summary": "Atmos Renewables (Igneo Infrastructure Partners) finalised on October 16 the acquisition of BayWa r.e.'s Australian portfolio: Yatpool Solar Park (106 MW, Victoria), Hughenden Solar Park (20 MW, Queensland), and the Bullawah Wind Farm development (~800 MW wind + 359 MW/718 MWh BESS). The deal pushes Atmos's combined operating and in-construction capacity beyond 2 GW. BayWa r.e. is retreating from non-core markets amid its parent company's financial restructuring. Baker McKenzie advised BayWa; no price disclosed."
+        },
+        {
+          "source": "Foresight Group",
+          "date": "2026-10-21",
+          "headline": "Foresight Energy Infrastructure Partners II Acquires Nivala BESS &mdash; Finland&rsquo;s Largest Battery Storage System &mdash; from Fotowatio Renewable Ventures; Nordic Grid-Balancing Assets Attract Growing Institutional Capital",
+          "url": "https://foresight.group/news-insights/news/2026/foresight-energy-infrastructure-partners-ii-completes-acquisition-of-nivala-bess-from-fotowatio-renewable-ventures/",
+          "summary": "Foresight Energy Infrastructure Partners II completed its acquisition of 100% of Nivala BESS — Finland's largest battery energy storage system — from Fotowatio Renewable Ventures (FRV), the renewables subsidiary of Abdul Latif Jameel. Nivala provides frequency and voltage regulation services in Finland's electricity market. No deal price disclosed."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "The week&rsquo;s most operationally significant AI forecasting result remains active: <a href=\"https://arxiv.org/abs/2610.22077\" target=\"_blank\" rel=\"noopener\">arXiv:2610.22077&rsquo;s finding of strong AI track skill but weak intensity and ensemble spread on tropical cyclones</a> is playing out in real time with Cyclone Arnab&rsquo;s rapid intensification to Very Severe status from a forecast that earlier models rated with &ldquo;low confidence.&rdquo; Two new papers this week extend the frontier: <a href=\"https://arxiv.org/abs/2610.28219\" target=\"_blank\" rel=\"noopener\">Kooloth et&nbsp;al. (arXiv:2610.28219, 21&nbsp;Oct)</a> apply spatiotemporal deep learning to separate forced and internal components of observed climate change &mdash; directly relevant to attribution and loss-and-damage; and <a href=\"https://neurips.cc/virtual/2026/174609\" target=\"_blank\" rel=\"noopener\">Xaurora (NeurIPS&nbsp;2026)</a> achieves near state-of-the-art ensemble weather skill by fine-tuning Microsoft Aurora (1.3&nbsp;B parameters) with stochastic interpolants and LoRA, though ensembles remain underdispersive. Both land alongside the earlier <a href=\"https://arxiv.org/abs/2610.20519\" target=\"_blank\" rel=\"noopener\">arXiv:2610.20519 result showing probabilistic AI outperforms IFS-ENS on heat extremes</a> and the <a href=\"https://arxiv.org/abs/2610.09770\" target=\"_blank\" rel=\"noopener\">Beucler et&nbsp;al. review on AI weather&ndash;climate gaps</a>.",
+      "items": [
+        {
+          "source": "arXiv / physics.ao-ph",
+          "date": "2026-10-21",
+          "headline": "arXiv:2610.28219 &mdash; Kooloth et&nbsp;al.: Separating Forced and Internal Components of Observed Climate Change with Spatiotemporal Deep Learning",
+          "url": "https://arxiv.org/abs/2610.28219",
+          "meta": "Kooloth et al. &middot; arXiv:2610.28219 [physics.ao-ph] &middot; 21 Oct 2026",
+          "summary": "Kooloth et al. present a spatiotemporal deep learning approach to disentangling the forced (externally driven) component of observed climate change from internal (unforced) variability — one of the core challenges in climate attribution and signal detection. The model is trained on multi-model climate simulations and applied to observational datasets. This line of research is directly relevant to quantifying how much of any observed extreme weather event or long-term trend can be attributed to anthropogenic forcing versus natural variability, with implications for loss-and-damage negotiations and adaptation planning."
+        },
+        {
+          "source": "NeurIPS 2026 / EMS 2026",
+          "date": "2026-10-06",
+          "headline": "Xaurora (NeurIPS&nbsp;2026): Generative Weather Forecasting via Stochastic Interpolants Fine-Tuned on Aurora 1.3&nbsp;B Foundation Model; Near State-of-the-Art Ensemble Skill; Underdispersive Ensembles Remain a Limitation",
+          "url": "https://neurips.cc/virtual/2026/174609",
+          "meta": "Walt, Kofinas, Coumou + others &middot; NeurIPS 2026 &middot; arXiv:2610.06509 &middot; c. 6 Oct 2026",
+          "summary": "Xaurora presents a generative ensemble weather forecasting model built by fine-tuning Microsoft's Aurora (1.3 billion parameter transformer foundation model) as a drift prediction model using the stochastic interpolant framework and low-rank adaptation (LoRA). The model achieves near state-of-the-art ensemble forecast skill without full retraining of the foundation model. Key limitation: ensembles remain underdispersive — insufficient ensemble spread — the same failure mode identified in arXiv:2610.22077 for tropical cyclone intensity. Accepted at NeurIPS 2026 and presented at EMS 2026."
+        },
+        {
+          "source": "arXiv / physics.ao-ph",
+          "date": "2026-10-20",
+          "headline": "arXiv:2610.26145 &mdash; Hourly Precipitation Downscaling from km-Scale Regional Climate Simulations; NeurIPS&nbsp;2026 Workshop on Tackling Climate Change with Machine Learning",
+          "url": "https://arxiv.org/abs/2610.26145",
+          "meta": "Addison, Kendon, Watson &middot; arXiv:2610.26145 [physics.ao-ph] &middot; 20 Oct 2026 &middot; NeurIPS 2026 Workshop on Tackling Climate Change with ML",
+          "summary": "Henry Addison, Elizabeth Kendon and Peter Watson present a deep-learning approach to downscaling hourly precipitation from kilometre-scale regional climate model simulations to sub-kilometre scales. Addresses a key bottleneck: as convection-permitting km-scale RCMs become feasible for multi-decade climate runs, translating their output to sub-km scales for adaptation planning (urban flooding, hydrology, agriculture) remains computationally prohibitive without statistical downscaling."
+        },
+        {
+          "source": "arXiv / stat.ML / physics.ao-ph",
+          "date": "2026-10-14",
+          "headline": "arXiv:2610.20519 &mdash; Probabilistic AI Models Outperform NWP on Record-Breaking Heat Extremes: WeatherNext2 24% above IFS-ENS Brier Skill Score at 72&nbsp;h; Reverses Earlier Deterministic Benchmarking Verdict",
+          "url": "https://arxiv.org/abs/2610.20519",
+          "meta": "Wessel, Spuler, Ferro, Kretschmer, Sippel &middot; arXiv:2610.20519 &middot; 14 Oct 2026",
+          "summary": "Wessel, Spuler, Ferro, Kretschmer and Sippel test probabilistic AI weather models against ECMWF IFS-ENS on record-breaking heat events over global land in 2022. Key finding: on a like-for-like probabilistic basis, WeatherNext2's Brier skill score sits 24% above IFS-ENS at 72-hour lead time. This reverses the headline from a 2026 Science Advances study that found physics-based HRES outperforming deterministic AI models — the key difference being deterministic vs. probabilistic model comparison."
+        },
+        {
+          "source": "arXiv / cs.LG / physics.ao-ph",
+          "date": "2026-10-07",
+          "headline": "arXiv:2610.09770 &mdash; &ldquo;Artificial Intelligence Pathways from Weather to Climate&rdquo; (Beucler, Neelin et&nbsp;al.): AI Weather Skill Does Not Transfer to Climate Projections Without Explicit Forcing Representation",
+          "url": "https://arxiv.org/abs/2610.09770",
+          "meta": "Beucler (UNIL), Neelin (UCLA) + 10 co-authors incl. Bretherton, Watt-Meyer, Schneider, Zanna &middot; arXiv:2610.09770 &middot; 7 Oct 2026",
+          "summary": "Tom Beucler (UNIL) and David Neelin (UCLA) with ten co-authors review the gap between AI weather-scale skill and climate-scale projection fidelity. Key arguments: AI models achieve well-calibrated ensemble weather forecasts but do not produce credible forced responses to external climate drivers without explicit representation; out-of-distribution robustness on extremes is required before models can inform adaptation decisions; AI models are not intrinsically more computationally efficient than GPU-ported dynamical models once complexity is accounted for."
+        },
+        {
+          "source": "arXiv / physics.ao-ph",
+          "date": "2026-10-15",
+          "headline": "arXiv:2610.22555 &mdash; AI Foundation Model for Atmospheric Chemistry and Climate: R<sup>2</sup>&nbsp;&gt;&nbsp;0.85 on 23/27 Fields; ~100&times; Faster than UKCA; Enables Tractable High-Resolution Chemistry-Climate Simulation",
+          "url": "https://arxiv.org/abs/2610.22555",
+          "meta": "arXiv:2610.22555 [physics.ao-ph] &middot; c. 15 Oct 2026",
+          "summary": "This paper fine-tunes the Aurora Earth system model on atmospheric chemistry and climate simulations from UKCA, producing an AI foundation model that predicts 27 atmospheric chemistry and climate fields; 23 of 27 achieve R² above 0.85. The model runs approximately 100 times faster than the physics-based UKCA model and remains stable in autoregressive simulation over 50 years. An emulator at this accuracy threshold opens the door to routine AI-driven climate projection pipelines that include atmospheric chemistry."
+        },
+        {
+          "source": "arXiv / cs.LG",
+          "date": "2026-10-15",
+          "headline": "arXiv:2610.22077 &mdash; Evaluating Probabilistic AI Weather Models on Tropical Cyclones: Strong Track Skill; Intensity and Ensemble Spread Remain Weak Points vs. ECMWF IFS-ENS",
+          "url": "https://arxiv.org/abs/2610.22077",
+          "meta": "arXiv:2610.22077 [cs.LG] &middot; 15 Oct 2026",
+          "summary": "This paper benchmarks probabilistic AI weather models on tropical cyclone forecasting. AI models outperform ECMWF IFS-ENS at cyclone track forecasting across multiple lead times, but intensity forecasting and ensemble spread calibration remain weak — models underweight rare, high-intensity values via training objectives that favour large-scale atmospheric state skill. Directly observable in Cyclone Arnab's rapid intensification to Very Severe status from earlier low-confidence forecasts."
+        },
+        {
+          "source": "Nature / SubX",
+          "date": "2026-10-14",
+          "headline": "Mouatadid et&nbsp;al. in <em>Nature</em>: Probabilistic Bias Correction Doubles AI Subseasonal Forecast Skill at 2&ndash;6&nbsp;Weeks; Improves ECMWF IFS for 92% of Temperature and 98% of Precipitation Targets; Leads SubX Competition",
+          "url": "https://www.nature.com/articles/s41586-026-11126-x",
+          "meta": "Mouatadid et al. &middot; Nature (14 Oct 2026)",
+          "summary": "Published in Nature, this paper introduces probabilistic bias correction (PBC) as a post-processing method for AI subseasonal forecasts in the 2–6-week range. PBC doubles AI subseasonal forecast skill; improves ECMWF's dynamical IFS for 92% of temperature prediction targets and 98% of precipitation targets globally; and leads the SubX international subseasonal forecast competition. Implies existing AI weather models have substantial latent skill at subseasonal timescales masked by poorly calibrated probability distributions — significant for S2S forecasting and renewable energy planning."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-10-21",
+          "title": "Peak Energy Raises US$108&nbsp;Million Series B Led by GM Ventures: US Sodium-Ion Battery Startup Building 4&nbsp;GWh Sacramento Factory; Customers Include RWE, Jupiter Power, Energy Vault",
+          "body_html": "<a href=\"https://gmauthority.com/blog/2026/10/gm-leads-108m-series-b-funding-round-for-peak-energy-battery-startup/\" target=\"_blank\" rel=\"noopener\">Peak Energy (Burlingame, CA) closed an oversubscribed US$108&nbsp;million Series B on approximately 21&nbsp;October, led by GM Ventures</a> alongside Maverick Silicon, Infinite Capital, Eclipse, Xora Innovation, and LG Technology Ventures. <a href=\"https://www.ess-news.com/2026/07/09/peak-energy-to-build-4-gwh-grid-scale-sodium-ion-bess-factory-in-california/\" target=\"_blank\" rel=\"noopener\">The company is building a 4&nbsp;GWh sodium-ion grid-scale BESS factory in Sacramento, CA with production starting Q1&nbsp;2027</a>. Peak&rsquo;s passively cooled sodium-ion cells are positioned as a lower-cost alternative to lithium for stationary storage, targeting up to 20% cost reduction versus conventional BESS. Commercial partners include RWE, Jupiter Power, and Energy Vault. GM&rsquo;s involvement builds on its June 2026 partnership with Peak to co-develop next-generation sodium-ion cells for stationary storage.",
+          "source_html": "<a href=\"https://gmauthority.com/blog/2026/10/gm-leads-108m-series-b-funding-round-for-peak-energy-battery-startup/\" target=\"_blank\" rel=\"noopener\">GM Authority / ESS News</a>"
+        },
+        {
+          "date": "2026-10-19",
+          "title": "Blackstone Closes Blackstone Energy Transition Partners V at US$8.7&nbsp;Billion &mdash; Largest Energy Transition Private Equity Fund of 2026; 50%+ Larger than Predecessor; Reached Hard Cap",
+          "body_html": "<a href=\"https://www.blackstone.com/?p=47566\" target=\"_blank\" rel=\"noopener\">Blackstone announced the final close of Blackstone Energy Transition Partners V (BETP&nbsp;V) at US$8.7&nbsp;billion on approximately 19&nbsp;October</a>&nbsp;&mdash; more than 50% larger than its predecessor fund (BETP&nbsp;IV at $5.6&nbsp;billion, closed February 2025) and at its hard cap. <a href=\"https://www.esgtoday.com/blackstone-raises-8-7-billion-for-energy-transition-fund/\" target=\"_blank\" rel=\"noopener\">BETP&nbsp;V has already funded three platform companies &mdash; Kindle, Fisterra, and Viridon &mdash; and excludes ownership of hydrocarbon reserves and extraction</a>. Blackstone committed US$150&nbsp;million of its own capital to the fund, which cites a 34% net IRR on energy transition investments since 1997 (firm-reported figure as of June 30).",
+          "source_html": "<a href=\"https://www.esgtoday.com/blackstone-raises-8-7-billion-for-energy-transition-fund/\" target=\"_blank\" rel=\"noopener\">ESG Today / Blackstone</a>"
+        },
+        {
+          "date": "2026-10-22",
+          "title": "Applied Digital and Soluna Holdings Sign Definitive Agreement for 50&nbsp;MW AI Data Centre Adjacent to 150&nbsp;MW Briscoe Wind Farm, Texas; Wind + Grid Hybrid Power for AI Compute Colocation",
+          "body_html": "<a href=\"https://greentechlead.com/energy-news/renewables-news-applied-digital-soluna-solar-energy-corporation-briscoe-wind-farm-56116\" target=\"_blank\" rel=\"noopener\">Applied Digital Corporation and Soluna Holdings signed a definitive agreement on approximately 22&nbsp;October to jointly develop a 50&nbsp;MW AI data centre in Briscoe County, Texas</a>, co-located with the 150&nbsp;MW Briscoe Wind Farm. Power supply mixes wind generation with grid electricity to absorb curtailment while delivering firm AI compute capacity &mdash; part of a growing wave of AI infrastructure projects seeking renewable colocation to reduce grid interconnect costs and carbon intensity.",
+          "source_html": "<a href=\"https://greentechlead.com/energy-news/renewables-news-applied-digital-soluna-solar-energy-corporation-briscoe-wind-farm-56116\" target=\"_blank\" rel=\"noopener\">GreentechLead</a>"
+        },
+        {
+          "date": "2026-10-21",
+          "title": "Foresight Energy Infrastructure Partners II Acquires Nivala BESS &mdash; Finland&rsquo;s Largest Battery Storage System &mdash; from Fotowatio Renewable Ventures (Abdul Latif Jameel); Nordic Grid-Balancing Assets Attract Institutional Capital",
+          "body_html": "<a href=\"https://foresight.group/news-insights/news/2026/foresight-energy-infrastructure-partners-ii-completes-acquisition-of-nivala-bess-from-fotowatio-renewable-ventures/\" target=\"_blank\" rel=\"noopener\">Foresight Energy Infrastructure Partners II completed the acquisition of 100% of Nivala BESS &mdash; Finland&rsquo;s largest battery energy storage system &mdash; from Fotowatio Renewable Ventures (FRV)</a>, the renewables subsidiary of Abdul Latif Jameel. Nivala provides frequency and voltage regulation services in Finland&rsquo;s electricity market. No deal price disclosed. Continues a pattern of pan-European institutional funds acquiring operational Nordic BESS assets as ancillary services revenue models mature.",
+          "source_html": "<a href=\"https://foresight.group/news-insights/news/2026/foresight-energy-infrastructure-partners-ii-completes-acquisition-of-nivala-bess-from-fotowatio-renewable-ventures/\" target=\"_blank\" rel=\"noopener\">Foresight Group</a>"
+        },
+        {
+          "date": "2026-10-19",
+          "title": "Atmos Renewables (Igneo Infrastructure Partners) Acquires BayWa&nbsp;r.e.&rsquo;s Australian Renewable Portfolio &mdash; Yatpool Solar (106&nbsp;MW), Hughenden Solar (20&nbsp;MW), Bullawah Wind Development (~800&nbsp;MW) &mdash; Total Capacity Exceeds 2&nbsp;GW",
+          "body_html": "<a href=\"https://www.pv-magazine-australia.com/2026/10/19/atmos-adds-baywa-r-e-projects-to-expanding-renewables-portfolio/\" target=\"_blank\" rel=\"noopener\">Atmos Renewables finalised on 16&nbsp;October the acquisition of BayWa&nbsp;r.e.&rsquo;s Australian portfolio</a>, adding Yatpool Solar (106&nbsp;MW, Victoria), Hughenden Solar (20&nbsp;MW, Queensland), and the late-stage Bullawah Wind Farm development (~800&nbsp;MW wind + 359&nbsp;MW/718&nbsp;MWh BESS). The deal pushes Atmos&rsquo;s combined operating and in-construction capacity beyond 2&nbsp;GW. <a href=\"https://www.enerdata.net/publications/daily-energy-news/atmos-renewables-acquires-nearly-1-gw-renewable-portfolio-australia.html\" target=\"_blank\" rel=\"noopener\">BayWa&nbsp;r.e. is retreating from non-core markets</a> amid its parent company&rsquo;s financial restructuring. Baker McKenzie advised BayWa; no price disclosed.",
+          "source_html": "<a href=\"https://www.pv-magazine-australia.com/2026/10/19/atmos-adds-baywa-r-e-projects-to-expanding-renewables-portfolio/\" target=\"_blank\" rel=\"noopener\">PV Magazine Australia</a>"
+        },
+        {
+          "date": "2026-10-19",
+          "title": "XCF Global Completes All-Stock Three-Way Merger Combining Renewable Fuel Production, Biomass-to-Fuels Development (Southern Energy Renewables) and Carbon-Asset Monetisation (DevvStream); Integrated Lifecycle Platform",
+          "body_html": "<a href=\"https://renewablesnow.com/news/xcf-completes-three-way-merger-to-boost-renewable-fuels-platform-1303213\" target=\"_blank\" rel=\"noopener\">XCF Global completed an all-stock three-way business combination on 19&nbsp;October</a>, merging renewable fuel production with Southern Energy Renewables&rsquo; biomass-to-fuels pipeline and DevvStream&rsquo;s carbon-asset monetisation platform. The combined entity targets the full value chain of biomass-based fuel projects from production through carbon credit generation. No deal terms disclosed.",
+          "source_html": "<a href=\"https://renewablesnow.com/news/xcf-completes-three-way-merger-to-boost-renewable-fuels-platform-1303213\" target=\"_blank\" rel=\"noopener\">Renewables Now</a>"
+        }
+      ]
+    }
+  }
+}
