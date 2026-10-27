@@ -1,0 +1,181 @@
+{
+  "digest_date": "2026-10-27",
+  "metar": "DIGEST 270716Z OCT26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "Today&rsquo;s UN NDC synthesis &mdash; published October 27, two weeks before COP31 opens in Antalya &mdash; delivers the starkest pre-summit signal yet: <a href=\"https://www.wri.org/news/statement-un-report-finds-country-climate-commitments-falling-short\" target=\"_blank\" rel=\"noopener\">154 nations&rsquo; updated pledges cover only 6&ndash;9% of the emissions cuts scientists say are needed by 2035</a>, a tenth of the ~60% required for the 1.5&deg;C pathway. Against that backdrop, a <a href=\"https://www.forbes.com/sites/kensilverstein/2026/10/25/turkey-courts-gulf-oil-weeks-before-hosting-the-worlds-climate-talks/\" target=\"_blank\" rel=\"noopener\">Forbes investigation finds Turkey has signed at least 11 oil and gas deals since winning the COP31 hosting bid</a>, with state firm TPAO on track to triple gas output by 2035. The Super El Ni&ntilde;o driving so much of this year&rsquo;s extreme weather continues to intensify: <a href=\"https://phys.org/news/2026-10-el-nio-temperature-key-pacific.html\" target=\"_blank\" rel=\"noopener\">Copernicus confirmed September&rsquo;s Ni&ntilde;o3.4 index hit an all-time record of 29.70&deg;C &mdash; above every prior El Ni&ntilde;o peak on record</a> &mdash; and its fingerprints were visible across the US this week, where Los Angeles and San Diego tide gauges registered their highest readings in over a century.",
+      "items": [
+        {
+          "source": "UNFCCC / WRI / AFP",
+          "date": "2026-10-27",
+          "headline": "UN NDC Synthesis Report (Oct 27): 154 Countries&rsquo; Pledges Would Cut Emissions Only 6&ndash;9% by 2035 &mdash; a Tenth of the 1.5&deg;C Pathway; 71% of Global Emissions Covered",
+          "url": "https://www.wri.org/news/statement-un-report-finds-country-climate-commitments-falling-short",
+          "summary": "Published October 27 &mdash; two weeks before COP31 opens &mdash; the UNFCCC's NDC synthesis covers 154 countries representing 71% of global GHG emissions. Even under optimistic full-implementation scenarios including conditional targets, the pledges would reduce global emissions by just 9% by 2035. The 1.5°C pathway requires roughly 60% cuts by that date. The report synthesises pledges submitted between January 2024 and August 2026 and was cited by AFP under the headline 'World's climate pledges would cut emissions a tenth of what's needed'. WRI called the gap 'alarming' and said it underscores the need for substantially more ambitious NDCs at Antalya."
+        },
+        {
+          "source": "Forbes",
+          "date": "2026-10-25",
+          "headline": "Forbes: Turkey Courts Gulf Oil Weeks Before COP31 &mdash; TPAO to Triple Gas Output by 2035; 11+ Oil and Gas Deals Since Hosting Bid; Climate Groups Warn of &ldquo;Paralysed Presidency&rdquo;",
+          "url": "https://www.forbes.com/sites/kensilverstein/2026/10/25/turkey-courts-gulf-oil-weeks-before-hosting-the-worlds-climate-talks/",
+          "summary": "Forbes's Ken Silverstein investigated Turkey's energy strategy on the eve of COP31, citing Global Witness analysis of Rystad Energy data. State oil firm TPAO has signed at least 11 oil and gas contracts since Turkey bid for the summit and is projected to roughly triple gas output by 2035. Climate Action Tracker finds that Turkey's wind and solar growth has not displaced fossil power. The Istanbul Policy Center's Ümit Şahin said he does not expect Turkey's presidency to press oil and gas producers to cut output. Climate groups and Energy Monitor warn the host's conflicted position could produce a presidency unable to move the needle on phase-out language."
+        },
+        {
+          "source": "Copernicus C3S / AFP / Phys.org / CS Monitor",
+          "date": "2026-10-07",
+          "headline": "Copernicus September 2026: Ni&ntilde;o3.4 All-Time Record 29.70&deg;C Above Every Prior El Ni&ntilde;o Peak; August 2026 Was Hottest Month Ever Globally; NOAA Declares &ldquo;Very Strong&rdquo; Event at 2.0&deg;C RONI; December Peak Forecast at 4.2&deg;C Above Average",
+          "url": "https://phys.org/news/2026-10-el-nio-temperature-key-pacific.html",
+          "summary": "Copernicus C3S's September 2026 climate bulletin confirmed the Niño3.4 monitoring region in the tropical Pacific reached an all-time monthly-average record of 29.70°C — exceeding the peaks of 1982/83, 1997/98 and 2015/16. NOAA's Relative Oceanic Niño Index reached 2.0°C in September, the official threshold for a 'very strong' event. August 2026 was the hottest calendar month ever recorded globally. Copernicus cautioned that a new baseline-adjusted index — accounting for ocean warming — does not yet classify this as stronger than past events, but the Washington Post projects a December peak of ~4.2°C above average and says the event may persist into 2027. The El Niño has been directly linked to the 2026 Southeast Asian peatland fires, record US coastal flooding, and accelerated Arctic sea ice loss."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Cyclone Arnab &mdash; Landfall Imminent 28&nbsp;Oct Forenoon; Bapatla&ndash;Visakhapatnam; 140&nbsp;kph Gusts; 570,000 Evacuated; India&rsquo;s First Named Cyclone of 2026",
+          "status": "As of 27&nbsp;Oct morning: <a href=\"https://vajiramandravi.com/current-affairs/cyclone-arnab-2026/\" target=\"_blank\" rel=\"noopener\">Cyclone Arnab continues to intensify as it crosses the northwest Bay of Bengal toward the Andhra Pradesh coast, with IMD maintaining its forecast of landfall near Bapatla&ndash;Visakhapatnam by the forenoon of October&nbsp;28 at sustained winds of 115&ndash;125&nbsp;kph and gusts to 140&nbsp;kph</a>. Coastal winds have begun strengthening along East Godavari and Visakhapatnam districts; rough seas are reported off the AP coast. <a href=\"https://www.brecorder.com/news/40445964/india-to-evacuate-thousands-as-cyclone-arnab-nears-eastern-coast\" target=\"_blank\" rel=\"noopener\">The AP government&rsquo;s evacuation of 570,000 identified-vulnerable residents is now actively under way, with 10 NDRF and 11 SDRF teams on-ground</a>. IMD RED ALERTS remain in force for AP and South Odisha coasts. Districts of highest concern: Kakinada, Anakapalli, Visakhapatnam, Konaseema, East Godavari.",
+          "impact": "Andhra Pradesh: RED ALERT; 570,000 ordered evacuated; coastal winds strengthening Oct 27, landfall Oct 28 forenoon at 140 kph gusts; 10 NDRF + 11 SDRF on-ground. Odisha (South): heavy rain and wind alerts. West Bengal, Jharkhand, Bihar: heavy rain alerts. Tamil Nadu, Karnataka: heavy rain warnings. Extreme to very heavy rainfall forecast across entire AP coast and interior."
+        },
+        {
+          "name": "Typhoon In-fa (JTWC 30W) &mdash; Category&nbsp;4; 130&nbsp;mph Winds; Super Typhoon Candidate; Threatening CNMI October 30&ndash;31; Fourth Typhoon to Hit Marianas in Six Months",
+          "status": "As of 27&nbsp;Oct: <a href=\"https://www.accuweather.com/en/hurricane/after-super-typhoon-champi-typhoon-in-fa-threatens-mariana-islands/1951092\" target=\"_blank\" rel=\"noopener\">Typhoon In-fa carries maximum sustained winds of 130&nbsp;mph (Category&nbsp;4) per the Oct&nbsp;26 JTWC advisory, with peak intensity forecasts reaching 135&nbsp;knots (Super Typhoon) within 72&nbsp;hours</a>. <a href=\"https://sea.weathernews.com/resources/202610/284\" target=\"_blank\" rel=\"noopener\">JMA expects the system to approach the Mariana Islands around October&nbsp;30, with the storm then forecast to stall before turning northwest &mdash; mariners in the area should monitor closely as it accelerates from October&nbsp;29</a>. AccuWeather warns of flooding rains and damaging winds for the CNMI around Friday local time; Yale Climate Connections says the center may track just north of the islands but dangerous swells are certain. In-fa will be the fourth typhoon to directly affect the CNMI in six months, following Super Typhoon Champi (peak 185&nbsp;mph, passed 12&nbsp;miles south of Guam on October&nbsp;18).",
+          "impact": "CNMI: NWS/Guam advisories; potential direct wind/rain impact Oct 30–31; large dangerous swells regardless of exact track. Western Pacific: track/intensity uncertainty high; preparations for worst-case Cat 4–5 scenario advised. Philippines (potential secondary track): early-stage monitoring."
+        },
+        {
+          "name": "Southeast Asian Peatland Haze (Indonesia/Borneo/Sumatra) &mdash; Protests Erupt in Jakarta; Five Firefighters Killed on Java; 1.9&nbsp;M Hectares Burned; ASMC Level&nbsp;3 Continues",
+          "status": "As of 27&nbsp;Oct: <a href=\"https://www.downtoearth.org.in/climate-change/indonesia-wildfires-choke-southeast-asia-as-toxic-haze-sparks-protests\" target=\"_blank\" rel=\"noopener\">Widespread protests have erupted in Jakarta and other Indonesian cities, with demonstrators demanding the government declare the fires a national disaster and prosecute corporations accused of deliberate land-clearing burns</a>. Five people were killed fighting fires in Bromo Tengger Semeru National Park, Java. <a href=\"https://en.wikipedia.org/wiki/2026_Southeast_Asian_haze\" target=\"_blank\" rel=\"noopener\">Independent monitoring platform Nusantara Atlas estimates ~1.9&nbsp;million hectares burned through end-September; 283,270+ respiratory illness cases; estimated 1,700+ deaths from haze pollution; 162 arrests</a>. Foreign assistance approved by President Prabowo; ASMC Level&nbsp;3 remains in force; monsoon onset not expected until late October/November.",
+          "impact": "Indonesia: ~1.9 million hectares burned; 283,270+ respiratory illness cases (7 provinces); ~1,700 estimated deaths; 5 firefighter fatalities (Bromo, Java); protests in Jakarta; 2,600+ flight disruptions; 162 arrests. Malaysia: school closures. Singapore: unhealthy air quality ongoing. Timor-Leste: school closures. ~40 million people exposed."
+        }
+      ],
+      "overview_html": "October&nbsp;27 brings three concurrent high-impact events. <a href=\"https://vajiramandravi.com/current-affairs/cyclone-arnab-2026/\" target=\"_blank\" rel=\"noopener\">Cyclone Arnab is bearing down on the Andhra Pradesh coast with landfall forecast for the forenoon of October&nbsp;28</a>; 570,000 people are actively being evacuated. Simultaneously, <a href=\"https://www.accuweather.com/en/hurricane/after-super-typhoon-champi-typhoon-in-fa-threatens-mariana-islands/1951092\" target=\"_blank\" rel=\"noopener\">Typhoon In-fa is a Category&nbsp;4 storm building toward super typhoon intensity and threatening the CNMI around October&nbsp;30&ndash;31</a> &mdash; the Marianas&rsquo; fourth typhoon in six months. In Southeast Asia, <a href=\"https://www.downtoearth.org.in/climate-change/indonesia-wildfires-choke-southeast-asia-as-toxic-haze-sparks-protests\" target=\"_blank\" rel=\"noopener\">the Indonesian haze crisis has entered a political phase as protests erupt in Jakarta demanding a national disaster declaration</a>. Across the continental US, <a href=\"https://yaleclimateconnections.org/2026/10/record-flooding-hits-the-u-s-as-powerful-tropical-storms-threaten-asia/\" target=\"_blank\" rel=\"noopener\">simultaneous century-scale records fell at river and tide gauges from New Mexico to Southern California</a>.",
+      "items": [
+        {
+          "source": "Yale Climate Connections / NPR / OPB / ABC News / AOL",
+          "date": "2026-10-26",
+          "headline": "Simultaneous Century-Scale US Flood Records: San Juan River (NM) at 1935 Levels; Pagosa Springs (CO) at 1911 Peak; LA and San Diego Highest Coastal Tides in a Century; Miami 6-Day Coastal Flood Streak &mdash; Longest on Record",
+          "url": "https://yaleclimateconnections.org/2026/10/record-flooding-hits-the-u-s-as-powerful-tropical-storms-threaten-asia/",
+          "summary": "October 23–26 brought simultaneous century-scale extreme weather events across the US. The San Juan River at Shiprock, New Mexico crested at its highest level since 1935, overflowing its banks. At Pagosa Springs, Colorado, the river peaked at 15.02 ft, the second-highest reading in records dating to 1911. Hurricane, Utah declared an emergency after flooding damaged more than 100 homes. On the Southern California coast, October 26's morning high tide produced the highest coastal water levels in over a century of NOAA record-keeping at both Los Angeles and San Diego — preliminary data confirmed by the National Ocean Service. Miami recorded six consecutive days (October 21–26) of moderate coastal flooding — the city's longest streak on record — as king-tide conditions swept from the Florida Keys to North Carolina's Outer Banks. Flash-flood watches continued in the Southwest through the weekend."
+        },
+        {
+          "source": "RTI Taiwan / Wunderground / Alo Japan",
+          "date": "2026-10-26",
+          "headline": "Typhoon Champi Post-Mortem: 1 Dead, 600+ Injured in Taiwan; 340,000 Power Outages; 567&nbsp;mm Iriomote 48-Hour Record; Now Extratropical Northeast of Honshu; Tied as 2026&rsquo;s Strongest at 185&nbsp;mph",
+          "url": "https://rti.org.tw/en/programnews?pid=116876&uid=4",
+          "summary": "Now fully extratropical and tracking northeast of Honshu, Champi's final toll is confirmed: Taiwan reported one death and more than 600 injuries, with over 340,000 customers losing power at peak impact. Iriomote Island, Okinawa set a 48-hour rainfall record of 567 mm. JMA's heavy-rain advisories for Kyushu and Shikoku have been lifted as the remnant moves away. Champi peaked at 185 mph sustained winds on October 19, tying it as the strongest tropical cyclone of the 2026 Western Pacific season alongside Typhoon Sinlaku. WindBorne Systems made history during Champi's peak, becoming the first operator ever to fly an unpowered autonomous balloon into a typhoon eye wall — a significant data-collection milestone for AI weather models."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "Battery storage is this week&rsquo;s headline metric. <a href=\"https://greentechlead.com/energy-news/renewables-news-renewable-financing-in-australia-us-wind-turbine-orders-teslas-battery-storage-56188\" target=\"_blank\" rel=\"noopener\">Tesla deployed a record 13.7&nbsp;GWh of stationary storage in Q3&nbsp;2026</a>, approximately 10% above the prior year, further extending its lead as the dominant grid-scale battery supplier. <a href=\"https://reneweconomy.com.au/australia-enjoys-surge-in-wind-solar-and-battery-projects-with-32-5-billion-now-financed-or-under-construction\" target=\"_blank\" rel=\"noopener\">Australia&rsquo;s renewable pipeline reached A$32.5&nbsp;billion financed or under construction</a>, with H1&nbsp;2026 large-scale commitments alone (2.6&nbsp;GW) already exceeding all of calendar 2025. <a href=\"https://greentechlead.com/energy-news/renewables-news-renewable-financing-in-australia-us-wind-turbine-orders-teslas-battery-storage-56188\" target=\"_blank\" rel=\"noopener\">US wind turbine orders hit 2.8&nbsp;GW in Q2&nbsp;2026 &mdash; the strongest procurement quarter since late 2023</a> &mdash; as developers rush equipment ahead of IRA tax-credit deadlines. On the downside, German home-battery maker Sonnen &mdash; formerly Shell-owned &mdash; has filed for insolvency proceedings, a cautionary signal about the difficult unit economics for standalone residential storage without VPP revenue.",
+      "items": [
+        {
+          "source": "PV Magazine / GreenTechLead",
+          "date": "2026-10-22",
+          "headline": "Tesla Q3 2026: Record 13.7&nbsp;GWh Battery Storage Deployed, Up ~10% Year-on-Year; Best Quarter in Company History; Megapack Grid-Scale Dominates",
+          "url": "https://greentechlead.com/energy-news/renewables-news-renewable-financing-in-australia-us-wind-turbine-orders-teslas-battery-storage-56188",
+          "summary": "Tesla reported deploying 13.7 GWh of stationary battery storage in Q3 2026 — its strongest quarter on record and roughly 10% above Q3 2025. The figure combines Powerwall residential units and Megapack grid-scale systems, with utility-scale Megapack projects accounting for the majority. Tesla remains the largest single supplier of stationary battery storage by deployed capacity globally."
+        },
+        {
+          "source": "RenewEconomy",
+          "date": "2026-10-23",
+          "headline": "Australia Renewable Surge: A$32.5&nbsp;Billion in Wind, Solar and Battery Projects Financed or Under Construction; H1 2026 Large-Scale Commitments (2.6&nbsp;GW) Already Beat All of 2025",
+          "url": "https://reneweconomy.com.au/australia-enjoys-surge-in-wind-solar-and-battery-projects-with-32-5-billion-now-financed-or-under-construction",
+          "summary": "Australia's renewable energy pipeline reached A$32.5 billion financed or under construction as of mid-October 2026, driven by a surge in wind, solar and utility-scale battery projects. Large-scale renewable financing in H1 2026 (2.6 GW) already exceeded the 2.3 GW committed across the whole of 2025, reflecting accelerating deployment momentum under Australia's 82% renewable electricity by 2030 target."
+        },
+        {
+          "source": "GreenTechLead / Wood Mackenzie",
+          "date": "2026-10-22",
+          "headline": "US Wind Turbine Orders Hit 2.8&nbsp;GW in Q2 2026 &mdash; Strongest Quarter Since Late 2023 as Developers Accelerate Procurement Ahead of IRA Tax-Credit Construction Deadlines",
+          "url": "https://greentechlead.com/energy-news/renewables-news-renewable-financing-in-australia-us-wind-turbine-orders-teslas-battery-storage-56188",
+          "summary": "US wind turbine orders reached 2.8 GW in Q2 2026, the strongest procurement quarter since late 2023, as project developers moved to lock in equipment ahead of Inflation Reduction Act production and investment tax-credit construction deadlines. The surge reverses a slow first quarter and signals continued confidence in US onshore wind, even as the offshore sector faces grid-connection delays in Germany and stalled permitting in the UK."
+        },
+        {
+          "source": "IPE Real Assets / Renewables.digital",
+          "date": "2026-10-15",
+          "headline": "Greencoat UK Wind Acquires Remaining 20% of 96.4&nbsp;MW Onshore Wind Portfolio from EDF Invest, Reaching Full Ownership; UK Wind Market Consolidation Continues",
+          "url": "https://transactions.renewables.digital/technology/onshore-wind",
+          "summary": "Greencoat UK Wind (LON:UKW) acquired the final 20% stake in a 96.4 MW onshore wind farm portfolio held by EDF Invest, bringing it to 100% ownership. The deal is the latest in a series of minority buyouts that characterize the maturing UK onshore wind market, where long-term infrastructure funds are consolidating positions in operating assets. Greencoat UK Wind is the UK's largest listed wind energy fund by capacity."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "The operational meteorology story of the week: <a href=\"https://www.npr.org/2026/10/26/nx-s1-6012820/ai-hurricane-forecast-google-deepmind-isaias\" target=\"_blank\" rel=\"noopener\">NPR reported October&nbsp;26 that <strong>Google DeepMind&rsquo;s AI model correctly called Hurricane Isaias&rsquo;s Florida Panhandle landfall days before the NHC&rsquo;s physics-based guidance</strong> converged on that track &mdash; but lagged 20&ndash;40% on intensity skill</a>, and forecasters say they cannot explain why the model is right or wrong in any given case. On benchmarking, <a href=\"https://arxiv.org/abs/2610.04558\" target=\"_blank\" rel=\"noopener\">ClimateBench&nbsp;v2.0 (arXiv:2610.04558)</a> raises the evaluation bar for AI climate emulators, while <a href=\"https://arxiv.org/abs/2610.20405\" target=\"_blank\" rel=\"noopener\">arXiv:2610.20405 embeds a neural-network deep convection scheme directly into the Community Atmosphere Model (CAM)</a>, correcting longstanding precipitation and diurnal-cycle biases. Two new data-infrastructure papers extend the AI weather ecosystem: the ocean-focused <a href=\"https://arxiv.org/abs/2609.08606\" target=\"_blank\" rel=\"noopener\">Neptune (arXiv:2609.08606)</a> for global ocean subseasonal prediction, and regional datasets <a href=\"https://arxiv.org/abs/2609.08241\" target=\"_blank\" rel=\"noopener\">EastAsiaClimateExtremes</a> and <a href=\"https://arxiv.org/abs/2509.00653\" target=\"_blank\" rel=\"noopener\">IndiaWeatherBench</a> aimed at S2S prediction over data-sparse domains.",
+      "items": [
+        {
+          "source": "NPR / WFAE",
+          "date": "2026-10-26",
+          "headline": "How AI Is Transforming Hurricane Forecasts: Google DeepMind Called Isaias&rsquo;s Florida Panhandle Landfall When NHC Was Tracking Southeast Louisiana; But AI Lagged 20&ndash;40% on Intensity; Forecasters Uneasy with &ldquo;Black Box&rdquo; Guidance",
+          "url": "https://www.npr.org/2026/10/26/nx-s1-6012820/ai-hurricane-forecast-google-deepmind-isaias",
+          "summary": "NPR's October 26 investigation found that Google DeepMind's AI model predicted Hurricane Isaias would make landfall on the Florida Panhandle early and correctly, while conventional NHC guidance initially placed the storm on a track toward southeastern Louisiana. However, the AI model showed 20–40% less skill than the NHC on intensity forecasting. The NHC began incorporating DeepMind's model into official guidance in 2025, where it quickly ranked among the top track predictors. Forecasters' key concern: they cannot diagnose why the model is right or wrong in any specific case, limiting diagnostic confidence. The model also failed on Hurricane Simon in the eastern Pacific, illustrating the risks of relying on pattern-matching in novel meteorological regimes."
+        },
+        {
+          "source": "arXiv / physics.ao-ph",
+          "date": "2026-10-03",
+          "headline": "arXiv:2610.04558 &mdash; ClimateBench v2.0: Probabilistic Climate Model Benchmarking with Post-2015 Out-of-Sample Test Set and Mandatory Multi-Member Ensembles",
+          "url": "https://arxiv.org/abs/2610.04558",
+          "meta": "arXiv:2610.04558 · physics.ao-ph",
+          "summary": "ClimateBench v2.0 is a rigorous update to the ML-for-climate benchmarking framework. It reserves all observational data after 2015 for out-of-sample evaluation — a stricter standard than prior versions — and requires submissions to include multiple ensemble members to enable proper probabilistic scoring. The benchmark is designed to compare AI emulators and hybrid physics-ML climate models on fair, climatologically relevant metrics, preventing overfitting to the historical training period."
+        },
+        {
+          "source": "arXiv / physics.ao-ph",
+          "date": "2026-10-14",
+          "headline": "arXiv:2610.20405 &mdash; Neural-Network Deep Convection Scheme in Community Atmosphere Model (CAM): Reduced Light-Rain Bias, Extreme Precipitation Improved, Late-Afternoon Diurnal Peak Corrected",
+          "url": "https://arxiv.org/abs/2610.20405",
+          "meta": "arXiv:2610.20405 · physics.ao-ph",
+          "summary": "This paper integrates a neural-network parameterization of deep convection into the Community Atmosphere Model (CAM), the atmospheric component of CESM. The NN scheme reduces systematic biases in light-precipitation frequency and extreme-precipitation intensity, and corrects the longstanding misrepresentation of the tropical land precipitation diurnal cycle — shifting it toward the observed late-afternoon peak. Results suggest that data-driven convection parameterizations can correct physical biases that have resisted decades of manual tuning in bulk schemes."
+        },
+        {
+          "source": "arXiv / physics.ao-ph",
+          "date": "2026-09-12",
+          "headline": "arXiv:2609.08606 &mdash; Neptune: Transformer-Based AI Model for Global Ocean Subseasonal Prediction; State-of-the-Art Skill at 2&ndash;8 Week Lead Times",
+          "url": "https://arxiv.org/abs/2609.08606",
+          "meta": "arXiv:2609.08606 · physics.ao-ph",
+          "summary": "Neptune is a transformer-based deep-learning model for global ocean subseasonal prediction, providing a dedicated ocean counterpart to the growing family of AI atmospheric models (GraphCast, Pangu, FourCastNet). The model targets the 2–8-week timescale where ocean memory is most relevant for medium-range weather and seasonal prediction. The paper benchmarks Neptune against operational ocean forecast systems, reporting state-of-the-art AI-driven skill for sea surface temperature, mixed layer depth and subsurface anomaly prediction."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-09-12",
+          "headline": "arXiv:2609.08241 &mdash; EastAsiaClimateExtremes: AI-Ready Dataset of Weekly Atmospheric and Oceanic Extremes over East Asia for Subseasonal Prediction Research",
+          "url": "https://arxiv.org/abs/2609.08241",
+          "meta": "arXiv:2609.08241",
+          "summary": "EastAsiaClimateExtremes provides a curated, AI-ready dataset of weekly atmospheric and oceanic extreme events over East Asia, specifically designed for subseasonal-to-seasonal (S2S) prediction research. The dataset covers variables relevant to extreme heat, cold, rainfall and drought events across the densely populated East Asian domain, addressing a significant gap in publicly available, regionally focused S2S training and evaluation data."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-09-01",
+          "headline": "arXiv:2509.00653 &mdash; IndiaWeatherBench: Dataset and Benchmark for Data-Driven Regional Weather Forecasting over India; Monsoon Dynamics, Complex Terrain, Data Gaps",
+          "url": "https://arxiv.org/abs/2509.00653",
+          "meta": "arXiv:2509.00653",
+          "summary": "IndiaWeatherBench fills a gap in global ML weather benchmarks by focusing on high-resolution regional forecasting over India, where monsoon dynamics, complex terrain (Himalayas, Western Ghats) and data-sparse regions pose distinctive challenges for data-driven models. The benchmark includes evaluation metrics tailored to Indian subcontinent weather patterns and provides a standard test set for comparing regional downscaling and forecasting approaches — directly relevant to an agriculture- and water-security-critical domain."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-10-12",
+          "title": "WindBorne Systems Wins Up to US$49M US Air Force Contract for Global Autonomous Balloon Atmospheric Data; Sole-Source Award to 557th Weather Wing Through 2033",
+          "body_html": "<a href=\"https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/\" target=\"_blank\" rel=\"noopener\">WindBorne Systems</a> announced a sole-source contract with the US Air Force worth up to <strong>$48.7&nbsp;million through September 2033</strong>, awarded to the 557th Weather Wing and 16th Weather Squadron &mdash; the company&rsquo;s largest contract to date. The deal covers atmospheric data from WindBorne&rsquo;s fleet of ~700 autonomous pressure-altitude-steering weather balloons, which the AF determined only WindBorne could uniquely supply. This comes on top of the company&rsquo;s <strong>$37M Series B</strong> (Khosla Ventures / Galvanize, August 2026, $250M post-money valuation) and follows WindBorne becoming the first operator ever to fly an unpowered autonomous system into a typhoon eye wall during Super Typhoon Champi &mdash; a significant validation of its hardware in extreme conditions.",
+          "source_html": "<a href=\"https://techcrunch.com/2026/10/12/windborne-wins-a-hefty-us-air-force-contract-for-its-balloon-data/\" target=\"_blank\" rel=\"noopener\">TechCrunch</a>"
+        },
+        {
+          "date": "2026-10-15",
+          "title": "Rabot Energy Closes &euro;50M Series B (Endeit / DeepTech &amp; Climate Fund) for Home-Battery Virtual Power Plant in Germany; 200,000+ Customers; Rabot Flow Bundles Battery, Smart Meter, Dynamic Tariff",
+          "body_html": "Berlin-based <a href=\"https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/\" target=\"_blank\" rel=\"noopener\">Rabot Energy raised &euro;50M (&asymp;US$56M) in a Series&nbsp;B led by Endeit Capital and the DeepTech &amp; Climate Fonds (DTCF)</a>, with HV Capital, HTGF, Bosch Ventures, CNI, Acurio Ventures and vent.io participating. The company&rsquo;s <em>Rabot Flow</em> product bundles a plug-and-play home battery with a smart meter and a dynamic electricity tariff &mdash; no rooftop solar required, opening the VPP model to renters. Rabot aggregates connected household batteries into a grid-flexibility virtual power plant; its stated target is <strong>1 million customers</strong>, up from 200,000+ today.",
+          "source_html": "<a href=\"https://tech.eu/2026/10/15/rabot-energy-secures-50m-to-transform-homes-into-a-virtual-power-plant/\" target=\"_blank\" rel=\"noopener\">tech.eu</a> / <a href=\"https://www.esgtoday.com/?p=26379\" target=\"_blank\" rel=\"noopener\">ESG Today</a>"
+        },
+        {
+          "date": "2026-10-14",
+          "title": "Insurers Pressed to &ldquo;Manage Down&rdquo; Climate Numbers; US Non-Renewals Top Two Million; Actuaries Report Pressure to Shave CAT Projections to Keep Business Moving; Verisk Raises Avg Annual Loss Estimate to $171&nbsp;Billion",
+          "body_html": "<a href=\"https://www.insurancebusinessmag.com/us/news/catastrophe/insurers-pressed-to-manage-down-climate-numbers-insiders-warn-as-us-nonrenewals-top-two-million-593487.aspx\" target=\"_blank\" rel=\"noopener\">Insurance Business Magazine</a> reports that catastrophe modelers and actuaries at some UK and European (re)insurers are being pressured by management to reduce climate-adjusted loss projections so business continues to flow &mdash; a claim sourced anonymously from current and former executives in property-casualty, reinsurance and broking. The disclosure comes as US home-insurance non-renewals have topped <strong>two million policies</strong>, a record driven by carriers exiting wildfire- and flood-prone markets. Separately, <strong>Verisk&rsquo;s September 2026 report</strong> raised its estimate of US expected insured loss in an average year to <strong>$171&nbsp;billion</strong> &mdash; the highest figure it has ever published. California&rsquo;s Sustainable Insurance Strategy, which allows carriers to use forward-looking wildfire models in rate filings in exchange for write commitments in distressed ZIP codes, is being closely watched as a potential model for other high-risk states.",
+          "source_html": "<a href=\"https://www.insurancebusinessmag.com/us/news/catastrophe/insurers-pressed-to-manage-down-climate-numbers-insiders-warn-as-us-nonrenewals-top-two-million-593487.aspx\" target=\"_blank\" rel=\"noopener\">Insurance Business</a>"
+        },
+        {
+          "date": "2026-10-20",
+          "title": "Catastrophe Bond Market Sets H1 2026 Record Near US$18&nbsp;Billion Across 83 Deals; Spreads Compress to 2.4&times; Modeled Expected Loss (Down from 3.71&times; in 2024); ILS Capital Normalising Nat-Cat Risk",
+          "body_html": "A <a href=\"https://caia.org/blog/2026/10/20/catastrophe-models-and-capital-markets-in-the-insurance-industry/\" target=\"_blank\" rel=\"noopener\">CAIA analysis</a> finds that cat bond issuance in H1&nbsp;2026 reached a record <strong>~$18&nbsp;billion across 83 transactions</strong>. Average spreads fell to <strong>2.4&times; modeled expected loss</strong>, down from 3.71&times; in 2024, as ILS capital re-rated nat-cat risk following consecutive light-loss years. The CAIA notes a structural divergence: reinsurers and cat-bond investors now use newer, higher-loss catastrophe model versions while many US primary insurers still rely on older ones, creating material basis risk in how the same event is priced across the market stack. <a href=\"https://www.insurancebusinessmag.com/us/news/catastrophe/insurers-pressed-to-manage-down-climate-numbers-insiders-warn-as-us-nonrenewals-top-two-million-593487.aspx\" target=\"_blank\" rel=\"noopener\">Moody&rsquo;s RMS also migrated its North Atlantic hurricane and US earthquake models to a high-definition framework in October</a>, adding further impetus for primary carriers to update their loss assumptions.",
+          "source_html": "<a href=\"https://caia.org/blog/2026/10/20/catastrophe-models-and-capital-markets-in-the-insurance-industry/\" target=\"_blank\" rel=\"noopener\">CAIA</a>"
+        }
+      ]
+    }
+  }
+}
