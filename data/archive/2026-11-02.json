@@ -1,0 +1,297 @@
+{
+  "digest_date": "2026-11-02",
+  "metar": "DIGEST 020715Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "With <a href=\"https://www.un.org/en/climatechange/cop31\" target=\"_blank\" rel=\"noopener\">COP31 opening in Antalya just seven days away on November&nbsp;9</a>, the pre-summit landscape sharpened on November&nbsp;1: <a href=\"https://kathmandupost.com/climate-environment/2026/11/01/nepal-and-bhutan-propose-dedicated-cop31-agenda-on-1-5-c-warming-in-mountain-regions\" target=\"_blank\" rel=\"noopener\">Nepal and Bhutan jointly proposed a dedicated agenda item on 1.5&deg;C warming in mountain regions</a>, and <a href=\"https://johnmenadue.com/post/2026/11/as-cop31-approaches-a-stark-warning-climate-change-is-killing-us/\" target=\"_blank\" rel=\"noopener\">nearly 150 health experts called for climate change to be formally recognised as a global health emergency</a>. In a significant pre-negotiation signal, <a href=\"https://oilprice.com/Latest-Energy-News/World-News/EU-Rules-Out-New-Climate-Finance-Pledges-at-COP31.html\" target=\"_blank\" rel=\"noopener\">the EU confirmed it will not make new climate finance pledges at Antalya</a>, citing rising domestic energy costs &mdash; a stance set to widen the rift with developing nations demanding tripled adaptation finance. The <a href=\"https://climate.copernicus.eu/climate-bulletin\" target=\"_blank\" rel=\"noopener\">official Copernicus C3S October 2026 temperature bulletin</a> had not yet been published as of November&nbsp;2, but preliminary ERA5 projections continue to place October 2026 as the warmest October on record at approximately 1.76&deg;C above preindustrial levels &mdash; extending the unbroken run above the Paris 1.5&deg;C threshold to 13 consecutive months.",
+      "items": [
+        {
+          "source": "Kathmandu Post",
+          "date": "2026-11-01",
+          "headline": "Nepal and Bhutan Propose Dedicated COP31 Agenda Item on 1.5&deg;C Warming in Mountain Regions; Nepal Pushes &lsquo;Sagarmatha to Sea&rsquo; Alliance",
+          "url": "https://kathmandupost.com/climate-environment/2026/11/01/nepal-and-bhutan-propose-dedicated-cop31-agenda-on-1-5-c-warming-in-mountain-regions",
+          "summary": "Nepal's Agriculture, Forests and Environment Minister Geeta Chaudhary presented a joint Nepal–Bhutan proposal for a dedicated COP31 agenda item on '1.5°C Warming in Mountains,' citing ICIMOD research showing mountain elevations experience warming rates up to 2.2°C for every 1.5°C of global mean warming (elevation-dependent warming). Nepal's foreign minister separately outlined priorities including regular high-level mountain dialogues, a dedicated mountain work programme, and systematic integration of mountain vulnerabilities into global climate frameworks. Nepal has also proposed the 'Sagarmatha to Sea' partnership linking Himalayan and Pacific island states on shared risks from glacial melt and sea-level rise. Bangladesh, Bhutan and Nepal filed a joint UNFCCC submission in July 2026 arguing that Himalayan glacial melt cascades into downstream flood and sea-level impacts borne disproportionately by Bangladesh."
+        },
+        {
+          "source": "John Menadue&rsquo;s New Paradigm",
+          "date": "2026-11-01",
+          "headline": "~150 Climate and Health Experts Call for Climate Change to Be Recognised as a Global Health Emergency Ahead of COP31",
+          "url": "https://johnmenadue.com/post/2026/11/as-cop31-approaches-a-stark-warning-climate-change-is-killing-us/",
+          "summary": "Nearly 150 climate and health experts published a joint call ahead of COP31 urging negotiators to formally recognise climate change as a global health emergency, arguing that the current diplomatic framing significantly underestimates the mortality and morbidity driven by extreme heat, expanding infectious disease ranges, food insecurity, and compounding extreme events. The call is part of a broader 'health and climate' advocacy campaign timed to the November 9 Antalya summit opening."
+        },
+        {
+          "source": "OilPrice.com",
+          "date": "2026-10-29",
+          "headline": "EU Rules Out New Climate Finance Pledges at COP31, Citing Rising Energy Costs; Africa Pushes for Tripled Adaptation Finance",
+          "url": "https://oilprice.com/Latest-Energy-News/World-News/EU-Rules-Out-New-Climate-Finance-Pledges-at-COP31.html",
+          "summary": "The European Union confirmed ahead of COP31 that it will not offer new climate finance commitments at the summit, citing rising domestic energy costs. African delegations have called for a tripling of adaptation finance commitments, creating a potential flashpoint in the negotiations. The EU's Council conclusions of October 12 set five priorities for Antalya: operationalising the New Collective Quantified Goal (NCQG) on climate finance, accelerating NDC ambition to align with 1.5°C, implementing the Global Goal on Adaptation, progressing the Loss and Damage Fund, and advancing the 35×35 global electrification pledge."
+        },
+        {
+          "source": "Scientific American / Copernicus C3S",
+          "date": "2026-10-31",
+          "headline": "October 2026 Projected Warmest October in ERA5 Record at ~1.76&deg;C Above Preindustrial; 13th Consecutive Month Above Paris 1.5&deg;C Threshold; Official C3S Bulletin Pending",
+          "url": "https://www.scientificamerican.com/article/this-october-is-on-track-to-be-the-hottest-ever-recorded/",
+          "summary": "October 2026 closed as the projected warmest October in the ERA5 instrumental record, with the Dessler–Hausfather Climate Dashboard projecting a monthly anomaly of approximately 1.76°C above preindustrial October averages — a clear margin above October 2023, the previous record. The result would mark the 13th consecutive month with global temperatures above the 1.5°C Paris Agreement threshold. The compounding factors are the record-strength 2026 El Niño and the continuing rise in background greenhouse gas concentrations. The official Copernicus C3S monthly climate bulletin had not been published as of November 2."
+        },
+        {
+          "source": "UN News",
+          "date": "2026-10-30",
+          "headline": "UN Deputy Secretary-General: &lsquo;Overshoot Is Not a Reason to Surrender&rsquo; Climate Ambition Ahead of COP31",
+          "url": "https://news.un.org/en/story/2026/10/1168555",
+          "summary": "UN Deputy Secretary-General Amina Mohammed called on world governments ahead of COP31 not to use potential temperature overshoot of the 1.5°C Paris goal as a rationale for stepping back from climate commitments, emphasising that the window to limit catastrophic warming remains open and calling for accelerated emissions reductions, adaptation investments, and operationalisation of the Loss and Damage Fund."
+        },
+        {
+          "source": "Turkish Minute / The Print",
+          "date": "2026-10-30",
+          "headline": "Brazil&rsquo;s Lula and UK PM Burnham Confirm Attendance at COP31 World Leaders Summit on November&nbsp;11&ndash;12",
+          "url": "https://www.turkishminute.com/2026/10/31/brazils-lula-to-attend-cop31-climate-summit-in-turkey/",
+          "summary": "Brazil's President Luiz Inácio Lula da Silva and UK Prime Minister Andy Burnham confirmed they will attend the COP31 World Leaders Summit in Antalya on November 11–12, incrementally raising a tally that earlier reporting placed at about 77 confirmed heads of state — roughly a third fewer than at COP28 in Dubai. Brazil, as incoming host of COP32 in Belém in 2027, has a strong interest in the continuity of global climate negotiations."
+        },
+        {
+          "source": "The Planet Brief / UNFCCC",
+          "date": "2026-10-26",
+          "headline": "Pacific Island Leaders Issue Taku Pakasoa Declaration Ahead of COP31: Emissions Ambition, Climate Finance, Ocean Protection",
+          "url": "https://theplanetbrief.com/carbon/climate-policy/cop31/",
+          "summary": "Pacific island leaders issued the Taku Pakasoa Declaration as a unified political position for COP31 in Antalya, covering emissions reduction ambition, scaled-up climate finance for adaptation and loss-and-damage, and ocean protection provisions. Pacific nations have historically been among the most forceful advocates for the 1.5°C temperature limit and for stronger finance commitments from developed countries."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Cyclone Murasu &mdash; Bay of Bengal Severe Cyclonic Storm; Landfall Imminent on Andhra Pradesh Coast Tonight; 100&ndash;110&nbsp;km/h Winds",
+          "status": "Active &mdash; Approaching Landfall Between Nellore and Narsapur (Andhra Pradesh) During Night of November&nbsp;2 / Early November&nbsp;3; <a href=\"https://www.indiatvnews.com/news/india/cyclone-murasu-intensifies-into-severe-cyclonic-storm-andhra-pradesh-tamil-nadu-and-odisha-on-high-alert-landfall-likely-by-early-november-3-2026-11-02-1058461\" target=\"_blank\" rel=\"noopener\">IMD Reports 100&ndash;110&nbsp;km/h Sustained Winds, Gusts to 120&nbsp;km/h, West-Northwest Movement at 25&nbsp;km/h</a>; Sri Lanka Issued Red Warnings for Deep-Sea Areas",
+          "impact": "IMD issued warnings for the south Andhra Pradesh coast. Fishermen banned from west-central Bay of Bengal through November 4. Rapid intensification risk flagged by meteorologists given highly favourable sea-surface temperatures. Second Bay of Bengal named cyclone in under one week, following Cyclone Arnab’s October 28 landfall on the same coastline. Andhra Pradesh, Tamil Nadu and Odisha on high alert."
+        },
+        {
+          "name": "Typhoon In-fa (JTWC&nbsp;30W) &mdash; Western Pacific; Weakened Further to 140&nbsp;km/h; Now 2,175&nbsp;km East of Philippines Tracking Westward; No PAR Impact",
+          "status": "Active &mdash; <a href=\"https://thechronicle.com.ph/typhoon-in-fa-unlikely-to-enter-par-as-northeast-monsoon-affects-northern-luzon/\" target=\"_blank\" rel=\"noopener\">PAGASA November&nbsp;2 Advisory: 2,175&nbsp;km East of Extreme Northern Luzon; 140&nbsp;km/h Sustained (Down from 155&nbsp;km/h on Nov 1), Gusts to 170&nbsp;km/h; Moving West-Northwestward at ~15&nbsp;km/h; Low Probability of PAR Entry</a>. <a href=\"https://astig.ph/pagasa-low-pressure-area-par-typhoon-in-fa-monitoring-2026/\" target=\"_blank\" rel=\"noopener\">A separate low-pressure area inside PAR east of Eastern Visayas is under monitoring but has not yet been named or given a wind signal.</a>",
+          "impact": "No direct Philippines impact expected. Northeast monsoon bringing isolated light rains to Ilocos Region, Cordillera Administrative Region, and Cagayan Valley. Shipping warnings remain in force for the western North Pacific."
+        },
+        {
+          "name": "Southeast Asian Peatland Haze (Indonesia / Borneo / Sumatra) &mdash; 120,000+ Hotspots; Indonesia&ndash;Singapore Joint Task Force Active; Schools Closed",
+          "status": "Ongoing &mdash; <a href=\"https://theconversation.com/indonesias-el-nino-driven-peat-fires-are-choking-the-region-and-releasing-centuries-of-stored-carbon-294838\" target=\"_blank\" rel=\"noopener\">Joint Bilateral Task Force activated October&nbsp;30; schools closed in hotspot zones across Malaysia and Indonesia; air quality in unhealthy to very unhealthy range; more than 333,470 acute respiratory cases across seven Indonesian provinces</a>",
+          "impact": "~40 million people region-wide exposed to elevated PM2.5. Indonesia has imposed a moratorium on new clearing permits for 66 million hectares of primary forest and peatland. Underground peat fires at depths up to 8 m continue even as the wet-season transition begins. CO₂ release expected to drive a measurable atmospheric spike in November–December ERA5 data."
+        }
+      ],
+      "overview_html": "The most urgent new development is <a href=\"https://www.indiatvnews.com/news/india/cyclone-murasu-intensifies-into-severe-cyclonic-storm-andhra-pradesh-tamil-nadu-and-odisha-on-high-alert-landfall-likely-by-early-november-3-2026-11-02-1058461\" target=\"_blank\" rel=\"noopener\">Cyclone Murasu, which intensified into a severe cyclonic storm on November&nbsp;2 and is bearing down on the Andhra Pradesh coast between Nellore and Narsapur, with landfall expected late tonight or in the early hours of November&nbsp;3</a>. It is <a href=\"https://en.wikipedia.org/wiki/Cyclone_Murasu\" target=\"_blank\" rel=\"noopener\">the ninth depression and the second named cyclone of the 2026 North Indian Ocean season</a>, arriving fewer than six days after Cyclone Arnab struck the same region &mdash; an unusually compressed sequence. IMD forecasts 100&ndash;110&nbsp;km/h sustained winds with gusts to 120&nbsp;km/h at landfall. In the western Pacific, <a href=\"https://thechronicle.com.ph/typhoon-in-fa-unlikely-to-enter-par-as-northeast-monsoon-affects-northern-luzon/\" target=\"_blank\" rel=\"noopener\">Typhoon In-fa weakened further to 140&nbsp;km/h and is now tracking westward at 15&nbsp;km/h, 2,175&nbsp;km east of the Philippines</a> &mdash; no PAR entry is expected. <a href=\"https://astig.ph/pagasa-low-pressure-area-par-typhoon-in-fa-monitoring-2026/\" target=\"_blank\" rel=\"noopener\">PAGASA is separately monitoring a low-pressure area inside PAR east of Eastern Visayas</a> that has not yet been named.",
+      "items": [
+        {
+          "source": "India TV News / IMD",
+          "date": "2026-11-02",
+          "headline": "Cyclone Murasu Intensifies into Severe Cyclonic Storm; Andhra Pradesh Landfall Tonight / Early November&nbsp;3; 100&ndash;110&nbsp;km/h Winds",
+          "url": "https://www.indiatvnews.com/news/india/cyclone-murasu-intensifies-into-severe-cyclonic-storm-andhra-pradesh-tamil-nadu-and-odisha-on-high-alert-landfall-likely-by-early-november-3-2026-11-02-1058461",
+          "summary": "Cyclone Murasu, which formed from a low-pressure area over the Andaman Sea on October 29, intensified into a severe cyclonic storm on November 2 over the west-central Bay of Bengal. IMD's latest bulletin places the system moving west-northwestward at 25 km/h and forecast to cross the south Andhra Pradesh coast between Nellore and Narsapur at or after midnight on November 2. Sustained winds of 100–110 km/h with gusts to 120 km/h are forecast at landfall. It is the ninth depression and the second named cyclone of the 2026 North Indian Ocean season, arriving fewer than six days after Cyclone Arnab struck the same general region. Meteorologists flagged a risk of rapid intensification given the highly favourable sea-surface-temperature environment of the west-central Bay. Sri Lanka issued red warnings for deep-sea areas; fishermen have been warned to stay out of the sea through November 4."
+        },
+        {
+          "source": "PAGASA / The Chronicle (Philippines)",
+          "date": "2026-11-02",
+          "headline": "Typhoon In-fa Weakened Further to 140&nbsp;km/h; Now 2,175&nbsp;km East of Philippines; PAGASA Monitors New LPA Inside PAR East of Eastern Visayas",
+          "url": "https://thechronicle.com.ph/typhoon-in-fa-unlikely-to-enter-par-as-northeast-monsoon-affects-northern-luzon/",
+          "summary": "PAGASA's November 2 5 a.m. advisory placed Typhoon In-fa at 2,175 km east of extreme Northern Luzon with maximum sustained winds of 140 km/h and gusts to 170 km/h — a further weakening from the 155 km/h reported in the November 1 bulletin. The storm is moving west-northwestward at about 15 km/h. PAGASA maintains a low probability of PAR entry. Separately, a low-pressure area has developed inside PAR east of Eastern Visayas; it has not yet been named or given a wind signal. PAGASA says this system is also being monitored."
+        },
+        {
+          "source": "Down to Earth / ABC News",
+          "date": "2026-10-28",
+          "headline": "Cyclone Arnab Aftermath: Landfall Oct&nbsp;28 Near Yanam, Andhra Pradesh; 3+ Deaths; Strongest Post-Monsoon Bay of Bengal Cyclone Since 2014; Weakening Inland",
+          "url": "https://www.downtoearth.org.in/natural-disasters/cyclone-arnabs-aftermath-lives-lost-heavy-rainfall-and-inland-weakening",
+          "summary": "Cyclone Arnab crossed the Andhra Pradesh coast near Yanam during the early morning of October 28 as a 'very severe cyclonic storm' — IMD's third-highest category — with maximum sustained winds of 125–135 km/h and gusts to 150 km/h, confirmed as the first named cyclone of the 2026 North Indian Ocean season and the strongest post-monsoon Bay of Bengal storm since 2014. At least three deaths and thousands of evacuations were reported across coastal Andhra Pradesh. The system has since dissipated inland. Residual moisture brought heavy rains to interior districts through November 1. The rapid follow-on cyclogenesis of Murasu reflects anomalously warm Bay of Bengal sea-surface temperatures driven by the record 2026 El Niño."
+        },
+        {
+          "source": "Malay Mail / The Conversation",
+          "date": "2026-10-31",
+          "headline": "Southeast Asian Peatland Haze: Indonesia&ndash;Singapore Joint Task Force Active; ~40M People Exposed; 120,000+ Hotspots; Schools Closed",
+          "url": "https://theconversation.com/indonesias-el-nino-driven-peat-fires-are-choking-the-region-and-releasing-centuries-of-stored-carbon-294838",
+          "summary": "The 2026 Southeast Asian peatland haze crisis continues into early November with the Indonesia–Singapore joint task force operational following its October 30 activation. More than 120,000 satellite fire hotspot detections across Indonesia so far this season — approximately seven times the 2025 full-season total — are driven by the record El Niño-linked drought. Underground peat fires at depths up to 8 metres continue even as the wet-season transition begins. Approximately 40 million people region-wide are exposed to elevated PM2.5. Indonesia has recorded more than 333,470 acute respiratory cases across seven provinces and has imposed a moratorium on new clearing permits for 66 million hectares of primary forest and peatland."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "Italy&rsquo;s solar market posted a significant milestone: <a href=\"https://solarquarter.com/2026/11/02/italy-adds-4-83-gw-of-solar-capacity-in-first-nine-months-of-2026-as-energy-storage-nears-20-gwh\" target=\"_blank\" rel=\"noopener\">4.83&nbsp;GW of new photovoltaic capacity was added in the first nine months of 2026, bringing cumulative installed solar to 48.35&nbsp;GW while co-installed and standalone battery storage nationally nears 20&nbsp;GWh</a>. In India, <a href=\"https://www.energetica-india.net/news/seci-seeks-bids-for-4-gw16-gwh-battery-storage-projects\" target=\"_blank\" rel=\"noopener\">SECI opened its largest-yet standalone battery storage tender at 4&nbsp;GW/16&nbsp;GWh split across Rajasthan and Gujarat</a>, a major milestone towards the government&rsquo;s 27,000&nbsp;MW BESS target by FY2030. Equinor disclosed <a href=\"https://maritime-executive.com/article/equinor-blames-us-shipbuilding-delays-for-late-offshore-wind-installation\" target=\"_blank\" rel=\"noopener\">a first-power delay on its 810&nbsp;MW Empire Wind project to H1&nbsp;2027</a> due to U.S. domestic shipbuilding constraints, though total capex is unchanged and financing is in place.",
+      "items": [
+        {
+          "source": "SolarQuarter / Italia Solare / TaiyangNews",
+          "date": "2026-10-27",
+          "headline": "Italy Adds 4.83&nbsp;GW Solar PV in First Nine Months of 2026; Cumulative Capacity Reaches 48.35&nbsp;GW; Energy Storage Nears 20&nbsp;GWh",
+          "url": "https://solarquarter.com/2026/11/02/italy-adds-4-83-gw-of-solar-capacity-in-first-nine-months-of-2026-as-energy-storage-nears-20-gwh",
+          "summary": "Italia Solare reported that Italy installed 4.83 GW of photovoltaic capacity across 147,632 projects in the first nine months of 2026, with Q3 alone contributing 1.742 GW — a 37% year-on-year increase. Cumulative installed solar reached 48.35 GW. Co-installed and standalone battery energy storage added 1,953 MWh year-to-date, bringing the national connected storage total to 19.98 GWh (8.34 GW power capacity) at end-September. Utility-scale solar accounted for 46% of new PV capacity in the period. Italy's annual renewable installation target is 8.3 GW."
+        },
+        {
+          "source": "Energetica India",
+          "date": "2026-11-02",
+          "headline": "India&rsquo;s SECI Launches Largest-Yet 4&nbsp;GW/16&nbsp;GWh Standalone Battery Storage Tender for Rajasthan and Gujarat",
+          "url": "https://www.energetica-india.net/news/seci-seeks-bids-for-4-gw16-gwh-battery-storage-projects",
+          "summary": "The Solar Energy Corporation of India (SECI) invited bids for 4,000 MW/16,000 MWh of standalone battery energy storage systems, split between 2,500 MW/10,000 MWh in Rajasthan and 1,500 MW/6,000 MWh in Gujarat (reference SECI/C&P/IPP/15/0013/26-27). The tender is the largest standalone BESS procurement SECI has opened to date, directly supporting the Union Power Ministry's target of 27,000 MW of battery storage capacity by FY2030. The bid submission deadline is November 24."
+        },
+        {
+          "source": "Maritime Executive / Renewable Energy World",
+          "date": "2026-11-01",
+          "headline": "Equinor Delays Empire Wind First Power to H1&nbsp;2027 Due to U.S. Shipbuilding Constraints on Installation Vessels",
+          "url": "https://maritime-executive.com/article/equinor-blames-us-shipbuilding-delays-for-late-offshore-wind-installation",
+          "summary": "Equinor disclosed that its 810 MW Empire Wind offshore wind project off New York — approximately 80% complete — will not deliver first power until the first half of 2027, delaying from an earlier 2026 target. The company attributed the setback to U.S. domestic shipbuilding requirements for installation support vessels, not to project or financial issues. Total capital expenditure is unchanged, with spending shifting from 2026 into 2027. Empire Wind 1 has separately secured a $3 billion+ project financing package and entered full execution mode."
+        },
+        {
+          "source": "SolarQuarter",
+          "date": "2026-11-02",
+          "headline": "DCM Shriram Commissions 68&nbsp;MW Wind-Solar Hybrid Renewable Project via JSW Renew Energy",
+          "url": "https://solarquarter.com/2026/11/02/dcm-shriram-completes-commissioning-of-68-mw-wind-solar-hybrid-renewable-energy-project",
+          "summary": "DCM Shriram completed the commissioning of a 68 MW wind-solar hybrid renewable energy project developed in partnership with JSW Renew Energy, adding hybrid generation capacity to its power procurement portfolio. The project reflects the accelerating trend toward co-located hybrid systems that improve capacity utilisation and reduce the need for additional grid infrastructure in India's fast-growing renewable sector."
+        },
+        {
+          "source": "PV Tech / TaiyangNews",
+          "date": "2026-10-28",
+          "headline": "Masdar Signs MoU with Invest New Zealand for Up to NZ$1&nbsp;Billion (~US$585&nbsp;M) in Solar PV, Wind and Battery Storage Investment",
+          "url": "https://www.pv-tech.org/masdar-explores-nz1-billion-solar-pv-wind-energy-storage-investment-in-new-zealand/",
+          "summary": "UAE-based renewable developer Masdar signed a memorandum of understanding with New Zealand's investment promotion agency Invest New Zealand to explore up to NZ$1 billion (approximately US$585 million) in solar PV, wind and battery storage investment. The MoU is linked to the New Zealand–UAE Comprehensive Economic Partnership Agreement signed in 2024 and is open to co-investment with local and Māori businesses. New Zealand is targeting a doubling of its renewable electricity generation capacity by 2040. The arrangement is a memorandum, not a binding investment commitment."
+        },
+        {
+          "source": "Solar Power Portal / FarmingUK",
+          "date": "2026-10-27",
+          "headline": "UK Government Grants Development Consent for 800&nbsp;MW Great North Road Solar Farm in Nottinghamshire &mdash; One of UK&rsquo;s Largest-Ever Solar Approvals",
+          "url": "https://www.solarpowerportal.co.uk/solar-planning/westminster-approves-800mw-solar-farm-in-lincolnshire",
+          "summary": "The UK government granted a Development Consent Order for the 800 MW Great North Road Solar Farm in Nottinghamshire on October 27, approved as a Nationally Significant Infrastructure Project under the Planning Act 2008. Developer Elements Green submitted the application in June 2025. The site covers approximately 1,765 hectares near Newark, with around 1,025 hectares allocated to solar arrays. The project was approved despite objections from local communities and farming groups over the loss of productive agricultural land."
+        },
+        {
+          "source": "Iberdrola",
+          "date": "2026-10-27",
+          "headline": "Iberdrola Prices $1.6&nbsp;Billion Dual-Tranche US Green Bonds at 5.40% (3-Year) and 5.85% (7-Year) for US Transmission and Renewables",
+          "url": "https://www.iberdrola.com/press-room/news/detail/iberdrola-issues-1-point-6bn-green-bonds-us-market",
+          "summary": "Iberdrola priced $1.6 billion in green bonds in the US market, comprising two tranches: $800 million of 3-year notes at a 5.40% fixed coupon (maturing November 2029) and $800 million of 7-year notes at 5.85% (maturing November 2033). Proceeds will be applied to US electricity transmission infrastructure and renewable energy projects. Total book demand exceeded $2 billion. The deal closes November 4."
+        },
+        {
+          "source": "Brussels Times / European Commission",
+          "date": "2026-10-26",
+          "headline": "EU Launches T-MED Investment Platform &mdash; Up to &euro;4.5&nbsp;Billion in EFSD+ Guarantees for Mediterranean Renewables, Green Hydrogen, Grids and Storage",
+          "url": "https://www.brusselstimes.com/2378854/eu-launches-e4-5b-platform-to-supercharge-mediterranean-renewable-energy-projects",
+          "summary": "The European Commission launched the Trans-Mediterranean Investment Platform (T-MED), providing up to €4.5 billion in EU guarantee capacity through EFSD+ to mobilise private capital for renewable electricity, green hydrogen, cross-border interconnectors, energy storage and clean technology manufacturing across the Mediterranean basin. T-MED sits within the Pact for the Mediterranean initiative targeting €25 billion in total investment by 2035."
+        },
+        {
+          "source": "ESG Today / PV Magazine USA",
+          "date": "2026-10-27",
+          "headline": "Optivolt Raises $32&nbsp;Million Series&nbsp;A to Scale Module-Level Solar Power Electronics &mdash; 99.4% Conversion Efficiency Claimed",
+          "url": "https://www.esgtoday.com/optivolt-raises-32-million-to-make-solar-panels-smarter/",
+          "summary": "San Francisco startup Optivolt raised $32 million in a Series A led by VXI Capital, with participation from RA Capital, Valo Ventures, Atlas Innovate and former SunPower CEO Tom Werner. The company's Power Balancer dynamically redistributes current among solar cell groups in real time to recover output lost to shading and mismatch, claiming 99.4% conversion efficiency. Proceeds fund manufacturing expansion. Total funding: $42 million."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "Two new <em>Geophysical Research Letters</em> publications this week sharpen understanding of climate feedbacks: one finds that <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL122135\" target=\"_blank\" rel=\"noopener\">progressive Arctic warming is now inhibiting net land carbon uptake in northern high latitudes</a>, signalling potential weakening of a major carbon sink, while <a href=\"https://gizmodo.com/climate-change-is-fueling-an-entirely-new-type-of-landslide-2000830726\" target=\"_blank\" rel=\"noopener\">another identifies a new class of bottom-up permafrost landslide &mdash; &ldquo;permafrost detachment slides&rdquo; &mdash; set to become more frequent with continued warming</a>. In AI forecasting, the arXiv pipeline from the past 72&nbsp;hours features <a href=\"https://arxiv.org/abs/2610.40641\" target=\"_blank\" rel=\"noopener\">an agentic AI framework linking extreme-weather probabilistic forecasts to downstream impact and adaptation decisions</a>, and <a href=\"https://arxiv.org/abs/2610.38775\" target=\"_blank\" rel=\"noopener\">a reinforcement-guided diffusion model (FitzRoy) that jointly optimises forecast skill and physical realism for precipitation over the continental US</a>.",
+      "items": [
+        {
+          "source": "Geophysical Research Letters / AGU",
+          "date": "2026-11-01",
+          "headline": "GRL: Increasing Warming May Inhibit Land Carbon Uptake in Northern High Latitudes &mdash; Arctic Carbon Sink Weakening Signal",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL122135",
+          "meta": "Madani et al. &middot; Geophysical Research Letters, doi:10.1029/2026GL122135",
+          "summary": "A new Geophysical Research Letters study finds that recent warming trends are inhibiting net land carbon uptake in northern high latitudes, with implications for the strength of the Arctic and boreal carbon sink. The study adds to a growing body of evidence that continued warming stresses — moisture deficits, longer growing seasons accompanied by higher soil respiration, and permafrost carbon release — are beginning to outpace vegetation productivity gains, eroding the net sink capacity. The findings reinforce the importance of representing permafrost carbon feedbacks in IPCC-class Earth system models and in AI climate emulators that target decadal projections."
+        },
+        {
+          "source": "Gizmodo / Geophysical Research Letters",
+          "date": "2026-10-29",
+          "headline": "GRL: Climate Change Is Fuelling an Entirely New Type of Landslide &mdash; &lsquo;Permafrost Detachment Slides&rsquo; in Canada&rsquo;s Northwest Territories Expected to Become More Frequent",
+          "url": "https://gizmodo.com/climate-change-is-fueling-an-entirely-new-type-of-landslide-2000830726",
+          "summary": "A GRL study by Joseph Young et al. identifies 'permafrost detachment slides' as a distinct failure mechanism, documented in two large Northwest Territories events (Johnson River 2017, Redstone River 2018). Unlike typical surface-down thaw, these slides fail from the base upward — driven by decades of ~0.3°C/decade permafrost warming combined with historic wildfire disturbance that allowed meltwater to penetrate to the permafrost base. The Mackenzie Valley area alone has more than 150 such slides. The authors conclude events of this type will become more frequent with continued warming, with implications for river systems, downstream Arctic communities, and infrastructure in permafrost regions of Canada, Alaska, and Siberia."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-10-29",
+          "headline": "arXiv:2610.40641 &mdash; Agentic AI Framework Links Extreme-Weather Probabilistic Forecasts to Agricultural and Adaptation Impact Estimates",
+          "url": "https://arxiv.org/abs/2610.40641",
+          "meta": "arXiv:2610.40641 (29 Oct 2026) &middot; cs.AI &times; physics.ao-ph",
+          "summary": "Researchers submitted arXiv:2610.40641 on October 29, presenting an agentic AI framework that connects extreme-weather event forecasts to downstream agricultural consequence estimates. The system couples a weather-event detection module with an agricultural impact model, enabling automated, end-to-end assessment from forecast output to expected crop, livestock or infrastructure effects. The work addresses a critical gap in operational weather services — translating high-impact weather warnings into sector-specific impact projections — and is cross-listed to cs.AI and physics.ao-ph."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-10-28",
+          "headline": "arXiv:2610.38775 &mdash; FitzRoy: Reinforcement-Guided Diffusion Model for Skillful and Physically Realistic Precipitation Forecasting over the Continental US",
+          "url": "https://arxiv.org/abs/2610.38775",
+          "meta": "arXiv:2610.38775 (28 Oct 2026) &middot; cs.LG &times; physics.ao-ph",
+          "summary": "The FitzRoy model applies reinforcement-guided diffusion to precipitation forecasting over the continental United States, jointly optimising for predictive skill and physical realism. Standard diffusion-based weather models tend to trade off one against the other — sharp but physically implausible fields vs. smooth but oversmoothed outputs. FitzRoy uses a reinforcement learning reward signal to guide the diffusion process toward outputs satisfying physical consistency metrics while retaining forecast skill. Results are evaluated against MRMS radar observations and standard probabilistic metrics."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-10-26",
+          "headline": "arXiv:2610.36186 &mdash; HRRRCast: Operational Data-Driven Regional Weather Forecasting with Verified Extreme-Event Skill and Near-Real-Time Capability",
+          "url": "https://arxiv.org/abs/2610.36186",
+          "meta": "arXiv:2610.36186 (26 Oct 2026) &middot; physics.ao-ph",
+          "summary": "HRRRCast is presented as the first data-driven regional weather model demonstrated to match the skill of NOAA's operational HRRR model on extreme weather events while running in near-real-time. The 31-page paper validates the model against verified high-impact events including severe convective outbreaks and extreme precipitation episodes, and describes an operational deployment pathway for hybrid HRRR/HRRRCast products. Near-real-time verification addresses a major credibility gap for ML-based regional forecasting adoption."
+        },
+        {
+          "source": "China Daily / China Meteorological Administration",
+          "date": "2026-10-30",
+          "headline": "China Introduces Two Operational AI Weather Models: Typhoon Cloud-Pattern Recognition and 4-Hour Severe Convective Weather Prediction Using Fengyun Satellite Data",
+          "url": "https://chinadaily.com.cn/a/202610/30/WS6ae3eff6e4b06d4aa0565fee.html",
+          "summary": "China's Meteorological Administration unveiled two new operational AI weather systems: a typhoon cloud-pattern recognition model that interprets storm structure and intensity from Fengyun satellite imagery in real time, and a model for predicting severe convective weather — heavy precipitation and thunderstorm activity — up to four hours in advance. Both are deployed operationally within the CMA's national forecast suite, part of a broader national initiative integrating deep learning into official meteorological services."
+        },
+        {
+          "source": "NPR",
+          "date": "2026-10-26",
+          "headline": "Google DeepMind AI Model Beat Physics-Based Forecasts on Hurricane Isaias Track &mdash; Florida Panhandle Landfall Correctly Forecast vs. Louisiana in Physics Models; Intensity Gap and Interpretability Concern Persist",
+          "url": "https://www.npr.org/2026/10/26/nx-s1-6012820/how-ai-is-transforming-hurricane-forecasts",
+          "summary": "NPR's October 26 analysis reports that Google DeepMind's AI weather model outperformed traditional physics-based models on the track forecast for Hurricane Isaias, which made landfall near Destin, Florida as a Category 2 storm. The DeepMind model correctly indicated a Florida Panhandle landfall while physics-based models pointed to Louisiana. ECMWF's AIFS is described as the second AI model with strong track performance this season. However, AI trailed the NHC's blended consensus on intensity — a persistent gap — and researchers cannot explain why the model makes a given correct or incorrect forecast, a growing interpretability concern for operational use."
+        },
+        {
+          "source": "arXiv / University of Lausanne et al.",
+          "date": "2026-10-07",
+          "headline": "arXiv:2610.09770 &mdash; Beucler et al.: AI Weather Models Must Encode External Forcings to Bridge Forecasting and Climate Projection; Major 12-Author Review",
+          "url": "https://arxiv.org/abs/2610.09770",
+          "meta": "Tom Beucler, David Neelin, Hui Su et al. (12 authors) &middot; arXiv:2610.09770 (7 Oct 2026) &middot; physics.ao-ph &times; cs.AI",
+          "summary": "Tom Beucler and 11 co-authors (including David Neelin, Hui Su, Chris Bretherton, Laure Zanna and Tapio Schneider) submitted a major arXiv review on October 7, arguing that current AI weather models cannot credibly respond to greenhouse-gas forcings because they are trained only on historical reanalysis data without explicit representation of external forcings. The paper proposes a research framework that extends AI weather models to include forcing-dependent responses — a prerequisite for bridging weather prediction and climate projection. The authors stress-test the approach on out-of-distribution cases including extremes and counterfactual warming scenarios."
+        },
+        {
+          "source": "Nature Climate Change",
+          "date": "2026-10-23",
+          "headline": "Nature Climate Change: South Indian Convergence Zone Rainfall Swings to Occur ~Twice as Often This Century &mdash; More Intense Rainfall per Event; Major Implications for Southern African Water Security",
+          "url": "https://www.nature.com/nclimate/articles?year=2026",
+          "summary": "A study in Nature Climate Change reports that climate model projections indicate swings of the South Indian convergence zone — a rainfall-producing circulation feature critical to Southern Africa — will occur approximately twice as often in the twenty-first century compared with the twentieth century, and will produce more intense rainfall per event. The dual signal of increased frequency and intensity has major implications for water security, flood risk and agricultural planning across Zimbabwe, Mozambique, South Africa and neighbouring countries."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-10-29",
+          "title": "Tokyo Century Acquires 50% Stake in 212&nbsp;MW UK Solar and Wind Portfolio from Egg Power",
+          "body_html": "<a href=\"https://greentechlead.com/energy-news/renewables-news-boralex-wind2-equitix-tokyo-century-56242\" target=\"_blank\" rel=\"noopener\">Tokyo Century agreed to acquire a 50% stake in a 212&nbsp;MW UK renewable portfolio from Egg Power</a>, comprising a solar farm, a solar development project and a wind farm. The deal adds the Japanese trading and leasing conglomerate to the growing list of Asian corporates building UK clean energy positions ahead of the country&rsquo;s 2030 clean power target, joining a quarter that includes Equitix&rsquo;s Beatrice stake and Boralex&rsquo;s Wind2 acquisition completed the same week.",
+          "source_html": "<a href=\"https://greentechlead.com\" target=\"_blank\" rel=\"noopener\">GreentechLead</a>"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "Vaisala Completes Acquisition of AI Weather Company Atmo, Inc. &mdash; Announced June 2026; Deepens Vaisala&rsquo;s Software and Services Strategy",
+          "body_html": "Finnish weather-instrument and environmental-measurement leader <a href=\"https://www.globenewswire.com/news-release/2026/10/29/3390949/0/en/vaisala-completes-acquisition-of-ai-weather-company-atmo-inc.html\" target=\"_blank\" rel=\"noopener\">Vaisala completed its acquisition of AI weather forecasting company Atmo, Inc. on October&nbsp;29</a>, roughly four months after announcing the deal in June 2026. <a href=\"https://www.xweather.com/blog/vaisala-completes-acquisition-of-ai-weather-company-atmo-inc-\" target=\"_blank\" rel=\"noopener\">Vaisala said the deal &ldquo;supports Vaisala&rsquo;s strategic priority to grow its services and software revenue&rdquo;</a> and expand its AI and digital offerings alongside its traditional hardware and sensor businesses. The fixed purchase price was <strong>USD 70&nbsp;million</strong>, paid mainly in cash and Vaisala series&nbsp;A shares at closing, with a contingent earn-out of up to <strong>USD 60&nbsp;million</strong> tied to 2026&ndash;2028 performance targets.",
+          "source_html": "<a href=\"https://www.globenewswire.com/news-release/2026/10/29/3390949/0/en/vaisala-completes-acquisition-of-ai-weather-company-atmo-inc.html\" target=\"_blank\" rel=\"noopener\">GlobeNewswire</a>"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "Boralex Acquires UK Onshore Wind Developer Wind2 &mdash; ~350&nbsp;MW Advanced-Stage Projects in Scotland, England and Wales",
+          "body_html": "Canadian renewable producer <a href=\"https://www.globenewswire.com/news-release/2026/10/29/3391129/0/en/boralex-accelerates-expansion-in-the-united-kingdom-with-the-acquisition-of-wind2.html\" target=\"_blank\" rel=\"noopener\">Boralex completed the acquisition of UK onshore wind developer Wind2 on October&nbsp;29</a>, adding approximately <strong>350&nbsp;MW of advanced-stage wind projects</strong> across Scotland, England and Wales to its UK pipeline. The deal lifts Boralex&rsquo;s UK development pipeline to approximately <a href=\"https://www.renews.biz/onshore-wind/boralex-acquires-uk-onshore-developer-wind2/\" target=\"_blank\" rel=\"noopener\">2&nbsp;GW alongside 73&nbsp;MW currently under construction</a>. Boralex was taken private by La Caisse de d&eacute;p&ocirc;t et placement du Qu&eacute;bec in August&nbsp;2026.",
+          "source_html": "<a href=\"https://www.globenewswire.com/news-release/2026/10/29/3391129/0/en/boralex-accelerates-expansion-in-the-united-kingdom-with-the-acquisition-of-wind2.html\" target=\"_blank\" rel=\"noopener\">GlobeNewswire</a>"
+        },
+        {
+          "date": "2026-10-29",
+          "title": "Equitix Completes &pound;155&nbsp;Million Beatrice Offshore Wind Stake Acquisition from TRIG &mdash; Now 35% Owner of 588&nbsp;MW Scottish Project",
+          "body_html": "<a href=\"https://irei.com/news/equitix-acquires-additional-stake-in-scotlands-beatrice-offshore-wind-farm/\" target=\"_blank\" rel=\"noopener\">Equitix completed the purchase of The Renewables Infrastructure Group&rsquo;s (TRIG) 17.5% stake in the <strong>588&nbsp;MW Beatrice Offshore Wind Farm</strong> for approximately <strong>&pound;155&nbsp;million</strong> on October&nbsp;29</a>, lifting its holding to 35%. SSE Renewables (40%) and Red Rock Renewables (25%) hold the remaining ownership; TRIG has fully exited the Scottish project. The transaction, first announced in July&nbsp;2026, completed on schedule. Beatrice is located off the Caithness coast and has been operating since 2019.",
+          "source_html": "<a href=\"https://irei.com/news/equitix-acquires-additional-stake-in-scotlands-beatrice-offshore-wind-farm/\" target=\"_blank\" rel=\"noopener\">IREI</a>"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "IGNIS Closes 656&nbsp;MWp Italian Renewable Portfolio Sale to flyRen Energy Group &mdash; 28 Projects; flyRen Now Manages Over 2&nbsp;GW in Italy",
+          "body_html": "Spanish developer <a href=\"https://reglobal.org/ignis-sells-656-mw-renewable-energy-portfolio-in-italy/\" target=\"_blank\" rel=\"noopener\">IGNIS closed the sale of a portfolio of <strong>656&nbsp;MWp</strong> across 28 renewable-energy projects in Italy to flyRen Energy Group SpA</a>, majority-owned by Foresight Energy Infrastructure Partners II. The portfolio covers PV, battery-hybrid and wind projects held through 23 special-purpose vehicles. <a href=\"https://www.energy-pedia.com/news/italy/ignis-completes-sale-of-656-mw-renewable-project-portfolio-in-italy-to-flyren-energy-group-spa-205825\" target=\"_blank\" rel=\"noopener\">With the transaction, flyRen&rsquo;s managed portfolio in Italy surpasses 2&nbsp;GW</a>.",
+          "source_html": "<a href=\"https://reglobal.org/ignis-sells-656-mw-renewable-energy-portfolio-in-italy/\" target=\"_blank\" rel=\"noopener\">ReglobaL</a>"
+        },
+        {
+          "date": "2026-10-27",
+          "title": "Optivolt Raises $32&nbsp;Million Series&nbsp;A to Scale Smart Solar Panel Power Electronics",
+          "body_html": "<a href=\"https://www.esgtoday.com/optivolt-raises-32-million-to-make-solar-panels-smarter/\" target=\"_blank\" rel=\"noopener\">Optivolt</a>, a San Francisco startup developing module-level power electronics for solar panels, closed a <strong>$32&nbsp;million Series&nbsp;A</strong> led by <a href=\"https://pv-magazine-usa.com/2026/10/27/optivolt-plans-manufacturing-expansion-with-recent-32-million-funding-boost/\" target=\"_blank\" rel=\"noopener\">VXI Capital, with participation from RA Capital, Valo Ventures, Atlas Innovate and former SunPower CEO Tom Werner</a>. The company&rsquo;s Power Balancer dynamically redistributes current among solar cell groups in real time, claiming 99.4% conversion efficiency. Total funding: $42&nbsp;million.",
+          "source_html": "<a href=\"https://www.esgtoday.com/optivolt-raises-32-million-to-make-solar-panels-smarter/\" target=\"_blank\" rel=\"noopener\">ESG Today</a>"
+        },
+        {
+          "date": "2026-11-01",
+          "title": "CESC/Purvah Green Extends ReNew 1.4&nbsp;GWp Acquisition Deadline to November&nbsp;21 &mdash; ~$510&nbsp;M Deal Still Pending",
+          "body_html": "India&rsquo;s CESC Limited and its renewable arm Purvah Green Power have <a href=\"https://www.whalesbook.com/corporate-news/English/energy/CESC-Subsidiary-Extends-Deadline-for-14-GWp-Renewable-Portfolio-Acquisition-to-2026/6ae62256c6c6dccbb90e1351\" target=\"_blank\" rel=\"noopener\">amended the share purchase agreement for their ~1.4&nbsp;GWp ReNew Solar Power acquisition, extending the closing deadline by 21 days to November&nbsp;21, 2026</a> after the original October&nbsp;31 deadline lapsed without completion. The deal covers six special-purpose vehicles holding approximately <strong>1.4&nbsp;GWp of contracted, operating solar capacity</strong> at an enterprise value of approximately &nbsp;4,859&nbsp;crore (~<a href=\"https://www.multibagg.ai/market-pulse/articles/cesc-renew-closing-shifts-november-announcement-cmvwo14a400042gq6h23f7syf\" target=\"_blank\" rel=\"noopener\">US$510&nbsp;million</a>). More than 90% of the acquired capacity is contracted with the Solar Energy Corporation of India.",
+          "source_html": "<a href=\"https://www.whalesbook.com/corporate-news/English/energy/CESC-Subsidiary-Extends-Deadline-for-14-GWp-Renewable-Portfolio-Acquisition-to-2026/6ae62256c6c6dccbb90e1351\" target=\"_blank\" rel=\"noopener\">WhalesBook</a>"
+        }
+      ]
+    }
+  }
+}
