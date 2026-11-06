@@ -1,0 +1,277 @@
+{
+  "digest_date": "2026-11-06",
+  "metar": "DIGEST 060715Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "COP31 opens in three days in Antalya. The <a href=\"https://www.climateandcapitalmedia.com/cop31-antalya-preview/\" target=\"_blank\" rel=\"noopener\">conference runs November&nbsp;9&ndash;20</a> under Australian presidency with T&uuml;rkiye as host, against growing controversy: <a href=\"https://www.climatechangenews.com/2026/10/21/turkish-giant-sponsoring-cop31-cut-climate-goals-then-cashed-in-on-oil-boom/\" target=\"_blank\" rel=\"noopener\">Ko&ccedil; Holding&rsquo;s refining arm T&uuml;pra&scedil;&mdash;the top COP31 corporate sponsor&mdash;has cut its own climate targets while expanding refining capacity</a>. <a href=\"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml\" target=\"_blank\" rel=\"noopener\">NOAA CPC&rsquo;s November advisory raises the probability of a historically large El Ni&ntilde;o (RONI &ge;&nbsp;+2.5&deg;C) for November&ndash;January 2026&ndash;27 to 70%</a>&mdash;its highest stated probability for this metric in the current cycle; the next ENSO diagnostic discussion is due November&nbsp;12. The official <a href=\"https://climate.copernicus.eu/climate-bulletin\" target=\"_blank\" rel=\"noopener\">Copernicus C3S October 2026 monthly bulletin</a> remains unpublished&mdash;expected imminently and projected by independent researchers to confirm October as the warmest on record near ~1.76&deg;C above preindustrial.",
+      "items": [
+        {
+          "source": "UN News / UNFCCC",
+          "date": "2026-11-05",
+          "headline": "COP31 Pre-Sessional Negotiations Open in Antalya; Main Session Opens November&nbsp;9; Finance, Fossil Fuels and Adaptation Remain Core Battle Lines",
+          "url": "https://news.un.org/en/story/2026/11/1168735",
+          "summary": "Technical pre-sessional negotiations for COP31 opened in Antalya on November 5 under Australian presidency (Australia's Chris Bowen leads the negotiations; Türkiye hosts). The three core battle lines entering talks: an NCQG on climate finance as a credible successor to the failed $100 billion-per-year pledge; language on fossil fuel phase-out following the UAE COP28 breakthrough; and whether adaptation finance receives a dedicated agenda item. The World Leaders Climate Action Summit is expected November 10–12. An oil refiner — Koç Holding's subsidiary Tüpraş — is the summit's top Global Business Partner, drawing criticism from climate campaigners."
+        },
+        {
+          "source": "NOAA / Climate Prediction Center",
+          "date": "2026-11-02",
+          "headline": "NOAA CPC El Ni&ntilde;o Advisory: 70% Probability of Historically Large Event (RONI &ge;&nbsp;+2.5&deg;C) for November&ndash;January 2026&ndash;27; Strong-to-Very Strong Through January&ndash;March 2027",
+          "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+          "summary": "NOAA CPC's most recent ENSO Diagnostic Discussion puts the probability of a historically large El Niño event — defined as RONI of +2.5°C or more for the three-month average — at 70% for November–January 2026–27. This is the highest such probability stated in the current cycle and aligns with WMO's October projection of Niño 3.4 anomalies near +3.7–3.8°C for the same period. Strong-to-very strong El Niño conditions are assessed as likely through January–March 2027 with odds exceeding 83%. The next CPC ENSO Diagnostic Discussion is scheduled for November 12, 2026."
+        },
+        {
+          "source": "France24 / AFP",
+          "date": "2026-11-03",
+          "headline": "Brazil Presents Voluntary Global Fossil Fuel Phase-Out Roadmap Ahead of COP31; Officials Stress It Is Not a Negotiating Text",
+          "url": "https://www.france24.com/en/live-news/20261103-ahead-of-cop31-brazil-offers-a-global-fossil-fuel-exit-plan",
+          "summary": "Brazil's government published a voluntary roadmap for a managed global fossil fuel phase-out ahead of COP31, framing it as a bridge proposal rather than a formal negotiating text. Brazilian officials stressed the plan accommodates different national energy security circumstances. The move positions Brazil — simultaneously a major oil exporter and one of the world's largest clean energy producers — as a potential dealmaker between major fossil fuel producers and climate-vulnerable nations at Antalya. The roadmap calls for a managed exit rather than an abrupt phase-out, echoing language from the UAE COP28 'transition away' compromise."
+        },
+        {
+          "source": "IISD / UNFCCC COP31 Presidency",
+          "date": "2026-11-02",
+          "headline": "Pacific Pre-COP Concludes with Taku Pakasoa Declaration: Faster Emissions Cuts, Accessible Climate Finance, Ocean Protection",
+          "url": "https://sdg.iisd.org/news/climate-cop-31-presidency-outlines-expectations-for-pacific-pre-cop/",
+          "summary": "The Pacific Pre-COP concluded with the Taku Pakasoa Declaration. Pacific leaders — among the most climate-vulnerable nations — called for accelerated emissions reductions consistent with 1.5°C, more accessible direct climate finance for small island developing states, and strengthened protection of oceans as a global climate regulator. The declaration aligned with the COP31 Presidency's agenda of launching electrification pledges and adding ocean protection to the summit programme on Energy Day, November 10."
+        },
+        {
+          "source": "WMO",
+          "date": "2026-11-01",
+          "headline": "WMO: 2026 El Ni&ntilde;o Ni&ntilde;o&nbsp;3.4 Projected to Peak Near +3.7&deg;C in December&mdash;Strongest Ever Recorded; Previous Record +2.6&deg;C (2015&ndash;16)",
+          "url": "https://wmo.int/news/media-centre/sea-surface-temperatures-reflect-strengthening-el-nino",
+          "summary": "WMO's October ocean temperature update confirms the 2026 El Niño is the strongest on record by several metrics. The Niño 3.4 index anomaly is projected to peak near +3.7°C in October–December 2026, surpassing the previous record of +2.6°C set in November 2015–January 2016 by over 1°C. The event is driving record global surface temperatures, the exceptional 2026 Atlantic and Pacific tropical cyclone seasons, the Bay of Bengal back-to-back cyclone sequence, the prolonged Southeast Asian peatland fire crisis, and 13 consecutive months above 1.5°C. WMO warns that peak impacts on regional precipitation patterns may not arrive until 2027 during the La Niña transition."
+        },
+        {
+          "source": "Scientific American / Copernicus C3S",
+          "date": "2026-10-31",
+          "headline": "October 2026 Projected Warmest October on Record at ~1.76&deg;C Above Preindustrial; 13th Consecutive Month Above 1.5&deg;C; Official C3S Bulletin Pending",
+          "url": "https://www.scientificamerican.com/article/this-october-is-on-track-to-be-the-hottest-ever-recorded/",
+          "summary": "October 2026 closed as the projected warmest October in the ERA5 instrumental record at approximately 1.76°C above preindustrial averages, driven by the record 2026 El Niño. The result marks the 13th consecutive month with global temperatures above the 1.5°C Paris threshold. Independent researchers Dessler and Hausfather project a monthly anomaly of 1.7591°C using C3S ERA5 data. The official Copernicus C3S monthly climate bulletin for October had not been published as of November 6."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Florida Extreme Flooding &mdash; St. Johns River Approaching Major Flood Stage Across Multiple Gauges; Seminole County Sandbagging; Death Toll at Two",
+          "status": "Escalating river flooding &mdash; <a href=\"https://www.clickorlando.com/news/local/2026/11/06/st-johns-river-expected-to-rise-near-lake-harney-as-flood-risk-increases/\" target=\"_blank\" rel=\"noopener\">St. Johns River near Lake Harney forecast to approach major flood stage early next week</a>; <a href=\"https://www.clickorlando.com/news/local/2026/11/05/saint-johns-river-flooding-forces-seminole-county-residents-to-sandbag-homes/\" target=\"_blank\" rel=\"noopener\">Seminole County residents filling sandbags as river rises toward major flood stage</a>; station near Cocoa reached 16.8&nbsp;ft (threshold 16&nbsp;ft) with forecast rise to major flood stage this weekend; Sanford forecast to crest at 6.4&nbsp;ft by Monday; two deaths confirmed statewide; Governor&rsquo;s emergency declaration covers 14 counties",
+          "impact": "Following the November 2 extreme rainfall event (up to 15 inches in Brevard County), the flood has spread northward into Seminole, Volusia and Lake counties as upstream flow continues to drain through the St. Johns River system. The event's duration is extending into at least mid-next week. Active flood warnings now span the river system from its headwaters to its mouth near Jacksonville. The simultaneous November 2 king-tide surge and sustained river flooding compound infrastructure stress along the northeast Florida coastline."
+        },
+        {
+          "name": "Southwest US Flooding Aftermath &mdash; One Confirmed Death in Flagstaff; Cleanup Expected Weeks; Four States Affected",
+          "status": "Recovery &mdash; extreme atmospheric river event from November&nbsp;1&ndash;2 has ended; <a href=\"https://carriermanagement.com/news/2026/11/04/293199.htm\" target=\"_blank\" rel=\"noopener\">one death confirmed in Flagstaff, Arizona; infrastructure damage spans Arizona, Colorado, New Mexico and portions of Nevada</a>; active cleanup underway across Flagstaff, Sedona, Tucson, Durango and Pagosa Springs; more than 10 all-time flood gauge records broken across three states",
+          "impact": "The Four Corners atmospheric river produced historic flooding across the Southwest; attribution research examining the role of record 2026 El Niño-elevated SSTs in amplifying atmospheric moisture flux is underway. Separately, 19 inches fell in six hours near the Louisiana border in southwest Mississippi — a simultaneous extreme event pointing to an exceptional large-scale moisture pattern."
+        },
+        {
+          "name": "Southeast Asian Peatland Haze (Indonesia / Borneo / Sumatra) &mdash; Ongoing; ~40&nbsp;Million Exposed; 1.9&nbsp;Million Hectares Burned in 2026",
+          "status": "Ongoing &mdash; <a href=\"https://theconversation.com/indonesias-el-nino-driven-peat-fires-are-choking-the-region-and-releasing-centuries-of-stored-carbon-294838\" target=\"_blank\" rel=\"noopener\">wet season onset beginning in some areas of Sumatra and Kalimantan is reducing surface fire intensity</a>, but underground peat fires at depths up to 8&nbsp;m continue and are extremely difficult to extinguish; bilateral Indonesia&ndash;Singapore task force operational; 333,470+ acute respiratory cases across seven Indonesian provinces recorded; 1.9&nbsp;million hectares burned in Indonesia through end-September 2026",
+          "impact": "~40 million people region-wide continue to experience elevated PM2.5 across Indonesia, Malaysia, Singapore and the Philippines. The El Niño peak expected in December threatens to further delay wet-season transition in the most fire-prone peatland areas. The fires have produced an estimated CO₂ release that will register as a measurable atmospheric spike in November–December ERA5 data."
+        }
+      ],
+      "overview_html": "Florida&rsquo;s flooding crisis is spreading north: <a href=\"https://www.clickorlando.com/news/local/2026/11/06/st-johns-river-expected-to-rise-near-lake-harney-as-flood-risk-increases/\" target=\"_blank\" rel=\"noopener\">the St. Johns River near Lake Harney is now forecast to approach major flood stage early next week</a>, <a href=\"https://www.clickorlando.com/news/local/2026/11/05/saint-johns-river-flooding-forces-seminole-county-residents-to-sandbag-homes/\" target=\"_blank\" rel=\"noopener\">Seminole County residents are sandbagging</a>, the river at Cocoa is already 0.8&nbsp;ft above flood stage and rising, and Sanford is projected to crest at 6.4&nbsp;ft by Monday. Two deaths have been confirmed and Governor&rsquo;s emergency declaration covers 14 counties. In the central Pacific, <a href=\"https://www.nhc.noaa.gov/gtwo.php\" target=\"_blank\" rel=\"noopener\">a tropical disturbance tracked at 90% development probability late November&nbsp;5 has organised south of Hawaii and is expected to pass well clear of land</a>; NHC advisories continue. The <a href=\"https://theconversation.com/indonesias-el-nino-driven-peat-fires-are-choking-the-region-and-releasing-centuries-of-stored-carbon-294838\" target=\"_blank\" rel=\"noopener\">Southeast Asian peatland haze</a> continues with ~40&nbsp;million exposed and 1.9&nbsp;million hectares burned in Indonesia in 2026.",
+      "items": [
+        {
+          "source": "ClickOrlando / NWS Melbourne FL",
+          "date": "2026-11-06",
+          "headline": "St. Johns River Near Lake Harney Forecast to Approach Major Flood Stage Early Next Week; Cocoa 16.8&nbsp;ft (above 16&nbsp;ft threshold); Sanford Crest 6.4&nbsp;ft Forecast by Monday",
+          "url": "https://www.clickorlando.com/news/local/2026/11/06/st-johns-river-expected-to-rise-near-lake-harney-as-flood-risk-increases/",
+          "summary": "As of November 6, the St. Johns River is simultaneously approaching or exceeding flood benchmarks at multiple gauges: near Lake Harney (Seminole/Volusia counties), the river is forecast to approach major flood stage early next week. Near Cocoa (Brevard), the river reached 16.8 ft overnight, above the 16 ft flood stage, with continued rise toward major flood stage this weekend. At Sanford, the river is forecast to crest at 6.4 ft by Monday. The event represents a prolonged slow-drain river flood that may keep waterways at or above flood stage through mid-November."
+        },
+        {
+          "source": "ClickOrlando",
+          "date": "2026-11-05",
+          "headline": "Seminole County Residents Sandbagging as St. Johns River Rises; County Distributes 3,000 Pre-Filled Sandbags First-Come, First-Served",
+          "url": "https://www.clickorlando.com/news/local/2026/11/05/saint-johns-river-flooding-forces-seminole-county-residents-to-sandbag-homes/",
+          "summary": "Seminole County residents began sandbagging as the St. Johns River approached flood stage on November 5. The county distributed 3,000 pre-filled sandbags on a first-come, first-served basis as residents along river-adjacent neighbourhoods prepared for the crest forecast for early next week. The flooding follows the Governor's emergency declaration expansion to 14 counties including Seminole."
+        },
+        {
+          "source": "NHC / National Hurricane Center",
+          "date": "2026-11-05",
+          "headline": "Central Pacific Tropical Disturbance Reaches 90% Five-Day Development Probability; Organised into Depression South of Hawaii; No Land Threat",
+          "url": "https://www.nhc.noaa.gov/gtwo.php",
+          "summary": "A disturbance in the central Pacific reached 90% formation probability in the late November 5 NHC outlook as it showed increasing organisation southeast of the Hawaiian Islands. The system was developing within a favourable environment of low wind shear and anomalously warm sea surface temperatures linked to the record-intensity 2026 El Niño. No impact to land areas was forecast; the system was expected to pass well south of Hawaii before weakening into the central Pacific."
+        },
+        {
+          "source": "Carrier Management / AP",
+          "date": "2026-11-04",
+          "headline": "Southwest US Flooding: One Death Confirmed in Flagstaff; Damage Spans Four States; Cleanup Expected to Take Weeks",
+          "url": "https://carriermanagement.com/news/2026/11/04/293199.htm",
+          "summary": "One death confirmed in Flagstaff, Arizona, following the November 1–2 Four Corners atmospheric river event. Infrastructure damage spans Arizona, Colorado, New Mexico and portions of Nevada. Road closures, bridge damage and utility disruptions across Flagstaff, Sedona, Tucson, Durango and Pagosa Springs. More than 10 all-time flood gauge records broken across three states; full damage assessment ongoing. Cleanup expected to take several weeks. Attribution research examining the role of El Niño-elevated SSTs in amplifying atmospheric moisture flux is underway."
+        },
+        {
+          "source": "Malay Mail / The Conversation",
+          "date": "2026-10-31",
+          "headline": "Southeast Asian Peatland Haze: Indonesia Burns 1.9&nbsp;Million Hectares Through September 2026; ~40&nbsp;Million Exposed; Underground Peat Fires at 8&nbsp;m Depth Continuing",
+          "url": "https://theconversation.com/indonesias-el-nino-driven-peat-fires-are-choking-the-region-and-releasing-centuries-of-stored-carbon-294838",
+          "summary": "The 2026 Southeast Asian peatland haze crisis continues. Indonesia burned over 1.9 million hectares through the end of September 2026. Underground peat fires at depths up to 8 metres resist wet-season rain onset across Sumatra and Kalimantan. ~40 million people exposed to elevated PM2.5 across Indonesia, Malaysia, Singapore and the Philippines. 333,470+ acute respiratory cases across seven Indonesian provinces. The El Niño peak in December threatens to extend the crisis into late November."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "India raised its renewable energy buildout ambition: <a href=\"https://solarquarter.com/2026/11/06/india-targets-530-gw-renewable-energy-capacity-by-2030-as-solar-manufacturing-expands-to-225-gw\" target=\"_blank\" rel=\"noopener\">government officials confirmed a 530&nbsp;GW renewable capacity target by 2030, with domestic solar manufacturing expanding to 225&nbsp;GW</a>, significantly ahead of the country&rsquo;s previously stated 500&nbsp;GW non-fossil goal. <a href=\"https://mercomcapital.com/sunraycer-renewables-acquires-325-mw-of-solar-projects-in-the-us/\" target=\"_blank\" rel=\"noopener\">Sunraycer Renewables acquired 325&nbsp;MW of utility-scale solar projects in Illinois and Missouri</a> from Apricus Energy. <a href=\"https://pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform\" target=\"_blank\" rel=\"noopener\">Array Technologies and Shoals Technologies confirmed their all-stock merger</a>, creating an integrated solar infrastructure platform. Meanwhile, <a href=\"https://www.canarymedia.com/articles/offshore-wind/trump-reevaluate-permit-revolution-wind-orsted\" target=\"_blank\" rel=\"noopener\">US courts are set to reconsider construction permits for four major East Coast offshore wind projects</a>, adding further headwinds to US offshore expansion.",
+      "items": [
+        {
+          "source": "SolarQuarter / MNRE",
+          "date": "2026-11-06",
+          "headline": "India Targets 530&nbsp;GW Renewable Energy Capacity by 2030 as Solar Manufacturing Expands to 225&nbsp;GW",
+          "url": "https://solarquarter.com/2026/11/06/india-targets-530-gw-renewable-energy-capacity-by-2030-as-solar-manufacturing-expands-to-225-gw",
+          "summary": "Indian government officials confirmed an expanded target of 530 GW of renewable energy capacity by 2030, alongside plans to grow domestic solar module manufacturing capacity to 225 GW. The revised 530 GW figure encompasses solar, wind and hybrid capacity additions beyond India's previously stated 500 GW non-fossil power goal. Solar module manufacturing is to reach 225 GW capacity — up from approximately 74 GW in March 2025 — to reduce import dependence and position India as a global renewable equipment exporter."
+        },
+        {
+          "source": "Mercom Capital Group",
+          "date": "2026-11-05",
+          "headline": "Sunraycer Renewables Acquires 325&nbsp;MW of Solar Projects in Illinois and Missouri from Apricus Energy",
+          "url": "https://mercomcapital.com/sunraycer-renewables-acquires-325-mw-of-solar-projects-in-the-us/",
+          "summary": "Sunraycer Renewables, a Crayhill Capital portfolio company, acquired two utility-scale solar projects from Apricus Energy: the 175 MW Gem City solar project in Adams County, Illinois, and the 150 MW Mighty Mississippi solar project in New Madrid County, Missouri. Construction on both facilities is anticipated to commence in early 2028. The acquisitions expand Sunraycer's growing MISO-region solar portfolio alongside its existing Texas solar-plus-storage assets financed in May 2026."
+        },
+        {
+          "source": "PV Tech",
+          "date": "2026-11-04",
+          "headline": "Array Technologies and Shoals Technologies Agree All-Stock Merger; Creates Integrated Solar Infrastructure Platform Spanning Trackers and Electrical BOS",
+          "url": "https://pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform",
+          "summary": "Array Technologies (solar tracker systems) and Shoals Technologies (electrical balance of systems, connectors and BOS products) announced an all-stock merger agreement, creating an integrated solar infrastructure platform. The combined company will offer bundled procurement and single-vendor service for large-scale solar projects, targeting improved cost efficiencies for utility-scale developers. The deal is subject to shareholder and regulatory approvals."
+        },
+        {
+          "source": "SolarQuarter",
+          "date": "2026-11-05",
+          "headline": "Tata Power Renewable Commissions 300&nbsp;MW SECI Solar Project in Koppal, Karnataka; Total Renewable Portfolio Reaches 12&nbsp;GW",
+          "url": "https://solarquarter.com/2026/11/05/tata-power-renewable-commissions-300-mw-seci-solar-project-in-karnataka-takes-renewable-utility-portfolio-to-12-gw",
+          "summary": "Tata Power Renewable Energy commissioned its 300 MW SECI-awarded solar project at Koppal, Karnataka, bringing the company's total renewable energy portfolio to 12 GW — a 20x growth over the past decade. The Koppal project is one of the largest single-site solar installations commissioned in Karnataka and directly supports India's national renewable energy targets."
+        },
+        {
+          "source": "Business Standard",
+          "date": "2026-11-04",
+          "headline": "NHPC and Essar Renewables to Partner on $475&nbsp;Million Hybrid Renewable Energy Project in Andhra Pradesh; Solar, Wind and Battery Storage",
+          "url": "https://business-standard.com/industry/news/nhpc-essar-renewables-partner-on-475-million-renewable-project-in-andhra-126110400620_1.html",
+          "summary": "India's National Hydroelectric Power Corporation (NHPC) and Essar Renewables announced a partnership to develop a $475 million hybrid renewable energy project in Andhra Pradesh, integrating solar PV, wind and battery energy storage systems. The deal builds on existing collaboration between the two companies in state-awarded RE tenders and aligns with Andhra Pradesh's aggressive renewable energy expansion targets."
+        },
+        {
+          "source": "GreentechLead",
+          "date": "2026-11-03",
+          "headline": "Squadron Energy Receives State Planning Approval for 420&nbsp;MW Moreton Hill Wind Farm in Victoria, Australia; Up to 62 Turbines",
+          "url": "https://greentechlead.com/energy-news/renewables-news-solar-capacity-in-turkiye-squadron-energy-verbund-56314",
+          "summary": "Squadron Energy received state planning approval for its 420 MW Moreton Hill wind farm in Victoria, which will incorporate up to 62 wind turbines. The approval is a key development milestone for one of Australia's largest renewable developers, contributing to Australia's target of 82% renewable electricity by 2030."
+        },
+        {
+          "source": "Canary Media / Mintz",
+          "date": "2026-11-02",
+          "headline": "US Interior Dept Seeks Court Reconsideration of Permits for Four Major Offshore Wind Projects Including 704&nbsp;MW Revolution Wind and 1.7&nbsp;GW Maryland Offshore Wind",
+          "url": "https://www.canarymedia.com/articles/offshore-wind/trump-reevaluate-permit-revolution-wind-orsted",
+          "summary": "The US Interior and Justice Departments have sought court reconsideration of construction and operations plan approvals for at least four East Coast offshore wind projects: the 704 MW Revolution Wind (partly operational), the 1.7 GW Maryland Offshore Wind project, Atlantic Shores (NJ) and New England Wind (MA). ~300 wind and solar projects also await Department of Defense review."
+        },
+        {
+          "source": "Energetica India",
+          "date": "2026-11-02",
+          "headline": "India&rsquo;s SECI Launches Largest-Yet 4&nbsp;GW/16&nbsp;GWh Standalone Battery Storage Tender for Rajasthan and Gujarat; Bid Deadline November&nbsp;24",
+          "url": "https://www.energetica-india.net/news/seci-seeks-bids-for-4-gw16-gwh-battery-storage-projects",
+          "summary": "India's Solar Energy Corporation (SECI) invited bids for 4,000 MW/16,000 MWh of standalone BESS — 2,500 MW/10,000 MWh in Rajasthan and 1,500 MW/6,000 MWh in Gujarat — its largest standalone BESS tender to date. Bid deadline: November 24. Directly supports India's 27,000 MW BESS capacity target by FY2030."
+        },
+        {
+          "source": "Maritime Executive",
+          "date": "2026-11-01",
+          "headline": "Equinor Delays 810&nbsp;MW Empire Wind First Power to H1&nbsp;2027 Due to US Shipbuilding Constraints; Total Capex Unchanged",
+          "url": "https://maritime-executive.com/article/equinor-blames-us-shipbuilding-delays-for-late-offshore-wind-installation",
+          "summary": "Equinor's 810 MW Empire Wind project off New York — approximately 80% complete — will not deliver first power until H1 2027, delayed from a 2026 target, due to US domestic shipbuilding requirements for installation support vessels. Total capex is unchanged; $3 billion+ project financing package is in place."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "The past week&rsquo;s most substantive contribution to AI weather science comes from <a href=\"https://arxiv.org/abs/2611.05592\" target=\"_blank\" rel=\"noopener\">Vonich &amp; Hakim&rsquo;s diagnostic framework (arXiv:2611.05592)</a> separating initial-condition error from intrinsic model error in AI forecast degradation&mdash;a critical step toward principled uncertainty quantification. <a href=\"https://arxiv.org/abs/2611.01614\" target=\"_blank\" rel=\"noopener\">Sonny-ENS (arXiv:2611.01614)</a> demonstrates a score-based diffusion ensemble outperforming IFS-ENS on CRPS up to 10 days. <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL122135\" target=\"_blank\" rel=\"noopener\">A <em>GRL</em> study</a> confirms the boreal carbon sink is weakening under accelerating Arctic warming. <a href=\"https://arxiv.org/abs/2610.38775\" target=\"_blank\" rel=\"noopener\">FitzRoy&rsquo;s reinforcement-guided diffusion</a> remains the standout regional ML forecasting preprint of the period, jointly optimising forecast skill and physical realism for US precipitation.",
+      "items": [
+        {
+          "source": "arXiv",
+          "date": "2026-11-03",
+          "headline": "arXiv:2611.05592 &mdash; Separating Initial-Condition vs. Model Error in AI Weather Forecasts: Attribution Framework for Downstream Probabilistic Skill Degradation",
+          "url": "https://arxiv.org/abs/2611.05592",
+          "meta": "Vonich &amp; Hakim (3 Nov 2026) &middot; arXiv:2611.05592 &middot; cs.LG &times; physics.ao-ph",
+          "summary": "This preprint by P. Trent Vonich and Gregory J. Hakim presents a diagnostic framework that disentangles initial-condition (IC) error from intrinsic model error in AI weather forecast degradation — a critical problem as AI models increasingly outperform physics-based counterparts on average metrics while showing unpredictable failure modes at longer leads. Evaluated on GraphCast and Pangu-Weather, the framework attributes probabilistic skill degradation at lead times beyond 5 days to specific IC error sources vs. model uncertainty. Ungated optimisation outperformed gated on half of evaluated dates when stopped early, informing AI model development priorities."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-11-01",
+          "headline": "arXiv:2611.01614 &mdash; Sonny-ENS: Score-Based Probabilistic Weather Forecasting Ensemble Outperforming IFS-ENS on CRPS at Lead Times Up to 10 Days",
+          "url": "https://arxiv.org/abs/2611.01614",
+          "meta": "arXiv:2611.01614 (1 Nov 2026) &middot; cs.LG &times; physics.ao-ph",
+          "summary": "Sonny-ENS applies a score-based diffusion approach to global probabilistic weather forecasting, generating ensembles by drawing samples from a learned conditional score function. The preprint reports that Sonny-ENS outperforms IFS-ENS on CRPS skill scores for lead times from 3 to 10 days, while maintaining ensemble spread calibration superior to other diffusion-based weather models. Addresses a key limitation of earlier diffusion weather models that trade ensemble sharpness against spread calibration."
+        },
+        {
+          "source": "Geophysical Research Letters / AGU",
+          "date": "2026-11-01",
+          "headline": "GRL: Accelerating Arctic Warming Now Inhibiting Net Land Carbon Uptake in Northern High Latitudes&mdash;Boreal Carbon Sink Weakening Signal",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL122135",
+          "meta": "Madani et al. &middot; Geophysical Research Letters doi:10.1029/2026GL122135",
+          "summary": "A GRL study finds that progressive warming is inhibiting net land carbon uptake in northern high latitudes, with moisture deficits, heightened soil respiration and permafrost carbon release outpacing vegetation productivity gains. The findings signal measurable weakening of the Arctic and boreal carbon sink, reinforcing the need to represent permafrost carbon processes in IPCC-class Earth system models and AI climate emulators targeting decadal projections."
+        },
+        {
+          "source": "China Daily / CMA",
+          "date": "2026-10-30",
+          "headline": "China CMA Deploys Two Operational AI Weather Systems: Typhoon Cloud-Pattern Recognition and 4-Hour Severe Convective Prediction Using Fengyun Satellite Data",
+          "url": "https://chinadaily.com.cn/a/202610/30/WS6ae3eff6e4b06d4aa0565fee.html",
+          "summary": "China's Meteorological Administration unveiled two new operational AI weather systems: a typhoon cloud-pattern recognition model interpreting storm structure from Fengyun satellite imagery in real time, and a model predicting severe convective weather up to four hours in advance. Both are deployed operationally within the CMA's national forecast suite, expanding the global footprint of fully operational AI weather systems alongside ECMWF's AIFS."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-10-29",
+          "headline": "arXiv:2610.40641 &mdash; Agentic AI Framework Connects Extreme-Weather Probabilistic Forecasts to Agricultural and Adaptation Impact Estimates End-to-End",
+          "url": "https://arxiv.org/abs/2610.40641",
+          "meta": "arXiv:2610.40641 (29 Oct 2026) &middot; cs.AI &times; physics.ao-ph",
+          "summary": "An agentic AI framework couples a weather-event detection module with an agricultural impact model, enabling automated end-to-end assessment from probabilistic forecast output to expected crop, livestock or infrastructure effects in near-real-time — addressing the critical gap between high-impact weather warnings and sector-specific impact projections."
+        },
+        {
+          "source": "Gizmodo / Geophysical Research Letters",
+          "date": "2026-10-29",
+          "headline": "GRL: &lsquo;Permafrost Detachment Slides&rsquo;&mdash;Climate-Driven Bottom-Up Failure Mode&mdash;Expected to Become More Frequent; 150+ Documented in Mackenzie Valley",
+          "url": "https://gizmodo.com/climate-change-is-fueling-an-entirely-new-type-of-landslide-2000830726",
+          "summary": "A GRL study identifies 'permafrost detachment slides' as a distinct bottom-up failure mechanism: slides fail from the base upward due to decades of ~0.3°C/decade permafrost warming combined with historic wildfire disturbance. The Mackenzie Valley alone has more than 150 such slides. Events of this type will become more frequent with continued warming, with implications for Arctic communities and infrastructure."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-10-28",
+          "headline": "arXiv:2610.38775 &mdash; FitzRoy: Reinforcement-Guided Diffusion Model Jointly Optimises Forecast Skill and Physical Realism for Continental US Precipitation",
+          "url": "https://arxiv.org/abs/2610.38775",
+          "meta": "arXiv:2610.38775 (28 Oct 2026) &middot; cs.LG &times; physics.ao-ph",
+          "summary": "FitzRoy applies reinforcement-guided diffusion to precipitation forecasting over the continental US, jointly optimising predictive skill and physical realism via a reinforcement learning reward signal. Standard diffusion-based weather models trade off sharp but physically implausible fields against smooth oversmoothed outputs; FitzRoy's RL guidance drives the diffusion process toward physically consistent outputs while retaining skill. Evaluated against MRMS radar observations and standard probabilistic metrics."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-05",
+          "title": "Sunraycer Renewables Acquires 325&nbsp;MW of US Solar Projects in Illinois and Missouri from Apricus Energy",
+          "body_html": "<a href=\"https://mercomcapital.com/sunraycer-renewables-acquires-325-mw-of-solar-projects-in-the-us/\" target=\"_blank\" rel=\"noopener\">Sunraycer Renewables, a Crayhill Capital portfolio company, acquired two utility-scale solar projects from Apricus Energy on November&nbsp;5</a>: the <strong>175&nbsp;MW Gem City solar project</strong> in Adams County, Illinois, and the <strong>150&nbsp;MW Mighty Mississippi solar project</strong> in New Madrid County, Missouri. Construction on both projects is anticipated to commence in early 2028. The acquisitions expand Sunraycer&rsquo;s MISO-region solar footprint alongside its existing Texas solar-plus-storage assets, adding to approximately <a href=\"https://pv-magazine-usa.com/2026/05/15/sunraycer-renewables-closes-901-million-financing-for-473-mwh-bess-portfolio-in-texas/\" target=\"_blank\" rel=\"noopener\">479.5&nbsp;MW of Texas solar projects financed in May 2026</a>.",
+          "source_html": "<a href=\"https://mercomcapital.com\" target=\"_blank\" rel=\"noopener\">Mercom Capital</a>"
+        },
+        {
+          "date": "2026-11-04",
+          "title": "Array Technologies and Shoals Technologies Announce All-Stock Merger; Creates Integrated Solar Infrastructure Platform",
+          "body_html": "<a href=\"https://pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform\" target=\"_blank\" rel=\"noopener\">Array Technologies and Shoals Technologies announced an all-stock merger agreement on November&nbsp;4</a>, combining Array&rsquo;s solar tracker systems with Shoals&rsquo; electrical balance-of-system products and wire harness connectors to create an <strong>integrated solar infrastructure platform</strong>. The combined company is expected to offer bundled procurement and single-vendor service for large-scale utility solar projects, targeting cost efficiencies across the hardware value chain. The deal is subject to shareholder and regulatory approvals.",
+          "source_html": "<a href=\"https://pv-tech.org\" target=\"_blank\" rel=\"noopener\">PV Tech</a>"
+        },
+        {
+          "date": "2026-11-02",
+          "title": "Hull Street Energy Acquires FirstLight USA&rsquo;s ~1.4&nbsp;GW Hydro and Pumped-Storage Portfolio from PSP Investments",
+          "body_html": "<a href=\"https://www.waterpowermagazine.com/\" target=\"_blank\" rel=\"noopener\">Hull Street Energy completed its acquisition of FirstLight USA&rsquo;s U.S. generation business from the Public Sector Pension Investment Board (PSP Investments)</a>, taking on a <strong>~1,400&nbsp;MW clean power portfolio</strong> that includes the 1,168&nbsp;MW Northfield Mountain pumped-storage facility in Massachusetts, 14 hydroelectric stations across Connecticut, Massachusetts and Pennsylvania, and three operational solar and battery facilities. <a href=\"https://www.renewableenergyworld.com/hydro-power/hull-street-energy-to-acquire-firstlights-hydro-pumped-storage-assets/\" target=\"_blank\" rel=\"noopener\">Following the close, Hull Street holds approximately 1,200&nbsp;MW of pumped storage hydro and nearly 400&nbsp;MW of conventional hydro</a> across the Northeast and Michigan.",
+          "source_html": "<a href=\"https://www.waterpowermagazine.com\" target=\"_blank\" rel=\"noopener\">Water Power Magazine</a>"
+        },
+        {
+          "date": "2026-11-02",
+          "title": "Two Point O Capital Raises $10&nbsp;Million Led by Transition Venture Capital to Scale Climate Intelligence Platform",
+          "body_html": "<a href=\"https://yourstory.com/2026/11/two-point-o-raises-10-million-led-by-transition-venture-capital\" target=\"_blank\" rel=\"noopener\">Two Point O Capital raised <strong>$10&nbsp;million</strong> in a funding round led by Transition Venture Capital</a>, with participation from climate-focused co-investors. Two Point O provides climate intelligence and data analytics services for financial institutions quantifying physical climate risk in investment portfolios. The raise will be used to scale its data infrastructure and expand coverage from individual asset-level risk scoring to portfolio-level climate-adjusted valuations.",
+          "source_html": "<a href=\"https://yourstory.com\" target=\"_blank\" rel=\"noopener\">YourStory</a>"
+        },
+        {
+          "date": "2026-11-01",
+          "title": "CESC/Purvah Green Extends ReNew 1.4&nbsp;GWp Acquisition Deadline to November&nbsp;21&mdash;~$510&nbsp;M Deal Still Pending",
+          "body_html": "India&rsquo;s CESC Limited and its renewable arm Purvah Green Power have <a href=\"https://www.whalesbook.com/corporate-news/English/energy/CESC-Subsidiary-Extends-Deadline-for-14-GWp-Renewable-Portfolio-Acquisition-to-2026/6ae62256c6c6dccbb90e1351\" target=\"_blank\" rel=\"noopener\">amended the share purchase agreement for their ~1.4&nbsp;GWp ReNew Solar Power acquisition, extending the closing deadline 21 days to November&nbsp;21, 2026</a>. The deal covers <strong>six SPVs holding approximately 1.4&nbsp;GWp of contracted operating solar capacity</strong> at an enterprise value of ~&#8377;4,859&nbsp;crore (<a href=\"https://www.multibagg.ai/market-pulse/articles/cesc-renew-closing-shifts-november-announcement-cmvwo14a400042gq6h23f7syf\" target=\"_blank\" rel=\"noopener\">~US$510&nbsp;million</a>), with more than 90% contracted with SECI.",
+          "source_html": "<a href=\"https://www.whalesbook.com\" target=\"_blank\" rel=\"noopener\">WhalesBook</a>"
+        },
+        {
+          "date": "2026-10-30",
+          "title": "BW ESS Acquires 200&nbsp;MW/800&nbsp;MWh French Battery Storage Portfolio from Recurrent Energy (Canadian Solar)&mdash;Enters Seventh Global Market",
+          "body_html": "<a href=\"https://www.energyglobal.com/energy-storage/30102026/bw-ess-enters-french-energy-storage-market-with-acquisition-of-two-projects-/\" target=\"_blank\" rel=\"noopener\">BW Energy Storage Systems acquired two ready-to-build standalone BESS projects in France from Canadian Solar&rsquo;s subsidiary Recurrent Energy</a>, comprising a <strong>100&nbsp;MW/400&nbsp;MWh project at Baixas (Eastern Pyr&eacute;n&eacute;es)</strong> and a second 100&nbsp;MW/400&nbsp;MWh project at Coquainvilliers (Calvados). The <a href=\"https://solarquarter.com/2026/10/30/recurrent-energy-sells-200-mw-800-mwh-bess-portfolio-in-france-to-bw-ess/\" target=\"_blank\" rel=\"noopener\">deal marks BW ESS&rsquo;s entry into France, its seventh market globally</a>, adding to existing positions in the UK, Italy, Germany, Spain, Australia and the US.",
+          "source_html": "<a href=\"https://www.energyglobal.com\" target=\"_blank\" rel=\"noopener\">Energy Global</a>"
+        }
+      ]
+    }
+  }
+}
