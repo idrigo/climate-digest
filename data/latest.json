@@ -1,72 +1,65 @@
 {
-  "digest_date": "2026-11-07",
-  "metar": "DIGEST 071200Z NOV26 · ROLLING 72H WINDOW",
+  "digest_date": "2026-11-08",
+  "metar": "DIGEST 081200Z NOV26 · ROLLING 72H WINDOW",
   "sections": {
     "climate": {
-      "overview_html": "The <a href=\"https://climate.copernicus.eu/copernicus-warmest-october-record-2026-virtually-certain-exceed-15degc\" target=\"_blank\" rel=\"noopener\">Copernicus C3S October 2026 bulletin officially confirms October was the warmest on record at 1.75&deg;C above preindustrial</a>, with global SSTs outside polar regions at 20.95&deg;C &mdash; an all-time October high; <a href=\"https://phys.org/news/2026-11-hottest-year-eu.html\" target=\"_blank\" rel=\"noopener\">2026 is now &ldquo;virtually certain&rdquo; to exceed 1.5&deg;C and &ldquo;most likely&rdquo; to rank second-warmest on record behind 2024</a>. COP31 opens in Antalya in two days (November&nbsp;9) against <a href=\"https://www.yahoo.com/news/science/articles/cop31-faces-tough-test-climate-125430446.html\" target=\"_blank\" rel=\"noopener\">a backdrop of modest expectations: the US is attending through a congressional delegation only, not the formal negotiations, and a senior EU official warned a revolution is not to be expected</a>. Australia and T&uuml;rkiye have framed it as the first <a href=\"https://www.climatechangenews.com/2026/11/06/blue-cop31-antalya-ocean-protections-record-heat-climate-finance/\" target=\"_blank\" rel=\"noopener\">&ldquo;Blue COP&rdquo; with an Antalya Ocean Declaration planned for Energy Day, November&nbsp;10</a>.",
+      "overview_html": "<a href=\"https://www.khan.co.kr/en/article/202611081558047/\" target=\"_blank\" rel=\"noopener\">COP31 opens in Antalya tomorrow (November&nbsp;9) under a &ldquo;deferred tasks&rdquo; framing</a>, with the carbon-finance NCQG, fossil-fuel phase-out language and NDC ratcheting as the core contested issues; <a href=\"https://www.carbonbrief.org/interactive-who-wants-what-at-the-cop31-climate-change-summit\" target=\"_blank\" rel=\"noopener\">Carbon Brief&rsquo;s new interactive maps party positions showing deep divergence on all three</a>. <a href=\"https://climate.copernicus.eu/copernicus-warmest-october-record-2026-virtually-certain-exceed-15degc\" target=\"_blank\" rel=\"noopener\">Copernicus C3S officially confirmed October 2026 as the warmest on record at 1.75&deg;C above preindustrial</a>, with global SSTs at their highest for any October; 2026 is now &ldquo;virtually certain&rdquo; to exceed 1.5&deg;C. <a href=\"https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml\" target=\"_blank\" rel=\"noopener\">NOAA CPC holds a 70% probability of a historically large El Ni&ntilde;o event (RONI &ge;&nbsp;+2.5&deg;C) for November&ndash;January 2026&ndash;27</a>.",
       "items": [
+        {
+          "source": "Korea Herald / AFP",
+          "date": "2026-11-08",
+          "headline": "COP31 Opens in Antalya Tomorrow as a Summit of &ldquo;Deferred Tasks&rdquo;: Finance, Fossil Fuels and NDC Ratcheting the Core Contested Issues",
+          "url": "https://www.khan.co.kr/en/article/202611081558047/",
+          "summary": "COP31 opens in Antalya, Türkiye on November 9 with expectations broadly muted. Analysts and diplomats are framing the summit as a moment to deliver on the unresolved &ldquo;deferred tasks&rdquo; from previous COPs: a credible successor to the failed $100 billion-per-year climate finance pledge (the NCQG), operationalised language on fossil-fuel phase-out following the UAE COP28 &ldquo;transition away&rdquo; compromise, and tightened NDC ratcheting mechanisms. The US is attending through a congressional delegation only, not through the formal UNFCCC negotiation track. Host Türkiye and Australia have framed it as a &ldquo;Blue COP&rdquo; with an Antalya Ocean Declaration planned for Energy Day, November 10. Brazil&rsquo;s Lula is expected at the World Leaders Summit on November 11&ndash;12."
+        },
+        {
+          "source": "Carbon Brief",
+          "date": "2026-11-07",
+          "headline": "Carbon Brief Interactive: Who Wants What at COP31 &mdash; Party Positions Mapped on Finance, Fossil Fuels, NDCs and Loss &amp; Damage",
+          "url": "https://www.carbonbrief.org/interactive-who-wants-what-at-the-cop31-climate-change-summit",
+          "summary": "Carbon Brief published an interactive guide to COP31 party positions covering the four main negotiating battle lines: climate finance and the NCQG (Global South pushing for $1 trillion+ per year from developed countries); fossil-fuel phase-out language (OPEC+ countries resisting; AOSIS and EU pushing for harder language); national NDC ratcheting pace; and loss-and-damage operationalisation. The interactive maps agreement, partial overlap and outright opposition among major blocs including the EU, US, China, India, AOSIS, LMDC and the African Group, providing a pre-summit reference for following the Antalya negotiations."
+        },
         {
           "source": "Copernicus C3S / ECMWF",
           "date": "2026-11-06",
           "headline": "Copernicus Official: October 2026 Warmest on Record at 1.75&deg;C Above Preindustrial; Global SSTs Highest for Any October; 2026 &ldquo;Virtually Certain&rdquo; to Exceed 1.5&deg;C",
           "url": "https://climate.copernicus.eu/copernicus-warmest-october-record-2026-virtually-certain-exceed-15degc",
-          "summary": "The official Copernicus C3S October 2026 monthly bulletin confirms October was the warmest on record globally at 1.75°C above preindustrial levels, with an average global surface air temperature of 15.35°C (0.90°C above the 1991–2020 mean). Sea surface temperatures outside polar regions reached 20.95°C — highest on record for any October, surpassing 2023. European land averaged 11.51°C, 1.49°C above normal, making it the second-warmest October on record for Europe. Copernicus declares 2026 'virtually certain' to exceed the 1.5°C Paris threshold, with a 20% chance of tying or exceeding 2024 as the hottest year on record. El Niño strengthening in the tropical Pacific is cited as the primary driver atop long-term warming."
-        },
-        {
-          "source": "Climate Change News",
-          "date": "2026-11-06",
-          "headline": "&lsquo;Blue COP31&rsquo; Set to Spotlight Ocean Protections: T&uuml;rkiye Plans Antalya Ocean Declaration; Australia Seeks Cover Decision on Oceans Within Formal Talks",
-          "url": "https://www.climatechangenews.com/2026/11/06/blue-cop31-antalya-ocean-protections-record-heat-climate-finance/",
-          "summary": "With COP31 two days away, Türkiye and Australia have framed the summit as the first 'Blue COP' — the host country is planning an Antalya Ocean Declaration, and Australia is seeking a formal cover decision on ocean protection within the UNFCCC process. Energy Day on November 10 is expected to feature ocean resilience commitments alongside electrification pledges. Pacific Small Island Developing States, whose Taku Pakasoa Declaration called for strengthened ocean protections, are positioned as the leading voices for ocean language. Climate finance and the fossil fuel transition remain the dominant negotiating battle lines."
+          "summary": "The official Copernicus C3S October 2026 monthly bulletin confirms October was the warmest on record globally at 1.75°C above preindustrial levels, with an average global surface air temperature of 15.35°C (0.90°C above the 1991–2020 mean). Sea surface temperatures outside polar regions reached 20.95°C — highest on record for any October, surpassing 2023. European land averaged 11.51°C, 1.49°C above normal, making it the second-warmest October on record for Europe. Copernicus declares 2026 &ldquo;virtually certain&rdquo; to exceed the 1.5°C Paris threshold, with a 20% chance of tying or exceeding 2024 as the hottest year on record. El Niño strengthening in the tropical Pacific is cited as the primary driver atop long-term warming."
         },
         {
           "source": "Yahoo News / AFP",
           "date": "2026-11-06",
           "headline": "COP31 Faces Tough Test as Climate Threats Mount: US Sends Congressional Delegation Only; EU Warns Revolution Not Expected; Brazil&rsquo;s Lula to Attend World Leaders&rsquo; Summit",
           "url": "https://www.yahoo.com/news/science/articles/cop31-faces-tough-test-climate-125430446.html",
-          "summary": "With COP31 days away, analysts and diplomats are framing the Antalya summit as a critical but difficult test. The US is attending through a congressional delegation and not the formal UNFCCC negotiations, a significant constraint on ambition given US emissions and financial commitments. A senior EU official warned that a revolution in climate action is not to be expected from Antalya. Brazil's president Lula is expected at the World Leaders' Summit on November 11–12, positioning Brazil — which presented a voluntary fossil fuel phase-out roadmap — as a potential bridge builder. Climate finance for the Global South, the NCQG successor mechanism, and fossil fuel transition language remain the core contested issues."
-        },
-        {
-          "source": "UN News / UNFCCC",
-          "date": "2026-11-05",
-          "headline": "COP31 Pre-Sessional Negotiations Open in Antalya; Main Session Opens November&nbsp;9; Finance, Fossil Fuels and Adaptation Remain Core Battle Lines",
-          "url": "https://news.un.org/en/story/2026/11/1168735",
-          "summary": "Technical pre-sessional negotiations for COP31 opened in Antalya on November 5 under Australian presidency (Australia's Chris Bowen leads the negotiations; Türkiye hosts). The three core battle lines entering talks: an NCQG on climate finance as a credible successor to the failed $100 billion-per-year pledge; language on fossil fuel phase-out following the UAE COP28 breakthrough; and whether adaptation finance receives a dedicated agenda item. The World Leaders Climate Action Summit is expected November 10–12. An oil refiner — Koç Holding's subsidiary Tüpraş — is the summit's top Global Business Partner, drawing criticism from climate campaigners."
-        },
-        {
-          "source": "NOAA / Climate Prediction Center",
-          "date": "2026-11-02",
-          "headline": "NOAA CPC El Ni&ntilde;o Advisory: 70% Probability of Historically Large Event (RONI &ge;&nbsp;+2.5&deg;C) for November&ndash;January 2026&ndash;27; Strong-to-Very Strong Through January&ndash;March 2027",
-          "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
-          "summary": "NOAA CPC's most recent ENSO Diagnostic Discussion puts the probability of a historically large El Niño event — defined as RONI of +2.5°C or more for the three-month average — at 70% for November–January 2026–27. This is the highest such probability stated in the current cycle and aligns with WMO's October projection of Niño 3.4 anomalies near +3.7–3.8°C for the same period. Strong-to-very strong El Niño conditions are assessed as likely through January–March 2027 with odds exceeding 83%. The next CPC ENSO Diagnostic Discussion is scheduled for November 12, 2026."
+          "summary": "With COP31 days away, analysts and diplomats are framing the Antalya summit as a critical but difficult test. The US is attending through a congressional delegation and not the formal UNFCCC negotiations, a significant constraint on ambition given US emissions and financial commitments. A senior EU official warned that a revolution in climate action is not to be expected from Antalya. Brazil&rsquo;s president Lula is expected at the World Leaders&rsquo; Summit on November 11&ndash;12, positioning Brazil — which presented a voluntary fossil fuel phase-out roadmap — as a potential bridge builder. Climate finance for the Global South, the NCQG successor mechanism, and fossil fuel transition language remain the core contested issues."
         },
         {
           "source": "France24 / AFP",
           "date": "2026-11-03",
           "headline": "Brazil Presents Voluntary Global Fossil Fuel Phase-Out Roadmap Ahead of COP31; Officials Stress It Is Not a Negotiating Text",
           "url": "https://www.france24.com/en/live-news/20261103-ahead-of-cop31-brazil-offers-a-global-fossil-fuel-exit-plan",
-          "summary": "Brazil's government published a voluntary roadmap for a managed global fossil fuel phase-out ahead of COP31, framing it as a bridge proposal rather than a formal negotiating text. Brazilian officials stressed the plan accommodates different national energy security circumstances. The move positions Brazil — simultaneously a major oil exporter and one of the world's largest clean energy producers — as a potential dealmaker between major fossil fuel producers and climate-vulnerable nations at Antalya. The roadmap calls for a managed exit rather than an abrupt phase-out, echoing language from the UAE COP28 'transition away' compromise."
+          "summary": "Brazil&rsquo;s government published a voluntary roadmap for a managed global fossil fuel phase-out ahead of COP31, framing it as a bridge proposal rather than a formal negotiating text. Brazilian officials stressed the plan accommodates different national energy security circumstances. The move positions Brazil — simultaneously a major oil exporter and one of the world&rsquo;s largest clean energy producers — as a potential dealmaker between major fossil fuel producers and climate-vulnerable nations at Antalya. The roadmap calls for a managed exit rather than an abrupt phase-out, echoing language from the UAE COP28 &ldquo;transition away&rdquo; compromise."
         },
         {
-          "source": "IISD / UNFCCC COP31 Presidency",
+          "source": "NOAA / Climate Prediction Center",
           "date": "2026-11-02",
-          "headline": "Pacific Pre-COP Concludes with Taku Pakasoa Declaration: Faster Emissions Cuts, Accessible Climate Finance, Ocean Protection",
-          "url": "https://sdg.iisd.org/news/climate-cop-31-presidency-outlines-expectations-for-pacific-pre-cop/",
-          "summary": "The Pacific Pre-COP concluded with the Taku Pakasoa Declaration. Pacific leaders — among the most climate-vulnerable nations — called for accelerated emissions reductions consistent with 1.5°C, more accessible direct climate finance for small island developing states, and strengthened protection of oceans as a global climate regulator. The declaration aligned with the COP31 Presidency's agenda of launching electrification pledges and adding ocean protection to the summit programme on Energy Day, November 10."
+          "headline": "NOAA CPC El Ni&ntilde;o Advisory: 70% Probability of Historically Large Event (RONI &ge;&nbsp;+2.5&deg;C) for November&ndash;January 2026&ndash;27; Strong-to-Very Strong Through January&ndash;March 2027",
+          "url": "https://www.cpc.ncep.noaa.gov/products/analysis_monitoring/enso_advisory/ensodisc.shtml",
+          "summary": "NOAA CPC&rsquo;s most recent ENSO Diagnostic Discussion puts the probability of a historically large El Niño event — defined as RONI of +2.5°C or more for the three-month average — at 70% for November–January 2026–27. This is the highest such probability stated in the current cycle and aligns with WMO&rsquo;s October projection of Niño 3.4 anomalies near +3.7–3.8°C for the same period. Strong-to-very strong El Niño conditions are assessed as likely through January–March 2027 with odds exceeding 83%. The next CPC ENSO Diagnostic Discussion is scheduled for November 12, 2026."
         }
       ]
     },
     "weather": {
       "major_events": [
         {
-          "name": "Florida Extreme Flooding &mdash; St. Johns River Spreading to Lake Harney, DeLand and Volusia County; Death Toll at Two; Major Flood Stage Forecast at Multiple Gauges",
-          "status": "Escalating &mdash; <a href=\"https://www.yahoo.com/news/weather-news/articles/st-johns-river-flooding-expected-232245693.html\" target=\"_blank\" rel=\"noopener\">Lake Harney forecast to approach major flood stage late next week as river continues rising through Seminole County</a>; <a href=\"https://www.yahoo.com/news/weather-news/articles/st-johns-river-hits-moderate-215427632.html\" target=\"_blank\" rel=\"noopener\">river reached moderate flood stage at DeLand in Volusia County and is continuing to rise</a>; Cocoa gauge remains above 16.8&nbsp;ft (threshold 16&nbsp;ft); Sanford crest forecast 6.4&nbsp;ft by Monday; two deaths confirmed statewide; Governor&rsquo;s emergency declaration covers 14 counties",
-          "impact": "Following the November 2 extreme rainfall event (up to 15 inches in Brevard County), the flood has spread northward through Seminole, Volusia and Lake counties and is now entering DeLand. Flood warnings now span the full river system from headwaters to its mouth near Jacksonville. Active cold front passage this weekend brings temporary rainfall relief but no reversal of the slow-drain river system; conditions expected to remain at or above flood stage through mid-November."
+          "name": "Florida Extreme Flooding &mdash; St. Johns River; Cocoa Forecast to Crest 17.1&nbsp;ft Midweek; Sanford Entering Minor Flood Stage Sunday; Two Deaths; 14-County Emergency",
+          "status": "Escalating further &mdash; <a href=\"https://www.clickorlando.com/weather/2026/11/06/flooding-continues-along-the-st-johns-river-as-cooler-weather-arrives-this-weekend/\" target=\"_blank\" rel=\"noopener\">Cocoa gauge now forecast to crest at 17.1&nbsp;ft midweek (threshold 16&nbsp;ft); Sanford gauge entering minor flood stage late Sunday</a>; river at or above major flood stage at multiple upstream gauges from Brevard to Volusia; two deaths confirmed statewide; Governor&rsquo;s emergency declaration covers 14 counties; NWS Melbourne issuing ongoing flood warnings for the full river system; cold front passage this weekend brought no reversal of the slow-drain flood trajectory",
+          "impact": "The November 2 extreme rainfall event (up to 15 inches in Brevard County) has propagated northward through Seminole, Volusia and Lake counties; the St. Johns River system is in slow-drain mode with conditions expected at or above flood stage through mid-November. The upcoming forecast crests — Cocoa 17.1 ft and Sanford entering minor flood stage — represent a further escalation from earlier readings. Widespread crop and infrastructure damage is accumulating across the affected counties, and the river system is now fully engaged from its headwaters to the mouth near Jacksonville."
         },
         {
-          "name": "Tropical Storm Pena &mdash; Central Pacific, Southeast of Hawaiian Islands; No Land Threat",
-          "status": "Active &mdash; <a href=\"https://staradvertiser.com/2026/11/06/breaking-news/tropical-storm-pena-forms-southeast-of-hawaii-poses-no-threat-to-land\" target=\"_blank\" rel=\"noopener\">Tropical Storm Pena formed on November&nbsp;6 with 45&nbsp;mph sustained winds, centered approximately 650&nbsp;miles southeast of South Point, Hawai&lsquo;i</a>; NHC Pacific forecasts westward track passing well south of the islands; no coastal watches or warnings in effect; model disagreement grows beyond Day&nbsp;3",
-          "impact": "Pena is developing within anomalously warm SSTs tied to the record 2026 El Niño event. While no land threat is currently forecast, the storm is in the same high-shear transition zone where El Niño systems have shown unexpected track variability this season. NHC Pacific is issuing advisory updates; next advisory expected to refine track uncertainty."
+          "name": "Severe Tropical Storm Cempaka &mdash; Approaching Philippine Area of Responsibility; 110&nbsp;km/h Winds; Forecast to Typhoon Before Northern Luzon Landfall",
+          "status": "Active and intensifying &mdash; <a href=\"https://www.manilatimes.net/2026/11/08/news/tropical-storm-could-enter-par-tonight-or-early-monday-pagasa/2464671\" target=\"_blank\" rel=\"noopener\">Severe Tropical Storm Cempaka carrying 110&nbsp;km/h sustained winds is expected to enter the Philippine Area of Responsibility tonight or early Monday, November&nbsp;9</a>; PAGASA forecasts further intensification to typhoon strength before making landfall in northern Luzon; tropical cyclone wind signal advisories are imminent for Isabela, Cagayan and Aurora provinces",
+          "impact": "Cempaka is approaching a Philippines landfall along the northern Luzon corridor, historically one of the most typhoon-vulnerable coastlines in the world. Intensification within warm Philippine Sea SSTs ahead of landfall is expected. If landfall occurs at typhoon strength, significant agricultural damage and infrastructure impacts in northern Luzon and southern Cagayan Valley are likely. NDRRMC is on alert; PAGASA issuing continuous weather bulletins."
         },
         {
           "name": "Southeast Asian Peatland Haze (Indonesia / Borneo / Sumatra) &mdash; Ongoing; Surface Hotspots Falling but Underground Fires Continue; Air-Pollution Deaths Up 42%",
@@ -74,82 +67,82 @@
           "impact": "~40 million people region-wide continue to experience elevated PM2.5 across Indonesia, Malaysia, Singapore and the Philippines. The El Niño peak expected in December threatens to delay the full wet-season transition in the most fire-prone peatland areas of southern Sumatra and Central Kalimantan. Underground fires can persist for months despite surface rain onset."
         }
       ],
-      "overview_html": "<a href=\"https://staradvertiser.com/2026/11/06/breaking-news/tropical-storm-pena-forms-southeast-of-hawaii-poses-no-threat-to-land\" target=\"_blank\" rel=\"noopener\">Tropical Storm Pena formed on November&nbsp;6 southeast of Hawai&lsquo;i with 45&nbsp;mph winds; NHC Pacific forecasts no land threat</a>. Florida&rsquo;s flooding has spread further north: <a href=\"https://www.yahoo.com/news/weather-news/articles/st-johns-river-hits-moderate-215427632.html\" target=\"_blank\" rel=\"noopener\">the St.&nbsp;Johns River hit moderate flood stage at DeLand in Volusia County</a> and <a href=\"https://www.yahoo.com/news/weather-news/articles/st-johns-river-flooding-expected-232245693.html\" target=\"_blank\" rel=\"noopener\">Lake Harney is forecast to approach major flood stage late next week</a>; two deaths confirmed, 14-county emergency declaration in effect. <a href=\"https://www.thevibes.com/index.php/articles/lifestyles/128123/indonesia-forest-fire-hotspots-plunge-67-but-haze-and-dry-weather-risks-persist\" target=\"_blank\" rel=\"noopener\">Indonesia&rsquo;s surface hotspot count fell 67% in October</a>, but Indonesia&rsquo;s health data shows air-pollution deaths rose 42% from August to September and underground peat fires continue.",
+      "overview_html": "<a href=\"https://www.manilatimes.net/2026/11/08/news/tropical-storm-could-enter-par-tonight-or-early-monday-pagasa/2464671\" target=\"_blank\" rel=\"noopener\">Severe Tropical Storm Cempaka (110&nbsp;km/h), expected to enter the Philippine Area of Responsibility tonight or early Monday, is forecast to intensify to typhoon strength before making landfall in northern Luzon</a> &mdash; PAGASA weather bulletins are under way. Florida&rsquo;s St.&nbsp;Johns River flooding is worsening: <a href=\"https://www.clickorlando.com/weather/2026/11/06/flooding-continues-along-the-st-johns-river-as-cooler-weather-arrives-this-weekend/\" target=\"_blank\" rel=\"noopener\">the Cocoa gauge is now forecast to crest at 17.1&nbsp;ft midweek and the Sanford gauge is entering minor flood stage Sunday</a>, with the two-death toll and 14-county emergency declaration unchanged. <a href=\"https://citizen.co.za/news/south-africa/weather/south-africa-weather-alert-8-november-2026\" target=\"_blank\" rel=\"noopener\">KwaZulu-Natal, South Africa is under a severe weather alert today for heavy rainfall and damaging winds</a>. <a href=\"https://www.thevibes.com/index.php/articles/lifestyles/128123/indonesia-forest-fire-hotspots-plunge-67-but-haze-and-dry-weather-risks-persist\" target=\"_blank\" rel=\"noopener\">Indonesia&rsquo;s surface hotspot count fell 67% in October</a>, but underground peat fires persist and air-pollution deaths rose 42% from August to September.",
       "items": [
         {
-          "source": "Yahoo News / NWS Melbourne FL",
-          "date": "2026-11-07",
-          "headline": "St. Johns River Flooding Spreads Further: Moderate Flood Stage Reached at DeLand (Volusia County); Lake Harney Forecast Major Flood Stage Late Next Week; Cocoa Gauge 16.8&nbsp;ft",
-          "url": "https://www.yahoo.com/news/weather-news/articles/st-johns-river-hits-moderate-215427632.html",
-          "summary": "As of November 7, the St. Johns River has reached moderate flood stage at DeLand in Volusia County, adding to the growing list of gauges above flood stage. The river near Lake Harney (Seminole/Volusia line) is now forecast to approach major flood stage late next week as slow upstream drainage continues. The Cocoa gauge (Brevard) remains at 16.8 ft, above its 16 ft flood stage threshold, with a continued rise toward major flood stage expected this weekend. Sanford is forecast to crest at 6.4 ft by Monday. Active flood warnings span the full river system. Two deaths have been confirmed statewide, with the Governor's emergency declaration covering 14 counties. A cold front is forecast to pass Saturday, bringing some temporary rainfall reduction without reversing the slow-drain river-flood trajectory."
+          "source": "Manila Times / PAGASA",
+          "date": "2026-11-08",
+          "headline": "Severe Tropical Storm Cempaka to Enter Philippine Area of Responsibility Tonight or Monday; 110&nbsp;km/h Winds; PAGASA Forecasts Typhoon Intensity Before Northern Luzon Landfall",
+          "url": "https://www.manilatimes.net/2026/11/08/news/tropical-storm-could-enter-par-tonight-or-early-monday-pagasa/2464671",
+          "summary": "Severe Tropical Storm Cempaka is forecast to enter the Philippine Area of Responsibility tonight (November 8) or early Monday morning, carrying maximum sustained winds of 110 km/h with gusts to 135 km/h. PAGASA forecasts that Cempaka will continue to intensify over the warm Philippine Sea waters and may reach typhoon strength (sustained winds exceeding 118 km/h) before making landfall in northern Luzon. Isabela, Cagayan and Aurora provinces are expected to be in the first wind signal areas. The storm is tracking northwest and poses a direct threat to the northern Luzon agricultural corridor; PAGASA weather bulletins are being issued every six hours."
         },
         {
-          "source": "Star Advertiser / NHC Pacific",
-          "date": "2026-11-06",
-          "headline": "Tropical Storm Pena Forms Southeast of Hawaiian Islands; 45&nbsp;mph Winds; NHC Pacific: No Land Threat; Track Uncertainty Grows After Day&nbsp;3",
-          "url": "https://staradvertiser.com/2026/11/06/breaking-news/tropical-storm-pena-forms-southeast-of-hawaii-poses-no-threat-to-land",
-          "summary": "Tropical Storm Pena formed on November 6 with maximum sustained winds of 45 mph, centered approximately 650 miles southeast of South Point, Hawaii. NHC Pacific forecasts a westward track over the coming days, passing well south of the Hawaiian Islands with no coastal watches or warnings in effect. The storm is developing within anomalously warm El Niño-enhanced SSTs in the central Pacific. Forecast confidence drops after about Monday as computer models begin to diverge on the track. No impact to land areas is currently forecast. NHC Pacific advisories continue."
+          "source": "Click Orlando / NWS Melbourne FL",
+          "date": "2026-11-08",
+          "headline": "St. Johns River Flooding Continues to Escalate: Cocoa Forecast to Crest 17.1&nbsp;ft Midweek; Sanford Entering Minor Flood Stage Sunday; Cold Front Brings No Reversal",
+          "url": "https://www.clickorlando.com/weather/2026/11/06/flooding-continues-along-the-st-johns-river-as-cooler-weather-arrives-this-weekend/",
+          "summary": "As of Sunday November 8, the St. Johns River flooding continues to escalate. The Cocoa gauge in Brevard County is now forecast to crest at approximately 17.1 ft midweek — above the 17 ft major flood stage threshold. The Sanford gauge is entering minor flood stage late Sunday. River gauges from the headwaters southward through Brevard, Seminole and Volusia counties remain at or above flood stage. The cold front that passed Saturday brought temporary rainfall relief but no reversal of the slow-drain river system. Two deaths have been confirmed statewide from the broader flood event that began with November 2 extreme rainfall. The Governor&rsquo;s emergency declaration covers 14 counties and remains in effect."
+        },
+        {
+          "source": "The Citizen / South African Weather Service",
+          "date": "2026-11-08",
+          "headline": "South Africa: KwaZulu-Natal Under Severe Weather Alert for Heavy Rainfall, Damaging Winds and Hail; Coastal Flooding Risk for Durban Metropolitan Area",
+          "url": "https://citizen.co.za/news/south-africa/weather/south-africa-weather-alert-8-november-2026",
+          "summary": "The South African Weather Service has issued a severe weather alert for KwaZulu-Natal province for November 8, warning of heavy rainfall (up to 50 mm in 24 hours in some areas), damaging winds and hail, with coastal flooding risk for the Durban metropolitan area. The system is associated with a cut-off low pressure system drawing warm Indian Ocean moisture inland. SAWS advises residents to avoid flood-prone areas and monitor official communications. No damage reports have been confirmed yet."
         },
         {
           "source": "The Vibes / Jakarta Post",
           "date": "2026-11-03",
           "headline": "Indonesia Forest-Fire Hotspot Count Falls 67% in October as Wet Season Begins; Air-Pollution Deaths Up 42% Aug&ndash;Sep; Underground Peat Fires at 8&nbsp;m Depth Continuing",
           "url": "https://www.thevibes.com/index.php/articles/lifestyles/128123/indonesia-forest-fire-hotspots-plunge-67-but-haze-and-dry-weather-risks-persist",
-          "summary": "Indonesia's surface forest-fire hotspot count fell approximately 67% in October as early wet-season rains began arriving in parts of Sumatra and Kalimantan. However, Indonesia's health ministry data shows air-pollution-linked deaths rose 42% from August to September 2026, with more than 170,000 people requiring treatment for acute respiratory infections in those two months. The 2026 fire season has burned over 1.9 million hectares through end-September, with the annual hotspot count exceeding yearly totals from every year 2019–2025. Underground peat fires at depths of up to 8 m resist wet-season rain onset and continue. The bilateral Indonesia–Singapore task force is operational, and Singapore has initiated action under its Transboundary Haze Pollution Act against firms contributing to the fires."
-        },
-        {
-          "source": "Carrier Management / AP",
-          "date": "2026-11-04",
-          "headline": "Southwest US Flooding Aftermath: One Death Confirmed in Flagstaff; Damage Spans Four States; Cleanup Expected to Take Weeks",
-          "url": "https://carriermanagement.com/news/2026/11/04/293199.htm",
-          "summary": "One death confirmed in Flagstaff, Arizona, following the November 1–2 Four Corners atmospheric river event. Infrastructure damage spans Arizona, Colorado, New Mexico and portions of Nevada. Road closures, bridge damage and utility disruptions across Flagstaff, Sedona, Tucson, Durango and Pagosa Springs. More than 10 all-time flood gauge records broken across three states; full damage assessment ongoing. Cleanup expected to take several weeks. Attribution research examining the role of El Niño-elevated SSTs in amplifying atmospheric moisture flux is underway."
+          "summary": "Indonesia&rsquo;s surface forest-fire hotspot count fell approximately 67% in October as early wet-season rains began arriving in parts of Sumatra and Kalimantan. However, Indonesia&rsquo;s health ministry data shows air-pollution-linked deaths rose 42% from August to September 2026, with more than 170,000 people requiring treatment for acute respiratory infections in those two months. The 2026 fire season has burned over 1.9 million hectares through end-September, with the annual hotspot count exceeding yearly totals from every year 2019&ndash;2025. Underground peat fires at depths of up to 8 m resist wet-season rain onset and continue. The bilateral Indonesia&ndash;Singapore task force is operational, and Singapore has initiated action under its Transboundary Haze Pollution Act against firms contributing to the fires."
         }
       ]
     },
     "renewables": {
-      "overview_html": "Australian renewable developer Neoen secured <a href=\"https://www.pv-tech.org/neoen-secures-au1-8-billion-to-finance-1-2gw-australian-solar-wind-and-storage-portfolio/\" target=\"_blank\" rel=\"noopener\">its largest-ever financing &mdash; A$1.8&nbsp;billion (~US$1.265&nbsp;bn) &mdash; for a 1.2&nbsp;GW portfolio of wind, solar and storage assets across South Australia, New South Wales and Western Australia</a>. France awarded <a href=\"https://greentechlead.com/energy-news/renewables-news-virya-energy-sunraycer-france-awards-1006-mw-wind-capacity-56331\" target=\"_blank\" rel=\"noopener\">1,006&nbsp;MW in its latest onshore wind tender at a weighted average price of &euro;78.57/MWh across 63 projects</a>. <a href=\"https://taiyangnews.info/markets/china-solar-pv-news-snippets-november-6-2026\" target=\"_blank\" rel=\"noopener\">China&rsquo;s NEA reports that over 157&nbsp;GW of large-scale wind and solar have been built in desert and barren areas by end-September&nbsp;2026</a> &mdash; exceeding the country&rsquo;s 2030 desert-category target seven years early. T&uuml;rkiye&rsquo;s YEKA GES-2026 auction awarded <a href=\"https://greentechlead.com/energy-news/renewables-news-solar-capacity-in-turkiye-squadron-energy-verbund-56314\" target=\"_blank\" rel=\"noopener\">785&nbsp;MW of solar capacity across 11 projects</a>.",
+      "overview_html": "<a href=\"https://offshorewind.biz/2026/11/04/cadeler-adds-wind-apex-to-dogger-bank-c-turbine-installation-campaign\" target=\"_blank\" rel=\"noopener\">Cadeler secured a firm turbine installation contract for Dogger Bank C (3,600&nbsp;MW total), the final phase of what will be the world&rsquo;s largest offshore wind farm</a>, with the Wind Apex vessel assigned and first installation beginning 2027. <a href=\"https://pv-magazine.com/2026/11/06/october-2026-good-for-pv-production-in-europe-but-south-of-france-and-ukraine-missout\" target=\"_blank\" rel=\"noopener\">October 2026 delivered above-average solar PV production across most of Europe</a>, though southern France and Ukraine lagged due to persistent cloud cover. Australian developer Neoen secured <a href=\"https://www.pv-tech.org/neoen-secures-au1-8-billion-to-finance-1-2gw-australian-solar-wind-and-storage-portfolio/\" target=\"_blank\" rel=\"noopener\">its largest-ever financing &mdash; A$1.8&nbsp;billion (~US$1.265&nbsp;bn) &mdash; for a 1.2&nbsp;GW portfolio</a>. <a href=\"https://taiyangnews.info/markets/china-solar-pv-news-snippets-november-6-2026\" target=\"_blank\" rel=\"noopener\">China NEA reports 157&nbsp;GW of large-scale desert solar and wind built by end-September, exceeding the 2030 desert-category target seven years early</a>.",
       "items": [
+        {
+          "source": "Offshore Wind Biz",
+          "date": "2026-11-04",
+          "headline": "Cadeler Wins Firm Turbine Installation Contract for Dogger Bank C (3,600&nbsp;MW); Wind Apex Vessel Assigned; First Phase Installation Begins 2027",
+          "url": "https://offshorewind.biz/2026/11/04/cadeler-adds-wind-apex-to-dogger-bank-c-turbine-installation-campaign",
+          "summary": "Cadeler, the Danish offshore wind installation vessel company, secured a firm turbine installation contract for Dogger Bank C &mdash; the third and final phase of the Dogger Bank offshore wind farm, which at 3,600 MW total will be the world&rsquo;s largest offshore wind farm once fully completed. Cadeler&rsquo;s Wind Apex installation vessel is assigned to the Dogger Bank C campaign, with the first phase of turbine installation expected to commence in 2027. The contract adds to Cadeler&rsquo;s growing orderbook for large-rotor turbine installation in the North Sea, following its recent Hornsea Three and Sofia contracts."
+        },
+        {
+          "source": "PV Magazine Europe",
+          "date": "2026-11-06",
+          "headline": "October 2026: Above-Average Solar PV Production Across Most of Europe; Southern France and Ukraine Lag Due to Persistent Cloud Cover",
+          "url": "https://pv-magazine.com/2026/11/06/october-2026-good-for-pv-production-in-europe-but-south-of-france-and-ukraine-missout",
+          "summary": "Europe&rsquo;s solar PV systems generated above-average electricity in October 2026 for most of the continent, according to PV Magazine&rsquo;s monthly production analysis. Northern and Central Europe — including Germany, the Netherlands, the UK and Scandinavia — posted positive deviations from seasonal norms. Southern France and Ukraine were exceptions, experiencing below-average irradiance due to persistent cloud cover associated with Atlantic weather systems tracking further south than typical. The analysis highlights the growing materiality of solar generation in European power balancing as installed capacity continues to grow."
+        },
         {
           "source": "PV Tech / Mercom India",
           "date": "2026-11-03",
           "headline": "Neoen Secures A$1.8&nbsp;Billion (~US$1.265&nbsp;bn) Debt Financing for 1.2&nbsp;GW Australian Renewables Portfolio; Largest Single Financing in Company History",
           "url": "https://www.pv-tech.org/neoen-secures-au1-8-billion-to-finance-1-2gw-australian-solar-wind-and-storage-portfolio/",
-          "summary": "Australian renewable developer Neoen secured A$1.8 billion in debt from 13 Australian and international lenders for a 1.2 GW portfolio spanning five projects: two wind farms, two battery energy storage projects, and one solar farm. The assets are spread across South Australia, New South Wales and Western Australia. The 440 MWp Culcairn solar plant in New South Wales is among the named assets. Neoen says it has now raised more than A$5 billion since 2024, covering 4.7 GW across 20 Australian projects. The deal is the company's largest single financing to date and signals continued institutional appetite for large-scale Australian clean energy infrastructure."
+          "summary": "Australian renewable developer Neoen secured A$1.8 billion in debt from 13 Australian and international lenders for a 1.2 GW portfolio spanning five projects: two wind farms, two battery energy storage projects, and one solar farm. The assets are spread across South Australia, New South Wales and Western Australia. The 440 MWp Culcairn solar plant in New South Wales is among the named assets. Neoen says it has now raised more than A$5 billion since 2024, covering 4.7 GW across 20 Australian projects. The deal is the company&rsquo;s largest single financing to date and signals continued institutional appetite for large-scale Australian clean energy infrastructure."
         },
         {
           "source": "GreentechLead",
           "date": "2026-11-05",
           "headline": "France Awards 1,006&nbsp;MW in Onshore Wind Tender Across 63 Projects; Weighted Average Price &euro;78.57/MWh",
           "url": "https://greentechlead.com/energy-news/renewables-news-virya-energy-sunraycer-france-awards-1006-mw-wind-capacity-56331",
-          "summary": "France's energy regulator awarded approximately 1,006 MW of onshore wind capacity across 63 projects in its latest competitive tender. The weighted average awarded electricity price was €78.57 per MWh. The result adds to France's growing pipeline of awarded onshore wind capacity as the country accelerates its renewable buildout under EU energy policy commitments. Separate Belgian developer Virya Energy also features in this GreentechLead renewables roundup."
+          "summary": "France&rsquo;s energy regulator awarded approximately 1,006 MW of onshore wind capacity across 63 projects in its latest competitive tender. The weighted average awarded electricity price was &euro;78.57 per MWh. The result adds to France&rsquo;s growing pipeline of awarded onshore wind capacity as the country accelerates its renewable buildout under EU energy policy commitments."
         },
         {
           "source": "Taiyang News",
           "date": "2026-11-06",
           "headline": "China NEA: Over 157&nbsp;GW of Large-Scale Desert Solar and Wind Built by End-September 2026 &mdash; Exceeds 2030 Target Seven Years Early",
           "url": "https://taiyangnews.info/markets/china-solar-pv-news-snippets-november-6-2026",
-          "summary": "China's National Energy Administration reported that more than 157 GW of large-scale wind and solar projects have been constructed in desert, Gobi, and other barren areas by the end of September 2026 — exceeding the country's 2030 target for the desert solar/wind programme by seven years. The figure does not represent China's total solar and wind installed capacity, which is substantially higher; it refers specifically to the large-base desert-siting programme. The milestone underscores the pace of China's renewable buildout and the compression of its project delivery timelines."
-        },
-        {
-          "source": "GreentechLead / Turkish MENR",
-          "date": "2026-11-03",
-          "headline": "T&uuml;rkiye YEKA GES-2026 Auction Awards 785&nbsp;MW Solar Capacity Across 11 Projects",
-          "url": "https://greentechlead.com/energy-news/renewables-news-solar-capacity-in-turkiye-squadron-energy-verbund-56314",
-          "summary": "Türkiye's Ministry of Energy and Natural Resources awarded 785 MW of solar electricity connection capacity across 11 projects under its YEKA GES-2026 renewable-energy auction programme. The results expand Türkiye's solar installed base as the country hosts COP31 in November — a source of controversy given its reliance on fossil fuels — and reflect the country's stated long-term renewable energy expansion targets."
+          "summary": "China&rsquo;s National Energy Administration reported that more than 157 GW of large-scale wind and solar projects have been constructed in desert, Gobi, and other barren areas by the end of September 2026 &mdash; exceeding the country&rsquo;s 2030 target for the desert solar/wind programme by seven years. The figure does not represent China&rsquo;s total solar and wind installed capacity, which is substantially higher; it refers specifically to the large-base desert-siting programme. The milestone underscores the pace of China&rsquo;s renewable buildout and the compression of its project delivery timelines."
         },
         {
           "source": "SolarQuarter / MNRE",
           "date": "2026-11-06",
           "headline": "India Targets 530&nbsp;GW Renewable Energy Capacity by 2030 as Solar Manufacturing Expands to 225&nbsp;GW",
           "url": "https://solarquarter.com/2026/11/06/india-targets-530-gw-renewable-energy-capacity-by-2030-as-solar-manufacturing-expands-to-225-gw",
-          "summary": "Indian government officials confirmed an expanded target of 530 GW of renewable energy capacity by 2030, alongside plans to grow domestic solar module manufacturing capacity to 225 GW. The revised 530 GW figure encompasses solar, wind and hybrid capacity additions beyond India's previously stated 500 GW non-fossil power goal. Solar module manufacturing is to reach 225 GW capacity — up from approximately 74 GW in March 2025 — to reduce import dependence and position India as a global renewable equipment exporter."
-        },
-        {
-          "source": "Mercom Capital Group",
-          "date": "2026-11-05",
-          "headline": "Sunraycer Renewables Acquires 325&nbsp;MW of Solar Projects in Illinois and Missouri from Apricus Energy",
-          "url": "https://mercomcapital.com/sunraycer-renewables-acquires-325-mw-of-solar-projects-in-the-us/",
-          "summary": "Sunraycer Renewables, a Crayhill Capital portfolio company, acquired two utility-scale solar projects from Apricus Energy: the 175 MW Gem City solar project in Adams County, Illinois, and the 150 MW Mighty Mississippi solar project in New Madrid County, Missouri. Construction on both facilities is anticipated to commence in early 2028. The acquisitions expand Sunraycer's growing MISO-region solar portfolio alongside its existing Texas solar-plus-storage assets financed in May 2026."
+          "summary": "Indian government officials confirmed an expanded target of 530 GW of renewable energy capacity by 2030, alongside plans to grow domestic solar module manufacturing capacity to 225 GW. The revised 530 GW figure encompasses solar, wind and hybrid capacity additions beyond India&rsquo;s previously stated 500 GW non-fossil power goal. Solar module manufacturing is to reach 225 GW capacity &mdash; up from approximately 74 GW in March 2025 &mdash; to reduce import dependence and position India as a global renewable equipment exporter."
         },
         {
           "source": "PV Tech",
@@ -157,20 +150,6 @@
           "headline": "Array Technologies and Shoals Technologies Agree All-Stock Merger; Creates Integrated Solar Infrastructure Platform Spanning Trackers and Electrical BOS",
           "url": "https://pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform",
           "summary": "Array Technologies (solar tracker systems) and Shoals Technologies (electrical balance of systems, connectors and BOS products) announced an all-stock merger agreement, creating an integrated solar infrastructure platform. The combined company will offer bundled procurement and single-vendor service for large-scale solar projects, targeting improved cost efficiencies for utility-scale developers. The deal is subject to shareholder and regulatory approvals."
-        },
-        {
-          "source": "SolarQuarter",
-          "date": "2026-11-05",
-          "headline": "Tata Power Renewable Commissions 300&nbsp;MW SECI Solar Project in Koppal, Karnataka; Total Renewable Portfolio Reaches 12&nbsp;GW",
-          "url": "https://solarquarter.com/2026/11/05/tata-power-renewable-commissions-300-mw-seci-solar-project-in-karnataka-takes-renewable-utility-portfolio-to-12-gw",
-          "summary": "Tata Power Renewable Energy commissioned its 300 MW SECI-awarded solar project at Koppal, Karnataka, bringing the company's total renewable energy portfolio to 12 GW — a 20x growth over the past decade. The Koppal project is one of the largest single-site solar installations commissioned in Karnataka and directly supports India's national renewable energy targets."
-        },
-        {
-          "source": "GreentechLead",
-          "date": "2026-11-03",
-          "headline": "Squadron Energy Receives State Planning Approval for 420&nbsp;MW Moreton Hill Wind Farm in Victoria, Australia; Up to 62 Turbines",
-          "url": "https://greentechlead.com/energy-news/renewables-news-solar-capacity-in-turkiye-squadron-energy-verbund-56314",
-          "summary": "Squadron Energy received state planning approval for its 420 MW Moreton Hill wind farm in Victoria, which will incorporate up to 62 wind turbines. The approval is a key development milestone for one of Australia's largest renewable developers, contributing to Australia's target of 82% renewable electricity by 2030."
         },
         {
           "source": "Canary Media / Mintz",
@@ -182,7 +161,7 @@
       ]
     },
     "science": {
-      "overview_html": "The standout new publication is a <a href=\"https://www.nature.com/articles/s41586-026-11126-x\" target=\"_blank\" rel=\"noopener\">Nature study from Guan, Mackey, Cohen and colleagues introducing probabilistic bias correction (PBC)</a>, a machine-learning post-processor applied atop any dynamical or AI forecast model that <a href=\"https://www.nature.com/articles/d41586-026-03077-0\" target=\"_blank\" rel=\"noopener\">doubled ECMWF&rsquo;s AIFS-SUBS subseasonal skill score and placed first in ECMWF&rsquo;s 2025 real-time forecasting competition across all variables and lead times</a>. <a href=\"https://deeplearn.org/arxiv/860323/satfront:-detecting-atmospheric-fronts-with-satellite-data-using-machine-learning\" target=\"_blank\" rel=\"noopener\">SATFRONT demonstrates that geostationary satellite data alone can detect atmospheric fronts over Europe (CSI@150&nbsp;km&nbsp;=&nbsp;0.428), rising to 0.591 when ERA5 reanalysis is added</a>&mdash;relevant for data-sparse regions where full NWP reanalysis is unavailable. Among carried papers, <a href=\"https://arxiv.org/abs/2611.05592\" target=\"_blank\" rel=\"noopener\">Vonich &amp; Hakim&rsquo;s diagnostic framework separating initial-condition from model error</a> in AI forecast degradation remains the most practically significant preprint of the period.",
+      "overview_html": "Fresh this week: <a href=\"https://www.geekwire.com/2026/ai2-gets-5m-from-google-to-turn-ai-weather-model-into-a-tool-for-projecting-climate-change/\" target=\"_blank\" rel=\"noopener\">Google&rsquo;s $5&nbsp;M grant to Ai2 will extend NeuralGCM into an open-source climate projection system trained on CMIP6 multi-decadal scenarios</a>, bridging the gap between AI weather forecasting and long-horizon climate modelling. A preprint under review at <em>Nature Climate Change</em> introduces the <a href=\"https://www.researchsquare.com/article/rs-7714530/v2\" target=\"_blank\" rel=\"noopener\">&ldquo;Carbon at Risk&rdquo; framework, which quantifies ecosystem carbon losses from extreme weather events under 1.5&ndash;4&deg;C warming</a>. A new <a href=\"https://agupubs.onlinelibrary.wiley.com/toc/19448007/current\" target=\"_blank\" rel=\"noopener\"><em>GRL</em> study links central Pacific salinification to El Ni&ntilde;o-driven freshwater redistribution</a>, with implications for ocean carbon uptake at a moment of record SSTs. The <a href=\"https://www.nature.com/articles/s41586-026-11126-x\" target=\"_blank\" rel=\"noopener\">Nature PBC paper (Guan, Mackey, Cohen et&nbsp;al.) that doubled ECMWF AIFS-SUBS subseasonal skill</a> and placed first in ECMWF&rsquo;s 2025 real-time competition remains the standout publication of the past two weeks.",
       "items": [
         {
           "source": "Nature / Microsoft Research",
@@ -190,15 +169,31 @@
           "headline": "Nature: Probabilistic Bias Correction Doubles Subseasonal AI Forecast Skill; Placed First in ECMWF 2025 Real-Time Competition; Open-Source Release",
           "url": "https://www.nature.com/articles/s41586-026-11126-x",
           "meta": "Guan, Mackey, Cohen et al. &middot; Nature (14 Oct 2026)",
-          "summary": "A Nature study from Hannah Guan (Microsoft Research), Kyle Mackey (MIT) and colleagues introduces probabilistic bias correction (PBC), a machine-learning post-processing layer that corrects historical forecast distributions from any dynamical or AI model using adaptive bias correction across variables and lead times. Applied to ECMWF's AIFS-SUBS subseasonal model, PBC doubled the mean RPSS across all variables and lead times. PBC placed first for all weather variables and lead times in ECMWF's 2025 real-time subseasonal forecasting competition. Improvement is concentrated primarily in the tropical belt; gains over Europe are modest. Microsoft Research released the method as open-source software. The arXiv preprint (arXiv:2604.16238) dates from April 2026; the paper is now peer-reviewed and published in Nature."
+          "summary": "A Nature study from Hannah Guan (Microsoft Research), Kyle Mackey (MIT) and colleagues introduces probabilistic bias correction (PBC), a machine-learning post-processing layer that corrects historical forecast distributions from any dynamical or AI model using adaptive bias correction across variables and lead times. Applied to ECMWF&rsquo;s AIFS-SUBS subseasonal model, PBC doubled the mean RPSS across all variables and lead times. PBC placed first for all weather variables and lead times in ECMWF&rsquo;s 2025 real-time subseasonal forecasting competition. Improvement is concentrated primarily in the tropical belt; gains over Europe are modest. Microsoft Research released the method as open-source software."
         },
         {
-          "source": "arXiv / NeurIPS 2026",
-          "date": "2026-10-30",
-          "headline": "SATFRONT: Detecting Atmospheric Fronts from Geostationary Satellite Data Using Machine Learning; CSI@150&nbsp;km&nbsp;=&nbsp;0.428 Satellite-Only, 0.591 with ERA5",
-          "url": "https://deeplearn.org/arxiv/860323/satfront:-detecting-atmospheric-fronts-with-satellite-data-using-machine-learning",
-          "meta": "Dravilas, Lucic et al. (30 Oct 2026) &middot; NeurIPS 2026",
-          "summary": "SATFRONT presents a machine learning framework for detecting cold, warm, and occluded atmospheric fronts over Europe from geostationary satellite observations, with ERA5 reanalysis as an optional additional input. Using Meteosat satellite data alone, the model achieves a Critical Success Index (CSI) at 150 km tolerance of 0.428; adding ERA5 raises this to 0.591. The analysis identifies near-surface winds and atmospheric moisture as the variables least recoverable from satellite observations alone — pointing to the specific limitations of satellite-only analysis in dynamically complex frontal zones. Developed in collaboration with EUMETSAT, the approach is relevant to operational NWP centres in data-sparse regions and to future satellite-first analysis workflows."
+          "source": "GeekWire / Allen Institute for AI",
+          "date": "2026-11-07",
+          "headline": "Google Funds Ai2 $5&nbsp;M to Extend NeuralGCM Into Open-Source Climate Projection System; Training on CMIP6 Multi-Decadal Scenarios",
+          "url": "https://www.geekwire.com/2026/ai2-gets-5m-from-google-to-turn-ai-weather-model-into-a-tool-for-projecting-climate-change/",
+          "meta": "Ai2 / Google Research &middot; 7 Nov 2026",
+          "summary": "The Allen Institute for AI received a $5 million grant from Google to extend NeuralGCM &mdash; originally developed as a machine-learning-based numerical weather prediction model &mdash; into a tool for multi-decadal climate change projection. The project aims to build an open-source climate model trained on CMIP6 scenario outputs, allowing climate scientists to run fast probabilistic projections beyond NWP time scales. NeuralGCM, developed collaboratively by Google Research and ECMWF, demonstrated competitive NWP skill in 2024–25; this Ai2-led project represents a significant extension of its scope into decadal climate modelling."
+        },
+        {
+          "source": "Research Square / Nature Climate Change",
+          "date": "2026-11-06",
+          "headline": "Preprint: &ldquo;Carbon at Risk&rdquo; Framework Quantifies Ecosystem Carbon Loss from Extreme Weather Under 1.5&ndash;4&deg;C Warming; Multi-Model Synthesis",
+          "url": "https://www.researchsquare.com/article/rs-7714530/v2",
+          "meta": "Research Square preprint (6 Nov 2026) &middot; under review Nature Climate Change",
+          "summary": "A preprint under review at Nature Climate Change introduces a &ldquo;Carbon at Risk&rdquo; (CaR) framework that quantifies ecosystem carbon losses resulting from compound extreme weather events &mdash; heatwaves, droughts and floods &mdash; under 1.5°C, 2°C, 3°C and 4°C global warming scenarios using a multi-model synthesis approach. The framework draws on CMIP6 climate projections combined with a vegetation carbon model ensemble to estimate tails of carbon loss risk analogous to financial Value-at-Risk methods. Results show non-linear increases in carbon loss risk above 2°C, with tropical and boreal ecosystems contributing the largest tails."
+        },
+        {
+          "source": "Geophysical Research Letters / AGU",
+          "date": "2026-11-06",
+          "headline": "GRL: Central Pacific Salinification Trend Linked to El Ni&ntilde;o-Driven Freshwater Transport Redistribution; Implications for Ocean Carbon Uptake",
+          "url": "https://agupubs.onlinelibrary.wiley.com/toc/19448007/current",
+          "meta": "Geophysical Research Letters (Nov 2026 current issue)",
+          "summary": "A newly published GRL study documents a salinification trend in the central Pacific Ocean and attributes it primarily to El Niño-driven redistribution of freshwater fluxes &mdash; reduced precipitation in normally convergent zones displaced by ITCZ shifts associated with El Niño events. The trend has implications for ocean CO₂ solubility: saltier, warmer surface waters reduce the ocean&rsquo;s capacity to absorb atmospheric CO₂, with feedback potential on the global carbon budget at a moment of record central Pacific SSTs driven by the strong 2026 El Niño event."
         },
         {
           "source": "arXiv",
@@ -206,7 +201,7 @@
           "headline": "arXiv:2611.05592 &mdash; Separating Initial-Condition vs. Model Error in AI Weather Forecasts: Attribution Framework for Downstream Probabilistic Skill Degradation",
           "url": "https://arxiv.org/abs/2611.05592",
           "meta": "Vonich &amp; Hakim (3 Nov 2026) &middot; arXiv:2611.05592 &middot; cs.LG &times; physics.ao-ph",
-          "summary": "This preprint by P. Trent Vonich and Gregory J. Hakim presents a diagnostic framework that disentangles initial-condition (IC) error from intrinsic model error in AI weather forecast degradation — a critical problem as AI models increasingly outperform physics-based counterparts on average metrics while showing unpredictable failure modes at longer leads. Evaluated on GraphCast and Pangu-Weather, the framework attributes probabilistic skill degradation at lead times beyond 5 days to specific IC error sources vs. model uncertainty. Results inform AI model development priorities and are a critical step toward principled uncertainty quantification for operational AI weather systems."
+          "summary": "This preprint by P. Trent Vonich and Gregory J. Hakim presents a diagnostic framework that disentangles initial-condition (IC) error from intrinsic model error in AI weather forecast degradation &mdash; a critical problem as AI models increasingly outperform physics-based counterparts on average metrics while showing unpredictable failure modes at longer leads. Evaluated on GraphCast and Pangu-Weather, the framework attributes probabilistic skill degradation at lead times beyond 5 days to specific IC error sources vs. model uncertainty. Results inform AI model development priorities and are a critical step toward principled uncertainty quantification for operational AI weather systems."
         },
         {
           "source": "arXiv",
@@ -225,26 +220,19 @@
           "summary": "A GRL study finds that progressive warming is inhibiting net land carbon uptake in northern high latitudes, with moisture deficits, heightened soil respiration and permafrost carbon release outpacing vegetation productivity gains. The findings signal measurable weakening of the Arctic and boreal carbon sink, reinforcing the need to represent permafrost carbon processes in IPCC-class Earth system models and AI climate emulators targeting decadal projections."
         },
         {
+          "source": "arXiv / NeurIPS 2026",
+          "date": "2026-10-30",
+          "headline": "SATFRONT: Detecting Atmospheric Fronts from Geostationary Satellite Data Using Machine Learning; CSI@150&nbsp;km&nbsp;=&nbsp;0.428 Satellite-Only, 0.591 with ERA5",
+          "url": "https://deeplearn.org/arxiv/860323/satfront:-detecting-atmospheric-fronts-with-satellite-data-using-machine-learning",
+          "meta": "Dravilas, Lucic et al. (30 Oct 2026) &middot; NeurIPS 2026",
+          "summary": "SATFRONT presents a machine learning framework for detecting cold, warm, and occluded atmospheric fronts over Europe from geostationary satellite observations, with ERA5 reanalysis as an optional additional input. Using Meteosat satellite data alone, the model achieves a Critical Success Index (CSI) at 150 km tolerance of 0.428; adding ERA5 raises this to 0.591. The analysis identifies near-surface winds and atmospheric moisture as the variables least recoverable from satellite observations alone. Developed in collaboration with EUMETSAT, the approach is relevant to operational NWP centres in data-sparse regions and to future satellite-first analysis workflows."
+        },
+        {
           "source": "China Daily / CMA",
           "date": "2026-10-30",
           "headline": "China CMA Deploys Two Operational AI Weather Systems: Typhoon Cloud-Pattern Recognition and 4-Hour Severe Convective Prediction Using Fengyun Satellite Data",
           "url": "https://chinadaily.com.cn/a/202610/30/WS6ae3eff6e4b06d4aa0565fee.html",
-          "summary": "China's Meteorological Administration unveiled two new operational AI weather systems: a typhoon cloud-pattern recognition model interpreting storm structure from Fengyun satellite imagery in real time, and a model predicting severe convective weather up to four hours in advance. Both are deployed operationally within the CMA's national forecast suite, expanding the global footprint of fully operational AI weather systems alongside ECMWF's AIFS."
-        },
-        {
-          "source": "arXiv",
-          "date": "2026-10-29",
-          "headline": "arXiv:2610.40641 &mdash; Agentic AI Framework Connects Extreme-Weather Probabilistic Forecasts to Agricultural and Adaptation Impact Estimates End-to-End",
-          "url": "https://arxiv.org/abs/2610.40641",
-          "meta": "arXiv:2610.40641 (29 Oct 2026) &middot; cs.AI &times; physics.ao-ph",
-          "summary": "An agentic AI framework couples a weather-event detection module with an agricultural impact model, enabling automated end-to-end assessment from probabilistic forecast output to expected crop, livestock or infrastructure effects in near-real-time — addressing the critical gap between high-impact weather warnings and sector-specific impact projections."
-        },
-        {
-          "source": "Gizmodo / Geophysical Research Letters",
-          "date": "2026-10-29",
-          "headline": "GRL: &lsquo;Permafrost Detachment Slides&rsquo; &mdash; Climate-Driven Bottom-Up Failure Mode &mdash; Expected to Become More Frequent; 150+ Documented in Mackenzie Valley",
-          "url": "https://gizmodo.com/climate-change-is-fueling-an-entirely-new-type-of-landslide-2000830726",
-          "summary": "A GRL study identifies 'permafrost detachment slides' as a distinct bottom-up failure mechanism: slides fail from the base upward due to decades of ~0.3°C/decade permafrost warming combined with historic wildfire disturbance. The Mackenzie Valley alone has more than 150 such slides. Events of this type will become more frequent with continued warming, with implications for Arctic communities and infrastructure."
+          "summary": "China&rsquo;s Meteorological Administration unveiled two new operational AI weather systems: a typhoon cloud-pattern recognition model interpreting storm structure from Fengyun satellite imagery in real time, and a model predicting severe convective weather up to four hours in advance. Both are deployed operationally within the CMA&rsquo;s national forecast suite, expanding the global footprint of fully operational AI weather systems alongside ECMWF&rsquo;s AIFS."
         },
         {
           "source": "arXiv",
@@ -252,7 +240,7 @@
           "headline": "arXiv:2610.38775 &mdash; FitzRoy: Reinforcement-Guided Diffusion Model Jointly Optimises Forecast Skill and Physical Realism for Continental US Precipitation",
           "url": "https://arxiv.org/abs/2610.38775",
           "meta": "arXiv:2610.38775 (28 Oct 2026) &middot; cs.LG &times; physics.ao-ph",
-          "summary": "FitzRoy applies reinforcement-guided diffusion to precipitation forecasting over the continental US, jointly optimising predictive skill and physical realism via a reinforcement learning reward signal. Standard diffusion-based weather models trade off sharp but physically implausible fields against smooth oversmoothed outputs; FitzRoy's RL guidance drives the diffusion process toward physically consistent outputs while retaining skill. Evaluated against MRMS radar observations and standard probabilistic metrics."
+          "summary": "FitzRoy applies reinforcement-guided diffusion to precipitation forecasting over the continental US, jointly optimising predictive skill and physical realism via a reinforcement learning reward signal. Standard diffusion-based weather models trade off sharp but physically implausible fields against smooth oversmoothed outputs; FitzRoy&rsquo;s RL guidance drives the diffusion process toward physically consistent outputs while retaining skill. Evaluated against MRMS radar observations and standard probabilistic metrics."
         }
       ]
     },
@@ -261,32 +249,38 @@
         {
           "date": "2026-11-05",
           "title": "TPG Closes TPG Rise Climate II at $10.4&nbsp;Billion Including $2.5&nbsp;Billion for Global South Initiative; Second-Largest Climate Private Equity Fund to Date",
-          "body_html": "<a href=\"https://esgtoday.com/tpg-raises-10-4-billion-for-climate-funds-including-2-5-billion-for-global-south\" target=\"_blank\" rel=\"noopener\">TPG closed its second climate private equity strategy &mdash; TPG Rise Climate II plus the Global South Initiative (GSI) &mdash; at a combined <strong>$10.4&nbsp;billion</strong></a>, per a Kirkland &amp; Ellis advisory announcement and coverage in ESG Today. The <a href=\"https://www.kirkland.com/news/press-release/2026/11/kirkland-advises-tpg-on-close-of-tpg-rise-climate-ii-at-more-than-$10-billion\" target=\"_blank\" rel=\"noopener\">close exceeds $10&nbsp;billion for the main fund alone</a>. The GSI earmarks <strong>$2.5&nbsp;billion</strong> for climate investments in the Global South, meeting the target announced with ALTÉRRA at COP28 in 2023. 31% of commitments came from investors new to TPG. Early deployment has been rapid: TPG reportedly invested nearly one-third of the fund within a month of close. The inaugural Rise Climate fund closed in 2022 at $7.3&nbsp;billion.",
+          "body_html": "<a href=\"https://esgtoday.com/tpg-raises-10-4-billion-for-climate-funds-including-2-5-billion-for-global-south\" target=\"_blank\" rel=\"noopener\">TPG closed its second climate private equity strategy &mdash; TPG Rise Climate II plus the Global South Initiative (GSI) &mdash; at a combined <strong>$10.4&nbsp;billion</strong></a>, per a Kirkland &amp; Ellis advisory announcement and coverage in ESG Today. The <a href=\"https://www.kirkland.com/news/press-release/2026/11/kirkland-advises-tpg-on-close-of-tpg-rise-climate-ii-at-more-than-$10-billion\" target=\"_blank\" rel=\"noopener\">close exceeds $10&nbsp;billion for the main fund alone</a>. The GSI earmarks <strong>$2.5&nbsp;billion</strong> for climate investments in the Global South, meeting the target announced with ALTERR&Agrave; at COP28 in 2023. 31% of commitments came from investors new to TPG. Early deployment has been rapid: TPG reportedly invested nearly one-third of the fund within a month of close.",
           "source_html": "<a href=\"https://esgtoday.com\" target=\"_blank\" rel=\"noopener\">ESG Today</a>"
         },
         {
-          "date": "2026-10-28",
-          "title": "AP Ventures Closes Fund III at $300&nbsp;Million for Low-Carbon Molecules: Green Hydrogen, Carbon Capture, Circularity and Hard-to-Abate Sectors",
-          "body_html": "<a href=\"https://techfundingnews.com/ap-ventures-300m-fund-iii-industrial-energy-tech/\" target=\"_blank\" rel=\"noopener\">AP Ventures closed its third fund at <strong>$300&nbsp;million</strong></a> (€270&nbsp;mn), targeting early-stage industrial decarbonisation technologies including green hydrogen production, storage and transport; carbon capture and utilisation; and advanced recycling. <a href=\"https://startuprise.co.uk/ap-ventures-closes-third-fund-at-e270-mn/\" target=\"_blank\" rel=\"noopener\">The fund reached final close on October&nbsp;28, 2026 from sovereign wealth funds, corporates, pension funds and family offices</a>, both returning and new LPs. AP Ventures was spun out of Anglo American in 2018 and has backed 13 portfolio companies since Fund III's initial close. Its previous fund launched in 2021 at $316&nbsp;million.",
-          "source_html": "<a href=\"https://techfundingnews.com\" target=\"_blank\" rel=\"noopener\">Tech Funding News</a>"
+          "date": "2026-11-06",
+          "title": "Africa GreenCo and Westlum Energy Complete Southern Africa&rsquo;s First Electricity Contract for Difference Transaction; Landmark Clean Power Mechanism",
+          "body_html": "<a href=\"https://solarquarter.com/2026/11/06/africa-greenco-and-westlum-energy-complete-southern-africas-first-electricity-cfd-transaction\" target=\"_blank\" rel=\"noopener\">Africa GreenCo and Westlum Energy have completed Southern Africa&rsquo;s first electricity Contract for Difference (CfD) transaction</a>, a landmark clean power financing mechanism for the region. The CfD structure enables long-term price certainty for renewable generators and offtakers without requiring direct government involvement, borrowing from the UK&rsquo;s proven CfD model. The transaction is designed to <strong>mobilise private investment in Southern African renewable capacity</strong> by reducing offtake risk for independent power producers operating in markets with limited creditworthy counterparts.",
+          "source_html": "<a href=\"https://solarquarter.com\" target=\"_blank\" rel=\"noopener\">Solar Quarter</a>"
+        },
+        {
+          "date": "2026-11-05",
+          "title": "Atmospheric AI Raises $10.1&nbsp;Million Seed Round Led by DBL Partners for Climate Forecasting and Decision Intelligence Platform",
+          "body_html": "<a href=\"https://thesaasnews.com/news/atmospheric-ai-raises-10m-seed/\" target=\"_blank\" rel=\"noopener\">Atmospheric AI closed a <strong>$10.1&nbsp;million seed round</strong> led by DBL Partners</a>, with participation from additional climate-focused investors. The company builds AI-powered climate forecasting and decision intelligence tools aimed at helping infrastructure operators, utilities and agricultural enterprises translate probabilistic weather and climate data into actionable operational decisions. The raise will fund model development and commercial expansion. DBL Partners, known for backing Tesla, SolarCity and other climate tech companies in their early stages, is Atmospheric AI&rsquo;s lead investor.",
+          "source_html": "<a href=\"https://thesaasnews.com\" target=\"_blank\" rel=\"noopener\">The SaaS News</a>"
         },
         {
           "date": "2026-11-05",
           "title": "NextEra&ndash;Dominion $67&nbsp;Billion Merger: Virginia SCC Evidentiary Hearing Set for November&nbsp;17; Clean Virginia Motion to Compel Pending; Decision Expected January&nbsp;11, 2027",
-          "body_html": "The <a href=\"https://wtvr.com/news/local-news/richmond/packed-scc-hearing-draws-strong-opinions-over-proposed-energy-merger\" target=\"_blank\" rel=\"noopener\">Virginia State Corporation Commission&rsquo;s evidentiary hearing on the proposed <strong>$67&nbsp;billion</strong> all-stock NextEra&ndash;Dominion merger is scheduled for November&nbsp;17, 2026 in Richmond</a>. <a href=\"https://wjla.com/news/local/story/virginia-fairfax-county-dominion-next-era-merger-utilities-hearing-scc-state-corporation-commission-virginians-costs-rate-hikes-affordability-bills\" target=\"_blank\" rel=\"noopener\">Public hearings in Fairfax and Newport News drew large and divided crowds</a>. SCC Hearing Examiner Roussy has yet to rule on a Clean Virginia motion to compel additional document production. The SCC&rsquo;s final decision is expected January&nbsp;11, 2027. The combined company would be the largest US electric utility by generation capacity, with significant implications for East Coast clean energy procurement and offshore wind contracting. Companies closed May 2026; deal expected to close H2&nbsp;2027.",
+          "body_html": "The <a href=\"https://wtvr.com/news/local-news/richmond/packed-scc-hearing-draws-strong-opinions-over-proposed-energy-merger\" target=\"_blank\" rel=\"noopener\">Virginia State Corporation Commission&rsquo;s evidentiary hearing on the proposed <strong>$67&nbsp;billion</strong> all-stock NextEra&ndash;Dominion merger is scheduled for November&nbsp;17, 2026 in Richmond</a>. <a href=\"https://wjla.com/news/local/story/virginia-fairfax-county-dominion-next-era-merger-utilities-hearing-scc-state-corporation-commission-virginians-costs-rate-hikes-affordability-bills\" target=\"_blank\" rel=\"noopener\">Public hearings in Fairfax and Newport News drew large and divided crowds</a>. SCC Hearing Examiner Roussy has yet to rule on a Clean Virginia motion to compel additional document production. The SCC&rsquo;s final decision is expected January&nbsp;11, 2027.",
           "source_html": "<a href=\"https://wtvr.com\" target=\"_blank\" rel=\"noopener\">WTVR CBS 6</a>"
         },
         {
-          "date": "2026-11-05",
-          "title": "Sunraycer Renewables Acquires 325&nbsp;MW of US Solar Projects in Illinois and Missouri from Apricus Energy",
-          "body_html": "<a href=\"https://mercomcapital.com/sunraycer-renewables-acquires-325-mw-of-solar-projects-in-the-us/\" target=\"_blank\" rel=\"noopener\">Sunraycer Renewables, a Crayhill Capital portfolio company, acquired two utility-scale solar projects from Apricus Energy on November&nbsp;5</a>: the <strong>175&nbsp;MW Gem City solar project</strong> in Adams County, Illinois, and the <strong>150&nbsp;MW Mighty Mississippi solar project</strong> in New Madrid County, Missouri. Construction on both projects is anticipated to commence in early 2028. The acquisitions expand Sunraycer&rsquo;s MISO-region solar footprint alongside its existing Texas solar-plus-storage assets, adding to approximately <a href=\"https://pv-magazine-usa.com/2026/05/15/sunraycer-renewables-closes-901-million-financing-for-473-mwh-bess-portfolio-in-texas/\" target=\"_blank\" rel=\"noopener\">479.5&nbsp;MW of Texas solar projects financed in May 2026</a>.",
-          "source_html": "<a href=\"https://mercomcapital.com\" target=\"_blank\" rel=\"noopener\">Mercom Capital</a>"
+          "date": "2026-10-29",
+          "title": "Group14 Technologies Raises &euro;150&nbsp;Million Series D Extension to Build Battery Materials Plant in Spain; 10&nbsp;GWh Annual Production Target",
+          "body_html": "<a href=\"https://pulse2.com/group14-technologies-raises-e150-million-series-d-extension-to-build-battery-materials-plant-in-spain/\" target=\"_blank\" rel=\"noopener\">Group14 Technologies raised a <strong>&euro;150&nbsp;million Series D extension</strong> to fund construction of a battery materials manufacturing plant in Spain</a>. The facility targets <strong>10&nbsp;GWh annual production capacity</strong> for Group14&rsquo;s SCC55 silicon-carbon composite anode material &mdash; a lithium-silicon battery technology that delivers higher energy density than conventional graphite anodes. Group14&rsquo;s technology is qualified in multiple EV and consumer electronics supply chains; the Spain plant will be its first European gigafactory-scale facility, complementing its Moses Lake, Washington production site.",
+          "source_html": "<a href=\"https://pulse2.com\" target=\"_blank\" rel=\"noopener\">Pulse 2.0</a>"
         },
         {
-          "date": "2026-11-04",
-          "title": "Array Technologies and Shoals Technologies Announce All-Stock Merger; Creates Integrated Solar Infrastructure Platform",
-          "body_html": "<a href=\"https://pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform\" target=\"_blank\" rel=\"noopener\">Array Technologies and Shoals Technologies announced an all-stock merger agreement on November&nbsp;4</a>, combining Array&rsquo;s solar tracker systems with Shoals&rsquo; electrical balance-of-system products and wire harness connectors to create an <strong>integrated solar infrastructure platform</strong>. The combined company is expected to offer bundled procurement and single-vendor service for large-scale utility solar projects, targeting cost efficiencies across the hardware value chain. The deal is subject to shareholder and regulatory approvals.",
-          "source_html": "<a href=\"https://pv-tech.org\" target=\"_blank\" rel=\"noopener\">PV Tech</a>"
+          "date": "2026-10-28",
+          "title": "AP Ventures Closes Fund III at $300&nbsp;Million for Low-Carbon Molecules: Green Hydrogen, Carbon Capture, Circularity and Hard-to-Abate Sectors",
+          "body_html": "<a href=\"https://techfundingnews.com/ap-ventures-300m-fund-iii-industrial-energy-tech/\" target=\"_blank\" rel=\"noopener\">AP Ventures closed its third fund at <strong>$300&nbsp;million</strong></a> (&euro;270&nbsp;mn), targeting early-stage industrial decarbonisation technologies including green hydrogen production, storage and transport; carbon capture and utilisation; and advanced recycling. <a href=\"https://startuprise.co.uk/ap-ventures-closes-third-fund-at-e270-mn/\" target=\"_blank\" rel=\"noopener\">The fund reached final close on October&nbsp;28, 2026 from sovereign wealth funds, corporates, pension funds and family offices</a>, both returning and new LPs. AP Ventures was spun out of Anglo American in 2018.",
+          "source_html": "<a href=\"https://techfundingnews.com\" target=\"_blank\" rel=\"noopener\">Tech Funding News</a>"
         },
         {
           "date": "2026-11-02",
