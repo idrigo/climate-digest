@@ -177,11 +177,11 @@
       <button class="toggle-btn" data-days="7">7 DAYS</button>
     </div>
     <nav class="nav-pills" aria-label="Sections">
-      <a href="#climate" class="nav-pill np-climate">Climate</a>
       <a href="#weather" class="nav-pill np-weather">Weather</a>
-      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
-      <a href="#science" class="nav-pill np-science">Science</a>
       <a href="#industry" class="nav-pill np-industry">Industry</a>
+      <a href="#science" class="nav-pill np-science">Science</a>
+      <a href="#renewables" class="nav-pill np-renewables">Renewables</a>
+      <a href="#climate" class="nav-pill np-climate">Climate</a>
     </nav>
   </div>
 </div>
@@ -324,10 +324,11 @@
 
   function render(data) {
     var main = document.getElementById('main-content');
-    var order = ['climate', 'weather', 'renewables', 'science'];
+    var order = ['weather', 'industry', 'science', 'renewables', 'climate'];
     var html = '';
-    order.forEach(function (key) { html += renderSection(key, data.sections[key]); });
-    html += renderIndustry(data.sections.industry);
+    order.forEach(function (key) {
+      html += key === 'industry' ? renderIndustry(data.sections.industry) : renderSection(key, data.sections[key]);
+    });
     main.innerHTML = html;
 
     document.getElementById('metar-line').textContent = data.metar || ('DIGEST ' + data.digest_date);
