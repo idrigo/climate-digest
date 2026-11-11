@@ -1,0 +1,202 @@
+{
+  "digest_date": "2026-11-11",
+  "metar": "DIGEST 111200Z NOV26 · ROLLING 72H WINDOW",
+  "climate": {
+    "overview_html": "The <a href=\"https://www.yahoo.com/news/world/articles/world-leaders-gather-two-day-030329841.html\">COP31 World Leaders' Summit</a> opened in Belém today with Lula, von der Leyen, and Pezeshkian headlining — but Macron, Merz, and Meloni are absent, blunting the political weight of a voluntary electrification pledge. The backdrop is grim: <a href=\"https://climate.copernicus.eu/copernicus-warmest-october-record-2026-virtually-certain-exceed-15degc\">Copernicus confirmed October 2026 as the warmest October on record</a> at +1.75 °C above pre-industrial, the third consecutive month above 1.5 °C, and <a href=\"https://wmo.int/node/39185\">WMO's provisional State of Climate report</a> put the January–September mean at ~1.47 °C — \"off the charts,\" with El Niño intensifying toward a record December peak. <a href=\"https://unep.org/en/publications/report/emissions-gap-report-2026\">UNEP's Emissions Gap 2026</a> was blunt: 1.5 °C overshoot is \"imminent and unavoidable\" on current NDC trajectories, with a ~2.6 °C central pathway and new pledges making negligible difference.",
+    "items": [
+      {
+        "headline": "COP31 World Leaders' Summit opens in Belém as key European leaders skip",
+        "date": "2026-11-11",
+        "url": "https://www.yahoo.com/news/world/articles/world-leaders-gather-two-day-030329841.html",
+        "summary_html": "Lula, von der Leyen, and Pezeshkian opened the two-day <a href=\"https://www.yahoo.com/news/world/articles/world-leaders-gather-two-day-030329841.html\">World Leaders' Summit at COP31</a> in Belém, but Macron, Merz, and Meloni are absent. A voluntary global electrification pledge is on the table alongside a just-transition financing package for the Global South. Negotiators flag the absence of major European leaders as a signal of domestic political pressure on climate ambition heading into the NDC3 submission window."
+      },
+      {
+        "headline": "Copernicus: October 2026 warmest October on record, +1.75 °C above pre-industrial",
+        "date": "2026-11-06",
+        "url": "https://climate.copernicus.eu/copernicus-warmest-october-record-2026-virtually-certain-exceed-15degc",
+        "summary_html": "<a href=\"https://climate.copernicus.eu/copernicus-warmest-october-record-2026-virtually-certain-exceed-15degc\">Copernicus C3S</a> confirmed October 2026 at +1.75 °C above the 1850–1900 pre-industrial baseline — the warmest October in the 177-year instrumental record. It is the third consecutive month above 1.5 °C. The global mean surface air temperature for October was <a href=\"https://climate.copernicus.eu/surface-air-temperature-october-2026\">20.95 °C</a>, breaking the prior SST record. C3S says 2026 is now \"virtually certain\" to exceed 1.5 °C as an annual mean for the first time."
+      },
+      {
+        "headline": "WMO COP31 State of Climate: Jan–Sep 2026 at ~1.47 °C, El Niño to peak in December",
+        "date": "2026-11-09",
+        "url": "https://wmo.int/node/39185",
+        "summary_html": "The <a href=\"https://wmo.int/node/39185\">WMO provisional State of Global Climate 2026</a> report, released ahead of COP31, found January–September running at approximately 1.47 °C above pre-industrial — \"off the charts\" relative to any prior year. <a href=\"https://wmo.int/node/39187\">Associated data</a> show record ocean heat content, accelerating sea level rise, and the most rapid glacier mass loss on record. El Niño is intensifying and WMO projects a record peak in December 2026, sustaining elevated global temperatures into early 2027."
+      },
+      {
+        "headline": "UNEP Emissions Gap 2026: 1.5 °C overshoot 'imminent and unavoidable,' ~2.6 °C pathway",
+        "date": "2026-10-21",
+        "url": "https://unep.org/en/publications/report/emissions-gap-report-2026",
+        "summary_html": "The <a href=\"https://unep.org/en/publications/report/emissions-gap-report-2026\">UNEP Emissions Gap Report 2026</a> concluded that 1.5 °C overshoot is \"imminent and unavoidable\" under current and pledged policies, with a central pathway of ~2.6 °C by 2100. New Nationally Determined Contributions submitted in 2026 collectively reduce the gap by less than 0.1 °C. The report calls for a 42% emissions cut by 2030 to keep a 1.5 °C pathway technically alive and warns that reliance on carbon removal at scale is not credible without immediate near-term action."
+      }
+    ]
+  },
+  "weather": {
+    "overview_html": "<a href=\"https://zoom.earth/storms/cempaka-2026/\">Typhoon Samuel</a> is now fully open-ocean northeast of Japan, rapidly weakening as it recurves ENE into the mid-latitude westerlies — no further land threats. In Florida, <a href=\"https://www.defconlevel.com/alert/2026-11-10-nws-noaa-weather-flood-warning-issued-november-9-at-8-04pm-est-by-nws-melbourne-fl\">St. Johns River flooding</a> continues along the central coast; the Cocoa gauge has been at or above major flood stage since November 10, with water entering homes in low-lying neighborhoods. South Africa is in an <a href=\"https://iol.co.za/news/weather/2026-11-10-tuesday-weather-extreme-heat-and-fire-danger-to-grip-parts-of-the-country\">extreme fire danger situation</a> across Northern Cape and Western Cape as a spring heat dome pushes temperatures to 40 °C with gusty berg winds through Wednesday.",
+    "major_events": [
+      {
+        "name": "Typhoon Samuel (open ocean)",
+        "status": "Weakening, recurving ENE, no land threat",
+        "url": "https://zoom.earth/storms/cempaka-2026/",
+        "summary_html": "<a href=\"https://zoom.earth/storms/cempaka-2026/\">Typhoon Samuel</a> has moved fully into open ocean northeast of Japan and is undergoing rapid extratropical transition. Maximum sustained winds have dropped below Category 1 intensity as a mid-latitude trough accelerates the system ENE. No coastal watches or warnings are in effect. The storm is expected to merge with the polar front by November 13."
+      },
+      {
+        "name": "St. Johns River Flooding — Florida",
+        "status": "Ongoing — Cocoa gauge at major flood stage",
+        "url": "https://www.defconlevel.com/alert/2026-11-10-nws-noaa-weather-flood-warning-issued-november-9-at-8-04pm-est-by-nws-melbourne-fl",
+        "summary_html": "The <a href=\"https://www.defconlevel.com/alert/2026-11-10-nws-noaa-weather-flood-warning-issued-november-9-at-8-04pm-est-by-nws-melbourne-fl\">St. Johns River flood warning</a> from NWS Melbourne remains in effect. The Cocoa gauge first reached major flood stage on November 10 and water has entered homes in low-lying riverside neighborhoods. The river is expected to remain at or near major flood stage through at least November 14 as upstream water slowly drains south."
+      },
+      {
+        "name": "South Africa Extreme Heat & Fire Danger",
+        "status": "Active — Northern Cape / Western Cape through Nov 12",
+        "url": "https://iol.co.za/news/weather/2026-11-10-tuesday-weather-extreme-heat-and-fire-danger-to-grip-parts-of-the-country",
+        "summary_html": "A <a href=\"https://iol.co.za/news/weather/2026-11-10-tuesday-weather-extreme-heat-and-fire-danger-to-grip-parts-of-the-country\">spring heat dome</a> over South Africa is pushing temperatures to 38–40 °C across Northern Cape and Western Cape with strong berg winds driving extreme fire danger warnings through Wednesday. The South African Weather Service has issued red-level fire danger warnings; multiple veld fires are reported active in the Cederberg and Karoo. The pattern breaks Thursday as a trough approaches from the southwest."
+      }
+    ],
+    "items": [
+      {
+        "headline": "St. Johns River Cocoa gauge hits major flood stage; water entering homes",
+        "date": "2026-11-11",
+        "url": "https://www.defconlevel.com/alert/2026-11-10-nws-noaa-weather-flood-warning-issued-november-9-at-8-04pm-est-by-nws-melbourne-fl",
+        "summary_html": "NWS Melbourne's <a href=\"https://www.defconlevel.com/alert/2026-11-10-nws-noaa-weather-flood-warning-issued-november-9-at-8-04pm-est-by-nws-melbourne-fl\">flood warning</a> for the St. Johns River at Cocoa remains active. The gauge crossed major flood stage on November 10 and is forecast to remain above that threshold through at least November 14. Officials in Brevard County have opened emergency shelters, and voluntary evacuation orders are in place for flood-prone subdivisions west of US-1."
+      },
+      {
+        "headline": "South Africa spring heatwave: 40 °C, red fire danger warnings across two provinces",
+        "date": "2026-11-10",
+        "url": "https://iol.co.za/news/weather/2026-11-10-tuesday-weather-extreme-heat-and-fire-danger-to-grip-parts-of-the-country",
+        "summary_html": "The <a href=\"https://iol.co.za/news/weather/2026-11-10-tuesday-weather-extreme-heat-and-fire-danger-to-grip-parts-of-the-country\">South African Weather Service</a> issued extreme fire danger warnings for Northern Cape and Western Cape as daytime highs reached 38–40 °C with gusty berg (offshore) winds reducing relative humidity below 15%. Active veld fires are burning near Citrusdal, Clanwilliam, and in the southern Karoo. Conditions ease Thursday as a southwest trough advances."
+      },
+      {
+        "headline": "Typhoon Samuel completes extratropical transition, rapid weakening northeast of Japan",
+        "date": "2026-11-11",
+        "url": "https://zoom.earth/storms/cempaka-2026/",
+        "summary_html": "<a href=\"https://zoom.earth/storms/cempaka-2026/\">Typhoon Samuel</a> has completed extratropical transition and is accelerating northeast into the open Pacific, well clear of the Japanese coast. JTWC issued a final advisory on the tropical phase; the remnant low will merge with the polar front by approximately November 13. No tropical watches or warnings remain in effect in the western North Pacific."
+      },
+      {
+        "headline": "El Niño intensifying toward record December peak, sustaining global temperature anomalies",
+        "date": "2026-11-09",
+        "url": "https://wmo.int/node/39185",
+        "summary_html": "The <a href=\"https://wmo.int/node/39185\">WMO State of Climate COP31 update</a> projects El Niño to reach its strongest peak on record in December 2026, with Niño3.4 anomalies currently tracking above prior record El Niño events. The warm ENSO phase has contributed to above-normal sea surface temperatures across the central and eastern tropical Pacific and is amplifying precipitation extremes in South America and drought conditions in parts of southern Africa and Southeast Asia."
+      }
+    ]
+  },
+  "renewables": {
+    "overview_html": "The <a href=\"https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries\">IEA Renewables 2026 report</a> projects 4,770 GW of new renewables capacity 2026–2031 — 57% above the prior six years — with India emerging as the second-largest market and the US posting a +40% acceleration. Solar dominates at 61% of additions. On the consolidation front, <a href=\"https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/\">Array and Shoals Technologies agreed an all-stock merger</a> valued at approximately $1.32 B, creating a vertically integrated solar infrastructure platform. <a href=\"https://www.energy-storage.news/return-secures-835-million-germany-bess-rollout-targets-1gw-annually/\">Return Energy secured €835 M</a> from Deutsche Bank and Rabobank to roll out 1 GW/year of battery storage across Germany, and the <a href=\"https://www.iea.org/news/electrification-takes-centre-stage-as-hormuz-shock-spurs-countries-to-seek-to-enhance-energy-security\">IEA Special Report on Electrification</a> argues 35% global electricity share by 2035 is within striking distance, delivering $400 B/year in energy cost savings.",
+    "items": [
+      {
+        "headline": "IEA Renewables 2026: 4,770 GW forecast 2026–2031, India #2 market, US +40%",
+        "date": "2026-11-06",
+        "url": "https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries",
+        "summary_html": "The <a href=\"https://www.iea.org/news/energy-security-concerns-spur-faster-renewables-growth-across-a-widening-constellation-of-countries\">IEA Renewables 2026 report</a> forecasts 4,770 GW of new capacity over the next six years — 57% above the 2020–2025 period — with solar PV accounting for 61% of additions. India overtook the EU to become the second-largest annual market after China. US additions are forecast to grow 40% over the prior six-year period, driven by IRA implementation and energy security concerns following the Hormuz disruption. Offshore wind remains the slowest-growing segment despite strong policy support, held back by supply chain and financing constraints."
+      },
+      {
+        "headline": "Array and Shoals Technologies agree all-stock merger, ~$1.32 B combined value",
+        "date": "2026-11-04",
+        "url": "https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/",
+        "summary_html": "<a href=\"https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/\">Array Technologies and Shoals Technologies</a> announced an all-stock merger creating a vertically integrated solar infrastructure platform combining single-axis trackers with electrical balance-of-system products. The combined company will have revenues of approximately $1.1 B and serves over 60 GW of installed capacity. The deal is expected to close in Q1 2027, subject to shareholder and regulatory approval. Management cited margin improvement from vertical integration and a strengthened position for utility-scale projects under the IRA domestic content bonus."
+      },
+      {
+        "headline": "Return Energy secures €835 M to deploy 1 GW/year of battery storage across Germany",
+        "date": "2026-11-04",
+        "url": "https://www.energy-storage.news/return-secures-835-million-germany-bess-rollout-targets-1gw-annually/",
+        "summary_html": "<a href=\"https://www.energy-storage.news/return-secures-835-million-germany-bess-rollout-targets-1gw-annually/\">Return Energy</a> closed €835 M in project financing from Deutsche Bank and Rabobank to fund a 1 GW/year pipeline of grid-scale battery energy storage systems across Germany. The first tranche covers three projects totalling 420 MW in Bavaria and Brandenburg scheduled for commissioning in 2027. Return is targeting 5 GW of cumulative German BESS capacity by 2030, positioning the portfolio to provide both frequency regulation and capacity reserve services under the reformed German grid-balancing framework."
+      },
+      {
+        "headline": "IEA Special Report on Electrification: 35% electricity share by 2035 in reach, $400 B/year savings",
+        "date": "2026-11-06",
+        "url": "https://www.iea.org/news/electrification-takes-centre-stage-as-hormuz-shock-spurs-countries-to-seek-to-enhance-energy-security",
+        "summary_html": "The <a href=\"https://www.iea.org/news/electrification-takes-centre-stage-as-hormuz-shock-spurs-countries-to-seek-to-enhance-energy-security\">IEA Special Report on Electrification</a>, released alongside Renewables 2026, finds that raising electricity's share of final energy to 35% by 2035 is achievable with current technology and policy trajectories accelerated by the Hormuz oil supply shock. At that level, the report estimates $400 B/year in energy cost savings globally relative to the baseline, driven primarily by electric vehicle fleet costs and industrial heat pump deployment. Electrification progress is fastest in road transport and space heating; industrial process heat and aviation remain the hardest segments to shift."
+      }
+    ]
+  },
+  "science": {
+    "overview_html": "NeurIPS 2026 is delivering a cluster of mechanistic interpretability results for AI weather models. An <a href=\"https://neurips.cc/virtual/2026/oral/150169\">oral presentation from Benson, Yang, and Reichstein</a> applies sparse autoencoders to decompose Earth system embeddings into interpretable monosemantic features; a companion paper from <a href=\"https://neurips.cc/virtual/2026/174689\">Mathai, Higgins, and Grise at UVA</a> probes GraphCast's internal representation of atmospheric rivers and finds the model tracks integrated vapor transport despite it being absent from inputs; and a <a href=\"https://neurips.cc/virtual/2026/160417\">third paper</a> extends the approach to Aurora, finding mechanistic ENSO steering on 100% of test events. An <a href=\"https://arxiv.org/abs/2605.17493\">arXiv preprint from Sejong University</a> argues KAN-based SAEs unlock 72% more alive features than ReLU baselines in climate foundation models. Meanwhile, <a href=\"https://climate.copernicus.eu/surface-air-temperature-october-2026\">C3S October surface data</a> and the <a href=\"https://wmo.int/node/39187\">WMO COP31 supplementary dataset</a> provide the observational backbone for 2026 annual attribution studies now underway.",
+    "items": [
+      {
+        "headline": "NeurIPS 2026 Oral: Sparse autoencoders decompose Earth system model embeddings into interpretable features",
+        "date": "2026-11-10",
+        "url": "https://neurips.cc/virtual/2026/oral/150169",
+        "meta": "Vitus Benson, Fanny Yang, Markus Reichstein · NeurIPS 2026 Oral",
+        "summary_html": "\"<a href=\"https://neurips.cc/virtual/2026/oral/150169\">Decomposing Earth Embeddings with Sparse Autoencoders</a>\" (Benson, Yang, Reichstein; NeurIPS 2026 Oral) trains dictionary-learning SAEs on the latent representations of a large-scale Earth system foundation model and recovers monosemantic features corresponding to known physical phenomena — ENSO phases, jet stream position, monsoon onset — without supervision. The approach enables mechanistic circuit tracing for predictions and identifies polysemantic interference as a primary source of model error on extreme events. Code and pretrained dictionaries are released under Apache 2.0."
+      },
+      {
+        "headline": "NeurIPS 2026: GraphCast internally tracks integrated vapor transport for atmospheric rivers without explicit input",
+        "date": "2026-11-10",
+        "url": "https://neurips.cc/virtual/2026/174689",
+        "meta": "Nihanth Mathai, Ian Higgins, Kevin Grise et al. (UVA) · NeurIPS 2026",
+        "summary_html": "\"<a href=\"https://neurips.cc/virtual/2026/174689\">Mechanistic Interpretability of Atmospheric Rivers in GraphCast</a>\" (Mathai, Higgins, Grise et al., UVA) uses activation patching and linear probing to show that GraphCast builds an internal representation of integrated vapor transport (IVT) that predicts atmospheric river presence with 0.91 AUC — despite IVT not being an input or training target. The result supports the hypothesis that large AI weather models learn physically meaningful intermediate variables through implicit supervision from downstream forecast targets."
+      },
+      {
+        "headline": "NeurIPS 2026: Aurora model uses mechanistic ENSO steering on 100% of test teleconnection events",
+        "date": "2026-11-10",
+        "url": "https://neurips.cc/virtual/2026/160417",
+        "summary_html": "\"<a href=\"https://neurips.cc/virtual/2026/160417\">Beyond Post-Hoc Saliency: Assessing Mechanistic Representation Interventions in a Deep Learning Weather Model</a>\" applies causal intervention methods to Microsoft's Aurora model and finds that ENSO-related latent features steer downstream temperature and precipitation predictions on 100% of held-out ENSO teleconnection test events. The paper contrasts mechanistic intervention accuracy with saliency-map-based post-hoc explanations, which correctly attribute ENSO influence on only 61% of the same events, highlighting the gap between correlation-based and causal interpretability approaches."
+      },
+      {
+        "headline": "arXiv: KAN-based sparse autoencoders unlock 72% more alive features in climate foundation models vs ReLU",
+        "date": "2026-05-23",
+        "url": "https://arxiv.org/abs/2605.17493",
+        "meta": "Jaekyoung Cheon, Sejong University · arXiv:2605.17493",
+        "summary_html": "\"<a href=\"https://arxiv.org/abs/2605.17493\">Beyond Linear Superposition: KAN-SAE climate features in AI weather models</a>\" (Cheon, Sejong University) replaces ReLU activations in dictionary-learning sparse autoencoders with Kolmogorov–Arnold Network (KAN) learnable activation functions and reports 72% more \"alive\" (non-dead) feature neurons on a climate foundation model benchmark, alongside lower reconstruction error on physically extreme atmospheric states. The improvement is attributed to KAN's ability to represent nonlinear single-neuron responses that better match the non-Gaussian statistics of climate variables."
+      },
+      {
+        "headline": "C3S October 2026 monthly bulletin: warmest October, 20.95 °C SST record, +0.90 °C vs 1991–2020",
+        "date": "2026-11-06",
+        "url": "https://climate.copernicus.eu/surface-air-temperature-october-2026",
+        "summary_html": "The <a href=\"https://climate.copernicus.eu/surface-air-temperature-october-2026\">Copernicus C3S October 2026 monthly bulletin</a> documents a global mean surface air temperature of 15.42 °C for October — +0.90 °C above the 1991–2020 reference period and the warmest October in the ERA5 record extending to 1940. Global mean sea surface temperature reached 20.95 °C, also a record for October. European land areas were +1.8 °C above average. The bulletin is a primary data source for the 2026 World Meteorological Year compilation."
+      },
+      {
+        "headline": "WMO COP31 supplementary dataset: record ocean heat, sea level, glacier loss through mid-2026",
+        "date": "2026-11-09",
+        "url": "https://wmo.int/node/39187",
+        "summary_html": "The <a href=\"https://wmo.int/node/39187\">WMO State of Global Climate 2026 supplementary data release</a> accompanying the COP31 provisional report documents: (1) record upper-ocean heat content through Q2 2026 across all depth layers to 2000 m; (2) mean global sea level 101 mm above the 1993 satellite-era baseline, the highest annual mean ever recorded; (3) the 30 reference glaciers in the World Glacier Monitoring Service network losing mass at the fastest rate in the 72-year observational record. The dataset is openly available and will anchor attribution studies published through 2027."
+      }
+    ]
+  },
+  "industry": {
+    "overview_html": "COP31's opening day brought a flurry of climate-finance moves. <a href=\"https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/\">Array and Shoals' $1.32 B merger</a> reshapes the US utility-scale solar supply chain. <a href=\"https://www.esgtoday.com/?p=26756\">Harbinger Motors closed a $240 M Series D</a> for its Class 4–5 electric commercial vehicle platform. <a href=\"https://www.esgtoday.com/deutsche-bank-rabobank-back-936-million-financing-for-battery-storage-expansion-in-germany/\">Return Energy secured €835 M</a> in German BESS project finance. <a href=\"https://pulse2.com/group14-technologies-raises-e150-million-series-d-extension-to-build-battery-materials-plant-in-spain\">Group14 Technologies added €150 M</a> to fund its Spain silicon-anode battery materials plant. <a href=\"https://www.ctvc.co/the-blue-wave-lifts-some-climate-tech-321/\">CTVC's issue #321</a> rounds up Green Voltis ($15 M), NON.energy ($12 M), and TPG's $10.4 B climate fund close. <a href=\"https://impactalpha.com/the-weeks-dealflow-november-6-2026/\">AP Ventures launched Fund III at $300 M</a> targeting green hydrogen, carbon capture, and advanced recycling.",
+    "items": [
+      {
+        "headline": "Array + Shoals Technologies: $1.32 B all-stock merger to integrate trackers and electrical BOS",
+        "date": "2026-11-04",
+        "url": "https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/",
+        "body_html": "<a href=\"https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/\">Array Technologies and Shoals Technologies</a> announced an all-stock merger creating an integrated solar infrastructure company combining Array's single-axis tracking systems with Shoals' electrical balance-of-system products (EBOS). The implied combined equity value is approximately $1.32 B based on pre-announcement share prices. Management projects $60–80 M in annual synergies by 2028 from supply chain consolidation and bundled product margin uplift. Subject to shareholder votes and HSR review; expected to close Q1 2027.",
+        "source_html": "Source: <a href=\"https://www.pv-tech.org/array-shoals-technologies-agree-merger-creating-integrated-solar-infrastructure-platform/\">PV Tech</a>, Nov 4"
+      },
+      {
+        "headline": "Harbinger Motors raises $240 M Series D for Class 4–5 electric commercial vehicles",
+        "date": "2026-11-05",
+        "url": "https://www.esgtoday.com/?p=26756",
+        "body_html": "<a href=\"https://www.esgtoday.com/?p=26756\">Harbinger Motors</a> closed a $240 M Series D led by Tiger Global and Capricorn Investment Group, with participation from Ridgeline Partners. The El Monte, CA–based startup builds purpose-designed Class 4–5 electric chassis for last-mile delivery, food service, and utility fleet applications, targeting a payload-optimized architecture that it claims delivers 30% lower total cost of ownership than converted diesel platforms over a 10-year fleet life. The company has pre-orders exceeding 11,000 units.",
+        "source_html": "Source: <a href=\"https://www.esgtoday.com/?p=26756\">ESG Today</a>, Nov 5"
+      },
+      {
+        "headline": "Return Energy: €835 M project financing from Deutsche Bank and Rabobank for 1 GW/yr German BESS",
+        "date": "2026-11-04",
+        "url": "https://www.esgtoday.com/deutsche-bank-rabobank-back-936-million-financing-for-battery-storage-expansion-in-germany/",
+        "body_html": "<a href=\"https://www.esgtoday.com/deutsche-bank-rabobank-back-936-million-financing-for-battery-storage-expansion-in-germany/\">Return Energy</a> secured €835 M in project finance from Deutsche Bank and Rabobank to fund a 1 GW/year pipeline of grid-scale battery energy storage systems across Germany. The first three projects (420 MW, Bavaria and Brandenburg) are scheduled for commissioning in 2027. Return is targeting 5 GW of cumulative German capacity by 2030, participating in both primary control reserve and intraday energy arbitrage markets.",
+        "source_html": "Source: <a href=\"https://www.esgtoday.com/deutsche-bank-rabobank-back-936-million-financing-for-battery-storage-expansion-in-germany/\">ESG Today</a>, Nov 4"
+      },
+      {
+        "headline": "Group14 Technologies: €150 M Series D extension to build 10 GWh silicon-anode battery materials plant in Spain",
+        "date": "2026-10-29",
+        "url": "https://pulse2.com/group14-technologies-raises-e150-million-series-d-extension-to-build-battery-materials-plant-in-spain",
+        "body_html": "<a href=\"https://pulse2.com/group14-technologies-raises-e150-million-series-d-extension-to-build-battery-materials-plant-in-spain\">Group14 Technologies</a> raised a €150 M extension to its Series D round to fund construction of its BAM-4 battery active materials plant in Sagunto, Spain — a 10 GWh/year silicon-carbon composite anode facility that will be the company's first European production site. Investors include existing backers BASF Venture Capital and Lightrock. Group14's SCC55 material claims 50% higher energy density versus graphite anodes and is qualified in production EVs from multiple OEMs.",
+        "source_html": "Source: <a href=\"https://pulse2.com/group14-technologies-raises-e150-million-series-d-extension-to-build-battery-materials-plant-in-spain\">Pulse 2.0</a>, Oct 29"
+      },
+      {
+        "headline": "CTVC #321: Green Voltis $15 M, NON.energy $12 M, TPG closes $10.4 B climate fund",
+        "date": "2026-11-10",
+        "url": "https://www.ctvc.co/the-blue-wave-lifts-some-climate-tech-321/",
+        "body_html": "<a href=\"https://www.ctvc.co/the-blue-wave-lifts-some-climate-tech-321/\">CTVC issue #321</a> covers three notable closes: (1) <strong>Green Voltis</strong> raised $15 M Series A for AI-driven grid flexibility software targeting distribution system operators; (2) <strong>NON.energy</strong> raised $12 M Series A for ultra-low-embodied-carbon building panels using agricultural waste streams; (3) <strong>TPG Rise Climate</strong> closed its second flagship vehicle at $10.4 B, the largest dedicated climate private equity fund on record, targeting infrastructure and industrial decarbonization assets across OECD markets.",
+        "source_html": "Source: <a href=\"https://www.ctvc.co/the-blue-wave-lifts-some-climate-tech-321/\">CTVC #321</a>, Nov 10"
+      },
+      {
+        "headline": "AP Ventures launches $300 M Fund III for green hydrogen, carbon capture, and advanced recycling",
+        "date": "2026-11-06",
+        "url": "https://impactalpha.com/the-weeks-dealflow-november-6-2026/",
+        "body_html": "<a href=\"https://impactalpha.com/the-weeks-dealflow-november-6-2026/\">AP Ventures</a> launched Fund III at a $300 M target, focusing on deep-tech companies in green hydrogen production and storage, point-source carbon capture, and advanced battery and critical mineral recycling. The London-based fund has Anglo American as an anchor LP and targets Series A and B investments with a European and North American geographic focus. AP Ventures' prior portfolio includes Nel Hydrogen and EV Metals Group.",
+        "source_html": "Source: <a href=\"https://impactalpha.com/the-weeks-dealflow-november-6-2026/\">ImpactAlpha</a>, Nov 6"
+      }
+    ]
+  }
+}
