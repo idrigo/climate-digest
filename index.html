@@ -283,6 +283,40 @@
     return html;
   }
 
+  // The Routine occasionally drifts from the documented schema (e.g. sections
+  // at the top level, "summary_html" instead of "summary", "headline" instead
+  // of "title"). Normalize to the canonical shape before rendering.
+  function hostOf(url) {
+    try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return ''; }
+  }
+
+  function normalizeItem(it) {
+    var out = {};
+    for (var k in it) out[k] = it[k];
+    if (out.summary == null) out.summary = it.summary_html || '';
+    if (out.title == null) out.title = it.headline || '';
+    if (out.impact == null) out.impact = it.summary_html || '';
+    if (!out.source) out.source = hostOf(it.url);
+    if (out.source_html == null) out.source_html = out.source;
+    if (out.body_html == null) out.body_html = out.summary;
+    return out;
+  }
+
+  function normalize(data) {
+    var src = data.sections || data;
+    var sections = {};
+    ['climate', 'weather', 'renewables', 'science', 'industry'].forEach(function (key) {
+      var sec = src[key];
+      if (!sec) return;
+      var copy = {};
+      for (var k in sec) copy[k] = sec[k];
+      copy.items = (sec.items || []).map(normalizeItem);
+      if (sec.major_events) copy.major_events = sec.major_events.map(normalizeItem);
+      sections[key] = copy;
+    });
+    return { digest_date: data.digest_date, metar: data.metar, sections: sections };
+  }
+
   function render(data) {
     var main = document.getElementById('main-content');
     var order = ['climate', 'weather', 'renewables', 'science'];
@@ -364,7 +398,7 @@
       .then(function (r) { if (!r.ok) throw new Error('not found'); return r.json(); })
       .then(function (data) {
         currentDigestDate = new Date(data.digest_date + 'T00:00:00Z').getTime();
-        render(data);
+        render(normalize(data));
         showArchiveBanner(data.digest_date, !!date);
         return fetch('data/archive-index.json', { cache: 'no-cache' })
           .then(function (r) { return r.ok ? r.json() : []; })
