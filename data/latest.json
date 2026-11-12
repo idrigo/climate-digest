@@ -1,269 +1,244 @@
 {
-  "digest_date": "2026-11-11",
-  "metar": "DIGEST 111530Z NOV26 · ROLLING 72H WINDOW",
+  "digest_date": "2026-11-12",
+  "metar": "DIGEST 121500Z NOV26 · ROLLING 72H WINDOW",
   "sections": {
     "climate": {
-      "overview_html": "The <a href=\"https://unfccc.int/cop31/high-level\" target=\"_blank\" rel=\"noopener\">Antalya Leaders’ Summit</a> runs 11-12 November at COP31 in Türkiye, after talks <a href=\"https://www.turkishminute.com/2026/11/09/cop31-opens-in-antalya-with-early-dispute-over-climate-finance/\" target=\"_blank\" rel=\"noopener\">opened with a dispute over climate finance</a>. The hosts' headline proposal is a voluntary <a href=\"https://www.abc.net.au/news/2026-11-10/cop31-tingle-global-temperature-1-5c/107366402\" target=\"_blank\" rel=\"noopener\">35% electricity share of final energy by 2035</a>. The WHO has <a href=\"https://gizmodo.com/this-super-el-nino-just-triggered-something-the-who-has-never-done-before-2000837799\" target=\"_blank\" rel=\"noopener\">classified El Niño health impacts as an emergency</a> for the first time.",
+      "overview_html": "The <a href=\"https://wmo.int/news/media-centre/state-of-climate-2026-gives-new-meaning-phrase-charts\" target=\"_blank\" rel=\"noopener\">WMO State of the Climate update</a> puts January-September 2026 at 1.47°C above pre-industrial, with records in sea level and ocean heat. At the COP31 leaders' summit, <a href=\"https://news.un.org/en/story/2026/11/1168783\" target=\"_blank\" rel=\"noopener\">Guterres proposed a climate justice compact</a> built on finance, fossil and deforestation roadmaps.",
       "items": [
         {
-          "source": "Turkish Minute",
+          "source": "WMO",
           "date": "2026-11-09",
-          "headline": "COP31 opens in Antalya with an early split over climate finance",
-          "url": "https://www.turkishminute.com/2026/11/09/cop31-opens-in-antalya-with-early-dispute-over-climate-finance/",
-          "summary": "Finance and trade items divided developed and developing countries before the agenda was adopted on day one. The US sent no officials, and an EU official said there was no political will for new funding pledges."
-        },
-        {
-          "source": "ABC News",
-          "date": "2026-11-10",
-          "headline": "COP31 hosts push a voluntary 35-by-35 electrification goal",
-          "url": "https://www.abc.net.au/news/2026-11-10/cop31-tingle-global-temperature-1-5c/107366402",
-          "summary": "The goal is for electricity to supply 35% of final energy by 2035, with talks focused on implementing existing pledges rather than new targets."
+          "headline": "WMO puts January-September 2026 at 1.47°C above pre-industrial",
+          "url": "https://wmo.int/news/media-centre/state-of-climate-2026-gives-new-meaning-phrase-charts",
+          "summary": "The COP31 update says 2026 will rank among the four warmest years and sea level and ocean heat content are at records. The data end in September, before most El Niño effects; the full report is due March 2027."
         },
         {
           "source": "UN News",
-          "date": "2026-11-09",
-          "headline": "Kurum takes COP31 presidency with Bowen leading negotiations",
-          "url": "https://news.un.org/en/story/2026/11/1168763",
-          "summary": "More than 90,000 people are expected in Antalya through 20 November under the co-presidency agreed at COP30."
+          "date": "2026-11-11",
+          "headline": "Guterres proposes a climate justice compact at the COP31 leaders' summit",
+          "url": "https://news.un.org/en/story/2026/11/1168783",
+          "summary": "He called for roadmaps on $1.3 trillion in climate finance, transitioning from fossil fuels and ending deforestation. Lula said Brazil would draw up national roadmaps on fossil dependence and deforestation."
         },
         {
-          "source": "Gizmodo",
-          "date": "2026-11-10",
-          "headline": "WHO classifies El Niño health impacts as an emergency for the first time",
-          "url": "https://gizmodo.com/this-super-el-nino-just-triggered-something-the-who-has-never-done-before-2000837799",
-          "summary": "The move follows WMO's warning that El Niño could reach record strength by December."
+          "source": "Climate Home News",
+          "date": "2026-11-11",
+          "headline": "World leaders arrive in Antalya as access problems keep delegates outside",
+          "url": "https://www.climatechangenews.com/2026/11/11/cop31-bulletin-day-3-with-the-people-stuck-outside-world-leaders-jet-in/",
+          "summary": "The leaders' summit opened with few heavyweight speakers, no US officials and the EU without new finance pledges."
         }
       ]
     },
     "weather": {
       "major_events": [
         {
-          "name": "Storm Charles — Portugal, Madeira, Spain",
-          "status": "Red warnings; moving NE to Italy, Croatia",
-          "impact": "Portugal is under a <a href=\"https://www.theportugalnews.com/news/2026-11-11/storm-charles-causes-flooding-in-lisbon/1114457\" target=\"_blank\" rel=\"noopener\">nationwide state of alert</a> with gusts to 140 km/h forecast in exposed areas; Madeira logged over 200 incidents overnight. <a href=\"https://www.todoalicante.es/english/storm-charles-triggers-widespread-20261111081147-nt.html\" target=\"_blank\" rel=\"noopener\">AEMET red warnings</a> cover rain in Ávila and Cáceres and wind on La Palma; western Andalusia may see 100-300 mm."
+          "name": "Storm Charles and Bruna — Italy, Adriatic",
+          "status": "Red alert in Tuscany; Adriatic next",
+          "impact": "Italy's civil protection set a <a href=\"https://www.ilmeteo.net/notizie/previsioni/allerta-meteo-di-giovedi-12-novembre-per-forte-maltempo-in-arrivo-in-molte-regioni-italiane-rossa-in-toscana.html\" target=\"_blank\" rel=\"noopener\">red alert for northwest Tuscany</a> on Nov 12, orange for Liguria and Emilia-Romagna, yellow in nine more regions; up to 250-300 mm of rain is possible. Charles is merging with low Bruna, and <a href=\"https://meteonews.ch/en/News/N16972/Storm-Charles-is-joining-forces-with-Storm-Bruna\" target=\"_blank\" rel=\"noopener\">MeteoNews</a> puts the heaviest Adriatic totals near Rijeka and the Montenegro-Albania border."
         },
         {
           "name": "Central Vietnam floods",
-          "status": "Heavy rain through Nov 12",
-          "impact": "Rain is <a href=\"https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/10/prolonged-heavy-rain-poses-flooding-in-central-vietnam\" target=\"_blank\" rel=\"noopener\">forecast to exceed 400 mm in places</a>; 1,577 houses were inundated in Thanh Hoa and rivers are rising from Quang Tri to Dak Lak."
-        },
-        {
-          "name": "Typhoon Cempaka (Samuel)",
-          "status": "Past Chichijima, weakening, ENE",
-          "impact": "The storm <a href=\"https://newsonjapan.com/article/151288.php\" target=\"_blank\" rel=\"noopener\">passed close to Chichijima</a> overnight Nov 10-11 and is moving away at about 26 mph, <a href=\"https://www.wunderground.com/hurricane/western-pacific/2026/typhoon-cempaka\" target=\"_blank\" rel=\"noopener\">forecast to become extratropical</a>."
+          "status": "Rain easing from Nov 12; rivers high",
+          "impact": "Hue to Dak Lak saw 150-250 mm, locally over 400 mm. <a href=\"https://dtinews.dantri.com.vn/vietnam-today/flood-warnings-issued-across-central-vietnam-20261112104551377.htm\" target=\"_blank\" rel=\"noopener\">Flood warnings</a> run from Hue to Khanh Hoa, reservoirs are releasing water and <a href=\"https://dtinews.dantri.com.vn/vietnam-today/heavy-rain-hits-central-vietnam-reservoirs-release-water-20261111110506414.htm\" target=\"_blank\" rel=\"noopener\">hundreds have been evacuated</a>; a landslide hit the North-South Expressway in Dak Lak."
         },
         {
           "name": "St. Johns River flooding — Florida",
-          "status": "Near major stage at Cocoa",
-          "impact": "The river stood at <a href=\"https://wfit.org/podcast/local-state-news/2026-11-10/wfit-local-state-news-november-10-2026-pm\" target=\"_blank\" rel=\"noopener\">16.98 ft at Cocoa</a> against a 17 ft major stage, with a forecast crest near 17.1 ft; water moves north into Seminole and Volusia counties this week."
+          "status": "Lake Harney crest Nov 20-23",
+          "impact": "Lake Harney stood at 9.1 ft (moderate) on Nov 11. <a href=\"https://www.clickorlando.com/news/local/2026/11/09/seminole-county-prepares-for-flooding-impacts-from-st-johns-river-lakes-expected-to-crest-by-november-20/\" target=\"_blank\" rel=\"noopener\">Seminole County</a> expects a crest of 9.7-10.3 ft and Sanford at 5.5-6 ft between Nov 20 and 23, with <a href=\"https://mynews13.com/fl/orlando/news/2026/11/11/seminole-county-monitors-flooding-near-sanford-lake-harney\" target=\"_blank\" rel=\"noopener\">high water lasting into December</a>."
         },
         {
           "name": "South Africa heatwave and fire danger",
           "status": "Until Friday Nov 13",
-          "impact": "SAWS expects <a href=\"https://iol.co.za/news/weather/2026-11-11-sa-weather-heatwave-to-continue-in-parts-of-the-country-until-friday/\" target=\"_blank\" rel=\"noopener\">highs near 40°C</a> in the Northern and Western Cape, with extremely high fire danger across four provinces."
+          "impact": "Heat has shifted to North West, Free State and southern Gauteng, with Upington forecast at 40°C. SAWS warns of <a href=\"https://www.timeslive.co.za/news/south-africa/2026-11-11-weather-service-warns-of-scorching-temperatures-and-high-fire-danger/\" target=\"_blank\" rel=\"noopener\">extremely high fire danger</a> in the Northern Cape, Free State and North West; <a href=\"https://iol.co.za/news/weather/2026-11-12-thursday-weather-heatwave-hits-several-provinces-as-thunderstorms-and-rain-expected-in-parts-of-sa/\" target=\"_blank\" rel=\"noopener\">thunderstorms</a> hit the east."
         },
         {
-          "name": "Tropical Storm Pena — Central Pacific",
-          "status": "Weak TS, no land threat",
-          "impact": "Pena <a href=\"https://www.natureworldnews.com/articles/73782/20261110/tropical-storm-pena-loses-its-hurricane-forecast-it-passes-far-south-hawaii.htm\" target=\"_blank\" rel=\"noopener\">is no longer forecast to become a hurricane</a> and is passing far south of Hawaii."
+          "name": "Nor'easter and cold snap — eastern US",
+          "status": "Rain on I-95, interior snow Nov 12-14",
+          "impact": "0.5-2 in. of rain and minor coastal flooding are possible Friday and Saturday, with 1-2 in. of wet snow in upstate NY and northern New England. <a href=\"https://www.cnn.com/2026/11/10/weather/winter-storm-eastern-us-cold-snap-climate\" target=\"_blank\" rel=\"noopener\">The coldest air in about six months</a> follows, with frost in the Carolinas and possible Deep South freezes Nov 14-15."
+        },
+        {
+          "name": "Bay of Bengal low",
+          "status": "Depression possible around Nov 15",
+          "impact": "IMD expects a <a href=\"https://www.theweek.in/news/india/2026/11/12/imd-weather-forecast-another-cyclone-to-hit-andhra-pradesh-rain-alert-in-tamil-nadu-uttarakhand-and-himachal-pradesh.html\" target=\"_blank\" rel=\"noopener\">depression over the southeast Bay of Bengal</a> around Nov 15, with heavy rain on the Andaman and Nicobar Islands and gusts to 60 km/h. IMD has not forecast cyclone strength."
         }
       ],
-      "overview_html": "<a href=\"https://www.theportugalnews.com/news/2026-11-11/storm-charles-causes-flooding-in-lisbon/1114457\" target=\"_blank\" rel=\"noopener\">Storm Charles</a> has put Portugal under a nationwide alert and triggered red warnings in Spain before it tracks toward Italy and Croatia. <a href=\"https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/10/prolonged-heavy-rain-poses-flooding-in-central-vietnam\" target=\"_blank\" rel=\"noopener\">Central Vietnam</a> faces over 400 mm of rain in places. In Florida the <a href=\"https://wfit.org/podcast/local-state-news/2026-11-10/wfit-local-state-news-november-10-2026-pm\" target=\"_blank\" rel=\"noopener\">St. Johns River</a> is cresting near major flood stage at Cocoa, while <a href=\"https://www.accuweather.com/en/hurricane/2026-atlantic-hurricane-season-is-over/1955742\" target=\"_blank\" rel=\"noopener\">AccuWeather</a> has called the Atlantic tropical season over.",
+      "overview_html": "Storm Charles has merged with low Bruna and moved on to Italy, where <a href=\"https://www.ilmeteo.net/notizie/previsioni/allerta-meteo-di-giovedi-12-novembre-per-forte-maltempo-in-arrivo-in-molte-regioni-italiane-rossa-in-toscana.html\" target=\"_blank\" rel=\"noopener\">Tuscany is on red alert</a> for up to 300 mm of rain. <a href=\"https://dtinews.dantri.com.vn/vietnam-today/flood-warnings-issued-across-central-vietnam-20261112104551377.htm\" target=\"_blank\" rel=\"noopener\">Central Vietnam</a> faces river flooding after more than 400 mm in places. In Florida the St. Johns River is now forecast to <a href=\"https://www.clickorlando.com/news/local/2026/11/09/seminole-county-prepares-for-flooding-impacts-from-st-johns-river-lakes-expected-to-crest-by-november-20/\" target=\"_blank\" rel=\"noopener\">crest at Lake Harney around Nov 20-23</a>, and the eastern US gets its first nor'easter and coldest air in six months.",
       "items": [
         {
-          "source": "The Portugal News",
+          "source": "ilMeteo.net",
           "date": "2026-11-11",
-          "headline": "Storm Charles floods Lisbon as Portugal enters state of alert",
-          "url": "https://www.theportugalnews.com/news/2026-11-11/storm-charles-causes-flooding-in-lisbon/1114457",
-          "summary": "Lisbon logged about 50 incidents, mostly flooding, between midnight and 10am with no injuries. Gusts to 120 km/h were forecast for Faro, and <a href=\"https://euronews.com/2026/11/10/depression-charles-to-hit-madeira-and-portugal-as-government-urges-maximum-caution\" target=\"_blank\" rel=\"noopener\">red warnings</a> covered parts of Madeira and the southern mainland."
-        },
-        {
-          "source": "TodoAlicante",
-          "date": "2026-11-11",
-          "headline": "Spain puts 14 regions on alert for Storm Charles, red in Ávila and Cáceres",
-          "url": "https://www.todoalicante.es/english/storm-charles-triggers-widespread-20261111081147-nt.html",
-          "summary": "La Palma is under a red wind warning with gusts near 130 km/h. Cádiz and Huelva could see 100-300 mm over the episode before the storm moves toward the Alps and Italy."
-        },
-        {
-          "source": "The Star",
-          "date": "2026-11-10",
-          "headline": "Central Vietnam braces for more than 400 mm of rain",
-          "url": "https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/10/prolonged-heavy-rain-poses-flooding-in-central-vietnam",
-          "summary": "Ha Tinh and northern Quang Tri expect 100-250 mm, and 1,577 houses are already under water in Thanh Hoa. A landslide cut Road 9C in Quang Tri."
-        },
-        {
-          "source": "WFIT",
-          "date": "2026-11-10",
-          "headline": "St. Johns River reaches 16.98 ft at Cocoa, near major flood stage",
-          "url": "https://wfit.org/podcast/local-state-news/2026-11-10/wfit-local-state-news-november-10-2026-pm",
-          "summary": "Water enters homes near Lake Poinsett and Rockledge at 17.2 ft; the forecast crest is about 17.1 ft, close to TS Fay's 2008 mark. The flooding follows more than 20 inches of rain in under 24 hours in southern Brevard."
-        },
-        {
-          "source": "IOL",
-          "date": "2026-11-11",
-          "headline": "South Africa heatwave to last until Friday with 40°C highs",
-          "url": "https://iol.co.za/news/weather/2026-11-11-sa-weather-heatwave-to-continue-in-parts-of-the-country-until-friday/",
-          "summary": "SAWS flags extremely high fire danger over the Northern Cape, North West, Free State and northwestern Western Cape."
+          "headline": "Italy issues red alert for Tuscany as Charles merges with low Bruna",
+          "url": "https://www.ilmeteo.net/notizie/previsioni/allerta-meteo-di-giovedi-12-novembre-per-forte-maltempo-in-arrivo-in-molte-regioni-italiane-rossa-in-toscana.html",
+          "summary": "Northwest Tuscany, including Massa-Carrara and Lucca provinces, is on red alert for Thursday, with orange in Liguria and Emilia-Romagna. Forecasts allow for 250-300 mm of rain and gusts to 100 km/h."
         },
         {
           "source": "Al Jazeera",
-          "date": "2026-11-08",
-          "headline": "First winter storm floods Gaza tents, killing at least five",
-          "url": "https://aljazeera.com/news/2026/11/8/floods-in-gaza-leave-tens-of-thousands-without-shelter",
-          "summary": "An embankment collapsed onto tents near Deir al-Balah. The UN counts about 26,000 flooded households among roughly 1.4 million people in tents or makeshift shelters."
+          "date": "2026-11-11",
+          "headline": "Portugal cancels more than 300 flights and shuts schools for Storm Charles",
+          "url": "https://www.aljazeera.com/news/2026/11/11/portugal-cancels-300-plus-flights-shuts-schools-ahead-of-storm-charles",
+          "summary": "Around 8,000 schools closed and 1,100 troops were placed on standby; Web Summit cancelled its second day. Mainland damage was limited after the storm passed."
         },
         {
-          "source": "AccuWeather",
-          "date": "2026-11-09",
-          "headline": "AccuWeather declares the 2026 Atlantic tropical season over",
-          "url": "https://www.accuweather.com/en/hurricane/2026-atlantic-hurricane-season-is-over/1955742",
-          "summary": "The call comes three weeks before the official 30 November end of a season whose first hurricane formed only on 8 October."
+          "source": "DTiNews",
+          "date": "2026-11-12",
+          "headline": "Flood warnings issued from Hue to Khanh Hoa after days of heavy rain",
+          "url": "https://dtinews.dantri.com.vn/vietnam-today/flood-warnings-issued-across-central-vietnam-20261112104551377.htm",
+          "summary": "Rain of 150-250 mm, locally over 400 mm, fell across central Vietnam. <a href=\"https://dtinews.dantri.com.vn/vietnam-today/heavy-rain-hits-central-vietnam-reservoirs-release-water-20261111110506414.htm\" target=\"_blank\" rel=\"noopener\">Reservoirs are releasing water</a> and hundreds of residents have been evacuated; rain is forecast to ease from Nov 12."
         },
         {
-          "source": "Rolling Out",
+          "source": "ClickOrlando",
           "date": "2026-11-09",
-          "headline": "Northeast US coastal storm to bring rain and high-elevation snow Nov 12-14",
-          "url": "https://rollingout.com/2026/11/09/northeast-coastal-storm-snow-risk/",
-          "summary": "Pennsylvania could see up to 3 inches of rain, with 3-6 inches of snow above about 3,000 ft before colder air arrives around 15 November."
+          "headline": "Seminole County expects St. Johns lakes to crest around Nov 20",
+          "url": "https://www.clickorlando.com/news/local/2026/11/09/seminole-county-prepares-for-flooding-impacts-from-st-johns-river-lakes-expected-to-crest-by-november-20/",
+          "summary": "Officials call it a very prolonged slow flood. Lake Harney is forecast to reach 9.7-10.3 ft, and <a href=\"https://mynews13.com/fl/orlando/news/2026/11/11/seminole-county-monitors-flooding-near-sanford-lake-harney\" target=\"_blank\" rel=\"noopener\">water is expected to stay high</a> into December."
+        },
+        {
+          "source": "IOL",
+          "date": "2026-11-12",
+          "headline": "South African heatwave spreads to several provinces with thunderstorms in the east",
+          "url": "https://iol.co.za/news/weather/2026-11-12-thursday-weather-heatwave-hits-several-provinces-as-thunderstorms-and-rain-expected-in-parts-of-sa/",
+          "summary": "Highs near 40°C are forecast in the Northern Cape; <a href=\"https://www.timeslive.co.za/news/south-africa/2026-11-11-weather-service-warns-of-scorching-temperatures-and-high-fire-danger/\" target=\"_blank\" rel=\"noopener\">SAWS warns</a> of extremely high fire danger across the interior until Friday."
+        },
+        {
+          "source": "The Weather Channel",
+          "date": "2026-11-11",
+          "headline": "Nor'easter to bring first snow to interior New England, not a high-impact storm",
+          "url": "https://weather.com/2026/11/11/forecast/regional/noreaster-first-snow-frost-freeze",
+          "summary": "Rain totals of 0.5-2 in. are expected along I-95 with wet snow in the hills. <a href=\"https://www.cnn.com/2026/11/10/weather/winter-storm-eastern-us-cold-snap-climate\" target=\"_blank\" rel=\"noopener\">CNN</a> reports the following air mass will run 5-15°F below average."
+        },
+        {
+          "source": "The Week",
+          "date": "2026-11-12",
+          "headline": "IMD expects a depression over the southeast Bay of Bengal around Nov 15",
+          "url": "https://www.theweek.in/news/india/2026/11/12/imd-weather-forecast-another-cyclone-to-hit-andhra-pradesh-rain-alert-in-tamil-nadu-uttarakhand-and-himachal-pradesh.html",
+          "summary": "Heavy rain is forecast for the Andaman and Nicobar Islands, with 40-50 km/h winds gusting to 60 km/h over the Andaman Sea on Nov 14-15."
+        },
+        {
+          "source": "Weathernews",
+          "date": "2026-11-09",
+          "headline": "Cempaka is typhoon No. 32 of 2026, the first year to reach that count since 1994",
+          "url": "https://wxtech.weathernews.com/en/news/sky20261109-01/",
+          "summary": "The typhoon recurved south of Japan without landfall. By Nov 11 it was a Category 1 near 30N 154E, forecast to become extratropical."
         }
       ]
     },
     "renewables": {
-      "overview_html": "A wind lull sent <a href=\"https://governorswindenergycoalition.org/europe-power-prices-shoot-above-e600-as-wind-collapses/\" target=\"_blank\" rel=\"noopener\">German day-ahead power to €345.64/MWh</a>, with evening quarter-hours above €600, the highest French prices since December 2022. <a href=\"https://www.euronews.com/2026/11/08/were-hardly-producing-any-power-can-europes-solar-boom-survive-a-cloudy-winter\" target=\"_blank\" rel=\"noopener\">Euronews</a> looks at how solar-heavy grids fare in a cloudy, windless winter. <a href=\"https://pv-magazine.com/2026/11/11/saudi-arabia-launches-1-9-gw-pv-tender\" target=\"_blank\" rel=\"noopener\">Saudi Arabia</a> opened a 1.9 GW solar tender.",
+      "overview_html": "The EU cleared <a href=\"https://splash247.com/eu-clears-2-2bn-support-to-revive-belgian-offshore-wind-tender/\" target=\"_blank\" rel=\"noopener\">€2.04bn in aid</a> to restart Belgium's 735 MW Princess Elisabeth tender. The <a href=\"https://www.newsfromthestates.com/node/437571\" target=\"_blank\" rel=\"noopener\">US Senate voted 73-25</a> to advance a permitting bill that adds a federal backstop for interstate transmission. At COP31, five countries backed a <a href=\"https://www.climatechangenews.com/2026/11/10/cop31-bulletin-day-2-energy-day-off-to-slow-start-amid-transport-chaos/\" target=\"_blank\" rel=\"noopener\">goal of 300 million rooftop solar homes</a> by 2030.",
       "items": [
         {
-          "source": "Bloomberg via GWEC",
+          "source": "Splash247",
+          "date": "2026-11-12",
+          "headline": "EU approves €2.04bn aid to restart Belgium's first Princess Elisabeth Zone tender",
+          "url": "https://splash247.com/eu-clears-2-2bn-support-to-revive-belgian-offshore-wind-tender/",
+          "summary": "The 20-year scheme supports a wind farm of up to 735 MW and replaces a €682m scheme approved in 2024. The tender result is expected in Q4 2027."
+        },
+        {
+          "source": "States Newsroom",
           "date": "2026-11-09",
-          "headline": "Wind lull pushes German day-ahead power above €600/MWh in evening hours",
-          "url": "https://governorswindenergycoalition.org/europe-power-prices-shoot-above-e600-as-wind-collapses/",
-          "summary": "German day-ahead settled at €345.64/MWh and French at €334.12/MWh, the highest since December 2022, as low wind hit Germany, the UK and Benelux. The UK grid operator warned of tight Monday-morning supply."
+          "headline": "US Senate votes 73-25 to advance bipartisan permitting reform bill",
+          "url": "https://www.newsfromthestates.com/node/437571",
+          "summary": "The bill adds a federal backstop for interstate lines of 230 kV and above and covers onshore and offshore wind. It still needs House passage."
         },
         {
-          "source": "Euronews",
-          "date": "2026-11-08",
-          "headline": "Europe's solar fleet faces its first test of a cloudy, windless winter",
-          "url": "https://www.euronews.com/2026/11/08/were-hardly-producing-any-power-can-europes-solar-boom-survive-a-cloudy-winter",
-          "summary": "Dunkelflaute periods push grids onto gas backup, though solar still delivers about 25-35% of its annual output in winter."
+          "source": "Climate Home News",
+          "date": "2026-11-10",
+          "headline": "Five countries back COP31 goal to double rooftop solar homes to 300 million",
+          "url": "https://www.climatechangenews.com/2026/11/10/cop31-bulletin-day-2-energy-day-off-to-slow-start-amid-transport-chaos/",
+          "summary": "Australia, Bangladesh, Kenya, Nigeria and Vanuatu endorsed the Global Rooftop Solar Declaration on Energy Day, targeting 300 million homes by 2030 from about 150 million."
         },
         {
-          "source": "Recharge",
-          "date": "2026-11-11",
-          "headline": "Siemens Gamesa breaks even on a large offshore wind order",
-          "url": "https://rechargenews.com/finance/siemens-gamesa-breaks-even-as-offshore-order-lifts-business/2-1-2072394",
-          "summary": "Parent Siemens Energy reported a record fiscal 2026."
-        },
-        {
-          "source": "Energy-Storage.news",
-          "date": "2026-11-09",
-          "headline": "BNEF sees US midterm results as a net positive for battery storage",
-          "url": "https://energy-storage.news/bloombergnef-us-midterm-results-likely-a-net-positive-for-bess-despite-data-centre-headwinds",
-          "summary": "BNEF's Derrick Flakoll cites new unified Democratic state governments such as Pennsylvania and Wisconsin, but tighter data-centre rules could slow storage demand."
+          "source": "WBUR",
+          "date": "2026-11-06",
+          "headline": "800 MW Vineyard Wind reaches full operation off Massachusetts",
+          "url": "https://www.wbur.org/news/2026/11/06/vineyard-wind-fully-running-offshore-wind-massachusetts",
+          "summary": "The project came online hours after the 704 MW Revolution Wind reached full commercial operation on Nov 5. Together they add about 1.5 GW of US offshore wind."
         },
         {
           "source": "pv magazine",
-          "date": "2026-11-11",
-          "headline": "Saudi Arabia opens qualification for 1.9 GW of solar in round eight",
-          "url": "https://pv-magazine.com/2026/11/11/saudi-arabia-launches-1-9-gw-pv-tender",
-          "summary": "SPPC's request covers two projects; pre-qualification closes 22 November."
+          "date": "2026-11-06",
+          "headline": "India approves INR 14,500 crore support for 92 GWh of grid storage",
+          "url": "https://www.pv-magazine.com/2026/11/06/cabinet-approves-inr-14500-crore-viability-gap-funding-scheme-for-development-of-92-gwh-grid-scale-energy-storage-systems/",
+          "summary": "The viability gap funding covers 60 GWh of pumped hydro, 30 GWh of batteries and 2 GWh of other technologies through FY2030-31, equal to 170% of existing grid storage. Batteries carry a 40% domestic-content rule."
         }
       ]
     },
     "science": {
-      "overview_html": "An <a href=\"https://www.ecmwf.int/en/about/media-centre/news/2026/increasing-observations-could-directly-improve-forecast-quality-worldwide-new-study-finds\" target=\"_blank\" rel=\"noopener\">ECMWF study for SOFF</a> finds that filling surface-observation gaps could cut short-range forecast uncertainty in Africa by about 30%. A <a href=\"https://arxiv.org/abs/2611.11918\" target=\"_blank\" rel=\"noopener\">new arXiv paper</a> runs GraphCast inside a coupled EnVar-EnKF system with real observations. <a href=\"https://www.esa.int/articles/about-us/directorates/earth-observation-programmes/meteorological-missions/meteosat-third-generation/mtg-i2-weather-satellite-delivers-first-images\" target=\"_blank\" rel=\"noopener\">MTG-I2</a> has returned its first images ahead of 2.5-minute rapid scans over Europe.",
+      "overview_html": "An <a href=\"https://arxiv.org/abs/2611.09573\" target=\"_blank\" rel=\"noopener\">arXiv study</a> finds five AI weather models lose at most 1.4% RMSE when run in half precision, a direct cost lever for operational inference. A <a href=\"https://www.nature.com/articles/s41467-026-76809-5\" target=\"_blank\" rel=\"noopener\">Nature Communications paper</a> shows recent record heatwaves will be routinely exceeded under further warming, and <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026GL123865\" target=\"_blank\" rel=\"noopener\">GRL</a> reports reef marine heatwaves intensify with depth.",
       "items": [
         {
-          "source": "ECMWF",
-          "date": "2026-11-10",
-          "headline": "ECMWF study links more surface observations to better forecasts out to 7 days",
-          "url": "https://www.ecmwf.int/en/about/media-centre/news/2026/increasing-observations-could-directly-improve-forecast-quality-worldwide-new-study-finds",
-          "summary": "Commissioned through the Systematic Observations Financing Facility, the study estimates that closing the observation gap could cut short-range forecast uncertainty in Africa by about 30%. In-situ surface data from sparse regions remains a gap AI models also depend on."
-        },
-        {
           "source": "arXiv",
-          "date": "2026-11-09",
-          "headline": "GraphCast propagates ensemble covariances in a realistic EnVar-EnKF cycle",
-          "url": "https://arxiv.org/abs/2611.11918",
-          "summary": "Run for a month with real observations including microwave radiances, the ML-driven ensemble gave spread and covariances comparable to an all-MPAS reference with lower RMSE against GFS analyses. Spurious correlations near the model top degraded results there.",
-          "meta": "arXiv:2611.11918 · physics.ao-ph"
-        },
-        {
-          "source": "ESA / EUMETSAT",
           "date": "2026-11-06",
-          "headline": "MTG-I2 weather satellite returns first Flexible Combined Imager images",
-          "url": "https://www.esa.int/articles/about-us/directorates/earth-observation-programmes/meteorological-missions/meteosat-third-generation/mtg-i2-weather-satellite-delivers-first-images",
-          "summary": "Launched on 27 August, the satellite will run EUMETSAT's 2.5-minute rapid scan over Europe and North Africa alongside Meteosat-12. Operations are expected in Q2 2027."
+          "headline": "Half-precision inference costs AI weather models at most 1.4% in RMSE",
+          "url": "https://arxiv.org/abs/2611.09573",
+          "meta": "arXiv:2611.09573 · physics.ao-ph",
+          "summary": "Aurora, Pangu-Weather, FourCastNet, SFNO and FastNet were run in fp16 versus fp32 on a single GPU, with global RMSE changing by at most 1.4%. Operators can cut inference cost and memory without retraining."
         },
         {
-          "source": "JGR Oceans",
-          "date": "2026-11-10",
-          "headline": "S-MODE flights show winds track SST across fronts with a 2-7 km lag",
-          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026JC024134",
-          "summary": "Airborne observations from two S-MODE cases show stronger winds over warmer water and weaker winds over cooler water, with the atmosphere lagging SST gradients by about 2-7 km.",
-          "meta": "Li, He et al. · Journal of Geophysical Research: Oceans"
-        },
-        {
-          "source": "Monash University / EcoNews",
-          "date": "2026-11-11",
-          "headline": "Non-cyclone systems drive up to 75% of extreme tropical rainfall",
-          "url": "https://econews.com.au/more-important-than-tropical-cyclones-scientists-finally-track-the-hidden-weather-systems-behind-most-tropical-rainfall/",
-          "summary": "Tracking all tropical weather systems, the team found that systems other than tropical cyclones produced 45-75% of extreme three-hourly rainfall in some regions.",
-          "meta": "Weather and Climate Dynamics"
-        },
-        {
-          "source": "Earth.com",
-          "date": "2026-11-07",
-          "headline": "Seafloor algae records show models overestimate Arctic winter sea ice",
-          "url": "https://www.earth.com/climate/arctic-winter-sea-ice-is-being-overestimated-by-climate-models/",
-          "summary": "Grading 27 climate models against 6,000-year-old sediment proxies trims projected winter ice by about 1 million km². The figures are re-weighted projections, not new observations.",
-          "meta": "Nature Geoscience"
-        },
-        {
-          "source": "Phys.org",
+          "source": "Nature Communications",
           "date": "2026-11-05",
-          "headline": "Cave records show ice-age abrupt climate shifts were slower than ice cores imply",
-          "url": "https://phys.org/news/2026-11-ice-age-abrupt-climate-shifts.html",
-          "summary": "Annual layers in speleothems indicate the abrupt transitions took longer than ice-core records suggested.",
-          "meta": "Xiyu Dong et al. · Science"
+          "headline": "Recent record heatwaves will be routinely exceeded under further warming",
+          "url": "https://www.nature.com/articles/s41467-026-76809-5",
+          "meta": "Aglas-Leitner, Perkins-Kirkpatrick, Brunner et al. · Nature Communications",
+          "summary": "The study compared 22 exceptional heatwaves from 2010-2023 with projections at 0-4.5°C of warming. A large share of future events exceed recent records in duration, cumulative heat and extent, <a href=\"https://www.eurekalert.org/news-releases/1150843\" target=\"_blank\" rel=\"noopener\">especially late in the century</a>."
+        },
+        {
+          "source": "GRL",
+          "date": "2026-11-10",
+          "headline": "Marine heatwaves on coral reefs grow more intense with depth",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2026GL123865",
+          "meta": "Yao et al. · Geophysical Research Letters",
+          "summary": "Subsurface heatwaves in global reef regions occur on fewer days but reach higher intensity at depth, with day counts modulated by ENSO. The result weakens the idea of deeper reefs as thermal refuges."
+        },
+        {
+          "source": "phys.org",
+          "date": "2026-11-09",
+          "headline": "Weaker Southern Ocean carbon uptake helped fuel the early Eocene hothouse",
+          "url": "https://phys.org/news/2026-11-southern-ocean-fuel-earth-warmest.html",
+          "meta": "Nature Geoscience",
+          "summary": "Lower biological carbon uptake in the Southern Ocean is linked to higher CO2 about 50 million years ago, amplifying an already warm climate."
+        },
+        {
+          "source": "ScienceDaily",
+          "date": "2026-11-05",
+          "headline": "Sticky marine snow can carry six times more carbon to the deep ocean",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261105224558.htm",
+          "summary": "Particles with more gel-like material resist bacterial breakdown as they sink, delivering more than six times as much carbon to depth."
+        },
+        {
+          "source": "phys.org",
+          "date": "2026-11-09",
+          "headline": "Short-duration rain intensity rises about 20% even as totals fall",
+          "url": "https://phys.org/news/2026-11-intense-storms-climate-extreme-urban.html",
+          "meta": "Journal of Hydrology",
+          "summary": "Future simulations for an Israeli study area show lower total rainfall but peak short-duration intensity up about 20%, raising urban flood risk. Drainage design based on totals would underestimate it."
+        },
+        {
+          "source": "Nature World News",
+          "date": "2026-11-09",
+          "headline": "2026 Antarctic ozone hole ranks seventh-largest in 48 years",
+          "url": "https://www.natureworldnews.com/articles/73775/20261109/2026-ozone-hole-ranks-seventh-largest-48-years-nasa-noaa-say-recovery-remains-track.htm",
+          "summary": "NASA and NOAA put the peak at 27.1 million km² on Sept 18, driven by a strong polar vortex. Recovery remains on track for the 2070s."
         }
       ]
     },
     "industry": {
       "items": [
         {
-          "date": "2026-11-10",
-          "title": "Spire Global Q3 revenue rises 42% to $18.0M; shares fall on miss",
-          "body_html": "Spire reported <a href=\"https://stockhouse.com/news/press-releases/2026/11/10/spire-global-announces-third-quarter-2026-results-achieving-42-year-over-year\" target=\"_blank\" rel=\"noopener\">Q3 revenue of $18.0M, up 42% year on year</a> and 77% excluding the sold maritime unit, with a $20.3M net loss and $175.4M in remaining performance obligations. Q4 guidance is $23M to $28M. Shares fell about 15% after hours; NOAA radio occultation and microwave sounding work featured on the <a href=\"https://www.fool.com/earnings/call-transcripts/2026/11/10/spire-global-spir-q3-2026-earnings-call-transcript/\" target=\"_blank\" rel=\"noopener\">earnings call</a>.",
-          "source_html": "<a href=\"https://stockhouse.com/news/press-releases/2026/11/10/spire-global-announces-third-quarter-2026-results-achieving-42-year-over-year\" target=\"_blank\" rel=\"noopener\">Stockhouse (Business Wire)</a>"
-        },
-        {
-          "date": "2026-11-10",
-          "title": "The Weather Company launches Proximity, a 90 m microscale forecast layer",
-          "body_html": "<a href=\"https://www.prnewswire.com/news-releases/the-weather-company-introduces-proximity-microscale-forecast-capability-elevating-weather-precision-to-unprecedented-heights-302934467.html\" target=\"_blank\" rel=\"noopener\">Proximity</a> resolves temperature, dewpoint, wind and precipitation type down to 90 m using an AI-plus-physics, variable-resolution approach focused on mountains, coasts and cities. It is <a href=\"https://www.weathercompany.com/news/twco-introduces-proximity-microscale-forecast/\" target=\"_blank\" rel=\"noopener\">live now on Wundermap for Weather Underground premium users</a>, with Storm Radar and the new Peak Ready app to follow.",
-          "source_html": "<a href=\"https://www.prnewswire.com/news-releases/the-weather-company-introduces-proximity-microscale-forecast-capability-elevating-weather-precision-to-unprecedented-heights-302934467.html\" target=\"_blank\" rel=\"noopener\">PR Newswire</a>"
-        },
-        {
-          "date": "2026-11-10",
-          "title": "ICEYE books three Rocket Lab Neutron launches; Muon Space books two",
-          "body_html": "Rocket Lab signed <a href=\"https://www.satellitetoday.com/launch/2026/11/10/rocket-lab-secures-half-a-billion-in-neutron-launch-orders-in-q3/\" target=\"_blank\" rel=\"noopener\">8 Neutron missions worth over $515M in Q3</a>, led by ICEYE with 3 dedicated launches from late 2028 and Muon Space with 2. Neutron's base price rose to $70M. Dedicated rides give both constellations control over orbit and refresh timing.",
-          "source_html": "<a href=\"https://www.satellitetoday.com/launch/2026/11/10/rocket-lab-secures-half-a-billion-in-neutron-launch-orders-in-q3/\" target=\"_blank\" rel=\"noopener\">Via Satellite</a>"
+          "date": "2026-11-11",
+          "title": "Previsico and Mitigrate pair real-time flood forecasts with building-level risk data",
+          "body_html": "UK flood-forecasting firm Previsico and Norwegian insurtech Mitigrate will <a href=\"https://www.reinsurancene.ws/previsico-and-mitigrate-partner-to-improve-flood-risk-assessment-and-loss-prevention/\" target=\"_blank\" rel=\"noopener\">combine hyperlocal flood prediction with vulnerability scores</a> for underwriting, claims and loss prevention across the UK and Nordics. Mitigrate's platform covers more than 4 million Nordic and 3 million UK buildings, giving Previsico's forecasts a direct path into insurer workflows.",
+          "source_html": "<a href=\"https://www.reinsurancene.ws/previsico-and-mitigrate-partner-to-improve-flood-risk-assessment-and-loss-prevention/\" target=\"_blank\" rel=\"noopener\">Reinsurance News</a>"
         },
         {
           "date": "2026-11-09",
-          "title": "Rheinmetall ICEYE Space Solutions picks Manufacturo for SAR satellite production",
-          "body_html": "The German-Finnish joint venture <a href=\"https://finance.yahoo.com/technology/articles/manufacturo-selected-rheinmetall-iceye-space-160000905.html\" target=\"_blank\" rel=\"noopener\">selected Manufacturo</a> as its production and quality management platform. The JV recently began building SAR satellites in Neuss.",
-          "source_html": "<a href=\"https://finance.yahoo.com/technology/articles/manufacturo-selected-rheinmetall-iceye-space-160000905.html\" target=\"_blank\" rel=\"noopener\">Yahoo Finance (PR Newswire)</a>"
+          "title": "US Coast Guard ends 2026 Great Lakes trial of six Saildrone Voyagers",
+          "body_html": "The six 33-ft USVs operated from April to November, <a href=\"https://www.marinetechnologynews.com/news/coast-guard-wraps-seasonal-667308\" target=\"_blank\" rel=\"noopener\">collecting wind, wave, water-temperature and pressure data</a> and tracking vessel traffic, before being pulled ahead of winter ice. They belong to 16 Voyagers under a $15.5M contract signed in March, and <a href=\"https://www.workboat.com/coast-guard-wraps-great-lakes-saildrone-trial-plans-spring-return\" target=\"_blank\" rel=\"noopener\">another test period is planned for spring 2027</a>.",
+          "source_html": "<a href=\"https://www.marinetechnologynews.com/news/coast-guard-wraps-seasonal-667308\" target=\"_blank\" rel=\"noopener\">Marine Technology News</a>"
         },
         {
-          "date": "2026-11-04",
-          "title": "Xweather launches Met-in-a-box, running Atmo's AI model on local observations",
-          "body_html": "Vaisala's Xweather <a href=\"https://www.globenewswire.com/news-release/2026/11/04/3395465/0/en/vaisala-xweather-unveils-met-in-a-box-bringing-world-class-ai-weather-forecasting-to-every-corner-of-the-globe.html\" target=\"_blank\" rel=\"noopener\">unveiled Met-in-a-box</a>, which builds a custom AI forecast for a country or operating area from local radar, lidar and station data, on dedicated hardware, cloud or on-premises. Vaisala claims 40,000x faster runs and 50% better accuracy than NWP, unverified. It is the first product since the <a href=\"https://www.globenewswire.com/news-release/2026/10/29/3390949/0/en/vaisala-completes-acquisition-of-ai-weather-company-atmo-inc.html\" target=\"_blank\" rel=\"noopener\">Atmo acquisition closed in late October</a> and targets met services and defence.",
-          "source_html": "<a href=\"https://www.globenewswire.com/news-release/2026/11/04/3395465/0/en/vaisala-xweather-unveils-met-in-a-box-bringing-world-class-ai-weather-forecasting-to-every-corner-of-the-globe.html\" target=\"_blank\" rel=\"noopener\">GlobeNewswire</a>"
-        },
-        {
-          "date": "2026-11-04",
-          "title": "Saildrone signs Umoe Mandal to build next-generation Surveyor USVs",
-          "body_html": "Saildrone and Norwegian shipbuilder Umoe Mandal <a href=\"https://breakingdefense.com/2026/11/saildrone-inks-agreement-with-norwegian-shipbuilder-umoe-mandal-to-produce-usVs/\" target=\"_blank\" rel=\"noopener\">signed a production agreement at Euronaval</a> for the Surveyor V3, with Umoe building composite hulls and Saildrone supplying autonomy and electronics. The deal <a href=\"https://oceannews.com/news/milestones/saildrone-and-umoe-mandal-formalize-surveyor-usv-production-deal-at-euronaval/\" target=\"_blank\" rel=\"noopener\">formalizes a plan first announced in August</a>.",
-          "source_html": "<a href=\"https://breakingdefense.com/2026/11/saildrone-inks-agreement-with-norwegian-shipbuilder-umoe-mandal-to-produce-usVs/\" target=\"_blank\" rel=\"noopener\">Breaking Defense</a>"
+          "date": "2026-11-07",
+          "title": "Galactic Energy's Ceres-2 returns to flight with ocean and commercial weather satellites",
+          "body_html": "The rocket <a href=\"https://news.cgtn.com/news/2026-11-07/China-launches-CERES-2-Y3-rocket-1RSbe0k53l6/p.html\" target=\"_blank\" rel=\"noopener\">lifted off from Jiuquan</a> and placed four satellites into a 535 km sun-synchronous orbit, recovering from its January debut failure. <a href=\"https://newspaceeconomy.ca/2026/11/07/ceres-2-places-four-satellites-into-sun-synchronous-orbit/\" target=\"_blank\" rel=\"noopener\">Payloads</a> support ocean observation, commercial meteorology and space situational awareness, adding Chinese launch capacity for small observation satellites.",
+          "source_html": "<a href=\"https://news.cgtn.com/news/2026-11-07/China-launches-CERES-2-Y3-rocket-1RSbe0k53l6/p.html\" target=\"_blank\" rel=\"noopener\">CGTN</a>"
         }
       ]
     }
