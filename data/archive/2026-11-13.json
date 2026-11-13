@@ -1,0 +1,214 @@
+{
+  "digest_date": "2026-11-13",
+  "metar": "DIGEST 130715Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "COP31 enters its second week with Turkey's <a href=\"https://www.investing.com/news/commodities-news/world-leaders-to-address-cop31-as-turkey-pushes-for-new-climate-deal-5017570\" target=\"_blank\" rel=\"noopener\">35% electrification target</a> still lacking clean-power language. A <a href=\"https://dig.watch/updates/undrr-wmo-report-early-warning-systems\" target=\"_blank\" rel=\"noopener\">UNDRR-WMO report</a> counts 136 countries with some early warning capability. <a href=\"https://abc.net.au/news/2026-11-12/cop31-australia-criticised-over-fossil-fuel-expansion/107375792\" target=\"_blank\" rel=\"noopener\">Australia</a> faced questions over fossil fuel expansion.",
+      "items": [
+        {
+          "source": "Digital Watch",
+          "date": "2026-11-11",
+          "headline": "UNDRR and WMO count 136 countries with some early warning capability",
+          "url": "https://dig.watch/updates/undrr-wmo-report-early-warning-systems",
+          "summary": "The 2026 Global Status of Multi-Hazard Early Warning Systems, released at COP31, puts that at 70% of countries but finds significant disparities between them."
+        },
+        {
+          "source": "Reuters via Investing.com",
+          "date": "2026-11-11",
+          "headline": "Turkey's COP31 electrification goal omits any clean-power requirement",
+          "url": "https://www.investing.com/news/commodities-news/world-leaders-to-address-cop31-as-turkey-pushes-for-new-climate-deal-5017570",
+          "summary": "The proposal would raise electricity's share of energy use to 35% by 2035 from a little over 20%. Portugal, Pacific island states and some European countries want it tied to clean power and a move away from fossil fuels."
+        },
+        {
+          "source": "ABC News",
+          "date": "2026-11-12",
+          "headline": "Australia faces COP31 criticism over fossil fuel expansion",
+          "url": "https://abc.net.au/news/2026-11-12/cop31-australia-criticised-over-fossil-fuel-expansion/107375792",
+          "summary": "Australia's prime minister used the summit to call for climate aid for Pacific nations."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Storms in Liguria and Tuscany, Italy",
+          "status": "Red alert in N. Tuscany; through Sat",
+          "impact": "Firefighters in La Spezia <a href=\"https://www.ansa.it/english/news/general_news/2026/11/12/storms-batter-western-italy-liguria-and-tuscany-hit-especially-hard_1fd9e821-a384-41e2-a779-171e8f09d4e2.html\" target=\"_blank\" rel=\"noopener\">rescued 60 workers</a> from flooded buildings overnight, and a landslide cut off Forno and Casette above Massa, leaving about 100 people unable to return home. The Frigido River overflowed and the SS 62 is closed. Liguria and Emilia-Romagna are on orange alert."
+        },
+        {
+          "name": "Nor'easter and cold snap, eastern US",
+          "status": "Interior snow; freeze to Deep South",
+          "impact": "JFK logged <a href=\"https://www.foxweather.com/weather-news/powerful-noreaster-unleashes-tornadoes-large-hail-flooding-across-northeast\" target=\"_blank\" rel=\"noopener\">3.32 in. of rain on Nov 12</a>, its second-wettest November day, with a tornado warning in Queens. <a href=\"https://www.foxweather.com/weather-news/noreaster-could-bring-first-significant-snowfall-parts-northeast-storm-takes-shape\" target=\"_blank\" rel=\"noopener\">Winter storm warnings</a> cover the Adirondacks and higher Green Mountains, where <a href=\"https://weather.com/2026/11/11/forecast/regional/noreaster-first-snow-frost-freeze\" target=\"_blank\" rel=\"noopener\">8 in. or more</a> is possible. Frost and freeze alerts run from Arkansas to northern Georgia through Saturday."
+        },
+        {
+          "name": "Queensland heatwave, Australia",
+          "status": "Severe heatwave warning to Nov 16",
+          "impact": "BoM's <a href=\"https://reg.bom.gov.au/qld/warnings/heatwave.shtml\" target=\"_blank\" rel=\"noopener\">severe heatwave warning</a> covers the Peninsula and Gulf Country, with highs in the high 30s to low 40s °C at Weipa, Thursday Island and Pormpuraaw. Conditions in the Gulf are peaking and should ease early next week."
+        },
+        {
+          "name": "Andaman Sea low, Bay of Bengal",
+          "status": "Depression likely by Nov 15",
+          "impact": "A low formed over the southeast Bay of Bengal on Nov 13. IMD <a href=\"https://www.businesstoday.in/india/story/imd-warns-of-bay-of-bengal-depression-by-november-15-heavy-rain-set-to-lash-andaman-islands-567287-2026-11-13\" target=\"_blank\" rel=\"noopener\">expects a depression by Nov 15</a>, with gusts to 60 km/h and isolated heavy rain on the Andaman and Nicobar Islands through Nov 16. Fishermen are told to stay out of the area."
+        },
+        {
+          "name": "St. Johns River flooding, Florida",
+          "status": "Lake Harney crest Nov 20-23",
+          "impact": "Seminole County <a href=\"https://www.clickorlando.com/news/local/2026/11/09/seminole-county-prepares-for-flooding-impacts-from-st-johns-river-lakes-expected-to-crest-by-november-20/\" target=\"_blank\" rel=\"noopener\">expects Lake Harney to crest</a> at 9.7-10.3 ft and Sanford at 5.5-6 ft between Nov 20 and 23, with <a href=\"https://mynews13.com/fl/orlando/news/2026/11/11/seminole-county-monitors-flooding-near-sanford-lake-harney\" target=\"_blank\" rel=\"noopener\">high water lasting into December</a>."
+        }
+      ],
+      "overview_html": "Western Italy had a second day of <a href=\"https://www.ansa.it/english/news/general_news/2026/11/12/storms-batter-western-italy-liguria-and-tuscany-hit-especially-hard_1fd9e821-a384-41e2-a779-171e8f09d4e2.html\" target=\"_blank\" rel=\"noopener\">floods and landslides</a> in Liguria and northern Tuscany. A nor'easter dumped <a href=\"https://www.foxweather.com/weather-news/powerful-noreaster-unleashes-tornadoes-large-hail-flooding-across-northeast\" target=\"_blank\" rel=\"noopener\">3.32 in. of rain at JFK</a> and spawned a tornado warning in Queens before turning to interior snow. NOAA's CPC <a href=\"https://www.foxweather.com/weather-news/super-el-nino-declared-forecasters-warn-major-shifts-winter-weather\" target=\"_blank\" rel=\"noopener\">declared a super El Niño</a> but <a href=\"https://www.insurancejournal.com/news/national/2026/11/12/892398.htm\" target=\"_blank\" rel=\"noopener\">cut the odds of a record event</a> to about 60%.",
+      "items": [
+        {
+          "source": "ANSA",
+          "date": "2026-11-12",
+          "headline": "Landslides and floods hit La Spezia and Massa-Carrara for a second day",
+          "url": "https://www.ansa.it/english/news/general_news/2026/11/12/storms-batter-western-italy-liguria-and-tuscany-hit-especially-hard_1fd9e821-a384-41e2-a779-171e8f09d4e2.html",
+          "summary": "Firefighters made hundreds of call-outs in La Spezia province, where schools stay shut Friday, and water and mud entered dozens of shops and warehouses. A landslide closed the Cisa state road at Caprigliola."
+        },
+        {
+          "source": "Fox Weather",
+          "date": "2026-11-12",
+          "headline": "Nor'easter brings tornado warnings to Queens and 3.32 in. of rain to JFK",
+          "url": "https://www.foxweather.com/weather-news/powerful-noreaster-unleashes-tornadoes-large-hail-flooding-across-northeast",
+          "summary": "Nearly 50 storm reports came in from Delaware to New York, including more than 39 hail reports and flash flooding at Breezy Point. JFK's total made Thursday its second-wettest November day on record."
+        },
+        {
+          "source": "Insurance Journal / Bloomberg",
+          "date": "2026-11-12",
+          "headline": "CPC puts odds of a record El Niño at about 60%, down from 83%",
+          "url": "https://www.insurancejournal.com/news/national/2026/11/12/892398.htm",
+          "summary": "The <a href=\"https://www.foxweather.com/weather-news/super-el-nino-declared-forecasters-warn-major-shifts-winter-weather\" target=\"_blank\" rel=\"noopener\">CPC also declared</a> the event a very strong, or super, El Niño on Thursday. It expects El Niño to fade by northern summer, with La Niña odds above 30% for June-August."
+        },
+        {
+          "source": "Business Today",
+          "date": "2026-11-13",
+          "headline": "Low forms over the Andaman Sea; IMD still expects a depression by Nov 15",
+          "url": "https://www.businesstoday.in/india/story/imd-warns-of-bay-of-bengal-depression-by-november-15-heavy-rain-set-to-lash-andaman-islands-567287-2026-11-13",
+          "summary": "The low formed at 05:30 IST under an upper-air circulation and should become well marked around Nov 14. Squally winds of 50 km/h, gusting to 60 km/h, are likely over the southeast Bay of Bengal through Nov 16."
+        },
+        {
+          "source": "ABC News",
+          "date": "2026-11-09",
+          "headline": "Far North Queensland breaks a heatwave record as storms hit central Queensland",
+          "url": "https://www.abc.net.au/news/2026-11-09/heatwave-far-north-queensland-storms-ease-south-east/107360646",
+          "summary": "A violent storm struck central Queensland while the far north set a heat record. BoM's <a href=\"https://reg.bom.gov.au/qld/warnings/heatwave.shtml\" target=\"_blank\" rel=\"noopener\">severe heatwave warning</a> for the Peninsula and Gulf Country now runs to Nov 16."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "<a href=\"https://www.pv-magazine.com/2026/11/06/october-2026-good-for-pv-production-in-europe-but-south-of-france-and-ukraine-missout/\" target=\"_blank\" rel=\"noopener\">Solcast</a> puts October irradiance about 10% above average across much of Europe. <a href=\"https://now.solar/2026/11/13/connecticut-solar-group-claims-victory-as-utilities-must-offer-flexible-interconnection-pv-magazine-usa/\" target=\"_blank\" rel=\"noopener\">Connecticut</a> ordered flexible interconnection with a 5% curtailment target, and India's <a href=\"https://www.saurenergy.com/solar-energy-news/mhi-receives-22-bids-for-10-gwh-battery-manufacturing-capacity-earmarked-for-grid-scale-storage-12805438\" target=\"_blank\" rel=\"noopener\">10 GWh grid-storage cell tender</a> drew 22 bids.",
+      "items": [
+        {
+          "source": "pv magazine / Solcast",
+          "date": "2026-11-06",
+          "headline": "October irradiance ran about 10% above average across much of Europe",
+          "url": "https://www.pv-magazine.com/2026/11/06/october-2026-good-for-pv-production-in-europe-but-south-of-france-and-ukraine-missout/",
+          "summary": "Solcast data put October up to 25% above average in central Europe and the Baltic states, while southern France and Ukraine fell short. Higher irradiance lifted PV output across most of the continent."
+        },
+        {
+          "source": "pv magazine USA",
+          "date": "2026-11-13",
+          "headline": "Connecticut orders utilities to offer flexible grid connections for solar and storage",
+          "url": "https://now.solar/2026/11/13/connecticut-solar-group-claims-victory-as-utilities-must-offer-flexible-interconnection-pv-magazine-usa/",
+          "summary": "Regulators told Eversource and United Illuminating to offer scheduled flexible interconnection on their most constrained circuits by next May and dynamic interconnection statewide by late 2030. First-vintage projects target no more than 5% annual curtailment."
+        },
+        {
+          "source": "Saur Energy",
+          "date": "2026-11-12",
+          "headline": "India's 10 GWh grid-storage battery tender draws 22 bids",
+          "url": "https://www.saurenergy.com/solar-energy-news/mhi-receives-22-bids-for-10-gwh-battery-manufacturing-capacity-earmarked-for-grid-scale-storage-12805438",
+          "summary": "Bidding for the cell manufacturing capacity, earmarked for grid-scale stationary storage, closed Nov 10. <a href=\"https://www.businesstoday.in/amp/latest/economy/story/reliance-jsw-amara-raja-exide-among-22-bidders-for-acc-battery-manufacturing-pli-scheme-567250-2026-11-13\" target=\"_blank\" rel=\"noopener\">Reliance, JSW, Amara Raja and Exide</a> are among the bidders."
+        },
+        {
+          "source": "SolarQuarter",
+          "date": "2026-11-11",
+          "headline": "Energy Investment and CORNEX plan a 1 GWh battery project in Romania",
+          "url": "https://solarquarter.com/2026/11/11/energy-investment-and-cornex-partner-to-develop-1-gwh-battery-storage-project-in-romania/",
+          "summary": "The partners target initial commissioning in 2027."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "A Nature Geoscience study finds <a href=\"https://news.climate.columbia.edu/2026/11/11/rain-may-increase-ocean-carbon-uptake-more-than-we-thought/\" target=\"_blank\" rel=\"noopener\">rain may raise ocean CO2 uptake by up to 13.6%</a>. For ML work, <a href=\"https://phys.org/news/2026-11-unrealistic-emissions-scenarios-ai-climate.html\" target=\"_blank\" rel=\"noopener\">climate emulators trained on synthetic scenarios</a> generalised better than those trained on realistic ones. A model study finds the <a href=\"https://eurekalert.org/news-releases/1149864\" target=\"_blank\" rel=\"noopener\">East Antarctic interior</a> stable above 10°C of warming, and the <a href=\"https://phys.org/news/2026-11-polar-vortex-faltering-weeks-earlier.html\" target=\"_blank\" rel=\"noopener\">Arctic polar vortex</a> weakened weeks ahead of any recorded disruption.",
+      "items": [
+        {
+          "source": "Columbia Climate School",
+          "date": "2026-11-11",
+          "headline": "Rain may raise ocean CO2 uptake by up to 13.6%",
+          "url": "https://news.climate.columbia.edu/2026/11/11/rain-may-increase-ocean-carbon-uptake-more-than-we-thought/",
+          "meta": "Nature Geoscience",
+          "summary": "The study estimates rain lifts global ocean carbon uptake by 13.6% compared with wind-driven exchange alone. Global carbon budgets may underestimate the ocean sink by about 5-15% because they do not fully account for rain."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-12",
+          "headline": "Climate emulators trained on synthetic scenarios generalise better",
+          "url": "https://phys.org/news/2026-11-unrealistic-emissions-scenarios-ai-climate.html",
+          "summary": "Emulators trained on optimised synthetic emissions scenarios predicted unfamiliar scenarios more accurately, using less data, than emulators trained on realistic trajectories. The result applies directly to ML emulators that must run forcing paths outside their training set."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-12",
+          "headline": "Loess lipids link abrupt East Asian monsoon failures to low insolation",
+          "url": "https://phys.org/news/2026-11-ancient-climate-reveal-east-asian.html",
+          "summary": "A Utrecht-led team used fossil bacterial membrane lipids from the Chinese Loess Plateau to show the monsoon tracked orbital changes over 250,000 years. When radiation fell below a threshold, abrupt cold and drought followed, mostly when CO2 was low."
+        },
+        {
+          "source": "EurekAlert / IBS",
+          "date": "2026-11-06",
+          "headline": "Model finds the East Antarctic interior holds up even above 10°C of warming",
+          "url": "https://eurekalert.org/news-releases/1149864",
+          "meta": "Nature Climate Change",
+          "summary": "Extra snowfall over the high interior offsets losses, while West Antarctica loses major ice above about 2°C. Without the precipitation and sunlight changes, the modelled ice sheet lost about 70% of its volume under the strongest forcing."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-07",
+          "headline": "Arctic polar vortex falters weeks earlier than any recorded disruption",
+          "url": "https://phys.org/news/2026-11-polar-vortex-faltering-weeks-earlier.html",
+          "summary": "The stratospheric polar vortex weakened sharply in early November, ahead of the previous earliest major warmings around Nov 28. How it will interact with the strong El Niño, and when surface effects arrive, is unclear."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-12",
+          "title": "Met Office signs multi-year deal to test Google's WeatherNext 3",
+          "body_html": "The Met Office and Google signed a <a href=\"https://www.metoffice.gov.uk/blog/2026/exploring-future-forecasting-how-the-met-office-is-supporting-ai-innovation\" target=\"_blank\" rel=\"noopener\">multi-year agreement</a> under which Met Office scientists will assess WeatherNext 3 in experimental sandboxes, building on joint tropical cyclone work. The Met Office says AI models could add value alongside its physics-based operational systems; no financial terms were given.",
+          "source_html": "<a href=\"https://www.metoffice.gov.uk/blog/2026/exploring-future-forecasting-how-the-met-office-is-supporting-ai-innovation\" target=\"_blank\" rel=\"noopener\">Met Office</a>"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "Climavision to feed utilities' own weather stations into its forecast models",
+          "body_html": "Climavision <a href=\"https://www.einpresswire.com/article/956079696/climavision-partners-with-western-weather-group-to-bring-utilities-own-ground-stations-into-its-forecast-models\" target=\"_blank\" rel=\"noopener\">partnered with Western Weather Group</a> to ingest readings from utility customers' ground stations into its forecast models. Utilities that use both firms get station observations, Climavision's private radar network and its forecasts in one stack.",
+          "source_html": "<a href=\"https://www.einpresswire.com/article/956079696/climavision-partners-with-western-weather-group-to-bring-utilities-own-ground-stations-into-its-forecast-models\" target=\"_blank\" rel=\"noopener\">EIN Presswire</a>"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "mistEO raises ₹18 crore seed round for climate risk intelligence",
+          "body_html": "Thiruvananthapuram-based mistEO <a href=\"https://indianstartupnews.com/funding/kerala-startup-misteo-raises-rs-18-crore-to-expand-climate-risk-intelligence-for-lenders-and-insurers-12804467\" target=\"_blank\" rel=\"noopener\">raised ₹18 crore</a> in a seed round <a href=\"https://entrackr.com/snippets/mgf-kavachh-leads-rs-18-cr-seed-round-in-climate-startup-misteo-12803941\" target=\"_blank\" rel=\"noopener\">led by MGF-Kavachh</a>, with Seafund participating. It pairs numerical weather modelling with machine learning and sells its Climate Decision Intelligence platform to banks, insurers and agri-value chains, and will expand across Asia.",
+          "source_html": "<a href=\"https://indianstartupnews.com/funding/kerala-startup-misteo-raises-rs-18-crore-to-expand-climate-risk-intelligence-for-lenders-and-insurers-12804467\" target=\"_blank\" rel=\"noopener\">Indian Startup News</a>"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "SkyGrid and MIT Lincoln Laboratory extend low-altitude forecast research",
+          "body_html": "SkyGrid <a href=\"https://www.prnewswire.com/news-releases/skygrid-and-mit-lincoln-laboratory-extend-partnership-to-mature-high-resolution-weather-forecasting-302937303.html\" target=\"_blank\" rel=\"noopener\">extended its agreement</a> with MIT Lincoln Laboratory to develop high-resolution forecasts for advanced air mobility. The second phase adds probabilistic forecasting through ensemble methods.",
+          "source_html": "<a href=\"https://www.prnewswire.com/news-releases/skygrid-and-mit-lincoln-laboratory-extend-partnership-to-mature-high-resolution-weather-forecasting-302937303.html\" target=\"_blank\" rel=\"noopener\">PR Newswire</a>"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "Technosylva launches a planning tool for utility extreme-weather spending",
+          "body_html": "Wildfire and extreme-weather risk firm Technosylva <a href=\"https://www.prnewswire.com/news-releases/technosylva-introduces-extreme-weather-planning-application-to-help-utilities-prioritize-mitigation-and-resilience-investments-302937921.html\" target=\"_blank\" rel=\"noopener\">introduced Technosylva Planning</a>, the product formerly called FireSight. It helps utilities rank mitigation and resilience investments by modelled weather-driven risk.",
+          "source_html": "<a href=\"https://www.prnewswire.com/news-releases/technosylva-introduces-extreme-weather-planning-application-to-help-utilities-prioritize-mitigation-and-resilience-investments-302937921.html\" target=\"_blank\" rel=\"noopener\">PR Newswire</a>"
+        },
+        {
+          "date": "2026-11-09",
+          "title": "WeatherBug relaunches its app and website with a redesigned forecast view",
+          "body_html": "WeatherBug <a href=\"https://www.prnewswire.com/news-releases/weatherbug-ushers-in-a-new-season-for-weather-apps-with-a-radically-helpful-new-forecasting-experience-302932190.html\" target=\"_blank\" rel=\"noopener\">relaunched its app and website</a> with a more personalised forecast experience aimed at turning data into everyday guidance.",
+          "source_html": "<a href=\"https://www.prnewswire.com/news-releases/weatherbug-ushers-in-a-new-season-for-weather-apps-with-a-radically-helpful-new-forecasting-experience-302932190.html\" target=\"_blank\" rel=\"noopener\">PR Newswire</a>"
+        }
+      ]
+    }
+  }
+}
