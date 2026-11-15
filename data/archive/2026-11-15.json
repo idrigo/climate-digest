@@ -1,0 +1,194 @@
+{
+  "digest_date": "2026-11-15",
+  "metar": "DIGEST 150700Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "COP31 ended its first week with <a href=\"https://www.climatechangenews.com/2026/11/14/cop31-bulletin-day-6-limited-progress-as-ministers-arrive-in-antalya/\" target=\"_blank\" rel=\"noopener\">three new drafts</a> on adaptation, just transition and finance, but no deal text; Bowen expects one early next week. A <a href=\"https://phys.org/news/2026-11-cryosphere-decline-safe-planetary-limits.html\" target=\"_blank\" rel=\"noopener\">Science paper</a> argues the cryosphere is already outside its safe planetary limits. A <a href=\"https://www.euronews.com/2026/11/12/a-warning-from-the-arctic-new-study-links-melting-sea-ice-to-future-summer-droughts-in-eur\" target=\"_blank\" rel=\"noopener\">Frontiers in Water study</a> ties low Barents-Kara winter sea ice to later Eurasian summer drought.",
+      "items": [
+        {
+          "source": "Climate Home News",
+          "date": "2026-11-14",
+          "headline": "COP31 issues drafts on adaptation, just transition and finance as ministers arrive",
+          "url": "https://www.climatechangenews.com/2026/11/14/cop31-bulletin-day-6-limited-progress-as-ministers-arrive-in-antalya/",
+          "summary": "The adaptation draft is the main fight over Africa's push to triple adaptation finance to at least $120bn a year by 2035, and the finance draft runs to 104 paragraphs. Chris Bowen expects a first draft of the deal text early next week; talks end Nov 20."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-13",
+          "headline": "Study says cryosphere decline has passed safe planetary limits",
+          "url": "https://phys.org/news/2026-11-cryosphere-decline-safe-planetary-limits.html",
+          "summary": "A paper in Science argues human-driven warming is degrading ice sheets, glaciers, sea ice and permafrost beyond safe environmental limits, putting conditions for human society at risk."
+        },
+        {
+          "source": "Euronews",
+          "date": "2026-11-12",
+          "headline": "Low Barents-Kara winter sea ice linked to later European summer drought",
+          "url": "https://www.euronews.com/2026/11/12/a-warning-from-the-arctic-new-study-links-melting-sea-ice-to-future-summer-droughts-in-eur",
+          "summary": "Winters with less sea ice were followed by a wavier circulation over the North Atlantic and Eurasia and drier summers. The authors say the link may be correlation, since both respond to warming."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Bay of Bengal low, India",
+          "status": "Cyclonic storm possible by Nov 16",
+          "impact": "IMD expects the low to become a depression on Nov 15 and <a href=\"https://aninews.in/news/national/general-news/low-pressure-over-bay-of-bengal-likely-to-intensify-into-cyclonic-storm-by-november-16-imd20261114083043/\" target=\"_blank\" rel=\"noopener\">a cyclonic storm over the central Bay</a> by the evening of Nov 16. Gusts to 65 km/h are forecast over the southwest Bay Nov 15-17, with heavy rain on the Andaman and Nicobar Islands; fishing is barred in parts of the Bay until Nov 19."
+        },
+        {
+          "name": "Pacific storms, US West Coast",
+          "status": "Storm warnings offshore; river flooding",
+          "impact": "NWS Eureka forecast <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-storm-warning-issued-november-14-at-8-52pm-pst-until-november-15-at-3-00am-pst-by-nws-eureka-ca\" target=\"_blank\" rel=\"noopener\">48-63 kt winds</a> off northern California overnight Nov 14-15, and NWS Seattle issued a <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-14-at-9-58pm-pst-until-november-16-at-1-00pm-pst-by-nws-seattle-wa\" target=\"_blank\" rel=\"noopener\">flood warning for the Skokomish River</a> as rain on the Olympics pushes it above flood stage Sunday. An <a href=\"https://spokesman.com/stories/2026/nov/13/atmospheric-river-arrives-in-california-with-rain-\" target=\"_blank\" rel=\"noopener\">atmospheric river reached California</a> on Nov 13."
+        },
+        {
+          "name": "Cape York heatwave, Queensland",
+          "status": "Warning through next week",
+          "impact": "Weipa has had <a href=\"https://www.abc.net.au/news/2026-11-14/cape-york-town-of-weipa-breaks-weather-records-in-prolonged-heat/107384870\" target=\"_blank\" rel=\"noopener\">39 straight days above 36°C</a>. BoM expects highs in the high 30s to low 40s °C on western Cape York and nights in the mid-to-high 20s, easing in the second half of next week."
+        },
+        {
+          "name": "St. Johns River flooding, Florida",
+          "status": "Lake Harney crest ~Nov 20-23",
+          "impact": "Seminole County <a href=\"https://www.clickorlando.com/news/local/2026/11/09/seminole-county-prepares-for-flooding-impacts-from-st-johns-river-lakes-expected-to-crest-by-november-20/\" target=\"_blank\" rel=\"noopener\">expects Lake Harney to crest</a> at 9.7-10.3 ft and Sanford at 5.5-6 ft between Nov 20 and 23, with high water into December."
+        }
+      ],
+      "overview_html": "IMD now expects the Bay of Bengal low to reach <a href=\"https://aninews.in/news/national/general-news/low-pressure-over-bay-of-bengal-likely-to-intensify-into-cyclonic-storm-by-november-16-imd20261114083043/\" target=\"_blank\" rel=\"noopener\">cyclonic storm strength by Nov 16</a>. A wet pattern on the US West Coast brought <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-storm-warning-issued-november-14-at-8-52pm-pst-until-november-15-at-3-00am-pst-by-nws-eureka-ca\" target=\"_blank\" rel=\"noopener\">storm-force winds</a> offshore and a <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-14-at-9-58pm-pst-until-november-16-at-1-00pm-pst-by-nws-seattle-wa\" target=\"_blank\" rel=\"noopener\">flood warning</a> in western Washington. South Africa's KwaZulu-Natal has <a href=\"https://www.sapeople.com/weather/daily-weather-per-province-sunday-15-november-2026/\" target=\"_blank\" rel=\"noopener\">severe thunderstorm warnings</a> on Sunday.",
+      "items": [
+        {
+          "source": "ANI",
+          "date": "2026-11-14",
+          "headline": "IMD says Bay of Bengal low may become a cyclonic storm by Nov 16",
+          "url": "https://aninews.in/news/national/general-news/low-pressure-over-bay-of-bengal-likely-to-intensify-into-cyclonic-storm-by-november-16-imd20261114083043/",
+          "summary": "The low formed over the southeast Bay on Nov 13 and is moving northwest. IMD expects a depression on Nov 15 and a cyclonic storm over the central Bay by the evening of Nov 16, with fishing bans across the region until Nov 19."
+        },
+        {
+          "source": "NWS Eureka",
+          "date": "2026-11-14",
+          "headline": "Storm warning for 48-63 kt winds off northern California",
+          "url": "https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-storm-warning-issued-november-14-at-8-52pm-pst-until-november-15-at-3-00am-pst-by-nws-eureka-ca",
+          "summary": "The warning covered waters from Point St. George to Cape Mendocino until 3 a.m. PST Nov 15. Similar storm warnings were issued by NWS Portland and Seattle for Oregon and Washington coastal waters."
+        },
+        {
+          "source": "NWS Seattle",
+          "date": "2026-11-14",
+          "headline": "Skokomish River forecast to top flood stage on Sunday",
+          "url": "https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-14-at-9-58pm-pst-until-november-16-at-1-00pm-pst-by-nws-seattle-wa",
+          "summary": "Heavy overnight rain on the south slopes of the Olympics is expected to push the Mason County river above flood stage on Nov 15. The warning runs until 1 p.m. PST Nov 16."
+        },
+        {
+          "source": "The Spokesman-Review",
+          "date": "2026-11-13",
+          "headline": "Atmospheric river arrives in California with rain and wind",
+          "url": "https://spokesman.com/stories/2026/nov/13/atmospheric-river-arrives-in-california-with-rain-",
+          "summary": "The storm brought rain and wind to California on Nov 13, ahead of storm-force winds off the northern California and Oregon coasts on Nov 14."
+        },
+        {
+          "source": "SA People",
+          "date": "2026-11-15",
+          "headline": "SAWS warns of severe thunderstorms in northwest KwaZulu-Natal",
+          "url": "https://www.sapeople.com/weather/daily-weather-per-province-sunday-15-november-2026/",
+          "summary": "Warnings cover Estcourt, Ekuvukeni, Ladysmith and Dannhauser on Sunday, Nov 15."
+        },
+        {
+          "source": "NWS Fairbanks",
+          "date": "2026-11-14",
+          "headline": "Heavy freezing spray and blizzard warnings on Alaska's Arctic coast",
+          "url": "https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-heavy-freezing-spray-warning-issued-november-14-at-3-48pm-akst-until-november-15-at-5-00pm-akst-by-nws-fairbanks-ak",
+          "summary": "Easterly winds of 35-40 kt with blowing snow and extreme freezing spray were forecast for Arctic coastal waters through Nov 15, alongside a blizzard warning for the northern Arctic coast."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "RWE and KKR reached <a href=\"https://www.offshorewind.biz/2026/11/11/rwe-and-kkr-reach-financial-close-for-28-gw-uk-offshore-wind-projects\" target=\"_blank\" rel=\"noopener\">financial close on 2.8 GW</a> of UK offshore wind, with about £12bn of investment. BNEF finds <a href=\"https://energynews.pro/en/indias-solar-with-storage-becomes-cheaper-than-new-coal-bnef-says\" target=\"_blank\" rel=\"noopener\">solar and wind with four-hour batteries</a> now undercut new coal in India, where <a href=\"https://www.mercomindia.com/daily-news-wrap-up-indias-solar-capacity-rises-21-yoy-in-9m-2026\" target=\"_blank\" rel=\"noopener\">27.3 GW of large-scale solar</a> was installed in the first nine months of 2026.",
+      "items": [
+        {
+          "source": "Offshore Wind",
+          "date": "2026-11-11",
+          "headline": "RWE and KKR reach financial close on 2.8 GW Vanguard offshore wind farms",
+          "url": "https://www.offshorewind.biz/2026/11/11/rwe-and-kkr-reach-financial-close-for-28-gw-uk-offshore-wind-projects",
+          "summary": "KKR takes 50% of the two 1.4 GW North Sea projects, which RWE puts at about £12bn and the largest non-recourse financing for UK offshore wind (<a href=\"https://www.rwe.com/en/press/rwe-ag/2026-11-11-rwe-and-kkr-join-forces-to-deliver-2-8-gw-of-new-offshore-wind-capacity-in-the-uk/\" target=\"_blank\" rel=\"noopener\">RWE</a>). Both are due to be fully commissioned in 2030."
+        },
+        {
+          "source": "BNEF via Energy News",
+          "date": "2026-11-11",
+          "headline": "BNEF says solar and wind with batteries now undercut new coal in India",
+          "url": "https://energynews.pro/en/indias-solar-with-storage-becomes-cheaper-than-new-coal-bnef-says",
+          "summary": "BNEF's Emerging Markets Transition Factbook finds the cost of solar and onshore wind paired with four-hour storage fell below new coal in the second half of 2025. Storage remains the main cost premium."
+        },
+        {
+          "source": "Mercom India",
+          "date": "2026-11-13",
+          "headline": "India installs 27.3 GW of large-scale solar in nine months, up 21%",
+          "url": "https://www.mercomindia.com/daily-news-wrap-up-indias-solar-capacity-rises-21-yoy-in-9m-2026",
+          "summary": "The figure covers January-September 2026. A transmission committee also directed at least 12 GW of connectivity at Bhadla-IV in Rajasthan."
+        },
+        {
+          "source": "PV Magazine",
+          "date": "2026-11-13",
+          "headline": "Energy China shortlists 23 module suppliers for a 15 GW tender",
+          "url": "http://www.pv-magazine.com/2026/11/13/chinese-pv-industry-brief-energy-china-shortlists-23-module-suppliers-for-15-gw-tender/",
+          "summary": "The centralized procurement covers 2026 solar module supply for one of China's largest state engineering groups."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "A <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL127323\" target=\"_blank\" rel=\"noopener\">GRL study</a> finds tropical cyclones increasingly reach peak intensity close to continental landfall, cutting warning lead time. Satellite data show Earth's <a href=\"https://www.sciencedaily.com/releases/2026/11/261111005905.htm\" target=\"_blank\" rel=\"noopener\">upper atmosphere supplied about 85%</a> of the charged particles in the May 2024 geomagnetic storm. A second <a href=\"https://phys.org/news/2026-11-similar-cloud-climate-effects.html\" target=\"_blank\" rel=\"noopener\">GRL paper</a> explains why similar cloud changes can have different radiative effects.",
+      "items": [
+        {
+          "source": "Geophysical Research Letters",
+          "date": "2026-11-11",
+          "headline": "Tropical cyclones increasingly reach peak intensity near continental landfall",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL127323",
+          "meta": "Fu, Wu · GRL",
+          "summary": "The authors find a growing share of storms peak shortly before reaching land. That leaves less time between peak intensity and landfall for warnings to act on."
+        },
+        {
+          "source": "ScienceDaily",
+          "date": "2026-11-11",
+          "headline": "Earth's upper atmosphere supplied most of the charged particles in the May 2024 storm",
+          "url": "https://www.sciencedaily.com/releases/2026/11/261111005905.htm",
+          "summary": "Satellite measurements show about 85% of the particles came from the upper atmosphere rather than the solar wind. The team says upper-atmosphere state could help predict how strong geomagnetic storms become."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-11",
+          "headline": "Similar cloud cover changes can have different climate effects, study finds",
+          "url": "https://phys.org/news/2026-11-similar-cloud-climate-effects.html",
+          "meta": "Geophysical Research Letters",
+          "summary": "The study explains why matching shifts in cloud amount produce different radiative effects. The authors propose improvements to cloud simulation but did not test them in a model."
+        },
+        {
+          "source": "Frontiers in Marine Science",
+          "date": "2026-11-12",
+          "headline": "Warming lengthened Korean marine heatwaves by up to 2.2 days",
+          "url": "https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2026.1932600/full",
+          "meta": "WRF-ROMS coupled model",
+          "summary": "Coupled WRF and ROMS runs with and without human-caused warming show the largest effect in the South Sea, where selected heatwaves lasted about 2.2 days longer."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-12",
+          "headline": "Earth's orbital asymmetries share recurring rhythms with El Niño",
+          "url": "https://phys.org/news/2026-11-earth-orbital-asymmetries-recurring-rhythms.html",
+          "meta": "Frontiers in Earth Science",
+          "summary": "The study links descriptors of the Earth-sun orbital state to ENSO periodicities. It is a statistical association, not a forecast method."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-13",
+          "title": "Jupiter Intelligence puts data-center climate losses at about $4.4bn a year",
+          "body_html": "Bloomberg reports a <a href=\"https://bloomberg.com/news/articles/2026-11-13/data-center-investors-underestimate-climate-risk-report-says\" target=\"_blank\" rel=\"noopener\">Jupiter Intelligence analysis</a> estimating annual losses of about $4.4bn to data centers from floods, wind and wildfire, which it says investors are not pricing in. Data centers are a fast-growing buyer segment for asset-level hazard data and site-specific weather risk scores.",
+          "source_html": "<a href=\"https://bloomberg.com/news/articles/2026-11-13/data-center-investors-underestimate-climate-risk-report-says\">Bloomberg</a>"
+        },
+        {
+          "date": "2026-11-11",
+          "title": "Willis upgrades Climate Diagnostic to screen 16 physical climate hazards",
+          "body_html": "WTW's broking arm <a href=\"https://www.wtwco.com/en-us/news/2026/11/willis-launches-a-major-upgrade-to-climate-diagnostic\" target=\"_blank\" rel=\"noopener\">upgraded Climate Diagnostic</a> to screen 16 acute and chronic physical risks, from flood and tropical cyclone to drought and landslide, drawing on Moody's and Munich Re analytics. Brokers bundling licensed hazard models compete directly with standalone climate-risk data vendors.",
+          "source_html": "<a href=\"https://www.wtwco.com/en-us/news/2026/11/willis-launches-a-major-upgrade-to-climate-diagnostic\">WTW</a>"
+        }
+      ]
+    }
+  }
+}
