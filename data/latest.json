@@ -1,127 +1,166 @@
 {
-  "digest_date": "2026-11-16",
-  "metar": "DIGEST 160700Z NOV26 · ROLLING 72H WINDOW",
+  "digest_date": "2026-11-17",
+  "metar": "DIGEST 170700Z NOV26 · ROLLING 72H WINDOW",
   "sections": {
     "climate": {
-      "overview_html": "COP31 in Antalya moves into its political week. UN climate chief Simon Stiell <a href=\"https://english.pardafas.com/un-climate-chief-urges-flexibility-and-speed-as-cop31-enters-second-week/\" target=\"_blank\" rel=\"noopener\">urged negotiators to move faster</a> to the hardest issues, and Chris Bowen expects a first draft of the deal this week. Finance and the <a href=\"https://www.downtoearth.org.in/climate-change/cop31-priorities-on-just-transition-take-shape-at-the-end-of-week-1\" target=\"_blank\" rel=\"noopener\">just transition mechanism</a> remain the main sticking points.",
+      "overview_html": "COP31 talks in Antalya enter their final days with an 18-page <a href=\"https://www.usnews.com/news/world/articles/2026-11-16/first-draft-of-cop31-deal-signals-tough-negotiations-to-come\" target=\"_blank\" rel=\"noopener\">first draft cover decision</a> that calls for accelerated action to phase out fossil fuels. A separate draft on the UN carbon market drew <a href=\"https://www.climatechangenews.com/2026/11/16/countries-take-up-industry-push-to-loosen-un-carbon-market-rules-at-cop31/\" target=\"_blank\" rel=\"noopener\">EU, Swiss and Senegalese opposition</a> to reopening project-developer rules. The summit is scheduled to close on Nov 20.",
       "items": [
         {
-          "source": "Pardafas",
-          "date": "2026-11-14",
-          "headline": "Stiell urges COP31 negotiators to speed up as talks enter their second week",
-          "url": "https://english.pardafas.com/un-climate-chief-urges-flexibility-and-speed-as-cop31-enters-second-week/",
-          "summary": "Stiell asked delegations to avoid tactical delays as ministers arrive, while major producers resist firm targets on oil, gas and coal. Negotiations president Chris Bowen said a first draft agreement should appear this week; Swiss envoy Felix Wertli <a href=\"https://www.bluewin.ch/en/news/switzerland-expects-a-tough-second-week-of-negotiations-at-cop31-li.3674161\" target=\"_blank\" rel=\"noopener\">expects a tough second week</a>."
+          "source": "US News (Reuters)",
+          "date": "2026-11-16",
+          "headline": "COP31 first draft calls for accelerated action to phase out fossil fuels",
+          "url": "https://www.usnews.com/news/world/articles/2026-11-16/first-draft-of-cop31-deal-signals-tough-negotiations-to-come",
+          "summary": "Negotiations lead Chris Bowen published an 18-page draft cover decision that also sets electricity at 35% of final energy by 2035. Bowen said provisions without consensus will be cut from later drafts before the Nov 20 close."
+        },
+        {
+          "source": "Climate Home News",
+          "date": "2026-11-16",
+          "headline": "Developing-country blocs push to loosen UN carbon market rules at COP31",
+          "url": "https://www.climatechangenews.com/2026/11/16/countries-take-up-industry-push-to-loosen-un-carbon-market-rules-at-cop31/",
+          "summary": "Like-Minded Developing Countries and least developed and landlocked states questioned requirements on carbon-credit project developers. The EU, Switzerland and Senegal oppose reassessing the rules; a first draft decision was published late Saturday."
         }
       ]
     },
     "weather": {
       "major_events": [
         {
-          "name": "Bay of Bengal depression (Akvan), India",
-          "status": "Deep depression; cyclone expected",
-          "impact": "IMD upgraded the low to a depression on Nov 15 and <a href=\"https://www.nationpathindia.com/national/bay-of-bengal-depression-severe-cyclonic-storm-november-2026\" target=\"_blank\" rel=\"noopener\">expects a cyclonic storm on Nov 16</a> and a severe cyclonic storm on Nov 17, to be named <a href=\"https://www.deccanchronicle.com/southern-states/andhra-pradesh/low-pressure-area-may-intensify-into-cyclone-akvan-by-november-16-imd-2004255\" target=\"_blank\" rel=\"noopener\">Akvan</a>. A <a href=\"https://en.wikipedia.org/wiki/2026_North_Indian_Ocean_cyclone_season\" target=\"_blank\" rel=\"noopener\">live season summary</a> cites an IMD outlook for landfall over Andhra Pradesh around Nov 19. Fishermen are told to stay ashore until Nov 20."
+          "name": "Cyclone Akvan, Bay of Bengal",
+          "status": "Cyclone; Andhra landfall forecast Nov 20",
+          "impact": "IMD forecasts landfall between Nellore and Tuni around noon Nov 20 with winds of 120-130 km/h gusting to 145 km/h. Odisha has deployed 74 rescue teams and begun evacuations in southern districts (<a href=\"https://www.business-standard.com/india-news/after-arnab-and-murasu-third-cyclone-akvan-to-hit-andhra-what-we-know-126111700193_1.html\" target=\"_blank\" rel=\"noopener\">Business Standard</a>)."
         },
         {
-          "name": "St. Johns River flooding, Florida",
-          "status": "Major flood at Cocoa; crest 17.1 ft",
-          "impact": "NWS Melbourne <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-15-at-9-19am-est-by-nws-melbourne-fl\" target=\"_blank\" rel=\"noopener\">reports major flooding near Cocoa</a> with a 17.1 ft crest forecast and water entering homes around Lake Poinsett. Downstream lakes in Seminole County are still expected to crest around Nov 20-23."
-        },
-        {
-          "name": "Nueces River flooding, Texas",
-          "status": "Moderate flood; crest about 16 ft",
-          "impact": "NWS Corpus Christi raised its <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-15-at-1-30pm-cst-until-november-18-at-1-45am-cst-by-nws-corpus-christi-tx\" target=\"_blank\" rel=\"noopener\">Nueces River warning</a> to moderate lowland flooding, with a crest near 15.9-16.2 ft and the warning running to Nov 18. Oil-field tanks, pumps and hunting cabins are affected."
-        },
-        {
-          "name": "Severe storms, eastern Australia",
-          "status": "Severe thunderstorms Nov 15-16",
-          "impact": "BoM <a href=\"https://x.com/BOM_au/status/2121800111257010529\" target=\"_blank\" rel=\"noopener\">flagged likely severe thunderstorms</a> across eastern Australia on Nov 15 and 16."
+          "name": "Pacific Northwest atmospheric rivers, US",
+          "status": "Peak Nov 16, easing Nov 17",
+          "impact": "A third atmospheric river in four days was forecast to peak Nov 16 over Washington and Oregon, with river flooding and high winds into Tuesday (<a href=\"https://www.foxweather.com/weather-news/atmospheric-river-heavy-rain-river-flooding-high-winds-pacific-northwest-nov-15\" target=\"_blank\" rel=\"noopener\">FOX Weather</a>)."
         }
       ],
-      "overview_html": "The Bay of Bengal system became a depression on Nov 15 and <a href=\"https://www.nationpathindia.com/national/bay-of-bengal-depression-severe-cyclonic-storm-november-2026\" target=\"_blank\" rel=\"noopener\">IMD expects it to become Cyclone Akvan</a> today, with an Andhra Pradesh landfall possible around Nov 19. In the US, river flooding continues on the <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-15-at-9-19am-est-by-nws-melbourne-fl\" target=\"_blank\" rel=\"noopener\">St. Johns</a> and <a href=\"https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-15-at-1-30pm-cst-until-november-18-at-1-45am-cst-by-nws-corpus-christi-tx\" target=\"_blank\" rel=\"noopener\">Nueces</a>. NASA says Pacific sea-level data put the <a href=\"https://www.sciencedaily.com/releases/2026/11/261114202227.htm\" target=\"_blank\" rel=\"noopener\">2026 El Niño on track to rival 1997-98</a>.",
+      "overview_html": "Cyclone Akvan is forecast to cross the Andhra Pradesh coast around noon on Nov 20 with gusts to 145 km/h, the state's <a href=\"https://www.business-standard.com/india-news/after-arnab-and-murasu-third-cyclone-akvan-to-hit-andhra-what-we-know-126111700193_1.html\" target=\"_blank\" rel=\"noopener\">third cyclone since Oct 28</a>. Odisha has started evacuations and fishing operations at Visakhapatnam are halted. In the US, another <a href=\"https://www.foxweather.com/weather-news/atmospheric-river-heavy-rain-river-flooding-high-winds-pacific-northwest-nov-15\" target=\"_blank\" rel=\"noopener\">atmospheric river peaked</a> over the Pacific Northwest on Nov 16 after two storms on Nov 13-14.",
       "items": [
         {
-          "source": "Nation Path India",
-          "date": "2026-11-15",
-          "headline": "IMD says Bay of Bengal depression may become a severe cyclonic storm",
-          "url": "https://www.nationpathindia.com/national/bay-of-bengal-depression-severe-cyclonic-storm-november-2026",
-          "summary": "The low over the southeast Bay became a depression on Nov 15; IMD forecasts a cyclonic storm on Nov 16 and a severe cyclonic storm on Nov 17. It would be the season's third cyclone and take the name <a href=\"https://www.deccanchronicle.com/southern-states/andhra-pradesh/low-pressure-area-may-intensify-into-cyclone-akvan-by-november-16-imd-2004255\" target=\"_blank\" rel=\"noopener\">Akvan</a>."
+          "source": "Business Standard",
+          "date": "2026-11-17",
+          "headline": "IMD expects Cyclone Akvan to hit Andhra Pradesh, its third cyclone since Oct 28",
+          "url": "https://www.business-standard.com/india-news/after-arnab-and-murasu-third-cyclone-akvan-to-hit-andhra-what-we-know-126111700193_1.html",
+          "summary": "Akvan is forecast to cross between Nellore and Tuni around noon on Nov 20 with winds of 120-130 km/h gusting to 145 km/h. It follows Cyclone Arnab on Oct 28 and Cyclone Murasu on Nov 3."
         },
         {
-          "source": "NWS Corpus Christi",
-          "date": "2026-11-15",
-          "headline": "Nueces River warning raised to moderate flooding through Nov 18",
-          "url": "https://www.defconlevel.com/alert/2026-11-15-nws-noaa-weather-flood-warning-issued-november-15-at-1-30pm-cst-until-november-18-at-1-45am-cst-by-nws-corpus-christi-tx",
-          "summary": "The river is forecast to crest near 16 ft, the moderate lowland flood threshold. The warning was upgraded from minor during the day and covers oil-field equipment along the floodplain."
+          "source": "India TV News",
+          "date": "2026-11-16",
+          "headline": "Andhra Pradesh and Odisha on alert as Cyclone Akvan nears the coast",
+          "url": "https://www.indiatvnews.com/news/india/cyclone-akvan-live-racker-andhra-pradesh-odisha-on-alert-for-heavy-rains-strong-winds-check-landfall-date-and-time-2026-11-16-1059601",
+          "summary": "IMD issued heavy rain, thunderstorm and gusty wind alerts for coastal Andhra Pradesh, Odisha and Rayalaseema. The Coast Guard and fisheries officials recalled trawlers and halted operations at Visakhapatnam Fishing Harbour."
         },
         {
-          "source": "Bureau of Meteorology",
+          "source": "FOX Weather",
           "date": "2026-11-15",
-          "headline": "BoM warns severe thunderstorms are likely across eastern Australia",
-          "url": "https://x.com/BOM_au/status/2121800111257010529",
-          "summary": "The Bureau's severe weather update covers Nov 15 and 16 for eastern states."
+          "headline": "Atmospheric river to peak over the Pacific Northwest on Nov 16",
+          "url": "https://www.foxweather.com/weather-news/atmospheric-river-heavy-rain-river-flooding-high-winds-pacific-northwest-nov-15",
+          "summary": "Heavy rain, river flooding and high winds were forecast to continue into Tuesday. The storm follows atmospheric rivers that hit the region on Nov 13-14."
         },
         {
-          "source": "ScienceDaily",
-          "date": "2026-11-14",
-          "headline": "NASA says the 2026 El Niño could be bigger than the 1997-98 event",
-          "url": "https://www.sciencedaily.com/releases/2026/11/261114202227.htm",
-          "summary": "NASA sea-level data show this El Niño strengthened more abruptly than 1997-98. The analysis does not say where the worst impacts will fall."
+          "source": "NPR",
+          "date": "2026-11-13",
+          "headline": "Two atmospheric rivers hit Oregon and Washington back to back",
+          "url": "https://www.npr.org/2026/11/13/nx-s1-6032777/rivers-in-the-sky-are-raining-down-on-the-pacific-northwest-what-are-they",
+          "summary": "NWS Seattle warned of swells up to 20 feet on the Washington coast. Forecasters flagged flash flooding, urban flooding and landslides."
+        },
+        {
+          "source": "Daily Tribune",
+          "date": "2026-11-10",
+          "headline": "PAGASA says one more typhoon may enter Philippine area before year-end",
+          "url": "https://tribune.net.ph/2026/11/10/pagasa-another-typhoon-possible-before-end-of-2026",
+          "summary": "PAGASA expects at least one more tropical cyclone in its area of responsibility before the end of 2026. Typhoon Cempaka, the 32nd named storm of the western North Pacific season, recurved without entering it."
         }
       ]
     },
     "renewables": {
-      "overview_html": "The UK government <a href=\"https://www.itv.com/news/meridian/2026-11-10/planned-solar-farm-in-oxfordshire-scrapped\" target=\"_blank\" rel=\"noopener\">refused the 840 MW Botley West solar farm</a>, the first rejection of a solar project under the national infrastructure regime. In Germany, Envision and ju:niz <a href=\"https://battery-tech.net/battery-markets-news/envision-smareg-bess-bavaria/\" target=\"_blank\" rel=\"noopener\">added a 442 MWh grid-forming battery</a> in Bavaria.",
+      "overview_html": "Adding wind to solar and batteries cuts the median cost of meeting 90% of demand to <a href=\"https://www.pv-magazine.com/2026/11/16/solar-wind-and-batteries-can-deliver-firm-power-at-e78-mwh-says-ember/\" target=\"_blank\" rel=\"noopener\">$86/MWh from $105/MWh</a>, Ember found. Solcast data put October irradiance <a href=\"https://pv-magazine-usa.com/2026/11/16/great-lakes-irradiance-surges-as-wet-weather-weighs-on-southwest-solar-resource/\" target=\"_blank\" rel=\"noopener\">14% above normal around the Great Lakes and 9% below in the Southwest</a>. Australia's regulator fined EnergyAustralia <a href=\"https://www.energy-storage.news/must-be-ready-and-able-to-deliver-energyaustralia-pays-au750000-over-alleged-fcas-failures-at-four-bess/\" target=\"_blank\" rel=\"noopener\">AU$750,000</a> over batteries that allegedly failed to deliver frequency services.",
       "items": [
         {
-          "source": "ITV News",
-          "date": "2026-11-10",
-          "headline": "UK refuses consent for the 840 MW Botley West solar farm",
-          "url": "https://www.itv.com/news/meridian/2026-11-10/planned-solar-farm-in-oxfordshire-scrapped",
-          "summary": "The energy secretary rejected the Oxfordshire project on the inspectorate's advice; 69% of the site was Green Belt. <a href=\"https://www.pv-tech.org/plans-for-uks-largest-pv-project-rejected/\" target=\"_blank\" rel=\"noopener\">PV Tech</a> says it is the first refusal of a solar nationally significant infrastructure project."
+          "source": "pv magazine",
+          "date": "2026-11-16",
+          "headline": "Ember finds adding wind cuts firm solar-plus-storage power to $86/MWh",
+          "url": "https://www.pv-magazine.com/2026/11/16/solar-wind-and-batteries-can-deliver-firm-power-at-e78-mwh-says-ember/",
+          "summary": "Adding wind lowers the median cost of meeting 90% of demand from $105/MWh to $86/MWh, and by about two-fifths in northern regions. In Germany, the worst combined wind-solar week of the decade leaves a deficit of about five days of average demand, against six for either source alone."
         },
         {
-          "source": "Battery-Tech",
-          "date": "2026-11-09",
-          "headline": "Envision and ju:niz plan a 442 MWh battery in Bavaria",
-          "url": "https://battery-tech.net/battery-markets-news/envision-smareg-bess-bavaria/",
-          "summary": "The Smareg 13 project at Vöhringen will use Envision's Gen 8 platform with four-hour duration and grid-forming inverters. Grid-forming storage helps stabilise frequency when wind and solar output swings."
+          "source": "pv magazine USA",
+          "date": "2026-11-16",
+          "headline": "Solcast puts October irradiance 14% above normal around the Great Lakes",
+          "url": "https://pv-magazine-usa.com/2026/11/16/great-lakes-irradiance-surges-as-wet-weather-weighs-on-southwest-solar-resource/",
+          "summary": "Buffalo and Cleveland set October irradiance records. Rain and persistent cloud pushed irradiance 9% below normal across the US Southwest and northern Mexico."
+        },
+        {
+          "source": "pv magazine",
+          "date": "2026-11-16",
+          "headline": "Sri Lanka report blames a coal unit, not solar, for the Oct 17 blackout",
+          "url": "https://pv-magazine.com/2026/11/16/coal-plant-failure-not-solar-pv-triggered-sri-lankas-latest-blackout",
+          "summary": "Norochcholai Unit 1 fell from 187 MW to 5 MW within 450 ms and grid frequency dropped from 49.906 Hz to 47.5 Hz in two seconds. Early official comments had blamed excess solar output."
+        },
+        {
+          "source": "Energy-Storage.News",
+          "date": "2026-11-14",
+          "headline": "EnergyAustralia pays AU$750,000 over alleged battery FCAS failures",
+          "url": "https://www.energy-storage.news/must-be-ready-and-able-to-deliver-energyaustralia-pays-au750000-over-alleged-fcas-failures-at-four-bess/",
+          "summary": "The Australian Energy Regulator issued 10 infringement notices over four batteries in NSW and Victoria that allegedly could not deliver frequency control offers in 2023-24. EnergyAustralia self-reported and made no admission of a breach."
+        },
+        {
+          "source": "offshoreWIND.biz",
+          "date": "2026-11-10",
+          "headline": "Sif closes one monopile line and seeks bridge financing",
+          "url": "https://www.offshorewind.biz/2026/11/10/sif-to-close-one-monopile-production-line-seeks-bridge-financing-amid-uncertainties-with-large-offshore-wind-project",
+          "summary": "The Dutch monopile maker will shut one of three lines at Maasvlakte 2. It reported material uncertainty about continuing as a going concern while its largest project awaits a final investment decision."
         }
       ]
     },
     "science": {
-      "overview_html": "A thin week for new research. A preprint on <a href=\"https://arxiv.org/abs/2611.18393\" target=\"_blank\" rel=\"noopener\">WeatherDreamer</a> trains one model to do both data assimilation and forecasting from 18 observing systems. A study using <a href=\"https://theconversation.com/oceans-and-forests-have-absorbed-roughly-half-our-carbon-emissions-for-decades-slowing-climate-change-but-can-they-keep-it-up-296498\" target=\"_blank\" rel=\"noopener\">atmospheric oxygen measurements</a> finds the ocean carbon sink is growing but its growth is slowing.",
+      "overview_html": "A <a href=\"https://www.nature.com/articles/s43017-026-00848-1\" target=\"_blank\" rel=\"noopener\">Nature Reviews Earth &amp; Environment review</a> says Arctic sea ice is likely to enter a rapid loss event before 2040, which could bring the first ice-free summer within five years. A <a href=\"https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL125563?af=R\" target=\"_blank\" rel=\"noopener\">GRL paper</a> uses the sea-level budget gap to infer stronger heat uptake below 2,000 m since the mid-2010s. The <a href=\"https://www.ecmwf.int/node/38438\" target=\"_blank\" rel=\"noopener\">State of Wildfires report</a> finds climate change tripled the odds of Iberia's August 2025 fire weather.",
       "items": [
         {
-          "source": "arXiv",
-          "date": "2026-11-13",
-          "headline": "WeatherDreamer learns assimilation and forecasting from 18 observing systems",
-          "url": "https://arxiv.org/abs/2611.18393",
-          "meta": "arXiv:2611.18393 · preprint",
-          "summary": "The world model ingests raw observations and produces an hourly global analysis in about 1.5 minutes on one GPU."
+          "source": "Nature Reviews Earth & Environment",
+          "date": "2026-11-16",
+          "headline": "Review warns rapid Arctic ice loss events could start before 2040",
+          "url": "https://www.nature.com/articles/s43017-026-00848-1",
+          "meta": "Review · Nature Reviews Earth & Environment",
+          "summary": "Such an event could bring the first ice-free summer within five years of onset; the satellite record shows two, in 2001-2008 and 2014-2020. The authors say climate models generally miss extreme breakup events and call for early-warning systems."
         },
         {
-          "source": "The Conversation",
-          "date": "2026-11-12",
-          "headline": "Oxygen data show the ocean carbon sink growing more slowly",
-          "url": "https://theconversation.com/oceans-and-forests-have-absorbed-roughly-half-our-carbon-emissions-for-decades-slowing-climate-change-but-can-they-keep-it-up-296498",
-          "meta": "Science, 2026",
-          "summary": "The study uses paired atmospheric O2 and CO2 trends to split uptake between ocean and land. The ocean is absorbing more carbon than before, but the rate of increase is falling."
+          "source": "Geophysical Research Letters",
+          "date": "2026-11-10",
+          "headline": "Sea-level budget gap points to stronger deep-ocean heat uptake since mid-2010s",
+          "url": "https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2026GL125563?af=R",
+          "meta": "Cha et al. · GRL",
+          "summary": "The authors convert the sea-level budget residual into heat uptake below 2,000 m, which Argo does not sample. Added to measured ocean heat uptake, the total matches the CERES energy imbalance for 2015-2024 within uncertainty; they call the deep signal possible, not confirmed."
+        },
+        {
+          "source": "ECMWF / Copernicus",
+          "date": "2026-11-11",
+          "headline": "State of Wildfires report says climate change tripled odds of Iberia's 2025 fire weather",
+          "url": "https://www.ecmwf.int/node/38438",
+          "meta": "State of Wildfires 2025-2026 · ESSD preprint",
+          "summary": "The August 2025 fire weather in northwest Iberia was about three times more likely and burned area about three times larger due to warming, per the <a href=\"https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/record-breaking-iberian-fire-season-three-times-larger-due-to-climate-change-\" target=\"_blank\" rel=\"noopener\">Met Office</a>. The season had 14 megafires and over 40,000 evacuations; figures may change in review."
         }
       ]
     },
     "industry": {
       "items": [
         {
-          "date": "2026-11-10",
-          "title": "Spire Global wins a $33.2M NOAA task order starting Dec 1",
-          "body_html": "NOAA <a href=\"https://greenstocknews.com/news/nyse/spir/spire-global-announces-third-quarter-2026-results-achieving-42-year-over-year-revenue-growth\" target=\"_blank\" rel=\"noopener\">awarded Spire a $33.2M task order</a> for a two-year period beginning Dec 1, 2026. Spire also reported more than $70M in new weather awards and guided to about 30% growth in 2027.",
-          "source_html": "<a href=\"https://greenstocknews.com/news/nyse/spir/spire-global-announces-third-quarter-2026-results-achieving-42-year-over-year-revenue-growth\" target=\"_blank\" rel=\"noopener\">Green Stock News (Business Wire)</a>"
+          "date": "2026-11-16",
+          "title": "ICEYE unveils Gen5 radar satellite with 11 cm government imaging mode",
+          "body_html": "ICEYE's <a href=\"https://www.satellitetoday.com/imagery-and-sensing/2026/11/16/iceyes-fifth-generation-sar-satellite-built-for-11cm-resolution/\" target=\"_blank\" rel=\"noopener\">fifth-generation SAR satellite</a> reaches 11 cm resolution at 1,800 MHz for governments and 16 cm for other customers, with downlink up to 1 Gbps. ICEYE gave <a href=\"https://www.techtimes.com/articles/330824/20261116/iceye-debuts-gen5-radar-satellite-11-cm-government-mode-needs-1800-mhz-wider-1200-mhz-band.htm\" target=\"_blank\" rel=\"noopener\">no launch date or pricing</a>; the onboard AI processor is a roadmap item for in-orbit screening.",
+          "source_html": "<a href=\"https://bloomberg.com/news/articles/2026-11-16/iceye-unveils-new-satellite-to-give-governments-sharper-images\" target=\"_blank\" rel=\"noopener\">Bloomberg</a>"
+        },
+        {
+          "date": "2026-11-13",
+          "title": "Windy makes meteoblue AI the default model in its location forecast",
+          "body_html": "Windy's latest release <a href=\"https://www.windy.com/articles/43920\" target=\"_blank\" rel=\"noopener\">sets the meteoblue AI multimodel as the default point forecast</a>, replacing ECMWF there while ECMWF stays the map default. The update also adds team dashboards and a lightning archive, and Windy says NOAA's RRFS will follow as its NAM replacement.",
+          "source_html": "<a href=\"https://www.windy.com/articles/43920\" target=\"_blank\" rel=\"noopener\">Windy</a>"
         },
         {
           "date": "2026-11-10",
-          "title": "Mercator Ocean joins EU Arctic observing project Beyond Arctic PASSION",
-          "body_html": "Mercator Ocean International <a href=\"https://www.mercator-ocean.eu/tag/horizon-europe/\" target=\"_blank\" rel=\"noopener\">is a partner</a> in the €8.5M Horizon Europe project, which <a href=\"https://www.europeanpolarboard.org/news/european-polar-board-joins-new-eu-project-beyond-arctic-passion-to-strengthen-arctic-observations-and-international-cooperation/\" target=\"_blank\" rel=\"noopener\">links Arctic observing networks</a> across more than 40 organisations over 48 months. Mercator handles data and Copernicus integration.",
-          "source_html": "<a href=\"https://www.mercator-ocean.eu/tag/horizon-europe/\" target=\"_blank\" rel=\"noopener\">Mercator Ocean</a>"
+          "title": "Royal Navy picks Ocean Infinity for £90M Atlantic Net sensor network",
+          "body_html": "The UK framework, <a href=\"https://maritime-executive.com/article/royal-navy-picks-ocean-infinity-to-set-up-atlantic-net-sub-hunting-system\" target=\"_blank\" rel=\"noopener\">worth up to £90M</a>, has Ocean Infinity integrate uncrewed vessels, underwater sensors and data services across the North Atlantic. It is the first phase of Atlantic Bastion, which later moves the role to Navy-owned Type 92 surface and Type 93 underwater drones.",
+          "source_html": "<a href=\"https://maritime-executive.com/article/royal-navy-picks-ocean-infinity-to-set-up-atlantic-net-sub-hunting-system\" target=\"_blank\" rel=\"noopener\">The Maritime Executive</a>"
         }
       ]
     }
