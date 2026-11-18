@@ -1,0 +1,216 @@
+{
+  "digest_date": "2026-11-18",
+  "metar": "DIGEST 180700Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-17",
+          "title": "Tomorrow.io says its sounder data cut AI model start-state error by 5-8%",
+          "body_html": "Tomorrow.io <a href=\"https://www.prnewswire.com/news-releases/tomorrowio-gives-google-deepminds-weathernext-2-and-microsofts-aurora-1-5-a-better-start-302941419.html\" target=\"_blank\" rel=\"noopener\">reported</a> that adding its microwave-sounder observations to its Sky 1 machine-learning assimilation cut initial water-vapour error by about 5-8% across 28 test cases, scored against ERA5. It says Aurora 1.5 started from Sky 1 gained about a day of near-surface temperature lead time over raw GFS starts. These are company-reported results.",
+          "source_html": "<a href=\"https://www.prnewswire.com/news-releases/tomorrowio-gives-google-deepminds-weathernext-2-and-microsofts-aurora-1-5-a-better-start-302941419.html\" target=\"_blank\" rel=\"noopener\">PR Newswire</a>"
+        },
+        {
+          "date": "2026-11-16",
+          "title": "NVIDIA projects 1.6x faster WRF runs on its Vera CPU; DKRZ picks the chip",
+          "body_html": "At SC26, NVIDIA <a href=\"https://nvidianews.nvidia.com/news/nvidia-expands-vera-cpu-platform-to-accelerate-scientific-discovery\" target=\"_blank\" rel=\"noopener\">launched a rack-scale Vera CPU platform</a> and projected 1.6x performance and 2x energy efficiency over x86 for the WRF model. Germany's climate computing centre DKRZ chose Vera for its HLRE-5 system, due in early 2028. The WRF figures are projections, not benchmarks.",
+          "source_html": "<a href=\"https://nvidianews.nvidia.com/news/nvidia-expands-vera-cpu-platform-to-accelerate-scientific-discovery\" target=\"_blank\" rel=\"noopener\">NVIDIA Newsroom</a>"
+        },
+        {
+          "date": "2026-11-16",
+          "title": "Sentinel-6B to take over as the reference sea-level satellite in January",
+          "body_html": "NASA says Sentinel-6B has completed calibration and will <a href=\"https://science.nasa.gov/blogs/sentinel-6/2026/11/16/nasa-european-sea-level-satellite-prepped-for-new-role/\" target=\"_blank\" rel=\"noopener\">become the reference altimetry mission</a> in January, replacing Sentinel-6 Michael Freilich. Altimetry-based ocean products will move to the new reference baseline after the handover.",
+          "source_html": "<a href=\"https://science.nasa.gov/blogs/sentinel-6/2026/11/16/nasa-european-sea-level-satellite-prepped-for-new-role/\" target=\"_blank\" rel=\"noopener\">NASA Science</a>"
+        },
+        {
+          "date": "2026-11-17",
+          "title": "Texas Tech starts a $24M mesonet and radar build in the Texas Hill Country",
+          "body_html": "Texas Tech is using <a href=\"https://www.globenewswire.com/news-release/2026/11/17/3405147/0/en/texas-tech-expands-weather-intelligence-infrastructure-into-texas-hill-country.html\" target=\"_blank\" rel=\"noopener\">$24 million in state funds</a> to add about 40 mesonet stations, three radars and a 48-hour high-resolution ensemble forecast, with full deployment targeted for fall 2027. It adds a public observing network in a region where private radar networks also operate.",
+          "source_html": "<a href=\"https://www.globenewswire.com/news-release/2026/11/17/3405147/0/en/texas-tech-expands-weather-intelligence-infrastructure-into-texas-hill-country.html\" target=\"_blank\" rel=\"noopener\">GlobeNewswire</a>"
+        },
+        {
+          "date": "2026-11-13",
+          "title": "FINAL-Bench opens a daily public leaderboard for AI and physics weather models",
+          "body_html": "FINAL-Bench, built by VIDRAFT_LAB and SeaWolf-AI, launched a <a href=\"https://casrai.org/news/final-bench-open-daily-weather-model-evaluation-2026\" target=\"_blank\" rel=\"noopener\">Global Weather Model Leaderboard</a> on Hugging Face that archives forecasts each morning and scores them against observations for 24 cities. On Nov 17 VIDRAFT <a href=\"https://dev.to/ai_openfree_b23025ef075cf/eight-national-weather-models-one-korean-ai-darwin-has-the-lowest-error-in-all-28-categories-17jh\" target=\"_blank\" rel=\"noopener\">claimed</a> its own model led all 28 categories, so the board is not independent.",
+          "source_html": "<a href=\"https://casrai.org/news/final-bench-open-daily-weather-model-evaluation-2026\" target=\"_blank\" rel=\"noopener\">CASRAI</a>"
+        },
+        {
+          "date": "2026-11-12",
+          "title": "Weathernews adds an offline mode to SeaNavigator for Master",
+          "body_html": "Weathernews <a href=\"https://cyprusshippingnews.com/2026/11/12/weathernews-brings-offline-weather-intelligence-to-the-bridge-alleviating-navigation-connectivity-gaps-at-sea/\" target=\"_blank\" rel=\"noopener\">added offline weather layers</a> to its AI ship-routing service after onboard trials found connectivity unreliable; masters pick layers to download, while route simulation still needs a link. Offline delivery is a feature buyers of marine routing services can now ask competitors for.",
+          "source_html": "<a href=\"https://www.ajot.com/news/weathernews-brings-offline-weather-intelligence-to-the-bridge-alleviating-navigation-connectivity-gaps-at-sea\" target=\"_blank\" rel=\"noopener\">AJOT</a>"
+        },
+        {
+          "date": "2026-11-17",
+          "title": "Brightline Interactive signs non-binding pact to add TruWeather data to its platform",
+          "body_html": "Nasdaq-listed Brightline Interactive signed a <a href=\"https://www.valuethemarkets.com/news/press-releases/brightline-interactive-and-truweather-solutions-sign-mou-to\" target=\"_blank\" rel=\"noopener\">memorandum of understanding</a> to integrate TruWeather Solutions' low-altitude weather services into its SpatialCore platform for demos and joint offers. TruWeather builds low-altitude weather networks for drones.",
+          "source_html": "<a href=\"https://www.valuethemarkets.com/news/press-releases/brightline-interactive-and-truweather-solutions-sign-mou-to\" target=\"_blank\" rel=\"noopener\">Value The Markets</a>"
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Cyclone Akvan, Bay of Bengal",
+          "status": "Severe cyclonic storm; landfall Nov 20",
+          "impact": "IMD expects a very severe cyclonic storm to cross Andhra Pradesh between Nellore and Visakhapatnam around noon Nov 20, with winds of 120-130 km/h gusting to 145 km/h. Odisha has identified more than 200,000 people for possible evacuation."
+        },
+        {
+          "name": "Cyclone Xavier, Northern Cook Islands",
+          "status": "Category 5, near Pukapuka and Nassau",
+          "impact": "Fiji Meteorological Service gives sustained winds near 220 km/h with gusts to 315 km/h; the centre is expected to stay offshore. Gale warnings for Pukapuka and Nassau; no casualties reported."
+        },
+        {
+          "name": "Sierra Nevada winter storm, US",
+          "status": "Winter storm warnings Nov 18-20",
+          "impact": "NWS Reno forecasts 2-4 ft of snow above 7,000 ft and ridgetop gusts to 100 mph, with travel very difficult to impossible. Another large storm is expected on the West Coast Nov 20-21."
+        },
+        {
+          "name": "Cold wave, northern China",
+          "status": "Orange blizzard warning; cold moving south",
+          "impact": "Temperatures are forecast to drop 6-8°C across much of China Nov 17-19, and up to 17°C locally, with blizzards in eastern Heilongjiang and Jilin."
+        },
+        {
+          "name": "Far North Queensland heatwave, Australia",
+          "status": "Severe heatwave warning to Nov 19",
+          "impact": "Weipa logged 41 straight days above 36°C by Nov 15, its longest run on record; BoM says it could reach 48 days this week."
+        },
+        {
+          "name": "Western and Northern Cape heat, South Africa",
+          "status": "Extreme heat advisory to Nov 19",
+          "impact": "SAWS expects highs in the high 30s to low 40s°C with fire danger in the Northern Cape; thunderstorm warnings inland."
+        },
+        {
+          "name": "El Niño floods, Ecuador",
+          "status": "Ongoing rain; toll 14 since Aug 29",
+          "impact": "Floods killed two people in Guayaquil on Nov 13 after 172.8 mm of rain fell on Milagro."
+        }
+      ],
+      "overview_html": "Cyclone Akvan strengthened into a severe cyclonic storm on Nov 18 and IMD expects it to <a href=\"https://watchers.news/2026/11/18/cyclone-akvan-landfall-nellore-visakhapatnam-noon-november-20-2026/\" target=\"_blank\" rel=\"noopener\">cross Andhra Pradesh around noon Nov 20</a> with gusts to 145 km/h. In the South Pacific, <a href=\"https://samoaglobalnews.com/category-5-cyclone-xavier-batters-northern-cook-islands-tracks-northeast-samoa/\" target=\"_blank\" rel=\"noopener\">Cyclone Xavier reached Category 5</a> near the Northern Cook Islands. NWS Reno forecasts <a href=\"https://unofficialnetworks.com/2026/11/17/palisades-tahoes-expedites-opening-day\" target=\"_blank\" rel=\"noopener\">2-4 ft of Sierra snow</a> through Friday, and a <a href=\"https://watchers.news/2026/11/16/cold-wave-temperature-drops-blizzards-northern-china-november-2026/\" target=\"_blank\" rel=\"noopener\">cold wave</a> is cutting temperatures by up to 17°C across northern China.",
+      "items": [
+        {
+          "source": "Watchers.news",
+          "date": "2026-11-18",
+          "headline": "Cyclone Akvan intensifies into a severe cyclonic storm ahead of Nov 20 landfall",
+          "url": "https://watchers.news/2026/11/18/cyclone-akvan-landfall-nellore-visakhapatnam-noon-november-20-2026/",
+          "summary": "At 0530 IST the storm was about 610 km south-southeast of Visakhapatnam; IMD expects a very severe cyclonic storm with winds of 120-130 km/h at landfall between Nellore and Visakhapatnam. Heavy to extremely heavy rain is forecast for coastal Andhra on Nov 19-20."
+        },
+        {
+          "source": "ANI",
+          "date": "2026-11-18",
+          "headline": "Tamil Nadu fisheries department issues high alert as Akvan approaches",
+          "url": "https://www.aninews.in/news/national/general-news/cyclonic-storm-8216akvan8217-approaches-tamil-nadu-fisheries-dept-issues-high-alert-imd-forecasts-landfall-between-nellore-and-visakhapatnam20261118093454",
+          "summary": "The alert follows IMD's forecast of landfall between Nellore and Visakhapatnam. IMD rates its track confidence as moderate."
+        },
+        {
+          "source": "Samoa Global News",
+          "date": "2026-11-18",
+          "headline": "Cyclone Xavier reaches Category 5 over the Northern Cook Islands",
+          "url": "https://samoaglobalnews.com/category-5-cyclone-xavier-batters-northern-cook-islands-tracks-northeast-samoa/",
+          "summary": "The Fiji Meteorological Service gives gusts up to 315 km/h; early on Nov 18 the centre was about 260 km northeast of Pukapuka, moving west-southwest at about 7 km/h. Shelters are open and Samoa Met has a high-wind warning for Tokelau."
+        },
+        {
+          "source": "Unofficial Networks",
+          "date": "2026-11-17",
+          "headline": "Palisades Tahoe moves opening day to Nov 21 after 26 inches of snow",
+          "url": "https://unofficialnetworks.com/2026/11/17/palisades-tahoes-expedites-opening-day",
+          "summary": "NWS Reno forecasts another 2-4 ft above 7,000 ft from Wednesday to Friday, with ridgetop gusts to 100 mph and travel very difficult to impossible."
+        },
+        {
+          "source": "Watchers.news",
+          "date": "2026-11-16",
+          "headline": "China renews orange blizzard warning for eastern Heilongjiang and Jilin",
+          "url": "https://watchers.news/2026/11/16/cold-wave-temperature-drops-blizzards-northern-china-november-2026/",
+          "summary": "A cold wave crossing northern China from Nov 15 to 19 is forecast to cut temperatures by up to 17°C locally, with rain from the Huang-Huai region southward."
+        },
+        {
+          "source": "IOL",
+          "date": "2026-11-17",
+          "headline": "SAWS issues an extreme heat advisory for the Western and Northern Cape",
+          "url": "https://iol.co.za/news/weather/2026-11-17-todays-weather-severe-thunderstorms-threaten-gauteng-as-extreme-heat-grips-western-cape/",
+          "summary": "Highs in the high 30s to low 40s°C are expected through Thursday. Gauteng and southwestern Limpopo were under a Yellow Level 2 warning for storms with hail and localised flooding."
+        },
+        {
+          "source": "Sortiraparis",
+          "date": "2026-11-17",
+          "headline": "Météo-France puts 46 departments on thunderstorm alert with 110 km/h gusts",
+          "url": "https://www.sortiraparis.com/en/news/in-paris/articles/358318-yellow-weather-warning-for-wind-and-thunderstorms-paris-and-ile-de-france-on-alert-this-tuesday-november-17",
+          "summary": "AROME forecast gusts of 100-110 km/h from Brittany to Lorraine on Tuesday afternoon and evening, including all of Île-de-France. The warnings were lifted for Nov 18."
+        },
+        {
+          "source": "Watchers.news",
+          "date": "2026-11-16",
+          "headline": "Ecuador's El Niño death toll rises to 14 after Guayaquil floods",
+          "url": "https://watchers.news/2026/11/16/el-nino-floods-guayaquil-milagro-ecuador-death-toll-14-november-2026/",
+          "summary": "Two people died in Guayaquil on Nov 13 and 172.8 mm of rain flooded Milagro. The toll counts El Niño-linked deaths since Aug 29."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "A thin research day in the sources we could reach. Japan's Meteorological Research Institute found <a href=\"https://scmp.com/news/asia/east-asia/article/3374570/japanese-forecasters-find-ai-beats-traditional-models-tracking-typhoons\" target=\"_blank\" rel=\"noopener\">AI models track typhoons well but lag on intensity</a>, and a 41-summer study shows <a href=\"https://www.eurekalert.org/news-releases/1152178\" target=\"_blank\" rel=\"noopener\">sea breezes shape the coastal boundary layer</a> during Mediterranean heatwaves. arXiv listings could not be checked directly today, so new ML-weather preprints may be missing.",
+      "items": [
+        {
+          "source": "South China Morning Post",
+          "date": "2026-11-16",
+          "headline": "Japan's Meteorological Research Institute finds AI models lag on typhoon intensity",
+          "url": "https://scmp.com/news/asia/east-asia/article/3374570/japanese-forecasters-find-ai-beats-traditional-models-tracking-typhoons",
+          "meta": "Munehiko Yamaguchi · Meteorological Research Institute",
+          "summary": "MRI forecasters found AI weather models handled typhoon tracks well but were weaker than physics-based models on intensity. Intensity guidance still depends on physics-based models."
+        },
+        {
+          "source": "EurekAlert",
+          "date": "2026-11-16",
+          "headline": "Sea breezes shape the lowest atmospheric layer during Mediterranean heatwaves",
+          "url": "https://www.eurekalert.org/news-releases/1152178",
+          "meta": "Advances in Atmospheric Sciences",
+          "summary": "Researchers analysed 41 summers of hourly data from seven coastal sites in Spain, Italy and France. Boundary-layer structure during heatwaves depends on sea-breeze behaviour, which bears on coastal extreme-temperature forecasts."
+        },
+        {
+          "source": "MIT News",
+          "date": "2026-11-16",
+          "headline": "MIT researcher separates drivers of glacial deep-ocean carbon storage",
+          "url": "https://news.mit.edu/2026/qa-how-ocean-carbon-sequestration-changes-under-different-glacial-conditions-1116",
+          "summary": "The Q&A splits the roles of cold seawater, Antarctic sea ice and ocean circulation in how much carbon the deep ocean held during glacial climates."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "Wood Mackenzie puts Spanish renewables' <a href=\"https://www.pv-tech.org/wood-mackenzie-spain-renewables-140-million-grid-constraints-2025-blackout/\" target=\"_blank\" rel=\"noopener\">curtailment losses at about €140m</a> since the April 2025 blackout, with voltage and inertia limits driving nearly half of 2026 curtailment. Finland is <a href=\"https://buttondown.com/renewanews/archive/2026-11-13-renewanews-briefing-november-13-2026/\" target=\"_blank\" rel=\"noopener\">preparing offshore wind auctions without state aid</a>. Few other in-window items could be confirmed today.",
+      "items": [
+        {
+          "source": "PV Tech",
+          "date": "2026-11-16",
+          "headline": "Wood Mackenzie says grid limits cost Spanish renewables €140m since the 2025 blackout",
+          "url": "https://www.pv-tech.org/wood-mackenzie-spain-renewables-140-million-grid-constraints-2025-blackout/",
+          "summary": "Some nodes in Extremadura and Murcia exceed 25% curtailment, and nearly half of 2026 curtailment comes from voltage and inertia limits rather than line capacity. About 10 GW of utility solar due by 2028 could add more."
+        },
+        {
+          "source": "RenewaNews",
+          "date": "2026-11-13",
+          "headline": "Finland prepares a new round of offshore wind auctions with no state aid",
+          "url": "https://buttondown.com/renewanews/archive/2026-11-13-renewanews-briefing-november-13-2026/",
+          "summary": "The briefing reports Finland is preparing its next offshore wind auction round without subsidies."
+        }
+      ]
+    },
+    "climate": {
+      "overview_html": "COP31 talks in Antalya enter their final days with no revised cover text yet; Chris Bowen said the Nov 16 draft <a href=\"https://www.dailysabah.com/business/energy/cop31-draft-calls-for-accelerated-action-to-phase-out-fossil-fuels\" target=\"_blank\" rel=\"noopener\">will not be the final draft</a>. Hosts launched a voluntary <a href=\"https://www.itu.int/en/mediacentre/Pages/PR-2026-11-16-COP31-Antalya-AI-Pledge.aspx\" target=\"_blank\" rel=\"noopener\">Antalya AI Pledge</a> with 80 endorsements, and <a href=\"https://www.dhnet.be/dernieres-depeches/2026/11/16/cop31-une-vingtaine-de-pays-dont-la-belgique-sallient-face-aux-feux-de-foret-EATLZZNVLVFFXEOLETOWETUSU4/\" target=\"_blank\" rel=\"noopener\">24 countries joined</a> a fire-management action plan.",
+      "items": [
+        {
+          "source": "ITU",
+          "date": "2026-11-16",
+          "headline": "COP31 hosts and ITU launch a voluntary AI climate pledge with 80 endorsements",
+          "url": "https://www.itu.int/en/mediacentre/Pages/PR-2026-11-16-COP31-Antalya-AI-Pledge.aspx",
+          "summary": "Only about 10 of the <a href=\"https://www.dhakatribune.com/world/424825/cop31-launches-ai-pledge-green-industrialisation\" target=\"_blank\" rel=\"noopener\">80 endorsements</a> come from national governments. The pledge asks signatories to cut AI's environmental footprint, including data-centre power and water use, and stays open until COP32."
+        },
+        {
+          "source": "Belga",
+          "date": "2026-11-16",
+          "headline": "Türkiye launches a COP31 wildfire action plan joined by 24 countries",
+          "url": "https://www.dhnet.be/dernieres-depeches/2026/11/16/cop31-une-vingtaine-de-pays-dont-la-belgique-sallient-face-aux-feux-de-foret-EATLZZNVLVFFXEOLETOWETUSU4/",
+          "summary": "Japan, the UK, Indonesia and Mexico are among the signatories of the voluntary Antalya Action Plan on Integrated Fire Management, drawn up with Brazil, South Korea and FAO. It shifts emphasis from emergency response to prevention."
+        }
+      ]
+    }
+  }
+}
