@@ -1,168 +1,153 @@
 {
-  "digest_date": "2026-11-20",
-  "metar": "DIGEST 200730Z NOV26 · ROLLING 72H WINDOW",
+  "digest_date": "2026-11-21",
+  "metar": "DIGEST 210720Z NOV26 · ROLLING 72H WINDOW",
   "sections": {
     "climate": {
-      "overview_html": "COP31 reached its scheduled last day on Nov 20 with a <a href=\"https://www.commondreams.org/news/cop31-green-transition\" target=\"_blank\" rel=\"noopener\">revised cover text that no longer mentions fossil fuels</a>, while it <a href=\"https://carbonherald.com/cop31-draft-accord-drops-fossil-fuel-phaseout-language-in-favor-of-carbon-capture/\" target=\"_blank\" rel=\"noopener\">keeps support for carbon capture and removal</a>. Negotiators were <a href=\"https://www.rte.ie/news/world/2026/1119/1599773-cop31-thursday/\" target=\"_blank\" rel=\"noopener\">still waiting on a new draft</a> on Nov 19, and the outcome may change before adoption.",
+      "overview_html": "COP31 in Antalya ran past its Friday close with <a href=\"https://www.freemalaysiatoday.com/category/highlight/2026/11/21/nations-row-over-fossil-fuels-as-cop31-goes-into-overtime\" target=\"_blank\" rel=\"noopener\">no deal on the cover decision</a>; the presidency promised a third draft on Saturday morning. A bloc of 23 countries, including the EU, wants fossil fuel transition language restored after the second draft <a href=\"https://pbs.org/newshour/world/activists-leaders-criticize-cop31-climate-talks-as-fossil-fuels-go-unmentioned-in-draft-deal\" target=\"_blank\" rel=\"noopener\">dropped it</a>. A voluntary <a href=\"https://www.climateaction.org/news/cop31-reaches-its-final-day-new-momentum-on-electrification-but-a-weakened\" target=\"_blank\" rel=\"noopener\">electrification package</a> sits outside the negotiated text.",
       "items": [
         {
-          "source": "Common Dreams",
-          "date": "2026-11-19",
-          "headline": "Revised COP31 cover text drops every reference to fossil fuels",
-          "url": "https://www.commondreams.org/news/cop31-green-transition",
-          "summary": "The presidency's Nov 19 draft removed the earlier call for accelerated action to phase out fossil fuels. It <a href=\"https://carbonherald.com/cop31-draft-accord-drops-fossil-fuel-phaseout-language-in-favor-of-carbon-capture/\" target=\"_blank\" rel=\"noopener\">retains language encouraging carbon capture</a> and carbon dioxide removal, which campaign groups criticised."
+          "source": "Free Malaysia Today",
+          "date": "2026-11-21",
+          "headline": "COP31 talks go into overtime as nations row over fossil fuels",
+          "url": "https://www.freemalaysiatoday.com/category/highlight/2026/11/21/nations-row-over-fossil-fuels-as-cop31-goes-into-overtime",
+          "summary": "Negotiators worked overnight after the Friday deadline passed, with a third draft of the cover decision due at 9 a.m. Saturday. COP31 president Murat Kurum told the plenary the parties were close but not finished."
         },
         {
-          "source": "RTÉ",
-          "date": "2026-11-19",
-          "headline": "COP31 negotiators await a new cover text on the eve of the scheduled close",
-          "url": "https://www.rte.ie/news/world/2026/1119/1599773-cop31-thursday/",
-          "summary": "Talks were due to end on Nov 20 with fossil fuels and adaptation finance still unresolved. The cover decision will also set how much wealthier nations pay poorer ones to adapt."
-        },
-        {
-          "source": "allAfrica",
+          "source": "PBS NewsHour",
           "date": "2026-11-20",
-          "headline": "Nigerian groups criticise the revised COP31 draft's retreat on fossil fuels",
-          "url": "https://allafrica.com/stories/202611200202.html",
-          "summary": "Coverage from Nigeria reports criticism of the second draft for dropping its fossil fuel transition language. Any final text needs consensus from nearly 200 parties."
+          "headline": "Activists and leaders criticise COP31 draft that omits fossil fuels",
+          "url": "https://pbs.org/newshour/world/activists-leaders-criticize-cop31-climate-talks-as-fossil-fuels-go-unmentioned-in-draft-deal",
+          "summary": "The second draft removed references to transitioning away from fossil fuels and dropped a proposed $120 billion adaptation finance target. Panama and about a dozen other countries signed a letter demanding the transition language return."
+        },
+        {
+          "source": "Climate Action",
+          "date": "2026-11-20",
+          "headline": "COP31 hosts back a voluntary electrification package",
+          "url": "https://www.climateaction.org/news/cop31-reaches-its-final-day-new-momentum-on-electrification-but-a-weakened",
+          "summary": "The COP31 Electrification Delivery Package groups pledges to replace direct fossil fuel use with electric alternatives. It is voluntary and not part of the negotiated cover text."
         }
       ]
     },
     "weather": {
       "major_events": [
         {
-          "name": "Cyclone Akvan, Andhra Pradesh-Odisha",
-          "status": "Crossed coast near Gopalpur, weakening",
-          "impact": "IMD says Akvan weakened to a cyclonic storm before crossing near Gopalpur between 07:30 and 08:30 IST on Nov 20, with gusts to 90 km/h. Gopalpur logged 166 mm of rain; Odisha schools are shut in six districts until Nov 21."
+          "name": "Cyclone Akvan remnants, Odisha, India",
+          "status": "Weakened to low pressure, heavy rain",
+          "impact": "Akvan crossed the coast near Gopalpur on Nov 20 and weakened to a depression, then a low. Odisha reports no major damage or deaths; about 3.7 lakh people were evacuated. IMD kept an orange alert for 14 districts with 12-20 cm of rain possible."
         },
         {
-          "name": "Cyclone Xavier, Northern Cook Islands",
-          "status": "Category 4, weakening, heading toward Samoa",
-          "impact": "Fiji Met Service downgraded Xavier from Category 5 to 4, with 165 km/h winds about 240 km northeast of Pukapuka. Pukapuka and Nassau remain under gale warnings; Samoa expects strong winds, heavy rain and large waves from Sunday."
+          "name": "Cyclone Xavier, South Pacific",
+          "status": "Weakening, low risk to Samoa",
+          "impact": "Samoa Meteorological Service said Xavier weakened to Category 1 about 920 km northeast of Apia and the chance of direct impacts in the next 12-24 hours is low. The Northern Cook Islands took the brunt earlier in the week."
         },
         {
-          "name": "Winter storm, Sierra Nevada and Great Basin, US",
-          "status": "Warnings to Nov 20",
-          "impact": "NWS Sacramento forecast 8-12 in of snow above 4,000 ft and up to 18 in on the highest peaks. NWS Elko warned travel could be near impossible, with visibility below 1/4 mile in blowing snow."
+          "name": "Thanksgiving-week storms, US coasts",
+          "status": "Forecast Nov 23-26",
+          "impact": "Weather.com expects a Southeast low to track into the mid-Atlantic on Wednesday and a possible major Northeast storm on Thursday. Two wet, windy systems are forecast for northern California to Washington on Tuesday and Wednesday. NHC gives a low off Florida a 60% chance of subtropical or tropical development in 7 days."
         },
         {
-          "name": "Bay Area storm, California",
-          "status": "Showers continue after record rain",
-          "impact": "San Jose recorded 2.04 in on Nov 18, a daily record and its second-wettest November day. Freeways flooded and thousands of PG&E customers lost power."
+          "name": "Heatwave, Cape York, Australia",
+          "status": "Severe heatwave warning",
+          "impact": "BoM kept a severe heatwave warning for the Peninsula with highs in the high 30s to near 40°C. Weipa's run above 36°C passed 41 days, its longest on record."
         }
       ],
-      "overview_html": "Cyclone Akvan <a href=\"https://odishatv.in/odisha/cyclone-akvan-crosses-odisha-coast-near-gopalpur-landfall-process-to-continue-for-2-hours-12825294\" target=\"_blank\" rel=\"noopener\">crossed the coast near Gopalpur</a> on the morning of Nov 20 after weakening, bringing <a href=\"https://www.newsdrum.in/national/cyclone-akvan-makes-landfall-with-90-kmph-gusts-heavy-rain-lashes-odisha-andhra-12825641\" target=\"_blank\" rel=\"noopener\">166 mm of rain to Gopalpur</a>. Cyclone Xavier is <a href=\"https://www.1news.co.nz/2026/11/19/cyclone-xavier-slowly-weakens-as-it-tracks-through-cook-islands/\" target=\"_blank\" rel=\"noopener\">down to Category 4</a> and tracking toward Samoa. In California, a storm set <a href=\"https://cbsnews.com/sanfrancisco/news/bay-area-november-2026-storm-more-showers-record-rainfall-cold-temps-returning\" target=\"_blank\" rel=\"noopener\">a daily rainfall record in San Jose</a> while winter storm warnings covered the Sierra and northern Nevada.",
+      "overview_html": "Cyclone Akvan <a href=\"https://www.deccanherald.com/india/odisha/no-major-damage-loss-of-life-in-odisha-due-to-cyclone-akvan-heavy-rain-lashes-state-4224959\" target=\"_blank\" rel=\"noopener\">caused no major damage in Odisha</a> and has weakened to a low, though heavy rain alerts remain. Forecasters see <a href=\"https://weather.com/2026/11/20/holiday/thanksgiving/thanksgiving-travel-weather-forecast-us-storms\" target=\"_blank\" rel=\"noopener\">storms on both US coasts</a> during Thanksgiving week, and NHC is watching a <a href=\"https://newsweek.com/map-shows-rare-november-tropical-storm-could-hit-us-days-12741051\" target=\"_blank\" rel=\"noopener\">low off Florida</a> for subtropical development. Indonesia's BNPB warned of <a href=\"https://en.tempo.co/read/2124049/aceh-central-java-and-papua-at-risk-of-floods-landslides-on-saturday\" target=\"_blank\" rel=\"noopener\">floods and landslides</a> across Central Java, Aceh and Papua.",
       "items": [
         {
-          "source": "OdishaTV",
+          "source": "Deccan Herald",
           "date": "2026-11-20",
-          "headline": "Cyclone Akvan crosses the coast near Gopalpur with 80-90 km/h winds",
-          "url": "https://odishatv.in/odisha/cyclone-akvan-crosses-odisha-coast-near-gopalpur-landfall-process-to-continue-for-2-hours-12825294",
-          "summary": "IMD said Akvan weakened from a severe cyclonic storm before landfall, which was expected to last about two hours. It is the <a href=\"https://www.newsdrum.in/national/cyclone-akvan-makes-landfall-with-90-kmph-gusts-heavy-rain-lashes-odisha-andhra-12825641\" target=\"_blank\" rel=\"noopener\">third cyclone to cross the Andhra coast</a> in less than a month."
+          "headline": "Odisha reports no major damage or deaths from Cyclone Akvan",
+          "url": "https://www.deccanherald.com/india/odisha/no-major-damage-loss-of-life-in-odisha-due-to-cyclone-akvan-heavy-rain-lashes-state-4224959",
+          "summary": "Disaster management minister Suresh Pujari said no major damage or loss of life was reported after landfall near Gopalpur. The state deployed 423 rescue teams and opened 9,341 shelters."
         },
         {
-          "source": "Business Standard",
+          "source": "OdishaBytes",
+          "date": "2026-11-21",
+          "headline": "Akvan's remnant weakens into a low over central Odisha",
+          "url": "https://odishabytes.com/cyclone-akvan-remnant-weakens-into-low-pressure-over-central-odisha/",
+          "summary": "Wind speeds have dropped sharply as the system moves inland. IMD expects rainfall to ease from Saturday."
+        },
+        {
+          "source": "Weather.com",
           "date": "2026-11-20",
-          "headline": "IMD expects Akvan to weaken into a deep depression after landfall",
-          "url": "https://www.business-standard.com/india-news/cyclone-akvan-weakens-likely-to-cross-odisha-coast-near-gopalpur-today-126112000095_1.html",
-          "summary": "IMD downgraded Akvan before it reached the north Andhra Pradesh-south Odisha coast. Heavy rain continues over north coastal Andhra Pradesh and south Odisha."
+          "headline": "Storms on both US coasts threaten Thanksgiving travel",
+          "url": "https://weather.com/2026/11/20/holiday/thanksgiving/thanksgiving-travel-weather-forecast-us-storms",
+          "summary": "Models increasingly show a Wednesday storm from the Southeast into the mid-Atlantic and a possible major Northeast storm on Thanksgiving Day. Two systems are forecast for the Pacific Northwest and northern California on Tuesday and Wednesday."
         },
         {
-          "source": "Pacific Media Network",
+          "source": "Newsweek",
           "date": "2026-11-19",
-          "headline": "Manihiki faces power and food shortages as Xavier weakens",
-          "url": "https://pmn.co.nz/read/environment/xavier-weakens-but-manihiki-faces-power-and-food-pressures",
-          "summary": "Xavier fell to Category 4 with <a href=\"https://www.1news.co.nz/2026/11/19/cyclone-xavier-slowly-weakens-as-it-tracks-through-cook-islands/\" target=\"_blank\" rel=\"noopener\">165 km/h winds</a> and MetService expects Category 3 by the end of Friday. Samoa's met service warns of wind, rain and large waves from Sunday."
+          "headline": "NHC gives a low off Florida a 60% chance of development",
+          "url": "https://newsweek.com/map-shows-rare-november-tropical-storm-could-hit-us-days-12741051",
+          "summary": "The National Hurricane Center rates the system's chance of becoming a tropical or subtropical cyclone within seven days at 60%. A November landfall would be rare."
         },
         {
-          "source": "CBS San Francisco",
-          "date": "2026-11-19",
-          "headline": "San Jose sets a daily rainfall record of 2.04 inches",
-          "url": "https://cbsnews.com/sanfrancisco/news/bay-area-november-2026-storm-more-showers-record-rainfall-cold-temps-returning",
-          "summary": "The Nov 18 total was San Jose's second-wettest November day on record. Flooding closed freeways and briefly halted Waymo service, and colder air follows the next round of showers."
+          "source": "NWS Salt Lake City",
+          "date": "2026-11-21",
+          "headline": "Wasatch Mountains get a winter storm warning through Saturday morning",
+          "url": "https://www.defconlevel.com/alert/2026-11-21-nws-noaa-weather-winter-storm-warning-issued-november-20-at-10-48pm-mst-until-november-21-at-11-00am-mst-by-nws-salt-lake-city-ut",
+          "summary": "The warning runs until 11 a.m. MST on Nov 21. An earlier version called for 12-24 inches of total snow, highest in the Upper Cottonwoods."
         },
         {
-          "source": "NWS Elko",
-          "date": "2026-11-19",
-          "headline": "NWS Elko warns of near-impossible travel in northern Nevada snow",
-          "url": "https://www.defconlevel.com/alert/2026-11-19-nws-noaa-weather-winter-storm-warning-issued-november-19-at-7-16am-pst-until-november-20-at-4-00pm-pst-by-nws-elko-nv",
-          "summary": "The winter storm warning runs to 4 PM PST on Nov 20, with visibility below 1/4 mile in falling and blowing snow. Sacramento, Reno and Las Vegas offices also issued warnings."
+          "source": "Tempo",
+          "date": "2026-11-20",
+          "headline": "Indonesia warns of floods and landslides in Central Java, Aceh and Papua",
+          "url": "https://en.tempo.co/read/2124049/aceh-central-java-and-papua-at-risk-of-floods-landslides-on-saturday",
+          "summary": "BNPB flagged moderate to very heavy rain for Saturday, naming Pati, Blora, Demak, Kudus and Semarang among vulnerable areas. BMKG says hazardous conditions could last until Nov 26."
         },
         {
-          "source": "The Weather Channel",
+          "source": "ABC News",
           "date": "2026-11-18",
-          "headline": "Parts of Florida flood in the middle of the dry season",
-          "url": "https://weather.com/2026/11/18/news/weather/florida-flood-forecast-dry-season",
-          "summary": "Heavy rain hit Florida's east coast this week. In Seminole County, Lake Monroe was <a href=\"https://clickorlando.com/news/2026/11/17/live-updates\" target=\"_blank\" rel=\"noopener\">projected to rise to 7.5-8 ft</a> by Friday."
+          "headline": "Severe heatwave warning stays in place for Cape York",
+          "url": "https://www.abc.net.au/news/2026-11-18/far-north-queensland-local-news-briefing/107397492",
+          "summary": "The Bureau of Meteorology forecast highs in the high 30s to near 40°C before easing later in the week. Weipa set a November record of 39.9°C on Nov 10."
         }
       ]
     },
     "renewables": {
-      "overview_html": "Scotland granted <a href=\"https://renews.biz/offshore-wind/muir-mhor-secures-1gw-offshore-consent\" target=\"_blank\" rel=\"noopener\">offshore consent for the 1 GW Muir Mhòr</a> floating wind farm. The European Commission <a href=\"https://www.brusselstimes.com/2410984/eu-greenlights-e9-5b-dutch-wind-aid-with-strict-repayment-safeguards\" target=\"_blank\" rel=\"noopener\">approved up to €9.5bn</a> in Dutch state aid for the IJmuiden Ver Gamma offshore sites. In Washington, a <a href=\"https://rollcall.com/2026/11/19/sweeping-permitting-overhaul-passes-senate-on-to-house\" target=\"_blank\" rel=\"noopener\">permitting overhaul passed the Senate</a> and now goes to the House.",
+      "overview_html": "The US administration is <a href=\"https://www.windpowermonthly.com/article/1975640/us-offshore-wind-farm-faces-new-federal-review\" target=\"_blank\" rel=\"noopener\">reviewing a key permit</a> for EDF's 2.8 GW Atlantic Shores South project. Solcast data show October irradiance <a href=\"https://www.pv-magazine.com/2026/11/20/high-pressure-drives-irradiance-gains-across-south-east-asia-as-sichuan-misses-out/\" target=\"_blank\" rel=\"noopener\">more than 20% above average</a> across southern China and Southeast Asia. The Philippines signed an <a href=\"https://www.manilatimes.net/2026/11/21/news/ph-taps-offshore-wind-potential-to-cut-reliance-on-imported-fuel/2475398\" target=\"_blank\" rel=\"noopener\">offshore wind deal with Ming Yang</a>.",
       "items": [
         {
-          "source": "reNEWS",
+          "source": "Windpower Monthly",
           "date": "2026-11-19",
-          "headline": "Muir Mhòr secures offshore consent for 1 GW of floating wind",
-          "url": "https://renews.biz/offshore-wind/muir-mhor-secures-1gw-offshore-consent",
-          "summary": "The Vattenfall and Fred. Olsen Seawind project sits about 63 km off Peterhead and targets generation in the early 2030s. It was the first fully floating ScotWind project to file both onshore and offshore applications."
+          "headline": "Atlantic Shores South faces a new federal permit review",
+          "url": "https://www.windpowermonthly.com/article/1975640/us-offshore-wind-farm-faces-new-federal-review",
+          "summary": "The administration is re-examining a key permit for EDF's stalled 2.8 GW project off New Jersey. The review adds to delays for US East Coast offshore wind."
         },
         {
-          "source": "The Brussels Times",
-          "date": "2026-11-17",
-          "headline": "EU approves up to €9.5bn in Dutch aid for two North Sea wind farms",
-          "url": "https://www.brusselstimes.com/2410984/eu-greenlights-e9-5b-dutch-wind-aid-with-strict-repayment-safeguards",
-          "summary": "The variable premium supports IJmuiden Ver Gamma-A and Gamma-B, expected to produce up to 7,441 GWh a year. It pays a premium on top of market revenue only when power prices fall below production costs."
+          "source": "PV Magazine (Solcast)",
+          "date": "2026-11-20",
+          "headline": "October irradiance ran over 20% above average in Southeast Asia",
+          "url": "https://www.pv-magazine.com/2026/11/20/high-pressure-drives-irradiance-gains-across-south-east-asia-as-sichuan-misses-out/",
+          "summary": "Solcast attributes the gains in southern China and Southeast Asia to strong El Niño conditions, persistent high pressure and less cloud. Sichuan came in below average."
         },
         {
-          "source": "Roll Call",
-          "date": "2026-11-19",
-          "headline": "US Senate passes a permitting overhaul covering transmission and wind and solar",
-          "url": "https://rollcall.com/2026/11/19/sweeping-permitting-overhaul-passes-senate-on-to-house",
-          "summary": "The bill would ease interstate transmission siting and limit NEPA legal challenges. The House takes it up after the Thanksgiving recess."
+          "source": "Manila Times",
+          "date": "2026-11-21",
+          "headline": "Philippines signs offshore wind agreement with China's Ming Yang",
+          "url": "https://www.manilatimes.net/2026/11/21/news/ph-taps-offshore-wind-potential-to-cut-reliance-on-imported-fuel/2475398",
+          "summary": "President Marcos signed the agreement to build out offshore wind infrastructure and cut reliance on imported fuel."
         }
       ]
     },
     "science": {
-      "overview_html": "A University at Albany study in GRL <a href=\"https://phys.org/news/2026-11-google-ai-hurricane.html\" target=\"_blank\" rel=\"noopener\">tested Google’s WeatherNext Cyclone intensity forecasts</a> against NHC and JTWC and found weak spots on the strongest, fastest-strengthening storms. Work presented at the AMS hurricane conference <a href=\"https://yaleclimateconnections.org/2026/11/theres-a-small-chance-climate-change-could-reduce-atlantic-hurricane-activity-heres-how/\" target=\"_blank\" rel=\"noopener\">projects Atlantic upper-level troughs expanding west</a> as climate warms. On arXiv, <a href=\"https://arxiv.org/abs/2611.25570\" target=\"_blank\" rel=\"noopener\">WeatherCraft</a> trains a probabilistic forecaster on discrete weather tokens with reinforcement learning.",
+      "overview_html": "A <a href=\"https://arxiv.org/abs/2611.23863\" target=\"_blank\" rel=\"noopener\">review led by Messori</a> compares data-driven and physics-based forecasts of extremes and finds hybrid systems show some of the largest gains. A NeurIPS workshop paper <a href=\"https://arxiv.org/abs/2611.25119\" target=\"_blank\" rel=\"noopener\">probes GraphCast with sparse autoencoders</a> and finds a feature tied to the model's mesh affects geopotential skill. It was a thin week for new results in the window this run could reach.",
       "items": [
         {
-          "source": "Phys.org",
-          "date": "2026-11-19",
-          "headline": "UAlbany tests Google's AI cyclone model on four years of storms",
-          "url": "https://phys.org/news/2026-11-google-ai-hurricane.html",
-          "meta": "University at Albany · Geophysical Research Letters",
-          "summary": "The study scored WeatherNext Cyclone intensity forecasts for every tropical cyclone from June 2022 to May 2026 against NHC and JTWC. The model may miss detail needed for the strongest, fastest-intensifying storms; the newer 2026 version was not tested."
-        },
-        {
-          "source": "Yale Climate Connections",
+          "source": "arXiv",
           "date": "2026-11-18",
-          "headline": "Westward-expanding Atlantic upper troughs could curb hurricane activity",
-          "url": "https://yaleclimateconnections.org/2026/11/theres-a-small-chance-climate-change-could-reduce-atlantic-hurricane-activity-heres-how/",
-          "summary": "A paper at the 2026 AMS hurricane conference projects Atlantic tropical upper-tropospheric troughs extending west in a warmer climate. A <a href=\"https://www.pnnl.gov/publications/future-projection-tropical-upper-tropospheric-troughs-and-implications-tropical\" target=\"_blank\" rel=\"noopener\">45-model CMIP6 study</a> shows the same Atlantic expansion and Pacific contraction."
+          "headline": "Review compares data-driven and NWP forecasts of extreme weather",
+          "url": "https://arxiv.org/abs/2611.23863",
+          "meta": "Messori et al. · arXiv preprint (physics.ao-ph)",
+          "summary": "The review surveys how ML and physics-based models handle extremes and finds hybrid systems that combine the two show some of the largest gains."
         },
         {
           "source": "arXiv",
           "date": "2026-11-19",
-          "headline": "WeatherCraft aligns a token-based probabilistic forecaster with reinforcement learning",
-          "url": "https://arxiv.org/abs/2611.25570",
-          "meta": "arXiv preprint (cs.LG)",
-          "summary": "The framework encodes weather states as discrete tokens, then uses one model for both probabilistic generation and reinforcement-learning alignment."
-        },
-        {
-          "source": "arXiv",
-          "date": "2026-11-19",
-          "headline": "Prototype conditioning makes neural forecaster features inspectable",
-          "url": "https://arxiv.org/abs/2611.25848",
-          "meta": "arXiv preprint (cs.LG)",
-          "summary": "Learned prototypes condition the forecaster and can be deleted to measure their effect on error. The authors report accuracy gains on GlobalForecast and TyphoonTracking benchmarks."
-        },
-        {
-          "source": "CNN",
-          "date": "2026-11-17",
-          "headline": "El Niño wind shift shuts down coastal upwelling off California",
-          "url": "https://www.cnn.com/2026/11/17/climate/super-el-nino-record-breaking-unique-event",
-          "summary": "El Niño changed prevailing surface winds and stopped the upwelling that keeps California's nearshore water cold, driving a marine heatwave. Zeke Hausfather says the event is likely the strongest in 1,000 years based on tree-ring and coral records."
+          "headline": "Sparse autoencoder audit finds GraphCast relies on mesh-locked features",
+          "url": "https://arxiv.org/abs/2611.25119",
+          "meta": "Gu and Last · NeurIPS 2026 workshop",
+          "summary": "Ablating a feature tied to GraphCast's computational mesh raised global geopotential height error despite no physical meaning. The authors argue physical interpretability and causal usefulness are separable (<a href=\"https://neurips.cc/virtual/2026/164194\" target=\"_blank\" rel=\"noopener\">NeurIPS 2026 page</a>)."
         }
       ]
     },
@@ -170,15 +155,27 @@
       "items": [
         {
           "date": "2026-11-19",
-          "title": "MITRE expands its weather modeling work with TempoQuest for federal missions",
-          "body_html": "MITRE and TempoQuest <a href=\"https://www.executivebiz.com/articles/mitre-tempoquest-weather-forecasting-collaboration\" target=\"_blank\" rel=\"noopener\">broadened their partnership</a> to aim TempoQuest's model acceleration work at federal priorities. TempoQuest's tools helped build MITRE's Weather 1K AI training dataset, which <a href=\"https://www.mitre.org/news-insights/news-release/mitre-and-weather-company-announce-collaboration-advance-global-weather\" target=\"_blank\" rel=\"noopener\">The Weather Company licensed</a> in April.",
-          "source_html": "<a href=\"https://www.executivebiz.com/articles/mitre-tempoquest-weather-forecasting-collaboration\">ExecutiveBiz</a>"
+          "title": "Meteomatics opens a weather drone base at McAlester airport in Oklahoma",
+          "body_html": "Meteomatics <a href=\"https://dronexl.co/2026/11/19/meteomatics-mcalester-meteobase-oklahoma-noaa-weather-drones/\" target=\"_blank\" rel=\"noopener\">will run its second operational Meteobase</a> at McAlester Regional Airport, the first at an active US airport. It flies under the NOAA National Mesonet Program, managed by KBR with Synoptic Data as lead subcontractor, and feeds boundary-layer profiles into Meteomatics' US1k model.",
+          "source_html": "<a href=\"https://dronexl.co/2026/11/19/meteomatics-mcalester-meteobase-oklahoma-noaa-weather-drones/\">DroneXL</a>"
         },
         {
-          "date": "2026-11-18",
-          "title": "SatLeo Labs holds $54M in letters of intent for thermal satellites",
-          "body_html": "The Ahmedabad startup has <a href=\"https://space.com/space-exploration/satellites/indias-satleo-labs-wants-to-build-a-thermometer-for-earth-in-space\" target=\"_blank\" rel=\"noopener\">raised about $6M since 2023</a> and plans satellites mapping land-surface temperature. It pitches near-real-time temperature data for heat, wildfire and crop monitoring.",
-          "source_html": "<a href=\"https://space.com/space-exploration/satellites/indias-satleo-labs-wants-to-build-a-thermometer-for-earth-in-space\">Space.com</a>"
+          "date": "2026-11-19",
+          "title": "ECMWF and partners win two HPCwire awards for AI forecasting",
+          "body_html": "ECMWF and European met services <a href=\"https://www.ecmwf.int/node/38441\" target=\"_blank\" rel=\"noopener\">won Best Use of HPC/AI in Physical Sciences</a> for operational AI models, and Forecast-in-a-Box won the societal response category. Forecast-in-a-Box packages ECMWF and Anemoi software so public institutions can run AI forecasts on their own hardware.",
+          "source_html": "<a href=\"https://www.ecmwf.int/node/38441\">ECMWF</a>"
+        },
+        {
+          "date": "2026-11-16",
+          "title": "Parallel Works wins an HPCwire award for moving NOAA forecast workloads to the cloud",
+          "body_html": "Parallel Works took the <a href=\"https://www.hpcwire.com/off-the-wire/parallel-works-deploys-mission-critical-weather-forecasting-to-the-cloud-expanding-real-time-predictions-at-scale/\" target=\"_blank\" rel=\"noopener\">Editors’ Choice award for Best Use of HPC in the Cloud</a> at SC26 for running mission-critical weather forecasting in the cloud. Its software moves NOAA workflows, including RRFS development, between supercomputers and commercial clouds.",
+          "source_html": "<a href=\"https://www.hpcwire.com/off-the-wire/parallel-works-deploys-mission-critical-weather-forecasting-to-the-cloud-expanding-real-time-predictions-at-scale/\">HPCwire</a>"
+        },
+        {
+          "date": "2026-11-17",
+          "title": "ECMWF details free forecast data for WMO members under Early Warnings for All",
+          "body_html": "ECMWF set out its <a href=\"https://www.ecmwf.int/node/38423\" target=\"_blank\" rel=\"noopener\">support for national met services</a>, centred on the <a href=\"https://www.ecmwf.int/en/forecasts/dataset/wmo-support-dataset\" target=\"_blank\" rel=\"noopener\">WMO Support Dataset</a>. The free regional feed gives fields to initialise limited-area models such as WRF and ICON, for official use only, and cannot be redistributed.",
+          "source_html": "<a href=\"https://www.ecmwf.int/node/38423\">ECMWF</a>"
         }
       ]
     }
