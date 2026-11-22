@@ -1,0 +1,207 @@
+{
+  "digest_date": "2026-11-22",
+  "metar": "DIGEST 220719Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "COP31 presidents Australia and Turkey <a href=\"https://www.rappler.com/world/global-affairs/cop31-climate-talks-close-final-deal-november-22-2026/\" target=\"_blank\" rel=\"noopener\">tabled a new package</a> early Sunday after talks overran by two days. The draft <a href=\"https://www.rte.ie/news/world/2026/1122/1600166-cop31-turkey/\" target=\"_blank\" rel=\"noopener\">acknowledges warming will exceed 1.5°C</a> but omits fossil fuels; approval was pending at publication. Pacific states <a href=\"https://islandsbusiness.com/pacnews/pacnews-one-19-november-2026/\" target=\"_blank\" rel=\"noopener\">presented 70 renewable projects worth $2.3bn</a> at the summit.",
+      "items": [
+        {
+          "source": "Rappler",
+          "date": "2026-11-22",
+          "headline": "COP31 presidents table a new package after talks run two days over",
+          "url": "https://www.rappler.com/world/global-affairs/cop31-climate-talks-close-final-deal-november-22-2026/",
+          "summary": "Delegations had until 03:00 GMT Sunday to object, with a plenary set to start approval at 06:00 GMT. COP31 President Murat Kurum said concerns on fossil fuels and adaptation finance had been addressed."
+        },
+        {
+          "source": "RTÉ",
+          "date": "2026-11-22",
+          "headline": "Draft COP31 deal would accept that warming will exceed 1.5°C",
+          "url": "https://www.rte.ie/news/world/2026/1122/1600166-cop31-turkey/",
+          "summary": "If approved, the text would acknowledge for the first time that global warming is on course to pass the 1.5°C threshold. It does not mention fossil fuels, which critics say opens the door to more fossil development."
+        },
+        {
+          "source": "Islands Business",
+          "date": "2026-11-19",
+          "headline": "Pacific Islands present 70 renewable projects worth $2.3bn at COP31",
+          "url": "https://islandsbusiness.com/pacnews/pacnews-one-19-november-2026/",
+          "summary": "Pacific governments pitched a pipeline of 70 renewable energy projects valued at US$2.3 billion to investors and donors at the summit."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Central Florida river flooding",
+          "status": "St. Johns River at record levels",
+          "impact": "Rain totals above 2 ft in parts of Brevard County pushed the St. Johns River past its 1953 record near Cocoa. A flood emergency covers 21 counties; rain tapers off Nov 21-22 but downstream gauges keep rising through the week."
+        },
+        {
+          "name": "Thanksgiving-week storms, US coasts",
+          "status": "Forecast Nov 24-27",
+          "impact": "At least three more Pacific storms hit the West Coast, the strongest Tuesday-Wednesday with king tides. A Southeast low may move up the East Coast with rain and wind around Thanksgiving Day."
+        },
+        {
+          "name": "Heavy rain, southern Thailand",
+          "status": "TMD heavy-rain warning",
+          "impact": "Heavy to very heavy rain could trigger flash floods and runoff in the south, with rough seas in the Gulf of Thailand and Andaman Sea."
+        }
+      ],
+      "overview_html": "Central Florida's flood is the main event: the St. Johns River <a href=\"https://www.natureworldnews.com/articles/73940/20261119/stalled-storm-pushes-st-johns-river-past-its-1953-record-level-3-flood-threat-shifts-floridas.htm\" target=\"_blank\" rel=\"noopener\">passed its 1953 record near Cocoa</a> and the emergency now <a href=\"https://rollingout.com/2026/11/21/florida-flooding-21-counties-emergency/\" target=\"_blank\" rel=\"noopener\">covers 21 counties</a>. Forecasters still expect <a href=\"https://weather.com/2026/11/21/holiday/thanksgiving/thanksgiving-travel-weather-forecast-us-storms\" target=\"_blank\" rel=\"noopener\">storms on both US coasts</a> around Thanksgiving, with <a href=\"https://www.accuweather.com/en/winter-weather/relentless-storms-with-rain-snow-and-wind-to-hammer-california-west-coast-into-week-of-thanksgiving/1960308\" target=\"_blank\" rel=\"noopener\">three more Pacific storms</a> for California. Thailand has <a href=\"https://borneobulletin.com.bn/thailand-braces-for-heavy-rain-rough-seas\" target=\"_blank\" rel=\"noopener\">warned of heavy rain</a> in the south.",
+      "items": [
+        {
+          "source": "Nature World News",
+          "date": "2026-11-19",
+          "headline": "St. Johns River passes its 1953 flood record near Cocoa",
+          "url": "https://www.natureworldnews.com/articles/73940/20261119/stalled-storm-pushes-st-johns-river-past-its-1953-record-level-3-flood-threat-shifts-floridas.htm",
+          "summary": "NWS Melbourne said the river near Cocoa rose past the flood of record set in 1953 after a stalled storm. Reports put the crest near 18.7 ft against a prior record of about 17.6 ft."
+        },
+        {
+          "source": "Rolling Out",
+          "date": "2026-11-21",
+          "headline": "Florida's flood emergency widens to 21 counties",
+          "url": "https://rollingout.com/2026/11/21/florida-flooding-21-counties-emergency/",
+          "summary": "The state emergency now spans 21 counties, with more than 100 water rescues in Brevard County. Melbourne has logged more than 17 inches of rain this month, its wettest November on record."
+        },
+        {
+          "source": "Central Florida Public Media",
+          "date": "2026-11-19",
+          "headline": "Rising St. Johns River set to flood Seminole and Volusia counties",
+          "url": "https://www.cfpublic.org/environment/2026-11-19/rising-st-johns-river-likely-flood-soon-seminole-volusia-counties",
+          "summary": "Water draining north from Brevard is pushing the river up downstream, with Lake Harney and Lake Monroe expected to crest later in the week. River flooding will outlast the rain."
+        },
+        {
+          "source": "weather.com",
+          "date": "2026-11-21",
+          "headline": "Northeast faces a possible major storm on Thanksgiving Day",
+          "url": "https://weather.com/2026/11/21/holiday/thanksgiving/thanksgiving-travel-weather-forecast-us-storms",
+          "summary": "A low forming over the Southeast Tuesday night moves into the mid-Atlantic Wednesday, with rain, wind and possible wet snow in the Appalachians on Thursday. Monday looks like the quietest travel day."
+        },
+        {
+          "source": "AccuWeather",
+          "date": "2026-11-21",
+          "headline": "At least three more Pacific storms to hit the West Coast before Thanksgiving",
+          "url": "https://www.accuweather.com/en/winter-weather/relentless-storms-with-rain-snow-and-wind-to-hammer-california-west-coast-into-week-of-thanksgiving/1960308",
+          "summary": "The strongest arrives Tuesday into Wednesday with winds that could down trees and cut power. King tides Tuesday through Thursday coincide with its landfall; snow levels will be higher than in earlier storms."
+        },
+        {
+          "source": "AccuWeather",
+          "date": "2026-11-20",
+          "headline": "Beaver supermoon adds to coastal flooding risk through Thanksgiving",
+          "url": "https://www.accuweather.com/en/space-news/full-beaver-supermoon-november-2026/1961930",
+          "summary": "The first of three consecutive supermoons raises tides and could push water onto low-lying coastal roads through the holiday week."
+        },
+        {
+          "source": "Borneo Bulletin",
+          "date": "2026-11-21",
+          "headline": "Thailand warns of heavy rain and flash floods in the south",
+          "url": "https://borneobulletin.com.bn/thailand-braces-for-heavy-rain-rough-seas",
+          "summary": "The Thai Meteorological Department forecast heavy to very heavy rain in parts of southern Thailand, with risk of flash floods and runoff from higher ground. Winds and waves are strengthening in the Gulf of Thailand and Andaman Sea."
+        },
+        {
+          "source": "RTÉ",
+          "date": "2026-11-21",
+          "headline": "Met Éireann issues yellow rain and gale warnings for Saturday night",
+          "url": "https://www.rte.ie/weather/",
+          "summary": "A Status Yellow rain warning runs from 23:00 on Nov 21 to 09:00 on Nov 22, with localised flooding possible. A separate gale warning covers east to southeast winds reaching force 8."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "EU negotiators <a href=\"https://www.pv-tech.org/eu-three-month-deadline-solar-approvals-permitting-reforms/\" target=\"_blank\" rel=\"noopener\">agreed a three-month permit cap</a> for solar and co-located storage. The UK set <a href=\"https://assets.publishing.service.gov.uk/media/6afedc86d367b3459e423f77/CfD-allocation-round-8-contract-budget-notice.pdf\" target=\"_blank\" rel=\"noopener\">notional £1 initial budgets</a> for its AR8 auction and will see bids before setting real ones. India's solar curtailment <a href=\"https://tribuneindia.com/news/business/grid-constraints-slower-project-awards-may-weigh-on-solar-capacity-growth-beyond-fy28-report\" target=\"_blank\" rel=\"noopener\">reached 8,133 GWh</a> in April-June, led by Rajasthan and Gujarat.",
+      "items": [
+        {
+          "source": "PV Tech",
+          "date": "2026-11-18",
+          "headline": "EU sets three-month permit deadline for solar and co-located storage",
+          "url": "https://www.pv-tech.org/eu-three-month-deadline-solar-approvals-permitting-reforms/",
+          "summary": "The provisional deal gives stand-alone storage six months and pumped hydro two years, and cuts the mandatory benefit-sharing threshold from 10 MW to 7 MW. Member states have 18 months to transpose the rules."
+        },
+        {
+          "source": "UK Government",
+          "date": "2026-11-19",
+          "headline": "UK sets notional £1 initial budgets for CfD round 8",
+          "url": "https://assets.publishing.service.gov.uk/media/6afedc86d367b3459e423f77/CfD-allocation-round-8-contract-budget-notice.pdf",
+          "summary": "Pots 1-4, including offshore wind, start at £1, so no project clears on the initial budget. The government will view anonymised bids before setting final budgets, with separate clearing prices for Scottish and English/Welsh offshore wind."
+        },
+        {
+          "source": "The Tribune",
+          "date": "2026-11-22",
+          "headline": "India's solar curtailment reached 8,133 GWh in April-June",
+          "url": "https://tribuneindia.com/news/business/grid-constraints-slower-project-awards-may-weigh-on-solar-capacity-growth-beyond-fy28-report",
+          "summary": "A YES Securities report says grid constraints hit hardest in Rajasthan and Gujarat and may slow solar capacity growth after FY28."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "An <a href=\"https://news.agu.org/11-19-2026-typhoons-charge-up-faster-after-meeting-marine-heatwaves/\" target=\"_blank\" rel=\"noopener\">AGU study</a> finds western Pacific typhoons crossing marine heatwaves are two to three times more likely to rapidly intensify. On the ML side, a preprint <a href=\"https://arxiv.org/html/2611.24020\" target=\"_blank\" rel=\"noopener\">fine-tunes Aurora for joint chemical and meteorological data assimilation</a>, and <a href=\"https://arxiv.org/abs/2611.20815\" target=\"_blank\" rel=\"noopener\">ForeSay</a> conditions a nowcasting generator on text forecasts. The <a href=\"https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/record-breaking-iberian-fire-season-three-times-larger-due-to-climate-change-\" target=\"_blank\" rel=\"noopener\">State of Wildfires report</a> attributes a tripling of Iberia's 2025 burned area to climate change.",
+      "items": [
+        {
+          "source": "AGU",
+          "date": "2026-11-19",
+          "headline": "Typhoons over marine heatwaves are up to three times likelier to rapidly intensify",
+          "url": "https://news.agu.org/11-19-2026-typhoons-charge-up-faster-after-meeting-marine-heatwaves/",
+          "summary": "Subtropical western North Pacific typhoons crossing marine heatwaves had a 9-12% chance of rapid intensification about two days later, against 3.5-4.5% for storms that avoided them.",
+          "meta": "Geophysical Research Letters"
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-11-18",
+          "headline": "AuroraChem couples chemical and meteorological data assimilation in one model",
+          "url": "https://arxiv.org/html/2611.24020",
+          "summary": "Researchers fine-tuned an atmospheric foundation model to include chemistry. Idealised tests show chemical observations constrain the meteorological state and vice versa, and the model's low cost makes ensemble assimilation practical.",
+          "meta": "arXiv:2611.24020"
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-11-16",
+          "headline": "ForeSay conditions a nowcasting generator on a text description of the storm",
+          "url": "https://arxiv.org/abs/2611.20815",
+          "summary": "A vision-language model first describes the coming storm in words; a rectified-flow generator then produces radar frames conditioned on that text. The authors report the best CSI at the highest rain thresholds on six datasets.",
+          "meta": "arXiv:2611.20815"
+        },
+        {
+          "source": "Met Office",
+          "date": "2026-11-17",
+          "headline": "State of Wildfires finds climate change tripled Iberia's 2025 burned area",
+          "url": "https://www.metoffice.gov.uk/about-us/news-and-media/media-centre/weather-and-climate-news/2026/record-breaking-iberian-fire-season-three-times-larger-due-to-climate-change-",
+          "summary": "The 2025-2026 report finds extreme fire weather across Iberia in 2025 was three times more likely due to human-caused climate change, and the area burned three times larger. The August episode caused 14 deaths and over 42,000 evacuations.",
+          "meta": "State of Wildfires 2025-2026 · ESSD"
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-16",
+          "title": "ICEYE unveils Gen5 SAR satellite with 11 cm resolution and onboard AI",
+          "body_html": "ICEYE <a href=\"https://satnews.com/2026/11/16/iceye-unveils-gen5-sar-satellite-with-11-centimeter-resolution-and-onboard-ai/\" target=\"_blank\" rel=\"noopener\">introduced its fifth-generation SAR satellite</a>, with resolution down to 11 cm for government users and 16 cm for commercial users, 1 Gbps downlink and an onboard AI processor. The company says it can deliver a Gen5 satellite within 12 months of signing; no first launch date was given.",
+          "source_html": "<a href=\"https://satnews.com/2026/11/16/iceye-unveils-gen5-sar-satellite-with-11-centimeter-resolution-and-onboard-ai/\">SatNews</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "StormGeo's Climatempo installs three S-band radars in Rio Grande do Sul",
+          "body_html": "Climatempo <a href=\"https://shipandbunker.com/news/am/987502-stormgeo-subsidiary-climatempo-installs-weather-radars-in-brazil\" target=\"_blank\" rel=\"noopener\">is building and will operate a three-radar network</a> for the Rio Grande do Sul state government, with a data integration platform and monitoring services. Nine sites were chosen from 32 candidates after the state's 2024 floods. The contract adds to the Porto Alegre radar Climatempo already runs.",
+          "source_html": "<a href=\"https://shipandbunker.com/news/am/987502-stormgeo-subsidiary-climatempo-installs-weather-radars-in-brazil\">Ship & Bunker</a>"
+        },
+        {
+          "date": "2026-11-20",
+          "title": "SatSure raises $21M with investment from an Indian sovereign fund",
+          "body_html": "Indian Earth observation analytics firm SatSure <a href=\"https://satellitetoday.com/finance/2026/11/20/indian-eo-startup-satsure-raises-21m-with-sovereign-fund-investment\" target=\"_blank\" rel=\"noopener\">raised $21 million</a>, with India's sovereign fund among the investors.",
+          "source_html": "<a href=\"https://satellitetoday.com/finance/2026/11/20/indian-eo-startup-satsure-raises-21m-with-sovereign-fund-investment\">Via Satellite</a>"
+        },
+        {
+          "date": "2026-11-18",
+          "title": "Tao Climate launches Tao Weather AI as a free worldwide service",
+          "body_html": "Tao Climate <a href=\"https://itbrief.co.uk/story/tao-climate-launches-free-ai-weather-service-worldwide\" target=\"_blank\" rel=\"noopener\">released Tao Weather AI</a>, a free conversational service that sets daily forecasts against longer-term local climate references. The company says it is not its own forecast model; it combines third-party forecast data with historical baselines.",
+          "source_html": "<a href=\"https://itbrief.co.uk/story/tao-climate-launches-free-ai-weather-service-worldwide\">IT Brief UK</a>"
+        },
+        {
+          "date": "2026-11-15",
+          "title": "mistEO raises ₹18 crore seed round for weather-risk analytics",
+          "body_html": "Kerala-based mistEO <a href=\"https://www.exchange4media.com/digital-news/ai-startup-misteo-raises-rs-18-crore-to-expand-climate-forecasting-technology-160264.html\" target=\"_blank\" rel=\"noopener\">raised ₹18 crore (about $1.9M)</a> in a seed round led by MGF-Kavachh. It pairs physics-based weather modelling with ML to give banks, insurers and agriculture asset-level risk estimates, and plans to expand into other Asian markets.",
+          "source_html": "<a href=\"https://www.exchange4media.com/digital-news/ai-startup-misteo-raises-rs-18-crore-to-expand-climate-forecasting-technology-160264.html\">exchange4media</a>"
+        }
+      ]
+    }
+  }
+}
