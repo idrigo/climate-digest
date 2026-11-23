@@ -1,0 +1,159 @@
+{
+  "digest_date": "2026-11-23",
+  "metar": "DIGEST 230716Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "COP31 in Antalya <a href=\"https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/\" target=\"_blank\" rel=\"noopener\">closed on Nov 22 without its main agreement</a> after the cover text dropped any mention of coal, oil and gas. The <a href=\"https://www.khan.co.kr/en/article/202611222110007\" target=\"_blank\" rel=\"noopener\">EU and others formally objected</a>, making it the first COP since 2009 to run past its deadline and still adopt no deal. Germanwatch's <a href=\"https://www.natureworldnews.com/articles/73913/20261118/dominica-myanmar-honduras-top-new-ranking-countries-hit-hardest-extreme-weather.htm\" target=\"_blank\" rel=\"noopener\">Climate Risk Index 2027</a> ranked Dominica, Myanmar and Honduras as hardest hit by extreme weather since 1996.",
+      "items": [
+        {
+          "source": "CBS News",
+          "date": "2026-11-22",
+          "headline": "COP31 ends with no agreement after fossil fuel talks stall",
+          "url": "https://www.cbsnews.com/news/un-cop31-climate-conference-ends-no-agreement-fossil-fuel-debate-standstill/",
+          "summary": "COP31 President Murat Kurum told the closing session the overarching text had no consensus and was not adopted. Talks ran about 44 hours past the scheduled close; <a href=\"https://phys.org/news/2026-11-cop31-climate-chaotic.html\" target=\"_blank\" rel=\"noopener\">separate decisions</a> on just transition, finance and technology did pass."
+        },
+        {
+          "source": "Eurasia Review",
+          "date": "2026-11-23",
+          "headline": "Guterres calls COP31 result deeply disappointing",
+          "url": "https://www.eurasiareview.com/23112026-cop31-ends-without-climate-pact-as-un-chief-warns-there-is-no-ambiguity-in-the-science/",
+          "summary": "UN Secretary-General António Guterres said there is \"no ambiguity in the science\" as the summit closed without a pact. The COP28 commitment to transition away from fossil fuels remains the standing text."
+        },
+        {
+          "source": "Nature World News",
+          "date": "2026-11-18",
+          "headline": "Germanwatch ranks Dominica, Myanmar and Honduras hardest hit by extreme weather",
+          "url": "https://www.natureworldnews.com/articles/73913/20261118/dominica-myanmar-honduras-top-new-ranking-countries-hit-hardest-extreme-weather.htm",
+          "summary": "The Climate Risk Index 2027, released at COP31 on Nov 17, covers 1996-2025; Jamaica, Sri Lanka and Spain top the 2025-only ranking. Heatwaves account for nearly 70% of recorded deaths, which Germanwatch says are likely undercounted."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Thanksgiving storm, eastern US",
+          "status": "Forecast Wed-Thu, Nov 25-26",
+          "impact": "A low forming over the Gulf and Deep South on Wednesday is expected to track up the East Coast into Thanksgiving Day, bringing rain, strong gusts and possible snow or ice on higher ground in upstate New York and northern New England. Monday and Tuesday look quiet for travel."
+        },
+        {
+          "name": "Central Florida river flooding",
+          "status": "St. Johns River above record at Cocoa",
+          "impact": "Flooding at Cocoa began Nov 2 and passed the 1953 record last week. AccuWeather expects the river to keep rising into Thanksgiving week and minor flooding at Cocoa to persist into January 2027; Lake Harney downstream may also set a record."
+        },
+        {
+          "name": "Southern Thailand heavy rain",
+          "status": "TMD advisory No. 16 in force",
+          "impact": "A strengthening northeast monsoon is bringing flash-flood and landslide risk to Narathiwat, Pattani and other southern provinces. TMD expects rain to increase again on Nov 24-25, with higher waves in the Gulf of Thailand and Andaman Sea."
+        },
+        {
+          "name": "Queensland heat and storms",
+          "status": "Cape York heatwave easing",
+          "impact": "Severe storms are forecast west of Charleville in south-western Queensland, while the far-north heatwave lingers before easing. Storms may return to the south-east later in the week."
+        }
+      ],
+      "overview_html": "The week's US focus is a <a href=\"https://www.wsmv.com/2026/11/23/travel-weather-update-major-storm-will-affect-eastern-13-us-thanksgiving-day/\" target=\"_blank\" rel=\"noopener\">Thanksgiving Day storm</a> for the eastern third of the country, from the Mid-South to New England. In Florida the St. Johns River <a href=\"https://www.accuweather.com/en/severe-weather/st-johns-river-smashes-73-year-record-in-florida-with-flooding-that-could-last-into-2027/1961124\" target=\"_blank\" rel=\"noopener\">may stay in flood into January</a>. Thailand's weather agency issued a <a href=\"https://www.nationthailand.com/news/general/40073800\" target=\"_blank\" rel=\"noopener\">16th heavy-rain advisory</a> for the south, and Queensland faces <a href=\"https://www.abc.net.au/news/2026-11-23/storms-south-western-queensland-heatwave-far-north/107414108\" target=\"_blank\" rel=\"noopener\">storms in the south-west</a> as the far-north heatwave lingers.",
+      "items": [
+        {
+          "source": "WSMV",
+          "date": "2026-11-23",
+          "headline": "Major storm expected over the eastern third of the US on Thanksgiving Day",
+          "url": "https://www.wsmv.com/2026/11/23/travel-weather-update-major-storm-will-affect-eastern-13-us-thanksgiving-day/",
+          "summary": "Rain spreads across the Mid-South late Wednesday and reaches the Northeast on Thanksgiving Day. Wednesday and Thursday carry the main travel risk."
+        },
+        {
+          "source": "Boston Globe",
+          "date": "2026-11-19",
+          "headline": "Coastal storm to bring heavy rain and gusty winds to southern New England",
+          "url": "https://www.bostonglobe.com/2026/11/19/metro/new-england-boston-weather-friday-forecast/",
+          "summary": "The Globe forecast a coastal storm, possibly with some tropical characteristics, for late Sunday into Monday, with bursts of heavy rain and minor coastal flooding. The rest of Thanksgiving week was then trending mostly dry in its forecast."
+        },
+        {
+          "source": "Nation Thailand",
+          "date": "2026-11-22",
+          "headline": "Thai Meteorological Department warns the south of flash floods and landslides",
+          "url": "https://www.nationthailand.com/news/general/40073800",
+          "summary": "The 16th advisory, issued at 5 pm on Nov 22, added cell-broadcast alerts for Narathiwat and Pattani. TMD expects rainfall to increase again on Nov 24-25."
+        },
+        {
+          "source": "ABC News",
+          "date": "2026-11-23",
+          "headline": "Severe storms forecast for south-western Queensland as far-north heat lingers",
+          "url": "https://www.abc.net.au/news/2026-11-23/storms-south-western-queensland-heatwave-far-north/107414108",
+          "summary": "The Bureau of Meteorology warned of severe storms west of Charleville, with storms possible again in the south-east later in the week. The Cape York heatwave is set to ease."
+        },
+        {
+          "source": "Euronews",
+          "date": "2026-11-20",
+          "headline": "El Niño expected to peak this winter as Europe prepares for cold",
+          "url": "https://www.euronews.com/2026/11/20/when-will-el-nino-peak-and-end-a-full-timeline-of-the-weather-phenomenon-taking-the-world-",
+          "summary": "Euronews set out the timeline for the current El Niño, which WMO expects to peak around December and continue into early 2027."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "An <a href=\"https://electrek.co/2026/11/16/adding-wind-cuts-solar-battery-storage-power-costs-nearly-20-percent/\" target=\"_blank\" rel=\"noopener\">Ember and GWEC analysis</a> finds that adding wind to solar and batteries cuts the median cost of meeting 90% of demand from $105 to $86/MWh. Vietnam <a href=\"https://www.ess-news.com/2026/11/17/vietnam-finalizes-2026-storage-pricing-under-two-part-tariff-as-curtailment-pressure-grows/\" target=\"_blank\" rel=\"noopener\">set 2026 storage pricing</a> under its two-part tariff as curtailment grows, and New England's <a href=\"https://mainebeacon.com/new-england-offshore-wind-marks-record-output-despite-federal-delays/\" target=\"_blank\" rel=\"noopener\">wind output ran 68% higher</a> in the first nine months of 2026.",
+      "items": [
+        {
+          "source": "Electrek",
+          "date": "2026-11-16",
+          "headline": "Ember finds adding wind cuts solar-plus-battery costs by nearly 20%",
+          "url": "https://electrek.co/2026/11/16/adding-wind-cuts-solar-battery-storage-power-costs-nearly-20-percent/",
+          "summary": "Adding wind lowers the median cost of covering 90% of demand from $105 to $86/MWh and cuts the modelled US battery need from 20 to 12 hours. Regions holding 75% of global demand could reach 90% for under $100/MWh with wind included."
+        },
+        {
+          "source": "ESS News",
+          "date": "2026-11-17",
+          "headline": "Vietnam finalizes 2026 storage pricing under its two-part tariff",
+          "url": "https://www.ess-news.com/2026/11/17/vietnam-finalizes-2026-storage-pricing-under-two-part-tariff-as-curtailment-pressure-grows/",
+          "summary": "The pricing applies the two-part capacity and energy tariff for standalone batteries set by Circular 62, in force since January 2026. It comes as curtailment of Vietnam's solar and wind fleets keeps rising."
+        },
+        {
+          "source": "Maine Beacon",
+          "date": "2026-11-18",
+          "headline": "New England wind output runs 68% above 2025 levels",
+          "url": "https://mainebeacon.com/new-england-offshore-wind-marks-record-output-despite-federal-delays/",
+          "summary": "EIA data show monthly wind generation in the first nine months of 2026 averaged 68% more than a year earlier. Vineyard Wind and Revolution Wind now run more than 120 turbines between them."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "A <a href=\"https://www.nature.com/articles/s41558-026-02805-8\" target=\"_blank\" rel=\"noopener\">Nature Climate Change study</a> finds that co-occurring atmospheric features are adding to extreme-rain increases over eastern North America, eastern Asia and western Europe. A <a href=\"https://phys.org/news/2026-11-atmospheric-nitrogen-emerges-major-nutrient.html\" target=\"_blank\" rel=\"noopener\">Science paper</a> puts atmospheric organic nitrogen deposition to the oceans at 12.8 Mt a year, and MIT researchers <a href=\"https://news.mit.edu/2026/qa-how-ocean-carbon-sequestration-changes-under-different-glacial-conditions-1116\" target=\"_blank\" rel=\"noopener\">explain how glacial sea ice</a> changed deep-ocean carbon storage.",
+      "items": [
+        {
+          "source": "Nature Climate Change",
+          "date": "2026-11-20",
+          "headline": "Concurrent atmospheric phenomena amplify extreme precipitation under warming",
+          "url": "https://www.nature.com/articles/s41558-026-02805-8",
+          "meta": "Wu, Tan, Liu et al. · Nature Climate Change",
+          "summary": "Changes in how often several atmospheric phenomena occur together add to rising extreme-precipitation totals across much of eastern North America, eastern Asia and western Europe."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-22",
+          "headline": "Atmospheric organic nitrogen supplies about 27% of nitrogen deposited on the oceans",
+          "url": "https://phys.org/news/2026-11-atmospheric-nitrogen-emerges-major-nutrient.html",
+          "meta": "Science",
+          "summary": "From 418 marine aerosol samples on 21 cruises, the authors estimate 12.8 million tonnes of organic nitrogen reach the oceans each year."
+        },
+        {
+          "source": "MIT News",
+          "date": "2026-11-16",
+          "headline": "MIT study links glacial sea ice expansion to deep-ocean carbon storage",
+          "url": "https://news.mit.edu/2026/qa-how-ocean-carbon-sequestration-changes-under-different-glacial-conditions-1116",
+          "meta": "Science Advances",
+          "summary": "The paper examines how expanded Antarctic sea ice and shifts in ocean circulation during ice ages changed how much carbon the deep ocean held."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-19",
+          "title": "Arbol launches parametric cover for GPU residual value",
+          "body_html": "Weather and climate underwriter Arbol <a href=\"https://www.artemis.bm/news/arbol-launches-parametric-insurance-for-gpu-residual-value-risk/\" target=\"_blank\" rel=\"noopener\">launched GPU Residual Value Protection</a>, which pays cash at term end if a benchmark GPU rental index falls below a strike the buyer chooses. It follows Arbol's cover for data-centre construction moratoriums, extending its index-based model beyond weather triggers.",
+          "source_html": "<a href=\"https://www.artemis.bm/news/arbol-launches-parametric-insurance-for-gpu-residual-value-risk/\">Artemis</a>"
+        }
+      ]
+    }
+  }
+}
