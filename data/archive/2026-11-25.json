@@ -1,0 +1,328 @@
+{
+  "digest_date": "2026-11-25",
+  "metar": "DIGEST 250719Z NOV26 · ROLLING 72H WINDOW",
+  "sections": {
+    "climate": {
+      "overview_html": "COP31 closed without a cover decision; <a href=\"https://earth.org/reactions-pour-in-as-cop31-talks-collapse-in-turkey/\" target=\"_blank\" rel=\"noopener\">Panama rejected the outcome</a> and <a href=\"https://www.eurasiareview.com/23112026-cop31-ends-without-climate-pact-as-un-chief-warns-there-is-no-ambiguity-in-the-science/\" target=\"_blank\" rel=\"noopener\">Guterres called it deeply disappointing</a>. The voluntary <a href=\"https://www.climateaction.org/news/cop31-reaches-its-final-day-new-momentum-on-electrification-but-a-weakened\" target=\"_blank\" rel=\"noopener\">electrification package</a> stands outside the failed text, and the IPCC timeline dispute moves to a December session.",
+      "items": [
+        {
+          "source": "Earth.Org",
+          "date": "2026-11-23",
+          "headline": "Panama rejects COP31 outcome as civil society calls the summit a failure",
+          "url": "https://earth.org/reactions-pour-in-as-cop31-talks-collapse-in-turkey/",
+          "summary": "COP31 President Murat Kurum declared the Antalya Pact not adopted. Oxfam said the summit delivered no meaningful outcomes, Canada called the result not what it hoped, and co-president Australia faced criticism at home."
+        },
+        {
+          "source": "Eurasia Review",
+          "date": "2026-11-23",
+          "headline": "Guterres calls COP31 result deeply disappointing",
+          "url": "https://www.eurasiareview.com/23112026-cop31-ends-without-climate-pact-as-un-chief-warns-there-is-no-ambiguity-in-the-science/",
+          "summary": "UN Secretary-General António Guterres said there is \"no ambiguity in the science\" as the summit closed without a pact. The COP28 commitment to transition away from fossil fuels remains the standing text."
+        },
+        {
+          "source": "Climate Action",
+          "date": "2026-11-20",
+          "headline": "COP31 hosts back a voluntary electrification package",
+          "url": "https://www.climateaction.org/news/cop31-reaches-its-final-day-new-momentum-on-electrification-but-a-weakened",
+          "summary": "The COP31 Electrification Delivery Package groups pledges to replace direct fossil fuel use with electric alternatives. It sat outside the negotiated text, so it stands despite the failed cover decision."
+        },
+        {
+          "source": "Al-Monitor",
+          "date": "2026-11-18",
+          "headline": "IPCC report timeline dispute heads to a December session",
+          "url": "https://www.al-monitor.com/originals/2026/11/saudi-arabia-defends-stance-climate-reports-amid-cop31-fight",
+          "summary": "Saudi Arabia, China and India want the seventh assessment reports delayed to 2029, after the 2028 global stocktake. The IPCC suspended its last session over the dispute and hopes to settle the timeline in December."
+        }
+      ]
+    },
+    "weather": {
+      "major_events": [
+        {
+          "name": "Thanksgiving coastal storm, eastern US",
+          "status": "Peak Thu Nov 26, moving out Fri",
+          "impact": "Heavy rain and coastal gusts up to 60 mph spread from the mid-Atlantic to New England on Thanksgiving, with record coastal flooding possible on Delaware Bay and in southern New Jersey. Weather.com expects significant delays at Northeast hub airports and possible freezing rain in interior northern New England."
+        },
+        {
+          "name": "West Coast storm and record king tides",
+          "status": "SF tide record 8.23 ft on Nov 24",
+          "impact": "San Francisco's gauge beat its November record of 7.97 ft (1982), with another king tide peak Wednesday morning and a high surf warning for the Bay Area. Some Marin County communities flooded and southern Oregon saw gusts of 40-60 mph as rain moved in."
+        },
+        {
+          "name": "Central Florida river flooding",
+          "status": "St. Johns at Sanford in major flood",
+          "impact": "The Sanford gauge reached 8.01 ft against a 5.5 ft flood stage, with a crest expected between Thursday and Saturday. Seminole County warns 20 or more homes could flood and that high water may last more than a month."
+        },
+        {
+          "name": "Southern Thailand monsoon floods",
+          "status": "More heavy rain forecast Nov 27-30",
+          "impact": "Flooding in Phatthalung affects 11,902 people in six districts, and Songkhla Lake has overflowed into homes in Sathing Phra. The Thai Meteorological Department warns of heavy to very heavy rain across the south from Nov 27-30."
+        }
+      ],
+      "overview_html": "A coastal storm peaks on Thanksgiving with <a href=\"https://www.foxweather.com/weather-news/major-thanksgiving-storm-set-slam-northeast-heavy-rain-gusty-winds-triggering-travel-disruptions\" target=\"_blank\" rel=\"noopener\">gusts up to 60 mph</a> and possible record flooding on Delaware Bay. On the West Coast, San Francisco's tide gauge <a href=\"https://abc7news.com/live-updates/live-bay-area-weather-updates-san-francisco-recovers-severe-flooding-more-storms-king-tides-coming-northern-california/20069742/entry/20076052/\" target=\"_blank\" rel=\"noopener\">hit 8.23 ft</a>, a November record, as another storm arrived. The St. Johns River at Sanford is in <a href=\"https://www.wusf.org/weather/2026-11-24/st-johns-river-levels-climb-in-seminole-county-with-more-rain-expected\" target=\"_blank\" rel=\"noopener\">major flood</a> with a crest due late this week, and southern Thailand faces <a href=\"https://www.nationthailand.com/news/general/40073854\" target=\"_blank\" rel=\"noopener\">more heavy rain on Nov 27-30</a>.",
+      "items": [
+        {
+          "source": "weather.com",
+          "date": "2026-11-24",
+          "headline": "Major Thanksgiving storm set for the Northeast and mid-Atlantic",
+          "url": "https://weather.com/2026/11/24/holiday/thanksgiving/east-coast-thanksgiving-storm-wind-rain-flooding",
+          "summary": "The storm reaches New England by Thursday afternoon or evening and moves out quickly rather than stalling. Forecasters expect significant flight delays at all Northeast hub airports."
+        },
+        {
+          "source": "Fox Weather",
+          "date": "2026-11-24",
+          "headline": "Thanksgiving storm could bring record flooding to Delaware Bay",
+          "url": "https://www.foxweather.com/weather-news/major-thanksgiving-storm-set-slam-northeast-heavy-rain-gusty-winds-triggering-travel-disruptions",
+          "summary": "Coastal winds could reach 60 mph, and Fox Weather says the storm may rank among the worst Thanksgiving Day storms for the I-95 corridor for rain and wind."
+        },
+        {
+          "source": "ABC7 San Francisco",
+          "date": "2026-11-24",
+          "headline": "San Francisco sets a November water-level record above 8 feet",
+          "url": "https://abc7news.com/live-updates/live-bay-area-weather-updates-san-francisco-recovers-severe-flooding-more-storms-king-tides-coming-northern-california/20069742/entry/20076052/",
+          "summary": "The tide gauge hit 8.23 ft, beating the 7.97 ft November record from 1982. The NWS had warned king tides could reach the highest levels on record in some areas."
+        },
+        {
+          "source": "NorCal Public Media",
+          "date": "2026-11-24",
+          "headline": "King tides, high surf and a new storm hit the Northern California coast",
+          "url": "https://norcalpublicmedia.org/20261124102496/news-feed/king-tides-powerful-waves-and-incoming-storm-to-hit-norcal-coast",
+          "summary": "Heavy rain was due to start Tuesday evening, with a high surf warning for the Bay Area on Wednesday and evacuations along parts of the northern coast."
+        },
+        {
+          "source": "WUSF",
+          "date": "2026-11-24",
+          "headline": "St. Johns River keeps rising in Seminole County with more rain due",
+          "url": "https://www.wusf.org/weather/2026-11-24/st-johns-river-levels-climb-in-seminole-county-with-more-rain-expected",
+          "summary": "In St. Johns River Estates, about 50 homes, street flooding reached 3.5 to 4 feet and residents are using boats. Officials expect flooding to last well into December."
+        },
+        {
+          "source": "Nature World News",
+          "date": "2026-11-24",
+          "headline": "Floods hit nearly 12,000 people in southern Thailand",
+          "url": "https://www.natureworldnews.com/articles/74019/20261124/floods-hit-nearly-12000-people-southern-thailand-more-heavy-rain-forecast.htm",
+          "summary": "Mueang Phatthalung and Khuan Khanun are the hardest-hit districts. High tides and accumulated rain pushed Songkhla Lake into more than 100 homes."
+        },
+        {
+          "source": "Nation Thailand",
+          "date": "2026-11-24",
+          "headline": "Southern Thailand braces for another wave of heavy rain on Nov 27-30",
+          "url": "https://www.nationthailand.com/news/general/40073854",
+          "summary": "The Thai Meteorological Department lists Phatthalung and Songkhla among provinces facing heavy to very heavy rain on already flooded ground."
+        },
+        {
+          "source": "ABC News",
+          "date": "2026-11-23",
+          "headline": "Extreme heatwave develops across the Kimberley",
+          "url": "https://abc.net.au/news/2026-11-23/kimberley-and-pilbara-local-news-briefing/107416170",
+          "summary": "Conditions reach extreme on Nov 23-24 before easing to severe by Wednesday. A severe heatwave warning remains for the North Interior."
+        }
+      ]
+    },
+    "renewables": {
+      "overview_html": "A storm cell <a href=\"https://abc.net.au/news/2026-11-20/electranet-transmission-towers-farmers-crop-loss-shed-storm/107408426\" target=\"_blank\" rel=\"noopener\">flattened two transmission towers</a> in South Australia, cutting power to about 24,000 properties and forcing a local rooftop solar switch-off. Scotland's Green Volt <a href=\"https://constructionbriefing.com/news/green-volt-advances-25bn-offshore-wind-project/8137474.article\" target=\"_blank\" rel=\"noopener\">reserved 28 turbines</a> for floating wind, and India's <a href=\"https://tribuneindia.com/news/business/grid-constraints-slower-project-awards-may-weigh-on-solar-capacity-growth-beyond-fy28-report\" target=\"_blank\" rel=\"noopener\">solar curtailment hit 8,133 GWh</a> in April-June.",
+      "items": [
+        {
+          "source": "ABC News",
+          "date": "2026-11-20",
+          "headline": "Storm topples two transmission towers on South Australia's Eyre Peninsula",
+          "url": "https://abc.net.au/news/2026-11-20/electranet-transmission-towers-farmers-crop-loss-shed-storm/107408426",
+          "summary": "About 24,000 properties lost power and the state <a href=\"https://reneweconomy.com.au/state-orders-rooftop-solar-switch-off-asks-for-patience-as-wild-storm-cuts-power-to-24000-properties/\" target=\"_blank\" rel=\"noopener\">ordered rooftop solar switched off</a> in the affected area. AEMO said the wider NEM was not affected."
+        },
+        {
+          "source": "Construction Briefing",
+          "date": "2026-11-24",
+          "headline": "Green Volt reserves 28 turbines above 15 MW for Scottish floating wind",
+          "url": "https://constructionbriefing.com/news/green-volt-advances-25bn-offshore-wind-project/8137474.article",
+          "summary": "The £2.5 billion project also signed a £15 million port agreement in Aberdeen, moving it closer to construction."
+        },
+        {
+          "source": "SolarQuarter",
+          "date": "2026-11-24",
+          "headline": "Madhya Pradesh approves 200 MW floating solar and 800 MW battery at Omkareshwar",
+          "url": "https://solarquarter.com/2026/11/24/madhya-pradesh-approves-200-mw-omkareshwar-floating-solar-expansion-with-800-mw-battery-storage",
+          "summary": "The state cabinet's approval brings planned floating solar on the Omkareshwar reservoir to 478 MW. The battery would let the plant shift output beyond daylight hours."
+        },
+        {
+          "source": "pv magazine",
+          "date": "2026-11-23",
+          "headline": "Lebanon plans 3-3.5 GW of new capacity led by solar, wind and storage",
+          "url": "https://www.pv-magazine.com/2026/11/23/lebanon-looks-to-ramp-up-solar-storage-deployments/",
+          "summary": "The cabinet approved the plan, and the government is exploring cooperation with Qatar on renewable and storage projects."
+        },
+        {
+          "source": "The Tribune",
+          "date": "2026-11-22",
+          "headline": "India's solar curtailment reached 8,133 GWh in April-June",
+          "url": "https://tribuneindia.com/news/business/grid-constraints-slower-project-awards-may-weigh-on-solar-capacity-growth-beyond-fy28-report",
+          "summary": "A YES Securities report says grid constraints hit hardest in Rajasthan and Gujarat and may slow solar capacity growth after FY28."
+        },
+        {
+          "source": "pv magazine (Solcast)",
+          "date": "2026-11-20",
+          "headline": "October irradiance ran over 20% above average in Southeast Asia",
+          "url": "https://www.pv-magazine.com/2026/11/20/high-pressure-drives-irradiance-gains-across-south-east-asia-as-sichuan-misses-out/",
+          "summary": "Solcast attributes the gains in southern China and Southeast Asia to strong El Niño conditions, persistent high pressure and less cloud. Sichuan came in below average."
+        }
+      ]
+    },
+    "science": {
+      "overview_html": "A new preprint <a href=\"https://arxiv.org/abs/2611.31564\" target=\"_blank\" rel=\"noopener\">scores three Chinese AI models</a> on tornado-favorable environments, finding each strong on different parameters. An <a href=\"https://news.agu.org/11-19-2026-typhoons-charge-up-faster-after-meeting-marine-heatwaves/\" target=\"_blank\" rel=\"noopener\">AGU study</a> finds typhoons crossing marine heatwaves are up to three times likelier to rapidly intensify, and <a href=\"https://phys.org/news/2026-11-google-ai-hurricane.html\" target=\"_blank\" rel=\"noopener\">UAlbany researchers</a> tested Google's AI cyclone model on four years of storms.",
+      "items": [
+        {
+          "source": "arXiv",
+          "date": "2026-11-23",
+          "headline": "Pangu, FengWu and FuXi tested on Oklahoma tornado environments",
+          "url": "https://arxiv.org/abs/2611.31564",
+          "meta": "arXiv:2611.31564 · physics.ao-ph",
+          "summary": "Across ten strong-tornado events, Pangu-Weather handled storm-relative helicity well, while FuXi Weather did well on several thermodynamic parameters but overpredicted their magnitude."
+        },
+        {
+          "source": "EurekAlert (University of Copenhagen)",
+          "date": "2026-11-23",
+          "headline": "Ocean exchanges more kinds of gases with the atmosphere than assumed",
+          "url": "https://www.eurekalert.org/news-releases/1152772",
+          "summary": "The authors say climate models miss part of this exchange and should account for seasonal changes in it."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-22",
+          "headline": "Atmospheric organic nitrogen supplies about 27% of nitrogen deposited on the oceans",
+          "url": "https://phys.org/news/2026-11-atmospheric-nitrogen-emerges-major-nutrient.html",
+          "meta": "Science",
+          "summary": "From 418 marine aerosol samples on 21 cruises, the authors estimate 12.8 million tonnes of organic nitrogen reach the oceans each year."
+        },
+        {
+          "source": "MIT News",
+          "date": "2026-11-20",
+          "headline": "MIT method keeps AI models of chaotic systems physically bounded",
+          "url": "https://news.mit.edu/new-approach-enables-physically-consistent-ai-models-chaotic-systems-1120",
+          "summary": "Researchers built physical constraints into machine-learning models of chaotic systems so predictions cannot run away to impossible values. Tests used standard benchmark systems, not operational weather or climate forecasts."
+        },
+        {
+          "source": "Nature Climate Change",
+          "date": "2026-11-20",
+          "headline": "Concurrent atmospheric phenomena amplify extreme precipitation under warming",
+          "url": "https://www.nature.com/articles/s41558-026-02805-8",
+          "meta": "Wu, Tan, Liu et al. · Nature Climate Change",
+          "summary": "Changes in how often several atmospheric phenomena occur together add to rising extreme-precipitation totals across much of eastern North America, eastern Asia and western Europe."
+        },
+        {
+          "source": "AGU",
+          "date": "2026-11-19",
+          "headline": "Typhoons over marine heatwaves are up to three times likelier to rapidly intensify",
+          "url": "https://news.agu.org/11-19-2026-typhoons-charge-up-faster-after-meeting-marine-heatwaves/",
+          "meta": "Geophysical Research Letters",
+          "summary": "Subtropical western North Pacific typhoons crossing marine heatwaves had a 9-12% chance of rapid intensification about two days later, against 3.5-4.5% for storms that avoided them."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-19",
+          "headline": "UAlbany tests Google's AI cyclone model on four years of storms",
+          "url": "https://phys.org/news/2026-11-google-ai-hurricane.html",
+          "meta": "University at Albany · Geophysical Research Letters",
+          "summary": "The study scored WeatherNext Cyclone intensity forecasts for every tropical cyclone from June 2022 to May 2026 against NHC and JTWC. The model may miss detail needed for the strongest, fastest-intensifying storms; the 2026 version was not tested."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-11-19",
+          "headline": "Sparse autoencoder audit finds GraphCast relies on mesh-locked features",
+          "url": "https://arxiv.org/abs/2611.25119",
+          "meta": "Gu and Last · NeurIPS 2026 workshop",
+          "summary": "Ablating a feature tied to GraphCast's computational mesh raised global geopotential height error even though the feature has no physical meaning. The authors argue physical interpretability and causal usefulness are separate properties."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-11-19",
+          "headline": "WeatherCraft cuts day-15 error with a token-based ensemble",
+          "url": "https://arxiv.org/abs/2611.25570",
+          "meta": "arXiv preprint (cs.LG)",
+          "summary": "The framework encodes weather states as discrete tokens and aligns one model with reinforcement learning. On ERA5, an eight-member ensemble mean reduced day-15 normalized RMSE by 17.6% against the strongest deterministic baseline tested."
+        },
+        {
+          "source": "arXiv",
+          "date": "2026-11-18",
+          "headline": "AuroraChem couples chemical and meteorological data assimilation in one model",
+          "url": "https://arxiv.org/html/2611.24020",
+          "meta": "arXiv:2611.24020",
+          "summary": "Researchers fine-tuned an atmospheric foundation model to include chemistry. Idealised tests show chemical observations constrain the meteorological state and vice versa, and the model's low cost makes ensemble assimilation practical."
+        }
+      ]
+    },
+    "industry": {
+      "items": [
+        {
+          "date": "2026-11-23",
+          "title": "Northrop Grumman wins $290.6M NASA contract for NOAA NEON microwave sounders",
+          "body_html": "NASA <a href=\"https://www.govconwire.com/articles/northrop-grumman-nasa-noaa-neon-microwave-sounder-contract-award\" target=\"_blank\" rel=\"noopener\">awarded Northrop Grumman $290.6 million</a> to build three Sounder for Microwave-Based Applications instruments for NOAA's Near Earth Orbit Network, with work running to April 2042. The government program of record sits alongside NOAA's commercial microwave-sounder data buys from Spire, Tomorrow.io and others.",
+          "source_html": "<a href=\"https://www.govconwire.com/articles/northrop-grumman-nasa-noaa-neon-microwave-sounder-contract-award\">GovCon Wire</a>"
+        },
+        {
+          "date": "2026-11-24",
+          "title": "SenseNet raises $43M to expand its wildfire detection network",
+          "body_html": "Idealist Capital <a href=\"https://www.geekwire.com/2026/sensenet-lands-43m-financing-deal-for-early-wildfire-detection-and-intelligence/\" target=\"_blank\" rel=\"noopener\">led the Series B financing</a>, which mixes new equity, secondary sales and debt. SenseNet combines ground sensors, AI cameras, satellite data and predictive analytics, and says its monitored area grew from 130 million to over 450 million acres in a year.",
+          "source_html": "<a href=\"https://www.geekwire.com/2026/sensenet-lands-43m-financing-deal-for-early-wildfire-detection-and-intelligence/\">GeekWire</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "Meteomatics opens a weather drone base at McAlester airport in Oklahoma",
+          "body_html": "Meteomatics <a href=\"https://dronexl.co/2026/11/19/meteomatics-mcalester-meteobase-oklahoma-noaa-weather-drones/\" target=\"_blank\" rel=\"noopener\">will run its second operational Meteobase</a> at McAlester Regional Airport, its first at an active US airport. It flies under the NOAA National Mesonet Program and feeds boundary-layer profiles into Meteomatics' US1k model.",
+          "source_html": "<a href=\"https://dronexl.co/2026/11/19/meteomatics-mcalester-meteobase-oklahoma-noaa-weather-drones/\">DroneXL</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "StormGeo's Climatempo builds a three-radar network in Rio Grande do Sul",
+          "body_html": "Climatempo <a href=\"https://shipandbunker.com/news/am/987502-stormgeo-subsidiary-climatempo-installs-weather-radars-in-brazil\" target=\"_blank\" rel=\"noopener\">will build and operate three S-band radars</a> for the state government, with a data platform and monitoring services. Sites were picked from 32 candidates after the 2024 floods, adding to the Porto Alegre radar Climatempo already runs.",
+          "source_html": "<a href=\"https://shipandbunker.com/news/am/987502-stormgeo-subsidiary-climatempo-installs-weather-radars-in-brazil\">Ship & Bunker</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "MITRE expands its weather modeling work with TempoQuest for federal missions",
+          "body_html": "MITRE and TempoQuest <a href=\"https://www.executivebiz.com/articles/mitre-tempoquest-weather-forecasting-collaboration\" target=\"_blank\" rel=\"noopener\">broadened their partnership</a> to apply GPU-accelerated forecasting to national security and wildfire missions, starting with porting MPAS to GPUs. TempoQuest's AceCAST helped build MITRE's Weather 1K dataset, which <a href=\"https://www.mitre.org/news-insights/news-release/mitre-and-weather-company-announce-collaboration-advance-global-weather\" target=\"_blank\" rel=\"noopener\">The Weather Company licensed</a> in April.",
+          "source_html": "<a href=\"https://www.executivebiz.com/articles/mitre-tempoquest-weather-forecasting-collaboration\">ExecutiveBiz</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "Arbol launches parametric cover for GPU residual value",
+          "body_html": "Weather and climate underwriter Arbol <a href=\"https://www.artemis.bm/news/arbol-launches-parametric-insurance-for-gpu-residual-value-risk/\" target=\"_blank\" rel=\"noopener\">launched GPU Residual Value Protection</a>, which pays cash at term end if a benchmark GPU rental index falls below a strike the buyer chooses. It follows Arbol's cover for data-centre construction moratoriums, extending its index-based model beyond weather triggers.",
+          "source_html": "<a href=\"https://www.artemis.bm/news/arbol-launches-parametric-insurance-for-gpu-residual-value-risk/\">Artemis</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "ECMWF and partners win two HPCwire awards for AI forecasting",
+          "body_html": "ECMWF and European met services <a href=\"https://www.ecmwf.int/node/38441\" target=\"_blank\" rel=\"noopener\">won Best Use of HPC/AI in Physical Sciences</a> for operational AI models, and Forecast-in-a-Box won the societal response category. Forecast-in-a-Box lets public institutions run AI forecasts on their own hardware, a free alternative to commercial on-premise products.",
+          "source_html": "<a href=\"https://www.ecmwf.int/node/38441\">ECMWF</a>"
+        },
+        {
+          "date": "2026-11-19",
+          "title": "Metop-SG B1 launch slot set for no earlier than Dec 17",
+          "body_html": "Orbital Radar <a href=\"https://orbitalradar.com/launch/ariane-62-metop-sg-b1\" target=\"_blank\" rel=\"noopener\">lists the Ariane 6 launch</a> of EUMETSAT's first Metop Second Generation B satellite from Kourou no earlier than Dec 17, a slot set on Nov 19. ESA said in October it expected launch <a href=\"https://www.esa.int/ESA_Multimedia/Images/2026/10/Canopee_with_MetOp-SG-B1_docked_at_Pariacabo_harbour\" target=\"_blank\" rel=\"noopener\">at the end of the year</a>.",
+          "source_html": "<a href=\"https://orbitalradar.com/launch/ariane-62-metop-sg-b1\">Orbital Radar</a>"
+        },
+        {
+          "date": "2026-11-20",
+          "title": "SatSure raises $21M with investment from an Indian sovereign fund",
+          "body_html": "Indian Earth observation analytics firm SatSure <a href=\"https://satellitetoday.com/finance/2026/11/20/indian-eo-startup-satsure-raises-21m-with-sovereign-fund-investment\" target=\"_blank\" rel=\"noopener\">closed a $21 million Series B</a> of equity, debt and secondaries, with India's sovereign space-tech fund investing. Its subsidiary KaleidEO has flight-tested an optical payload but has not yet launched a satellite.",
+          "source_html": "<a href=\"https://satellitetoday.com/finance/2026/11/20/indian-eo-startup-satsure-raises-21m-with-sovereign-fund-investment\">Via Satellite</a>"
+        },
+        {
+          "date": "2026-11-18",
+          "title": "SatLeo Labs holds $54M in letters of intent for thermal satellites",
+          "body_html": "The Ahmedabad startup has <a href=\"https://space.com/space-exploration/satellites/indias-satleo-labs-wants-to-build-a-thermometer-for-earth-in-space\" target=\"_blank\" rel=\"noopener\">raised about $6M since 2023</a> and plans satellites mapping land-surface temperature. It pitches near-real-time temperature data for heat, wildfire and crop monitoring.",
+          "source_html": "<a href=\"https://space.com/space-exploration/satellites/indias-satleo-labs-wants-to-build-a-thermometer-for-earth-in-space\">Space.com</a>"
+        },
+        {
+          "date": "2026-11-18",
+          "title": "constellr and Bulgarian Academy of Sciences plan a satellite crisis centre in Plovdiv",
+          "body_html": "Thermal-imaging satellite firm constellr signed a <a href=\"https://bta.bg/en/news/economy/1249463-bulgarian-academy-of-sciences-german-company-to-establish-space-based-crisis-ma\" target=\"_blank\" rel=\"noopener\">cooperation agreement</a> to build a centre monitoring wildfires, floods, farming and water use in southern Bulgaria. The partners plan to apply for EU funding.",
+          "source_html": "<a href=\"https://bta.bg/en/news/economy/1249463-bulgarian-academy-of-sciences-german-company-to-establish-space-based-crisis-ma\">BTA</a>"
+        },
+        {
+          "date": "2026-11-18",
+          "title": "Tao Climate launches Tao Weather AI as a free worldwide service",
+          "body_html": "Tao Climate <a href=\"https://itbrief.co.uk/story/tao-climate-launches-free-ai-weather-service-worldwide\" target=\"_blank\" rel=\"noopener\">released Tao Weather AI</a>, a free conversational service that sets daily forecasts against longer-term local climate references. The company says it is not its own forecast model; it combines third-party forecast data with historical baselines.",
+          "source_html": "<a href=\"https://itbrief.co.uk/story/tao-climate-launches-free-ai-weather-service-worldwide\">IT Brief UK</a>"
+        }
+      ]
+    }
+  }
+}
