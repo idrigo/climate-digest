@@ -1,10 +1,17 @@
 {
-  "digest_date": "2026-11-27",
-  "metar": "DIGEST 270718Z NOV26 · ROLLING 72H WINDOW",
+  "digest_date": "2026-11-28",
+  "metar": "DIGEST 280718Z NOV26 · ROLLING 72H WINDOW",
   "sections": {
     "climate": {
-      "overview_html": "NOAA now gives the El Niño about a <a href=\"https://latintimes.com/noaa-el-nino-2026-2027-latin-america-risks-601791\" target=\"_blank\" rel=\"noopener\">60% chance of becoming the strongest on record</a>. COP31 in Antalya <a href=\"https://www.carbonbrief.org/cop31-key-outcomes-agreed-at-the-un-climate-talks-in-antalya\" target=\"_blank\" rel=\"noopener\">ended without a cover decision</a> for the first time since 2009, and Copernicus logged a <a href=\"https://technology.org/2026/11/23/earth-record-daily-temperature-anomaly-2-12c-copernicus-el-nino\" target=\"_blank\" rel=\"noopener\">2.12°C daily global anomaly</a>.",
+      "overview_html": "Copernicus reports <a href=\"https://en.mercopress.com/2026/11/27/earth-exceeds-2c-of-warming-for-seven-consecutive-days-for-the-first-time\" target=\"_blank\" rel=\"noopener\">seven consecutive days above 2°C</a> of warming from 18 to 24 November, a first. NOAA gives the El Niño about a <a href=\"https://latintimes.com/noaa-el-nino-2026-2027-latin-america-risks-601791\" target=\"_blank\" rel=\"noopener\">60% chance of becoming the strongest on record</a>. COP31 <a href=\"https://www.carbonbrief.org/cop31-key-outcomes-agreed-at-the-un-climate-talks-in-antalya\" target=\"_blank\" rel=\"noopener\">ended without a cover decision</a>, with talks resuming in Bonn in June.",
       "items": [
+        {
+          "source": "MercoPress",
+          "date": "2026-11-27",
+          "headline": "Global temperature stays above 2°C for seven straight days, Copernicus says",
+          "url": "https://en.mercopress.com/2026/11/27/earth-exceeds-2c-of-warming-for-seven-consecutive-days-for-the-first-time",
+          "summary": "Copernicus data show 18-24 November each ran more than 2°C above the 1850-1900 average for the date, the first such run on record. Reports put the 23 November anomaly near 2.25°C; <a href=\"https://english.news.cn/20261127/5a6fb25b73cd44dd8d96286040ba9a25/c.html\" target=\"_blank\" rel=\"noopener\">Copernicus says</a> this is not a breach of the Paris long-term threshold."
+        },
         {
           "source": "Latin Times",
           "date": "2026-11-23",
@@ -25,49 +32,75 @@
           "headline": "Development banks announce finance side deals as COP31 deadlocks",
           "url": "https://greencentralbanking.com/2026/11/25/cop-31-deadlock-side-deals-energy-finance-announced",
           "summary": "Development banks and governments announced new climate finance initiatives outside the formal negotiations. Decisions on the just transition mechanism were deferred to 2027."
-        },
-        {
-          "source": "Technology.org",
-          "date": "2026-11-23",
-          "headline": "Copernicus records a 2.12°C daily global temperature anomaly",
-          "url": "https://technology.org/2026/11/23/earth-record-daily-temperature-anomaly-2-12c-copernicus-el-nino",
-          "summary": "Preliminary Copernicus data show 20 November 2026 ran 2.12°C above the pre-industrial average for the date, the largest daily anomaly measured. The record comes as El Niño heads toward a forecast peak in December."
         }
       ]
     },
     "weather": {
       "major_events": [
         {
-          "name": "Thanksgiving nor'easter, eastern US",
-          "status": "Exiting; coastal flood risk into Saturday",
-          "impact": "Record high tide at Bowers Beach, Delaware; major coastal flooding on the New Jersey shore with rescues in Atlantic City. Peak gusts near 78 mph; nearly one million customers lost power and more than 400 flights were cancelled. Forecasters expect coastal flood risk to persist into Saturday."
-        },
-        {
           "name": "Southern Thailand monsoon rain",
-          "status": "Flood alert Nov 27-30, 15 provinces",
-          "impact": "Heavy rain forecast for 11 provinces on 27 November, with a low-pressure system possibly bringing heavier rain to the lower south on 29-30 November. Floods have already affected nearly 12,000 people in Phatthalung."
+          "status": "Heavy rain warning, 14 provinces, 28 Nov",
+          "impact": "TMD flags flash-flood risk in Surat Thani and Nakhon Si Thammarat and rough seas in the lower Gulf. Floods earlier in the week affected nearly 12,000 people, mostly in Phatthalung."
         },
         {
-          "name": "Queensland storms and Cape York heat",
-          "status": "Severe storms Fri-Sun; heatwave warning",
-          "impact": "Severe storms with heavy rain and damaging gusts are forecast from south-west to south-east Queensland through Sunday. A severe heatwave warning covers the Cape York Peninsula, with maxima in the mid-30s to low 40s °C."
+          "name": "Thanksgiving storm aftermath, eastern US",
+          "status": "Exited; recovery and outages",
+          "impact": "More than 500,000 customers were still without power on Friday. Virginia declared a state of emergency; one death is under investigation on Staten Island."
+        },
+        {
+          "name": "Western US mountain snow",
+          "status": "Winter storm warnings through Sat night",
+          "impact": "Colorado mountains expect 8-15 inches with gusts to 55 mph. An atmospheric river brings dense snow to the Cascades, northern Idaho and Montana, with another storm due Sunday."
+        },
+        {
+          "name": "Queensland severe storms",
+          "status": "Severe storms possible through Sunday",
+          "impact": "BOM expects storms with heavy rain and damaging gusts moving from south-west to south-east Queensland, with the south-east most exposed on Sunday."
         }
       ],
-      "overview_html": "The Thanksgiving nor'easter set a <a href=\"https://whyy.org/articles/thanksgiving-philly-region-noreaster-coastal-flooding-damaging-winds-power-outages/\" target=\"_blank\" rel=\"noopener\">record high tide at Bowers Beach</a>, Delaware, and pushed outages to <a href=\"https://www.aljazeera.com/news/2026/11/27/thanksgiving-storms-leave-nearly-a-million-without-power-across-the-us\" target=\"_blank\" rel=\"noopener\">nearly one million customers</a>, including <a href=\"https://www.yahoo.com/news/weather-news/articles/thanksgiving-storm-knocks-power-171k-001323434.html\" target=\"_blank\" rel=\"noopener\">171,000 in New Jersey</a>. Southern Thailand begins a four-day flood alert with <a href=\"https://thethaiger.com/hot-news/weather/thailand-weather-today-27-november-2026\" target=\"_blank\" rel=\"noopener\">heavy rain in 11 provinces</a> today. In Australia, <a href=\"https://www.abc.net.au/news/2026-11-27/queensland-storms-rain-severe-weather-summer/107429386\" target=\"_blank\" rel=\"noopener\">severe storms</a> are forecast across Queensland through the weekend.",
+      "overview_html": "Southern Thailand faces another day of heavy rain, with the TMD <a href=\"https://thethaiger.com/hot-news/weather/thailand-weather-today-28-november-2026\" target=\"_blank\" rel=\"noopener\">warning 14 provinces</a> of flash-flood risk. On the US East Coast, <a href=\"https://washingtonpost.com/nation/2026/11/27/power-outages-heavy-rain-continue-east-coast-after-thanksgiving-day-storm\" target=\"_blank\" rel=\"noopener\">more than 500,000 customers</a> were still without power on Friday after the Thanksgiving storm. Western mountains take the next system, with <a href=\"https://www.yahoo.com/news/weather-news/articles/winter-storm-warning-issued-15-095145657.html\" target=\"_blank\" rel=\"noopener\">up to 15 inches of snow</a> forecast for Colorado on Saturday. Queensland expects <a href=\"https://www.abc.net.au/news/2026-11-27/queensland-storms-rain-severe-weather-summer/107429386\" target=\"_blank\" rel=\"noopener\">severe storms through Sunday</a>. No tropical cyclones are active in the Atlantic or eastern Pacific.",
       "items": [
         {
-          "source": "WHYY",
-          "date": "2026-11-26",
-          "headline": "Nor'easter brings record coastal flooding to the Philadelphia region and Delaware",
-          "url": "https://whyy.org/articles/thanksgiving-philly-region-noreaster-coastal-flooding-damaging-winds-power-outages/",
-          "summary": "Bowers Beach, Delaware, set a record high tide, and flooding closed Route 1 north of Bethany Beach. Utilities in Pennsylvania, New Jersey and Delaware reported more than 73,000 outages by midday Thursday."
+          "source": "The Thaiger",
+          "date": "2026-11-28",
+          "headline": "Thai Meteorological Department warns of heavy rain in 14 southern provinces",
+          "url": "https://thethaiger.com/hot-news/weather/thailand-weather-today-28-november-2026",
+          "summary": "The 5am bulletin puts the heaviest rain over Surat Thani and Nakhon Si Thammarat, with flash-flood risk in both. Residents near waterways and foothills are told to watch for overflows and landslides."
         },
         {
-          "source": "NJ.com via Yahoo",
-          "date": "2026-11-26",
-          "headline": "Storm cuts power to 171,000 New Jersey customers as gusts reach 78 mph",
-          "url": "https://www.yahoo.com/news/weather-news/articles/thanksgiving-storm-knocks-power-171k-001323434.html",
-          "summary": "New Jersey outages passed 171,000 on Thanksgiving evening under a statewide state of emergency. More coastal flooding was forecast with the next high tides."
+          "source": "Nation Thailand",
+          "date": "2026-11-28",
+          "headline": "Lower Gulf of Thailand seas turn rough as upper Thailand cools",
+          "url": "https://nationthailand.com/news/general/40074017",
+          "summary": "TMD paired the southern rain warning with rough-sea advice for the lower Gulf, while a cool air mass lowers temperatures over the north and northeast."
+        },
+        {
+          "source": "The Washington Post",
+          "date": "2026-11-27",
+          "headline": "More than 500,000 still without power a day after the Thanksgiving storm",
+          "url": "https://washingtonpost.com/nation/2026/11/27/power-outages-heavy-rain-continue-east-coast-after-thanksgiving-day-storm",
+          "summary": "Outages and rain continued along the East Coast on Friday. Virginia Governor Abigail Spanberger declared a state of emergency to support recovery."
+        },
+        {
+          "source": "NBC News",
+          "date": "2026-11-27",
+          "headline": "Body recovered from a submerged vehicle on Staten Island after the storm",
+          "url": "https://www.nbcnews.com/news/us-news/much-country-thanksgiving-featured-nasty-weather-rcna611521",
+          "summary": "Police found a man's body after a vehicle was reported underwater near a coastal roadway on Thanksgiving. The cause of death was not immediately determined."
+        },
+        {
+          "source": "Yahoo News",
+          "date": "2026-11-27",
+          "headline": "Colorado mountains under winter storm warning for up to 15 inches of snow",
+          "url": "https://www.yahoo.com/news/weather-news/articles/winter-storm-warning-issued-15-095145657.html",
+          "summary": "The NWS warning runs from Friday evening through Saturday night, with 8-15 inches and gusts to 55 mph. Forecasters advise travelling on Friday or Sunday instead of Saturday."
+        },
+        {
+          "source": "OpenSnow",
+          "date": "2026-11-27",
+          "headline": "Atmospheric river carries dense snow from the Cascades into the Northern Rockies",
+          "url": "https://opensnow.com/dailysnow/usandcanada/post/45161",
+          "summary": "The storm brings snow to the Washington and Oregon Cascades, southeast British Columbia, northern Idaho and Montana through Saturday. In Bend, <a href=\"https://wisevoter.com/world/us/or/bend/2026/11/27/bend-rain-winds-return-weekend\" target=\"_blank\" rel=\"noopener\">another storm returns Sunday</a> after a brief Saturday break."
         },
         {
           "source": "Al Jazeera",
@@ -77,65 +110,37 @@
           "summary": "Outages across the East Coast neared one million customers, and more than 400 US flights were cancelled on the holiday."
         },
         {
-          "source": "The Weather Channel",
-          "date": "2026-11-26",
-          "headline": "Thanksgiving storm leaves flood and wind damage along the East Coast",
-          "url": "https://weather.com/2026/11/26/news/weather/east-coast-thanksgiving-storm-flooding-winds",
-          "summary": "The storm's damage ran from the mid-Atlantic into the Northeast, with coastal flooding in New Jersey shore towns and downed trees inland."
-        },
-        {
-          "source": "The Thaiger",
-          "date": "2026-11-27",
-          "headline": "Thai Meteorological Department forecasts heavy rain in 11 provinces on 27 November",
-          "url": "https://thethaiger.com/hot-news/weather/thailand-weather-today-27-november-2026",
-          "summary": "Heavy rain is forecast for 11 provinces, mostly in the south, at the start of the 27-30 November flood alert. A low-pressure system may bring heavier rain to the lower south on 29-30 November."
-        },
-        {
           "source": "ABC News (Australia)",
           "date": "2026-11-27",
           "headline": "Severe storms forecast for Queensland through the weekend",
           "url": "https://www.abc.net.au/news/2026-11-27/queensland-storms-rain-severe-weather-summer/107429386",
           "summary": "The Bureau of Meteorology expects severe storms from Friday in south-west Queensland, spreading to the south-east by Sunday with heavy rain and damaging gusts. It also forecasts a hot, dry summer under El Niño."
-        },
-        {
-          "source": "The Washington Post",
-          "date": "2026-11-25",
-          "headline": "Macy's Thanksgiving Day Parade postponed to Saturday by the storm",
-          "url": "https://www.washingtonpost.com/nation/2026/11/25/macys-thanksgiving-day-parade-postponed-by-storm-rescheduled-saturday/",
-          "summary": "Macy's moved its 100th parade to 8:30 a.m. Saturday, the first weather postponement in its history. NBC will air a rerun of the 2025 parade on Thursday."
-        },
-        {
-          "source": "ABC7 San Francisco",
-          "date": "2026-11-24",
-          "headline": "San Francisco sets a November water-level record above 8 feet",
-          "url": "https://abc7news.com/live-updates/live-bay-area-weather-updates-san-francisco-recovers-severe-flooding-more-storms-king-tides-coming-northern-california/20069742/entry/20076052/",
-          "summary": "The tide gauge hit 8.23 ft, beating the 7.97 ft November record from 1982. The NWS had warned king tides could reach the highest levels on record in some areas."
-        },
-        {
-          "source": "Nature World News",
-          "date": "2026-11-24",
-          "headline": "Floods hit nearly 12,000 people in southern Thailand",
-          "url": "https://www.natureworldnews.com/articles/74019/20261124/floods-hit-nearly-12000-people-southern-thailand-more-heavy-rain-forecast.htm",
-          "summary": "Mueang Phatthalung and Khuan Khanun are the hardest-hit districts. High tides and accumulated rain pushed Songkhla Lake into more than 100 homes."
-        },
-        {
-          "source": "Newswire.lk",
-          "date": "2026-11-25",
-          "headline": "Sri Lanka forecasts more than 100 mm of rain in several provinces",
-          "url": "https://newswire.lk/2026/11/25/heavy-rainfall-above-100-mm-expected-in-several-parts-of-sri-lanka-today",
-          "summary": "The Department of Meteorology expected heavy showers in the Western, Sabaragamuwa, Central, Uva and North-western provinces and in Galle and Matara districts."
         }
       ]
     },
     "renewables": {
-      "overview_html": "AEMO enters summer with <a href=\"https://www.energy-storage.news/greater-operational-flexibility-australias-aemo-leans-on-5-3gw-of-new-battery-storage-for-summer/\" target=\"_blank\" rel=\"noopener\">5.3 GW of new battery storage</a> on the NEM and a forecast of warmer, drier weather under El Niño. South Australia's storm-hit Eyre Peninsula is due to <a href=\"https://abc.net.au/news/2026-11-25/construction-temporary-transmission-towers-eyre-peninsula/107424404\" target=\"_blank\" rel=\"noopener\">reconnect by Friday</a> on temporary towers. Egypt set a <a href=\"https://solarquarter.com/2026/11/26/egypt-targets-31-9-gw-renewable-energy-capacity-and-14-42-gwh-battery-storage-by-2030\" target=\"_blank\" rel=\"noopener\">31.9 GW renewables target</a> for 2030 with 14.42 GWh of storage.",
+      "overview_html": "China's installed solar reached <a href=\"https://pv-magazine.com/2026/11/27/chinese-pv-industry-brief-china-hits-1-33-tw-of-cumulative-solar-capacity\" target=\"_blank\" rel=\"noopener\">about 1.33 TW</a> at the end of October. France <a href=\"https://www.pv-magazine.com/2026/11/26/france-triples-planned-renewable-energy-auction-volume-to-1-5-gw/\" target=\"_blank\" rel=\"noopener\">tripled its next renewable auction</a> to 1.5 GW. In South Australia, storm-downed transmission keeps the <a href=\"https://abc.net.au/news/2026-11-25/construction-temporary-transmission-towers-eyre-peninsula/107424404\" target=\"_blank\" rel=\"noopener\">Cathedral Rocks wind farm offline</a> while temporary towers go up.",
       "items": [
         {
-          "source": "Energy-Storage.news",
-          "date": "2026-11-20",
-          "headline": "AEMO counts on 5.3 GW of new batteries for a hot, dry El Niño summer",
-          "url": "https://www.energy-storage.news/greater-operational-flexibility-australias-aemo-leans-on-5-3gw-of-new-battery-storage-for-summer/",
-          "summary": "AEMO's summer readiness release says more than 30 projects totalling 8.4 GW, including 5.3 GW of batteries, joined the NEM since December 2025. It expects sufficient supply under forecast conditions, with warmer and drier weather across most of Australia."
+          "source": "pv magazine",
+          "date": "2026-11-27",
+          "headline": "China's cumulative solar capacity reaches about 1.33 TW",
+          "url": "https://pv-magazine.com/2026/11/27/chinese-pv-industry-brief-china-hits-1-33-tw-of-cumulative-solar-capacity",
+          "summary": "NEA data put installed solar at roughly 1.33 TW at the end of October, up 16.3% year on year. China Huaneng also started a 400 MW offshore solar project in Jiangsu sharing sea area with a working wind farm."
+        },
+        {
+          "source": "pv magazine",
+          "date": "2026-11-26",
+          "headline": "France triples its planned renewable auction to 1.5 GW",
+          "url": "https://www.pv-magazine.com/2026/11/26/france-triples-planned-renewable-energy-auction-volume-to-1-5-gw/",
+          "summary": "The technology-neutral tender rises from 500 MW to 1.5 GW and opens to all renewable technologies, the government said on 25 November."
+        },
+        {
+          "source": "EnergyTrend",
+          "date": "2026-11-26",
+          "headline": "Sungrow and EVE Energy among six new storage orders and bid wins",
+          "url": "https://www.energytrend.com/news/20261126-52620.html",
+          "summary": "The roundup includes a 380 MW/1,500 MWh project in Spain involving Sungrow's renewables arm and a 1.2 GWh EVE Energy cooperation deal."
         },
         {
           "source": "SolarQuarter",
@@ -152,31 +157,56 @@
           "summary": "Egypt set a 2030 goal of 31.9 GW of renewable capacity paired with 14.42 GWh of battery storage."
         },
         {
-          "source": "SolarQuarter",
-          "date": "2026-11-26",
-          "headline": "Gambia signs a $68M deal for 52 MW of solar and 40.9 MWh of storage",
-          "url": "https://solarquarter.com/2026/11/26/gambia-signs-us68-million-deal-for-52-mw-solar-and-40-9-mwh-battery-storage-project",
-          "summary": "The $68 million project pairs 52 MW of solar with a 40.9 MWh battery."
-        },
-        {
           "source": "ABC News",
           "date": "2026-11-25",
           "headline": "Eyre Peninsula to reconnect by Friday on temporary transmission towers",
           "url": "https://abc.net.au/news/2026-11-25/construction-temporary-transmission-towers-eyre-peninsula/107424404",
           "summary": "Crews are building temporary towers after a storm downed two and damaged a third; permanent replacements could take up to a year. The 62 MW Cathedral Rocks wind farm stays offline and a rooftop solar export ban remains, as winds exceeded the towers' design limits."
-        },
-        {
-          "source": "DSIJ",
-          "date": "2026-11-25",
-          "headline": "L&T wins a Rs 1,000-2,500 crore battery storage order at Khavda",
-          "url": "https://insights.dsij.in/dsijarticledetail/lt-wins-rs-1000-2500-crore-khavda-battery-storage-order-shares-trade-higher",
-          "summary": "The Gujarat system will store surplus renewable output at high generation and release it at peak demand."
         }
       ]
     },
     "science": {
-      "overview_html": "No major AI weather model papers surfaced this holiday week. A <a href=\"https://arxiv.org/abs/2611.31564\" target=\"_blank\" rel=\"noopener\">test of Pangu, FengWu and FuXi</a> on Oklahoma tornado environments remains the main ML item. New work links slower Atlantic overturning to a <a href=\"https://scienceblog.com/when-iceberg-surges-slowed-the-atlantics-overturning-circulation-during-the-last-ice-age-the-north-pacifics-low-oxygen-zone-shrank-sometimes-almost-vanishing-fossil-seabed-shells-from-11-cores/\" target=\"_blank\" rel=\"noopener\">shrinking North Pacific low-oxygen zone</a> in the ice age, and OceanICU estimates that without marine life, <a href=\"https://phys.org/news/2026-11-marine-life-atmospheric-century.html\" target=\"_blank\" rel=\"noopener\">2100 CO₂ would be 35-65% higher</a>.",
+      "overview_html": "Two reviews of AI weather prediction landed this week: a <a href=\"https://www.nature.com/articles/s43017-026-00849-0\" target=\"_blank\" rel=\"noopener\">Nature Reviews survey of 2015-2025 work</a> and an <a href=\"https://www.nature.com/articles/s41612-026-01595-2\" target=\"_blank\" rel=\"noopener\">npj assessment of foundation models and LLM decision tools</a>. A GRL study links <a href=\"https://phys.org/news/2026-11-roller-coaster-flight-reveals-hidden.html\" target=\"_blank\" rel=\"noopener\">cloud-top charge to droplet size</a> in layer clouds, and an Earth's Future paper projects <a href=\"https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/\" target=\"_blank\" rel=\"noopener\">76-140% more lightning</a> by 2100 under high emissions.",
       "items": [
+        {
+          "source": "Nature Reviews Earth & Environment",
+          "date": "2026-11-25",
+          "headline": "Review maps a decade of AI for short-to-medium range weather prediction",
+          "url": "https://www.nature.com/articles/s43017-026-00849-0",
+          "meta": "Nature Reviews Earth & Environment",
+          "summary": "The review covers machine-learning weather prediction from 2015 to 2025 and sets out recommendations for future research."
+        },
+        {
+          "source": "npj Climate and Atmospheric Science",
+          "date": "2026-11-27",
+          "headline": "Review assesses weather foundation models and LLM decision support",
+          "url": "https://www.nature.com/articles/s41612-026-01595-2",
+          "meta": "npj Climate and Atmospheric Science",
+          "summary": "The authors searched four databases for studies from January 2020 to May 2026 on foundation models in forecasting and LLM-based tools that turn forecasts into decisions."
+        },
+        {
+          "source": "Phys.org",
+          "date": "2026-11-27",
+          "headline": "Aircraft profiles show cloud-top charge in layer clouds tracks droplet size",
+          "url": "https://phys.org/news/2026-11-roller-coaster-flight-reveals-hidden.html",
+          "meta": "Geophysical Research Letters",
+          "summary": "Clouds with more charge at their tops tended to contain larger droplets. The link could matter for how droplets collide and grow toward drizzle."
+        },
+        {
+          "source": "AGU",
+          "date": "2026-11-24",
+          "headline": "Lightning could become 76-140% more common by 2100 under high emissions",
+          "url": "https://news.agu.org/press-release/lightning-could-strike-over-twice-as-often-in-a-warming-world/",
+          "meta": "Andreas Krause (TUM) et al. · Earth's Future",
+          "summary": "The projection compares the end of the century with 1995-2014. More lightning raises ignition risk for wildfires."
+        },
+        {
+          "source": "NOAA AOML",
+          "date": "2026-11-23",
+          "headline": "NOAA study suggests flying G-IV hurricane missions closer to storm centers",
+          "url": "https://www.aoml.noaa.gov/optimizing-g-iv-hurricane-reconnaissance-flights/",
+          "summary": "The study quantifies the forecast impact of all reconnaissance data from NOAA's Gulfstream IV-SP jet, which has mostly sampled storm outskirts."
+        },
         {
           "source": "ScienceBlog",
           "date": "2026-11-25",
@@ -194,14 +224,6 @@
           "meta": "University of York, UEA · Science Advances"
         },
         {
-          "source": "Phys.org",
-          "date": "2026-11-25",
-          "headline": "Without marine life, 2100 CO₂ would be 35-65% higher, OceanICU estimates",
-          "url": "https://phys.org/news/2026-11-marine-life-atmospheric-century.html",
-          "summary": "A policy brief from the EU OceanICU project, presented at COP31, quantifies the biological carbon pump's role. It calls for caution and clear terms around proposed marine carbon dioxide removal.",
-          "meta": "OceanICU · policy brief"
-        },
-        {
           "source": "EurekAlert",
           "date": "2026-11-24",
           "headline": "Study probes why India and southern China set heat records together in May 2026",
@@ -210,46 +232,23 @@
           "meta": "Hong Kong Baptist University · Advances in Atmospheric Sciences"
         },
         {
-          "source": "NOAA Research",
-          "date": "2026-11-24",
-          "headline": "NOAA hurricane hunters log 480 flight hours across 10 cyclones in 2026",
-          "url": "https://research.noaa.gov/noaa-researchers-adapt-to-unprecedented-2026-hurricane-season",
-          "summary": "AOML flew drones inside the eyewall of Hurricane Isaias and sampled Hurricane Polo, which peaked at 180 mph."
-        },
-        {
           "source": "arXiv",
           "date": "2026-11-23",
           "headline": "Pangu, FengWu and FuXi tested on Oklahoma tornado environments",
           "url": "https://arxiv.org/abs/2611.31564",
           "meta": "arXiv:2611.31564 · physics.ao-ph",
           "summary": "Across ten strong-tornado events, Pangu-Weather handled storm-relative helicity well, while FuXi Weather did well on several thermodynamic parameters but overpredicted their magnitude."
-        },
-        {
-          "source": "EurekAlert (University of Copenhagen)",
-          "date": "2026-11-23",
-          "headline": "Ocean exchanges more kinds of gases with the atmosphere than assumed",
-          "url": "https://www.eurekalert.org/news-releases/1152772",
-          "summary": "The authors say climate models miss part of this exchange and should account for seasonal changes in it."
-        },
-        {
-          "source": "MIT News",
-          "date": "2026-11-20",
-          "headline": "MIT method keeps AI models of chaotic systems physically bounded",
-          "url": "https://news.mit.edu/new-approach-enables-physically-consistent-ai-models-chaotic-systems-1120",
-          "summary": "Researchers built physical constraints into machine-learning models of chaotic systems so predictions cannot run away to impossible values. Tests used standard benchmark systems, not operational weather or climate forecasts."
-        },
-        {
-          "source": "Nature Climate Change",
-          "date": "2026-11-20",
-          "headline": "Concurrent atmospheric phenomena amplify extreme precipitation under warming",
-          "url": "https://www.nature.com/articles/s41558-026-02805-8",
-          "meta": "Wu, Tan, Liu et al. · Nature Climate Change",
-          "summary": "Changes in how often several atmospheric phenomena occur together add to rising extreme-precipitation totals across much of eastern North America, eastern Asia and western Europe."
         }
       ]
     },
     "industry": {
       "items": [
+        {
+          "date": "2026-11-27",
+          "title": "Weatherstack moves sign-ups and billing onto the APILayer platform",
+          "body_html": "Weatherstack's real-time, historical, forecast and marine endpoints are <a href=\"https://www.einnews.com/pr_news/959344092/weatherstack-is-now-available-on-apilayer-one-account-for-weather-data-and-more\" target=\"_blank\" rel=\"noopener\">now sold through APILayer accounts</a>, alongside the company's other APIs. Existing keys, subscriptions and endpoints keep working; new customers sign up through APILayer. It is a distribution change, not a new data product.",
+          "source_html": "<a href=\"https://www.einnews.com/pr_news/959344092/weatherstack-is-now-available-on-apilayer-one-account-for-weather-data-and-more\">EIN Presswire</a>"
+        },
         {
           "date": "2026-11-26",
           "title": "BBC switches its forecast supply back to the Met Office, replacing MeteoGroup",
@@ -279,12 +278,6 @@
           "title": "Northrop Grumman wins $290.6M NASA contract for NOAA NEON microwave sounders",
           "body_html": "NASA <a href=\"https://www.govconwire.com/articles/northrop-grumman-nasa-noaa-neon-microwave-sounder-contract-award\" target=\"_blank\" rel=\"noopener\">awarded Northrop Grumman $290.6 million</a> to build three Sounder for Microwave-Based Applications instruments for NOAA's Near Earth Orbit Network, with work running to April 2042. The government program of record sits alongside NOAA's commercial microwave-sounder data buys from Spire, Tomorrow.io and others.",
           "source_html": "<a href=\"https://www.govconwire.com/articles/northrop-grumman-nasa-noaa-neon-microwave-sounder-contract-award\">GovCon Wire</a>"
-        },
-        {
-          "date": "2026-11-20",
-          "title": "SatSure raises $21M with investment from an Indian sovereign fund",
-          "body_html": "Indian Earth observation analytics firm SatSure <a href=\"https://satellitetoday.com/finance/2026/11/20/indian-eo-startup-satsure-raises-21m-with-sovereign-fund-investment\" target=\"_blank\" rel=\"noopener\">closed a $21 million Series B</a> of equity, debt and secondaries, with India's sovereign space-tech fund investing. Its subsidiary KaleidEO has flight-tested an optical payload but has not yet launched a satellite.",
-          "source_html": "<a href=\"https://satellitetoday.com/finance/2026/11/20/indian-eo-startup-satsure-raises-21m-with-sovereign-fund-investment\">Via Satellite</a>"
         }
       ]
     }
